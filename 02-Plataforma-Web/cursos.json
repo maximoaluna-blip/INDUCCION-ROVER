@@ -1,0 +1,12 @@
+[
+  {
+    "courseId": "fundamentos-scout",
+    "title": "Fundamentos del Movimiento Scout",
+    "description": "Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, misión, método scout y su impacto global. Preparación integral para servir como sinodal o ayudante.",
+    "icon": "🏕️",
+    "duration": "6 horas",
+    "modules": 7,
+    "status": "active",
+    "file": "fundamentos-scout.html"
+  }
+]

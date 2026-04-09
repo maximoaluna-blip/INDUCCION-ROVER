@@ -254,12 +254,67 @@ body {
     position: fixed; top: 80px; right: 20px; background: #622599;
     color: white; padding: 15px 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2); animation: slideIn 0.3s;
-    z-index: 2000; max-width: 300px;
+    z-index: 2000; max-width: 400px; font-size: 0.9em; line-height: 1.4;
 }
 @keyframes slideIn { from { transform: translateX(400px); } to { transform: translateX(0); } }
 @keyframes slideOut { from { transform: translateX(0); } to { transform: translateX(400px); } }
 
 .hidden { display: none !important; }
+
+/* --- Recovery & Toggle Buttons --- */
+.toggle-buttons {
+    display: flex; gap: 0; margin-bottom: 25px;
+    border: 2px solid #622599; overflow: hidden;
+}
+.toggle-btn {
+    flex: 1; padding: 12px 20px; background: #f2f5f7;
+    border: none; cursor: pointer; font-size: 15px;
+    font-family: 'Montserrat', sans-serif; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    color: #622599; transition: all 0.3s;
+}
+.toggle-btn:hover { background: #f3e8ff; }
+.toggle-btn.active { background: #622599; color: white; }
+
+.recovery-section {
+    background: #f3e8ff; border-left: 4px solid #622599;
+    padding: 25px; margin-bottom: 25px; animation: fadeIn 0.3s;
+}
+.recovery-section h3 { color: #622599; margin-bottom: 15px; font-weight: 700; }
+.recovery-section .form-group { margin-bottom: 15px; }
+
+/* --- Modal Overlay (Progress Summary) --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6); z-index: 5000;
+    display: flex; align-items: center; justify-content: center;
+    animation: fadeIn 0.3s;
+}
+.modal-content {
+    background: white; padding: 40px; max-width: 450px; width: 90%;
+    text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    border-top: 4px solid #622599; animation: fadeIn 0.3s;
+}
+.modal-content h2 { color: #622599; margin-bottom: 15px; font-weight: 700; }
+.modal-content .modal-score {
+    font-size: 2em; font-weight: 700; color: #622599; margin: 10px 0;
+}
+.modal-content .modal-progress-bar {
+    background: #e0e0e0; height: 20px; margin: 15px 0; overflow: hidden;
+}
+.modal-content .modal-progress-fill {
+    background: linear-gradient(90deg, #622599, #8e44ad); height: 100%;
+    transition: width 0.5s ease;
+}
+.modal-content .modal-progress-text {
+    color: #636363; font-size: 0.95em; margin-bottom: 20px;
+}
+
+/* --- Time Per Module Indicator --- */
+.module-time-indicator {
+    display: inline-block; font-size: 0.8em; color: #636363;
+    margin-left: 8px; font-weight: 400;
+}
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
@@ -278,7 +333,7 @@ body {
 /* --- Print --- */
 @media print {
     body { background: white; }
-    .top-bar, .nav-menu, .mobile-nav, .btn, .save-indicator, .sync-indicator { display: none !important; }
+    .top-bar, .nav-menu, .mobile-nav, .btn, .save-indicator, .sync-indicator, .modal-overlay { display: none !important; }
     .certificate { page-break-inside: avoid; }
 }
 
@@ -347,6 +402,24 @@ body {
                 <div class="info-box">
                     <strong>🎯 Objetivo del Curso:</strong><br>
                     Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, misión, método scout y su impacto global. Preparación integral para servir como sinodal o ayudante.
+                </div>
+
+                <div class="toggle-buttons">
+                    <button class="toggle-btn active" id="toggleNewReg" onclick="toggleRegistrationMode('new')">🆕 Nuevo Registro</button>
+                    <button class="toggle-btn" id="toggleRecover" onclick="toggleRegistrationMode('recover')">🔄 Recuperar mi Avance</button>
+                </div>
+
+                <div class="recovery-section hidden" id="recoverySection">
+                    <h3>🔄 Recuperar tu avance anterior</h3>
+                    <p style="color: #636363; margin-bottom: 15px;">Ingresa el correo electronico con el que te registraste para recuperar tu progreso.</p>
+                    <div class="form-group">
+                        <label for="recoveryEmail">Correo Electronico</label>
+                        <input type="email" id="recoveryEmail" placeholder="Ej: juan.perez@email.com" required>
+                    </div>
+                    <div style="text-align: center;">
+                        <button class="btn" onclick="recoverProgress()">🔍 Recuperar</button>
+                    </div>
+                    <div id="recoveryMessage" style="margin-top: 15px; text-align: center; display: none;"></div>
                 </div>
 
                 <form id="registrationForm" onsubmit="handleRegistration(event)">
@@ -463,7 +536,7 @@ body {
             <!-- MÓDULO 2: MISIÓN Y PROPÓSITO DEL MOVIMIENTO SCOUT -->
             <div class="module" id="module-2">
                 <h2>🎯 Misión y Propósito del Movimiento Scout</h2>
-                <div class="badge">Módulo 1/6</div>
+                <div class="badge">Módulo 1/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
 
                 <div class="mission-box"><h3>🌟 MISIÓN DEL MOVIMIENTO SCOUT</h3><blockquote style="font-size: 1.1rem; font-style: italic; text-align: center; margin: 20px 0; color: #1a4b6b;">"Contribuir a la educación de los jóvenes para que participen en la construcción de un mundo mejor, donde las personas se desarrollen plenamente y jueguen un papel constructivo en la sociedad."</blockquote></div>
 
@@ -547,7 +620,7 @@ body {
             <!-- MÓDULO 3: MAFEKING - EL ORIGEN DEL MOVIMIENTO SCOUT -->
             <div class="module" id="module-3">
                 <h2>⛰️ Mafeking - El Origen del Movimiento Scout</h2>
-                <div class="badge">Módulo 2/6</div>
+                <div class="badge">Módulo 2/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
 
                 <h3>📅 El Sitio de Mafeking (1899-1900)</h3>
 
@@ -632,7 +705,7 @@ body {
             <!-- MÓDULO 4: BROWNSEA ISLAND - EL PRIMER CAMPAMENTO SCOUT -->
             <div class="module" id="module-4">
                 <h2>🏝️ Brownsea Island - El Primer Campamento Scout</h2>
-                <div class="badge">Módulo 3/6</div>
+                <div class="badge">Módulo 3/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
 
                 <h3>📅 1-9 de Agosto de 1907</h3>
 
@@ -737,7 +810,7 @@ body {
             <!-- MÓDULO 5: LA EXPANSIÓN MUNDIAL DEL MOVIMIENTO SCOUT -->
             <div class="module" id="module-5">
                 <h2>🌍 La Expansión Mundial del Movimiento Scout</h2>
-                <div class="badge">Módulo 4/6</div>
+                <div class="badge">Módulo 4/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
 
                 <h3>🚀 El Crecimiento Explosivo</h3>
 
@@ -837,7 +910,7 @@ body {
             <!-- MÓDULO 6: LOS 8 ELEMENTOS DEL MÉTODO SCOUT -->
             <div class="module" id="module-6">
                 <h2>⚙️ Los 8 Elementos del Método Scout</h2>
-                <div class="badge">Módulo 5/6</div>
+                <div class="badge">Módulo 5/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
 
                 <p>El Método Scout es un sistema educativo único que funciona a través de la interacción de 8 elementos esenciales. Como sinodal/ayudante, es fundamental que comprendas cómo aplicar cada uno.</p>
 
@@ -930,7 +1003,7 @@ body {
             <!-- MÓDULO 7: EL IMPACTO GLOBAL DEL MOVIMIENTO SCOUT -->
             <div class="module" id="module-7">
                 <h2>💫 El Impacto Global del Movimiento Scout</h2>
-                <div class="badge">Módulo 6/6</div>
+                <div class="badge">Módulo 6/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
 
                 <h3>🌟 Más de 100 Años Transformando Vidas</h3>
 
@@ -1087,6 +1160,20 @@ body {
         </div>
     </div>
 
+    <!-- Modal for progress summary between modules -->
+    <div class="modal-overlay hidden" id="moduleCompleteModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Modulo completado!</h2>
+            <div class="modal-score" id="modalScore"></div>
+            <p style="color: #636363; margin-bottom: 10px;">Puntuacion de la evaluacion</p>
+            <div class="modal-progress-bar">
+                <div class="modal-progress-fill" id="modalProgressFill" style="width: 0%"></div>
+            </div>
+            <p class="modal-progress-text" id="modalProgressText">Progreso total: 0%</p>
+            <button class="btn" id="modalContinueBtn" onclick="dismissModuleCompleteModal()">Continuar ➡️</button>
+        </div>
+    </div>
+
     <div class="save-indicator" id="saveIndicator">💾 Guardando...</div>
 
     <script>
@@ -1096,7 +1183,7 @@ body {
         title: "Fundamentos del Movimiento Scout",
         totalModules: 9,
         contentModules: 6,
-        googleScriptUrl: "https://script.google.com/macros/s/AKfycbwYfFZbEWJILQCndTAxSWx1P5yEj79_utSDNkn13gNgN43k7D-q9DNvkjH-3zDPg7ZH/exec",
+        googleScriptUrl: "https://script.google.com/macros/s/AKfycbzHd4KB4MafCKKPp8kEf9V-vLnlsCKUhmqR6eMFB-Qvz2f03xy9bYSx86eGUuS5RkfX2g/exec",
         achievements: [{"id":"achievement-1","name":"Historiador Scout","emoji":"📚","unlockOnModule":3},{"id":"achievement-2","name":"Conocedor de la Misión","emoji":"🎯","unlockOnModule":2},{"id":"achievement-3","name":"Metodólogo Scout","emoji":"⚙️","unlockOnModule":6},{"id":"achievement-4","name":"Ciudadano Global","emoji":"🌍","unlockOnModule":7},{"id":"achievement-5","name":"Rover Certificado","emoji":"🎓","unlockOnModule":-1}]
     };
 
@@ -1131,6 +1218,84 @@ window.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('beforeunload', function () {
     saveProgress();
 });
+
+// --- Registration mode toggle ---
+function toggleRegistrationMode(mode) {
+    var newRegBtn = document.getElementById('toggleNewReg');
+    var recoverBtn = document.getElementById('toggleRecover');
+    var recoverySection = document.getElementById('recoverySection');
+    var registrationForm = document.getElementById('registrationForm');
+
+    if (mode === 'recover') {
+        newRegBtn.classList.remove('active');
+        recoverBtn.classList.add('active');
+        recoverySection.classList.remove('hidden');
+        registrationForm.style.display = 'none';
+    } else {
+        newRegBtn.classList.add('active');
+        recoverBtn.classList.remove('active');
+        recoverySection.classList.add('hidden');
+        registrationForm.style.display = '';
+    }
+}
+
+// --- Recovery from server ---
+function recoverProgress() {
+    var emailInput = document.getElementById('recoveryEmail');
+    var email = emailInput.value.trim();
+    var msgDiv = document.getElementById('recoveryMessage');
+
+    if (!email) {
+        showNotification('⚠️ Ingresa tu correo electronico', 'warning');
+        return;
+    }
+
+    msgDiv.style.display = 'block';
+    msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">🔄 Buscando tu avance...</p>';
+
+    var url = COURSE_CONFIG.googleScriptUrl + '?action=recover&email=' + encodeURIComponent(email) + '&token=ROVER_ASC_2025';
+
+    fetch(url)
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+            if (data && data.found) {
+                // Restore all progress data
+                if (data.userProfile) userProfile = data.userProfile;
+                if (data.moduleProgress) moduleProgress = data.moduleProgress;
+                if (data.quizScores) quizScores = data.quizScores;
+                if (data.studyTime) studyTime = data.studyTime;
+                if (data.reflections) reflections = data.reflections;
+
+                // Restore reflections to textareas
+                Object.keys(reflections).forEach(function(k) {
+                    var ta = document.getElementById('reflection-' + k);
+                    if (ta) ta.value = reflections[k];
+                });
+
+                saveProgress();
+                updateStats();
+                updateProgress();
+
+                var lastModule = data.currentModule || 0;
+                var firstName = userProfile.fullName ? userProfile.fullName.split(' ')[0] : 'Scout';
+
+                var welcomeEl = document.getElementById('welcomeName');
+                if (welcomeEl) welcomeEl.textContent = firstName;
+
+                showNotification('¡Avance recuperado exitosamente, ' + firstName + '! 🎉');
+                showModule(lastModule > 0 ? lastModule : 1);
+            } else {
+                msgDiv.innerHTML = '<p style="color: #FF9800; font-weight: 600;">⚠️ No se encontro avance asociado a este correo.</p>' +
+                    '<p style="color: #636363; margin-top: 10px;">Puedes registrarte como nuevo usuario.</p>' +
+                    '<button class="btn" style="margin-top: 10px;" onclick="toggleRegistrationMode(\'new\')">🆕 Registrarme</button>';
+            }
+        })
+        .catch(function(err) {
+            console.log('Error recovering progress:', err);
+            msgDiv.innerHTML = '<p style="color: #f44336; font-weight: 600;">❌ Error al conectar con el servidor.</p>' +
+                '<p style="color: #636363; margin-top: 10px;">Verifica tu conexion a internet e intenta de nuevo.</p>';
+        });
+}
 
 // --- Registro ---
 function handleRegistration(event) {
@@ -1254,6 +1419,15 @@ function checkQuiz(moduleNum) {
     saveProgress();
 }
 
+// --- Module names for display ---
+var MODULE_NAMES = {
+    0: 'Registro', 1: 'Inicio', 2: 'Mision y Proposito',
+    3: 'Mafeking', 4: 'Brownsea Island', 5: 'Expansion Mundial',
+    6: 'Metodo Scout', 7: 'Impacto Global', 8: 'Certificado'
+};
+
+var pendingNextModule = null;
+
 function completeModule(moduleNum) {
     moduleProgress[moduleNum] = true;
     sendToGoogleSheets({
@@ -1262,10 +1436,46 @@ function completeModule(moduleNum) {
     });
     var navBtns = document.querySelectorAll('.nav-btn');
     if (navBtns[moduleNum]) navBtns[moduleNum].classList.add('completed');
-    showModule(moduleNum + 1);
     saveProgress();
     updateProgress();
     updateStats();
+
+    // Show progress summary modal before navigating
+    var score = quizScores[moduleNum] || 0;
+    var completed = moduleProgress.filter(Boolean).length;
+    var total = COURSE_CONFIG.contentModules;
+    var pct = Math.round((completed / total) * 100);
+
+    var modalTitle = document.getElementById('modalTitle');
+    var modalScore = document.getElementById('modalScore');
+    var modalFill = document.getElementById('modalProgressFill');
+    var modalText = document.getElementById('modalProgressText');
+    var modal = document.getElementById('moduleCompleteModal');
+
+    var displayModuleNum = moduleNum - 1; // Modules 2-7 display as 1-6
+    if (modalTitle) modalTitle.textContent = 'Modulo ' + displayModuleNum + '/6 completado!';
+    if (modalScore) modalScore.textContent = score + '%';
+    if (modalFill) modalFill.style.width = pct + '%';
+    if (modalText) modalText.textContent = 'Progreso total: ' + pct + '% (' + completed + '/' + total + ' modulos)';
+
+    pendingNextModule = moduleNum + 1;
+    if (modal) modal.classList.remove('hidden');
+
+    // Auto-dismiss after 5 seconds
+    setTimeout(function() {
+        dismissModuleCompleteModal();
+    }, 5000);
+}
+
+function dismissModuleCompleteModal() {
+    var modal = document.getElementById('moduleCompleteModal');
+    if (modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        if (pendingNextModule !== null) {
+            showModule(pendingNextModule);
+            pendingNextModule = null;
+        }
+    }
 }
 
 // --- Progreso ---
@@ -1325,7 +1535,14 @@ function loadProgress() {
             showModule(currentModule);
             var welcomeEl = document.getElementById('welcomeName');
             if (welcomeEl) welcomeEl.textContent = userProfile.fullName.split(' ')[0];
-            showNotification('¡Bienvenido de vuelta, ' + userProfile.fullName.split(' ')[0] + '! 👋');
+
+            // Informative welcome-back message
+            var firstName = userProfile.fullName.split(' ')[0];
+            var moduleName = MODULE_NAMES[currentModule] || ('Modulo ' + currentModule);
+            var completedCount = moduleProgress.filter(Boolean).length;
+            var remaining = COURSE_CONFIG.contentModules - completedCount;
+            var welcomeMsg = '¡Bienvenido de vuelta, ' + firstName + '! Estas en el modulo ' + currentModule + ' - ' + moduleName + '. Te faltan ' + remaining + ' modulos para completar el curso.';
+            showNotification(welcomeMsg);
         }
         Object.keys(reflections).forEach(function (k) {
             var ta = document.getElementById('reflection-' + k);
@@ -1371,7 +1588,7 @@ function saveCommitment(text) {
 // --- Certificado ---
 function generateCertificate() {
     var date = new Date();
-    var code = 'ASC-' + date.getFullYear() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase();
+    var fallbackCode = 'ASC-' + date.getFullYear() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase();
 
     var el = function (id) { return document.getElementById(id); };
     if (el('studentName')) el('studentName').textContent = userProfile.fullName || 'Rover Scout';
@@ -1379,28 +1596,58 @@ function generateCertificate() {
     if (el('totalTime')) el('totalTime').textContent = studyTime;
     if (el('certGroup')) el('certGroup').textContent = userProfile.group || 'N/A';
     if (el('certRegion')) el('certRegion').textContent = userProfile.region || 'Colombia';
-    if (el('certCode')) el('certCode').textContent = code;
 
     var avg = quizScores.length > 0 ? Math.round(quizScores.reduce(function (a, b) { return a + b; }, 0) / quizScores.length) : 100;
     if (el('finalScore')) el('finalScore').textContent = avg;
 
-    sendToGoogleSheets({
+    // Try to get certificate code from server
+    var certPayload = {
         action: 'certificate', name: userProfile.fullName, email: userProfile.email,
-        group: userProfile.group, region: userProfile.region, certificateCode: code,
+        group: userProfile.group, region: userProfile.region,
         completionDate: date.toISOString(), score: avg, studyTime: studyTime,
         course: COURSE_CONFIG.courseId
-    });
+    };
+
+    // Attempt server-side code generation
+    sendToGoogleSheetsWithResponse(certPayload)
+        .then(function(response) {
+            if (response && response.certificateCode) {
+                var serverCode = response.certificateCode;
+                if (el('certCode')) el('certCode').textContent = serverCode;
+                localStorage.setItem('certificate_' + serverCode, JSON.stringify({
+                    name: userProfile.fullName, code: serverCode, date: date.toISOString(),
+                    score: avg, course: COURSE_CONFIG.courseId
+                }));
+            } else {
+                // Use fallback code
+                if (el('certCode')) el('certCode').textContent = fallbackCode;
+                certPayload.certificateCode = fallbackCode;
+                sendToGoogleSheets(certPayload);
+                localStorage.setItem('certificate_' + fallbackCode, JSON.stringify({
+                    name: userProfile.fullName, code: fallbackCode, date: date.toISOString(),
+                    score: avg, course: COURSE_CONFIG.courseId
+                }));
+            }
+        })
+        .catch(function() {
+            // Fallback to client-side code
+            if (el('certCode')) el('certCode').textContent = fallbackCode;
+            certPayload.certificateCode = fallbackCode;
+            sendToGoogleSheets(certPayload);
+            localStorage.setItem('certificate_' + fallbackCode, JSON.stringify({
+                name: userProfile.fullName, code: fallbackCode, date: date.toISOString(),
+                score: avg, course: COURSE_CONFIG.courseId
+            }));
+        });
+
+    // Show fallback immediately (will be overwritten if server responds)
+    if (el('certCode')) el('certCode').textContent = fallbackCode;
 
     unlockAchievement('achievement-5');
     var bar = document.getElementById('progressBar');
     var text = document.getElementById('progressText');
     if (bar) bar.style.width = '100%';
     if (text) text.textContent = '100%';
-
-    localStorage.setItem('certificate_' + code, JSON.stringify({
-        name: userProfile.fullName, code: code, date: date.toISOString(),
-        score: avg, course: COURSE_CONFIG.courseId
-    }));
 }
 
 // --- Compartir ---
@@ -1432,17 +1679,70 @@ function sendToGoogleSheets(data) {
         var indicator = document.getElementById('syncIndicator');
         if (indicator) indicator.classList.add('show');
         var payload = Object.assign({}, data, {
+            token: 'ROVER_ASC_2025',
             timestamp: new Date().toISOString(),
             url: window.location.href
         });
+
+        // Try CORS first, fall back to no-cors
         fetch(COURSE_CONFIG.googleScriptUrl, {
-            method: 'POST', mode: 'no-cors',
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
-        }).then(function () {
-            setTimeout(function () { if (indicator) indicator.classList.remove('show'); }, 2000);
-        }).catch(function () { console.log('Datos guardados localmente'); });
-    } catch (e) { console.log('Datos guardados localmente (Google Sheets no disponible)'); }
+        }).then(function (response) {
+            if (indicator) {
+                indicator.textContent = '☁️ Guardado en la nube';
+                indicator.classList.add('show');
+                setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+            }
+            return response.json().catch(function() { return {}; });
+        }).catch(function () {
+            // Fallback to no-cors mode for older Apps Script deployments
+            fetch(COURSE_CONFIG.googleScriptUrl, {
+                method: 'POST', mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).then(function () {
+                if (indicator) {
+                    indicator.textContent = '☁️ Sincronizado con Google Sheets';
+                    indicator.classList.add('show');
+                    setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+                }
+            }).catch(function () {
+                if (indicator) {
+                    indicator.textContent = '💾 Guardado localmente';
+                    indicator.classList.add('show');
+                    setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+                }
+                console.log('Datos guardados localmente');
+            });
+        });
+    } catch (e) {
+        console.log('Datos guardados localmente (Google Sheets no disponible)');
+        var indicator = document.getElementById('syncIndicator');
+        if (indicator) {
+            indicator.textContent = '💾 Guardado localmente';
+            indicator.classList.add('show');
+            setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+        }
+    }
+}
+
+// Send to Google Sheets and return the parsed response (for certificate code)
+function sendToGoogleSheetsWithResponse(data) {
+    if (!COURSE_CONFIG.googleScriptUrl) return Promise.reject('No URL');
+    var payload = Object.assign({}, data, {
+        token: 'ROVER_ASC_2025',
+        timestamp: new Date().toISOString(),
+        url: window.location.href
+    });
+    return fetch(COURSE_CONFIG.googleScriptUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    }).then(function(response) {
+        return response.json();
+    });
 }
 
 // --- Timers ---

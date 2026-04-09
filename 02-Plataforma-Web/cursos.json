@@ -2,11 +2,67 @@
   {
     "courseId": "fundamentos-scout",
     "title": "Fundamentos del Movimiento Scout",
-    "description": "Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, misión, método scout y su impacto global. Preparación integral para servir como sinodal o ayudante.",
-    "icon": "🏕️",
+    "description": "Historia, mision, metodo scout y principios fundamentales. Base esencial para todo rover que desea ser sinodal o ayudante.",
+    "icon": "📚",
     "duration": "6 horas",
-    "modules": 7,
+    "modules": 6,
     "status": "active",
-    "file": "fundamentos-scout.html"
+    "file": "fundamentos-scout.html",
+    "folder": "fundamentos"
+  },
+  {
+    "courseId": "primeros-auxilios",
+    "title": "Primeros Auxilios Scout",
+    "description": "Tecnicas de primeros auxilios adaptadas para actividades scout. Incluye emergencias en campamentos y actividades al aire libre.",
+    "icon": "🏥",
+    "duration": "8 horas",
+    "modules": 8,
+    "status": "new",
+    "file": "primeros-auxilios.html",
+    "folder": "primeros-auxilios"
+  },
+  {
+    "courseId": "tecnicas-campismo",
+    "title": "Tecnicas de Campismo",
+    "description": "Nudos, amarres, construcciones, orientacion y supervivencia. Todo lo necesario para actividades al aire libre.",
+    "icon": "⛺",
+    "duration": "10 horas",
+    "modules": 10,
+    "status": "new",
+    "file": "tecnicas-campismo.html",
+    "folder": "tecnicas-campismo"
+  },
+  {
+    "courseId": "liderazgo",
+    "title": "Liderazgo y Trabajo en Equipo",
+    "description": "Desarrollo de habilidades de liderazgo juvenil, comunicacion efectiva y gestion de grupos scout.",
+    "icon": "🎯",
+    "duration": "6 horas",
+    "modules": 6,
+    "status": "coming-soon",
+    "file": null,
+    "folder": null
+  },
+  {
+    "courseId": "pedagogia-scout",
+    "title": "Pedagogia Scout",
+    "description": "Psicologia infantil y juvenil, tecnicas educativas y manejo de grupos por edades (manada, tropa, comunidad).",
+    "icon": "👥",
+    "duration": "8 horas",
+    "modules": 8,
+    "status": "coming-soon",
+    "file": null,
+    "folder": null
+  },
+  {
+    "courseId": "juegos-dinamicas",
+    "title": "Juegos y Dinamicas Scout",
+    "description": "Banco de juegos, dinamicas de integracion, fogatas y actividades ludicas para cada rama.",
+    "icon": "🎮",
+    "duration": "5 horas",
+    "modules": 5,
+    "status": "coming-soon",
+    "file": null,
+    "folder": null
   }
 ]

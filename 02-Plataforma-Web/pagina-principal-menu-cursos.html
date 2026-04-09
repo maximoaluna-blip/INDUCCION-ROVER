@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma de Formación Rover - ASC</title>
+    <title>Plataforma de Formacion Rover - ASC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,120 +13,210 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Montserrat', sans-serif;
+            background: #f2f5f7;
             min-height: 100vh;
-            padding: 20px;
+            color: #2c2927;
+            line-height: 1.6;
         }
 
-        .container {
-            max-width: 1200px;
+        /* --- Top Bar --- */
+        .top-bar {
+            background: #622599;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .top-bar-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top-bar .logos {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-bar .logos img {
+            height: 45px;
+        }
+
+        .top-bar .logos .separator {
+            width: 1px;
+            height: 35px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .top-bar-title {
+            color: #ffffff;
+            font-size: 0.95em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Hero --- */
+        .hero {
+            background: linear-gradient(135deg, #622599 0%, #3d1660 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.15em;
+            opacity: 0.9;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .header {
+        /* --- Stats --- */
+        .stats-container {
+            max-width: 1240px;
+            margin: -30px auto 0;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border-top: 4px solid #622599;
+            padding: 25px 20px;
             text-align: center;
-            color: white;
-            margin-bottom: 40px;
-            animation: fadeIn 1s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            color: #622599;
+            display: block;
         }
 
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+        .stat-label {
+            font-size: 0.85em;
+            color: #636363;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* --- Courses --- */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #622599;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ffe675;
+            display: inline-block;
         }
 
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 10px;
         }
 
         .course-card {
-            background: white;
-            border-radius: 15px;
+            background: #ffffff;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             overflow: hidden;
+            border-top: 4px solid #622599;
         }
 
         .course-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .course-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            box-shadow: 0 10px 30px rgba(98, 37, 153, 0.15);
         }
 
         .course-card.new::after {
             content: 'NUEVO';
             position: absolute;
-            top: 10px;
-            right: -25px;
-            background: #FF9800;
+            top: 12px;
+            right: -28px;
+            background: #00afef;
             color: white;
-            padding: 5px 30px;
-            font-size: 0.8em;
+            padding: 5px 35px;
+            font-size: 0.75em;
+            font-weight: 700;
             transform: rotate(45deg);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
         }
 
         .course-card.coming-soon {
-            opacity: 0.7;
+            opacity: 0.6;
             cursor: not-allowed;
         }
 
         .course-card.coming-soon::after {
-            content: 'PRÓXIMAMENTE';
+            content: 'PROXIMAMENTE';
             position: absolute;
-            top: 10px;
-            right: -40px;
-            background: #9E9E9E;
+            top: 12px;
+            right: -35px;
+            background: #636363;
             color: white;
-            padding: 5px 40px;
-            font-size: 0.8em;
+            padding: 5px 35px;
+            font-size: 0.7em;
+            font-weight: 700;
             transform: rotate(45deg);
+            letter-spacing: 1px;
         }
 
         .course-icon {
-            font-size: 3em;
+            font-size: 2.5em;
             margin-bottom: 15px;
         }
 
         .course-title {
-            color: #1a4b6b;
-            font-size: 1.5em;
+            color: #622599;
+            font-size: 1.3em;
+            font-weight: 700;
             margin-bottom: 10px;
         }
 
         .course-description {
-            color: #666;
+            color: #636363;
             margin-bottom: 20px;
-            line-height: 1.6;
+            font-size: 0.95em;
         }
 
         .course-info {
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
-            font-size: 0.9em;
-            color: #888;
+            font-size: 0.85em;
+            color: #636363;
+            font-weight: 600;
         }
 
         .course-info span {
@@ -135,107 +226,126 @@
         }
 
         .btn {
-            background: #4CAF50;
-            color: white;
-            border: none;
+            background: transparent;
+            color: #2c2927;
+            border: 2px solid #2c2927;
             padding: 12px 25px;
-            border-radius: 5px;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 0.95em;
+            font-weight: 600;
             width: 100%;
-            transition: background 0.3s;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
             text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn:hover {
-            background: #45a049;
+            background: #622599;
+            color: #ffffff;
+            border-color: #622599;
         }
 
         .btn.disabled {
-            background: #ccc;
+            border-color: #ccc;
+            color: #ccc;
             cursor: not-allowed;
         }
 
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
+        .btn.disabled:hover {
+            background: transparent;
+            color: #ccc;
         }
 
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            opacity: 0.9;
-            margin-top: 5px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* --- Footer --- */
         .footer {
+            background: #2c2927;
+            color: #ffffff;
             text-align: center;
-            margin-top: 60px;
-            padding: 20px;
-            color: white;
+            padding: 30px 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        .footer p {
+            margin: 5px 0;
             opacity: 0.8;
         }
 
+        .footer a {
+            color: #ffe675;
+            text-decoration: none;
+        }
+
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8em;
+            .hero h1 {
+                font-size: 1.6em;
             }
-            
+
+            .hero p {
+                font-size: 1em;
+            }
+
             .courses-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .top-bar-title {
+                font-size: 0.8em;
+            }
+
+            .top-bar img {
+                height: 40px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🏕️ Plataforma de Formación Rover</h1>
-            <p>Asociación Scout de Colombia - Formación para Sinodales y Ayudantes</p>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="logos">
+                <img src="assets/logo-asc.png" alt="Asociacion Scouts de Colombia">
+                <div class="separator"></div>
+                <img src="assets/logo-vallescout.png" alt="Scouts del Valle">
+            </div>
+            <span class="top-bar-title">Plataforma de Formacion</span>
         </div>
+    </div>
 
-        <div class="stats-container">
-            <div class="stat-card">
-                <span class="stat-number">4</span>
-                <span class="stat-label">Cursos Disponibles</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">24</span>
-                <span class="stat-label">Horas de Contenido</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">Gratuito</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">∞</span>
-                <span class="stat-label">Acceso Ilimitado</span>
-            </div>
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Formacion para Rovers</h1>
+        <p>Preparacion integral para sinodales y ayudantes en las ramas de Manada y Scouts</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-container">
+        <div class="stat-card">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Cursos Disponibles</span>
         </div>
+        <div class="stat-card">
+            <span class="stat-number">24</span>
+            <span class="stat-label">Horas de Contenido</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Gratuito</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Acceso Ilimitado</span>
+        </div>
+    </div>
+
+    <!-- Courses -->
+    <div class="container">
+        <h2 class="section-title">Cursos Disponibles</h2>
 
         <div class="courses-grid">
             <!-- CURSO 1: FUNDAMENTOS -->
@@ -243,12 +353,12 @@
                 <div class="course-icon">📚</div>
                 <h2 class="course-title">Fundamentos del Movimiento Scout</h2>
                 <p class="course-description">
-                    Historia, misión, método scout y principios fundamentales. 
+                    Historia, mision, metodo scout y principios fundamentales.
                     Base esencial para todo rover que desea ser sinodal o ayudante.
                 </p>
                 <div class="course-info">
                     <span>⏱️ 6 horas</span>
-                    <span>📊 6 módulos</span>
+                    <span>📊 6 modulos</span>
                     <span>✅ Activo</span>
                 </div>
                 <a href="fundamentos-scout.html" class="btn">Iniciar Curso</a>
@@ -259,28 +369,28 @@
                 <div class="course-icon">🏥</div>
                 <h2 class="course-title">Primeros Auxilios Scout</h2>
                 <p class="course-description">
-                    Técnicas de primeros auxilios adaptadas para actividades scout. 
+                    Tecnicas de primeros auxilios adaptadas para actividades scout.
                     Incluye emergencias en campamentos y actividades al aire libre.
                 </p>
                 <div class="course-info">
                     <span>⏱️ 8 horas</span>
-                    <span>📊 8 módulos</span>
+                    <span>📊 8 modulos</span>
                     <span>✅ Activo</span>
                 </div>
                 <a href="primeros-auxilios/index.html" class="btn">Iniciar Curso</a>
             </div>
 
-            <!-- CURSO 3: TÉCNICAS DE CAMPISMO -->
+            <!-- CURSO 3: TECNICAS DE CAMPISMO -->
             <div class="course-card new">
                 <div class="course-icon">⛺</div>
-                <h2 class="course-title">Técnicas de Campismo</h2>
+                <h2 class="course-title">Tecnicas de Campismo</h2>
                 <p class="course-description">
-                    Nudos, amarres, construcciones, orientación y supervivencia. 
+                    Nudos, amarres, construcciones, orientacion y supervivencia.
                     Todo lo necesario para actividades al aire libre.
                 </p>
                 <div class="course-info">
                     <span>⏱️ 10 horas</span>
-                    <span>📊 10 módulos</span>
+                    <span>📊 10 modulos</span>
                     <span>✅ Activo</span>
                 </div>
                 <a href="tecnicas-campismo/index.html" class="btn">Iniciar Curso</a>
@@ -291,54 +401,56 @@
                 <div class="course-icon">🎯</div>
                 <h2 class="course-title">Liderazgo y Trabajo en Equipo</h2>
                 <p class="course-description">
-                    Desarrollo de habilidades de liderazgo juvenil, comunicación efectiva 
-                    y gestión de grupos scout.
+                    Desarrollo de habilidades de liderazgo juvenil, comunicacion efectiva
+                    y gestion de grupos scout.
                 </p>
                 <div class="course-info">
                     <span>⏱️ 6 horas</span>
-                    <span>📊 6 módulos</span>
-                    <span>🔒 Enero 2025</span>
+                    <span>📊 6 modulos</span>
+                    <span>🔒 Proximo</span>
                 </div>
-                <button class="btn disabled" disabled>Próximamente</button>
+                <button class="btn disabled" disabled>Proximamente</button>
             </div>
 
-            <!-- CURSO 5: PEDAGOGÍA -->
+            <!-- CURSO 5: PEDAGOGIA -->
             <div class="course-card coming-soon">
                 <div class="course-icon">👥</div>
-                <h2 class="course-title">Pedagogía Scout</h2>
+                <h2 class="course-title">Pedagogia Scout</h2>
                 <p class="course-description">
-                    Psicología infantil y juvenil, técnicas educativas y manejo 
+                    Psicologia infantil y juvenil, tecnicas educativas y manejo
                     de grupos por edades (manada, tropa, comunidad).
                 </p>
                 <div class="course-info">
                     <span>⏱️ 8 horas</span>
-                    <span>📊 8 módulos</span>
-                    <span>🔒 Febrero 2025</span>
+                    <span>📊 8 modulos</span>
+                    <span>🔒 Proximo</span>
                 </div>
-                <button class="btn disabled" disabled>Próximamente</button>
+                <button class="btn disabled" disabled>Proximamente</button>
             </div>
 
             <!-- CURSO 6: JUEGOS -->
             <div class="course-card coming-soon">
                 <div class="course-icon">🎮</div>
-                <h2 class="course-title">Juegos y Dinámicas Scout</h2>
+                <h2 class="course-title">Juegos y Dinamicas Scout</h2>
                 <p class="course-description">
-                    Banco de juegos, dinámicas de integración, fogatas y 
-                    actividades lúdicas para cada rama.
+                    Banco de juegos, dinamicas de integracion, fogatas y
+                    actividades ludicas para cada rama.
                 </p>
                 <div class="course-info">
                     <span>⏱️ 5 horas</span>
-                    <span>📊 5 módulos</span>
-                    <span>🔒 Marzo 2025</span>
+                    <span>📊 5 modulos</span>
+                    <span>🔒 Proximo</span>
                 </div>
-                <button class="btn disabled" disabled>Próximamente</button>
+                <button class="btn disabled" disabled>Proximamente</button>
             </div>
         </div>
+    </div>
 
-        <div class="footer">
-            <p>© 2024 Asociación Scout de Colombia - Rama Rover</p>
-            <p>Plataforma desarrollada con ❤️ para la formación de nuestros rovers</p>
-        </div>
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 Asociacion Scouts de Colombia - Regional Valle del Cauca</p>
+        <p>Plataforma de formacion para la Rama Rover</p>
+        <p style="margin-top: 10px;"><a href="https://vallescout.org.co" target="_blank">vallescout.org.co</a></p>
     </div>
 </body>
 </html>

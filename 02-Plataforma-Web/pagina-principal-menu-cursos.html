@@ -326,11 +326,11 @@
     <!-- Stats -->
     <div class="stats-container">
         <div class="stat-card">
-            <span class="stat-number">4</span>
+            <span class="stat-number" id="statCursos">—</span>
             <span class="stat-label">Cursos Disponibles</span>
         </div>
         <div class="stat-card">
-            <span class="stat-number">24</span>
+            <span class="stat-number" id="statHoras">—</span>
             <span class="stat-label">Horas de Contenido</span>
         </div>
         <div class="stat-card">
@@ -347,104 +347,93 @@
     <div class="container">
         <h2 class="section-title">Cursos Disponibles</h2>
 
-        <div class="courses-grid">
-            <!-- CURSO 1: FUNDAMENTOS -->
-            <div class="course-card">
-                <div class="course-icon">📚</div>
-                <h2 class="course-title">Fundamentos del Movimiento Scout</h2>
-                <p class="course-description">
-                    Historia, mision, metodo scout y principios fundamentales.
-                    Base esencial para todo rover que desea ser sinodal o ayudante.
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 6 horas</span>
-                    <span>📊 6 modulos</span>
-                    <span>✅ Activo</span>
-                </div>
-                <a href="fundamentos-scout.html" class="btn">Iniciar Curso</a>
-            </div>
-
-            <!-- CURSO 2: PRIMEROS AUXILIOS -->
-            <div class="course-card new">
-                <div class="course-icon">🏥</div>
-                <h2 class="course-title">Primeros Auxilios Scout</h2>
-                <p class="course-description">
-                    Tecnicas de primeros auxilios adaptadas para actividades scout.
-                    Incluye emergencias en campamentos y actividades al aire libre.
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 8 horas</span>
-                    <span>📊 8 modulos</span>
-                    <span>✅ Activo</span>
-                </div>
-                <a href="primeros-auxilios/index.html" class="btn">Iniciar Curso</a>
-            </div>
-
-            <!-- CURSO 3: TECNICAS DE CAMPISMO -->
-            <div class="course-card new">
-                <div class="course-icon">⛺</div>
-                <h2 class="course-title">Tecnicas de Campismo</h2>
-                <p class="course-description">
-                    Nudos, amarres, construcciones, orientacion y supervivencia.
-                    Todo lo necesario para actividades al aire libre.
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 10 horas</span>
-                    <span>📊 10 modulos</span>
-                    <span>✅ Activo</span>
-                </div>
-                <a href="tecnicas-campismo/index.html" class="btn">Iniciar Curso</a>
-            </div>
-
-            <!-- CURSO 4: LIDERAZGO -->
-            <div class="course-card coming-soon">
-                <div class="course-icon">🎯</div>
-                <h2 class="course-title">Liderazgo y Trabajo en Equipo</h2>
-                <p class="course-description">
-                    Desarrollo de habilidades de liderazgo juvenil, comunicacion efectiva
-                    y gestion de grupos scout.
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 6 horas</span>
-                    <span>📊 6 modulos</span>
-                    <span>🔒 Proximo</span>
-                </div>
-                <button class="btn disabled" disabled>Proximamente</button>
-            </div>
-
-            <!-- CURSO 5: PEDAGOGIA -->
-            <div class="course-card coming-soon">
-                <div class="course-icon">👥</div>
-                <h2 class="course-title">Pedagogia Scout</h2>
-                <p class="course-description">
-                    Psicologia infantil y juvenil, tecnicas educativas y manejo
-                    de grupos por edades (manada, tropa, comunidad).
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 8 horas</span>
-                    <span>📊 8 modulos</span>
-                    <span>🔒 Proximo</span>
-                </div>
-                <button class="btn disabled" disabled>Proximamente</button>
-            </div>
-
-            <!-- CURSO 6: JUEGOS -->
-            <div class="course-card coming-soon">
-                <div class="course-icon">🎮</div>
-                <h2 class="course-title">Juegos y Dinamicas Scout</h2>
-                <p class="course-description">
-                    Banco de juegos, dinamicas de integracion, fogatas y
-                    actividades ludicas para cada rama.
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 5 horas</span>
-                    <span>📊 5 modulos</span>
-                    <span>🔒 Proximo</span>
-                </div>
-                <button class="btn disabled" disabled>Proximamente</button>
-            </div>
+        <div class="courses-grid" id="coursesGrid">
+            <p style="color: #636363; grid-column: 1/-1; text-align: center; padding: 20px;">Cargando catalogo de cursos...</p>
         </div>
     </div>
+
+    <script>
+    (function() {
+        // Config para landing local 02-Plataforma-Web/: cursos.json esta en el mismo
+        // directorio y los archivos activos se referencian por course.file
+        var CATALOG_URL = 'cursos.json';
+
+        function buildHref(course) {
+            if (course.file) return course.file;
+            if (course.folder) return course.folder + '/index.html';
+            return '#';
+        }
+
+        function parseHours(duration) {
+            var m = (duration || '').match(/(\d+)/);
+            return m ? parseInt(m[1], 10) : 0;
+        }
+
+        function escapeHtml(str) {
+            return String(str == null ? '' : str).replace(/[&<>"']/g, function(c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        function renderCard(course) {
+            var status = course.status || 'coming-soon';
+            var isActive = status === 'active';
+            var isNew = status === 'new';
+            var isComingSoon = !isActive && !isNew;
+
+            var classes = ['course-card'];
+            if (isNew) classes.push('new');
+            if (isComingSoon) classes.push('coming-soon');
+
+            var statusText = isActive ? '✅ Activo' : isNew ? '🆕 Nuevo' : '🔒 Proximo';
+
+            var buttonHtml = isComingSoon
+                ? '<button class="btn disabled" disabled>Proximamente</button>'
+                : '<a href="' + escapeHtml(buildHref(course)) + '" class="btn">Iniciar Curso</a>';
+
+            return '<div class="' + classes.join(' ') + '">' +
+                '<div class="course-icon">' + escapeHtml(course.icon) + '</div>' +
+                '<h2 class="course-title">' + escapeHtml(course.title) + '</h2>' +
+                '<p class="course-description">' + escapeHtml(course.description) + '</p>' +
+                '<div class="course-info">' +
+                    '<span>⏱️ ' + escapeHtml(course.duration) + '</span>' +
+                    '<span>📊 ' + escapeHtml(course.modules) + ' modulos</span>' +
+                    '<span>' + statusText + '</span>' +
+                '</div>' +
+                buttonHtml +
+            '</div>';
+        }
+
+        function renderCatalog(courses) {
+            var grid = document.getElementById('coursesGrid');
+            if (!courses || !courses.length) {
+                grid.innerHTML = '<p style="color: #636363; grid-column: 1/-1; text-align: center;">No hay cursos disponibles por ahora.</p>';
+                return;
+            }
+            grid.innerHTML = courses.map(renderCard).join('');
+
+            var disponibles = courses.filter(function(c) {
+                return c.status === 'active' || c.status === 'new';
+            });
+            var totalHoras = disponibles.reduce(function(sum, c) {
+                return sum + parseHours(c.duration);
+            }, 0);
+            document.getElementById('statCursos').textContent = disponibles.length;
+            document.getElementById('statHoras').textContent = totalHoras;
+        }
+
+        fetch(CATALOG_URL, { cache: 'no-cache' })
+            .then(function(r) {
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                return r.json();
+            })
+            .then(renderCatalog)
+            .catch(function(err) {
+                document.getElementById('coursesGrid').innerHTML =
+                    '<p style="color: #b00; grid-column: 1/-1; text-align: center;">Error al cargar catalogo: ' + escapeHtml(err.message) + '</p>';
+            });
+    })();
+    </script>
 
     <!-- Footer -->
     <div class="footer">

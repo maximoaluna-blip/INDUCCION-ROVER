@@ -28,6 +28,9 @@
 
     <link rel="icon" type="image/png" href="assets/logo-asc.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/dark-theme.css">
+    <!-- Early theme init para evitar FOUC en modo oscuro -->
+    <script>(function(){try{var t=localStorage.getItem('rover-theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
     <style>
         * {
             margin: 0;
@@ -464,5 +467,7 @@
         <p>Plataforma de formacion para la Rama Rover</p>
         <p style="margin-top: 10px;"><a href="https://vallescout.org.co" target="_blank">vallescout.org.co</a></p>
     </div>
+
+    <script src="assets/theme-toggle.js"></script>
 </body>
 </html>

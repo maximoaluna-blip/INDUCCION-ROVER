@@ -1203,6 +1203,133 @@ function configurarTriggerRecordatorios() {
 }
 
 // ============================================================================
+// BACKUP AUTOMATICO DE GOOGLE SHEETS
+// ============================================================================
+
+/**
+ * Configuracion del backup automatico.
+ */
+var BACKUP_CONFIG = {
+  folderName: 'Backups Plataforma Rover ASC',  // Carpeta en Google Drive raiz
+  retentionCount: 12                            // Conservar ultimos N backups (resto se borra)
+};
+
+/**
+ * Obtiene (o crea) la carpeta de backups en el Drive del usuario propietario.
+ * @return {GoogleAppsScript.Drive.Folder}
+ */
+function getOrCreateBackupFolder() {
+  var iter = DriveApp.getFoldersByName(BACKUP_CONFIG.folderName);
+  if (iter.hasNext()) return iter.next();
+  return DriveApp.createFolder(BACKUP_CONFIG.folderName);
+}
+
+/**
+ * Hace una copia del spreadsheet activo en la carpeta de backups.
+ * El nombre del archivo incluye timestamp YYYY-MM-DD-HHmm.
+ * Despues elimina backups antiguos si excede retentionCount.
+ *
+ * Disenada para ejecutarse semanalmente via trigger temporal.
+ * @return {object} Resumen con el archivo creado y backups eliminados
+ */
+function backupSheets() {
+  var startTime = new Date();
+  Logger.log('=== Backup Sheets: inicio ' + startTime.toISOString() + ' ===');
+
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sourceFile = DriveApp.getFileById(ss.getId());
+    var folder = getOrCreateBackupFolder();
+
+    // Timestamp formateado sin caracteres invalidos para nombres de archivo
+    var tz = ss.getSpreadsheetTimeZone() || 'America/Bogota';
+    var stamp = Utilities.formatDate(startTime, tz, 'yyyy-MM-dd-HHmm');
+    var backupName = 'Backup Rover ASC - ' + stamp;
+
+    var copy = sourceFile.makeCopy(backupName, folder);
+    Logger.log('Backup creado: ' + backupName + ' (id=' + copy.getId() + ')');
+
+    // Retencion: borrar los mas antiguos si excedemos el tope
+    var eliminados = applyBackupRetention(folder);
+
+    var duration = Math.round((new Date() - startTime) / 1000);
+    Logger.log('=== Backup Sheets: OK, eliminados ' + eliminados + ' antiguos, ' + duration + 's ===');
+
+    return {
+      success: true,
+      backupName: backupName,
+      backupId: copy.getId(),
+      eliminados: eliminados,
+      duration: duration
+    };
+  } catch (err) {
+    Logger.log('ERROR en backupSheets: ' + err.message);
+    return { success: false, error: err.message };
+  }
+}
+
+/**
+ * Borra los archivos de backup mas antiguos cuando el total supera retentionCount.
+ * Solo considera archivos dentro de la carpeta de backups.
+ * Usa setTrashed (papelera) en vez de borrado permanente para permitir recuperacion.
+ *
+ * @param {GoogleAppsScript.Drive.Folder} folder
+ * @return {number} Cantidad de archivos enviados a la papelera
+ */
+function applyBackupRetention(folder) {
+  var files = [];
+  var iter = folder.getFiles();
+  while (iter.hasNext()) {
+    var f = iter.next();
+    files.push({ file: f, created: f.getDateCreated().getTime() });
+  }
+
+  if (files.length <= BACKUP_CONFIG.retentionCount) return 0;
+
+  // Mas reciente primero
+  files.sort(function(a, b) { return b.created - a.created; });
+
+  var toDelete = files.slice(BACKUP_CONFIG.retentionCount);
+  var eliminados = 0;
+  for (var i = 0; i < toDelete.length; i++) {
+    try {
+      toDelete[i].file.setTrashed(true);
+      eliminados++;
+    } catch (err) {
+      Logger.log('No se pudo enviar a papelera: ' + err.message);
+    }
+  }
+  return eliminados;
+}
+
+/**
+ * Configura un trigger temporal semanal que ejecuta backupSheets cada lunes 02:00.
+ * Ejecutar manualmente desde el editor de Apps Script UNA sola vez.
+ * Elimina duplicados existentes del mismo handler antes de crear uno nuevo.
+ */
+function configurarTriggerBackup() {
+  var existentes = ScriptApp.getProjectTriggers();
+  var eliminados = 0;
+  for (var i = 0; i < existentes.length; i++) {
+    if (existentes[i].getHandlerFunction() === 'backupSheets') {
+      ScriptApp.deleteTrigger(existentes[i]);
+      eliminados++;
+    }
+  }
+
+  ScriptApp.newTrigger('backupSheets')
+    .timeBased()
+    .onWeekDay(ScriptApp.WeekDay.MONDAY)
+    .atHour(2)
+    .create();
+
+  Logger.log('Trigger configurado: backupSheets se ejecutara los lunes a las 02:00.');
+  if (eliminados > 0) {
+    Logger.log('Triggers duplicados eliminados: ' + eliminados);
+  }
+}
+
+// ============================================================================
 // FUNCIONES DE UTILIDAD Y TEST
 // ============================================================================
 

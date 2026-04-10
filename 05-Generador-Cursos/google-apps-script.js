@@ -645,8 +645,8 @@ function handleRegister(body, timestamp) {
   }
 
   var age = parseInt(body.age, 10);
-  if (isNaN(age) || age < 16 || age > 25) {
-    return jsonResponse(false, null, 'La edad debe estar entre 16 y 25 anios.');
+  if (isNaN(age) || age < 18 || age > 22) {
+    return jsonResponse(false, null, 'La edad debe estar entre 18 y 22 anios (rango oficial de rovers ASC).');
   }
 
   var group = sanitize(body.group, 200);

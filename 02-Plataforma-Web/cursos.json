@@ -17,9 +17,9 @@
     "icon": "🏥",
     "duration": "8 horas",
     "modules": 8,
-    "status": "new",
-    "file": "primeros-auxilios.html",
-    "folder": "primeros-auxilios"
+    "status": "coming-soon",
+    "file": null,
+    "folder": null
   },
   {
     "courseId": "tecnicas-campismo",
@@ -28,9 +28,9 @@
     "icon": "⛺",
     "duration": "10 horas",
     "modules": 10,
-    "status": "new",
-    "file": "tecnicas-campismo.html",
-    "folder": "tecnicas-campismo"
+    "status": "coming-soon",
+    "file": null,
+    "folder": null
   },
   {
     "courseId": "liderazgo",

@@ -214,6 +214,45 @@ function getCertificateEmailHtml(name, course, code, score) {
     '</body></html>';
 }
 
+/**
+ * Genera HTML para el correo de recordatorio a estudiantes inactivos.
+ * @param {string} name
+ * @param {string} course
+ * @param {number} daysInactive
+ * @return {string}
+ */
+function getReminderEmailHtml(name, course, daysInactive) {
+  return '<!DOCTYPE html>' +
+    '<html><head><meta charset="utf-8"></head>' +
+    '<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;">' +
+    '<table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:20px auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.1);">' +
+    '  <tr><td style="background:' + BRAND_COLOR + ';padding:30px 40px;text-align:center;">' +
+    '    <h1 style="color:#ffffff;margin:0;font-size:22px;">&#127795; Te extranamos en el camino</h1>' +
+    '    <p style="color:#e0c8f0;margin:8px 0 0;font-size:14px;">' + PLATFORM_NAME + '</p>' +
+    '  </td></tr>' +
+    '  <tr><td style="padding:30px 40px;">' +
+    '    <h2 style="color:' + BRAND_COLOR + ';margin-top:0;">Hola, ' + sanitize(name, 100) + '</h2>' +
+    '    <p style="color:#333;line-height:1.6;">Hace ' + daysInactive + ' dias que no avanzas en tu curso:</p>' +
+    '    <div style="background:#f8f0ff;border-left:4px solid ' + BRAND_COLOR + ';padding:15px 20px;margin:15px 0;border-radius:0 8px 8px 0;">' +
+    '      <strong style="color:' + BRAND_COLOR + ';font-size:18px;">' + sanitize(course, 200) + '</strong>' +
+    '    </div>' +
+    '    <p style="color:#333;line-height:1.6;">Sabemos que la vida rover es activa y llena de compromisos, pero completar tu formacion te prepara para servir mejor a tu grupo scout. !Solo necesitas unos minutos al dia para retomar tu avance!</p>' +
+    '    <div style="background:#fffbe6;border-left:4px solid #ffe675;padding:15px 20px;margin:20px 0;border-radius:0 8px 8px 0;">' +
+    '      <p style="color:#7a6a00;margin:0;font-size:14px;line-height:1.5;"><strong>&#128161; Consejo:</strong> Tu progreso esta guardado. Al entrar de nuevo con tu email podras continuar justo donde lo dejaste.</p>' +
+    '    </div>' +
+    '    <div style="text-align:center;margin:25px 0;">' +
+    '      <a href="https://maximoaluna-blip.github.io/INDUCCION-ROVER/" style="display:inline-block;background:' + BRAND_COLOR + ';color:#fff;padding:14px 32px;border-radius:25px;font-weight:bold;font-size:16px;text-decoration:none;">Retomar mi curso</a>' +
+    '    </div>' +
+    '    <p style="color:#888;line-height:1.6;font-size:13px;text-align:center;font-style:italic;">"Siempre Listo para Servir"</p>' +
+    '  </td></tr>' +
+    '  <tr><td style="background:#f8f0ff;padding:15px 40px;text-align:center;border-top:1px solid #e0c8f0;">' +
+    '    <p style="color:#888;font-size:12px;margin:0;">' + PLATFORM_NAME + ' | vallescout.org.co</p>' +
+    '    <p style="color:#aaa;font-size:11px;margin:5px 0 0;">Este correo fue enviado automaticamente. Si ya completaste el curso, puedes ignorarlo.</p>' +
+    '  </td></tr>' +
+    '</table>' +
+    '</body></html>';
+}
+
 // ============================================================================
 // DEFINICION DE HOJAS Y SUS ENCABEZADOS
 // ============================================================================
@@ -238,6 +277,10 @@ var SHEET_CONFIG = {
   compromisos: {
     name: 'Compromisos',
     headers: ['Timestamp', 'Email', 'Nombre', 'Curso', 'Compromiso']
+  },
+  recordatorios: {
+    name: 'Recordatorios',
+    headers: ['Timestamp', 'Email', 'Nombre', 'Curso', 'Dias Inactivo', 'Tipo']
   }
 };
 
@@ -645,8 +688,8 @@ function handleRegister(body, timestamp) {
   }
 
   var age = parseInt(body.age, 10);
-  if (isNaN(age) || age < 16 || age > 25) {
-    return jsonResponse(false, null, 'La edad debe estar entre 16 y 25 anios.');
+  if (isNaN(age) || age < 18 || age > 22) {
+    return jsonResponse(false, null, 'La edad debe estar entre 18 y 22 anios (rango oficial de rovers ASC).');
   }
 
   var group = sanitize(body.group, 200);
@@ -932,6 +975,362 @@ function handleCommitment(body, timestamp) {
 
 // ============================================================================
 // FUNCION DE PRUEBA / INICIALIZACION
+// ============================================================================
+
+// ============================================================================
+// RECORDATORIOS AUTOMATICOS A ESTUDIANTES INACTIVOS
+// ============================================================================
+
+/**
+ * Configuracion de los recordatorios. Ajusta segun necesidad.
+ */
+var REMINDER_CONFIG = {
+  minDaysInactive: 7,      // No molestar antes de este umbral
+  maxDaysInactive: 60,     // No enviar a quienes llevan demasiado tiempo sin entrar
+  cooldownDays: 7,         // Minimo entre dos recordatorios al mismo usuario+curso
+  maxEmailsPerRun: 50      // Cap defensivo para cuota Gmail (~100/dia en cuentas gratis)
+};
+
+/**
+ * Construye un map "email|curso" -> ultima fecha de actividad (Date).
+ * Considera tanto progreso de modulos como resultados de evaluaciones.
+ * @return {Object}
+ */
+function buildLastActivityMap() {
+  var map = {};
+
+  function ingest(sheetName, emailCol, courseCol) {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
+    if (!sheet) return;
+    var data = sheet.getDataRange().getValues();
+    for (var i = 1; i < data.length; i++) {
+      var row = data[i];
+      var ts = row[0];
+      var email = String(row[emailCol] || '').toLowerCase().trim();
+      var course = String(row[courseCol] || '').trim();
+      if (!email || !course || !ts) continue;
+      var date = (ts instanceof Date) ? ts : new Date(ts);
+      if (isNaN(date.getTime())) continue;
+      var key = email + '|' + course;
+      if (!map[key] || date > map[key]) {
+        map[key] = date;
+      }
+    }
+  }
+
+  // Progreso: [Timestamp, Email, Nombre, Curso, ...]
+  ingest(SHEET_CONFIG.progreso.name, 1, 3);
+  // Evaluaciones: [Timestamp, Email, Nombre, Curso, ...]
+  ingest(SHEET_CONFIG.evaluaciones.name, 1, 3);
+
+  return map;
+}
+
+/**
+ * Construye un set de "email|curso" con certificado ya emitido.
+ * Estos usuarios NO deben recibir recordatorios para ese curso.
+ * @return {Object}
+ */
+function buildCertificatedSet() {
+  var set = {};
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_CONFIG.certificados.name);
+  if (!sheet) return set;
+  var data = sheet.getDataRange().getValues();
+  // Certificados: [Timestamp, Email, Nombre, Curso, ...]
+  for (var i = 1; i < data.length; i++) {
+    var email = String(data[i][1] || '').toLowerCase().trim();
+    var course = String(data[i][3] || '').trim();
+    if (email && course) set[email + '|' + course] = true;
+  }
+  return set;
+}
+
+/**
+ * Construye un map "email|curso" -> fecha del ultimo recordatorio enviado.
+ * @return {Object}
+ */
+function buildLastReminderMap() {
+  var map = {};
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_CONFIG.recordatorios.name);
+  if (!sheet) return map;
+  var data = sheet.getDataRange().getValues();
+  // Recordatorios: [Timestamp, Email, Nombre, Curso, Dias Inactivo, Tipo]
+  for (var i = 1; i < data.length; i++) {
+    var row = data[i];
+    var ts = row[0];
+    var email = String(row[1] || '').toLowerCase().trim();
+    var course = String(row[3] || '').trim();
+    if (!email || !course || !ts) continue;
+    var date = (ts instanceof Date) ? ts : new Date(ts);
+    if (isNaN(date.getTime())) continue;
+    var key = email + '|' + course;
+    if (!map[key] || date > map[key]) map[key] = date;
+  }
+  return map;
+}
+
+/**
+ * Funcion principal: busca estudiantes inactivos y les envia un recordatorio.
+ * Disenada para ejecutarse una vez al dia via trigger temporal.
+ *
+ * Criterios para enviar recordatorio:
+ *   - Estudiante registrado en Registros
+ *   - No tiene certificado para ese curso
+ *   - minDaysInactive <= dias desde ultima actividad <= maxDaysInactive
+ *   - No recibio otro recordatorio en los ultimos cooldownDays
+ *   - Tope de maxEmailsPerRun por ejecucion
+ *
+ * @return {object} Resumen con estadisticas de la ejecucion
+ */
+function enviarRecordatoriosInactivos() {
+  var startTime = new Date();
+  Logger.log('=== Recordatorios automaticos: inicio ' + startTime.toISOString() + ' ===');
+
+  var registrosSheet = getOrCreateSheet(SHEET_CONFIG.registros.name, SHEET_CONFIG.registros.headers);
+  var recordatoriosSheet = getOrCreateSheet(SHEET_CONFIG.recordatorios.name, SHEET_CONFIG.recordatorios.headers);
+
+  var registros = registrosSheet.getDataRange().getValues();
+  if (registros.length <= 1) {
+    Logger.log('No hay registros. Nada que hacer.');
+    return { enviados: 0, candidatos: 0, registros: 0 };
+  }
+
+  var lastActivity = buildLastActivityMap();
+  var certificados = buildCertificatedSet();
+  var lastReminder = buildLastReminderMap();
+
+  var now = new Date();
+  var DAY_MS = 24 * 60 * 60 * 1000;
+  var enviados = 0;
+  var candidatos = 0;
+  var errores = 0;
+
+  // Deduplicar por email+curso (un usuario puede aparecer varias veces en Registros
+  // si se inscribio a distintos cursos).
+  var procesados = {};
+
+  for (var i = 1; i < registros.length; i++) {
+    if (enviados >= REMINDER_CONFIG.maxEmailsPerRun) {
+      Logger.log('Cap de ' + REMINDER_CONFIG.maxEmailsPerRun + ' emails alcanzado; se detiene.');
+      break;
+    }
+
+    var row = registros[i];
+    var regTs = row[0];
+    var fullName = String(row[1] || '').trim();
+    var email = String(row[5] || '').toLowerCase().trim();
+    var course = String(row[7] || '').trim();
+
+    if (!email || !course || !fullName || !validateEmail(email)) continue;
+
+    var key = email + '|' + course;
+    if (procesados[key]) continue;
+    procesados[key] = true;
+
+    // Ya tiene certificado: no molestar
+    if (certificados[key]) continue;
+
+    // Determinar "ultima actividad": progreso/evaluacion o, en su defecto, la fecha de registro
+    var lastDate = lastActivity[key];
+    if (!lastDate) {
+      lastDate = (regTs instanceof Date) ? regTs : new Date(regTs);
+    }
+    if (!lastDate || isNaN(lastDate.getTime())) continue;
+
+    var daysInactive = Math.floor((now - lastDate) / DAY_MS);
+    if (daysInactive < REMINDER_CONFIG.minDaysInactive) continue;
+    if (daysInactive > REMINDER_CONFIG.maxDaysInactive) continue;
+
+    // Cool-down
+    var prevReminder = lastReminder[key];
+    if (prevReminder) {
+      var daysSinceReminder = Math.floor((now - prevReminder) / DAY_MS);
+      if (daysSinceReminder < REMINDER_CONFIG.cooldownDays) continue;
+    }
+
+    candidatos++;
+
+    // Enviar correo
+    try {
+      var htmlBody = getReminderEmailHtml(fullName, course, daysInactive);
+      GmailApp.sendEmail(email, 'Te extranamos en tu curso: ' + course + ' - ' + PLATFORM_NAME, '', {
+        htmlBody: htmlBody,
+        name: PLATFORM_NAME
+      });
+
+      recordatoriosSheet.appendRow([
+        now, email, fullName, course, daysInactive, 'inactividad'
+      ]);
+
+      enviados++;
+      Logger.log('Recordatorio enviado a ' + email + ' (' + daysInactive + ' dias sin actividad en "' + course + '")');
+    } catch (err) {
+      errores++;
+      Logger.log('Error enviando recordatorio a ' + email + ': ' + err.message);
+    }
+  }
+
+  var duration = Math.round((new Date() - startTime) / 1000);
+  Logger.log('=== Recordatorios: ' + enviados + ' enviados, ' + candidatos + ' candidatos, ' + errores + ' errores, ' + duration + 's ===');
+  return { enviados: enviados, candidatos: candidatos, errores: errores, duration: duration };
+}
+
+/**
+ * Configura un trigger temporal diario que ejecuta enviarRecordatoriosInactivos.
+ * Ejecutar manualmente desde el editor de Apps Script UNA sola vez.
+ * Antes de crear el nuevo trigger elimina los duplicados existentes.
+ */
+function configurarTriggerRecordatorios() {
+  var existentes = ScriptApp.getProjectTriggers();
+  var eliminados = 0;
+  for (var i = 0; i < existentes.length; i++) {
+    if (existentes[i].getHandlerFunction() === 'enviarRecordatoriosInactivos') {
+      ScriptApp.deleteTrigger(existentes[i]);
+      eliminados++;
+    }
+  }
+
+  ScriptApp.newTrigger('enviarRecordatoriosInactivos')
+    .timeBased()
+    .everyDays(1)
+    .atHour(9)  // 09:00 hora del proyecto (configurable en File > Project properties)
+    .create();
+
+  Logger.log('Trigger configurado: enviarRecordatoriosInactivos se ejecutara diariamente a las 09:00.');
+  if (eliminados > 0) {
+    Logger.log('Triggers duplicados eliminados: ' + eliminados);
+  }
+}
+
+// ============================================================================
+// BACKUP AUTOMATICO DE GOOGLE SHEETS
+// ============================================================================
+
+/**
+ * Configuracion del backup automatico.
+ */
+var BACKUP_CONFIG = {
+  folderName: 'Backups Plataforma Rover ASC',  // Carpeta en Google Drive raiz
+  retentionCount: 12                            // Conservar ultimos N backups (resto se borra)
+};
+
+/**
+ * Obtiene (o crea) la carpeta de backups en el Drive del usuario propietario.
+ * @return {GoogleAppsScript.Drive.Folder}
+ */
+function getOrCreateBackupFolder() {
+  var iter = DriveApp.getFoldersByName(BACKUP_CONFIG.folderName);
+  if (iter.hasNext()) return iter.next();
+  return DriveApp.createFolder(BACKUP_CONFIG.folderName);
+}
+
+/**
+ * Hace una copia del spreadsheet activo en la carpeta de backups.
+ * El nombre del archivo incluye timestamp YYYY-MM-DD-HHmm.
+ * Despues elimina backups antiguos si excede retentionCount.
+ *
+ * Disenada para ejecutarse semanalmente via trigger temporal.
+ * @return {object} Resumen con el archivo creado y backups eliminados
+ */
+function backupSheets() {
+  var startTime = new Date();
+  Logger.log('=== Backup Sheets: inicio ' + startTime.toISOString() + ' ===');
+
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sourceFile = DriveApp.getFileById(ss.getId());
+    var folder = getOrCreateBackupFolder();
+
+    // Timestamp formateado sin caracteres invalidos para nombres de archivo
+    var tz = ss.getSpreadsheetTimeZone() || 'America/Bogota';
+    var stamp = Utilities.formatDate(startTime, tz, 'yyyy-MM-dd-HHmm');
+    var backupName = 'Backup Rover ASC - ' + stamp;
+
+    var copy = sourceFile.makeCopy(backupName, folder);
+    Logger.log('Backup creado: ' + backupName + ' (id=' + copy.getId() + ')');
+
+    // Retencion: borrar los mas antiguos si excedemos el tope
+    var eliminados = applyBackupRetention(folder);
+
+    var duration = Math.round((new Date() - startTime) / 1000);
+    Logger.log('=== Backup Sheets: OK, eliminados ' + eliminados + ' antiguos, ' + duration + 's ===');
+
+    return {
+      success: true,
+      backupName: backupName,
+      backupId: copy.getId(),
+      eliminados: eliminados,
+      duration: duration
+    };
+  } catch (err) {
+    Logger.log('ERROR en backupSheets: ' + err.message);
+    return { success: false, error: err.message };
+  }
+}
+
+/**
+ * Borra los archivos de backup mas antiguos cuando el total supera retentionCount.
+ * Solo considera archivos dentro de la carpeta de backups.
+ * Usa setTrashed (papelera) en vez de borrado permanente para permitir recuperacion.
+ *
+ * @param {GoogleAppsScript.Drive.Folder} folder
+ * @return {number} Cantidad de archivos enviados a la papelera
+ */
+function applyBackupRetention(folder) {
+  var files = [];
+  var iter = folder.getFiles();
+  while (iter.hasNext()) {
+    var f = iter.next();
+    files.push({ file: f, created: f.getDateCreated().getTime() });
+  }
+
+  if (files.length <= BACKUP_CONFIG.retentionCount) return 0;
+
+  // Mas reciente primero
+  files.sort(function(a, b) { return b.created - a.created; });
+
+  var toDelete = files.slice(BACKUP_CONFIG.retentionCount);
+  var eliminados = 0;
+  for (var i = 0; i < toDelete.length; i++) {
+    try {
+      toDelete[i].file.setTrashed(true);
+      eliminados++;
+    } catch (err) {
+      Logger.log('No se pudo enviar a papelera: ' + err.message);
+    }
+  }
+  return eliminados;
+}
+
+/**
+ * Configura un trigger temporal semanal que ejecuta backupSheets cada lunes 02:00.
+ * Ejecutar manualmente desde el editor de Apps Script UNA sola vez.
+ * Elimina duplicados existentes del mismo handler antes de crear uno nuevo.
+ */
+function configurarTriggerBackup() {
+  var existentes = ScriptApp.getProjectTriggers();
+  var eliminados = 0;
+  for (var i = 0; i < existentes.length; i++) {
+    if (existentes[i].getHandlerFunction() === 'backupSheets') {
+      ScriptApp.deleteTrigger(existentes[i]);
+      eliminados++;
+    }
+  }
+
+  ScriptApp.newTrigger('backupSheets')
+    .timeBased()
+    .onWeekDay(ScriptApp.WeekDay.MONDAY)
+    .atHour(2)
+    .create();
+
+  Logger.log('Trigger configurado: backupSheets se ejecutara los lunes a las 02:00.');
+  if (eliminados > 0) {
+    Logger.log('Triggers duplicados eliminados: ' + eliminados);
+  }
+}
+
+// ============================================================================
+// FUNCIONES DE UTILIDAD Y TEST
 // ============================================================================
 
 /**

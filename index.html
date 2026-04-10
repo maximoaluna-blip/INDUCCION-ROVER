@@ -4,7 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plataforma de Formacion Rover - ASC</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Plataforma gratuita de formacion online para rovers (18-22 anios) de la Asociacion Scouts de Colombia. Cursos de escultismo, liderazgo y preparacion para sinodales y ayudantes.">
+    <meta name="keywords" content="rover, scouts, asociacion scouts colombia, ASC, formacion scout, curso scout, sinodal, ayudante scout, vallescout, fundamentos scout">
+    <meta name="author" content="Asociacion Scouts de Colombia - Regional Valle del Cauca">
+    <link rel="canonical" href="https://maximoaluna-blip.github.io/INDUCCION-ROVER/">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maximoaluna-blip.github.io/INDUCCION-ROVER/">
+    <meta property="og:title" content="Plataforma de Formacion Rover - Asociacion Scouts de Colombia">
+    <meta property="og:description" content="Cursos gratuitos de formacion scout para rovers. Fundamentos del movimiento scout, certificados verificables y acceso 24/7.">
+    <meta property="og:image" content="https://maximoaluna-blip.github.io/INDUCCION-ROVER/assets/logo-vallescout.png">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="Plataforma de Formacion Rover ASC">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Plataforma de Formacion Rover - ASC">
+    <meta name="twitter:description" content="Cursos gratuitos de formacion scout para rovers de 18-22 anios en Colombia.">
+    <meta name="twitter:image" content="https://maximoaluna-blip.github.io/INDUCCION-ROVER/assets/logo-vallescout.png">
+
+    <link rel="icon" type="image/png" href="assets/logo-asc.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/dark-theme.css">
+    <!-- Early theme init para evitar FOUC en modo oscuro -->
+    <script>(function(){try{var t=localStorage.getItem('rover-theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
     <style>
         * {
             margin: 0;
@@ -326,11 +352,11 @@
     <!-- Stats -->
     <div class="stats-container">
         <div class="stat-card">
-            <span class="stat-number">4</span>
+            <span class="stat-number" id="statCursos">—</span>
             <span class="stat-label">Cursos Disponibles</span>
         </div>
         <div class="stat-card">
-            <span class="stat-number">24</span>
+            <span class="stat-number" id="statHoras">—</span>
             <span class="stat-label">Horas de Contenido</span>
         </div>
         <div class="stat-card">
@@ -347,104 +373,93 @@
     <div class="container">
         <h2 class="section-title">Cursos Disponibles</h2>
 
-        <div class="courses-grid">
-            <!-- CURSO 1: FUNDAMENTOS -->
-            <div class="course-card">
-                <div class="course-icon">📚</div>
-                <h2 class="course-title">Fundamentos del Movimiento Scout</h2>
-                <p class="course-description">
-                    Historia, mision, metodo scout y principios fundamentales.
-                    Base esencial para todo rover que desea ser sinodal o ayudante.
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 6 horas</span>
-                    <span>📊 6 modulos</span>
-                    <span>✅ Activo</span>
-                </div>
-                <a href="fundamentos/index.html" class="btn">Iniciar Curso</a>
-            </div>
-
-            <!-- CURSO 2: PRIMEROS AUXILIOS -->
-            <div class="course-card new">
-                <div class="course-icon">🏥</div>
-                <h2 class="course-title">Primeros Auxilios Scout</h2>
-                <p class="course-description">
-                    Tecnicas de primeros auxilios adaptadas para actividades scout.
-                    Incluye emergencias en campamentos y actividades al aire libre.
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 8 horas</span>
-                    <span>📊 8 modulos</span>
-                    <span>✅ Activo</span>
-                </div>
-                <a href="primeros-auxilios/index.html" class="btn">Iniciar Curso</a>
-            </div>
-
-            <!-- CURSO 3: TECNICAS DE CAMPISMO -->
-            <div class="course-card new">
-                <div class="course-icon">⛺</div>
-                <h2 class="course-title">Tecnicas de Campismo</h2>
-                <p class="course-description">
-                    Nudos, amarres, construcciones, orientacion y supervivencia.
-                    Todo lo necesario para actividades al aire libre.
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 10 horas</span>
-                    <span>📊 10 modulos</span>
-                    <span>✅ Activo</span>
-                </div>
-                <a href="tecnicas-campismo/index.html" class="btn">Iniciar Curso</a>
-            </div>
-
-            <!-- CURSO 4: LIDERAZGO -->
-            <div class="course-card coming-soon">
-                <div class="course-icon">🎯</div>
-                <h2 class="course-title">Liderazgo y Trabajo en Equipo</h2>
-                <p class="course-description">
-                    Desarrollo de habilidades de liderazgo juvenil, comunicacion efectiva
-                    y gestion de grupos scout.
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 6 horas</span>
-                    <span>📊 6 modulos</span>
-                    <span>🔒 Proximo</span>
-                </div>
-                <button class="btn disabled" disabled>Proximamente</button>
-            </div>
-
-            <!-- CURSO 5: PEDAGOGIA -->
-            <div class="course-card coming-soon">
-                <div class="course-icon">👥</div>
-                <h2 class="course-title">Pedagogia Scout</h2>
-                <p class="course-description">
-                    Psicologia infantil y juvenil, tecnicas educativas y manejo
-                    de grupos por edades (manada, tropa, comunidad).
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 8 horas</span>
-                    <span>📊 8 modulos</span>
-                    <span>🔒 Proximo</span>
-                </div>
-                <button class="btn disabled" disabled>Proximamente</button>
-            </div>
-
-            <!-- CURSO 6: JUEGOS -->
-            <div class="course-card coming-soon">
-                <div class="course-icon">🎮</div>
-                <h2 class="course-title">Juegos y Dinamicas Scout</h2>
-                <p class="course-description">
-                    Banco de juegos, dinamicas de integracion, fogatas y
-                    actividades ludicas para cada rama.
-                </p>
-                <div class="course-info">
-                    <span>⏱️ 5 horas</span>
-                    <span>📊 5 modulos</span>
-                    <span>🔒 Proximo</span>
-                </div>
-                <button class="btn disabled" disabled>Proximamente</button>
-            </div>
+        <div class="courses-grid" id="coursesGrid">
+            <p style="color: #636363; grid-column: 1/-1; text-align: center; padding: 20px;">Cargando catalogo de cursos...</p>
         </div>
     </div>
+
+    <script>
+    (function() {
+        // Config para landing raiz (GitHub Pages): cursos.json esta en 02-Plataforma-Web/,
+        // y los cursos activos viven en carpetas tipo fundamentos/index.html
+        var CATALOG_URL = '02-Plataforma-Web/cursos.json';
+
+        function buildHref(course) {
+            if (course.folder) return course.folder + '/index.html';
+            if (course.file) return course.file;
+            return '#';
+        }
+
+        function parseHours(duration) {
+            var m = (duration || '').match(/(\d+)/);
+            return m ? parseInt(m[1], 10) : 0;
+        }
+
+        function escapeHtml(str) {
+            return String(str == null ? '' : str).replace(/[&<>"']/g, function(c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        function renderCard(course) {
+            var status = course.status || 'coming-soon';
+            var isActive = status === 'active';
+            var isNew = status === 'new';
+            var isComingSoon = !isActive && !isNew;
+
+            var classes = ['course-card'];
+            if (isNew) classes.push('new');
+            if (isComingSoon) classes.push('coming-soon');
+
+            var statusText = isActive ? '✅ Activo' : isNew ? '🆕 Nuevo' : '🔒 Proximo';
+
+            var buttonHtml = isComingSoon
+                ? '<button class="btn disabled" disabled>Proximamente</button>'
+                : '<a href="' + escapeHtml(buildHref(course)) + '" class="btn">Iniciar Curso</a>';
+
+            return '<div class="' + classes.join(' ') + '">' +
+                '<div class="course-icon">' + escapeHtml(course.icon) + '</div>' +
+                '<h2 class="course-title">' + escapeHtml(course.title) + '</h2>' +
+                '<p class="course-description">' + escapeHtml(course.description) + '</p>' +
+                '<div class="course-info">' +
+                    '<span>⏱️ ' + escapeHtml(course.duration) + '</span>' +
+                    '<span>📊 ' + escapeHtml(course.modules) + ' modulos</span>' +
+                    '<span>' + statusText + '</span>' +
+                '</div>' +
+                buttonHtml +
+            '</div>';
+        }
+
+        function renderCatalog(courses) {
+            var grid = document.getElementById('coursesGrid');
+            if (!courses || !courses.length) {
+                grid.innerHTML = '<p style="color: #636363; grid-column: 1/-1; text-align: center;">No hay cursos disponibles por ahora.</p>';
+                return;
+            }
+            grid.innerHTML = courses.map(renderCard).join('');
+
+            var disponibles = courses.filter(function(c) {
+                return c.status === 'active' || c.status === 'new';
+            });
+            var totalHoras = disponibles.reduce(function(sum, c) {
+                return sum + parseHours(c.duration);
+            }, 0);
+            document.getElementById('statCursos').textContent = disponibles.length;
+            document.getElementById('statHoras').textContent = totalHoras;
+        }
+
+        fetch(CATALOG_URL, { cache: 'no-cache' })
+            .then(function(r) {
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                return r.json();
+            })
+            .then(renderCatalog)
+            .catch(function(err) {
+                document.getElementById('coursesGrid').innerHTML =
+                    '<p style="color: #b00; grid-column: 1/-1; text-align: center;">Error al cargar catalogo: ' + escapeHtml(err.message) + '</p>';
+            });
+    })();
+    </script>
 
     <!-- Footer -->
     <div class="footer">
@@ -452,5 +467,7 @@
         <p>Plataforma de formacion para la Rama Rover</p>
         <p style="margin-top: 10px;"><a href="https://vallescout.org.co" target="_blank">vallescout.org.co</a></p>
     </div>
+
+    <script src="assets/theme-toggle.js"></script>
 </body>
 </html>

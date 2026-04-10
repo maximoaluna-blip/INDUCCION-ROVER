@@ -199,7 +199,7 @@ function buildRegistrationModule(course) {
                     </div>
                     <div class="form-group">
                         <label for="age">Edad</label>
-                        <input type="number" id="age" name="age" min="16" max="25" placeholder="Ej: 19">
+                        <input type="number" id="age" name="age" min="18" max="22" placeholder="Ej: 19">
                     </div>
                     <div class="form-group">
                         <label for="group">Grupo Scout</label>

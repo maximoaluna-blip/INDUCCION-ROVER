@@ -298,6 +298,41 @@ function generateCertificate() {
     }));
 }
 
+// --- Descargar certificado como PDF ---
+function downloadCertificatePDF() {
+    var cert = document.querySelector('#module-' + COURSE_CONFIG.totalModules + ' .certificate');
+    if (!cert) {
+        showNotification('El certificado aun no esta disponible.');
+        return;
+    }
+    if (typeof html2pdf === 'undefined') {
+        showNotification('Error: la libreria de PDF no cargo. Verifica tu conexion a internet.');
+        return;
+    }
+
+    var code = (document.getElementById('certCode') || {}).textContent || 'certificado';
+    var filename = 'Certificado-' + code + '.pdf';
+
+    showNotification('Generando PDF...');
+
+    var opt = {
+        margin:       [10, 10, 10, 10],
+        filename:     filename,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['avoid-all'] }
+    };
+
+    html2pdf().set(opt).from(cert).save()
+        .then(function() {
+            showNotification('PDF descargado: ' + filename);
+        })
+        .catch(function(err) {
+            showNotification('Error al generar PDF. Intenta con Imprimir.');
+        });
+}
+
 // --- Compartir ---
 function shareResults() {
     var text = '¡He completado el curso ' + COURSE_CONFIG.title + '! 🏕️\n\n' +

@@ -326,6 +326,7 @@ function buildCertificateModule(course, certModuleId) {
                 </div>
 
                 <div style="text-align: center; margin: 30px 0;">
+                    <button class="btn" onclick="downloadCertificatePDF()">📥 Descargar PDF</button>
                     <button class="btn" onclick="window.print()">🖨️ Imprimir Certificado</button>
                     <button class="btn" onclick="shareResults()">📤 Compartir Logros</button>
                     <button class="btn" onclick="restartCourse()">🔄 Reiniciar Curso</button>
@@ -438,6 +439,9 @@ ${certificateHtml}
     </div>
 
     <div class="save-indicator" id="saveIndicator">💾 Guardando...</div>
+
+    <!-- html2pdf.js para descarga de certificado como PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" integrity="sha512-MpDFIChbcXl2QgipQrt1VcPHMldRILetapBEmc2JMojp1Pco39RIxYFOiJKdYAD9r6Y4cFBLR0pJJEWdDB0PYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
     // --- Configuracion del curso (generada automaticamente) ---

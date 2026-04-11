@@ -64,5 +64,16 @@
     "status": "coming-soon",
     "file": null,
     "folder": null
+  },
+  {
+    "courseId": "caracteristicas-educativas",
+    "title": "Caracteristicas Educativas del Movimiento Scout",
+    "description": "Curso sobre las caracteristicas educativas que definen al Movimiento Scout: su proposito, el Metodo Scout con sus 8 elementos, el sistema de valores y los principios que lo hacen unico como movimiento juvenil mundial.",
+    "icon": "📖",
+    "duration": "6 horas",
+    "modules": 7,
+    "status": "active",
+    "file": "caracteristicas-educativas.html",
+    "folder": "caracteristicas-educativas"
   }
 ]

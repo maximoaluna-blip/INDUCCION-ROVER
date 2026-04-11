@@ -378,7 +378,7 @@ function buildHTML(course) {
     const nav = buildNavigation(course, certModuleId);
     const quizAnswers = buildQuizAnswers(course.modules);
 
-    const googleUrl = course.googleScriptUrl || 'https://script.google.com/macros/s/AKfycbwYfFZbEWJILQCndTAxSWx1P5yEj79_utSDNkn13gNgN43k7D-q9DNvkjH-3zDPg7ZH/exec';
+    const googleUrl = course.googleScriptUrl || 'https://script.google.com/macros/s/AKfycbzHd4KB4MafCKKPp8kEf9V-vLnlsCKUhmqR6eMFB-Qvz2f03xy9bYSx86eGUuS5RkfX2g/exec';
 
     // Build modules HTML
     const registrationHtml = buildRegistrationModule(course);
@@ -395,12 +395,20 @@ function buildHTML(course) {
 
     const subtitle = course.subtitle || 'Formación para Rovers - Sinodales y Ayudantes';
 
+    // Determine asset path prefix (courses are deployed in subfolders: courseId/index.html)
+    const assetPrefix = '../assets';
+
     return `<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${course.title} - Curso para Rovers</title>
+    <link rel="icon" type="image/svg+xml" href="${assetPrefix}/favicon.svg">
+    <link rel="icon" type="image/png" href="${assetPrefix}/logo-asc.png">
+    <link rel="stylesheet" href="${assetPrefix}/dark-theme.css">
+    <!-- Early theme init para evitar FOUC en modo oscuro -->
+    <script>(function(){try{var t=localStorage.getItem('rover-theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
     <style>
 ${cssContent}
     </style>
@@ -459,6 +467,7 @@ ${certificateHtml}
 
 ${jsEngine}
     </script>
+    <script src="${assetPrefix}/theme-toggle.js"></script>
 </body>
 </html>`;
 }
@@ -484,7 +493,8 @@ const entry = {
     duration: course.duration,
     modules: course.modules.length,
     status: 'active',
-    file: course.courseId + '.html'
+    file: course.courseId + '.html',
+    folder: course.courseId
 };
 
 if (existingIndex >= 0) {

@@ -26,8 +26,12 @@
     <meta name="twitter:description" content="6 modulos, 6 horas, certificado verificable. Historia, mision y metodo scout para rovers ASC.">
     <meta name="twitter:image" content="https://maximoaluna-blip.github.io/INDUCCION-ROVER/assets/logo-vallescout.png">
 
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="icon" type="image/png" href="../assets/logo-asc.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/dark-theme.css">
+    <!-- Early theme init para evitar FOUC en modo oscuro -->
+    <script>(function(){try{var t=localStorage.getItem('rover-theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
     <style>
 /* ============================================
    PLATAFORMA EDUCATIVA ROVER - ASC
@@ -1169,6 +1173,7 @@ body {
                 </div>
 
                 <div style="text-align: center; margin: 30px 0;">
+                    <button class="btn" onclick="downloadCertificatePDF()">📥 Descargar PDF</button>
                     <button class="btn" onclick="window.print()">🖨️ Imprimir Certificado</button>
                     <button class="btn" onclick="shareResults()">📤 Compartir Logros</button>
                     <button class="btn" onclick="restartCourse()">🔄 Reiniciar Curso</button>
@@ -1198,6 +1203,9 @@ body {
     </div>
 
     <div class="save-indicator" id="saveIndicator">💾 Guardando...</div>
+
+    <!-- html2pdf.js para descarga de certificado como PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" integrity="sha512-MpDFIChbcXl2QgipQrt1VcPHMldRILetapBEmc2JMojp1Pco39RIxYFOiJKdYAD9r6Y4cFBLR0pJJEWdDB0PYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
     // --- Configuracion del curso (generada automaticamente) ---
@@ -1673,6 +1681,41 @@ function generateCertificate() {
     if (text) text.textContent = '100%';
 }
 
+// --- Descargar certificado como PDF ---
+function downloadCertificatePDF() {
+    var cert = document.querySelector('#module-8 .certificate');
+    if (!cert) {
+        showNotification('El certificado aun no esta disponible.');
+        return;
+    }
+    if (typeof html2pdf === 'undefined') {
+        showNotification('Error: la libreria de PDF no cargo. Verifica tu conexion a internet.');
+        return;
+    }
+
+    var code = (document.getElementById('certCode') || {}).textContent || 'certificado';
+    var filename = 'Certificado-' + code + '.pdf';
+
+    showNotification('Generando PDF...');
+
+    var opt = {
+        margin:       [10, 10, 10, 10],
+        filename:     filename,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['avoid-all'] }
+    };
+
+    html2pdf().set(opt).from(cert).save()
+        .then(function() {
+            showNotification('PDF descargado: ' + filename);
+        })
+        .catch(function(err) {
+            showNotification('Error al generar PDF. Intenta con Imprimir.');
+        });
+}
+
 // --- Compartir ---
 function shareResults() {
     var text = '¡He completado el curso ' + COURSE_CONFIG.title + '! 🏕️\n\n' +
@@ -1773,5 +1816,7 @@ setInterval(function () { if (currentModule > 0) { studyTime += 1; updateStats()
 setInterval(saveProgress, 60000);
 
     </script>
+
+    <script src="../assets/theme-toggle.js"></script>
 </body>
 </html>

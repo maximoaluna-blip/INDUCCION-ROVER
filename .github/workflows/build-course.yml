@@ -1,0 +1,94 @@
+# ============================================================================
+# GitHub Action: Regenerar curso HTML cuando se edite un JSON en borradores/
+#
+# Se dispara al hacer push a main con cambios en:
+#   05-Generador-Cursos/borradores/*.json
+#
+# El workflow:
+#   1. Detecta cual(es) JSON cambiaron
+#   2. Ejecuta build-course.js por cada uno
+#   3. Copia el HTML generado a la carpeta raiz para GitHub Pages
+#   4. Hace commit y push de los archivos generados
+# ============================================================================
+
+name: Build Course HTML
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '05-Generador-Cursos/borradores/*.json'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Detect changed course JSONs
+        id: detect
+        run: |
+          # Listar los .json que cambiaron en este push
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- '05-Generador-Cursos/borradores/*.json' 2>/dev/null || echo "")
+          if [ -z "$CHANGED" ]; then
+            echo "No course JSONs changed in this commit."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changed files:"
+            echo "$CHANGED"
+            # Extraer solo los nombres de curso (sin extension ni ruta)
+            COURSES=$(echo "$CHANGED" | sed 's|.*/||; s|\.json$||' | tr '\n' ' ')
+            echo "courses=$COURSES" >> "$GITHUB_OUTPUT"
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build course(s)
+        if: steps.detect.outputs.skip != 'true'
+        run: |
+          cd 05-Generador-Cursos
+          for COURSE in ${{ steps.detect.outputs.courses }}; do
+            echo "========================================="
+            echo "Building: $COURSE"
+            echo "========================================="
+            node build-course.js "$COURSE"
+          done
+
+      - name: Copy generated HTML to root for GitHub Pages
+        if: steps.detect.outputs.skip != 'true'
+        run: |
+          for COURSE in ${{ steps.detect.outputs.courses }}; do
+            SRC="02-Plataforma-Web/${COURSE}.html"
+            if [ -f "$SRC" ]; then
+              # Crear carpeta del curso en raiz si no existe
+              mkdir -p "$COURSE"
+              cp "$SRC" "${COURSE}/index.html"
+              echo "Copied $SRC -> ${COURSE}/index.html"
+            else
+              echo "Warning: $SRC not found after build"
+            fi
+          done
+
+      - name: Commit and push generated files
+        if: steps.detect.outputs.skip != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add 02-Plataforma-Web/*.html */index.html 02-Plataforma-Web/cursos.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "build: regenerar curso(s) HTML desde borradores [skip ci]
+
+            Cursos: ${{ steps.detect.outputs.courses }}
+            Generado automaticamente por GitHub Actions"
+            git push
+          fi

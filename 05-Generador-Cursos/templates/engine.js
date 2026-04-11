@@ -10,13 +10,16 @@ let moduleProgress = [];
 let quizScores = [];
 let startTime = new Date();
 let studyTime = 0;
+let sessionStartTime = null;
 let reflections = {};
 let userProfile = {};
 
 // --- Inicializacion ---
 window.addEventListener('DOMContentLoaded', function () {
     moduleProgress = new Array(COURSE_CONFIG.totalModules).fill(false);
+    sessionStartTime = new Date();
     loadProgress();
+    updateElapsedTime();
     console.log('✅ Curso inicializado: ' + COURSE_CONFIG.title);
     if (COURSE_CONFIG.googleScriptUrl) {
         console.log('📊 Google Sheets configurado y listo');
@@ -173,10 +176,20 @@ function updateProgress() {
     if (bar) bar.style.width = pct + '%';
     if (text) text.textContent = pct + '%';
 
-    var remaining = total - completed;
-    var est = remaining * 50;
-    var timeEl = document.getElementById('timeRemaining');
-    if (timeEl) timeEl.textContent = est + ' minutos';
+    updateElapsedTime();
+}
+
+function updateElapsedTime() {
+    var timeEl = document.getElementById('elapsedTime');
+    if (!timeEl || !sessionStartTime) return;
+    var totalMinutes = studyTime;
+    if (totalMinutes < 60) {
+        timeEl.textContent = totalMinutes + ' min';
+    } else {
+        var hours = Math.floor(totalMinutes / 60);
+        var mins = totalMinutes % 60;
+        timeEl.textContent = hours + 'h ' + (mins < 10 ? '0' : '') + mins + 'min';
+    }
 }
 
 function updateStats() {
@@ -299,38 +312,75 @@ function generateCertificate() {
 }
 
 // --- Descargar certificado como PDF ---
+function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+        || (window.innerWidth <= 768);
+}
+
 function downloadCertificatePDF() {
-    var cert = document.querySelector('#module-' + COURSE_CONFIG.totalModules + ' .certificate');
+    var certModule = document.getElementById('module-' + (COURSE_CONFIG.totalModules - 1));
+    var cert = certModule ? certModule.querySelector('.certificate') : null;
     if (!cert) {
-        showNotification('El certificado aun no esta disponible.');
+        showNotification('El certificado aún no está disponible.');
         return;
     }
     if (typeof html2pdf === 'undefined') {
-        showNotification('Error: la libreria de PDF no cargo. Verifica tu conexion a internet.');
+        showNotification('La librería de PDF no cargó. Verifica tu conexión a internet.');
+        // Fallback: ofrecer imprimir
+        if (confirm('¿Deseas usar la opción de Imprimir en su lugar?')) { window.print(); }
         return;
     }
 
     var code = (document.getElementById('certCode') || {}).textContent || 'certificado';
     var filename = 'Certificado-' + code + '.pdf';
+    var mobile = isMobileDevice();
 
-    showNotification('Generando PDF...');
+    showNotification(mobile ? 'Generando PDF (puede tardar unos segundos)...' : 'Generando PDF...');
 
+    // En móvil: scale menor para evitar problemas de memoria
     var opt = {
         margin:       [10, 10, 10, 10],
         filename:     filename,
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, useCORS: true, letterRendering: true },
+        image:        { type: 'jpeg', quality: mobile ? 0.92 : 0.98 },
+        html2canvas:  { scale: mobile ? 1.5 : 2, useCORS: true, letterRendering: true, scrollY: 0 },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak:    { mode: ['avoid-all'] }
     };
 
-    html2pdf().set(opt).from(cert).save()
-        .then(function() {
-            showNotification('PDF descargado: ' + filename);
-        })
-        .catch(function(err) {
-            showNotification('Error al generar PDF. Intenta con Imprimir.');
-        });
+    // En móvil usamos blob + open para mejor compatibilidad
+    if (mobile) {
+        html2pdf().set(opt).from(cert).outputPdf('blob')
+            .then(function(blob) {
+                var url = URL.createObjectURL(blob);
+                // Intentar abrir en nueva pestaña (funciona en la mayoría de móviles)
+                var link = document.createElement('a');
+                link.href = url;
+                link.download = filename;
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                setTimeout(function() {
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                }, 5000);
+                showNotification('PDF generado: ' + filename + ' 📥');
+            })
+            .catch(function(err) {
+                console.error('Error PDF móvil:', err);
+                showNotification('Error generando PDF. Intenta con Imprimir.', 'warning');
+                if (confirm('¿Deseas usar la opción de Imprimir?')) { window.print(); }
+            });
+    } else {
+        // En desktop: descarga directa
+        html2pdf().set(opt).from(cert).save()
+            .then(function() {
+                showNotification('PDF descargado: ' + filename + ' 📥');
+            })
+            .catch(function(err) {
+                console.error('Error PDF:', err);
+                showNotification('Error al generar PDF. Intenta con Imprimir.', 'warning');
+            });
+    }
 }
 
 // --- Compartir ---
@@ -376,5 +426,14 @@ function sendToGoogleSheets(data) {
 }
 
 // --- Timers ---
-setInterval(function () { if (currentModule > 0) { studyTime += 1; updateStats(); } }, 60000);
+// Incrementar studyTime cada minuto (solo si esta en un modulo de contenido)
+setInterval(function () {
+    if (currentModule > 0) {
+        studyTime += 1;
+        updateStats();
+        updateElapsedTime();
+    }
+}, 60000);
+// Actualizar display de tiempo transcurrido cada 30 seg para fluidez
+setInterval(function () { updateElapsedTime(); }, 30000);
 setInterval(saveProgress, 60000);

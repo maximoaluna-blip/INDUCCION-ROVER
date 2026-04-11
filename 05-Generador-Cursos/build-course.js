@@ -425,7 +425,7 @@ ${cssContent}
                 <div class="progress-text" id="progressText">0%</div>
             </div>
             <p style="margin-top: 10px; font-size: 0.9em; color: #666;">
-                ⏱️ Tiempo estimado restante: <span id="timeRemaining">${contentModules * 50} minutos</span>
+                ⏱️ Tiempo en el curso: <span id="elapsedTime">0 min</span>
             </p>
         </div>
 

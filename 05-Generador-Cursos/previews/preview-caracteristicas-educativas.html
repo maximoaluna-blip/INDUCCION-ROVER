@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREVIEW — Características Educativas del Movimiento Scout</title>
+    <style>
+/* === Course styles (identical to production) === */
+/* ============================================
+   PLATAFORMA EDUCATIVA ROVER - ASC
+   Identidad visual: vallescout.org.co
+   Montserrat | #622599 | #ffe675 | #00afef
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background: #f2f5f7;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    color: #2c2927;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background: #622599; padding: 12px 0; position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+.top-bar-inner {
+    max-width: 940px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.top-bar .logos { display: flex; align-items: center; gap: 15px; }
+.top-bar .logos img { height: 40px; }
+.top-bar .logos .separator { width: 1px; height: 30px; background: rgba(255,255,255,0.3); }
+.top-bar a.back-link {
+    color: #ffe675; text-decoration: none; font-size: 0.85em; font-weight: 600;
+}
+.top-bar a.back-link:hover { text-decoration: underline; }
+
+.container { max-width: 940px; margin: 0 auto; padding: 20px; }
+
+/* --- Header & Progress --- */
+.header {
+    background: white; padding: 25px; margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;
+    border-top: 4px solid #622599;
+}
+.header h1 { color: #622599; margin-bottom: 10px; font-size: 1.8em; font-weight: 700; }
+.header p { color: #636363; font-size: 1em; }
+
+.progress-container {
+    background: #e0e0e0; height: 30px;
+    margin: 20px 0; overflow: hidden; position: relative;
+}
+.progress-bar {
+    background: linear-gradient(90deg, #622599, #8e44ad); height: 100%; width: 0%;
+    transition: width 0.5s ease; display: flex; align-items: center;
+    justify-content: center; color: white; font-weight: 700;
+}
+.progress-text {
+    position: absolute; width: 100%; text-align: center;
+    line-height: 30px; color: #2c2927; font-weight: 700;
+}
+
+/* --- Navigation --- */
+.nav-menu {
+    display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;
+    background: white; padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.nav-btn {
+    flex: 1; min-width: 90px; padding: 10px 8px; background: #f2f5f7;
+    border: 2px solid #ddd; cursor: pointer;
+    transition: all 0.3s; font-size: 13px; text-align: center;
+    font-family: 'Montserrat', sans-serif; font-weight: 600;
+}
+.nav-btn:hover { background: #f3e8ff; border-color: #622599; transform: translateY(-2px); }
+.nav-btn.active { background: #622599; color: white; border-color: #622599; }
+.nav-btn.completed { background: #8e44ad; color: white; border-color: #8e44ad; }
+.nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.mobile-nav {
+    display: none; position: fixed; bottom: 0; left: 0; right: 0;
+    background: white; box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    z-index: 1000; padding: 10px;
+}
+.mobile-nav select {
+    width: 100%; padding: 15px; font-size: 16px;
+    border: 2px solid #622599; background: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Content Area --- */
+.content {
+    background: white; padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* --- Modules --- */
+.module { display: none; animation: fadeIn 0.5s; }
+.module.active { display: block; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.module h2 { color: #622599; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #ffe675; font-weight: 700; }
+.module h3 { color: #622599; margin: 25px 0 15px; font-weight: 700; }
+.module h4 { color: #2c2927; margin: 20px 0 10px; font-weight: 600; }
+.module p { color: #636363; margin-bottom: 15px; text-align: justify; }
+.module ul, .module ol { margin: 15px 0 15px 30px; color: #636363; }
+.module li { margin-bottom: 10px; }
+
+.badge {
+    display: inline-block; background: #ffe675; color: #2c2927;
+    padding: 5px 15px; font-size: 0.85em; margin-bottom: 20px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.module-time-indicator {
+    display: inline-block; margin-left: 10px; font-size: 0.8em;
+    color: #636363; font-weight: 400;
+}
+
+/* --- Content Blocks --- */
+.info-box {
+    background: #f3e8ff; border-left: 4px solid #622599;
+    padding: 15px; margin: 20px 0;
+}
+.data-privacy {
+    background: #fff8e1; border-left: 4px solid #ffe675;
+    padding: 15px; margin: 20px 0;
+}
+.mission-box {
+    background: linear-gradient(135deg, #f3e8ff, #e8d5f5);
+    border: 2px solid #622599; padding: 20px; margin: 20px 0;
+}
+
+/* --- Timeline --- */
+.timeline { position: relative; padding: 20px 0; }
+.timeline-item {
+    background: #f2f5f7; border-left: 4px solid #622599;
+    padding: 15px; margin-bottom: 20px;
+}
+
+/* --- Method Grid --- */
+.method-elements {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; margin: 20px 0;
+}
+.method-element {
+    padding: 20px; border: 2px solid #ddd; transition: transform 0.3s;
+}
+.method-element:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(98,37,153,0.1); }
+
+/* --- Forms --- */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #2c2927; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px; border: 2px solid #ddd;
+    font-size: 15px; transition: border-color 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #622599; outline: none;
+}
+
+/* --- Registration Toggle --- */
+.toggle-buttons { display: flex; gap: 0; margin-bottom: 25px; }
+.toggle-btn {
+    flex: 1; padding: 12px; border: 2px solid #622599; background: #f2f5f7;
+    color: #622599; cursor: pointer; font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 14px; transition: all 0.3s; text-align: center;
+}
+.toggle-btn.active { background: #622599; color: white; }
+.toggle-btn:hover:not(.active) { background: #f3e8ff; }
+.recovery-section { margin-bottom: 20px; }
+
+/* --- Buttons --- */
+.btn {
+    background: #622599; color: white; border: none; padding: 12px 25px;
+    cursor: pointer; font-size: 15px; margin: 10px 5px;
+    transition: all 0.3s; display: inline-block;
+    font-family: 'Montserrat', sans-serif; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+.btn:hover { background: #4a1b75; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(98, 37, 153, 0.3); }
+.btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+/* --- Reflections --- */
+.reflection-area {
+    background: #fff8e1; border-left: 4px solid #ffe675;
+    padding: 20px; margin: 20px 0;
+}
+.reflection-area textarea {
+    width: 100%; min-height: 100px; padding: 10px;
+    border: 2px solid #ffe675; font-family: 'Montserrat', sans-serif; resize: vertical;
+}
+
+/* --- Quizzes --- */
+.quiz-container { background: #f2f5f7; padding: 20px; margin: 20px 0; }
+.question { margin-bottom: 25px; }
+.question h4 { color: #622599; margin-bottom: 15px; font-weight: 700; }
+.option {
+    display: block; padding: 12px; margin: 8px 0; background: white;
+    border: 2px solid #ddd; cursor: pointer; transition: all 0.3s;
+}
+.option:hover { background: #f3e8ff; border-color: #622599; }
+.option.selected { background: #e8d5f5; border-color: #622599; }
+.option.correct { background: #c8e6c9; border-color: #4CAF50; }
+.option.incorrect { background: #ffcdd2; border-color: #f44336; }
+
+/* --- Stats --- */
+.stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px; margin: 20px 0;
+}
+.stat-card {
+    background: #622599;
+    color: white; padding: 20px; text-align: center;
+}
+.stat-card h4 { font-size: 2em; margin-bottom: 5px; color: white; }
+
+/* --- Achievements --- */
+.achievements { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.achievement {
+    background: #f3e8ff; color: #622599; padding: 10px 15px;
+    border: 2px solid #622599; font-size: 0.9em;
+    opacity: 0.4; transition: all 0.3s; font-weight: 600;
+}
+.achievement.earned { opacity: 1; transform: scale(1.05); box-shadow: 0 3px 10px rgba(98, 37, 153, 0.3); }
+
+/* --- Certificate --- */
+.certificate {
+    background: linear-gradient(45deg, #ffffff, #f8f9fa);
+    border: 3px solid #ffe675; padding: 40px;
+    text-align: center; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+.certificate h2 { color: #622599; margin-bottom: 20px; }
+.certificate h3 { color: #622599; font-size: 1.8em; margin: 20px 0; }
+.certificate-code {
+    background: #f2f5f7; padding: 15px;
+    font-family: 'Courier New', monospace; font-size: 1.2em;
+    margin: 25px auto; max-width: 400px; border: 2px dashed #622599;
+}
+
+/* --- Modal Overlay --- */
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6); z-index: 5000;
+    justify-content: center; align-items: center;
+}
+.modal-overlay.show { display: flex; }
+.modal-content {
+    background: white; padding: 40px; max-width: 450px; width: 90%;
+    text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.modal-content h3 { color: #622599; margin-bottom: 15px; }
+
+/* --- Indicators --- */
+.sync-indicator {
+    position: fixed; top: 70px; right: 10px; background: #622599;
+    color: white; padding: 5px 10px; font-size: 0.8em;
+    display: none; z-index: 3000; animation: pulse 2s infinite;
+}
+.sync-indicator.show { display: block; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.save-indicator {
+    position: fixed; bottom: 20px; right: 20px; background: #622599;
+    color: white; padding: 10px 20px; font-size: 0.9em;
+    display: none; z-index: 1000;
+}
+.save-indicator.show { display: block; animation: pulse 1s infinite; }
+
+.notification {
+    position: fixed; top: 80px; right: 20px; background: #622599;
+    color: white; padding: 15px 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2); animation: slideIn 0.3s;
+    z-index: 2000; max-width: 400px;
+}
+@keyframes slideIn { from { transform: translateX(400px); } to { transform: translateX(0); } }
+@keyframes slideOut { from { transform: translateX(0); } to { transform: translateX(400px); } }
+
+.hidden { display: none !important; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .container { padding: 10px; }
+    .header h1 { font-size: 1.3em; }
+    .nav-menu { display: none; }
+    .mobile-nav { display: block; }
+    .content { padding: 15px; }
+    .method-elements { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    .certificate { padding: 20px; }
+    .top-bar .logos img { height: 35px; }
+    .toggle-buttons { flex-direction: column; }
+}
+
+/* --- Print --- */
+@media print {
+    body { background: white; }
+    .top-bar, .nav-menu, .mobile-nav, .btn, .save-indicator, .sync-indicator, .modal-overlay { display: none !important; }
+    .certificate { page-break-inside: avoid; }
+}
+
+
+/* === Preview-specific overrides === */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+@page {
+    size: A4;
+    margin: 15mm;
+}
+
+@media print {
+    body { background: white !important; }
+    .preview-page { break-before: page; box-shadow: none !important; border: 1px solid #ddd !important; }
+    .cover-page { break-before: auto; }
+    .preview-watermark { display: none; }
+    .preview-toolbar { display: none !important; }
+}
+
+body {
+    background: #e8e8e8;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Toolbar --- */
+.preview-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #622599;
+    color: white;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    margin: -20px -20px 30px -20px;
+    font-size: 0.9em;
+}
+.preview-toolbar h3 { font-weight: 700; }
+.preview-toolbar .toolbar-info { display: flex; gap: 20px; align-items: center; }
+.preview-toolbar .toolbar-badge {
+    background: #ffe675; color: #622599; padding: 4px 12px;
+    font-weight: 700; font-size: 0.85em; letter-spacing: 1px;
+}
+.preview-toolbar button {
+    background: #ffe675; color: #622599; border: none; padding: 8px 20px;
+    font-weight: 700; cursor: pointer; font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+}
+.preview-toolbar button:hover { background: #fff; }
+
+/* --- Page container --- */
+.preview-page {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 40px;
+    position: relative;
+}
+
+/* --- Cover page --- */
+.cover-page {
+    text-align: center;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #622599 0%, #3d1660 100%);
+    color: white;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cover-content { max-width: 600px; }
+.cover-logos {
+    display: flex; align-items: center; justify-content: center; gap: 20px;
+    margin-bottom: 40px;
+}
+.cover-logo-placeholder {
+    width: 80px; height: 80px; background: rgba(255,255,255,0.15);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9em; letter-spacing: 2px;
+}
+.cover-separator {
+    width: 2px; height: 60px; background: rgba(255,255,255,0.3);
+}
+.cover-icon { font-size: 4em; margin-bottom: 20px; }
+.cover-title { font-size: 2.2em; font-weight: 700; margin-bottom: 10px; line-height: 1.2; }
+.cover-subtitle { font-size: 1.1em; opacity: 0.85; margin-bottom: 30px; }
+.cover-divider {
+    width: 80px; height: 4px; background: #ffe675; margin: 0 auto 30px;
+}
+.cover-description { font-size: 0.95em; opacity: 0.9; line-height: 1.7; margin-bottom: 40px; }
+.cover-meta {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
+    text-align: left; margin-bottom: 40px;
+}
+.cover-meta-item {
+    display: flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.1); padding: 12px 15px; border-radius: 8px;
+    font-size: 0.9em;
+}
+.cover-meta-icon { font-size: 1.3em; }
+.cover-footer { margin-top: 30px; font-size: 0.9em; opacity: 0.8; }
+
+/* --- TOC page --- */
+.toc-page { padding: 40px; }
+.toc-table {
+    width: 100%; border-collapse: collapse; margin: 20px 0;
+    font-size: 0.9em;
+}
+.toc-table th {
+    background: #622599; color: white; padding: 12px 15px; text-align: left;
+    font-weight: 600;
+}
+.toc-table td { padding: 10px 15px; border-bottom: 1px solid #eee; }
+.toc-table tr:hover td { background: #f8f5fc; }
+.toc-achievements {
+    display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;
+}
+.toc-achievement {
+    background: #f8f5fc; border: 1px solid #e0d4f0; padding: 8px 15px;
+    border-radius: 20px; font-size: 0.85em;
+}
+
+/* --- Screen frame --- */
+.screen-label {
+    background: #622599; color: white; padding: 10px 20px;
+    font-weight: 700; font-size: 1.1em; margin: -40px -40px 25px -40px;
+}
+.screen-frame {
+    border: 2px solid #ddd; border-radius: 4px; overflow: hidden;
+}
+.screen-topbar {
+    background: #622599; padding: 8px 15px; display: flex;
+    justify-content: space-between; align-items: center;
+    font-size: 0.8em; color: white;
+}
+.screen-topbar-logos { font-weight: 600; }
+.screen-topbar-link { color: #ffe675; font-weight: 600; }
+.screen-header .header {
+    margin-bottom: 0; border-radius: 0;
+}
+.screen-body {
+    padding: 25px;
+    /* Override module visibility */
+}
+.screen-body .module { display: block !important; }
+.screen-body .hidden { display: none; }
+
+/* --- Preview form styling --- */
+.preview-form .form-group { margin-bottom: 15px; }
+.preview-form label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.9em; color: #622599; }
+.preview-form input, .preview-form select, .preview-form textarea {
+    width: 100%; padding: 10px; border: 2px solid #e0e0e0;
+    font-family: 'Montserrat', sans-serif; font-size: 0.9em; background: #f9f9f9;
+}
+.preview-form textarea { min-height: 80px; resize: vertical; }
+
+/* --- Preview note --- */
+.preview-note {
+    background: #fff3cd; border: 1px solid #ffc107; padding: 10px 15px;
+    margin-bottom: 20px; font-size: 0.85em; font-weight: 600; color: #856404;
+}
+
+/* --- Hidden preview button --- */
+.hidden-preview {
+    opacity: 0.5; margin-top: 10px;
+}
+
+/* --- Watermark --- */
+.preview-watermark {
+    position: fixed; bottom: 20px; right: 20px; background: #622599;
+    color: white; padding: 8px 16px; font-size: 0.75em; font-weight: 600;
+    z-index: 999; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+}
+
+/* Ensure progress bar shows correctly */
+.progress-bar {
+    background: linear-gradient(90deg, #622599, #00afef) !important;
+    height: 100%;
+    transition: width 0.3s;
+}
+    </style>
+</head>
+<body>
+    <div class="preview-toolbar">
+        <div>
+            <h3>📋 PREVIEW — Características Educativas del Movimiento Scout</h3>
+        </div>
+        <div class="toolbar-info">
+            <span class="toolbar-badge">BORRADOR</span>
+            <span>9 pantallas</span>
+            <span>|</span>
+            <span>11 de abril de 2026</span>
+            <button onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+        </div>
+    </div>
+
+
+    <div class="preview-page cover-page">
+        <div class="cover-content">
+            <div class="cover-logos">
+                <div class="cover-logo-placeholder">ASC</div>
+                <div class="cover-separator"></div>
+                <div class="cover-logo-placeholder">VALLE</div>
+            </div>
+            <div class="cover-icon">📖</div>
+            <h1 class="cover-title">Características Educativas del Movimiento Scout</h1>
+            <p class="cover-subtitle">Formación para Rovers - Sinodales y Ayudantes</p>
+            <div class="cover-divider"></div>
+            <p class="cover-description">Curso sobre las características educativas que definen al Movimiento Scout: su propósito, el Método Scout con sus 8 elementos, el sistema de valores y los principios que lo hacen único como movimiento juvenil mundial.</p>
+            <div class="cover-meta">
+                <div class="cover-meta-item">
+                    <span class="cover-meta-icon">⏱️</span>
+                    <span>Duración: 6 horas</span>
+                </div>
+                <div class="cover-meta-item">
+                    <span class="cover-meta-icon">📊</span>
+                    <span>6 módulos de contenido</span>
+                </div>
+                <div class="cover-meta-item">
+                    <span class="cover-meta-icon">🧪</span>
+                    <span>6 evaluaciones</span>
+                </div>
+                <div class="cover-meta-item">
+                    <span class="cover-meta-icon">🏆</span>
+                    <span>6 logros desbloqueables</span>
+                </div>
+            </div>
+            <div class="cover-footer">
+                <p><strong>DOCUMENTO DE PREVIEW</strong></p>
+                <p>Generado el 11 de abril de 2026</p>
+                <p style="margin-top: 10px; font-size: 0.85em; color: #999;">
+                    Plataforma de Formación Rover — Asociación Scouts de Colombia<br>
+                    Regional Valle del Cauca
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-page toc-page">
+        <h2 class="screen-label">📑 Tabla de Contenidos</h2>
+        <table class="toc-table">
+            <thead><tr><th></th><th>Pantalla</th><th>Contenido</th><th>Referencia</th></tr></thead>
+            <tbody><tr><td style="font-size:1.3em;">📝</td><td><strong>Registro al Curso</strong></td><td>Formulario</td><td style="text-align:center;">Pantalla 1</td></tr><tr><td style="font-size:1.3em;">🏠</td><td><strong>Bienvenido/a</strong></td><td>Bienvenida</td><td style="text-align:center;">Pantalla 2</td></tr><tr><td style="font-size:1.3em;">🎯</td><td><strong>Módulo 1: El Propósito Educativo del Movimiento Scout</strong></td><td>Quiz: ✅ | Reflexión: ✅</td><td style="text-align:center;">Pantalla 3</td></tr><tr><td style="font-size:1.3em;">🧠</td><td><strong>Módulo 2: Como Aprendemos: Principios del Aprendizaje</strong></td><td>Quiz: ✅ | Reflexión: ✅</td><td style="text-align:center;">Pantalla 4</td></tr><tr><td style="font-size:1.3em;">⚜️</td><td><strong>Módulo 3: El Método Scout: 8 Elementos Interactivos</strong></td><td>Quiz: ✅ | Reflexión: ✅</td><td style="text-align:center;">Pantalla 5</td></tr><tr><td style="font-size:1.3em;">⚖️</td><td><strong>Módulo 4: Sistema de Valores y Principios Scout</strong></td><td>Quiz: ✅ | Reflexión: ✅</td><td style="text-align:center;">Pantalla 6</td></tr><tr><td style="font-size:1.3em;">🌍</td><td><strong>Módulo 5: Características que Definen al Movimiento</strong></td><td>Quiz: ✅ | Reflexión: ✅</td><td style="text-align:center;">Pantalla 7</td></tr><tr><td style="font-size:1.3em;">🏛️</td><td><strong>Módulo 6: El Movimiento Scout en la Sociedad</strong></td><td>Quiz: ✅ | Reflexión: ✅</td><td style="text-align:center;">Pantalla 8</td></tr><tr><td style="font-size:1.3em;">🏆</td><td><strong>Certificado de Completación</strong></td><td>Certificado + Logros</td><td style="text-align:center;">Pantalla 9</td></tr></tbody>
+        </table>
+
+        <h3 style="margin-top: 30px; color: #622599;">🏆 Logros del Curso</h3>
+        <div class="toc-achievements"><span class="toc-achievement">🎯 Educador Consciente <small>(módulo 2)</small></span><span class="toc-achievement">🧠 Maestro del Aprendizaje <small>(módulo 3)</small></span><span class="toc-achievement">⚜️ Conocedor del Método <small>(módulo 4)</small></span><span class="toc-achievement">⚖️ Guardian de los Valores <small>(módulo 5)</small></span><span class="toc-achievement">🌍 Experto del Movimiento <small>(módulo 6)</small></span><span class="toc-achievement">🏛️ Diplomatico Scout <small>(módulo 7)</small></span></div>
+
+        <h3 style="margin-top: 30px; color: #622599;">📜 Certificado</h3>
+        <div class="info-box">
+            <strong>CARACTERÍSTICAS EDUCATIVAS DEL MOVIMIENTO SCOUT</strong><br>
+            ha completado éxitosamente el curso de Características Educativas del Movimiento Scout, demostrando conocimiento sobre el propósito, método, valores y principios que definen al escultismo mundial
+        </div>
+    </div>
+
+    <div class="preview-page">
+        <div class="screen-label">📝 PANTALLA 1: Registro al Curso</div>
+        <div class="screen-frame">
+            <div class="screen-header">
+                <div class="screen-topbar">
+                    <span class="screen-topbar-logos">🏕️ ASC | VALLE</span>
+                    <span class="screen-topbar-link">← Volver al catálogo</span>
+                </div>
+                <div class="header">
+                    <h1>📖 Características Educativas del Movimiento Scout</h1>
+                    <p>Formación para Rovers - Sinodales y Ayudantes</p>
+                    <div class="progress-container"><div class="progress-bar" style="width: 0%;"></div><div class="progress-text">0%</div></div>
+                </div>
+            </div>
+            <div class="screen-body">
+                <h2>📝 Registro al Curso</h2>
+                <div class="info-box">
+                    <strong>🎯 Objetivo del Curso:</strong><br>
+                    Curso sobre las características educativas que definen al Movimiento Scout: su propósito, el Método Scout con sus 8 elementos, el sistema de valores y los principios que lo hacen único como movimiento juvenil mundial.
+                </div>
+                <div class="preview-form">
+                    <div class="form-group"><label>Nombre Completo *</label><input type="text" placeholder="Ej: Juan Carlos Pérez Gómez" disabled></div>
+                    <div class="form-group"><label>Edad</label><input type="number" placeholder="Ej: 19" disabled></div>
+                    <div class="form-group"><label>Grupo Scout</label><input type="text" placeholder="Ej: Grupo Scout 25" disabled></div>
+                    <div class="form-group"><label>Región/Departamento</label><select disabled><option>Seleccionar...</option><option>Amazonas</option><option>Antioquia</option><option>Arauca</option><option>Atlántico</option><option>Bogotá D.C.</option><option>...</option></select></div>
+                    <div class="form-group"><label>Correo Electrónico</label><input type="email" placeholder="Ej: juan.perez@email.com" disabled></div>
+                    <div class="form-group"><label>¿Por qué quieres ser sinodal/ayudante?</label><textarea placeholder="Describe brevemente tu motivación..." disabled></textarea></div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button class="btn" disabled style="font-size: 1.1rem; padding: 15px 30px;">🚀 Comenzar Curso</button>
+                    </div>
+                </div>
+                <div class="data-privacy">
+                    <h4>📊 Información sobre tus datos</h4>
+                    <p>Este curso guarda tu progreso localmente y en Google Sheets para verificación de certificados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-page">
+        <div class="screen-label">🏠 PANTALLA 2: Bienvenida</div>
+        <div class="screen-frame">
+            <div class="screen-header">
+                <div class="screen-topbar">
+                    <span class="screen-topbar-logos">🏕️ ASC | VALLE</span>
+                    <span class="screen-topbar-link">← Volver al catálogo</span>
+                </div>
+                <div class="header">
+                    <h1>📖 Características Educativas del Movimiento Scout</h1>
+                    <p>Formación para Rovers - Sinodales y Ayudantes</p>
+                    <div class="progress-container"><div class="progress-bar" style="width: 0%;"></div><div class="progress-text">0%</div></div>
+                </div>
+            </div>
+            <div class="screen-body">
+                <h2>🏠 Bienvenido/a</h2>
+                
+                <div class="info-box"><strong>Siempre Listo/a para Servir!</strong><br>Este curso te preparará para comprender las bases educativas del Movimiento Scout, esenciales para tu rol como sinodal o ayudante en las ramas de Manada y Scouts.</div>
+<p>Basado en el documento oficial <strong>"Características Esenciales del Movimiento Scout"</strong> de la Organización Mundial del Movimiento Scout (2019), este curso te llevará a comprender por que el escultismo es mucho más que actividades al aire libre: es un sistema educativo integral que transforma vidas.</p>
+<h3>🎯 Objetivos del Curso</h3>
+<ul><li><strong>Comprender el propósito educativo</strong> del Movimiento Scout y su relevancia actual</li>
+<li><strong>Conocer los principios del aprendizaje</strong> que fundamentan la educación scout</li>
+<li><strong>Dominar los 8 elementos</strong> del Método Scout y como se interrelaciónan</li>
+<li><strong>Entender el sistema de valores</strong> basado en la Promesa y Ley Scout</li>
+<li><strong>Identificar las características</strong> que definen y diferencian al movimiento</li>
+<li><strong>Aplicar estos conocimientos</strong> en tu labor como sinodal o ayudante</li></ul>
+<div class="info-box"><strong>Duración estimada:</strong> 6 horas de estudio (aproximadamente 50 minutos por módulo).<br><strong>Evaluación:</strong> Cada módulo incluye una reflexión personal y una evaluación con mínimo 70% de aciertos para avanzar.</div>
+                
+            <h3>🏆 Logros por Desbloquear</h3>
+            <div class="achievements"><div class="achievement">🎯 Educador Consciente</div><div class="achievement">🧠 Maestro del Aprendizaje</div><div class="achievement">⚜️ Conocedor del Método</div><div class="achievement">⚖️ Guardian de los Valores</div><div class="achievement">🌍 Experto del Movimiento</div><div class="achievement">🏛️ Diplomatico Scout</div></div>
+            <div class="stats">
+                <div class="stat-card"><h4>0</h4><p>Módulos Completados</p></div>
+                <div class="stat-card"><h4>0</h4><p>Evaluaciones Aprobadas</p></div>
+                <div class="stat-card"><h4>0</h4><p>Minutos de Estudio</p></div>
+            </div>
+            <button class="btn" disabled>🚀 Comenzar el Curso</button>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-page">
+        <div class="screen-label">🎯 PANTALLA 3: Módulo 1: El Propósito Educativo del Movimiento Scout</div>
+        <div class="screen-frame">
+            <div class="screen-header">
+                <div class="screen-topbar">
+                    <span class="screen-topbar-logos">🏕️ ASC | VALLE</span>
+                    <span class="screen-topbar-link">← Volver al catálogo</span>
+                </div>
+                <div class="header">
+                    <h1>📖 Características Educativas del Movimiento Scout</h1>
+                    <p>Formación para Rovers - Sinodales y Ayudantes</p>
+                    <div class="progress-container"><div class="progress-bar" style="width: 17%;"></div><div class="progress-text">17%</div></div>
+                </div>
+            </div>
+            <div class="screen-body">
+                <h2>🎯 El Propósito Educativo del Movimiento Scout</h2>
+                <div class="badge">Módulo 1/6</div>
+                <div class="mission-box"><h3>🌟 MISIÓN DEL MOVIMIENTO SCOUT</h3><blockquote style="font-size: 1.1rem; font-style: italic; text-align: center; margin: 20px 0; color: #1a4b6b;">"Contribuir a la educación de los jóvenes, mediante un sistema de valores basado en la Promesa y la Ley Scout, para ayudar a construir un mundo mejor donde las personas se sientan realizadas como individuos y asumen un papel constructivo en la sociedad."</blockquote><p style="text-align: center; font-size: 0.9em;">— Constitución de la Organización Mundial del Movimiento Scout</p></div>
+<h3>Empoderamiento de Individuos y Ciudadanos</h3>
+<p>Para el Movimiento Scout, las dos dimensiónes del desarrollo — <strong>crecer como individuo</strong> y <strong>crecer como ciudadano</strong> — son igualmente importantes e inseparables. La educación scout busca empoderar a los jóvenes para que sean autónomos en su desarrollo personal y, al mismo tiempo, participen activamente en la construcción de una sociedad mejor.</p>
+<div class="method-elements"><div class="method-element" style="background: linear-gradient(135deg, #e8f5e9, #e8f5e9dd); border-color: #4caf50;"><h4>🧑 Como Individuo</h4><p>Desarrollar plenamente las capacidades físicas, intelectuales, emocionales, sociales y espirituales propias.</p></div><div class="method-element" style="background: linear-gradient(135deg, #e3f2fd, #e3f2fddd); border-color: #2196f3;"><h4>🌍 Como Ciudadano</h4><p>Ser un miembro responsable y activo de las comunidades locales, nacionales e internacionales.</p></div></div>
+<h3>🌐 Nuevos Desafíos Globales</h3>
+<p>Niveles sin precedentes de cambio, complejidad y contradicción caracterizan los desafíos del mundo actual. El Movimiento Scout debe responder a preguntas fundamentales sobre como hacer que el desarrollo sea sostenible, como luchar contra la desigualdad y la intolerancia, y como empoderar a los jóvenes para que sean agentes de cambio.</p>
+<div class="info-box"><strong>Los Objetivos de Desarrollo Sostenible (ODS)</strong> de las Naciones Unidas proporcionan una referencia común para todo el mundo. El Movimiento Scout los ha adoptado como marco de referencia, reconociendo que la educación es clave para alcanzar cada uno de los 17 ODS.</div>
+<h3>📚 Los Cuatro Pilares de la Educación</h3>
+<p>Según el informe de la UNESCO, la educación se sostiene sobre cuatro pilares fundamentales que el Movimiento Scout integra en su propuesta:</p>
+<div class="method-elements"><div class="method-element" style="background: linear-gradient(135deg, #fff3e0, #fff3e0dd); border-color: #ff9800;"><h4>Aprender a Ser</h4><p>Desarrollar la personalidad y actuar con autonomía, juicio y responsabilidad personal.</p></div><div class="method-element" style="background: linear-gradient(135deg, #e8eaf6, #e8eaf6dd); border-color: #3f51b5;"><h4>Aprender a Conocer</h4><p>Adquirir conocimiento amplio con la posibilidad de profundizar en temas específicos.</p></div><div class="method-element" style="background: linear-gradient(135deg, #e0f2f1, #e0f2f1dd); border-color: #009688;"><h4>Aprender a Hacer</h4><p>Adquirir competencias que permitan lidiar con diversas situaciones y trabajar en equipo.</p></div><div class="method-element" style="background: linear-gradient(135deg, #fce4ec, #fce4ecdd); border-color: #e91e63;"><h4>Aprender a Vivir Juntos</h4><p>Desarrollar la comprensión del otro y la percepción de las interdependencias.</p></div></div>
+                
+                
+            <div class="reflection-area">
+                <h4>🤔 Reflexión Personal</h4>
+                <p>Piensa en tu experiencia como rover: ¿en cual de los cuatro pilares de la educación sientes que el escultismo te ha aportado mas? ¿Cómo podrias fortalecer los otros pilares en tu trabajo con las ramas menores?</p>
+                <textarea placeholder="Escribe tu reflexión aquí..." disabled></textarea>
+            </div>
+                
+            <div class="quiz-container">
+                <h3>🧪 Evaluación - Propósito Educativo</h3>
+                <div class="preview-note">Las respuestas correctas están marcadas con ✅ y borde verde para revisión.</div>
+                <div class="question"><h4>1. ¿Cuáles son las dos dimensiónes del desarrollo que el Movimiento Scout considera igualmente importantes?</h4><label class="option"><input type="radio" disabled> Desarrollo físico y desarrollo mental</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Crecer como individuo y crecer como ciudadano ✅</label><label class="option"><input type="radio" disabled> Desarrollo académico y desarrollo deportivo</label></div><div class="question"><h4>2. ¿Qué referencia internacional ha adoptado el Movimiento Scout como marco de referencia para su acción educativa?</h4><label class="option"><input type="radio" disabled> La Declaración de los Derechos del Niño</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Los Objetivos de Desarrollo Sostenible (ODS) de la ONU ✅</label><label class="option"><input type="radio" disabled> El Convenio de Ginebra</label></div><div class="question"><h4>3. ¿Cuál de los cuatro pilares de la educación se refiere a desarrollar la comprensión del otro y las interdependencias?</h4><label class="option"><input type="radio" disabled> Aprender a Ser</label><label class="option"><input type="radio" disabled> Aprender a Hacer</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Aprender a Vivir Juntos ✅</label></div>
+                <button class="btn" disabled>Verificar Respuestas</button>
+                <button class="btn hidden-preview" disabled>Continuar a Principios del Aprendizaje 🧠</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-page">
+        <div class="screen-label">🧠 PANTALLA 4: Módulo 2: Como Aprendemos: Principios del Aprendizaje</div>
+        <div class="screen-frame">
+            <div class="screen-header">
+                <div class="screen-topbar">
+                    <span class="screen-topbar-logos">🏕️ ASC | VALLE</span>
+                    <span class="screen-topbar-link">← Volver al catálogo</span>
+                </div>
+                <div class="header">
+                    <h1>📖 Características Educativas del Movimiento Scout</h1>
+                    <p>Formación para Rovers - Sinodales y Ayudantes</p>
+                    <div class="progress-container"><div class="progress-bar" style="width: 33%;"></div><div class="progress-text">33%</div></div>
+                </div>
+            </div>
+            <div class="screen-body">
+                <h2>🧠 Como Aprendemos: Principios del Aprendizaje</h2>
+                <div class="badge">Módulo 2/6</div>
+                <h3>🔬 Siete Principios del Aprendizaje</h3>
+<p>Para que la educación responda a los desafíos actuales, se necesitan marcos conceptuales sólidos. Los siguientes siete principios resumen el conocimiento actual de como las personas aprenden en cualquier entorno, y son la base sobre la que se construye la educación scout:</p>
+<div class="timeline"><div class="timeline-item"><h4>1. El aprendiz en el centro</h4><p>Los sujetos que aprenden deben estar en el centro del proceso de aprendizaje. El escultismo pone al joven como protagonista de su propia formación.</p></div><div class="timeline-item"><h4>2. Aprendizaje social</h4><p>El aprendizaje es un proceso social; se aprende mejor en interacción con otros. Las patrullas y equipos scouts son el ejemplo perfecto de este principio.</p></div><div class="timeline-item"><h4>3. Las emociones importan</h4><p>Las emociones son parte integral del aprendizaje. Las actividades scouts generan experiencias emocionales significativas que refuerzan el aprendizaje.</p></div><div class="timeline-item"><h4>4. Diferencias individuales</h4><p>Los alumnos difieren en muchos aspectos, incluidos conocimientos previos, capacidades, concepciones del aprendizaje, estilos y estrategias de aprendizaje.</p></div><div class="timeline-item"><h4>5. Esfuerzo y motivación</h4><p>La motivación es esencial. Las actividades scouts son desafiantes pero alcanzables, manteniendo la motivación a través de logros progresivos.</p></div><div class="timeline-item"><h4>6. Evaluación del progreso</h4><p>La evaluación apoya el aprendizaje. En el escultismo, la progresión personal permite al joven evaluar su propio avance.</p></div><div class="timeline-item"><h4>7. Conexiones horizontales</h4><p>Las conexiones entre áreas de conocimiento son fundamentales. El Método Scout integra todas las dimensiónes del desarrollo de manera holística.</p></div></div>
+<h3>🏫 Tipos de Educación</h3>
+<p>Para comprender el lugar único que ocupa el Movimiento Scout en la educación, es importante distinguir tres tipos de educación:</p>
+<div class="method-elements"><div class="method-element" style="background: linear-gradient(135deg, #e8eaf6, #e8eaf6dd); border-color: #3f51b5;"><h4>📝 Educación Formal</h4><p>Estructurada, con programas definidos, impartida en instituciones educativas (escuelas, universidades). Otorga títulos y certificaciones oficiales.</p></div><div class="method-element" style="background: linear-gradient(135deg, #e8f5e9, #e8f5e9dd); border-color: #4caf50;"><h4>🏕️ Educación No Formal</h4><p>Organizada y sistemática pero fuera del sistema formal. El Movimiento Scout es el ejemplo más grande del mundo de educación no formal para jóvenes.</p></div><div class="method-element" style="background: linear-gradient(135deg, #fff3e0, #fff3e0dd); border-color: #ff9800;"><h4>🌱 Educación Informal</h4><p>Aprendizaje espontáneo que ocurre en la vida cotidiana: familia, amigos, medios de comúnicación, experiencias diarias.</p></div></div>
+<div class="info-box"><strong>¿Sabías que?</strong> Las fronteras entre estos tipos de educación se están desvaneciendo. Hoy existe una tendencia a combinar contextos de aprendizaje formales, no formales e informales. El éxito del Movimiento Scout en la educación no formal se debe a que el aprendizaje se lleva a cabo a través de actividades divertidas, selecciónadas por los jóvenes y realizadas en pequeños equipos.</div>
+<h3>🎯 El Programa de Jóvenes</h3>
+<p>El Movimiento Scout contribuye al empoderamiento de los jóvenes a través de su <strong>Programa de Jóvenes</strong>: oportunidades educativas que los jóvenes pueden cocrear y de las cuales se benefician, todo con el apoyo de adultos capacitados.</p>
+<p>El concepto de <strong>autoeducación progresiva</strong> es central: cada joven es un individuo único que tiene el potencial de desarrollarse en todas las dimensiónes y asumir la responsabilidad de su propio desarrollo desde temprana edad. Esto significa <em>aprender a aprender</em>, siendo equipado para el aprendizaje durante toda la vida.</p>
+                
+                
+            <div class="reflection-area">
+                <h4>🤔 Reflexión Personal</h4>
+                <p>Como sinodal o ayudante, ¿como puedes aplicar los siete principios del aprendizaje en tus actividades con la manada o tropa? Piensa en un ejemplo concreto para al menos tres de estos principios.</p>
+                <textarea placeholder="Escribe tu reflexión aquí..." disabled></textarea>
+            </div>
+                
+            <div class="quiz-container">
+                <h3>🧪 Evaluación - Principios del Aprendizaje</h3>
+                <div class="preview-note">Las respuestas correctas están marcadas con ✅ y borde verde para revisión.</div>
+                <div class="question"><h4>1. ¿A qué tipo de educación pertenece el Movimiento Scout?</h4><label class="option"><input type="radio" disabled> Educación formal</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Educación no formal ✅</label><label class="option"><input type="radio" disabled> Educación informal</label><label class="option"><input type="radio" disabled> Educación virtual</label></div><div class="question"><h4>2. ¿Cuál es el concepto central del enfoque educativo scout?</h4><label class="option"><input type="radio" disabled> La memorización de contenidos</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> La autoeducación progresiva ✅</label><label class="option"><input type="radio" disabled> La evaluación estandarizada</label><label class="option"><input type="radio" disabled> La instrucción dirigida por adultos</label></div><div class="question"><h4>3. Según los principios del aprendizaje, ¿qué papel juegan las emociones?</h4><label class="option"><input type="radio" disabled> No son relevantes en el aprendizaje</label><label class="option"><input type="radio" disabled> Son un obstáculo para el aprendizaje</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Son parte integral del aprendizaje ✅</label></div>
+                <button class="btn" disabled>Verificar Respuestas</button>
+                <button class="btn hidden-preview" disabled>Continuar al Método Scout ⚜️</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-page">
+        <div class="screen-label">⚜️ PANTALLA 5: Módulo 3: El Método Scout: 8 Elementos Interactivos</div>
+        <div class="screen-frame">
+            <div class="screen-header">
+                <div class="screen-topbar">
+                    <span class="screen-topbar-logos">🏕️ ASC | VALLE</span>
+                    <span class="screen-topbar-link">← Volver al catálogo</span>
+                </div>
+                <div class="header">
+                    <h1>📖 Características Educativas del Movimiento Scout</h1>
+                    <p>Formación para Rovers - Sinodales y Ayudantes</p>
+                    <div class="progress-container"><div class="progress-bar" style="width: 50%;"></div><div class="progress-text">50%</div></div>
+                </div>
+            </div>
+            <div class="screen-body">
+                <h2>⚜️ El Método Scout: 8 Elementos Interactivos</h2>
+                <div class="badge">Módulo 3/6</div>
+                <div class="info-box"><strong>El Método Scout</strong> es un sistema de autoeducación progresiva compuesto por 8 elementos interactivos que trabajan juntos como un todo integrado. Ningun elemento funciona aislado; todos se complementan y refuerzan mutuamente.</div>
+<h3>1. Ley y Promesa Scout</h3>
+<p>La <strong>Promesa Scout</strong> es un compromiso voluntario personal con la Ley Scout, un conjunto de valores compartidos e inclusivos que es la base de todo lo que hace un Scout. A través de la Promesa, cada Scout toma una decisión consciente de adoptar la Ley como código de conducta personal, no simplemente como un conjunto de reglas impuestas.</p>
+<h3>2. Aprender Haciendo</h3>
+<p>El aprendizaje en el Movimiento Scout se basa en la experiencia directa y la reflexión. Los jóvenes aprenden a través de la práctica y la acción, aplicando de inmediato lo aprendido en situaciones reales. Incluye la experimentación, el desafio, el descubrimiento y la innovación.</p>
+<h3>3. Progresión Personal</h3>
+<p>Cada joven avanza a su propio ritmo a través de un camino de desarrollo personal. Este sistema de progresión estimula al joven a desarrollar capacidades cada vez más complejas, adaptado a sus posibilidades y ritmo individual.</p>
+<h3>4. Sistema de Equipos</h3>
+<p>El Movimiento Scout utiliza un sistema de <strong>pequeños equipos</strong> (como las patrullas) para facilitar el aprendizaje colaborativo y la participación en la toma de decisiónes. Este enfoque desarrolla trabajo en equipo, habilidades interpersonales, liderazgo y sentido de responsabilidad y pertenencia.</p>
+<div class="info-box">El sistema de equipos es una herramienta efectiva para empoderar a los jóvenes, ya que permite que asuman roles de liderazgo, participen democráticamente en las decisiónes del grupo y aprendan a convivir con la diversidad.</div>
+<h3>5. Apoyo Adulto</h3>
+<p>Los adultos en el Movimiento Scout desempeñan un papel de <strong>guía y facilitador</strong>, no de instructor autoritario. La relación educativa se basa en el diálogo, la confianza mutua y el acompañamiento. El adulto crea las condiciones para que el joven descubra y aprenda por si mismo.</p>
+<h3>6. Marco Simbólico</h3>
+<p>El Movimiento Scout utiliza una estructura unificadora de <strong>temas, símbolos e historias</strong> que facilitan el aprendizaje y desarrollan una identidad única como Scout. Este marco simbólico crea sentido de pertenencia, transmite mensajes educativos y estimula la cohesión y solidaridad dentro del grupo y del movimiento global.</p>
+<h3>7. Naturaleza</h3>
+<p>El entorno natural proporciona un escenario ideal para las actividades scouts, con oportunidades de aventura y educación para el desarrollo físico, intelectual, emocional, social y espiritual. Las actividades en la naturaleza fomentan una mejor comprensión de la relación con el medio ambiente y la responsabilidad hacia el entorno.</p>
+<h3>8. Participación Comunitaria</h3>
+<p>Los scouts participan activamente en el desarrollo de sus comunidades a través del servicio y la acción social. Esta participación no es simplemente altruismo: es una herramienta educativa que desarrolla la ciudadanía activa, la empatía y la comprensión de las necesidades del entorno.</p>
+<h3>🔗 Un Sistema Integrado</h3>
+<div class="method-elements"><div class="method-element" style="background: linear-gradient(135deg, #e8f5e9, #e8f5e9dd); border-color: #4caf50;"><h4>⚖️ Ley y Promesa</h4><p>Compromiso voluntario con valores compartidos que guian la conducta personal.</p></div><div class="method-element" style="background: linear-gradient(135deg, #fff3e0, #fff3e0dd); border-color: #ff9800;"><h4>🔨 Aprender Haciendo</h4><p>Experiencia directa, experimentación y reflexión como base del aprendizaje.</p></div><div class="method-element" style="background: linear-gradient(135deg, #e3f2fd, #e3f2fddd); border-color: #2196f3;"><h4>📈 Progresión Personal</h4><p>Desarrollo a ritmo propio con metas cada vez más complejas y significativas.</p></div><div class="method-element" style="background: linear-gradient(135deg, #fce4ec, #fce4ecdd); border-color: #e91e63;"><h4>👥 Sistema de Equipos</h4><p>Pequeños grupos que facilitan liderazgo, cooperación y toma de decisiónes.</p></div><div class="method-element" style="background: linear-gradient(135deg, #f3e5f5, #f3e5f5dd); border-color: #9c27b0;"><h4>🤝 Apoyo Adulto</h4><p>Adultos como guías y facilitadores, no como instructores autoritarios.</p></div><div class="method-element" style="background: linear-gradient(135deg, #e0f7fa, #e0f7fadd); border-color: #00bcd4;"><h4>🎭 Marco Simbólico</h4><p>Símbolos, temas e historias que crean identidad y sentido de pertenencia.</p></div><div class="method-element" style="background: linear-gradient(135deg, #e8f5e9, #e8f5e9dd); border-color: #388e3c;"><h4>🌿 Naturaleza</h4><p>El entorno natural como escenario ideal para la aventura y el aprendizaje.</p></div><div class="method-element" style="background: linear-gradient(135deg, #fff8e1, #fff8e1dd); border-color: #ffc107;"><h4>🏘️ Comunidad</h4><p>Servicio y participación activa en el desarrollo de la comunidad local.</p></div></div>
+                
+                
+            <div class="reflection-area">
+                <h4>🤔 Reflexión Personal</h4>
+                <p>Piensa en una actividad reciente que hayas vivido en tu grupo scout. ¿Cuántos de los 8 elementos del Método Scout puedes identificar en esa actividad? ¿Hubo alguno que no estuvo presente? ¿Cómo podrias incluirlo?</p>
+                <textarea placeholder="Escribe tu reflexión aquí..." disabled></textarea>
+            </div>
+                
+            <div class="quiz-container">
+                <h3>🧪 Evaluación - El Método Scout</h3>
+                <div class="preview-note">Las respuestas correctas están marcadas con ✅ y borde verde para revisión.</div>
+                <div class="question"><h4>1. ¿Cuántos elementos componen el Método Scout?</h4><label class="option"><input type="radio" disabled> 5 elementos</label><label class="option"><input type="radio" disabled> 6 elementos</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> 8 elementos ✅</label><label class="option"><input type="radio" disabled> 10 elementos</label></div><div class="question"><h4>2. ¿Cuál es el rol del adulto en el Método Scout?</h4><label class="option"><input type="radio" disabled> Instructor que dicta las actividades</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Guía y facilitador que acompaña al joven ✅</label><label class="option"><input type="radio" disabled> Supervisor que evalua el rendimiento</label><label class="option"><input type="radio" disabled> Director que toma todas las decisiónes</label></div><div class="question"><h4>3. ¿Qué funcion cumple el sistema de equipos en el Movimiento Scout?</h4><label class="option"><input type="radio" disabled> Solo organizar las actividades de campamento</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Facilitar el aprendizaje colaborativo, liderazgo y toma de decisiónes ✅</label><label class="option"><input type="radio" disabled> Separar a los jóvenes por nivel de experiencia</label><label class="option"><input type="radio" disabled> Crear competencia entre los miembros</label></div><div class="question"><h4>4. ¿Por qué los 8 elementos del Método Scout funcionan como un sistema?</h4><label class="option"><input type="radio" disabled> Porque se aplican uno por uno en orden secuencial</label><label class="option"><input type="radio" disabled> Porque cada uno puede funcionar de manera independiente</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Porque son interactivos y se complementan entre si como un todo integrado ✅</label><label class="option"><input type="radio" disabled> Porque cada elemento corresponde a un rango de edad diferente</label></div>
+                <button class="btn" disabled>Verificar Respuestas</button>
+                <button class="btn hidden-preview" disabled>Continuar a Valores Scout ⚖️</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-page">
+        <div class="screen-label">⚖️ PANTALLA 6: Módulo 4: Sistema de Valores y Principios Scout</div>
+        <div class="screen-frame">
+            <div class="screen-header">
+                <div class="screen-topbar">
+                    <span class="screen-topbar-logos">🏕️ ASC | VALLE</span>
+                    <span class="screen-topbar-link">← Volver al catálogo</span>
+                </div>
+                <div class="header">
+                    <h1>📖 Características Educativas del Movimiento Scout</h1>
+                    <p>Formación para Rovers - Sinodales y Ayudantes</p>
+                    <div class="progress-container"><div class="progress-bar" style="width: 67%;"></div><div class="progress-text">67%</div></div>
+                </div>
+            </div>
+            <div class="screen-body">
+                <h2>⚖️ Sistema de Valores y Principios Scout</h2>
+                <div class="badge">Módulo 4/6</div>
+                <h3>📜 Valores Universales del Movimiento Scout</h3>
+<p>El Movimiento Scout se basa en el deseo de su fundador, Baden-Powell, de mejorar la sociedad, una meta que el creía solo se puede lograr <strong>mejorando a las personas</strong>. Dentro del Movimiento, el proceso educativo se logra a través de un sistema de autoeducación progresiva incorporado al Método Scout, basado en un sistema de valores.</p>
+<p>La Constitución de la OMMS define los <strong>tres principios fundamentales</strong> que representan el código de conducta que caracteriza a todos los miembros del Movimiento:</p>
+<div class="method-elements"><div class="method-element" style="background: linear-gradient(135deg, #f3e5f5, #f3e5f5dd); border-color: #9c27b0;"><h4>🙏 Deber para con Dios</h4><p>La relación de una persona con los valores espirituales de la vida: la búsqueda de la fe y de una realidad espiritual superior. Se refiere a la dimensión espiritual, no a una religión específica.</p></div><div class="method-element" style="background: linear-gradient(135deg, #e3f2fd, #e3f2fddd); border-color: #2196f3;"><h4>🤝 Deber para con los Demás</h4><p>La relación de una persona con la sociedad en su sentido más amplio. Lealtad al país, participación en el desarrollo de la comunidad, reconocimiento de la dignidad humana y respeto por la integridad del mundo natural.</p></div><div class="method-element" style="background: linear-gradient(135deg, #e8f5e9, #e8f5e9dd); border-color: #4caf50;"><h4>🧑 Deber para Consigo Mismo</h4><p>La responsabilidad de desarrollar el propio potencial. No es egoísmo ni individualismo, sino la obligación de cultivar las propias capacidades para poder servir mejor a los demás.</p></div></div>
+<h3>💡 Valores Inclusivos</h3>
+<p>Los tres principios están vinculados por la idea de <strong>servicio y amor</strong>. Basándose en el mensaje de Baden-Powell de que "la verdadera forma de obtener la felicidad es haciendo felices a los demás", el Movimiento Scout cree que la felicidad individual y el sentido de propósito provienen de un compromiso con la dignidad humana.</p>
+<div class="info-box"><strong>Importante:</strong> El Movimiento Scout rechaza cualquier forma de adoctrinamiento. La adhesión a los valores scouts debe basarse en la libre elección y la comprensión personal, nunca en la imposición. El objetivo es que cada joven interiorice estos valores de manera autonoma y reflexiva.</div>
+<h3>🌈 Espiritualidad, No Religión Específica</h3>
+<p>El "deber para con Dios" se refiere a la <strong>dimensión espiritual</strong> de la persona, a la búsqueda de significado trascendente en la vida. No se limita a una religión, doctrina o práctica religiosa específica. El Movimiento Scout respeta la diversidad de creencias y tradiciones espirituales de sus miembros.</p>
+<h3>🔄 Adaptación a los Rangos de Edad</h3>
+<p>A diferencia de la educación tradicional que separa por año de nacimiento, el Movimiento Scout adapta su programa a grupos de edad correspondientes a etapas de desarrollo: <strong>infancia, pubertad, adolescencia y juventud</strong>. Dentro de cada grupo, se promueve que los jóvenes se desarrollen a su propio ritmo, reconociendo que no todos aprenden de la misma manera.</p>
+<div class="timeline"><div class="timeline-item"><h4>🐺 Infancia (Manada)</h4><p>Énfasis en el juego, la imaginacion, el descubrimiento y la socialización básica dentro del marco del Libro de la Selva.</p></div><div class="timeline-item"><h4>⚜️ Pubertad (Tropa Scout)</h4><p>Aventura, sistema de patrullas, habilidades prácticas y desarrollo del sentido de responsabilidad y autonomía.</p></div><div class="timeline-item"><h4>🧭 Adolescencia (Comunidad)</h4><p>Servicio comúnitario, liderazgo, especialización en áreas de interés y proyectos de mayor envergadura.</p></div><div class="timeline-item"><h4>🌟 Juventud (Rover)</h4><p>Servicio al movimiento y la comunidad, formación como dirigentes, desarrollo de un proyecto de vida personal.</p></div></div>
+                
+                
+            <div class="reflection-area">
+                <h4>🤔 Reflexión Personal</h4>
+                <p>¿Cómo puedes transmitir los valores scouts a los niños y jóvenes de tu rama sin caer en el adoctrinamiento? Describe una estrategia concreta basada en el ejemplo y la experiencia, no en la instrucción directa.</p>
+                <textarea placeholder="Escribe tu reflexión aquí..." disabled></textarea>
+            </div>
+                
+            <div class="quiz-container">
+                <h3>🧪 Evaluación - Valores y Principios</h3>
+                <div class="preview-note">Las respuestas correctas están marcadas con ✅ y borde verde para revisión.</div>
+                <div class="question"><h4>1. ¿Cuáles son los tres principios fundamentales del Movimiento Scout?</h4><label class="option"><input type="radio" disabled> Lealtad, Servicio y Obediencia</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Deber para con Dios, con los Demás y Consigo Mismo ✅</label><label class="option"><input type="radio" disabled> Valor, Sabiduría y Fuerza</label><label class="option"><input type="radio" disabled> Fe, Esperanza y Caridad</label></div><div class="question"><h4>2. ¿Qué significa el 'deber para con Dios' en el Movimiento Scout?</h4><label class="option"><input type="radio" disabled> Pertenecer a una religión específica</label><label class="option"><input type="radio" disabled> Asistir a servicios religiosos obligatorios</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> La búsqueda de la dimensión espiritual y de una realidad trascendente ✅</label><label class="option"><input type="radio" disabled> Seguir las reglas de una iglesia determinada</label></div><div class="question"><h4>3. ¿Cuál es la posición del Movimiento Scout frente al adoctrinamiento?</h4><label class="option"><input type="radio" disabled> Lo permite cuando es para transmitir valores scouts</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Lo rechaza completamente; la adhesión a los valores debe ser libre ✅</label><label class="option"><input type="radio" disabled> Lo acepta solo en las ramas menores</label><label class="option"><input type="radio" disabled> No tiene una posición definida al respecto</label></div>
+                <button class="btn" disabled>Verificar Respuestas</button>
+                <button class="btn hidden-preview" disabled>Continuar a Características del Movimiento 🌍</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-page">
+        <div class="screen-label">🌍 PANTALLA 7: Módulo 5: Características que Definen al Movimiento</div>
+        <div class="screen-frame">
+            <div class="screen-header">
+                <div class="screen-topbar">
+                    <span class="screen-topbar-logos">🏕️ ASC | VALLE</span>
+                    <span class="screen-topbar-link">← Volver al catálogo</span>
+                </div>
+                <div class="header">
+                    <h1>📖 Características Educativas del Movimiento Scout</h1>
+                    <p>Formación para Rovers - Sinodales y Ayudantes</p>
+                    <div class="progress-container"><div class="progress-bar" style="width: 83%;"></div><div class="progress-text">83%</div></div>
+                </div>
+            </div>
+            <div class="screen-body">
+                <h2>🌍 Características que Definen al Movimiento</h2>
+                <div class="badge">Módulo 5/6</div>
+                <p>Además de su propósito educativo, su método y sus valores, el Movimiento Scout se define por un conjunto de <strong>características específicas</strong> que lo distinguen de cualquier otra organización juvenil o educativa en el mundo.</p>
+<h3>1️⃣ Un Movimiento</h3>
+<p>El Movimiento Scout es un <strong>movimiento global enraizado en las comunidades locales</strong>. Es un movimiento porque está formado por un gran grupo de personas que comparten los mismos valores y están activamente interésados en lograr un objetivo común. Se manifiesta en sus profundas raíces en la comunidad local, donde se adapta a cada realidad.</p>
+<div class="info-box"><strong>Unidad no significa uniformidad.</strong> La unidad del movimiento es resultado de compartir un propósito, valores y un método educativo común. Pero esta unidad no impide la diversidad entre los miembros. Todos se adhieren a los mismos principios fundamentales, aunque la expresión puede variar según el contexto cultural y social.</div>
+<h3>2️⃣ Para Jóvenes</h3>
+<p>El Movimiento Scout es un <strong>movimiento de jóvenes y para jóvenes</strong>, apoyado por adultos. Dirige su propuesta educativa a los jóvenes, apoyandolos en su transición de la infancia a la edad adulta. No es un movimiento juvenil de adultos; los adultos son facilitadores del proceso educativo, no los protagonistas.</p>
+<p>El Movimiento sigue siendo particularmente relevante para los <strong>adolescentes</strong>, ofreciendo un espacio seguro para desarrollar la capacidad de tomar decisiónes propias y alcanzar mayor autonomía. El diálogo intergeneracional entre jóvenes y adultos enriquece la experiencia de ambos.</p>
+<h3>3️⃣ Voluntario</h3>
+<p>El carácter voluntario del Movimiento Scout subraya que los miembros se unen por <strong>libre elección</strong>. No hay obligación de unirse y no existe obligatoriedad una vez que se es miembro. Este compromiso voluntario es un componente esencial del proceso educativo: la aceptación libre de responsabilidades y compromisos es mucho más valiosa que la obediencia impuesta.</p>
+<h3>4️⃣ Abierto a Todos</h3>
+<p>El Movimiento Scout está abierto a todos, <strong>sin distinción de origen, raza, género o credo</strong>, de acuerdo con la Constitución de la OMMS. También hace un compromiso consciente para llegar a los jóvenes que más lo necesitan, especialmente aquellos que tienen dificultades en su vida diaria.</p>
+<div class="info-box"><strong>Protección de la juventud:</strong> Si bien el Movimiento está abierto a todos los jóvenes, para los adultos existe un deber adicional: proteger a los miembros jóvenes contra cualquier abuso. Cualquier candidato a cargo educativo debe tener la madurez y equilibrio psicológico necesarios para desarrollar una relación educativa respetuosa.</div>
+<h3>Resumen de Características</h3>
+<div class="method-elements"><div class="method-element" style="background: linear-gradient(135deg, #e3f2fd, #e3f2fddd); border-color: #1976d2;"><h4>🌐 Un Movimiento</h4><p>Global con raíces locales. Unidad en propósito, valores y método sin uniformidad.</p></div><div class="method-element" style="background: linear-gradient(135deg, #e8f5e9, #e8f5e9dd); border-color: #388e3c;"><h4>👦 Para Jóvenes</h4><p>De jóvenes y para jóvenes, con adultos como apoyo facilitador, no como protagonistas.</p></div><div class="method-element" style="background: linear-gradient(135deg, #fff3e0, #fff3e0dd); border-color: #f57c00;"><h4>🤚 Voluntario</h4><p>Adhesión libre. El compromiso voluntario es parte esencial del proceso educativo.</p></div><div class="method-element" style="background: linear-gradient(135deg, #fce4ec, #fce4ecdd); border-color: #c62828;"><h4>🤝 Abierto a Todos</h4><p>Sin discriminación, con atencion especial a jóvenes vulnerables y compromiso de protección.</p></div></div>
+                
+                
+            <div class="reflection-area">
+                <h4>🤔 Reflexión Personal</h4>
+                <p>En tu grupo scout, ¿consideras que se cumple la apertura a todos? ¿Hay barreras (económicas, sociales, culturales) que impidan el acceso de algunos jóvenes? ¿Qué podrias hacer como rover para ayudar a superarlas?</p>
+                <textarea placeholder="Escribe tu reflexión aquí..." disabled></textarea>
+            </div>
+                
+            <div class="quiz-container">
+                <h3>🧪 Evaluación - Características del Movimiento</h3>
+                <div class="preview-note">Las respuestas correctas están marcadas con ✅ y borde verde para revisión.</div>
+                <div class="question"><h4>1. ¿Por qué se dice que el Movimiento Scout es un 'movimiento' y no solo una organización?</h4><label class="option"><input type="radio" disabled> Porque tiene muchos miembros en todo el mundo</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Porque está formado por personas que comparten valores y trabajan por un objetivo común desde las comunidades locales ✅</label><label class="option"><input type="radio" disabled> Porque cambia constantemente sus reglas</label><label class="option"><input type="radio" disabled> Porque se mueven fisicamente de un lugar a otro</label></div><div class="question"><h4>2. ¿Qué significa que el Movimiento Scout es 'voluntario'?</h4><label class="option"><input type="radio" disabled> Que los adultos trabajan sin salario</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Que los miembros se unen por libre elección y el compromiso voluntario es parte del proceso educativo ✅</label><label class="option"><input type="radio" disabled> Que las actividades son opcionales</label><label class="option"><input type="radio" disabled> Que no hay reglas obligatorias</label></div><div class="question"><h4>3. ¿Cuál es el deber adicional del Movimiento respecto a los adultos que desean participar?</h4><label class="option"><input type="radio" disabled> Que tengan experiencia previa en campamentos</label><label class="option"><input type="radio" disabled> Que sean profesionales de la educación</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Proteger a los jóvenes verificando la madurez y equilibrio de los candidatos a cargos educativos ✅</label><label class="option"><input type="radio" disabled> Que pertenezcan a una comunidad religiosa</label></div>
+                <button class="btn" disabled>Verificar Respuestas</button>
+                <button class="btn hidden-preview" disabled>Continuar a Independencia del Movimiento 🏛️</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-page">
+        <div class="screen-label">🏛️ PANTALLA 8: Módulo 6: El Movimiento Scout en la Sociedad</div>
+        <div class="screen-frame">
+            <div class="screen-header">
+                <div class="screen-topbar">
+                    <span class="screen-topbar-logos">🏕️ ASC | VALLE</span>
+                    <span class="screen-topbar-link">← Volver al catálogo</span>
+                </div>
+                <div class="header">
+                    <h1>📖 Características Educativas del Movimiento Scout</h1>
+                    <p>Formación para Rovers - Sinodales y Ayudantes</p>
+                    <div class="progress-container"><div class="progress-bar" style="width: 100%;"></div><div class="progress-text">100%</div></div>
+                </div>
+            </div>
+            <div class="screen-body">
+                <h2>🏛️ El Movimiento Scout en la Sociedad</h2>
+                <div class="badge">Módulo 6/6</div>
+                <h3>🚫 No Político</h3>
+<p>Como movimiento educativo, el Movimiento Scout <strong>no debe identificarse con partidos políticos</strong>. Ni la organización misma, ni nadie que se presente como su representante, debe identificarse con un partido o grupo político. La razon es clara: Baden-Powell advirtio sobre el peligro de que las personas se acostumbren a que otros determinen sus formas de pensar, sin ejercer su propio juicio.</p>
+<div class="info-box"><strong>Educación, no política partidista:</strong> El Movimiento Scout es un movimiento educativo destinado a ayudar a los jóvenes a desarrollar sus propias capacidades y autonomía. Este enfoque requiere <em>neutralidad total</em> en el proceso educativo. La identificación con cualquier partido comprometeria la objetividad qué debe caracterizar la educación centrada en la persona.</div>
+<p>Sin embargo, esto <strong>no significa separacion de la realidad social</strong>. El Movimiento puede defender valores, tomar posición sobre cuestiones como los Derechos del Niño o los ODS, siempre que esten vinculados a su mision educativa. Lo importante es que estas posiciónes sean herramientas educativas que brinden a los jóvenes la capacidad de pensar criticamente.</p>
+<p>En cuanto a los miembros individuales: nada impide que un Scout pertenezca a un partido político como individuo, siempre que los valores del partido sean consistentes con los valores scouts y que <strong>nunca use al Movimiento como plataforma</strong> para la promocion política.</p>
+<h3>🏛️ Independiente</h3>
+<p>El Movimiento Scout tiene una <strong>identidad específica</strong> basada en su propósito, principios, valores y método. Solo puede lograr su objetivo educativo si se salvaguarda esta identidad. Cualquier pérdida de identidad al estar demasiado vinculado a otra organización o autoridad tendrá un impacto negativo.</p>
+<p>Cualquier Organización Scout Nacional debe tener la capacidad de <strong>tomar decisiónes libremente</strong> por su propia autoridad, sin interferencia de instituciones publicas, sociales o religiosas. Esto no significa operar de manera aislada: la cooperación se fomenta, pero siempre asegurando que la identidad e independencia del Movimiento no se vean comprometidas.</p>
+<div class="timeline"><div class="timeline-item"><h4>Cooperación con otras organizaciones juveniles</h4><p>Nunca debe conducir a la pérdida de la independencia ni del papel específico del Movimiento en la educación de los jóvenes.</p></div><div class="timeline-item"><h4>Patrocinio por organizaciones religiosas o comunitarias</h4><p>Nunca debe resultar en que la Organización Scout sea controlada o percibida como subordinada.</p></div><div class="timeline-item"><h4>Vínculos con autoridades locales o nacionales</h4><p>Nunca deben ser tales que se cuestione el papel educativo voluntario y no formal del Movimiento.</p></div><div class="timeline-item"><h4>Apoyo a agencias de desarrollo</h4><p>Nunca debe llevar a que el Movimiento sea visto como una agencia de desarrollo en vez de un movimiento educativo.</p></div></div>
+<h3>🛡️ Protección de la Identidad</h3>
+<p>La naturaleza e identidad específicas del Movimiento estan <strong>definidas internacionalmente</strong> y acordadas por todas las Organizaciónes Scouts Nacionales. Todos los niveles del Movimiento deben estar atentos en sus relaciónes con otras entidades para garantizar que la identidad y la independencia no se vean comprometidas.</p>
+<div class="mission-box"><h3>🌟 RESUMEN: ¿QUE HACE UNICO AL MOVIMIENTO SCOUT?</h3><p style="margin: 15px 0;">El Movimiento Scout es único porque combina:</p><ul style="text-align: left; margin: 10px auto; max-width: 500px;"><li>Un <strong>propósito educativo</strong> claro y centrado en la persona</li><li>Un <strong>método</strong> de 8 elementos interactivos probado por mas de un siglo</li><li>Un <strong>sistema de valores</strong> inclusivo basado en la libre elección</li><li>Una naturaleza <strong>voluntaria, abierta, no política e independiente</strong></li><li>Un alcance <strong>global</strong> con raíces profundas en lo <strong>local</strong></li></ul></div>
+                
+                
+            <div class="reflection-area">
+                <h4>🤔 Reflexión Personal</h4>
+                <p>Como futuro sinodal o ayudante, ¿cómo mantendrías la independencia y neutralidad del Movimiento Scout en tu grupo, especialmente si enfrentarás presiones de instituciones externas (religiosas, políticas, comunitarias) que quisieran influir en las actividades?</p>
+                <textarea placeholder="Escribe tu reflexión aquí..." disabled></textarea>
+            </div>
+                
+            <div class="quiz-container">
+                <h3>🧪 Evaluación - El Movimiento en la Sociedad</h3>
+                <div class="preview-note">Las respuestas correctas están marcadas con ✅ y borde verde para revisión.</div>
+                <div class="question"><h4>1. ¿Por qué el Movimiento Scout no debe identificarse con partidos políticos?</h4><label class="option"><input type="radio" disabled> Porque la política es mala</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Porque comprometeria la neutralidad y objetividad del enfoque educativo centrado en la persona ✅</label><label class="option"><input type="radio" disabled> Porque Baden-Powell era militar y no político</label><label class="option"><input type="radio" disabled> Porque los jóvenes no tienen edad para votar</label></div><div class="question"><h4>2. ¿Puede el Movimiento Scout tomar posición sobre temas como los Derechos del Niño o los ODS?</h4><label class="option"><input type="radio" disabled> No, debe mantenerse completamente neutral en todo</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Si, siempre que esten vinculados a su mision educativa y no a política partidista ✅</label><label class="option"><input type="radio" disabled> Solo si un partido político lo solicita</label><label class="option"><input type="radio" disabled> Solo en países democraticos</label></div><div class="question"><h4>3. ¿Qué significa la independencia del Movimiento Scout?</h4><label class="option"><input type="radio" disabled> Que no coopera con ninguna otra organización</label><label class="option"><input type="radio" disabled> Que cada grupo scout hace lo que quiere</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Que la organización puede tomar decisiónes libremente sin interferencia externa, salvaguardando su identidad ✅</label><label class="option"><input type="radio" disabled> Que no recibe financiamiento de nadie</label></div><div class="question"><h4>4. ¿Qué debe pasar si una organización patrocinadora intenta controlar a una Organización Scout Nacional?</h4><label class="option"><input type="radio" disabled> Se debe aceptar porque proporcionan recursos</label><label class="option" style="border: 2px solid #4caf50; background: #e8f5e9;"><input type="radio" disabled> Se debe salvaguardar la identidad e independencia del Movimiento sin comprometer su propósito educativo ✅</label><label class="option"><input type="radio" disabled> Se debe romper toda relación inmediatamente</label><label class="option"><input type="radio" disabled> Se debe consultar a los miembros jóvenes</label></div>
+                <button class="btn" disabled>Verificar Respuestas</button>
+                <button class="btn hidden-preview" disabled>Obtener Certificado 🏆</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-page">
+        <div class="screen-label">🏆 PANTALLA 9: Certificado de Completación</div>
+        <div class="screen-frame">
+            <div class="screen-header">
+                <div class="screen-topbar">
+                    <span class="screen-topbar-logos">🏕️ ASC | VALLE</span>
+                    <span class="screen-topbar-link">← Volver al catálogo</span>
+                </div>
+                <div class="header">
+                    <h1>📖 Características Educativas del Movimiento Scout</h1>
+                    <div class="progress-container"><div class="progress-bar" style="width: 100%;"></div><div class="progress-text">100%</div></div>
+                </div>
+            </div>
+            <div class="screen-body">
+                <div class="certificate">
+                    <h2>🏆 ¡FELICITACIONES!</h2>
+                    <h3>Certificado de Completación</h3>
+                    <h2 style="color: #1a4b6b; margin: 20px 0;">CARACTERÍSTICAS EDUCATIVAS DEL MOVIMIENTO SCOUT</h2>
+                    <p style="font-size: 1.1rem; margin: 20px 0;">Certificamos que</p>
+                    <h3 style="color: #ffc107; font-size: 1.8rem; margin: 15px 0;">[Nombre del Estudiante]</h3>
+                    <p style="margin: 20px 0;">ha completado éxitosamente el curso de Características Educativas del Movimiento Scout, demostrando conocimiento sobre el propósito, método, valores y principios que definen al escultismo mundial</p>
+                    <div class="certificate-code">
+                        Código de Verificación: <strong>ASC-2025-XXXXX</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 30px; font-size: 0.9rem;">
+                        <div style="text-align: left;">
+                            <p><strong>Fecha:</strong> DD/MM/AAAA</p>
+                            <p><strong>Duración:</strong> XX minutos</p>
+                            <p><strong>Grupo Scout:</strong> Grupo XX</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <p><strong>Puntuación:</strong> XX%</p>
+                            <p><strong>Estado:</strong> APROBADO ✅</p>
+                            <p><strong>Región:</strong> Valle del Cauca</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🎯 Logros Desbloqueados</h3>
+                <div class="achievements"><div class="achievement earned">🎯 Educador Consciente</div><div class="achievement earned">🧠 Maestro del Aprendizaje</div><div class="achievement earned">⚜️ Conocedor del Método</div><div class="achievement earned">⚖️ Guardian de los Valores</div><div class="achievement earned">🌍 Experto del Movimiento</div><div class="achievement earned">🏛️ Diplomatico Scout</div></div>
+
+                <div style="text-align: center; margin: 30px 0;">
+                    <button class="btn" disabled>📥 Descargar PDF</button>
+                    <button class="btn" disabled>🖨️ Imprimir Certificado</button>
+                    <button class="btn" disabled>📤 Compartir Logros</button>
+                    <button class="btn" disabled>🔄 Reiniciar Curso</button>
+                </div>
+
+                <div class="reflection-area">
+                    <h4>🎯 Compromiso Personal</h4>
+                    <p>Escribe tu compromiso como rover certificado para servir a las nuevas generaciones scouts:</p>
+                    <textarea placeholder="Mi compromiso como rover scout certificado es..." disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-watermark">PREVIEW — NO PUBLICADO</div>
+</body>
+</html>

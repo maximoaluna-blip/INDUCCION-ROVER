@@ -29,6 +29,9 @@
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="icon" type="image/png" href="../assets/logo-asc.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/dark-theme.css">
+    <!-- Early theme init para evitar FOUC en modo oscuro -->
+    <script>(function(){try{var t=localStorage.getItem('rover-theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
     <style>
 /* ============================================
    PLATAFORMA EDUCATIVA ROVER - ASC
@@ -1813,5 +1816,7 @@ setInterval(function () { if (currentModule > 0) { studyTime += 1; updateStats()
 setInterval(saveProgress, 60000);
 
     </script>
+
+    <script src="../assets/theme-toggle.js"></script>
 </body>
 </html>

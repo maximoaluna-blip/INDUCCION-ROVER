@@ -1327,31 +1327,86 @@ function recoverProgress() {
         })
         .then(function(data) {
             console.log('[Recovery] Data received:', data);
-            if (data && data.found) {
-                // Restore all progress data
-                if (data.userProfile) userProfile = data.userProfile;
-                if (data.moduleProgress) moduleProgress = data.moduleProgress;
-                if (data.quizScores) quizScores = data.quizScores;
-                if (data.studyTime) studyTime = data.studyTime;
-                if (data.reflections) reflections = data.reflections;
 
-                // Restore reflections to textareas
-                Object.keys(reflections).forEach(function(k) {
-                    var ta = document.getElementById('reflection-' + k);
-                    if (ta) ta.value = reflections[k];
-                });
+            // El Apps Script devuelve: { success: true, data: { registration, modules, quizzes, certificates } }
+            var isFound = (data && data.found) || (data && data.success && data.data);
+
+            if (isFound) {
+                var serverData = data.data || data;
+                var reg = serverData.registration || data.userProfile || {};
+                var mods = serverData.modules || [];
+                var quizzes = serverData.quizzes || [];
+
+                // Reconstruir userProfile desde registration
+                if (reg.fullName || reg.name) {
+                    userProfile = {
+                        fullName: reg.fullName || reg.name || '',
+                        age: reg.age || '',
+                        group: reg.group || '',
+                        region: reg.region || '',
+                        email: reg.email || email,
+                        motivation: reg.motivation || '',
+                        registrationDate: reg.registrationDate || reg.timestamp || ''
+                    };
+                } else if (data.userProfile) {
+                    userProfile = data.userProfile;
+                }
+
+                // Reconstruir moduleProgress desde modules array
+                if (mods.length > 0) {
+                    moduleProgress = new Array(COURSE_CONFIG.totalModules).fill(false);
+                    mods.forEach(function(m) {
+                        var modNum = m.moduleCompleted || m.module;
+                        if (modNum !== undefined && modNum < moduleProgress.length) {
+                            moduleProgress[modNum] = true;
+                        }
+                    });
+                } else if (data.moduleProgress) {
+                    moduleProgress = data.moduleProgress;
+                }
+
+                // Reconstruir quizScores desde quizzes array
+                if (quizzes.length > 0) {
+                    quizScores = [];
+                    quizzes.forEach(function(q) {
+                        var modNum = q.module;
+                        var score = q.score;
+                        if (modNum !== undefined && score !== undefined) {
+                            quizScores[modNum] = parseInt(score);
+                        }
+                    });
+                } else if (data.quizScores) {
+                    quizScores = data.quizScores;
+                }
+
+                // StudyTime y reflections (si vienen directamente)
+                if (data.studyTime) studyTime = data.studyTime;
+                if (data.reflections) {
+                    reflections = data.reflections;
+                    Object.keys(reflections).forEach(function(k) {
+                        var ta = document.getElementById('reflection-' + k);
+                        if (ta) ta.value = reflections[k];
+                    });
+                }
 
                 saveProgress();
                 updateStats();
                 updateProgress();
 
+                // Determinar último módulo completado
                 var lastModule = data.currentModule || 0;
-                var firstName = userProfile.fullName ? userProfile.fullName.split(' ')[0] : 'Scout';
+                if (!lastModule && moduleProgress.length > 0) {
+                    for (var i = moduleProgress.length - 1; i >= 0; i--) {
+                        if (moduleProgress[i]) { lastModule = i + 1; break; }
+                    }
+                }
 
+                var firstName = userProfile.fullName ? userProfile.fullName.split(' ')[0] : 'Scout';
                 var welcomeEl = document.getElementById('welcomeName');
                 if (welcomeEl) welcomeEl.textContent = firstName;
 
-                showNotification('¡Avance recuperado exitosamente, ' + firstName + '! 🎉');
+                var completedCount = moduleProgress.filter(Boolean).length;
+                showNotification('¡Avance recuperado, ' + firstName + '! ' + completedCount + ' módulos completados 🎉');
                 showModule(lastModule > 0 ? lastModule : 1);
             } else {
                 var reason = (data && data.message) ? data.message : 'No se encontro avance asociado a este correo.';

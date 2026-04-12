@@ -4,7 +4,7 @@
   "subtitle": "Formación para Rovers - Sinodales y Ayudantes",
   "description": "Curso sobre las características educativas que definen al Movimiento Scout: su propósito, el Método Scout con sus 8 elementos, el sistema de valores y los principios que lo hacen único como movimiento juvenil mundial.",
   "icon": "📖",
-  "duration": "6 horas",
+  "duration": "2 horas",
   "totalContentModules": 6,
   "modules": [
     {
@@ -41,7 +41,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Duración estimada:</strong> 6 horas de estudio (aproximadamente 50 minutos por módulo).<br><strong>Evaluación:</strong> Cada módulo incluye una reflexión personal y una evaluación con mínimo 70% de aciertos para avanzar."
+          "text": "<strong>Duración estimada:</strong> 2 horas de estudio (aproximadamente 15-20 minutos por módulo).<br><strong>Evaluación:</strong> Cada módulo incluye una reflexión personal y una evaluación con mínimo 70% de aciertos para avanzar."
         }
       ]
     },

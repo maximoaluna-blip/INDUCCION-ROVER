@@ -336,68 +336,94 @@ function downloadCertificatePDF() {
 
     showNotification(mobile ? 'Generando PDF (puede tardar unos segundos)...' : 'Generando PDF...');
 
-    // Clonar certificado en contenedor controlado para forzar 1 página
+    // Clonar certificado en contenedor oculto con ancho fijo
     var wrapper = document.createElement('div');
-    wrapper.style.cssText = 'position:fixed;left:-9999px;top:0;width:650px;background:white;z-index:-1;';
+    wrapper.style.cssText = 'position:fixed;left:-9999px;top:0;width:600px;background:white;z-index:-1;';
     var clone = cert.cloneNode(true);
-    // Reset estilos que inflan el tamaño
-    clone.style.cssText = 'max-width:650px;width:650px;margin:0;padding:25px 30px;border:3px solid #622599;background:white;box-shadow:none;font-size:14px;position:relative;overflow:hidden;';
-    // Compactar h2, h3, p dentro del clon
-    clone.querySelectorAll('h2').forEach(function(el) { el.style.fontSize = '1.15em'; el.style.margin = '8px 0'; });
-    clone.querySelectorAll('h3').forEach(function(el) { el.style.fontSize = '1.1em'; el.style.margin = '6px 0'; });
-    clone.querySelectorAll('p').forEach(function(el) { if (!el.style.fontSize) el.style.fontSize = '0.85em'; });
+    clone.style.cssText = 'width:600px;max-width:600px;margin:0;padding:20px 25px;border:3px solid #622599;background:white;box-shadow:none;font-size:13px;position:relative;overflow:hidden;';
+    clone.querySelectorAll('h2').forEach(function(el) { el.style.fontSize = '1.1em'; el.style.margin = '6px 0'; });
+    clone.querySelectorAll('h3').forEach(function(el) { el.style.fontSize = '1em'; el.style.margin = '5px 0'; });
+    clone.querySelectorAll('p').forEach(function(el) { el.style.margin = el.style.margin || '3px 0'; });
+    clone.querySelectorAll('img').forEach(function(el) { el.style.height = '35px'; });
+    clone.querySelectorAll('hr').forEach(function(el) { el.style.margin = '6px 30px'; });
     wrapper.appendChild(clone);
     document.body.appendChild(wrapper);
 
-    var opt = {
-        margin:       [8, 8, 8, 8],
-        filename:     filename,
-        image:        { type: 'jpeg', quality: 0.95 },
-        html2canvas:  { scale: 2, useCORS: true, scrollY: 0, width: 650, windowWidth: 650 },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak:    { mode: ['avoid-all'] }
-    };
+    var canvasScale = mobile ? 1.5 : 2;
 
-    function cleanup() {
+    // Renderizar a canvas y escalar para que quepa en 1 página A4
+    html2canvas(clone, {
+        scale: canvasScale, useCORS: true, scrollY: 0,
+        width: 600, windowWidth: 600, backgroundColor: '#ffffff'
+    }).then(function(canvas) {
         if (wrapper.parentNode) document.body.removeChild(wrapper);
-    }
 
-    if (mobile) {
-        opt.html2canvas.scale = 1.5;
-        html2pdf().set(opt).from(clone).outputPdf('blob')
-            .then(function(blob) {
-                cleanup();
+        var imgData = canvas.toDataURL('image/jpeg', 0.95);
+
+        // A4: 210 x 297 mm, márgenes 10mm
+        var pageW = 210, pageH = 297, margin = 10;
+        var usableW = pageW - margin * 2;
+        var usableH = pageH - margin * 2;
+
+        // Convertir canvas px a mm: px / scale / 96 * 25.4
+        var imgWmm = canvas.width / canvasScale / 96 * 25.4;
+        var imgHmm = canvas.height / canvasScale / 96 * 25.4;
+
+        // Escalar para que quepa (nunca agrandar)
+        var ratio = Math.min(usableW / imgWmm, usableH / imgHmm, 1);
+        var finalW = imgWmm * ratio;
+        var finalH = imgHmm * ratio;
+
+        // Centrar en la página
+        var x = margin + (usableW - finalW) / 2;
+        var y = margin + (usableH - finalH) / 2;
+
+        // Crear PDF de 1 sola página
+        var JsPDF = (window.jspdf && window.jspdf.jsPDF) || (typeof jsPDF !== 'undefined' ? jsPDF : null);
+        if (!JsPDF) {
+            // Fallback: buscar en el bundle de html2pdf
+            try { JsPDF = html2pdf().then ? null : null; } catch(e) {}
+        }
+
+        if (JsPDF) {
+            var pdf = new JsPDF('p', 'mm', 'a4');
+            pdf.addImage(imgData, 'JPEG', x, y, finalW, finalH);
+
+            if (mobile) {
+                var blob = pdf.output('blob');
                 var url = URL.createObjectURL(blob);
                 var link = document.createElement('a');
-                link.href = url;
-                link.download = filename;
-                link.target = '_blank';
-                document.body.appendChild(link);
-                link.click();
-                setTimeout(function() {
-                    document.body.removeChild(link);
-                    URL.revokeObjectURL(url);
-                }, 5000);
-                showNotification('PDF generado: ' + filename + ' 📥');
-            })
-            .catch(function(err) {
-                cleanup();
-                console.error('Error PDF móvil:', err);
-                showNotification('Error generando PDF. Intenta con Imprimir.', 'warning');
-                if (confirm('¿Deseas usar la opción de Imprimir?')) { window.print(); }
-            });
-    } else {
-        html2pdf().set(opt).from(clone).save()
-            .then(function() {
-                cleanup();
+                link.href = url; link.download = filename; link.target = '_blank';
+                document.body.appendChild(link); link.click();
+                setTimeout(function() { document.body.removeChild(link); URL.revokeObjectURL(url); }, 5000);
+            } else {
+                pdf.save(filename);
+            }
+            showNotification('PDF descargado: ' + filename + ' 📥');
+        } else {
+            // Fallback si no se encuentra jsPDF: usar html2pdf normal con imagen ya escalada
+            var fallbackDiv = document.createElement('div');
+            fallbackDiv.style.cssText = 'width:190mm;background:white;';
+            var img = document.createElement('img');
+            img.src = imgData;
+            img.style.cssText = 'width:100%;height:auto;';
+            fallbackDiv.appendChild(img);
+            document.body.appendChild(fallbackDiv);
+            html2pdf().set({
+                margin: [10,10,10,10], filename: filename,
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak: { mode: ['avoid-all'] }
+            }).from(fallbackDiv).save().then(function() {
+                document.body.removeChild(fallbackDiv);
                 showNotification('PDF descargado: ' + filename + ' 📥');
-            })
-            .catch(function(err) {
-                cleanup();
-                console.error('Error PDF:', err);
-                showNotification('Error al generar PDF. Intenta con Imprimir.', 'warning');
             });
-    }
+        }
+    }).catch(function(err) {
+        if (wrapper.parentNode) document.body.removeChild(wrapper);
+        console.error('Error PDF:', err);
+        showNotification('Error al generar PDF. Intenta con Imprimir.', 'warning');
+        if (confirm('¿Deseas usar la opción de Imprimir?')) { window.print(); }
+    });
 }
 
 // --- Compartir ---

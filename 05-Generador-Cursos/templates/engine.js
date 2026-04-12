@@ -405,6 +405,84 @@ function restartCourse() {
     }
 }
 
+// --- Registration mode toggle ---
+function toggleRegistrationMode(mode) {
+    var newRegBtn = document.getElementById('toggleNewReg');
+    var recoverBtn = document.getElementById('toggleRecover');
+    var recoverySection = document.getElementById('recoverySection');
+    var registrationForm = document.getElementById('registrationForm');
+
+    if (mode === 'recover') {
+        newRegBtn.classList.remove('active');
+        recoverBtn.classList.add('active');
+        recoverySection.classList.remove('hidden');
+        registrationForm.style.display = 'none';
+    } else {
+        newRegBtn.classList.add('active');
+        recoverBtn.classList.remove('active');
+        recoverySection.classList.add('hidden');
+        registrationForm.style.display = '';
+    }
+}
+
+// --- Recovery from server ---
+function recoverProgress() {
+    var emailInput = document.getElementById('recoveryEmail');
+    var email = emailInput.value.trim();
+    var msgDiv = document.getElementById('recoveryMessage');
+
+    if (!email) {
+        showNotification('⚠️ Ingresa tu correo electronico', 'warning');
+        return;
+    }
+
+    msgDiv.style.display = 'block';
+    msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">🔄 Buscando tu avance...</p>';
+
+    var url = COURSE_CONFIG.googleScriptUrl + '?action=recover&email=' + encodeURIComponent(email) + '&token=ROVER_ASC_2025';
+
+    fetch(url)
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+            if (data && data.found) {
+                // Restore all progress data
+                if (data.userProfile) userProfile = data.userProfile;
+                if (data.moduleProgress) moduleProgress = data.moduleProgress;
+                if (data.quizScores) quizScores = data.quizScores;
+                if (data.studyTime) studyTime = data.studyTime;
+                if (data.reflections) reflections = data.reflections;
+
+                // Restore reflections to textareas
+                Object.keys(reflections).forEach(function(k) {
+                    var ta = document.getElementById('reflection-' + k);
+                    if (ta) ta.value = reflections[k];
+                });
+
+                saveProgress();
+                updateStats();
+                updateProgress();
+
+                var lastModule = data.currentModule || 0;
+                var firstName = userProfile.fullName ? userProfile.fullName.split(' ')[0] : 'Scout';
+
+                var welcomeEl = document.getElementById('welcomeName');
+                if (welcomeEl) welcomeEl.textContent = firstName;
+
+                showNotification('¡Avance recuperado exitosamente, ' + firstName + '! 🎉');
+                showModule(lastModule > 0 ? lastModule : 1);
+            } else {
+                msgDiv.innerHTML = '<p style="color: #FF9800; font-weight: 600;">⚠️ No se encontro avance asociado a este correo.</p>' +
+                    '<p style="color: #636363; margin-top: 10px;">Puedes registrarte como nuevo usuario.</p>' +
+                    '<button class="btn" style="margin-top: 10px;" onclick="toggleRegistrationMode(\'new\')">🆕 Registrarme</button>';
+            }
+        })
+        .catch(function(err) {
+            console.log('Error recovering progress:', err);
+            msgDiv.innerHTML = '<p style="color: #f44336; font-weight: 600;">❌ Error al conectar con el servidor.</p>' +
+                '<p style="color: #636363; margin-top: 10px;">Verifica tu conexion a internet e intenta de nuevo.</p>';
+        });
+}
+
 // --- Google Sheets ---
 function sendToGoogleSheets(data) {
     if (!COURSE_CONFIG.googleScriptUrl) return;
@@ -412,17 +490,53 @@ function sendToGoogleSheets(data) {
         var indicator = document.getElementById('syncIndicator');
         if (indicator) indicator.classList.add('show');
         var payload = Object.assign({}, data, {
+            token: 'ROVER_ASC_2025',
             timestamp: new Date().toISOString(),
             url: window.location.href
         });
+
+        // Try CORS first, fall back to no-cors
         fetch(COURSE_CONFIG.googleScriptUrl, {
-            method: 'POST', mode: 'no-cors',
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
-        }).then(function () {
-            setTimeout(function () { if (indicator) indicator.classList.remove('show'); }, 2000);
-        }).catch(function () { console.log('Datos guardados localmente'); });
-    } catch (e) { console.log('Datos guardados localmente (Google Sheets no disponible)'); }
+        }).then(function (response) {
+            if (indicator) {
+                indicator.textContent = '☁️ Guardado en la nube';
+                indicator.classList.add('show');
+                setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+            }
+            return response.json().catch(function() { return {}; });
+        }).catch(function () {
+            // Fallback to no-cors mode for older Apps Script deployments
+            fetch(COURSE_CONFIG.googleScriptUrl, {
+                method: 'POST', mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).then(function () {
+                if (indicator) {
+                    indicator.textContent = '☁️ Sincronizado con Google Sheets';
+                    indicator.classList.add('show');
+                    setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+                }
+            }).catch(function () {
+                if (indicator) {
+                    indicator.textContent = '💾 Guardado localmente';
+                    indicator.classList.add('show');
+                    setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+                }
+                console.log('Datos guardados localmente');
+            });
+        });
+    } catch (e) {
+        console.log('Datos guardados localmente (Google Sheets no disponible)');
+        var indicator = document.getElementById('syncIndicator');
+        if (indicator) {
+            indicator.textContent = '💾 Guardado localmente';
+            indicator.classList.add('show');
+            setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+        }
+    }
 }
 
 // --- Timers ---

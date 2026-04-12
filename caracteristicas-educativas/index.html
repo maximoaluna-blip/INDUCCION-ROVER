@@ -317,6 +317,18 @@ body {
     </style>
 </head>
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="logos">
+                <img src="../assets/logo-asc.png" alt="Asociacion Scouts de Colombia">
+                <div class="separator"></div>
+                <img src="../assets/logo-vallescout.png" alt="Scouts del Valle">
+            </div>
+            <a href="../index.html" class="back-link">&#8592; Volver a Cursos</a>
+        </div>
+    </div>
+
     <div class="sync-indicator" id="syncIndicator">☁️ Sincronizado con Google Sheets</div>
 
     <div class="container">
@@ -367,6 +379,24 @@ body {
                 <div class="info-box">
                     <strong>🎯 Objetivo del Curso:</strong><br>
                     Curso sobre las características educativas que definen al Movimiento Scout: su propósito, el Método Scout con sus 8 elementos, el sistema de valores y los principios que lo hacen único como movimiento juvenil mundial.
+                </div>
+
+                <div class="toggle-buttons">
+                    <button class="toggle-btn active" id="toggleNewReg" onclick="toggleRegistrationMode('new')">🆕 Nuevo Registro</button>
+                    <button class="toggle-btn" id="toggleRecover" onclick="toggleRegistrationMode('recover')">🔄 Recuperar mi Avance</button>
+                </div>
+
+                <div class="recovery-section hidden" id="recoverySection">
+                    <h3>🔄 Recuperar tu avance anterior</h3>
+                    <p style="color: #636363; margin-bottom: 15px;">Ingresa el correo electronico con el que te registraste para recuperar tu progreso.</p>
+                    <div class="form-group">
+                        <label for="recoveryEmail">Correo Electronico</label>
+                        <input type="email" id="recoveryEmail" placeholder="Ej: juan.perez@email.com" required>
+                    </div>
+                    <div style="text-align: center;">
+                        <button class="btn" onclick="recoverProgress()">🔍 Recuperar</button>
+                    </div>
+                    <div id="recoveryMessage" style="margin-top: 15px; text-align: center; display: none;"></div>
                 </div>
 
                 <form id="registrationForm" onsubmit="handleRegistration(event)">
@@ -1300,41 +1330,66 @@ body {
 
             <!-- MÓDULO 8: CERTIFICADO -->
             <div class="module" id="module-8">
-                <div class="certificate">
-                    <h2>🏆 ¡FELICITACIONES!</h2>
-                    <h3>Certificado de Completación</h3>
-                    <h2 style="color: #1a4b6b; margin: 20px 0;">CARACTERÍSTICAS EDUCATIVAS DEL MOVIMIENTO SCOUT</h2>
+                <div class="certificate" style="max-width: 700px; margin: 0 auto; background: white; border: 3px solid #622599; border-radius: 0; padding: 30px 35px; position: relative; overflow: hidden;">
+                    <!-- Decorative corners -->
+                    <div style="position: absolute; top: 0; left: 0; width: 60px; height: 60px; border-top: 4px solid #ffe675; border-left: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; border-top: 4px solid #ffe675; border-right: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 60px; height: 60px; border-bottom: 4px solid #ffe675; border-left: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; bottom: 0; right: 0; width: 60px; height: 60px; border-bottom: 4px solid #ffe675; border-right: 4px solid #ffe675;"></div>
 
-                    <p style="font-size: 1.1rem; margin: 20px 0;">Certificamos que</p>
-                    <h3 style="color: #ffc107; font-size: 1.8rem; margin: 15px 0;" id="studentName"></h3>
-                    <p style="margin: 20px 0;">ha completado éxitosamente el curso de Características Educativas del Movimiento Scout, demostrando conocimiento sobre el propósito, método, valores y principios que definen al escultismo mundial</p>
-
-                    <div class="certificate-code">
-                        Código de Verificación: <strong id="certCode">ASC-2024-XXXXX</strong>
+                    <!-- Header -->
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 10px;">
+                            <img src="../assets/logo-asc.png" alt="ASC" style="height: 45px;">
+                            <div style="width: 1px; height: 35px; background: #ddd;"></div>
+                            <img src="../assets/logo-vallescout.png" alt="Valle Scout" style="height: 45px;">
+                        </div>
+                        <p style="font-size: 0.75em; text-transform: uppercase; letter-spacing: 2px; color: #622599; font-weight: 600; margin: 5px 0;">Asociacion Scouts de Colombia</p>
+                        <p style="font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; color: #888; margin: 2px 0;">Regional Valle del Cauca</p>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; margin-top: 30px; font-size: 0.9rem;">
-                        <div style="text-align: left;">
-                            <p><strong>Fecha:</strong> <span id="certDate"></span></p>
-                            <p><strong>Duración:</strong> <span id="totalTime"></span> minutos</p>
-                            <p><strong>Grupo Scout:</strong> <span id="certGroup"></span></p>
-                        </div>
-                        <div style="text-align: right;">
-                            <p><strong>Puntuación:</strong> <span id="finalScore"></span>%</p>
-                            <p><strong>Estado:</strong> APROBADO ✅</p>
-                            <p><strong>Región:</strong> <span id="certRegion"></span></p>
-                        </div>
+                    <hr style="border: none; border-top: 2px solid #622599; margin: 10px 30px;">
+
+                    <!-- Title -->
+                    <div style="text-align: center; margin: 15px 0 10px;">
+                        <h2 style="color: #622599; font-size: 1.3em; letter-spacing: 2px; margin: 0;">CERTIFICADO DE APROBACION</h2>
                     </div>
 
-                    <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #ddd;">
-                        <p style="font-size: 0.9em; color: #666;">
-                            Este certificado puede ser verificado contactando a la Asociación Scout de Colombia<br>
-                            con el código de verificación proporcionado.
-                        </p>
+                    <!-- Course name -->
+                    <div style="text-align: center; background: linear-gradient(135deg, #622599 0%, #3d1660 100%); color: white; padding: 10px 20px; margin: 10px 0;">
+                        <h3 style="font-size: 1.1em; letter-spacing: 1px; margin: 0; color: white;">CARACTERÍSTICAS EDUCATIVAS DEL MOVIMIENTO SCOUT</h3>
+                    </div>
+
+                    <!-- Body -->
+                    <div style="text-align: center; margin: 15px 0;">
+                        <p style="font-size: 0.9em; color: #636363; margin-bottom: 8px;">Se otorga el presente certificado a</p>
+                        <h3 style="color: #622599; font-size: 1.5em; margin: 8px 0; border-bottom: 2px solid #ffe675; display: inline-block; padding-bottom: 5px;" id="studentName"></h3>
+                        <p style="font-size: 0.85em; color: #636363; margin-top: 10px; line-height: 1.5;">ha completado éxitosamente el curso de Características Educativas del Movimiento Scout, demostrando conocimiento sobre el propósito, método, valores y principios que definen al escultismo mundial</p>
+                    </div>
+
+                    <!-- Details grid -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; margin: 15px 0; padding: 12px 15px; background: #f9f7fc; border-left: 3px solid #622599; font-size: 0.82em;">
+                        <p style="margin: 0;"><strong>Fecha:</strong> <span id="certDate"></span></p>
+                        <p style="margin: 0;"><strong>Puntuacion:</strong> <span id="finalScore"></span>%</p>
+                        <p style="margin: 0;"><strong>Grupo Scout:</strong> <span id="certGroup"></span></p>
+                        <p style="margin: 0;"><strong>Region:</strong> <span id="certRegion"></span></p>
+                        <p style="margin: 0;"><strong>Tiempo de estudio:</strong> <span id="totalTime"></span> min</p>
+                        <p style="margin: 0;"><strong>Estado:</strong> <span style="color: #2e7d32; font-weight: 700;">APROBADO ✅</span></p>
+                    </div>
+
+                    <!-- Verification code -->
+                    <div style="text-align: center; margin: 12px 0; padding: 8px; border: 1px dashed #622599; background: #faf8fd;">
+                        <p style="font-size: 0.75em; color: #888; margin: 0 0 3px;">Codigo de Verificacion</p>
+                        <strong style="font-size: 1em; color: #622599; letter-spacing: 2px;" id="certCode">ASC-2024-XXXXX</strong>
+                    </div>
+
+                    <!-- Footer -->
+                    <div style="text-align: center; margin-top: 12px;">
+                        <p style="font-size: 0.7em; color: #999;">Plataforma de Formacion Rover ASC | vallescout.org.co</p>
                     </div>
                 </div>
 
-                <h3>🎯 Logros Desbloqueados</h3>
+                <h3 style="margin-top: 30px;">🎯 Logros Desbloqueados</h3>
                 <div class="achievements">
                     <div class="achievement earned">🎯 Educador Consciente</div>
                     <div class="achievement earned">🧠 Maestro del Aprendizaje</div>
@@ -1786,6 +1841,84 @@ function restartCourse() {
     }
 }
 
+// --- Registration mode toggle ---
+function toggleRegistrationMode(mode) {
+    var newRegBtn = document.getElementById('toggleNewReg');
+    var recoverBtn = document.getElementById('toggleRecover');
+    var recoverySection = document.getElementById('recoverySection');
+    var registrationForm = document.getElementById('registrationForm');
+
+    if (mode === 'recover') {
+        newRegBtn.classList.remove('active');
+        recoverBtn.classList.add('active');
+        recoverySection.classList.remove('hidden');
+        registrationForm.style.display = 'none';
+    } else {
+        newRegBtn.classList.add('active');
+        recoverBtn.classList.remove('active');
+        recoverySection.classList.add('hidden');
+        registrationForm.style.display = '';
+    }
+}
+
+// --- Recovery from server ---
+function recoverProgress() {
+    var emailInput = document.getElementById('recoveryEmail');
+    var email = emailInput.value.trim();
+    var msgDiv = document.getElementById('recoveryMessage');
+
+    if (!email) {
+        showNotification('⚠️ Ingresa tu correo electronico', 'warning');
+        return;
+    }
+
+    msgDiv.style.display = 'block';
+    msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">🔄 Buscando tu avance...</p>';
+
+    var url = COURSE_CONFIG.googleScriptUrl + '?action=recover&email=' + encodeURIComponent(email) + '&token=ROVER_ASC_2025';
+
+    fetch(url)
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+            if (data && data.found) {
+                // Restore all progress data
+                if (data.userProfile) userProfile = data.userProfile;
+                if (data.moduleProgress) moduleProgress = data.moduleProgress;
+                if (data.quizScores) quizScores = data.quizScores;
+                if (data.studyTime) studyTime = data.studyTime;
+                if (data.reflections) reflections = data.reflections;
+
+                // Restore reflections to textareas
+                Object.keys(reflections).forEach(function(k) {
+                    var ta = document.getElementById('reflection-' + k);
+                    if (ta) ta.value = reflections[k];
+                });
+
+                saveProgress();
+                updateStats();
+                updateProgress();
+
+                var lastModule = data.currentModule || 0;
+                var firstName = userProfile.fullName ? userProfile.fullName.split(' ')[0] : 'Scout';
+
+                var welcomeEl = document.getElementById('welcomeName');
+                if (welcomeEl) welcomeEl.textContent = firstName;
+
+                showNotification('¡Avance recuperado exitosamente, ' + firstName + '! 🎉');
+                showModule(lastModule > 0 ? lastModule : 1);
+            } else {
+                msgDiv.innerHTML = '<p style="color: #FF9800; font-weight: 600;">⚠️ No se encontro avance asociado a este correo.</p>' +
+                    '<p style="color: #636363; margin-top: 10px;">Puedes registrarte como nuevo usuario.</p>' +
+                    '<button class="btn" style="margin-top: 10px;" onclick="toggleRegistrationMode(\'new\')">🆕 Registrarme</button>';
+            }
+        })
+        .catch(function(err) {
+            console.log('Error recovering progress:', err);
+            msgDiv.innerHTML = '<p style="color: #f44336; font-weight: 600;">❌ Error al conectar con el servidor.</p>' +
+                '<p style="color: #636363; margin-top: 10px;">Verifica tu conexion a internet e intenta de nuevo.</p>';
+        });
+}
+
 // --- Google Sheets ---
 function sendToGoogleSheets(data) {
     if (!COURSE_CONFIG.googleScriptUrl) return;
@@ -1793,17 +1926,53 @@ function sendToGoogleSheets(data) {
         var indicator = document.getElementById('syncIndicator');
         if (indicator) indicator.classList.add('show');
         var payload = Object.assign({}, data, {
+            token: 'ROVER_ASC_2025',
             timestamp: new Date().toISOString(),
             url: window.location.href
         });
+
+        // Try CORS first, fall back to no-cors
         fetch(COURSE_CONFIG.googleScriptUrl, {
-            method: 'POST', mode: 'no-cors',
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
-        }).then(function () {
-            setTimeout(function () { if (indicator) indicator.classList.remove('show'); }, 2000);
-        }).catch(function () { console.log('Datos guardados localmente'); });
-    } catch (e) { console.log('Datos guardados localmente (Google Sheets no disponible)'); }
+        }).then(function (response) {
+            if (indicator) {
+                indicator.textContent = '☁️ Guardado en la nube';
+                indicator.classList.add('show');
+                setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+            }
+            return response.json().catch(function() { return {}; });
+        }).catch(function () {
+            // Fallback to no-cors mode for older Apps Script deployments
+            fetch(COURSE_CONFIG.googleScriptUrl, {
+                method: 'POST', mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).then(function () {
+                if (indicator) {
+                    indicator.textContent = '☁️ Sincronizado con Google Sheets';
+                    indicator.classList.add('show');
+                    setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+                }
+            }).catch(function () {
+                if (indicator) {
+                    indicator.textContent = '💾 Guardado localmente';
+                    indicator.classList.add('show');
+                    setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+                }
+                console.log('Datos guardados localmente');
+            });
+        });
+    } catch (e) {
+        console.log('Datos guardados localmente (Google Sheets no disponible)');
+        var indicator = document.getElementById('syncIndicator');
+        if (indicator) {
+            indicator.textContent = '💾 Guardado localmente';
+            indicator.classList.add('show');
+            setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+        }
+    }
 }
 
 // --- Timers ---

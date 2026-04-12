@@ -1129,37 +1129,62 @@ body {
 
             <!-- MÓDULO 8: CERTIFICADO -->
             <div class="module" id="module-8">
-                <div class="certificate">
-                    <h2>🏆 ¡FELICITACIONES!</h2>
-                    <h3>Certificado de Completación</h3>
-                    <h2 style="color: #1a4b6b; margin: 20px 0;">FUNDAMENTOS DEL MOVIMIENTO SCOUT</h2>
+                <div class="certificate" style="max-width: 700px; margin: 0 auto; background: white; border: 3px solid #622599; border-radius: 0; padding: 30px 35px; position: relative; overflow: hidden;">
+                    <!-- Decorative corners -->
+                    <div style="position: absolute; top: 0; left: 0; width: 60px; height: 60px; border-top: 4px solid #ffe675; border-left: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; border-top: 4px solid #ffe675; border-right: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 60px; height: 60px; border-bottom: 4px solid #ffe675; border-left: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; bottom: 0; right: 0; width: 60px; height: 60px; border-bottom: 4px solid #ffe675; border-right: 4px solid #ffe675;"></div>
 
-                    <p style="font-size: 1.1rem; margin: 20px 0;">Certificamos que</p>
-                    <h3 style="color: #ffc107; font-size: 1.8rem; margin: 15px 0;" id="studentName"></h3>
-                    <p style="margin: 20px 0;">ha completado exitosamente el curso de Historia y Características Esenciales del Movimiento Scout, demostrando comprensión profunda de los fundamentos necesarios para servir como sinodal/ayudante en las ramas de manada y tropa.</p>
-
-                    <div class="certificate-code">
-                        Código de Verificación: <strong id="certCode">ASC-2024-XXXXX</strong>
+                    <!-- Header -->
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 10px;">
+                            <img src="assets/logo-asc.png" alt="ASC" style="height: 45px;">
+                            <div style="width: 1px; height: 35px; background: #ddd;"></div>
+                            <img src="assets/logo-vallescout.png" alt="Valle Scout" style="height: 45px;">
+                        </div>
+                        <p style="font-size: 0.75em; text-transform: uppercase; letter-spacing: 2px; color: #622599; font-weight: 600; margin: 5px 0;">Asociacion Scouts de Colombia</p>
+                        <p style="font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; color: #888; margin: 2px 0;">Regional Valle del Cauca</p>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; margin-top: 30px; font-size: 0.9rem;">
-                        <div style="text-align: left;">
-                            <p><strong>Fecha:</strong> <span id="certDate"></span></p>
-                            <p><strong>Duración:</strong> <span id="totalTime"></span> minutos</p>
-                            <p><strong>Grupo Scout:</strong> <span id="certGroup"></span></p>
-                        </div>
-                        <div style="text-align: right;">
-                            <p><strong>Puntuación:</strong> <span id="finalScore"></span>%</p>
-                            <p><strong>Estado:</strong> APROBADO ✅</p>
-                            <p><strong>Región:</strong> <span id="certRegion"></span></p>
-                        </div>
+                    <hr style="border: none; border-top: 2px solid #622599; margin: 10px 30px;">
+
+                    <!-- Title -->
+                    <div style="text-align: center; margin: 15px 0 10px;">
+                        <h2 style="color: #622599; font-size: 1.3em; letter-spacing: 2px; margin: 0;">CERTIFICADO DE APROBACION</h2>
                     </div>
 
-                    <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #ddd;">
-                        <p style="font-size: 0.9em; color: #666;">
-                            Este certificado puede ser verificado contactando a la Asociación Scout de Colombia<br>
-                            con el código de verificación proporcionado.
-                        </p>
+                    <!-- Course name -->
+                    <div style="text-align: center; background: linear-gradient(135deg, #622599 0%, #3d1660 100%); color: white; padding: 10px 20px; margin: 10px 0;">
+                        <h3 style="font-size: 1.1em; letter-spacing: 1px; margin: 0; color: white;">FUNDAMENTOS DEL MOVIMIENTO SCOUT</h3>
+                    </div>
+
+                    <!-- Body -->
+                    <div style="text-align: center; margin: 15px 0;">
+                        <p style="font-size: 0.9em; color: #636363; margin-bottom: 8px;">Se otorga el presente certificado a</p>
+                        <h3 style="color: #622599; font-size: 1.5em; margin: 8px 0; border-bottom: 2px solid #ffe675; display: inline-block; padding-bottom: 5px;" id="studentName"></h3>
+                        <p style="font-size: 0.85em; color: #636363; margin-top: 10px; line-height: 1.5;">ha completado exitosamente el curso de Historia y Características Esenciales del Movimiento Scout, demostrando comprensión profunda de los fundamentos necesarios para servir como sinodal/ayudante en las ramas de manada y tropa.</p>
+                    </div>
+
+                    <!-- Details grid -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; margin: 15px 0; padding: 12px 15px; background: #f9f7fc; border-left: 3px solid #622599; font-size: 0.82em;">
+                        <p style="margin: 0;"><strong>Fecha:</strong> <span id="certDate"></span></p>
+                        <p style="margin: 0;"><strong>Puntuacion:</strong> <span id="finalScore"></span>%</p>
+                        <p style="margin: 0;"><strong>Grupo Scout:</strong> <span id="certGroup"></span></p>
+                        <p style="margin: 0;"><strong>Region:</strong> <span id="certRegion"></span></p>
+                        <p style="margin: 0;"><strong>Tiempo de estudio:</strong> <span id="totalTime"></span> min</p>
+                        <p style="margin: 0;"><strong>Estado:</strong> <span style="color: #2e7d32; font-weight: 700;">APROBADO ✅</span></p>
+                    </div>
+
+                    <!-- Verification code -->
+                    <div style="text-align: center; margin: 12px 0; padding: 8px; border: 1px dashed #622599; background: #faf8fd;">
+                        <p style="font-size: 0.75em; color: #888; margin: 0 0 3px;">Codigo de Verificacion</p>
+                        <strong style="font-size: 1em; color: #622599; letter-spacing: 2px;" id="certCode">ASC-2024-XXXXX</strong>
+                    </div>
+
+                    <!-- Footer -->
+                    <div style="text-align: center; margin-top: 12px;">
+                        <p style="font-size: 0.7em; color: #999;">Plataforma de Formacion Rover ASC | vallescout.org.co</p>
                     </div>
                 </div>
 

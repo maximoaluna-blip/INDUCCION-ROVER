@@ -1762,7 +1762,6 @@ function downloadCertificatePDF() {
     }
     if (typeof html2pdf === 'undefined') {
         showNotification('La librería de PDF no cargó. Verifica tu conexión a internet.');
-        // Fallback: ofrecer imprimir
         if (confirm('¿Deseas usar la opción de Imprimir en su lugar?')) { window.print(); }
         return;
     }
@@ -1773,22 +1772,38 @@ function downloadCertificatePDF() {
 
     showNotification(mobile ? 'Generando PDF (puede tardar unos segundos)...' : 'Generando PDF...');
 
-    // En móvil: scale menor para evitar problemas de memoria
+    // Clonar certificado en contenedor controlado para forzar 1 página
+    var wrapper = document.createElement('div');
+    wrapper.style.cssText = 'position:fixed;left:-9999px;top:0;width:650px;background:white;z-index:-1;';
+    var clone = cert.cloneNode(true);
+    // Reset estilos que inflan el tamaño
+    clone.style.cssText = 'max-width:650px;width:650px;margin:0;padding:25px 30px;border:3px solid #622599;background:white;box-shadow:none;font-size:14px;position:relative;overflow:hidden;';
+    // Compactar h2, h3, p dentro del clon
+    clone.querySelectorAll('h2').forEach(function(el) { el.style.fontSize = '1.15em'; el.style.margin = '8px 0'; });
+    clone.querySelectorAll('h3').forEach(function(el) { el.style.fontSize = '1.1em'; el.style.margin = '6px 0'; });
+    clone.querySelectorAll('p').forEach(function(el) { if (!el.style.fontSize) el.style.fontSize = '0.85em'; });
+    wrapper.appendChild(clone);
+    document.body.appendChild(wrapper);
+
     var opt = {
-        margin:       [10, 10, 10, 10],
+        margin:       [8, 8, 8, 8],
         filename:     filename,
-        image:        { type: 'jpeg', quality: mobile ? 0.92 : 0.98 },
-        html2canvas:  { scale: mobile ? 1.5 : 2, useCORS: true, letterRendering: true, scrollY: 0 },
+        image:        { type: 'jpeg', quality: 0.95 },
+        html2canvas:  { scale: 2, useCORS: true, scrollY: 0, width: 650, windowWidth: 650 },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak:    { mode: ['avoid-all'] }
     };
 
-    // En móvil usamos blob + open para mejor compatibilidad
+    function cleanup() {
+        if (wrapper.parentNode) document.body.removeChild(wrapper);
+    }
+
     if (mobile) {
-        html2pdf().set(opt).from(cert).outputPdf('blob')
+        opt.html2canvas.scale = 1.5;
+        html2pdf().set(opt).from(clone).outputPdf('blob')
             .then(function(blob) {
+                cleanup();
                 var url = URL.createObjectURL(blob);
-                // Intentar abrir en nueva pestaña (funciona en la mayoría de móviles)
                 var link = document.createElement('a');
                 link.href = url;
                 link.download = filename;
@@ -1802,17 +1817,19 @@ function downloadCertificatePDF() {
                 showNotification('PDF generado: ' + filename + ' 📥');
             })
             .catch(function(err) {
+                cleanup();
                 console.error('Error PDF móvil:', err);
                 showNotification('Error generando PDF. Intenta con Imprimir.', 'warning');
                 if (confirm('¿Deseas usar la opción de Imprimir?')) { window.print(); }
             });
     } else {
-        // En desktop: descarga directa
-        html2pdf().set(opt).from(cert).save()
+        html2pdf().set(opt).from(clone).save()
             .then(function() {
+                cleanup();
                 showNotification('PDF descargado: ' + filename + ' 📥');
             })
             .catch(function(err) {
+                cleanup();
                 console.error('Error PDF:', err);
                 showNotification('Error al generar PDF. Intenta con Imprimir.', 'warning');
             });

@@ -433,15 +433,16 @@
 
         function renderCatalog(courses) {
             var grid = document.getElementById('coursesGrid');
-            if (!courses || !courses.length) {
+            // Solo mostrar cursos activos o nuevos
+            var disponibles = (courses || []).filter(function(c) {
+                return c.status === 'active' || c.status === 'new';
+            });
+            if (!disponibles.length) {
                 grid.innerHTML = '<p style="color: #636363; grid-column: 1/-1; text-align: center;">No hay cursos disponibles por ahora.</p>';
                 return;
             }
-            grid.innerHTML = courses.map(renderCard).join('');
+            grid.innerHTML = disponibles.map(renderCard).join('');
 
-            var disponibles = courses.filter(function(c) {
-                return c.status === 'active' || c.status === 'new';
-            });
             var totalHoras = disponibles.reduce(function(sum, c) {
                 return sum + parseHours(c.duration);
             }, 0);

@@ -114,10 +114,6 @@ body {
     text-transform: uppercase; letter-spacing: 0.5px;
 }
 
-.module-time-indicator {
-    display: inline-block; margin-left: 10px; font-size: 0.8em;
-    color: #636363; font-weight: 400;
-}
 
 /* --- Content Blocks --- */
 .info-box {

@@ -20,10 +20,6 @@ window.addEventListener('DOMContentLoaded', function () {
     sessionStartTime = new Date();
     loadProgress();
     updateElapsedTime();
-    console.log('✅ Curso inicializado: ' + COURSE_CONFIG.title);
-    if (COURSE_CONFIG.googleScriptUrl) {
-        console.log('📊 Google Sheets configurado y listo');
-    }
 });
 
 window.addEventListener('beforeunload', function () {
@@ -420,7 +416,7 @@ function downloadCertificatePDF() {
         }
     }).catch(function(err) {
         if (wrapper.parentNode) document.body.removeChild(wrapper);
-        console.error('Error PDF:', err);
+        if (typeof console !== 'undefined') console.error('Error PDF:', err);
         showNotification('Error al generar PDF. Intenta con Imprimir.', 'warning');
         if (confirm('¿Deseas usar la opción de Imprimir?')) { window.print(); }
     });
@@ -487,16 +483,12 @@ function recoverProgress() {
         '&course=' + encodeURIComponent(COURSE_CONFIG.courseId) +
         '&token=ROVER_ASC_2025';
 
-    console.log('[Recovery] Fetching:', url);
-
     fetch(url, { redirect: 'follow' })
         .then(function(response) {
-            console.log('[Recovery] Response status:', response.status, response.ok);
             if (!response.ok) throw new Error('HTTP ' + response.status);
             return response.json();
         })
         .then(function(data) {
-            console.log('[Recovery] Data received:', data);
 
             // El Apps Script devuelve: { success: true, data: { registration, modules, quizzes, certificates } }
             var isFound = (data && data.found) || (data && data.success && data.data);
@@ -586,7 +578,7 @@ function recoverProgress() {
             }
         })
         .catch(function(err) {
-            console.error('[Recovery] Error:', err);
+            if (typeof console !== 'undefined') console.error('[Recovery] Error:', err);
             msgDiv.innerHTML = '<p style="color: #f44336; font-weight: 600;">❌ Error al conectar con el servidor.</p>' +
                 '<p style="color: #636363; margin-top: 10px;">Error: ' + err.message + '</p>' +
                 '<p style="color: #636363; margin-top: 5px;">Verifica tu conexion a internet e intenta de nuevo.</p>';
@@ -635,11 +627,11 @@ function sendToGoogleSheets(data) {
                     indicator.classList.add('show');
                     setTimeout(function () { indicator.classList.remove('show'); }, 2000);
                 }
-                console.log('Datos guardados localmente');
+                // Datos guardados localmente (fallback silencioso)
             });
         });
     } catch (e) {
-        console.log('Datos guardados localmente (Google Sheets no disponible)');
+        // Google Sheets no disponible, progreso guardado localmente
         var indicator = document.getElementById('syncIndicator');
         if (indicator) {
             indicator.textContent = '💾 Guardado localmente';
@@ -650,14 +642,12 @@ function sendToGoogleSheets(data) {
 }
 
 // --- Timers ---
-// Incrementar studyTime cada minuto (solo si esta en un modulo de contenido)
+// Incrementar studyTime cada minuto y guardar progreso (solo si esta en un modulo de contenido)
 setInterval(function () {
     if (currentModule > 0) {
         studyTime += 1;
         updateStats();
         updateElapsedTime();
     }
+    saveProgress();
 }, 60000);
-// Actualizar display de tiempo transcurrido cada 30 seg para fluidez
-setInterval(function () { updateElapsedTime(); }, 30000);
-setInterval(saveProgress, 60000);

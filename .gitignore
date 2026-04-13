@@ -4,5 +4,14 @@
 # Documentos fuente para el generador (temporales)
 05-Generador-Cursos/input/
 
+# Previews generados (temporales, se regeneran con preview-course.js)
+05-Generador-Cursos/previews/
+
 # Claude Code local settings
 .claude/settings.local.json
+.claude/launch.json
+
+# Archivos de sistema Windows
+*.lnk
+Thumbs.db
+Desktop.ini

@@ -503,8 +503,8 @@ ${certificateHtml}
 
     <div class="save-indicator" id="saveIndicator">💾 Guardando...</div>
 
-    <!-- html2pdf.js para descarga de certificado como PDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" integrity="sha512-MpDFIChbcXl2QgipQrt1VcPHMldRILetapBEmc2JMojp1Pco39RIxYFOiJKdYAD9r6Y4cFBLR0pJJEWdDB0PYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jsPDF para generar el certificado en una sola página A4 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
     // --- Configuracion del curso (generada automaticamente) ---

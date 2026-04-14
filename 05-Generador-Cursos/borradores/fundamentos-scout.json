@@ -45,7 +45,7 @@
       "sections": [
         {
           "type": "mission-box",
-          "text": "<h3>🌟 MISIÓN DEL MOVIMIENTO SCOUT</h3><blockquote style=\"font-size: 1.1rem; font-style: italic; text-align: center; margin: 20px 0; color: #1a4b6b;\">\"Contribuir a la educación de los jóvenes para que participen en la construcción de un mundo mejor, donde las personas se desarrollen plenamente y jueguen un papel constructivo en la sociedad.\"</blockquote>"
+          "text": "<h3>🌟 MISIÓN DEL MOVIMIENTO SCOUT</h3><blockquote style=\"font-size: 1.1rem; font-style: italic; text-align: center; margin: 20px 0; color: #1a4b6b;\">\"Contribuir a la educación de los jóvenes, mediante un sistema de valores basado en la Promesa y la Ley Scout, para ayudar a construir un mundo mejor donde las personas se sientan realizadas como individuos y asumen un papel constructivo en la sociedad.\"</blockquote>"
         },
         {
           "type": "heading",

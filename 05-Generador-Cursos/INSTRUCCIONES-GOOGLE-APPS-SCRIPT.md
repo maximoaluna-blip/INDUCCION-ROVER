@@ -302,11 +302,70 @@ Si necesitas cambiar el token (por ejemplo, por seguridad):
 
 ---
 
+## Backup automatico del Google Sheet
+
+El sistema incluye un modulo de backup automatico que crea una copia diaria del Google Sheet en tu Google Drive. Es **critico** activarlo: si el sheet se borra accidentalmente, los datos de los Rovers se perderian.
+
+### Que hace
+- Cada noche a las **2:00 AM** copia el sheet completo a una carpeta `Backups_Plataforma_Rover_ASC` en tu Drive.
+- Nombra cada copia con la fecha: `rover-backup-2026-04-25`.
+- Conserva los **ultimos 30 backups** y elimina automaticamente los mas antiguos.
+- Si falla, te envia un correo de alerta a la cuenta propietaria del script.
+
+### Instalacion (una sola vez)
+
+1. Abre el editor de Apps Script (Extensiones > Apps Script desde tu Sheet).
+2. Verifica que el codigo de `google-apps-script.js` ya incluye al final el bloque `BACKUP AUTOMATICO`. Si actualizaste solo desde el repo, copia el contenido completo del archivo nuevamente.
+3. En el menu desplegable de funciones (parte superior del editor), selecciona **`instalarTriggerBackup`**.
+4. Pulsa **Ejecutar**.
+5. Acepta los permisos solicitados:
+   - Acceso a tu Google Drive (para crear la carpeta y copias).
+   - Acceso a Gmail (para notificaciones de error).
+   - Acceso al Spreadsheet.
+6. Revisa el log (`Ver > Registros de ejecucion`). Debe decir:
+   `✅ Trigger instalado: backupAutomatico se ejecutara cada dia a las 2:00`
+7. Verifica el trigger: en el panel izquierdo del editor, click en el icono de reloj. Debes ver `backupAutomatico` programado diariamente.
+
+### Hacer un backup manual ahora mismo
+
+1. En el editor, selecciona la funcion **`backupAutomatico`** y pulsa **Ejecutar**.
+2. Revisa el log: vera el URL del backup recien creado.
+3. Abre tu Drive y busca la carpeta `Backups_Plataforma_Rover_ASC` para confirmar.
+
+### Listar backups existentes
+
+Ejecuta la funcion **`listarBackups`** desde el editor. El log mostrara todos los backups con fecha, tamano y URL.
+
+### Restaurar desde un backup
+
+Si necesitas restaurar (caso de borrado accidental):
+1. Abre la carpeta `Backups_Plataforma_Rover_ASC` en Drive.
+2. Click derecho sobre el backup deseado > **Hacer una copia** o **Mover** al lugar del sheet original.
+3. Asegurate de que el sheet restaurado tenga el mismo `Id` o actualiza la implementacion del Web App si cambio.
+
+### Desinstalar
+
+Ejecuta la funcion **`eliminarTriggerBackup`** una sola vez. Detendra todos los backups automaticos. Las copias ya creadas se mantienen en Drive.
+
+### Configuracion
+
+En la parte superior del bloque de backup en `google-apps-script.js` puedes ajustar:
+
+| Variable | Valor por defecto | Descripcion |
+|----------|-------------------|-------------|
+| `BACKUP_FOLDER_NAME` | `Backups_Plataforma_Rover_ASC` | Nombre de la carpeta en Drive |
+| `BACKUP_RETENTION_DAYS` | `30` | Cuantos dias conservar backups |
+| `BACKUP_HOUR` | `2` | Hora del dia en que se ejecuta (0-23) |
+| `BACKUP_FILENAME_PREFIX` | `rover-backup-` | Prefijo del nombre de cada copia |
+
+---
+
 ## Resumen de archivos
 
 | Archivo | Ubicacion | Funcion |
 |---------|-----------|---------|
-| `google-apps-script.js` | `05-Generador-Cursos/` | Codigo backend para Google Apps Script |
+| `google-apps-script.js` | `05-Generador-Cursos/` | Codigo backend para Google Apps Script (incluye backup) |
+| `backup-automatico.js` | `05-Generador-Cursos/` | Modulo standalone de backup (referencia) |
 | `INSTRUCCIONES-GOOGLE-APPS-SCRIPT.md` | `05-Generador-Cursos/` | Este documento de instrucciones |
 | `build-course.js` | `05-Generador-Cursos/` | Generador de HTML para cursos |
 | `templates/engine.js` | `05-Generador-Cursos/templates/` | Motor JavaScript del frontend |

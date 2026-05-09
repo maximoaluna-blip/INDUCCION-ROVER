@@ -59,9 +59,20 @@ function showModule(moduleIndex) {
         showNotification('⚠️ Debes completar el registro primero', 'warning');
         return;
     }
+    // Pause and unload videos in the previously active module to free memory
+    document.querySelectorAll('.module.active video[data-src]').forEach(function (v) {
+        try { v.pause(); } catch (e) {}
+        if (v.src) { v.removeAttribute('src'); v.load(); }
+    });
     document.querySelectorAll('.module').forEach(function (m) { m.classList.remove('active'); });
     var target = document.getElementById('module-' + moduleIndex);
-    if (target) target.classList.add('active');
+    if (target) {
+        target.classList.add('active');
+        // Lazy-load videos in the now-active module: copy data-src to src
+        target.querySelectorAll('video[data-src]').forEach(function (v) {
+            if (!v.src) { v.src = v.getAttribute('data-src'); }
+        });
+    }
 
     document.querySelectorAll('.nav-btn').forEach(function (btn, index) {
         btn.classList.remove('active');

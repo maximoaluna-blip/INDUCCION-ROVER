@@ -129,6 +129,14 @@ function renderSection(section) {
             return `<div class="method-elements">\n                    ${mItems}\n                </div>`;
         case 'course-objectives':
             return `<h3>🎯 Objetivos del Curso</h3>\n` + renderSection({ type: 'list', ordered: false, items: section.items });
+        case 'video':
+            const caption = section.caption ? `<p class="video-caption" style="text-align:center;font-style:italic;color:#555;margin-top:8px;">${section.caption}</p>` : '';
+            const poster = section.poster ? ` poster="${section.poster}"` : '';
+            return `<div class="video-container" style="margin:20px 0;">
+                    <video controls preload="none" data-src="${section.src}" style="width:100%;max-width:800px;display:block;margin:0 auto;border-radius:8px;background:#000;"${poster}>
+                        Tu navegador no soporta video HTML5.
+                    </video>${caption}
+                </div>`;
         default:
             return `<p>${section.text || ''}</p>`;
     }

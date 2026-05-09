@@ -360,12 +360,56 @@ En la parte superior del bloque de backup en `google-apps-script.js` puedes ajus
 
 ---
 
+## Despliegue automatico con clasp (recomendado)
+
+A partir de mayo 2026 el backend se sincroniza con `clasp`, la CLI oficial de Google
+Apps Script. Esto evita el copy-paste manual del editor cada vez que cambia el codigo.
+
+### Instalacion (una sola vez)
+
+```powershell
+# 1. Permitir scripts de PowerShell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+# 2. Instalar clasp
+npm install -g @google/clasp
+
+# 3. Habilitar la API de Apps Script en tu cuenta Google:
+#    https://script.google.com/home/usersettings  →  toggle ON
+
+# 4. Login con la cuenta propietaria del Sheet
+clasp login
+```
+
+### Workflow para cambios futuros
+
+```powershell
+cd 05-Generador-Cursos\apps-script
+# (edita Código.js con tu editor)
+clasp push      # sube el codigo al editor de Apps Script
+clasp deploy    # opcional: crea nueva version del Web App
+```
+
+Mas detalles en `05-Generador-Cursos/apps-script/README.md`.
+
+### Cuando se sigue usando copy-paste manual
+
+Si por alguna razon no quieres usar clasp (computador nuevo sin Node, otra cuenta, etc.),
+el flujo viejo sigue funcionando: copia el contenido de `apps-script/Código.js` y
+pegalo en el editor de Apps Script web.
+
+---
+
 ## Resumen de archivos
 
 | Archivo | Ubicacion | Funcion |
 |---------|-----------|---------|
-| `google-apps-script.js` | `05-Generador-Cursos/` | Codigo backend para Google Apps Script (incluye backup) |
-| `backup-automatico.js` | `05-Generador-Cursos/` | Modulo standalone de backup (referencia) |
+| `apps-script/Código.js` | `05-Generador-Cursos/apps-script/` | **Codigo fuente canonico del backend (sincronizado via clasp)** |
+| `apps-script/appsscript.json` | `05-Generador-Cursos/apps-script/` | Manifiesto del proyecto Apps Script |
+| `apps-script/.clasp.json` | `05-Generador-Cursos/apps-script/` | Vinculo al Script ID en Google |
+| `apps-script/README.md` | `05-Generador-Cursos/apps-script/` | Workflow de clasp |
+| `google-apps-script.js` | `05-Generador-Cursos/` | (legacy) Copia plana del backend, misma fuente que `apps-script/Código.js` |
+| `backup-automatico.js` | `05-Generador-Cursos/` | Modulo standalone del backup (ya integrado en `Código.js`) |
 | `INSTRUCCIONES-GOOGLE-APPS-SCRIPT.md` | `05-Generador-Cursos/` | Este documento de instrucciones |
 | `build-course.js` | `05-Generador-Cursos/` | Generador de HTML para cursos |
 | `templates/engine.js` | `05-Generador-Cursos/templates/` | Motor JavaScript del frontend |

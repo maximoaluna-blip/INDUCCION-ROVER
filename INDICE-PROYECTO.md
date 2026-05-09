@@ -72,9 +72,14 @@ INDUCCION-ROVER/
 │   ├── fix-tildes.py                   ← Utilidad para corregir acentos en JSONs
 │   ├── course-schema.json              ← Esquema de referencia para cursos
 │   ├── course-schema.example.json      ← Ejemplo completo basado en curso existente
-│   ├── google-apps-script.js           ← Codigo fuente del backend Google Apps Script (incluye backup)
-│   ├── backup-automatico.js            ← Modulo standalone de backup nocturno (referencia)
-│   ├── INSTRUCCIONES-GOOGLE-APPS-SCRIPT.md ← Guia de configuracion del backend + backup
+│   ├── google-apps-script.js           ← (legacy) Copia plana del backend
+│   ├── backup-automatico.js            ← Modulo standalone de backup (ya en Código.js)
+│   ├── apps-script/                    ← Backend versionado y desplegable via clasp
+│   │   ├── Código.js                   ← Codigo canonico del backend (1634 lineas)
+│   │   ├── appsscript.json             ← Manifiesto Apps Script
+│   │   ├── .clasp.json                 ← Vinculo al Script ID
+│   │   └── README.md                   ← Workflow de clasp push / pull / deploy
+│   ├── INSTRUCCIONES-GOOGLE-APPS-SCRIPT.md ← Guia de configuracion del backend + backup + clasp
 │   ├── templates/
 │   │   ├── styles.css                  ← CSS compartido para todos los cursos generados
 │   │   └── engine.js                   ← Motor JS compartido (registro, quizzes, progreso, PDF)

@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamentos del Movimiento Scout - Curso para Rovers</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/png" href="../assets/logo-asc.png">
+    <link rel="stylesheet" href="../assets/dark-theme.css">
+    <!-- Early theme init para evitar FOUC en modo oscuro -->
+    <script>(function(){try{var t=localStorage.getItem('rover-theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
     <style>
 /* ============================================
    PLATAFORMA EDUCATIVA ROVER - ASC
    Identidad visual: vallescout.org.co
+   Montserrat | #622599 | #ffe675 | #00afef
    ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -34,10 +41,6 @@ body {
 .top-bar .logos { display: flex; align-items: center; gap: 15px; }
 .top-bar .logos img { height: 40px; }
 .top-bar .logos .separator { width: 1px; height: 30px; background: rgba(255,255,255,0.3); }
-.top-bar-title {
-    color: #ffffff; font-size: 0.85em; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 1px;
-}
 .top-bar a.back-link {
     color: #ffe675; text-decoration: none; font-size: 0.85em; font-weight: 600;
 }
@@ -123,6 +126,7 @@ body {
     text-transform: uppercase; letter-spacing: 0.5px;
 }
 
+
 /* --- Content Blocks --- */
 .info-box {
     background: #f3e8ff; border-left: 4px solid #622599;
@@ -165,6 +169,17 @@ body {
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     border-color: #622599; outline: none;
 }
+
+/* --- Registration Toggle --- */
+.toggle-buttons { display: flex; gap: 0; margin-bottom: 25px; }
+.toggle-btn {
+    flex: 1; padding: 12px; border: 2px solid #622599; background: #f2f5f7;
+    color: #622599; cursor: pointer; font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 14px; transition: all 0.3s; text-align: center;
+}
+.toggle-btn.active { background: #622599; color: white; }
+.toggle-btn:hover:not(.active) { background: #f3e8ff; }
+.recovery-section { margin-bottom: 20px; }
 
 /* --- Buttons --- */
 .btn {
@@ -234,6 +249,19 @@ body {
     margin: 25px auto; max-width: 400px; border: 2px dashed #622599;
 }
 
+/* --- Modal Overlay --- */
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6); z-index: 5000;
+    justify-content: center; align-items: center;
+}
+.modal-overlay.show { display: flex; }
+.modal-content {
+    background: white; padding: 40px; max-width: 450px; width: 90%;
+    text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.modal-content h3 { color: #622599; margin-bottom: 15px; }
+
 /* --- Indicators --- */
 .sync-indicator {
     position: fixed; top: 70px; right: 10px; background: #622599;
@@ -254,67 +282,12 @@ body {
     position: fixed; top: 80px; right: 20px; background: #622599;
     color: white; padding: 15px 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2); animation: slideIn 0.3s;
-    z-index: 2000; max-width: 400px; font-size: 0.9em; line-height: 1.4;
+    z-index: 2000; max-width: 400px;
 }
 @keyframes slideIn { from { transform: translateX(400px); } to { transform: translateX(0); } }
 @keyframes slideOut { from { transform: translateX(0); } to { transform: translateX(400px); } }
 
 .hidden { display: none !important; }
-
-/* --- Recovery & Toggle Buttons --- */
-.toggle-buttons {
-    display: flex; gap: 0; margin-bottom: 25px;
-    border: 2px solid #622599; overflow: hidden;
-}
-.toggle-btn {
-    flex: 1; padding: 12px 20px; background: #f2f5f7;
-    border: none; cursor: pointer; font-size: 15px;
-    font-family: 'Montserrat', sans-serif; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.5px;
-    color: #622599; transition: all 0.3s;
-}
-.toggle-btn:hover { background: #f3e8ff; }
-.toggle-btn.active { background: #622599; color: white; }
-
-.recovery-section {
-    background: #f3e8ff; border-left: 4px solid #622599;
-    padding: 25px; margin-bottom: 25px; animation: fadeIn 0.3s;
-}
-.recovery-section h3 { color: #622599; margin-bottom: 15px; font-weight: 700; }
-.recovery-section .form-group { margin-bottom: 15px; }
-
-/* --- Modal Overlay (Progress Summary) --- */
-.modal-overlay {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.6); z-index: 5000;
-    display: flex; align-items: center; justify-content: center;
-    animation: fadeIn 0.3s;
-}
-.modal-content {
-    background: white; padding: 40px; max-width: 450px; width: 90%;
-    text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    border-top: 4px solid #622599; animation: fadeIn 0.3s;
-}
-.modal-content h2 { color: #622599; margin-bottom: 15px; font-weight: 700; }
-.modal-content .modal-score {
-    font-size: 2em; font-weight: 700; color: #622599; margin: 10px 0;
-}
-.modal-content .modal-progress-bar {
-    background: #e0e0e0; height: 20px; margin: 15px 0; overflow: hidden;
-}
-.modal-content .modal-progress-fill {
-    background: linear-gradient(90deg, #622599, #8e44ad); height: 100%;
-    transition: width 0.5s ease;
-}
-.modal-content .modal-progress-text {
-    color: #636363; font-size: 0.95em; margin-bottom: 20px;
-}
-
-/* --- Time Per Module Indicator --- */
-.module-time-indicator {
-    display: inline-block; font-size: 0.8em; color: #636363;
-    margin-left: 8px; font-weight: 400;
-}
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
@@ -326,8 +299,8 @@ body {
     .method-elements { grid-template-columns: 1fr; }
     .stats { grid-template-columns: 1fr; }
     .certificate { padding: 20px; }
-    .top-bar-title { font-size: 0.75em; }
-    .top-bar img { height: 35px; }
+    .top-bar .logos img { height: 35px; }
+    .toggle-buttons { flex-direction: column; }
 }
 
 /* --- Print --- */
@@ -344,11 +317,11 @@ body {
     <div class="top-bar">
         <div class="top-bar-inner">
             <div class="logos">
-                <img src="assets/logo-asc.png" alt="Asociacion Scouts de Colombia">
+                <img src="../assets/logo-asc.png" alt="Asociacion Scouts de Colombia">
                 <div class="separator"></div>
-                <img src="assets/logo-vallescout.png" alt="Scouts del Valle">
+                <img src="../assets/logo-vallescout.png" alt="Scouts del Valle">
             </div>
-            <a href="pagina-principal-menu-cursos.html" class="back-link">&#8592; Volver a Cursos</a>
+            <a href="../index.html" class="back-link">&#8592; Volver a Cursos</a>
         </div>
     </div>
 
@@ -356,14 +329,14 @@ body {
 
     <div class="container">
         <div class="header">
-            <h1>Fundamentos del Movimiento Scout</h1>
-            <p>Formacion para Rovers - Sinodales y Ayudantes</p>
+            <h1>🏕️ Fundamentos del Movimiento Scout</h1>
+            <p>Formación para Rovers - Sinodales y Ayudantes</p>
             <div class="progress-container">
                 <div class="progress-bar" id="progressBar"></div>
                 <div class="progress-text" id="progressText">0%</div>
             </div>
             <p style="margin-top: 10px; font-size: 0.9em; color: #666;">
-                ⏱️ Tiempo estimado restante: <span id="timeRemaining">300 minutos</span>
+                ⏱️ Tiempo en el curso: <span id="elapsedTime">0 min</span>
             </p>
         </div>
 
@@ -536,9 +509,9 @@ body {
             <!-- MÓDULO 2: MISIÓN Y PROPÓSITO DEL MOVIMIENTO SCOUT -->
             <div class="module" id="module-2">
                 <h2>🎯 Misión y Propósito del Movimiento Scout</h2>
-                <div class="badge">Módulo 1/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
+                <div class="badge">Módulo 1/6</div>
 
-                <div class="mission-box"><h3>🌟 MISIÓN DEL MOVIMIENTO SCOUT</h3><blockquote style="font-size: 1.1rem; font-style: italic; text-align: center; margin: 20px 0; color: #1a4b6b;">"Contribuir a la educación de los jóvenes para que participen en la construcción de un mundo mejor, donde las personas se desarrollen plenamente y jueguen un papel constructivo en la sociedad."</blockquote></div>
+                <div class="mission-box"><h3>🌟 MISIÓN DEL MOVIMIENTO SCOUT</h3><blockquote style="font-size: 1.1rem; font-style: italic; text-align: center; margin: 20px 0; color: #1a4b6b;">"Contribuir a la educación de los jóvenes, mediante un sistema de valores basado en la Promesa y la Ley Scout, para ayudar a construir un mundo mejor donde las personas se sientan realizadas como individuos y asumen un papel constructivo en la sociedad."</blockquote></div>
 
                 <h3>¿Cómo logramos esta misión?</h3>
 
@@ -620,7 +593,7 @@ body {
             <!-- MÓDULO 3: MAFEKING - EL ORIGEN DEL MOVIMIENTO SCOUT -->
             <div class="module" id="module-3">
                 <h2>⛰️ Mafeking - El Origen del Movimiento Scout</h2>
-                <div class="badge">Módulo 2/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
+                <div class="badge">Módulo 2/6</div>
 
                 <h3>📅 El Sitio de Mafeking (1899-1900)</h3>
 
@@ -705,7 +678,7 @@ body {
             <!-- MÓDULO 4: BROWNSEA ISLAND - EL PRIMER CAMPAMENTO SCOUT -->
             <div class="module" id="module-4">
                 <h2>🏝️ Brownsea Island - El Primer Campamento Scout</h2>
-                <div class="badge">Módulo 3/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
+                <div class="badge">Módulo 3/6</div>
 
                 <h3>📅 1-9 de Agosto de 1907</h3>
 
@@ -810,7 +783,7 @@ body {
             <!-- MÓDULO 5: LA EXPANSIÓN MUNDIAL DEL MOVIMIENTO SCOUT -->
             <div class="module" id="module-5">
                 <h2>🌍 La Expansión Mundial del Movimiento Scout</h2>
-                <div class="badge">Módulo 4/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
+                <div class="badge">Módulo 4/6</div>
 
                 <h3>🚀 El Crecimiento Explosivo</h3>
 
@@ -910,7 +883,7 @@ body {
             <!-- MÓDULO 6: LOS 8 ELEMENTOS DEL MÉTODO SCOUT -->
             <div class="module" id="module-6">
                 <h2>⚙️ Los 8 Elementos del Método Scout</h2>
-                <div class="badge">Módulo 5/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
+                <div class="badge">Módulo 5/6</div>
 
                 <p>El Método Scout es un sistema educativo único que funciona a través de la interacción de 8 elementos esenciales. Como sinodal/ayudante, es fundamental que comprendas cómo aplicar cada uno.</p>
 
@@ -1003,7 +976,7 @@ body {
             <!-- MÓDULO 7: EL IMPACTO GLOBAL DEL MOVIMIENTO SCOUT -->
             <div class="module" id="module-7">
                 <h2>💫 El Impacto Global del Movimiento Scout</h2>
-                <div class="badge">Módulo 6/6</div><span class="module-time-indicator">⏱️ ~50 min</span>
+                <div class="badge">Módulo 6/6</div>
 
                 <h3>🌟 Más de 100 Años Transformando Vidas</h3>
 
@@ -1102,41 +1075,66 @@ body {
 
             <!-- MÓDULO 8: CERTIFICADO -->
             <div class="module" id="module-8">
-                <div class="certificate">
-                    <h2>🏆 ¡FELICITACIONES!</h2>
-                    <h3>Certificado de Completación</h3>
-                    <h2 style="color: #1a4b6b; margin: 20px 0;">FUNDAMENTOS DEL MOVIMIENTO SCOUT</h2>
+                <div class="certificate" style="max-width: 700px; margin: 0 auto; background: white; border: 3px solid #622599; border-radius: 0; padding: 30px 35px; position: relative; overflow: hidden;">
+                    <!-- Decorative corners -->
+                    <div style="position: absolute; top: 0; left: 0; width: 60px; height: 60px; border-top: 4px solid #ffe675; border-left: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; border-top: 4px solid #ffe675; border-right: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 60px; height: 60px; border-bottom: 4px solid #ffe675; border-left: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; bottom: 0; right: 0; width: 60px; height: 60px; border-bottom: 4px solid #ffe675; border-right: 4px solid #ffe675;"></div>
 
-                    <p style="font-size: 1.1rem; margin: 20px 0;">Certificamos que</p>
-                    <h3 style="color: #ffc107; font-size: 1.8rem; margin: 15px 0;" id="studentName"></h3>
-                    <p style="margin: 20px 0;">ha completado exitosamente el curso de Historia y Características Esenciales del Movimiento Scout, demostrando comprensión profunda de los fundamentos necesarios para servir como sinodal/ayudante en las ramas de manada y tropa.</p>
-
-                    <div class="certificate-code">
-                        Código de Verificación: <strong id="certCode">ASC-2024-XXXXX</strong>
+                    <!-- Header -->
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 10px;">
+                            <img src="../assets/logo-asc.png" alt="ASC" style="height: 45px;">
+                            <div style="width: 1px; height: 35px; background: #ddd;"></div>
+                            <img src="../assets/logo-vallescout.png" alt="Valle Scout" style="height: 45px;">
+                        </div>
+                        <p style="font-size: 0.75em; text-transform: uppercase; letter-spacing: 2px; color: #622599; font-weight: 600; margin: 5px 0;">Asociacion Scouts de Colombia</p>
+                        <p style="font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; color: #888; margin: 2px 0;">Regional Valle del Cauca</p>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; margin-top: 30px; font-size: 0.9rem;">
-                        <div style="text-align: left;">
-                            <p><strong>Fecha:</strong> <span id="certDate"></span></p>
-                            <p><strong>Duración:</strong> <span id="totalTime"></span> minutos</p>
-                            <p><strong>Grupo Scout:</strong> <span id="certGroup"></span></p>
-                        </div>
-                        <div style="text-align: right;">
-                            <p><strong>Puntuación:</strong> <span id="finalScore"></span>%</p>
-                            <p><strong>Estado:</strong> APROBADO ✅</p>
-                            <p><strong>Región:</strong> <span id="certRegion"></span></p>
-                        </div>
+                    <hr style="border: none; border-top: 2px solid #622599; margin: 10px 30px;">
+
+                    <!-- Title -->
+                    <div style="text-align: center; margin: 15px 0 10px;">
+                        <h2 style="color: #622599; font-size: 1.3em; letter-spacing: 2px; margin: 0;">CERTIFICADO DE APROBACION</h2>
                     </div>
 
-                    <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #ddd;">
-                        <p style="font-size: 0.9em; color: #666;">
-                            Este certificado puede ser verificado contactando a la Asociación Scout de Colombia<br>
-                            con el código de verificación proporcionado.
-                        </p>
+                    <!-- Course name -->
+                    <div style="text-align: center; background: linear-gradient(135deg, #622599 0%, #3d1660 100%); color: white; padding: 10px 20px; margin: 10px 0;">
+                        <h3 style="font-size: 1.1em; letter-spacing: 1px; margin: 0; color: white;">FUNDAMENTOS DEL MOVIMIENTO SCOUT</h3>
+                    </div>
+
+                    <!-- Body -->
+                    <div style="text-align: center; margin: 15px 0;">
+                        <p style="font-size: 0.9em; color: #636363; margin-bottom: 8px;">Se otorga el presente certificado a</p>
+                        <h3 style="color: #622599; font-size: 1.5em; margin: 8px 0; border-bottom: 2px solid #ffe675; display: inline-block; padding-bottom: 5px;" id="studentName"></h3>
+                        <p style="font-size: 0.85em; color: #636363; margin-top: 10px; line-height: 1.5;">ha completado exitosamente el curso de Historia y Características Esenciales del Movimiento Scout, demostrando comprensión profunda de los fundamentos necesarios para servir como sinodal/ayudante en las ramas de manada y tropa.</p>
+                    </div>
+
+                    <!-- Details grid -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; margin: 15px 0; padding: 12px 15px; background: #f9f7fc; border-left: 3px solid #622599; font-size: 0.82em;">
+                        <p style="margin: 0;"><strong>Fecha:</strong> <span id="certDate"></span></p>
+                        <p style="margin: 0;"><strong>Puntuacion:</strong> <span id="finalScore"></span>%</p>
+                        <p style="margin: 0;"><strong>Grupo Scout:</strong> <span id="certGroup"></span></p>
+                        <p style="margin: 0;"><strong>Region:</strong> <span id="certRegion"></span></p>
+                        <p style="margin: 0;"><strong>Tiempo de estudio:</strong> <span id="totalTime"></span> min</p>
+                        <p style="margin: 0;"><strong>Estado:</strong> <span style="color: #2e7d32; font-weight: 700;">APROBADO ✅</span></p>
+                    </div>
+
+                    <!-- Verification code -->
+                    <div style="text-align: center; margin: 12px 0; padding: 8px; border: 1px dashed #622599; background: #faf8fd;">
+                        <p style="font-size: 0.75em; color: #888; margin: 0 0 3px;">Codigo de Verificacion</p>
+                        <strong style="font-size: 1em; color: #622599; letter-spacing: 2px;" id="certCode">ASC-2024-XXXXX</strong>
+                    </div>
+
+                    <!-- Footer -->
+                    <div style="text-align: center; margin-top: 12px;">
+                        <p style="font-size: 0.7em; color: #999;">Plataforma de Formacion Rover ASC | vallescout.org.co</p>
                     </div>
                 </div>
 
-                <h3>🎯 Logros Desbloqueados</h3>
+                <h3 style="margin-top: 30px;">🎯 Logros Desbloqueados</h3>
                 <div class="achievements">
                     <div class="achievement earned">📚 Historiador Scout</div>
                     <div class="achievement earned">🎯 Conocedor de la Misión</div>
@@ -1146,6 +1144,7 @@ body {
                 </div>
 
                 <div style="text-align: center; margin: 30px 0;">
+                    <button class="btn" onclick="downloadCertificatePDF()">📥 Descargar PDF</button>
                     <button class="btn" onclick="window.print()">🖨️ Imprimir Certificado</button>
                     <button class="btn" onclick="shareResults()">📤 Compartir Logros</button>
                     <button class="btn" onclick="restartCourse()">🔄 Reiniciar Curso</button>
@@ -1160,21 +1159,10 @@ body {
         </div>
     </div>
 
-    <!-- Modal for progress summary between modules -->
-    <div class="modal-overlay hidden" id="moduleCompleteModal">
-        <div class="modal-content">
-            <h2 id="modalTitle">Modulo completado!</h2>
-            <div class="modal-score" id="modalScore"></div>
-            <p style="color: #636363; margin-bottom: 10px;">Puntuacion de la evaluacion</p>
-            <div class="modal-progress-bar">
-                <div class="modal-progress-fill" id="modalProgressFill" style="width: 0%"></div>
-            </div>
-            <p class="modal-progress-text" id="modalProgressText">Progreso total: 0%</p>
-            <button class="btn" id="modalContinueBtn" onclick="dismissModuleCompleteModal()">Continuar ➡️</button>
-        </div>
-    </div>
-
     <div class="save-indicator" id="saveIndicator">💾 Guardando...</div>
+
+    <!-- jsPDF para generar el certificado en una sola página A4 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
     // --- Configuracion del curso (generada automaticamente) ---
@@ -1202,100 +1190,22 @@ let moduleProgress = [];
 let quizScores = [];
 let startTime = new Date();
 let studyTime = 0;
+let sessionStartTime = null;
 let reflections = {};
 let userProfile = {};
 
 // --- Inicializacion ---
 window.addEventListener('DOMContentLoaded', function () {
     moduleProgress = new Array(COURSE_CONFIG.totalModules).fill(false);
+    sessionStartTime = new Date();
+    shuffleQuizOptions();
     loadProgress();
-    console.log('✅ Curso inicializado: ' + COURSE_CONFIG.title);
-    if (COURSE_CONFIG.googleScriptUrl) {
-        console.log('📊 Google Sheets configurado y listo');
-    }
+    updateElapsedTime();
 });
 
 window.addEventListener('beforeunload', function () {
     saveProgress();
 });
-
-// --- Registration mode toggle ---
-function toggleRegistrationMode(mode) {
-    var newRegBtn = document.getElementById('toggleNewReg');
-    var recoverBtn = document.getElementById('toggleRecover');
-    var recoverySection = document.getElementById('recoverySection');
-    var registrationForm = document.getElementById('registrationForm');
-
-    if (mode === 'recover') {
-        newRegBtn.classList.remove('active');
-        recoverBtn.classList.add('active');
-        recoverySection.classList.remove('hidden');
-        registrationForm.style.display = 'none';
-    } else {
-        newRegBtn.classList.add('active');
-        recoverBtn.classList.remove('active');
-        recoverySection.classList.add('hidden');
-        registrationForm.style.display = '';
-    }
-}
-
-// --- Recovery from server ---
-function recoverProgress() {
-    var emailInput = document.getElementById('recoveryEmail');
-    var email = emailInput.value.trim();
-    var msgDiv = document.getElementById('recoveryMessage');
-
-    if (!email) {
-        showNotification('⚠️ Ingresa tu correo electronico', 'warning');
-        return;
-    }
-
-    msgDiv.style.display = 'block';
-    msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">🔄 Buscando tu avance...</p>';
-
-    var url = COURSE_CONFIG.googleScriptUrl + '?action=recover&email=' + encodeURIComponent(email) + '&token=ROVER_ASC_2025';
-
-    fetch(url)
-        .then(function(response) { return response.json(); })
-        .then(function(data) {
-            if (data && data.found) {
-                // Restore all progress data
-                if (data.userProfile) userProfile = data.userProfile;
-                if (data.moduleProgress) moduleProgress = data.moduleProgress;
-                if (data.quizScores) quizScores = data.quizScores;
-                if (data.studyTime) studyTime = data.studyTime;
-                if (data.reflections) reflections = data.reflections;
-
-                // Restore reflections to textareas
-                Object.keys(reflections).forEach(function(k) {
-                    var ta = document.getElementById('reflection-' + k);
-                    if (ta) ta.value = reflections[k];
-                });
-
-                saveProgress();
-                updateStats();
-                updateProgress();
-
-                var lastModule = data.currentModule || 0;
-                var firstName = userProfile.fullName ? userProfile.fullName.split(' ')[0] : 'Scout';
-
-                var welcomeEl = document.getElementById('welcomeName');
-                if (welcomeEl) welcomeEl.textContent = firstName;
-
-                showNotification('¡Avance recuperado exitosamente, ' + firstName + '! 🎉');
-                showModule(lastModule > 0 ? lastModule : 1);
-            } else {
-                msgDiv.innerHTML = '<p style="color: #FF9800; font-weight: 600;">⚠️ No se encontro avance asociado a este correo.</p>' +
-                    '<p style="color: #636363; margin-top: 10px;">Puedes registrarte como nuevo usuario.</p>' +
-                    '<button class="btn" style="margin-top: 10px;" onclick="toggleRegistrationMode(\'new\')">🆕 Registrarme</button>';
-            }
-        })
-        .catch(function(err) {
-            console.log('Error recovering progress:', err);
-            msgDiv.innerHTML = '<p style="color: #f44336; font-weight: 600;">❌ Error al conectar con el servidor.</p>' +
-                '<p style="color: #636363; margin-top: 10px;">Verifica tu conexion a internet e intenta de nuevo.</p>';
-        });
-}
 
 // --- Registro ---
 function handleRegistration(event) {
@@ -1330,9 +1240,20 @@ function showModule(moduleIndex) {
         showNotification('⚠️ Debes completar el registro primero', 'warning');
         return;
     }
+    // Pause and unload videos in the previously active module to free memory
+    document.querySelectorAll('.module.active video[data-src]').forEach(function (v) {
+        try { v.pause(); } catch (e) {}
+        if (v.src) { v.removeAttribute('src'); v.load(); }
+    });
     document.querySelectorAll('.module').forEach(function (m) { m.classList.remove('active'); });
     var target = document.getElementById('module-' + moduleIndex);
-    if (target) target.classList.add('active');
+    if (target) {
+        target.classList.add('active');
+        // Lazy-load videos in the now-active module: copy data-src to src
+        target.querySelectorAll('video[data-src]').forEach(function (v) {
+            if (!v.src) { v.src = v.getAttribute('data-src'); }
+        });
+    }
 
     document.querySelectorAll('.nav-btn').forEach(function (btn, index) {
         btn.classList.remove('active');
@@ -1353,11 +1274,36 @@ function showModule(moduleIndex) {
 }
 
 // --- Sistema de evaluaciones ---
-function selectOption(element, questionIndex) {
+function selectOption(element, optionIndex) {
     var question = element.closest('.question');
-    question.querySelectorAll('.option').forEach(function (opt) { opt.classList.remove('selected'); });
+    // Limpiar marcas previas (selected, correct, incorrect) de TODAS las opciones de la pregunta:
+    // permite reintentar sin que queden colores fantasma de un intento anterior.
+    question.querySelectorAll('.option').forEach(function (opt) {
+        opt.classList.remove('selected', 'correct', 'incorrect');
+    });
     element.classList.add('selected');
-    element.setAttribute('data-selected-index', questionIndex);
+    element.setAttribute('data-selected-index', optionIndex);
+    // Si el boton "Verificar" estaba oculto tras un fallo, lo restauramos en cuanto el usuario cambia de opcion.
+    var quizContainer = element.closest('.quiz-container');
+    if (quizContainer) {
+        var checkBtn = quizContainer.querySelector('[id^="checkBtn-"]');
+        if (checkBtn) checkBtn.style.display = '';
+    }
+}
+
+// Baraja las opciones de cada pregunta una vez por sesion (Fisher-Yates).
+// Como cada <label class="option"> conserva su onclick="selectOption(this, oi)" con su indice original,
+// QUIZ_ANSWERS sigue siendo valido sin tocar build-course.js.
+function shuffleQuizOptions() {
+    document.querySelectorAll('.quiz-container .question').forEach(function (question) {
+        var options = Array.prototype.slice.call(question.querySelectorAll('.option'));
+        if (options.length < 2) return;
+        for (var i = options.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = options[i]; options[i] = options[j]; options[j] = tmp;
+        }
+        options.forEach(function (opt) { question.appendChild(opt); });
+    });
 }
 
 function checkQuiz(moduleNum) {
@@ -1405,28 +1351,13 @@ function checkQuiz(moduleNum) {
             module: moduleNum, score: score, course: COURSE_CONFIG.courseId
         });
     } else {
-        showNotification('Puntuación: ' + score + '%. Necesitas 70% para continuar. Revisa el contenido.', 'warning');
-        // Permitir reintentar sin recargar
-        setTimeout(function () {
-            questions.forEach(function (q) {
-                q.querySelectorAll('.option').forEach(function (opt) {
-                    opt.classList.remove('selected', 'correct', 'incorrect');
-                });
-            });
-            if (checkBtn) checkBtn.style.display = '';
-        }, 3000);
+        showNotification('Puntuación: ' + score + '%. Necesitas 70% para continuar. Revisa el contenido y vuelve a intentarlo.', 'warning');
+        // No auto-reset: en cuanto el usuario hace clic en una opcion, selectOption() limpia las marcas
+        // de esa pregunta y vuelve a mostrar el boton "Verificar". Esto evita que un reset por tiempo
+        // borrara la nueva seleccion del usuario antes de que pulsara verificar.
     }
     saveProgress();
 }
-
-// --- Module names for display ---
-var MODULE_NAMES = {
-    0: 'Registro', 1: 'Inicio', 2: 'Mision y Proposito',
-    3: 'Mafeking', 4: 'Brownsea Island', 5: 'Expansion Mundial',
-    6: 'Metodo Scout', 7: 'Impacto Global', 8: 'Certificado'
-};
-
-var pendingNextModule = null;
 
 function completeModule(moduleNum) {
     moduleProgress[moduleNum] = true;
@@ -1436,46 +1367,10 @@ function completeModule(moduleNum) {
     });
     var navBtns = document.querySelectorAll('.nav-btn');
     if (navBtns[moduleNum]) navBtns[moduleNum].classList.add('completed');
+    showModule(moduleNum + 1);
     saveProgress();
     updateProgress();
     updateStats();
-
-    // Show progress summary modal before navigating
-    var score = quizScores[moduleNum] || 0;
-    var completed = moduleProgress.filter(Boolean).length;
-    var total = COURSE_CONFIG.contentModules;
-    var pct = Math.round((completed / total) * 100);
-
-    var modalTitle = document.getElementById('modalTitle');
-    var modalScore = document.getElementById('modalScore');
-    var modalFill = document.getElementById('modalProgressFill');
-    var modalText = document.getElementById('modalProgressText');
-    var modal = document.getElementById('moduleCompleteModal');
-
-    var displayModuleNum = moduleNum - 1; // Modules 2-7 display as 1-6
-    if (modalTitle) modalTitle.textContent = 'Modulo ' + displayModuleNum + '/6 completado!';
-    if (modalScore) modalScore.textContent = score + '%';
-    if (modalFill) modalFill.style.width = pct + '%';
-    if (modalText) modalText.textContent = 'Progreso total: ' + pct + '% (' + completed + '/' + total + ' modulos)';
-
-    pendingNextModule = moduleNum + 1;
-    if (modal) modal.classList.remove('hidden');
-
-    // Auto-dismiss after 5 seconds
-    setTimeout(function() {
-        dismissModuleCompleteModal();
-    }, 5000);
-}
-
-function dismissModuleCompleteModal() {
-    var modal = document.getElementById('moduleCompleteModal');
-    if (modal && !modal.classList.contains('hidden')) {
-        modal.classList.add('hidden');
-        if (pendingNextModule !== null) {
-            showModule(pendingNextModule);
-            pendingNextModule = null;
-        }
-    }
 }
 
 // --- Progreso ---
@@ -1488,10 +1383,20 @@ function updateProgress() {
     if (bar) bar.style.width = pct + '%';
     if (text) text.textContent = pct + '%';
 
-    var remaining = total - completed;
-    var est = remaining * 50;
-    var timeEl = document.getElementById('timeRemaining');
-    if (timeEl) timeEl.textContent = est + ' minutos';
+    updateElapsedTime();
+}
+
+function updateElapsedTime() {
+    var timeEl = document.getElementById('elapsedTime');
+    if (!timeEl || !sessionStartTime) return;
+    var totalMinutes = studyTime;
+    if (totalMinutes < 60) {
+        timeEl.textContent = totalMinutes + ' min';
+    } else {
+        var hours = Math.floor(totalMinutes / 60);
+        var mins = totalMinutes % 60;
+        timeEl.textContent = hours + 'h ' + (mins < 10 ? '0' : '') + mins + 'min';
+    }
 }
 
 function updateStats() {
@@ -1535,14 +1440,7 @@ function loadProgress() {
             showModule(currentModule);
             var welcomeEl = document.getElementById('welcomeName');
             if (welcomeEl) welcomeEl.textContent = userProfile.fullName.split(' ')[0];
-
-            // Informative welcome-back message
-            var firstName = userProfile.fullName.split(' ')[0];
-            var moduleName = MODULE_NAMES[currentModule] || ('Modulo ' + currentModule);
-            var completedCount = moduleProgress.filter(Boolean).length;
-            var remaining = COURSE_CONFIG.contentModules - completedCount;
-            var welcomeMsg = '¡Bienvenido de vuelta, ' + firstName + '! Estas en el modulo ' + currentModule + ' - ' + moduleName + '. Te faltan ' + remaining + ' modulos para completar el curso.';
-            showNotification(welcomeMsg);
+            showNotification('¡Bienvenido de vuelta, ' + userProfile.fullName.split(' ')[0] + '! 👋');
         }
         Object.keys(reflections).forEach(function (k) {
             var ta = document.getElementById('reflection-' + k);
@@ -1588,7 +1486,7 @@ function saveCommitment(text) {
 // --- Certificado ---
 function generateCertificate() {
     var date = new Date();
-    var fallbackCode = 'ASC-' + date.getFullYear() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase();
+    var code = 'ASC-' + date.getFullYear() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase();
 
     var el = function (id) { return document.getElementById(id); };
     if (el('studentName')) el('studentName').textContent = userProfile.fullName || 'Rover Scout';
@@ -1596,58 +1494,289 @@ function generateCertificate() {
     if (el('totalTime')) el('totalTime').textContent = studyTime;
     if (el('certGroup')) el('certGroup').textContent = userProfile.group || 'N/A';
     if (el('certRegion')) el('certRegion').textContent = userProfile.region || 'Colombia';
+    if (el('certCode')) el('certCode').textContent = code;
 
     var avg = quizScores.length > 0 ? Math.round(quizScores.reduce(function (a, b) { return a + b; }, 0) / quizScores.length) : 100;
     if (el('finalScore')) el('finalScore').textContent = avg;
 
-    // Try to get certificate code from server
-    var certPayload = {
+    sendToGoogleSheets({
         action: 'certificate', name: userProfile.fullName, email: userProfile.email,
-        group: userProfile.group, region: userProfile.region,
+        group: userProfile.group, region: userProfile.region, certificateCode: code,
         completionDate: date.toISOString(), score: avg, studyTime: studyTime,
         course: COURSE_CONFIG.courseId
-    };
-
-    // Attempt server-side code generation
-    sendToGoogleSheetsWithResponse(certPayload)
-        .then(function(response) {
-            if (response && response.certificateCode) {
-                var serverCode = response.certificateCode;
-                if (el('certCode')) el('certCode').textContent = serverCode;
-                localStorage.setItem('certificate_' + serverCode, JSON.stringify({
-                    name: userProfile.fullName, code: serverCode, date: date.toISOString(),
-                    score: avg, course: COURSE_CONFIG.courseId
-                }));
-            } else {
-                // Use fallback code
-                if (el('certCode')) el('certCode').textContent = fallbackCode;
-                certPayload.certificateCode = fallbackCode;
-                sendToGoogleSheets(certPayload);
-                localStorage.setItem('certificate_' + fallbackCode, JSON.stringify({
-                    name: userProfile.fullName, code: fallbackCode, date: date.toISOString(),
-                    score: avg, course: COURSE_CONFIG.courseId
-                }));
-            }
-        })
-        .catch(function() {
-            // Fallback to client-side code
-            if (el('certCode')) el('certCode').textContent = fallbackCode;
-            certPayload.certificateCode = fallbackCode;
-            sendToGoogleSheets(certPayload);
-            localStorage.setItem('certificate_' + fallbackCode, JSON.stringify({
-                name: userProfile.fullName, code: fallbackCode, date: date.toISOString(),
-                score: avg, course: COURSE_CONFIG.courseId
-            }));
-        });
-
-    // Show fallback immediately (will be overwritten if server responds)
-    if (el('certCode')) el('certCode').textContent = fallbackCode;
+    });
 
     unlockAchievement('achievement-5');
     var bar = document.getElementById('progressBar');
     var text = document.getElementById('progressText');
     if (bar) bar.style.width = '100%';
     if (text) text.textContent = '100%';
+
+    localStorage.setItem('certificate_' + code, JSON.stringify({
+        name: userProfile.fullName, code: code, date: date.toISOString(),
+        score: avg, course: COURSE_CONFIG.courseId
+    }));
+}
+
+// --- Descargar certificado como PDF ---
+function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+        || (window.innerWidth <= 768);
+}
+
+// --- Utilidades internas para el PDF ---
+function _txt(id, fallback) {
+    var el = document.getElementById(id);
+    return el ? (el.textContent || '').trim() : (fallback || '');
+}
+
+function _imgToDataURL(imgEl) {
+    return new Promise(function(resolve) {
+        if (!imgEl) { resolve(null); return; }
+        try {
+            var canvas = document.createElement('canvas');
+            var w = imgEl.naturalWidth || imgEl.width || 200;
+            var h = imgEl.naturalHeight || imgEl.height || 200;
+            canvas.width = w; canvas.height = h;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(imgEl, 0, 0, w, h);
+            resolve({ data: canvas.toDataURL('image/png'), w: w, h: h });
+        } catch (e) { resolve(null); }
+    });
+}
+
+function _wrapText(pdf, text, maxWidth) {
+    return pdf.splitTextToSize(text || '', maxWidth);
+}
+
+function downloadCertificatePDF() {
+    var certModule = document.getElementById('module-' + (COURSE_CONFIG.totalModules - 1));
+    var cert = certModule ? certModule.querySelector('.certificate') : null;
+    if (!cert) {
+        showNotification('El certificado aún no está disponible.');
+        return;
+    }
+
+    // Localizar jsPDF (viene incluido en el bundle de html2pdf)
+    var JsPDF = (window.jspdf && window.jspdf.jsPDF) || (typeof jsPDF !== 'undefined' ? jsPDF : null);
+    if (!JsPDF) {
+        showNotification('La librería de PDF no cargó. Verifica tu conexión.');
+        if (confirm('¿Deseas usar la opción de Imprimir en su lugar?')) { window.print(); }
+        return;
+    }
+
+    var code = _txt('certCode', 'certificado');
+    var filename = 'Certificado-' + code + '.pdf';
+    var mobile = isMobileDevice();
+    showNotification('Generando PDF...');
+
+    // Datos del certificado
+    var student = _txt('studentName', 'Estudiante');
+    var date = _txt('certDate', '');
+    var score = _txt('finalScore', '');
+    var group = _txt('certGroup', '');
+    var region = _txt('certRegion', '');
+    var totalTime = _txt('totalTime', '');
+    var courseName = (COURSE_CONFIG.certificateCourseName || COURSE_CONFIG.title || '').toUpperCase();
+    var courseDescription = COURSE_CONFIG.certificateDescription ||
+        'ha completado exitosamente el curso de formación de la Plataforma Rover ASC';
+
+    // Cargar logos
+    var ascImg = cert.querySelector('img[src*="logo-asc"]');
+    var valleImg = cert.querySelector('img[src*="logo-vallescout"]');
+
+    Promise.all([_imgToDataURL(ascImg), _imgToDataURL(valleImg)]).then(function(logos) {
+        var logoASC = logos[0], logoValle = logos[1];
+
+        // A4 portrait: 210 x 297 mm
+        var pdf = new JsPDF('p', 'mm', 'a4');
+        var pageW = 210, pageH = 297;
+
+        // --- Marco morado exterior ---
+        pdf.setDrawColor(98, 37, 153);
+        pdf.setLineWidth(1.2);
+        pdf.rect(8, 8, pageW - 16, pageH - 16);
+
+        // --- Esquinas decorativas amarillas ---
+        pdf.setDrawColor(255, 230, 117);
+        pdf.setLineWidth(2);
+        var cs = 20; // corner size
+        // Top-left
+        pdf.line(8, 8, 8 + cs, 8);
+        pdf.line(8, 8, 8, 8 + cs);
+        // Top-right
+        pdf.line(pageW - 8, 8, pageW - 8 - cs, 8);
+        pdf.line(pageW - 8, 8, pageW - 8, 8 + cs);
+        // Bottom-left
+        pdf.line(8, pageH - 8, 8 + cs, pageH - 8);
+        pdf.line(8, pageH - 8, 8, pageH - 8 - cs);
+        // Bottom-right
+        pdf.line(pageW - 8, pageH - 8, pageW - 8 - cs, pageH - 8);
+        pdf.line(pageW - 8, pageH - 8, pageW - 8, pageH - 8 - cs);
+
+        var y = 30; // cursor vertical
+
+        // --- Logos ---
+        var logoH = 18;
+        var logoGap = 8;
+        var logoASCw = logoASC ? logoH * (logoASC.w / logoASC.h) : 0;
+        var logoValleW = logoValle ? logoH * (logoValle.w / logoValle.h) : 0;
+        var totalLogosW = logoASCw + logoGap + logoValleW;
+        var logosX = (pageW - totalLogosW) / 2;
+        if (logoASC) pdf.addImage(logoASC.data, 'PNG', logosX, y, logoASCw, logoH);
+        if (logoValle) pdf.addImage(logoValle.data, 'PNG', logosX + logoASCw + logoGap, y, logoValleW, logoH);
+        y += logoH + 6;
+
+        // --- Encabezado institucional ---
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(10);
+        pdf.setTextColor(98, 37, 153);
+        pdf.text('ASOCIACIÓN SCOUTS DE COLOMBIA', pageW / 2, y, { align: 'center' });
+        y += 5;
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(8);
+        pdf.setTextColor(120, 120, 120);
+        pdf.text('Regional Valle del Cauca', pageW / 2, y, { align: 'center' });
+        y += 5;
+
+        // --- Línea divisoria morada ---
+        pdf.setDrawColor(98, 37, 153);
+        pdf.setLineWidth(0.6);
+        pdf.line(40, y, pageW - 40, y);
+        y += 10;
+
+        // --- Título "CERTIFICADO DE APROBACIÓN" ---
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(22);
+        pdf.setTextColor(98, 37, 153);
+        pdf.text('CERTIFICADO DE APROBACIÓN', pageW / 2, y, { align: 'center' });
+        y += 12;
+
+        // --- Banner morado con nombre del curso ---
+        pdf.setFillColor(98, 37, 153);
+        pdf.rect(20, y, pageW - 40, 14, 'F');
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(13);
+        pdf.setTextColor(255, 255, 255);
+        var courseLines = _wrapText(pdf, courseName, pageW - 50);
+        if (courseLines.length > 1) {
+            pdf.setFontSize(11);
+        }
+        pdf.text(courseLines[0], pageW / 2, y + 9, { align: 'center' });
+        y += 20;
+
+        // --- "Se otorga a" ---
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(11);
+        pdf.setTextColor(99, 99, 99);
+        pdf.text('Se otorga el presente certificado a', pageW / 2, y, { align: 'center' });
+        y += 10;
+
+        // --- Nombre del estudiante ---
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(20);
+        pdf.setTextColor(98, 37, 153);
+        pdf.text(student, pageW / 2, y, { align: 'center' });
+        // Subrayado amarillo bajo el nombre
+        var nameW = pdf.getTextWidth(student);
+        pdf.setDrawColor(255, 230, 117);
+        pdf.setLineWidth(1.5);
+        pdf.line((pageW - nameW) / 2 - 5, y + 2, (pageW + nameW) / 2 + 5, y + 2);
+        y += 12;
+
+        // --- Descripción ---
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(10);
+        pdf.setTextColor(99, 99, 99);
+        var descLines = _wrapText(pdf, courseDescription, pageW - 60);
+        for (var i = 0; i < descLines.length && i < 3; i++) {
+            pdf.text(descLines[i], pageW / 2, y, { align: 'center' });
+            y += 5;
+        }
+        y += 5;
+
+        // --- Tarjeta de detalles ---
+        var detX = 25, detW = pageW - 50, detH = 38;
+        pdf.setFillColor(249, 247, 252);
+        pdf.rect(detX, y, detW, detH, 'F');
+        pdf.setFillColor(98, 37, 153);
+        pdf.rect(detX, y, 2, detH, 'F'); // borde izquierdo morado
+
+        var colX1 = detX + 8;
+        var colX2 = detX + detW / 2 + 5;
+        var rowY = y + 8;
+        var rowGap = 7;
+
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(9);
+        pdf.setTextColor(60, 60, 60);
+
+        function _detail(label, value, x, yy) {
+            pdf.setFont('helvetica', 'bold');
+            pdf.setTextColor(98, 37, 153);
+            pdf.text(label, x, yy);
+            pdf.setFont('helvetica', 'normal');
+            pdf.setTextColor(60, 60, 60);
+            pdf.text(String(value || '-'), x + pdf.getTextWidth(label) + 2, yy);
+        }
+
+        _detail('Fecha: ', date, colX1, rowY);
+        _detail('Puntuación: ', score + '%', colX2, rowY);
+        _detail('Grupo Scout: ', group, colX1, rowY + rowGap);
+        _detail('Región: ', region, colX2, rowY + rowGap);
+        _detail('Tiempo: ', totalTime + ' min', colX1, rowY + rowGap * 2);
+        pdf.setFont('helvetica', 'bold');
+        pdf.setTextColor(98, 37, 153);
+        pdf.text('Estado: ', colX2, rowY + rowGap * 2);
+        pdf.setTextColor(46, 125, 50);
+        pdf.text('APROBADO', colX2 + pdf.getTextWidth('Estado: ') + 2, rowY + rowGap * 2);
+
+        y += detH + 8;
+
+        // --- Código de verificación ---
+        var codeBoxH = 14;
+        pdf.setDrawColor(98, 37, 153);
+        pdf.setLineWidth(0.4);
+        pdf.setLineDashPattern([1.5, 1.5], 0);
+        pdf.setFillColor(250, 248, 253);
+        pdf.rect(50, y, pageW - 100, codeBoxH, 'FD');
+        pdf.setLineDashPattern([], 0);
+
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(7);
+        pdf.setTextColor(140, 140, 140);
+        pdf.text('CÓDIGO DE VERIFICACIÓN', pageW / 2, y + 5, { align: 'center' });
+        pdf.setFont('courier', 'bold');
+        pdf.setFontSize(11);
+        pdf.setTextColor(98, 37, 153);
+        pdf.text(code, pageW / 2, y + 11, { align: 'center' });
+        y += codeBoxH + 6;
+
+        // --- Footer ---
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(7);
+        pdf.setTextColor(150, 150, 150);
+        pdf.text('Plataforma de Formación Rover ASC  |  vallescout.org.co', pageW / 2, pageH - 16, { align: 'center' });
+        pdf.setFontSize(6);
+        pdf.text('Verifica este certificado ingresando el código en la plataforma web', pageW / 2, pageH - 12, { align: 'center' });
+
+        // --- Guardar ---
+        if (mobile) {
+            var blob = pdf.output('blob');
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement('a');
+            link.href = url; link.download = filename; link.target = '_blank';
+            document.body.appendChild(link); link.click();
+            setTimeout(function() { document.body.removeChild(link); URL.revokeObjectURL(url); }, 5000);
+        } else {
+            pdf.save(filename);
+        }
+        showNotification('PDF descargado: ' + filename + ' 📥');
+    }).catch(function(err) {
+        if (typeof console !== 'undefined') console.error('Error PDF:', err);
+        showNotification('Error al generar PDF. Intenta con Imprimir.', 'warning');
+        if (confirm('¿Deseas usar la opción de Imprimir?')) { window.print(); }
+    });
 }
 
 // --- Compartir ---
@@ -1670,6 +1799,147 @@ function restartCourse() {
         localStorage.removeItem('commitment_' + COURSE_CONFIG.courseId);
         location.reload();
     }
+}
+
+// --- Registration mode toggle ---
+function toggleRegistrationMode(mode) {
+    var newRegBtn = document.getElementById('toggleNewReg');
+    var recoverBtn = document.getElementById('toggleRecover');
+    var recoverySection = document.getElementById('recoverySection');
+    var registrationForm = document.getElementById('registrationForm');
+
+    if (mode === 'recover') {
+        newRegBtn.classList.remove('active');
+        recoverBtn.classList.add('active');
+        recoverySection.classList.remove('hidden');
+        registrationForm.style.display = 'none';
+    } else {
+        newRegBtn.classList.add('active');
+        recoverBtn.classList.remove('active');
+        recoverySection.classList.add('hidden');
+        registrationForm.style.display = '';
+    }
+}
+
+// --- Recovery from server ---
+function recoverProgress() {
+    var emailInput = document.getElementById('recoveryEmail');
+    var email = emailInput.value.trim();
+    var msgDiv = document.getElementById('recoveryMessage');
+
+    if (!email) {
+        showNotification('⚠️ Ingresa tu correo electronico', 'warning');
+        return;
+    }
+
+    msgDiv.style.display = 'block';
+    msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">🔄 Buscando tu avance...</p>';
+
+    var url = COURSE_CONFIG.googleScriptUrl +
+        '?action=recover&email=' + encodeURIComponent(email) +
+        '&course=' + encodeURIComponent(COURSE_CONFIG.courseId) +
+        '&token=ROVER_ASC_2025';
+
+    fetch(url, { redirect: 'follow' })
+        .then(function(response) {
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            return response.json();
+        })
+        .then(function(data) {
+
+            // El Apps Script devuelve: { success: true, data: { registration, modules, quizzes, certificates } }
+            var isFound = (data && data.found) || (data && data.success && data.data);
+
+            if (isFound) {
+                var serverData = data.data || data;
+                var reg = serverData.registration || data.userProfile || {};
+                var mods = serverData.modules || [];
+                var quizzes = serverData.quizzes || [];
+
+                // Reconstruir userProfile desde registration
+                if (reg.fullName || reg.name) {
+                    userProfile = {
+                        fullName: reg.fullName || reg.name || '',
+                        age: reg.age || '',
+                        group: reg.group || '',
+                        region: reg.region || '',
+                        email: reg.email || email,
+                        motivation: reg.motivation || '',
+                        registrationDate: reg.registrationDate || reg.timestamp || ''
+                    };
+                } else if (data.userProfile) {
+                    userProfile = data.userProfile;
+                }
+
+                // Reconstruir moduleProgress desde modules array
+                if (mods.length > 0) {
+                    moduleProgress = new Array(COURSE_CONFIG.totalModules).fill(false);
+                    mods.forEach(function(m) {
+                        var modNum = m.moduleCompleted || m.module;
+                        if (modNum !== undefined && modNum < moduleProgress.length) {
+                            moduleProgress[modNum] = true;
+                        }
+                    });
+                } else if (data.moduleProgress) {
+                    moduleProgress = data.moduleProgress;
+                }
+
+                // Reconstruir quizScores desde quizzes array
+                if (quizzes.length > 0) {
+                    quizScores = [];
+                    quizzes.forEach(function(q) {
+                        var modNum = q.module;
+                        var score = q.score;
+                        if (modNum !== undefined && score !== undefined) {
+                            quizScores[modNum] = parseInt(score);
+                        }
+                    });
+                } else if (data.quizScores) {
+                    quizScores = data.quizScores;
+                }
+
+                // StudyTime y reflections (si vienen directamente)
+                if (data.studyTime) studyTime = data.studyTime;
+                if (data.reflections) {
+                    reflections = data.reflections;
+                    Object.keys(reflections).forEach(function(k) {
+                        var ta = document.getElementById('reflection-' + k);
+                        if (ta) ta.value = reflections[k];
+                    });
+                }
+
+                saveProgress();
+                updateStats();
+                updateProgress();
+
+                // Determinar último módulo completado
+                var lastModule = data.currentModule || 0;
+                if (!lastModule && moduleProgress.length > 0) {
+                    for (var i = moduleProgress.length - 1; i >= 0; i--) {
+                        if (moduleProgress[i]) { lastModule = i + 1; break; }
+                    }
+                }
+
+                var firstName = userProfile.fullName ? userProfile.fullName.split(' ')[0] : 'Scout';
+                var welcomeEl = document.getElementById('welcomeName');
+                if (welcomeEl) welcomeEl.textContent = firstName;
+
+                var completedCount = moduleProgress.filter(Boolean).length;
+                showNotification('¡Avance recuperado, ' + firstName + '! ' + completedCount + ' módulos completados 🎉');
+                showModule(lastModule > 0 ? lastModule : 1);
+            } else {
+                var reason = (data && data.message) ? data.message : 'No se encontro avance asociado a este correo.';
+                msgDiv.innerHTML = '<p style="color: #FF9800; font-weight: 600;">⚠️ ' + reason + '</p>' +
+                    '<p style="color: #636363; margin-top: 10px;">Puedes registrarte como nuevo usuario.</p>' +
+                    '<button class="btn" style="margin-top: 10px;" onclick="toggleRegistrationMode(\'new\')">🆕 Registrarme</button>';
+            }
+        })
+        .catch(function(err) {
+            if (typeof console !== 'undefined') console.error('[Recovery] Error:', err);
+            msgDiv.innerHTML = '<p style="color: #f44336; font-weight: 600;">❌ Error al conectar con el servidor.</p>' +
+                '<p style="color: #636363; margin-top: 10px;">Error: ' + err.message + '</p>' +
+                '<p style="color: #636363; margin-top: 5px;">Verifica tu conexion a internet e intenta de nuevo.</p>';
+        });
 }
 
 // --- Google Sheets ---
@@ -1714,11 +1984,11 @@ function sendToGoogleSheets(data) {
                     indicator.classList.add('show');
                     setTimeout(function () { indicator.classList.remove('show'); }, 2000);
                 }
-                console.log('Datos guardados localmente');
+                // Datos guardados localmente (fallback silencioso)
             });
         });
     } catch (e) {
-        console.log('Datos guardados localmente (Google Sheets no disponible)');
+        // Google Sheets no disponible, progreso guardado localmente
         var indicator = document.getElementById('syncIndicator');
         if (indicator) {
             indicator.textContent = '💾 Guardado localmente';
@@ -1728,27 +1998,18 @@ function sendToGoogleSheets(data) {
     }
 }
 
-// Send to Google Sheets and return the parsed response (for certificate code)
-function sendToGoogleSheetsWithResponse(data) {
-    if (!COURSE_CONFIG.googleScriptUrl) return Promise.reject('No URL');
-    var payload = Object.assign({}, data, {
-        token: 'ROVER_ASC_2025',
-        timestamp: new Date().toISOString(),
-        url: window.location.href
-    });
-    return fetch(COURSE_CONFIG.googleScriptUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-    }).then(function(response) {
-        return response.json();
-    });
-}
-
 // --- Timers ---
-setInterval(function () { if (currentModule > 0) { studyTime += 1; updateStats(); } }, 60000);
-setInterval(saveProgress, 60000);
+// Incrementar studyTime cada minuto y guardar progreso (solo si esta en un modulo de contenido)
+setInterval(function () {
+    if (currentModule > 0) {
+        studyTime += 1;
+        updateStats();
+        updateElapsedTime();
+    }
+    saveProgress();
+}, 60000);
 
     </script>
+    <script src="../assets/theme-toggle.js"></script>
 </body>
 </html>

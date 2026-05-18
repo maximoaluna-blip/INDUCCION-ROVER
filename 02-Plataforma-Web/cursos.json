@@ -2,13 +2,13 @@
   {
     "courseId": "fundamentos-scout",
     "title": "Fundamentos del Movimiento Scout",
-    "description": "Historia, misión, método scout y principios fundamentales. Base esencial para todo rover que desea ser sinodal o ayudante.",
-    "icon": "📚",
+    "description": "Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, misión, método scout y su impacto global. Preparación integral para servir como sinodal o ayudante.",
+    "icon": "🏕️",
     "duration": "2 horas",
-    "modules": 6,
+    "modules": 7,
     "status": "active",
     "file": "fundamentos-scout.html",
-    "folder": "fundamentos"
+    "folder": "fundamentos-scout"
   },
   {
     "courseId": "caracteristicas-educativas",

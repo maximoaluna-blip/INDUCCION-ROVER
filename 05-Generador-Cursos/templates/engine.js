@@ -297,6 +297,17 @@ function showNotification(message, type) {
 function saveReflection(moduleNum, text) {
     reflections[moduleNum] = text;
     saveProgress();
+    // Sincronizacion en segundo plano al backend (fire-and-forget)
+    if (userProfile && userProfile.email && typeof sendToGoogleSheets === 'function') {
+        sendToGoogleSheets({
+            action: 'reflection',
+            email: userProfile.email,
+            name: userProfile.fullName,
+            course: COURSE_CONFIG.courseId,
+            moduleId: String(moduleNum),
+            texto: text || ''
+        });
+    }
 }
 
 function saveCommitment(text) {
@@ -725,6 +736,29 @@ function recoverProgress() {
                     Object.keys(reflections).forEach(function(k) {
                         var ta = document.getElementById('reflection-' + k);
                         if (ta) ta.value = reflections[k];
+                    });
+                }
+
+                // Reflexiones por curso (persistencia hibrida): hidratar cada curso en localStorage
+                if (serverData.reflectionsByCourse && typeof serverData.reflectionsByCourse === 'object') {
+                    Object.keys(serverData.reflectionsByCourse).forEach(function (cid) {
+                        var courseReflections = serverData.reflectionsByCourse[cid] || {};
+                        if (cid === COURSE_CONFIG.courseId) {
+                            reflections = courseReflections;
+                            Object.keys(reflections).forEach(function (k) {
+                                var ta = document.getElementById('reflection-' + k);
+                                if (ta) ta.value = reflections[k];
+                            });
+                        } else {
+                            try {
+                                var key = 'courseProgress_' + cid;
+                                var raw = localStorage.getItem(key);
+                                var existing = raw ? JSON.parse(raw) : {};
+                                existing.reflections = courseReflections;
+                                existing.lastSaved = new Date().toISOString();
+                                localStorage.setItem(key, JSON.stringify(existing));
+                            } catch (e) { /* ignore */ }
+                        }
                     });
                 }
 

@@ -337,7 +337,13 @@ function generateCertificate() {
         course: COURSE_CONFIG.courseId
     });
 
-    unlockAchievement('achievement-5');
+    // Mismo criterio que el motor compartido: el logro final es el que declara
+    // `unlockOnModule: -1`, no el que se llame 'achievement-5'. Aqui acertaba por
+    // coincidencia (en Fundamentos el logro final SI se llama asi); se barre por la
+    // convencion para que un tercer curso de la linea no herede el defecto.
+    COURSE_CONFIG.achievements.forEach(function (ach) {
+        if (ach.unlockOnModule === -1) unlockAchievement(ach.id);
+    });
     var bar = document.getElementById('progressBar');
     var text = document.getElementById('progressText');
     if (bar) bar.style.width = '100%';

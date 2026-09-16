@@ -1779,7 +1779,11 @@ function generateCertificate() {
     // Show fallback immediately (will be overwritten if server responds)
     if (el('certCode')) el('certCode').textContent = fallbackCode;
 
-    unlockAchievement('achievement-5');
+    // El logro final es el que declara `unlockOnModule: -1`, no el que se llame
+    // 'achievement-5'. Alineado con el motor compartido (H10, 15-sep-2026).
+    COURSE_CONFIG.achievements.forEach(function (ach) {
+        if (ach.unlockOnModule === -1) unlockAchievement(ach.id);
+    });
     var bar = document.getElementById('progressBar');
     var text = document.getElementById('progressText');
     if (bar) bar.style.width = '100%';

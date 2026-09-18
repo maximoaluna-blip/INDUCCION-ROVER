@@ -7,8 +7,7 @@
     "duration": "2 horas",
     "modules": 7,
     "status": "active",
-    "file": "fundamentos-scout.html",
-    "folder": "fundamentos-scout"
+    "file": "fundamentos-scout.html"
   },
   {
     "courseId": "caracteristicas-educativas",
@@ -18,8 +17,7 @@
     "duration": "2 horas",
     "modules": 7,
     "status": "active",
-    "file": "caracteristicas-educativas.html",
-    "folder": "caracteristicas-educativas"
+    "file": "caracteristicas-educativas.html"
   },
   {
     "courseId": "primeros-auxilios",

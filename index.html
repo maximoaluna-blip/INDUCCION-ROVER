@@ -385,9 +385,18 @@
         // y los cursos activos viven en carpetas tipo fundamentos/index.html
         var CATALOG_URL = '02-Plataforma-Web/cursos.json';
 
+        // Los cursos se sirven desde 02-Plataforma-Web/, que es la SALIDA DEL GENERADOR
+        // y la copia canonica, igual que en las otras cuatro lineas de la plataforma.
+        // ⚠️ Hasta el 18-sep-2026 esto miraba `folder` primero y SIN prefijo, y
+        // build-course.js escribe `folder: courseId`. Las carpetas de 2025 se llaman
+        // `fundamentos/` y `caracteristicas-educativas/`, asi que para fundamentos-scout
+        // el enlace apuntaba a `fundamentos-scout/index.html`: 404 en produccion, en un
+        // curso `active`. Nadie lo vio porque Rover no tiene suite E2E.
+        var COURSES_BASE = '02-Plataforma-Web/';
+
         function buildHref(course) {
-            if (course.folder) return course.folder + '/index.html';
-            if (course.file) return course.file;
+            if (course.file) return COURSES_BASE + course.file;
+            if (course.folder) return COURSES_BASE + course.folder + '/index.html';
             return '#';
         }
 

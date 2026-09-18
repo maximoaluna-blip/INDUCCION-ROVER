@@ -557,7 +557,9 @@ const entry = {
     modules: course.modules.length,
     status: 'active',
     file: course.courseId + '.html',
-    folder: course.courseId
+    // Sin `folder`: nadie lo lee -las dos paginas miran `file` primero- y era el campo
+    // que provocaba el 404, porque decia `courseId` y las carpetas reales de 2025 tenian
+    // otro nombre. Un campo que no se usa pero se cree no es inocuo (ADR-063).
 };
 
 if (existingIndex >= 0) {

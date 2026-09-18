@@ -7,8 +7,10 @@
 # El workflow:
 #   1. Detecta cual(es) JSON cambiaron
 #   2. Ejecuta build-course.js por cada uno
-#   3. Copia el HTML generado a la carpeta raiz para GitHub Pages
-#   4. Hace commit y push de los archivos generados
+#   3. Hace commit y push de los archivos generados
+#
+# ⚠️ Ya NO copia el HTML a una carpeta de la raiz: ese paso fabricaba una segunda copia
+#    de cada curso, que divergia de la del generador (ADR-063, 18-sep-2026).
 # ============================================================================
 
 name: Build Course HTML
@@ -62,27 +64,27 @@ jobs:
             node build-course.js "$COURSE"
           done
 
-      - name: Copy generated HTML to root for GitHub Pages
-        if: steps.detect.outputs.skip != 'true'
-        run: |
-          for COURSE in ${{ steps.detect.outputs.courses }}; do
-            SRC="02-Plataforma-Web/${COURSE}.html"
-            if [ -f "$SRC" ]; then
-              # Crear carpeta del curso en raiz si no existe
-              mkdir -p "$COURSE"
-              cp "$SRC" "${COURSE}/index.html"
-              echo "Copied $SRC -> ${COURSE}/index.html"
-            else
-              echo "Warning: $SRC not found after build"
-            fi
-          done
+      # ⚠️ Aqui habia un paso "Copy generated HTML to root for GitHub Pages" que hacia
+      # `mkdir -p "$COURSE"` y copiaba el HTML a `<courseId>/index.html`. Se retiro el
+      # 18-sep-2026 (ADR-063): era la maquina que fabricaba una SEGUNDA copia de cada
+      # curso en la raiz. Convivieron año y medio y divergieron, y el enlace de la
+      # landing apuntaba a la carpeta equivocada -404 en un curso `active`-.
+      #
+      # Hoy la landing sirve desde 02-Plataforma-Web/, que es la salida del generador y
+      # la unica copia, igual que en las otras cuatro lineas. Dejar este paso habria
+      # recreado el problema en cuanto alguien tocara un JSON.
+      #
+      # Las carpetas `fundamentos/` y `caracteristicas-educativas/` siguen ahi, pero con
+      # una REDIRECCION dentro, por si alguien guardo ese enlace. No las regenera nadie.
 
       - name: Commit and push generated files
         if: steps.detect.outputs.skip != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add 02-Plataforma-Web/*.html */index.html 02-Plataforma-Web/cursos.json
+          # Sin `*/index.html`: ya no se generan copias en la raiz (ADR-063), y ese
+          # comodin barria tambien las redirecciones que viven en esas carpetas.
+          git add 02-Plataforma-Web/*.html 02-Plataforma-Web/cursos.json
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else

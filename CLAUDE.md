@@ -12,4 +12,8 @@ Mismo patrón técnico que las 3 líneas nacionales — GitHub Pages + Google Ap
 
 ## 3. Estado (ADR-020, `DECISIONES.md` raíz, 12-jul-2026)
 
-**En pausa, no descontinuada.** 7 cursos activos en producción, certificados y verificador funcionando con normalidad. Sin desarrollo activo desde el 19-may-2026. No compite con Adultos/DI/PJ ni se planea fusionar — sirve a una audiencia (Rovers regionales aspirantes a sinodal/ayudante) que las 3 líneas nacionales no cubren. Si se retoma desarrollo activo, ampliar este documento al patrón completo de las líneas activas.
+⚠️ **Hasta el 21-sep-2026 este párrafo decía «7 cursos activos»**: son **2**, contados en `02-Plataforma-Web/cursos.json`. Y esta línea **no versiona el diseño de sus cursos** —no hay `01-Diseno-Cursos/` ni un `.md` de diseño, así que el JSON es el único original—: decisión abierta en el `DECISIONES.md` de la raíz.
+
+**20-sep-2026 — los 2 cursos pasaron el barrido de paridad de quizzes (ADR-073):** 20 opciones reescritas, todas distractores, la correcta intacta; `contentVersion` en `2026-09-20`. Era **el peor de la plataforma**: `caracteristicas-educativas` tenía 13 de sus 20 preguntas con la correcta como extremo de longitud. ⚠️ **Sin suite E2E** (única línea), así que aquí la verificación es a mano.
+
+**En pausa, no descontinuada.** **2 cursos activos** en producción (los otros **5** siguen en `coming-soon`), certificados y verificador funcionando con normalidad. Sin desarrollo activo desde el 19-may-2026. No compite con Adultos/DI/PJ ni se planea fusionar — sirve a una audiencia (Rovers regionales aspirantes a sinodal/ayudante) que las 3 líneas nacionales no cubren. Si se retoma desarrollo activo, ampliar este documento al patrón completo de las líneas activas.

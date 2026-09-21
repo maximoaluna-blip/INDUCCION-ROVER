@@ -3,7 +3,7 @@
   "title": "Características Educativas del Movimiento Scout",
   "subtitle": "Formación para Rovers - Sinodales y Ayudantes",
   "description": "Curso sobre las características educativas que definen al Movimiento Scout: su propósito, el Método Scout con sus 8 elementos, el sistema de valores y los principios que lo hacen único como movimiento juvenil mundial.",
-  "contentVersion": "2026-04-11",
+  "contentVersion": "2026-09-20",
   "icon": "📖",
   "duration": "2 horas",
   "totalContentModules": 6,
@@ -145,14 +145,14 @@
             "options": [
               "Desarrollo físico y desarrollo mental",
               "Crecer como individuo y crecer como ciudadano",
-              "Desarrollo académico y desarrollo deportivo"
+              "Crecer en lo académico y crecer en lo deportivo"
             ],
             "correctIndex": 1
           },
           {
             "text": "¿Qué referencia internacional ha adoptado el Movimiento Scout como marco de referencia para su acción educativa?",
             "options": [
-              "La Declaración de los Derechos del Niño",
+              "La Declaración Universal de los Derechos del Niño",
               "Los Objetivos de Desarrollo Sostenible (ODS) de la ONU",
               "El Convenio de Ginebra"
             ],
@@ -484,7 +484,7 @@
             "options": [
               "Solo organizar las actividades de campamento",
               "Facilitar el aprendizaje colaborativo, liderazgo y toma de decisiónes",
-              "Separar a los jóvenes por nivel de experiencia",
+              "Separar a los jóvenes por su nivel de experiencia y su edad",
               "Crear competencia entre los miembros"
             ],
             "correctIndex": 1
@@ -495,7 +495,7 @@
               "Porque se aplican uno por uno en orden secuencial",
               "Porque cada uno puede funcionar de manera independiente",
               "Porque son interactivos y se complementan entre si como un todo integrado",
-              "Porque cada elemento corresponde a un rango de edad diferente"
+              "Porque cada elemento corresponde a un rango de edad distinto de la rama"
             ],
             "correctIndex": 2
           }
@@ -607,7 +607,7 @@
           {
             "text": "¿Cuáles son los tres principios fundamentales del Movimiento Scout?",
             "options": [
-              "Lealtad, Servicio y Obediencia",
+              "Lealtad, Servicio a los demás y Obediencia",
               "Deber para con Dios, con los Demás y Consigo Mismo",
               "Valor, Sabiduría y Fuerza",
               "Fe, Esperanza y Caridad"
@@ -618,7 +618,7 @@
             "text": "¿Qué significa el 'deber para con Dios' en el Movimiento Scout?",
             "options": [
               "Pertenecer a una religión específica",
-              "Asistir a servicios religiosos obligatorios",
+              "Asistir de forma obligatoria a los servicios religiosos del grupo",
               "La búsqueda de la dimensión espiritual y de una realidad trascendente",
               "Seguir las reglas de una iglesia determinada"
             ],
@@ -627,7 +627,7 @@
           {
             "text": "¿Cuál es la posición del Movimiento Scout frente al adoctrinamiento?",
             "options": [
-              "Lo permite cuando es para transmitir valores scouts",
+              "Lo permite cuando se trata de transmitir los valores scouts",
               "Lo rechaza completamente; la adhesión a los valores debe ser libre",
               "Lo acepta solo en las ramas menores",
               "No tiene una posición definida al respecto"
@@ -740,7 +740,7 @@
           {
             "text": "¿Por qué se dice que el Movimiento Scout es un 'movimiento' y no solo una organización?",
             "options": [
-              "Porque tiene muchos miembros en todo el mundo",
+              "Porque tiene millones de miembros repartidos en casi todos los países del mundo, y ningún otro grupo es tan grande",
               "Porque está formado por personas que comparten valores y trabajan por un objetivo común desde las comunidades locales",
               "Porque cambia constantemente sus reglas",
               "Porque se mueven fisicamente de un lugar a otro"
@@ -750,7 +750,7 @@
           {
             "text": "¿Qué significa que el Movimiento Scout es 'voluntario'?",
             "options": [
-              "Que los adultos trabajan sin salario",
+              "Que los adultos que sirven en el Movimiento trabajan sin recibir salario ni compensación a cambio",
               "Que los miembros se unen por libre elección y el compromiso voluntario es parte del proceso educativo",
               "Que las actividades son opcionales",
               "Que no hay reglas obligatorias"
@@ -760,7 +760,7 @@
           {
             "text": "¿Cuál es el deber adicional del Movimiento respecto a los adultos que desean participar?",
             "options": [
-              "Que tengan experiencia previa en campamentos",
+              "Exigir experiencia previa en campamentos y trabajo con jóvenes antes de darles un cargo",
               "Que sean profesionales de la educación",
               "Proteger a los jóvenes verificando la madurez y equilibrio de los candidatos a cargos educativos",
               "Que pertenezcan a una comunidad religiosa"
@@ -857,7 +857,7 @@
             "options": [
               "Porque la política es mala",
               "Porque comprometeria la neutralidad y objetividad del enfoque educativo centrado en la persona",
-              "Porque Baden-Powell era militar y no político",
+              "Porque Baden-Powell era militar y nunca quiso mezclar el escultismo con la política",
               "Porque los jóvenes no tienen edad para votar"
             ],
             "correctIndex": 1
@@ -865,7 +865,7 @@
           {
             "text": "¿Puede el Movimiento Scout tomar posición sobre temas como los Derechos del Niño o los ODS?",
             "options": [
-              "No, debe mantenerse completamente neutral en todo",
+              "No, debe mantenerse completamente neutral en todos los temas públicos del país",
               "Si, siempre que esten vinculados a su mision educativa y no a política partidista",
               "Solo si un partido político lo solicita",
               "Solo en países democraticos"
@@ -875,7 +875,7 @@
           {
             "text": "¿Qué significa la independencia del Movimiento Scout?",
             "options": [
-              "Que no coopera con ninguna otra organización",
+              "Que no coopera con ninguna otra organización ni acepta acuerdos con gobiernos, empresas o iglesias",
               "Que cada grupo scout hace lo que quiere",
               "Que la organización puede tomar decisiónes libremente sin interferencia externa, salvaguardando su identidad",
               "Que no recibe financiamiento de nadie"
@@ -885,7 +885,7 @@
           {
             "text": "¿Qué debe pasar si una organización patrocinadora intenta controlar a una Organización Scout Nacional?",
             "options": [
-              "Se debe aceptar porque proporcionan recursos",
+              "Se debe aceptar el control porque la organización patrocinadora es la que proporciona los recursos",
               "Se debe salvaguardar la identidad e independencia del Movimiento sin comprometer su propósito educativo",
               "Se debe romper toda relación inmediatamente",
               "Se debe consultar a los miembros jóvenes"

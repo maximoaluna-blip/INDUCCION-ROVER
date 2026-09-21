@@ -3,7 +3,7 @@
   "title": "Fundamentos del Movimiento Scout",
   "subtitle": "Formación para Rovers - Sinodales y Ayudantes",
   "description": "Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, misión, método scout y su impacto global. Preparación integral para servir como sinodal o ayudante.",
-  "contentVersion": "2026-04-14",
+  "contentVersion": "2026-09-20",
   "icon": "🏕️",
   "duration": "2 horas",
   "totalContentModules": 6,
@@ -112,7 +112,7 @@
           {
             "text": "¿Cuál es el objetivo principal de la misión scout?",
             "options": [
-              "Enseñar técnicas de campamento",
+              "Enseñar técnicas de campamento y supervivencia al aire libre",
               "Contribuir a la educación para construir un mundo mejor",
               "Formar exploradores profesionales"
             ],
@@ -196,7 +196,7 @@
           {
             "text": "¿Qué descubrió Baden-Powell sobre los jóvenes en Mafeking?",
             "options": [
-              "Que necesitan supervisión constante",
+              "Que necesitan supervisión constante de un adulto responsable",
               "Que son capaces de mucho más cuando se les da responsabilidad",
               "Que solo sirven para tareas simples"
             ],
@@ -207,7 +207,7 @@
             "options": [
               "Mensajeros, primeros auxilios, centinelas y apoyo logístico",
               "Solo observadores",
-              "Combatientes armados"
+              "Combatientes armados en la línea de defensa de la ciudad"
             ],
             "correctIndex": 0
           }
@@ -287,7 +287,7 @@
           {
             "text": "¿Cuál fue una innovación clave del campamento?",
             "options": [
-              "Disciplina militar estricta",
+              "Disciplina militar estricta y jerárquica",
               "Sistema de patrullas con liderazgo juvenil",
               "Clases teóricas intensivas"
             ],
@@ -371,7 +371,7 @@
         "questions": [
           {
             "text": "¿En cuántos países está presente el movimiento scout actualmente?",
-            "options": ["50 países", "100 países", "172 países y territorios"],
+            "options": ["50 países", "100 países y territorios", "172 países y territorios"],
             "correctIndex": 2
           },
           {
@@ -530,7 +530,7 @@
           {
             "text": "¿Cuál es una contribución importante del escultismo?",
             "options": [
-              "Solo actividades recreativas",
+              "Solo actividades recreativas al aire libre",
               "Construcción de paz y servicio comunitario",
               "Únicamente campamentos"
             ],

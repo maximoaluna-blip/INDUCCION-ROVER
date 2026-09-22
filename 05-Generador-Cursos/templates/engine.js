@@ -755,38 +755,23 @@ function recoverProgress() {
                     quizScores = data.quizScores;
                 }
 
-                // StudyTime y reflections (si vienen directamente)
+                // StudyTime: el unico dato de sesion que el backend sigue devolviendo
                 if (data.studyTime) studyTime = data.studyTime;
-                if (data.reflections) {
-                    reflections = data.reflections;
-                    Object.keys(reflections).forEach(function(k) {
-                        var ta = document.getElementById('reflection-' + k);
-                        if (ta) ta.value = reflections[k];
-                    });
-                }
 
-                // Reflexiones por curso (persistencia hibrida): hidratar cada curso en localStorage
-                if (serverData.reflectionsByCourse && typeof serverData.reflectionsByCourse === 'object') {
-                    Object.keys(serverData.reflectionsByCourse).forEach(function (cid) {
-                        var courseReflections = serverData.reflectionsByCourse[cid] || {};
-                        if (cid === COURSE_CONFIG.courseId) {
-                            reflections = courseReflections;
-                            Object.keys(reflections).forEach(function (k) {
-                                var ta = document.getElementById('reflection-' + k);
-                                if (ta) ta.value = reflections[k];
-                            });
-                        } else {
-                            try {
-                                var key = 'courseProgress_' + cid;
-                                var raw = localStorage.getItem(key);
-                                var existing = raw ? JSON.parse(raw) : {};
-                                existing.reflections = courseReflections;
-                                existing.lastSaved = new Date().toISOString();
-                                localStorage.setItem(key, JSON.stringify(existing));
-                            } catch (e) { /* ignore */ }
-                        }
-                    });
-                }
+                // ADR-074 - AQUI NO SE HIDRATA NINGUN TEXTO, A PROPOSITO.
+                // `recover` no esta autenticado: pide un correo y nada mas. Por eso el
+                // backend de Rover -que es propio, con su hoja y su token- dejo de mandar
+                // lo que la persona escribio y solo dice QUE hay guardado (serverData.saved).
+                // Lo escrito vive en el navegador donde se escribio, y alli sigue.
+                var guardado = serverData.saved || {};
+                var anotaciones = 0;
+                Object.keys(guardado.reflections || {}).forEach(function (cid) {
+                    anotaciones += (guardado.reflections[cid] || []).length;
+                });
+                Object.keys(guardado.commitments || {}).forEach(function (cid) {
+                    anotaciones += guardado.commitments[cid] || 0;
+                });
+                anotaciones += (guardado.plans || []).length + (guardado.assessments || []).length;
 
                 saveProgress();
                 updateStats();
@@ -806,6 +791,14 @@ function recoverProgress() {
 
                 var completedCount = moduleProgress.filter(Boolean).length;
                 showNotification('¡Avance recuperado, ' + firstName + '! ' + completedCount + ' módulos completados 🎉');
+
+                if (anotaciones > 0 && typeof msgDiv !== 'undefined' && msgDiv) {
+                    msgDiv.style.display = 'block';
+                    msgDiv.innerHTML = '<p style="color: #2e7d32; font-weight: 600;">✅ Recuperamos tu avance.</p>' +
+                        '<p style="color: #636363; margin-top: 10px;">Tienes <strong>' + anotaciones +
+                        '</strong> anotaciones guardadas. Lo que escribes <strong>no se recupera por correo</strong>: ' +
+                        'se queda en el navegador donde lo escribiste.</p>';
+                }
                 showModule(lastModule > 0 ? lastModule : 1);
             } else {
                 var reason = (data && data.message) ? data.message : 'No se encontro avance asociado a este correo.';

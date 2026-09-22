@@ -3,7 +3,7 @@
   "title": "Fundamentos del Movimiento Scout",
   "subtitle": "Formación para Rovers - Sinodales y Ayudantes",
   "description": "Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, misión, método scout y su impacto global. Preparación integral para servir como sinodal o ayudante.",
-  "contentVersion": "2026-09-20",
+  "contentVersion": "2026-09-21",
   "icon": "🏕️",
   "duration": "2 horas",
   "totalContentModules": 6,
@@ -196,7 +196,7 @@
           {
             "text": "¿Qué descubrió Baden-Powell sobre los jóvenes en Mafeking?",
             "options": [
-              "Que necesitan supervisión constante de un adulto responsable",
+              "Que necesitan que un adulto les indique constantemente qué hacer",
               "Que son capaces de mucho más cuando se les da responsabilidad",
               "Que solo sirven para tareas simples"
             ],
@@ -401,8 +401,8 @@
             { "title": "3. 📈 Progresión Personal", "description": "Cada joven progresa a su propio ritmo, con objetivos personalizados y reconocimiento de logros individuales.", "color": "#f3e5f5", "borderColor": "#9C27B0" },
             { "title": "4. 👥 Sistema de Equipos", "description": "Pequeños grupos (patrullas/seisenas) donde se desarrolla el liderazgo, la responsabilidad y las habilidades sociales.", "color": "#fce4ec", "borderColor": "#E91E63" },
             { "title": "5. 🎭 Marco Simbólico", "description": "Uso de símbolos, ceremonias y tradiciones que dan identidad y refuerzan los valores del movimiento.", "color": "#fff3e0", "borderColor": "#FF9800" },
-            { "title": "6. 🌲 Vida en la Naturaleza", "description": "Contacto directo con el ambiente natural como espacio privilegiado de educación y desarrollo personal.", "color": "#e0f2f1", "borderColor": "#009688" },
-            { "title": "7. 🤗 Presencia Estimulante del Adulto", "description": "Acompañamiento de adultos preparados que facilitan y apoyan el proceso educativo sin imponer ni substituir.", "color": "#fff8e1", "borderColor": "#FFC107" },
+            { "title": "6. 🌲 Naturaleza", "description": "Contacto directo con el ambiente natural como espacio privilegiado de educación y desarrollo personal.", "color": "#e0f2f1", "borderColor": "#009688" },
+            { "title": "7. 🤝 Apoyo del Adulto", "description": "Acompañamiento de adultos preparados que facilitan y apoyan el proceso educativo sin imponer ni substituir.", "color": "#fff8e1", "borderColor": "#FFC107" },
             { "title": "8. 🌍 Involucramiento Comunitario", "description": "Participación activa de los jóvenes en su comunidad, desarrollando conciencia social y compromiso ciudadano.", "color": "#ffebee", "borderColor": "#F44336" }
           ]
         },
@@ -417,7 +417,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>💡 Para el Sinodal/Ayudante:</strong><br>Al trabajar con manada o tropa, debes aplicar TODOS estos elementos de manera equilibrada. Por ejemplo:<br>• En manada: El marco simbólico del Libro de la Selva + sistema de seisenas + progresión por insignias<br>• En tropa: Mayor énfasis en el sistema de patrullas + vida al aire libre + servicio comunitario"
+          "text": "<strong>💡 Para el Sinodal/Ayudante:</strong><br>Al trabajar con manada o tropa, debes aplicar TODOS estos elementos de manera equilibrada. Por ejemplo:<br>• En manada: el marco simbólico de La Fantasía, con El Libro de las Tierras Vírgenes como fondo motivador + sistema de seisenas + progresión por insignias<br>• En tropa: Mayor énfasis en el sistema de patrullas + vida al aire libre + servicio comunitario"
         }
       ],
       "reflection": {

@@ -3,7 +3,7 @@
   "title": "Características Educativas del Movimiento Scout",
   "subtitle": "Formación para Rovers - Sinodales y Ayudantes",
   "description": "Curso sobre las características educativas que definen al Movimiento Scout: su propósito, el Método Scout con sus 8 elementos, el sistema de valores y los principios que lo hacen único como movimiento juvenil mundial.",
-  "contentVersion": "2026-09-20",
+  "contentVersion": "2026-09-21",
   "icon": "📖",
   "duration": "2 horas",
   "totalContentModules": 6,
@@ -34,7 +34,7 @@
           "items": [
             "<strong>Comprender el propósito educativo</strong> del Movimiento Scout y su relevancia actual",
             "<strong>Conocer los principios del aprendizaje</strong> que fundamentan la educación scout",
-            "<strong>Dominar los 8 elementos</strong> del Método Scout y como se interrelaciónan",
+            "<strong>Dominar los 8 elementos</strong> del Método Scout y como se interrelacionan",
             "<strong>Entender el sistema de valores</strong> basado en la Promesa y Ley Scout",
             "<strong>Identificar las características</strong> que definen y diferencian al movimiento",
             "<strong>Aplicar estos conocimientos</strong> en tu labor como sinodal o ayudante"
@@ -63,7 +63,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Para el Movimiento Scout, las dos dimensiónes del desarrollo — <strong>crecer como individuo</strong> y <strong>crecer como ciudadano</strong> — son igualmente importantes e inseparables. La educación scout busca empoderar a los jóvenes para que sean autónomos en su desarrollo personal y, al mismo tiempo, participen activamente en la construcción de una sociedad mejor."
+          "text": "Para el Movimiento Scout, las dos dimensiones del desarrollo — <strong>crecer como individuo</strong> y <strong>crecer como ciudadano</strong> — son igualmente importantes e inseparables. La educación scout busca empoderar a los jóvenes para que sean autónomos en su desarrollo personal y, al mismo tiempo, participen activamente en la construcción de una sociedad mejor."
         },
         {
           "type": "method-grid",
@@ -135,13 +135,13 @@
         }
       ],
       "reflection": {
-        "prompt": "Piensa en tu experiencia como rover: ¿en cual de los cuatro pilares de la educación sientes que el escultismo te ha aportado mas? ¿Cómo podrias fortalecer los otros pilares en tu trabajo con las ramas menores?"
+        "prompt": "Piensa en tu experiencia como rover: ¿en cuál de los cuatro pilares de la educación sientes que el escultismo te ha aportado más? ¿Cómo podrías fortalecer los otros pilares en tu trabajo con las ramas menores?"
       },
       "quiz": {
         "title": "Evaluación - Propósito Educativo",
         "questions": [
           {
-            "text": "¿Cuáles son las dos dimensiónes del desarrollo que el Movimiento Scout considera igualmente importantes?",
+            "text": "¿Cuáles son las dos dimensiones del desarrollo que el Movimiento Scout considera igualmente importantes?",
             "options": [
               "Desarrollo físico y desarrollo mental",
               "Crecer como individuo y crecer como ciudadano",
@@ -152,7 +152,7 @@
           {
             "text": "¿Qué referencia internacional ha adoptado el Movimiento Scout como marco de referencia para su acción educativa?",
             "options": [
-              "La Declaración Universal de los Derechos del Niño",
+              "La Declaración de los Derechos del Niño (ONU, 1959)",
               "Los Objetivos de Desarrollo Sostenible (ODS) de la ONU",
               "El Convenio de Ginebra"
             ],
@@ -215,7 +215,7 @@
             },
             {
               "title": "7. Conexiones horizontales",
-              "description": "Las conexiones entre áreas de conocimiento son fundamentales. El Método Scout integra todas las dimensiónes del desarrollo de manera holística."
+              "description": "Las conexiones entre áreas de conocimiento son fundamentales. El Método Scout integra todas las dimensiones del desarrollo de manera holística."
             }
           ]
         },
@@ -245,7 +245,7 @@
             },
             {
               "title": "🌱 Educación Informal",
-              "description": "Aprendizaje espontáneo que ocurre en la vida cotidiana: familia, amigos, medios de comúnicación, experiencias diarias.",
+              "description": "Aprendizaje espontáneo que ocurre en la vida cotidiana: familia, amigos, medios de comunicación, experiencias diarias.",
               "color": "#fff3e0",
               "borderColor": "#ff9800"
             }
@@ -253,7 +253,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>¿Sabías que?</strong> Las fronteras entre estos tipos de educación se están desvaneciendo. Hoy existe una tendencia a combinar contextos de aprendizaje formales, no formales e informales. El éxito del Movimiento Scout en la educación no formal se debe a que el aprendizaje se lleva a cabo a través de actividades divertidas, selecciónadas por los jóvenes y realizadas en pequeños equipos."
+          "text": "<strong>¿Sabías que?</strong> Las fronteras entre estos tipos de educación se están desvaneciendo. Hoy existe una tendencia a combinar contextos de aprendizaje formales, no formales e informales. El éxito del Movimiento Scout en la educación no formal se debe a que el aprendizaje se lleva a cabo a través de actividades divertidas, seleccionadas por los jóvenes y realizadas en pequeños equipos."
         },
         {
           "type": "heading",
@@ -266,11 +266,11 @@
         },
         {
           "type": "paragraph",
-          "text": "El concepto de <strong>autoeducación progresiva</strong> es central: cada joven es un individuo único que tiene el potencial de desarrollarse en todas las dimensiónes y asumir la responsabilidad de su propio desarrollo desde temprana edad. Esto significa <em>aprender a aprender</em>, siendo equipado para el aprendizaje durante toda la vida."
+          "text": "El concepto de <strong>autoeducación progresiva</strong> es central: cada joven es un individuo único que tiene el potencial de desarrollarse en todas las dimensiones y asumir la responsabilidad de su propio desarrollo desde temprana edad. Esto significa <em>aprender a aprender</em>, siendo equipado para el aprendizaje durante toda la vida."
         }
       ],
       "reflection": {
-        "prompt": "Como sinodal o ayudante, ¿como puedes aplicar los siete principios del aprendizaje en tus actividades con la manada o tropa? Piensa en un ejemplo concreto para al menos tres de estos principios."
+        "prompt": "Como sinodal o ayudante, ¿cómo puedes aplicar los siete principios del aprendizaje en tus actividades con la manada o tropa? Piensa en un ejemplo concreto para al menos tres de estos principios."
       },
       "quiz": {
         "title": "Evaluación - Principios del Aprendizaje",
@@ -316,7 +316,7 @@
       "sections": [
         {
           "type": "info-box",
-          "text": "<strong>El Método Scout</strong> es un sistema de autoeducación progresiva compuesto por 8 elementos interactivos que trabajan juntos como un todo integrado. Ningun elemento funciona aislado; todos se complementan y refuerzan mutuamente."
+          "text": "<strong>El Método Scout</strong> es un sistema de autoeducación progresiva compuesto por 8 elementos interactivos que trabajan juntos como un todo integrado. Ningún elemento funciona aislado; todos se complementan y refuerzan mutuamente."
         },
         {
           "type": "heading",
@@ -334,7 +334,7 @@
         },
         {
           "type": "paragraph",
-          "text": "El aprendizaje en el Movimiento Scout se basa en la experiencia directa y la reflexión. Los jóvenes aprenden a través de la práctica y la acción, aplicando de inmediato lo aprendido en situaciones reales. Incluye la experimentación, el desafio, el descubrimiento y la innovación."
+          "text": "El aprendizaje en el Movimiento Scout se basa en la experiencia directa y la reflexión. Los jóvenes aprenden a través de la práctica y la acción, aplicando de inmediato lo aprendido en situaciones reales. Incluye la experimentación, el desafío, el descubrimiento y la innovación."
         },
         {
           "type": "heading",
@@ -352,11 +352,11 @@
         },
         {
           "type": "paragraph",
-          "text": "El Movimiento Scout utiliza un sistema de <strong>pequeños equipos</strong> (como las patrullas) para facilitar el aprendizaje colaborativo y la participación en la toma de decisiónes. Este enfoque desarrolla trabajo en equipo, habilidades interpersonales, liderazgo y sentido de responsabilidad y pertenencia."
+          "text": "El Movimiento Scout utiliza un sistema de <strong>pequeños equipos</strong> (como las patrullas) para facilitar el aprendizaje colaborativo y la participación en la toma de decisiones. Este enfoque desarrolla trabajo en equipo, habilidades interpersonales, liderazgo y sentido de responsabilidad y pertenencia."
         },
         {
           "type": "info-box",
-          "text": "El sistema de equipos es una herramienta efectiva para empoderar a los jóvenes, ya que permite que asuman roles de liderazgo, participen democráticamente en las decisiónes del grupo y aprendan a convivir con la diversidad."
+          "text": "El sistema de equipos es una herramienta efectiva para empoderar a los jóvenes, ya que permite que asuman roles de liderazgo, participen democráticamente en las decisiones del grupo y aprendan a convivir con la diversidad."
         },
         {
           "type": "heading",
@@ -365,7 +365,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Los adultos en el Movimiento Scout desempeñan un papel de <strong>guía y facilitador</strong>, no de instructor autoritario. La relación educativa se basa en el diálogo, la confianza mutua y el acompañamiento. El adulto crea las condiciones para que el joven descubra y aprenda por si mismo."
+          "text": "Los adultos en el Movimiento Scout desempeñan un papel de <strong>guía y facilitador</strong>, no de instructor autoritario. La relación educativa se basa en el diálogo, la confianza mutua y el acompañamiento. El adulto crea las condiciones para que el joven descubra y aprenda por sí mismo."
         },
         {
           "type": "heading",
@@ -404,7 +404,7 @@
           "items": [
             {
               "title": "⚖️ Ley y Promesa",
-              "description": "Compromiso voluntario con valores compartidos que guian la conducta personal.",
+              "description": "Compromiso voluntario con valores compartidos que guían la conducta personal.",
               "color": "#e8f5e9",
               "borderColor": "#4caf50"
             },
@@ -422,7 +422,7 @@
             },
             {
               "title": "👥 Sistema de Equipos",
-              "description": "Pequeños grupos que facilitan liderazgo, cooperación y toma de decisiónes.",
+              "description": "Pequeños grupos que facilitan liderazgo, cooperación y toma de decisiones.",
               "color": "#fce4ec",
               "borderColor": "#e91e63"
             },
@@ -454,7 +454,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Piensa en una actividad reciente que hayas vivido en tu grupo scout. ¿Cuántos de los 8 elementos del Método Scout puedes identificar en esa actividad? ¿Hubo alguno que no estuvo presente? ¿Cómo podrias incluirlo?"
+        "prompt": "Piensa en una actividad reciente que hayas vivido en tu grupo scout. ¿Cuántos de los 8 elementos del Método Scout puedes identificar en esa actividad? ¿Hubo alguno que no estuvo presente? ¿Cómo podrías incluirlo?"
       },
       "quiz": {
         "title": "Evaluación - El Método Scout",
@@ -474,17 +474,17 @@
             "options": [
               "Instructor que dicta las actividades",
               "Guía y facilitador que acompaña al joven",
-              "Supervisor que evalua el rendimiento",
-              "Director que toma todas las decisiónes"
+              "Supervisor que evalúa el rendimiento",
+              "Director que toma todas las decisiones"
             ],
             "correctIndex": 1
           },
           {
-            "text": "¿Qué funcion cumple el sistema de equipos en el Movimiento Scout?",
+            "text": "¿Qué función cumple el sistema de equipos en el Movimiento Scout?",
             "options": [
               "Solo organizar las actividades de campamento",
-              "Facilitar el aprendizaje colaborativo, liderazgo y toma de decisiónes",
-              "Separar a los jóvenes por su nivel de experiencia y su edad",
+              "Facilitar el aprendizaje colaborativo, liderazgo y toma de decisiones",
+              "Separar a los jóvenes por su nivel de experiencia y habilidad",
               "Crear competencia entre los miembros"
             ],
             "correctIndex": 1
@@ -494,8 +494,8 @@
             "options": [
               "Porque se aplican uno por uno en orden secuencial",
               "Porque cada uno puede funcionar de manera independiente",
-              "Porque son interactivos y se complementan entre si como un todo integrado",
-              "Porque cada elemento corresponde a un rango de edad distinto de la rama"
+              "Porque son interactivos y se complementan entre sí como un todo integrado",
+              "Porque cada elemento se aplica solo en el rango de edad que le corresponde"
             ],
             "correctIndex": 2
           }
@@ -516,7 +516,7 @@
         },
         {
           "type": "paragraph",
-          "text": "El Movimiento Scout se basa en el deseo de su fundador, Baden-Powell, de mejorar la sociedad, una meta que el creía solo se puede lograr <strong>mejorando a las personas</strong>. Dentro del Movimiento, el proceso educativo se logra a través de un sistema de autoeducación progresiva incorporado al Método Scout, basado en un sistema de valores."
+          "text": "El Movimiento Scout se basa en el deseo de su fundador, Baden-Powell, de mejorar la sociedad, una meta que él creía solo se puede lograr <strong>mejorando a las personas</strong>. Dentro del Movimiento, el proceso educativo se logra a través de un sistema de autoeducación progresiva incorporado al Método Scout, basado en un sistema de valores."
         },
         {
           "type": "paragraph",
@@ -556,7 +556,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Importante:</strong> El Movimiento Scout rechaza cualquier forma de adoctrinamiento. La adhesión a los valores scouts debe basarse en la libre elección y la comprensión personal, nunca en la imposición. El objetivo es que cada joven interiorice estos valores de manera autonoma y reflexiva."
+          "text": "<strong>Importante:</strong> El Movimiento Scout rechaza cualquier forma de adoctrinamiento. La adhesión a los valores scouts debe basarse en la libre elección y la comprensión personal, nunca en la imposición. El objetivo es que cada joven interiorice estos valores de manera autónoma y reflexiva."
         },
         {
           "type": "heading",
@@ -574,14 +574,18 @@
         },
         {
           "type": "paragraph",
-          "text": "A diferencia de la educación tradicional que separa por año de nacimiento, el Movimiento Scout adapta su programa a grupos de edad correspondientes a etapas de desarrollo: <strong>infancia, pubertad, adolescencia y juventud</strong>. Dentro de cada grupo, se promueve que los jóvenes se desarrollen a su propio ritmo, reconociendo que no todos aprenden de la misma manera."
+          "text": "A diferencia de la educación tradicional que separa por año de nacimiento, el Movimiento Scout adapta su programa a grupos de edad correspondientes a etapas de desarrollo: <strong>primera infancia, infancia, pubertad, adolescencia y juventud</strong>. Dentro de cada grupo, se promueve que los jóvenes se desarrollen a su propio ritmo, reconociendo que no todos aprenden de la misma manera."
         },
         {
           "type": "timeline",
           "items": [
             {
+              "title": "🐾 Primera infancia (Familia)",
+              "description": "Primeros pasos en la vida scout a través del juego, el afecto y la formación de los primeros hábitos de vida en común."
+            },
+            {
               "title": "🐺 Infancia (Manada)",
-              "description": "Énfasis en el juego, la imaginacion, el descubrimiento y la socialización básica dentro del marco del Libro de la Selva."
+              "description": "Énfasis en el juego, la imaginación, el descubrimiento y la socialización básica dentro del marco simbólico de La Fantasía, que se alimenta de El Libro de las Tierras Vírgenes."
             },
             {
               "title": "⚜️ Pubertad (Tropa Scout)",
@@ -589,10 +593,10 @@
             },
             {
               "title": "🧭 Adolescencia (Comunidad)",
-              "description": "Servicio comúnitario, liderazgo, especialización en áreas de interés y proyectos de mayor envergadura."
+              "description": "Servicio comunitario, liderazgo, especialización en áreas de interés y proyectos de mayor envergadura."
             },
             {
-              "title": "🌟 Juventud (Rover)",
+              "title": "🌟 Juventud (Clan)",
               "description": "Servicio al movimiento y la comunidad, formación como dirigentes, desarrollo de un proyecto de vida personal."
             }
           ]
@@ -607,7 +611,7 @@
           {
             "text": "¿Cuáles son los tres principios fundamentales del Movimiento Scout?",
             "options": [
-              "Lealtad, Servicio a los demás y Obediencia",
+              "Lealtad, Disciplina y Obediencia al jefe",
               "Deber para con Dios, con los Demás y Consigo Mismo",
               "Valor, Sabiduría y Fuerza",
               "Fe, Esperanza y Caridad"
@@ -655,7 +659,7 @@
         },
         {
           "type": "paragraph",
-          "text": "El Movimiento Scout es un <strong>movimiento global enraizado en las comunidades locales</strong>. Es un movimiento porque está formado por un gran grupo de personas que comparten los mismos valores y están activamente interésados en lograr un objetivo común. Se manifiesta en sus profundas raíces en la comunidad local, donde se adapta a cada realidad."
+          "text": "El Movimiento Scout es un <strong>movimiento global enraizado en las comunidades locales</strong>. Es un movimiento porque está formado por un gran grupo de personas que comparten los mismos valores y están activamente interesados en lograr un objetivo común. Se manifiesta en sus profundas raíces en la comunidad local, donde se adapta a cada realidad."
         },
         {
           "type": "info-box",
@@ -668,11 +672,11 @@
         },
         {
           "type": "paragraph",
-          "text": "El Movimiento Scout es un <strong>movimiento de jóvenes y para jóvenes</strong>, apoyado por adultos. Dirige su propuesta educativa a los jóvenes, apoyandolos en su transición de la infancia a la edad adulta. No es un movimiento juvenil de adultos; los adultos son facilitadores del proceso educativo, no los protagonistas."
+          "text": "El Movimiento Scout es un <strong>movimiento de jóvenes y para jóvenes</strong>, apoyado por adultos. Dirige su propuesta educativa a los jóvenes, apoyándolos en su transición de la infancia a la edad adulta. No es un movimiento juvenil de adultos; los adultos son facilitadores del proceso educativo, no los protagonistas."
         },
         {
           "type": "paragraph",
-          "text": "El Movimiento sigue siendo particularmente relevante para los <strong>adolescentes</strong>, ofreciendo un espacio seguro para desarrollar la capacidad de tomar decisiónes propias y alcanzar mayor autonomía. El diálogo intergeneracional entre jóvenes y adultos enriquece la experiencia de ambos."
+          "text": "El Movimiento sigue siendo particularmente relevante para los <strong>adolescentes</strong>, ofreciendo un espacio seguro para desarrollar la capacidad de tomar decisiones propias y alcanzar mayor autonomía. El diálogo intergeneracional entre jóvenes y adultos enriquece la experiencia de ambos."
         },
         {
           "type": "heading",
@@ -724,7 +728,7 @@
             },
             {
               "title": "🤝 Abierto a Todos",
-              "description": "Sin discriminación, con atencion especial a jóvenes vulnerables y compromiso de protección.",
+              "description": "Sin discriminación, con atención especial a jóvenes vulnerables y compromiso de protección.",
               "color": "#fce4ec",
               "borderColor": "#c62828"
             }
@@ -732,7 +736,7 @@
         }
       ],
       "reflection": {
-        "prompt": "En tu grupo scout, ¿consideras que se cumple la apertura a todos? ¿Hay barreras (económicas, sociales, culturales) que impidan el acceso de algunos jóvenes? ¿Qué podrias hacer como rover para ayudar a superarlas?"
+        "prompt": "En tu grupo scout, ¿consideras que se cumple la apertura a todos? ¿Hay barreras (económicas, sociales, culturales) que impidan el acceso de algunos jóvenes? ¿Qué podrías hacer como rover para ayudar a superarlas?"
       },
       "quiz": {
         "title": "Evaluación - Características del Movimiento",
@@ -740,17 +744,17 @@
           {
             "text": "¿Por qué se dice que el Movimiento Scout es un 'movimiento' y no solo una organización?",
             "options": [
-              "Porque tiene millones de miembros repartidos en casi todos los países del mundo, y ningún otro grupo es tan grande",
+              "Porque lo que define a un movimiento es su tamaño: basta con reunir muchos miembros en muchos países para serlo",
               "Porque está formado por personas que comparten valores y trabajan por un objetivo común desde las comunidades locales",
               "Porque cambia constantemente sus reglas",
-              "Porque se mueven fisicamente de un lugar a otro"
+              "Porque se mueven físicamente de un lugar a otro"
             ],
             "correctIndex": 1
           },
           {
             "text": "¿Qué significa que el Movimiento Scout es 'voluntario'?",
             "options": [
-              "Que los adultos que sirven en el Movimiento trabajan sin recibir salario ni compensación a cambio",
+              "Que nadie en el Movimiento puede recibir pago, ni siquiera quienes cumplen funciones profesionales",
               "Que los miembros se unen por libre elección y el compromiso voluntario es parte del proceso educativo",
               "Que las actividades son opcionales",
               "Que no hay reglas obligatorias"
@@ -784,19 +788,19 @@
         },
         {
           "type": "paragraph",
-          "text": "Como movimiento educativo, el Movimiento Scout <strong>no debe identificarse con partidos políticos</strong>. Ni la organización misma, ni nadie que se presente como su representante, debe identificarse con un partido o grupo político. La razon es clara: Baden-Powell advirtio sobre el peligro de que las personas se acostumbren a que otros determinen sus formas de pensar, sin ejercer su propio juicio."
+          "text": "Como movimiento educativo, el Movimiento Scout <strong>no debe identificarse con partidos políticos</strong>. Ni la organización misma, ni nadie que se presente como su representante, debe identificarse con un partido o grupo político. La razón es clara: Baden-Powell advirtió sobre el peligro de que las personas se acostumbren a que otros determinen sus formas de pensar, sin ejercer su propio juicio."
         },
         {
           "type": "info-box",
-          "text": "<strong>Educación, no política partidista:</strong> El Movimiento Scout es un movimiento educativo destinado a ayudar a los jóvenes a desarrollar sus propias capacidades y autonomía. Este enfoque requiere <em>neutralidad total</em> en el proceso educativo. La identificación con cualquier partido comprometeria la objetividad qué debe caracterizar la educación centrada en la persona."
+          "text": "<strong>Educación, no política partidista:</strong> El Movimiento Scout es un movimiento educativo destinado a ayudar a los jóvenes a desarrollar sus propias capacidades y autonomía. Este enfoque requiere <em>neutralidad total</em> en el proceso educativo. La identificación con cualquier partido comprometería la objetividad que debe caracterizar la educación centrada en la persona."
         },
         {
           "type": "paragraph",
-          "text": "Sin embargo, esto <strong>no significa separacion de la realidad social</strong>. El Movimiento puede defender valores, tomar posición sobre cuestiones como los Derechos del Niño o los ODS, siempre que esten vinculados a su mision educativa. Lo importante es que estas posiciónes sean herramientas educativas que brinden a los jóvenes la capacidad de pensar criticamente."
+          "text": "Sin embargo, esto <strong>no significa separación de la realidad social</strong>. El Movimiento puede defender valores, tomar posición sobre cuestiones como los Derechos del Niño o los ODS, siempre que estén vinculados a su misión educativa. Lo importante es que estas posiciones sean herramientas educativas que brinden a los jóvenes la capacidad de pensar críticamente."
         },
         {
           "type": "paragraph",
-          "text": "En cuanto a los miembros individuales: nada impide que un Scout pertenezca a un partido político como individuo, siempre que los valores del partido sean consistentes con los valores scouts y que <strong>nunca use al Movimiento como plataforma</strong> para la promocion política."
+          "text": "En cuanto a los miembros individuales: nada impide que un Scout pertenezca a un partido político como individuo, siempre que los valores del partido sean consistentes con los valores scouts y que <strong>nunca use al Movimiento como plataforma</strong> para la promoción política."
         },
         {
           "type": "heading",
@@ -809,7 +813,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Cualquier Organización Scout Nacional debe tener la capacidad de <strong>tomar decisiónes libremente</strong> por su propia autoridad, sin interferencia de instituciones publicas, sociales o religiosas. Esto no significa operar de manera aislada: la cooperación se fomenta, pero siempre asegurando que la identidad e independencia del Movimiento no se vean comprometidas."
+          "text": "Cualquier Organización Scout Nacional debe tener la capacidad de <strong>tomar decisiones libremente</strong> por su propia autoridad, sin interferencia de instituciones públicas, sociales o religiosas. Esto no significa operar de manera aislada: la cooperación se fomenta, pero siempre asegurando que la identidad e independencia del Movimiento no se vean comprometidas."
         },
         {
           "type": "timeline",
@@ -839,11 +843,11 @@
         },
         {
           "type": "paragraph",
-          "text": "La naturaleza e identidad específicas del Movimiento estan <strong>definidas internacionalmente</strong> y acordadas por todas las Organizaciónes Scouts Nacionales. Todos los niveles del Movimiento deben estar atentos en sus relaciónes con otras entidades para garantizar que la identidad y la independencia no se vean comprometidas."
+          "text": "La naturaleza e identidad específicas del Movimiento están <strong>definidas internacionalmente</strong> y acordadas por todas las Organizaciones Scouts Nacionales. Todos los niveles del Movimiento deben estar atentos en sus relaciones con otras entidades para garantizar que la identidad y la independencia no se vean comprometidas."
         },
         {
           "type": "mission-box",
-          "text": "<h3>🌟 RESUMEN: ¿QUE HACE UNICO AL MOVIMIENTO SCOUT?</h3><p style=\"margin: 15px 0;\">El Movimiento Scout es único porque combina:</p><ul style=\"text-align: left; margin: 10px auto; max-width: 500px;\"><li>Un <strong>propósito educativo</strong> claro y centrado en la persona</li><li>Un <strong>método</strong> de 8 elementos interactivos probado por mas de un siglo</li><li>Un <strong>sistema de valores</strong> inclusivo basado en la libre elección</li><li>Una naturaleza <strong>voluntaria, abierta, no política e independiente</strong></li><li>Un alcance <strong>global</strong> con raíces profundas en lo <strong>local</strong></li></ul>"
+          "text": "<h3>🌟 RESUMEN: ¿QUÉ HACE ÚNICO AL MOVIMIENTO SCOUT?</h3><p style=\"margin: 15px 0;\">El Movimiento Scout es único porque combina:</p><ul style=\"text-align: left; margin: 10px auto; max-width: 500px;\"><li>Un <strong>propósito educativo</strong> claro y centrado en la persona</li><li>Un <strong>método</strong> de 8 elementos interactivos probado por más de un siglo</li><li>Un <strong>sistema de valores</strong> inclusivo basado en la libre elección</li><li>Una naturaleza <strong>voluntaria, abierta, no política e independiente</strong></li><li>Un alcance <strong>global</strong> con raíces profundas en lo <strong>local</strong></li></ul>"
         }
       ],
       "reflection": {
@@ -856,8 +860,8 @@
             "text": "¿Por qué el Movimiento Scout no debe identificarse con partidos políticos?",
             "options": [
               "Porque la política es mala",
-              "Porque comprometeria la neutralidad y objetividad del enfoque educativo centrado en la persona",
-              "Porque Baden-Powell era militar y nunca quiso mezclar el escultismo con la política",
+              "Porque comprometería la neutralidad y objetividad del enfoque educativo centrado en la persona",
+              "Porque Baden-Powell les prohibió a los miembros del Movimiento afiliarse a un partido",
               "Porque los jóvenes no tienen edad para votar"
             ],
             "correctIndex": 1
@@ -866,9 +870,9 @@
             "text": "¿Puede el Movimiento Scout tomar posición sobre temas como los Derechos del Niño o los ODS?",
             "options": [
               "No, debe mantenerse completamente neutral en todos los temas públicos del país",
-              "Si, siempre que esten vinculados a su mision educativa y no a política partidista",
+              "Sí, siempre que estén vinculados a su misión educativa y no a política partidista",
               "Solo si un partido político lo solicita",
-              "Solo en países democraticos"
+              "Solo en países democráticos"
             ],
             "correctIndex": 1
           },
@@ -877,7 +881,7 @@
             "options": [
               "Que no coopera con ninguna otra organización ni acepta acuerdos con gobiernos, empresas o iglesias",
               "Que cada grupo scout hace lo que quiere",
-              "Que la organización puede tomar decisiónes libremente sin interferencia externa, salvaguardando su identidad",
+              "Que la organización puede tomar decisiones libremente sin interferencia externa, salvaguardando su identidad",
               "Que no recibe financiamiento de nadie"
             ],
             "correctIndex": 2
@@ -918,7 +922,7 @@
     },
     {
       "id": "achievement-4",
-      "name": "Guardian de los Valores",
+      "name": "Guardián de los Valores",
       "emoji": "⚖️",
       "unlockOnModule": 5
     },
@@ -930,13 +934,13 @@
     },
     {
       "id": "achievement-6",
-      "name": "Diplomatico Scout",
+      "name": "Diplomático Scout",
       "emoji": "🏛️",
       "unlockOnModule": 7
     }
   ],
   "certificate": {
     "courseName": "CARACTERÍSTICAS EDUCATIVAS DEL MOVIMIENTO SCOUT",
-    "description": "ha completado éxitosamente el curso de Características Educativas del Movimiento Scout, demostrando conocimiento sobre el propósito, método, valores y principios que definen al escultismo mundial"
+    "description": "ha completado exitosamente el curso de Características Educativas del Movimiento Scout, demostrando conocimiento sobre el propósito, método, valores y principios que definen al escultismo mundial"
   }
 }

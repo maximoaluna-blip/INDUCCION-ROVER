@@ -352,15 +352,22 @@ function handleRecover(params) {
   }
   email = email.toLowerCase();
 
+  // ADR-074 (21-sep-2026): este endpoint NO esta autenticado -doGet no pide token,
+  // y el token viaja en el HTML publicado de cada curso-, asi que devuelve solo lo
+  // necesario para retomar el curso y NADA de lo que la persona escribio. De eso
+  // informa que existe (ids y conteos), nunca su contenido. Mismo criterio que el
+  // backend de la plataforma, que es otro despliegue con otra hoja.
   var result = {
     registration: null,
     modules: [],
     quizzes: [],
     certificates: [],
-    commitments: [],
-    reflectionsByCourse: {},
-    assessments: {},
-    plans: {}
+    saved: {
+      reflections: {},   // courseId -> [moduloId, ...]
+      commitments: {},   // courseId -> cuantos
+      plans: [],
+      assessments: []
+    }
   };
 
   // Buscar en Registros
@@ -376,7 +383,6 @@ function handleRecover(params) {
           group: regData[i][3],
           region: regData[i][4],
           email: regData[i][5],
-          motivation: regData[i][6],
           course: regData[i][7]
         };
         break; // Tomar el primer registro
@@ -442,11 +448,8 @@ function handleRecover(params) {
     var comData = comSheet.getDataRange().getValues();
     for (var n = 1; n < comData.length; n++) {
       if (String(comData[n][1]).toLowerCase().trim() === email) {
-        result.commitments.push({
-          timestamp: comData[n][0],
-          course: comData[n][3],
-          commitment: comData[n][4]
-        });
+        var comCourse = String(comData[n][3] || '').trim() || 'sin-curso';
+        result.saved.commitments[comCourse] = (result.saved.commitments[comCourse] || 0) + 1;
       }
     }
   } catch (err) { /* Hoja puede no existir aun */ }
@@ -459,10 +462,11 @@ function handleRecover(params) {
       if (String(refData[q][1]).toLowerCase().trim() === email) {
         var refCourse = String(refData[q][3]).trim();
         var refModId = String(refData[q][4]).trim();
-        var refTxt = String(refData[q][5] || '');
         if (!refCourse || !refModId) continue;
-        if (!result.reflectionsByCourse[refCourse]) result.reflectionsByCourse[refCourse] = {};
-        result.reflectionsByCourse[refCourse][refModId] = refTxt;
+        if (!result.saved.reflections[refCourse]) result.saved.reflections[refCourse] = [];
+        if (result.saved.reflections[refCourse].indexOf(refModId) === -1) {
+          result.saved.reflections[refCourse].push(refModId);
+        }
       }
     }
   } catch (err) { /* Hoja puede no existir aun */ }
@@ -477,8 +481,8 @@ function handleRecover(params) {
         var cmpId = String(asData[s][5]).trim();
         var grade = parseInt(asData[s][6], 10);
         if (!aid || !cmpId || isNaN(grade)) continue;
-        if (!result.assessments[aid]) result.assessments[aid] = { grades: {} };
-        result.assessments[aid].grades[cmpId] = grade;
+        // ADR-074: que autodiagnosticos hizo, NUNCA con que grados.
+        if (result.saved.assessments.indexOf(aid) === -1) result.saved.assessments.push(aid);
       }
     }
   } catch (err) { /* Hoja puede no existir aun */ }
@@ -495,7 +499,7 @@ function handleRecover(params) {
         var contStr = String(plData[t][6] || '');
         var cont = null;
         try { cont = JSON.parse(contStr); } catch (e) { cont = contStr; }
-        result.plans[plId] = { planType: plType, contenido: cont, timestamp: plData[t][0] };
+        if (result.saved.plans.indexOf(plId) === -1) result.saved.plans.push(plId);
       }
     }
   } catch (err) { /* Hoja puede no existir aun */ }
@@ -532,7 +536,7 @@ function handleVerify(params) {
         return jsonResponse(true, {
           valid: true,
           studentName: certData[i][2],
-          email: certData[i][1],
+          // ADR-074: el correo del titular no se devuelve.
           course: certData[i][3],
           group: certData[i][4],
           region: certData[i][5],

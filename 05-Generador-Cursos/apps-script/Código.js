@@ -563,7 +563,6 @@ function handleStats() {
       totalUsers: 0,
       totalCertificates: 0,
       totalQuizzes: 0,
-      totalCommitments: 0,
       completionsByModule: {},
       courseStats: {},
       averageScore: 0,
@@ -643,12 +642,12 @@ function handleStats() {
       }
     } catch (err) { /* Sin datos aun */ }
 
-    // Contar compromisos
-    try {
-      var comSheet = getOrCreateSheet(SHEET_CONFIG.compromisos.name, SHEET_CONFIG.compromisos.headers);
-      var comData = comSheet.getDataRange().getValues();
-      stats.totalCommitments = Math.max(0, comData.length - 1);
-    } catch (err) { /* Sin datos aun */ }
+    // Sin metrica de compromisos (hallazgo C4, auditoria del 20-sep-2026).
+    // Los dos cursos de Rover guardan el compromiso solo en localStorage y
+    // ninguno envia action='commitment', asi que el conteo era 0 estructural.
+    // Se retira en vez de conectarse: guardar en una hoja lo que cada rover se
+    // compromete a hacer va en direccion contraria al ADR-074, y esa decision
+    // es del dueno. La hoja 'Compromisos' y handleCommitment() se conservan.
 
     return jsonResponse(true, stats);
 

@@ -152,8 +152,8 @@
           {
             "text": "¿Qué referencia internacional ha adoptado el Movimiento Scout como marco de referencia para su acción educativa?",
             "options": [
-              "La Declaración de los Derechos del Niño (ONU, 1959)",
-              "Los Objetivos de Desarrollo Sostenible (ODS) de la ONU",
+              "La Declaración de los Derechos del Niño (ONU, 1959), que el Movimiento cita desde entonces",
+              "Los 17 ODS (Objetivos de Desarrollo Sostenible) de la ONU",
               "El Convenio de Ginebra"
             ],
             "correctIndex": 1
@@ -278,7 +278,7 @@
           {
             "text": "¿A qué tipo de educación pertenece el Movimiento Scout?",
             "options": [
-              "Educación formal",
+              "Educación formal (la escolar)",
               "Educación no formal",
               "Educación informal",
               "Educación virtual"
@@ -475,7 +475,7 @@
               "Instructor que dicta las actividades",
               "Guía y facilitador que acompaña al joven",
               "Supervisor que evalúa el rendimiento",
-              "Director que toma todas las decisiones"
+              "Director que toma todas las decisiones del equipo"
             ],
             "correctIndex": 1
           },
@@ -622,7 +622,7 @@
             "text": "¿Qué significa el 'deber para con Dios' en el Movimiento Scout?",
             "options": [
               "Pertenecer a una religión específica",
-              "Asistir de forma obligatoria a los servicios religiosos del grupo",
+              "Asistir de forma obligatoria a los servicios religiosos del grupo scout",
               "La búsqueda de la dimensión espiritual y de una realidad trascendente",
               "Seguir las reglas de una iglesia determinada"
             ],
@@ -754,7 +754,7 @@
           {
             "text": "¿Qué significa que el Movimiento Scout es 'voluntario'?",
             "options": [
-              "Que nadie en el Movimiento puede recibir pago, ni siquiera quienes cumplen funciones profesionales",
+              "Que nadie en el Movimiento puede recibir pago por su trabajo, ni siquiera quienes cumplen funciones profesionales",
               "Que los miembros se unen por libre elección y el compromiso voluntario es parte del proceso educativo",
               "Que las actividades son opcionales",
               "Que no hay reglas obligatorias"
@@ -869,7 +869,7 @@
           {
             "text": "¿Puede el Movimiento Scout tomar posición sobre temas como los Derechos del Niño o los ODS?",
             "options": [
-              "No, debe mantenerse completamente neutral en todos los temas públicos del país",
+              "No, debe mantenerse completamente neutral en todos los temas públicos del país en el que está",
               "Sí, siempre que estén vinculados a su misión educativa y no a política partidista",
               "Solo si un partido político lo solicita",
               "Solo en países democráticos"
@@ -889,7 +889,7 @@
           {
             "text": "¿Qué debe pasar si una organización patrocinadora intenta controlar a una Organización Scout Nacional?",
             "options": [
-              "Se debe aceptar el control porque la organización patrocinadora es la que proporciona los recursos",
+              "Se debe aceptar el control porque la organización patrocinadora es la que proporciona los recursos económicos",
               "Se debe salvaguardar la identidad e independencia del Movimiento sin comprometer su propósito educativo",
               "Se debe romper toda relación inmediatamente",
               "Se debe consultar a los miembros jóvenes"

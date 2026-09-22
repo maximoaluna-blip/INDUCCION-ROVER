@@ -44,6 +44,90 @@ const cssContent = fs.readFileSync(path.join(TEMPLATES_DIR, 'styles.css'), 'utf-
 const jsEngine = fs.readFileSync(path.join(TEMPLATES_DIR, 'engine.js'), 'utf-8');
 
 // --- Validacion basica ---
+// Solo cuenta cuando es UNICA mas larga; un empate no es explotable.
+function checkSesgoLongitud(course) {
+    const stripHtml = (s) => String(s).replace(/<[^>]*>/g, '');
+    const culpables = [];
+    let total = 0;
+    (course.modules || []).forEach(mod => {
+        if (!mod.quiz || !mod.quiz.questions) return;
+        mod.quiz.questions.forEach((q, qi) => {
+            if (!q.options || q.correctIndex === undefined) return;
+            total++;
+            const lens = q.options.map(o => stripHtml(o).length);
+            const otras = lens.filter((_, i) => i !== q.correctIndex);
+            const margen = lens[q.correctIndex] - Math.max(...otras);
+            if (margen > 0) culpables.push({ mod: mod.id, qi, margen });
+        });
+    });
+    return { total, culpables };
+}
+
+// --- Paridad de forma en los quizzes (dos reglas simetricas) ---
+// Anadidas el 15-sep-2026 por la auditoria pedagogica del Curso 03 de Politicas
+// Transversales. El chequeo de arriba es unilateral -solo mira si la correcta es la
+// mas LARGA- y por eso admite dos formas de aprobar sin leer que no veia:
+//   (a) el pendulo: al acortar la correcta para pasar ese chequeo, paso a ser la mas
+
+//   (b) la oveja negra: la correcta era la unica opcion que empezaba con otra palabra
+//       en 6 preguntas, con acierto 6 de 6.
+// Estas dos reglas miran la PARIDAD, no el rango: castigan que la forma delate, en
+// cualquier direccion. Por eso no se pueden burlar empujando hacia un lado.
+
+// 1. La correcta no puede ser el EXTREMO de longitud, ni por arriba ni por abajo.
+//    Simetrica a proposito: el chequeo unilateral de mas arriba provoco el pendulo
+//    -al acortar la correcta para pasarlo, paso a ser la mas corta en 8 de 14-.
+//    Solo cuenta si es UNICA en el extremo y por un margen visible: una pregunta con
+//    dos distractores muy distintos entre si y la correcta en medio no es explotable.
+function checkExtremoLongitud(course) {
+    const stripHtml = (s) => String(s).replace(/<[^>]*>/g, '');
+    const MARGEN = 12;
+    const culpables = [];
+    let total = 0;
+    (course.modules || []).forEach(mod => {
+        if (!mod.quiz || !mod.quiz.questions) return;
+        mod.quiz.questions.forEach((q, qi) => {
+            if (!q.options || q.correctIndex === undefined) return;
+            total++;
+            const lens = q.options.map(o => stripHtml(o).length);
+            const mia = lens[q.correctIndex];
+            const otras = lens.filter((_, i) => i !== q.correctIndex);
+            const porArriba = mia - Math.max(...otras);
+            const porAbajo = Math.min(...otras) - mia;
+            if (porArriba >= MARGEN) culpables.push({ mod: mod.id, qi, margen: porArriba, sentido: 'la mas larga' });
+            else if (porAbajo >= MARGEN) culpables.push({ mod: mod.id, qi, margen: porAbajo, sentido: 'la mas corta' });
+        });
+    });
+    return { total, culpables };
+}
+
+// 2. Paralelismo de apertura: si exactamente dos opciones comparten primera palabra y
+//    la tercera -la distinta- es la correcta, se acierta sin leer. Vale igual para la
+//    polaridad en preguntas de si/no: dos opciones deben compartir la de la correcta.
+function checkOvejaNegra(course) {
+    const stripHtml = (s) => String(s).replace(/<[^>]*>/g, '');
+    const primeraPalabra = (s) => {
+        const t = stripHtml(s).trim().toLowerCase().replace(/^[^\wáéíóúñ]+/, '');
+        return (t.split(/[\s,:.;]+/)[0] || '');
+    };
+    const culpables = [];
+    let total = 0;
+    (course.modules || []).forEach(mod => {
+        if (!mod.quiz || !mod.quiz.questions) return;
+        mod.quiz.questions.forEach((q, qi) => {
+            if (!q.options || q.options.length < 3 || q.correctIndex === undefined) return;
+            total++;
+            const ini = q.options.map(primeraPalabra);
+            const otras = ini.filter((_, i) => i !== q.correctIndex);
+            const todasOtrasIguales = otras.every(x => x === otras[0]);
+            if (todasOtrasIguales && ini[q.correctIndex] !== otras[0]) {
+                culpables.push({ mod: mod.id, qi, correcta: ini[q.correctIndex], otras: otras[0] });
+            }
+        });
+    });
+    return { total, culpables };
+}
+
 function validate(course) {
     const errors = [];
     if (!course.courseId) errors.push('Falta courseId');
@@ -74,6 +158,37 @@ if (errors.length > 0) {
     errors.forEach(e => console.error('   - ' + e));
     process.exit(1);
 }
+
+const sesgo = checkSesgoLongitud(course);
+if (sesgo.culpables.length * 2 > sesgo.total) {
+    console.warn(`⚠️  Sesgo de longitud: la opcion correcta es la mas larga en ${sesgo.culpables.length}/${sesgo.total} preguntas (mas de la mitad).`);
+    console.warn('   Se puede aprobar eligiendo siempre la opcion mas larga, sin leer las lecciones.');
+    console.warn('   Acorta la correcta (suele traer el "por que" pegado) o dale a cada distractor su propia razon plausible.');
+    sesgo.culpables.slice().sort((a, b) => b.margen - a.margen).slice(0, 5)
+        .forEach(c => console.warn(`   - Modulo ${c.mod}, pregunta ${c.qi + 1}: +${c.margen} caracteres sobre la siguiente`));
+    if (sesgo.culpables.length > 5) console.warn(`   ... y ${sesgo.culpables.length - 5} mas`);
+}
+
+const extremo = checkExtremoLongitud(course);
+if (extremo.culpables.length > 0) {
+    console.warn(`⚠️  La correcta es el extremo de longitud en ${extremo.culpables.length}/${extremo.total} preguntas.`);
+    console.warn('   Da igual el sentido: si destaca por tamano, se acierta sin leer.');
+    console.warn('   Empareja las tres longitudes alargando o acortando DISTRACTORES, no la correcta.');
+    extremo.culpables.slice().sort((a, b) => b.margen - a.margen).slice(0, 5).forEach(c =>
+        console.warn(`   - Modulo ${c.mod}, pregunta ${c.qi + 1}: ${c.sentido} por ${c.margen} caracteres`));
+    if (extremo.culpables.length > 5) console.warn(`   ... y ${extremo.culpables.length - 5} mas`);
+}
+
+const oveja = checkOvejaNegra(course);
+if (oveja.culpables.length > 0) {
+    console.warn(`⚠️  Oveja negra: en ${oveja.culpables.length}/${oveja.total} preguntas la correcta es la UNICA que empieza distinto.`);
+    console.warn('   Se acierta sin leer: basta elegir la que no se parece a las otras dos.');
+    console.warn('   Que dos opciones compartan la apertura -y la polaridad- de la correcta.');
+    oveja.culpables.slice(0, 5).forEach(c =>
+        console.warn(`   - Modulo ${c.mod}, pregunta ${c.qi + 1}: correcta empieza por "${c.correcta}", las otras dos por "${c.otras}"`));
+    if (oveja.culpables.length > 5) console.warn(`   ... y ${oveja.culpables.length - 5} mas`);
+}
+
 
 // --- Departamentos colombianos ---
 const DEPARTAMENTOS = [
@@ -273,9 +388,9 @@ function buildRegistrationModule(course) {
                     <p>Este curso guarda dos cosas en dos sitios distintos:</p>
                     <ul>
                         <li>📱 <strong>En este navegador:</strong> todo tu avance y lo que escribes, para que puedas seguir sin internet</li>
-                        <li>☁️ <strong>En una hoja de la Asociación:</strong> tu registro, los módulos que completas, tus puntuaciones y tu certificado — y también <strong>lo que escribes</strong> en tus reflexiones, que el equipo de formación puede leer</li>
+                        <li>☁️ <strong>En una hoja de la Asociación:</strong> tu registro, los módulos que completas, tus puntuaciones y tu certificado — y también <strong>tus reflexiones</strong>, que el equipo de formación puede leer</li>
                     </ul>
-                    <p style="margin-top: 10px; font-size: 0.9em;"><strong>Si recuperas tu avance con tu correo, vuelven tus módulos y tus puntuaciones, no lo que escribiste:</strong> eso se queda en el navegador donde lo escribiste. Tus datos solo se usan para fines educativos de la Asociación Scouts de Colombia.</p>
+                    <p style="margin-top: 10px; font-size: 0.9em;"><strong>Tu compromiso del cierre se queda solo en este navegador</strong>, y si recuperas tu avance con tu correo vuelven tus módulos y tus puntuaciones, no lo que escribiste. Tus datos solo se usan para fines educativos de la Asociación Scouts de Colombia.</p>
                 </div>
             </div>`;
 }

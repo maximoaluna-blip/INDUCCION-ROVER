@@ -232,7 +232,10 @@ body {
 
 .dash-header .meta {
     font-size: 0.85em;
-    color: #888;
+    /* #636363 y no #888: sobre blanco son 6.01:1 contra 3.54:1. La auditoria CONECTADA
+       del 27-sep-2026 lo encontro -la desconectada no, porque tapaba la cabecera con el
+       modal-. Mismo gris que el resto de la casa. */
+    color: #636363;
 }
 
 .dash-actions {
@@ -295,9 +298,12 @@ body {
 }
 
 .filter-group label {
+/* Los grises de este panel (#888 y #aaa) daban 3.54:1 y 2.32:1 sobre blanco. Pasan a
+   #636363 (6.01:1), el de la casa. Lo encontro la auditoria CONECTADA del 27-sep-2026;
+   la desconectada no podia, porque el modal tapaba todo esto. */
     font-size: 0.75em;
     font-weight: 600;
-    color: #888;
+    color: #636363;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -323,7 +329,7 @@ body {
 .btn-filter-clear {
     background: transparent;
     border: 1px solid #ccc;
-    color: #888;
+    color: #636363;
     padding: 8px 14px;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8em;
@@ -374,7 +380,7 @@ body {
 
 .summary-card .card-label {
     font-size: 0.85em;
-    color: #888;
+    color: #636363;
     font-weight: 500;
     margin-top: 4px;
 }
@@ -586,7 +592,7 @@ table tbody td {
 .no-data {
     text-align: center;
     padding: 40px 20px;
-    color: #aaa;
+    color: #636363;
     font-size: 0.95em;
 }
 
@@ -805,26 +811,28 @@ table tbody td {
             </div>
         </div>
 
-        <!-- Filters -->
+        <!-- Filters. Cada <label> lleva su for: sin el, la etiqueta se ve pero no nombra
+             al control, y un lector de pantalla anuncia un desplegable sin nombre. axe lo
+             marca CRITICAL. Lo encontro la auditoria conectada del 27-sep-2026. -->
         <div class="filters-bar">
             <div class="filter-group">
-                <label>Region</label>
+                <label for="filterRegion">Region</label>
                 <select id="filterRegion" onchange="applyFilters()">
                     <option value="">Todas las regiones</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Curso</label>
+                <label for="filterCourse">Curso</label>
                 <select id="filterCourse" onchange="applyFilters()">
                     <option value="">Todos los cursos</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Fecha desde</label>
+                <label for="filterDateFrom">Fecha desde</label>
                 <input type="date" id="filterDateFrom" onchange="applyFilters()">
             </div>
             <div class="filter-group">
-                <label>Fecha hasta</label>
+                <label for="filterDateTo">Fecha hasta</label>
                 <input type="date" id="filterDateTo" onchange="applyFilters()">
             </div>
             <button class="btn-filter-clear" onclick="clearFilters()">Limpiar filtros</button>
@@ -1033,7 +1041,19 @@ function fetchData() {
             return response.json();
         })
         .then(function(data) {
-            state.data = data;
+            // Apps Script envuelve la respuesta en {success, data, error}: hay que
+            // desempaquetarla. Este panel guardaba el SOBRE, asi que leia
+            // `state.data.resumen` donde el dato vive en `state.data.data.resumen` --
+            // y lo mismo con `modulos`. Por eso la tasa salia vacia y el grafico de
+            // modulos decia "No hay datos para mostrar" aunque el backend ya los
+            // sirviera (ADR-082, @6 y @7). El panel de la plataforma desempaqueta desde
+            // siempre; este, copiado de una version anterior, nunca lo hizo. Lo cazo
+            // panel-a11y.spec.js el 27-sep-2026: la primera prueba que recorrio el
+            // `fetchData` de verdad en vez de inyectar `state.data` a mano.
+            if (data && data.success === false) {
+                throw new Error(data.error || 'el backend respondio con error');
+            }
+            state.data = (data && data.success && data.data) ? data.data : data;
             setConnectionStatus('connected');
             populateFilters();
             applyFilters();

@@ -144,6 +144,16 @@ body {
 [data-theme="dark"] .consent-box p { color: #ddd; }
 [data-theme="dark"] .consent-check { color: #d4b8ff; }
 
+/* El certificado conserva fondo claro para poder imprimirse, asi que su texto no debe
+   heredar los colores claros del tema oscuro (daba 2.02:1).
+   Portado de Programa de Jovenes, que lo arreglo el 03-ago-2026 al ampliar su
+   auditoria a11y a los modulos ocultos. Rover no tenia auditoria a11y ninguna hasta el
+   27-sep-2026, y su primera corrida lo encontro tal cual, con los mismos numeros. */
+html[data-theme="dark"] .certificate,
+html[data-theme="dark"] .certificate p,
+html[data-theme="dark"] .certificate strong,
+html[data-theme="dark"] .certificate div { color: #2b2b33; }
+
 .data-privacy {
     background: #fff8e1; border-left: 4px solid #ffe675;
     padding: 15px; margin: 20px 0;
@@ -237,13 +247,25 @@ body {
     color: white; padding: 20px; text-align: center;
 }
 .stat-card h4 { font-size: 2em; margin-bottom: 5px; color: white; }
+/* `.module p` (color gris para fondo blanco) le ganaba en especificidad al `color: white`
+   de .stat-card, dejando texto #636363 sobre fondo morado: contraste 1.55:1, ilegible.
+   Portado de Programa de Jovenes, que lo arreglo el 03-ago-2026 al ampliar su
+   auditoria a11y a los modulos ocultos. Rover no tenia auditoria a11y ninguna hasta el
+   27-sep-2026, y su primera corrida lo encontro tal cual, con los mismos numeros. */
+.stat-card p, .module .stat-card p { color: #ffffff; }
 
 /* --- Achievements --- */
 .achievements { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
 .achievement {
     background: #f3e8ff; color: #622599; padding: 10px 15px;
     border: 2px solid #622599; font-size: 0.9em;
-    opacity: 0.4; transition: all 0.3s; font-weight: 600;
+    /* opacity 0.4 aplastaba el contraste a 2:1 sobre un diseno que de suyo cumple 7.93:1.
+       Calculado: 0.75 da 4.39:1 (no pasa), 0.85 da 5.57:1. Se conserva la senal visual
+       de "aun no lo tienes" y se cumple WCAG AA.
+       Portado de Programa de Jovenes, que lo arreglo el 03-ago-2026 al ampliar su
+   auditoria a11y a los modulos ocultos. Rover no tenia auditoria a11y ninguna hasta el
+   27-sep-2026, y su primera corrida lo encontro tal cual, con los mismos numeros. */
+    opacity: 0.85; transition: all 0.3s; font-weight: 600;
 }
 .achievement.earned { opacity: 1; transform: scale(1.05); box-shadow: 0 3px 10px rgba(98, 37, 153, 0.3); }
 

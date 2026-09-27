@@ -1,0 +1,76 @@
+name: Pruebas E2E (Playwright)
+
+# La primera integracion continua de Rover (27-sep-2026). Hasta ese dia era la unica linea
+# sin suite, y por eso sus defectos vivian publicados: el 18-sep un curso `active` daba 404
+# (ADR-063), y la primera corrida de esta suite encontro cuatro mas en el acto -el
+# certificado cambiaba de codigo en cada visita, el registro no mandaba su curso, el panel
+# leia el sobre de Apps Script en vez de los datos, y 54 nodos de contraste en los cursos-.
+#
+# Recompila los cursos, los sirve EN LOCAL y corre la suite contra ese build -no contra
+# produccion-: ASC_BASE_URL apunta al servidor de este job. Sin esa variable la suite mira
+# GitHub Pages y valida lo que ya estaba publicado, no lo que se esta subiendo.
+# El backend se intercepta en cada prueba: ninguna escribe en la hoja de Rover.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: PRUEBAS-E2E/package-lock.json
+
+      - name: Instalar dependencias
+        working-directory: PRUEBAS-E2E
+        run: npm ci
+
+      - name: Instalar navegador Playwright
+        working-directory: PRUEBAS-E2E
+        run: npx playwright install --with-deps chromium
+
+      - name: Compuerta del backend (sin red)
+        working-directory: 05-Generador-Cursos
+        run: node probar-backend.js
+
+      - name: Recompilar cursos
+        working-directory: 05-Generador-Cursos
+        run: |
+          for c in fundamentos-scout caracteristicas-educativas; do
+            node build-course.js "$c"
+          done
+
+      - name: Servir build + correr suite
+        working-directory: PRUEBAS-E2E
+        env:
+          ASC_BASE_URL: http://localhost:8099/02-Plataforma-Web/
+        run: |
+          python3 -m http.server 8099 --directory "$GITHUB_WORKSPACE" >/tmp/srv.log 2>&1 &
+          SRV=$!
+          for i in $(seq 1 15); do
+            curl -sf -o /dev/null "http://localhost:8099/02-Plataforma-Web/fundamentos-scout.html" && break
+            sleep 1
+          done
+          set +e
+          npx playwright test --reporter=list
+          CODE=$?
+          kill $SRV 2>/dev/null
+          exit $CODE
+
+      - name: Subir reporte (si falla)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: PRUEBAS-E2E/playwright-report
+          retention-days: 14

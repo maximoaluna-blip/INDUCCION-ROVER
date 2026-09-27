@@ -156,6 +156,16 @@ body {
 [data-theme="dark"] .consent-box p { color: #ddd; }
 [data-theme="dark"] .consent-check { color: #d4b8ff; }
 
+/* El certificado conserva fondo claro para poder imprimirse, asi que su texto no debe
+   heredar los colores claros del tema oscuro (daba 2.02:1).
+   Portado de Programa de Jovenes, que lo arreglo el 03-ago-2026 al ampliar su
+   auditoria a11y a los modulos ocultos. Rover no tenia auditoria a11y ninguna hasta el
+   27-sep-2026, y su primera corrida lo encontro tal cual, con los mismos numeros. */
+html[data-theme="dark"] .certificate,
+html[data-theme="dark"] .certificate p,
+html[data-theme="dark"] .certificate strong,
+html[data-theme="dark"] .certificate div { color: #2b2b33; }
+
 .data-privacy {
     background: #fff8e1; border-left: 4px solid #ffe675;
     padding: 15px; margin: 20px 0;
@@ -249,13 +259,25 @@ body {
     color: white; padding: 20px; text-align: center;
 }
 .stat-card h4 { font-size: 2em; margin-bottom: 5px; color: white; }
+/* `.module p` (color gris para fondo blanco) le ganaba en especificidad al `color: white`
+   de .stat-card, dejando texto #636363 sobre fondo morado: contraste 1.55:1, ilegible.
+   Portado de Programa de Jovenes, que lo arreglo el 03-ago-2026 al ampliar su
+   auditoria a11y a los modulos ocultos. Rover no tenia auditoria a11y ninguna hasta el
+   27-sep-2026, y su primera corrida lo encontro tal cual, con los mismos numeros. */
+.stat-card p, .module .stat-card p { color: #ffffff; }
 
 /* --- Achievements --- */
 .achievements { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
 .achievement {
     background: #f3e8ff; color: #622599; padding: 10px 15px;
     border: 2px solid #622599; font-size: 0.9em;
-    opacity: 0.4; transition: all 0.3s; font-weight: 600;
+    /* opacity 0.4 aplastaba el contraste a 2:1 sobre un diseno que de suyo cumple 7.93:1.
+       Calculado: 0.75 da 4.39:1 (no pasa), 0.85 da 5.57:1. Se conserva la senal visual
+       de "aun no lo tienes" y se cumple WCAG AA.
+       Portado de Programa de Jovenes, que lo arreglo el 03-ago-2026 al ampliar su
+   auditoria a11y a los modulos ocultos. Rover no tenia auditoria a11y ninguna hasta el
+   27-sep-2026, y su primera corrida lo encontro tal cual, con los mismos numeros. */
+    opacity: 0.85; transition: all 0.3s; font-weight: 600;
 }
 .achievement.earned { opacity: 1; transform: scale(1.05); box-shadow: 0 3px 10px rgba(98, 37, 153, 0.3); }
 
@@ -359,7 +381,7 @@ body {
                 <div class="progress-bar" id="progressBar"></div>
                 <div class="progress-text" id="progressText">0%</div>
             </div>
-            <p style="margin-top: 10px; font-size: 0.9em; color: #666;">
+            <p style="margin-top: 10px; font-size: 0.9em;">
                 ⏱️ Tiempo en el curso: <span id="elapsedTime">0 min</span>
             </p>
         </div>
@@ -1384,7 +1406,7 @@ body {
                             <img src="../assets/logo-vallescout.png" alt="Valle Scout" style="height: 45px;">
                         </div>
                         <p style="font-size: 0.75em; text-transform: uppercase; letter-spacing: 2px; color: #622599; font-weight: 600; margin: 5px 0;">Asociacion Scouts de Colombia</p>
-                        <p style="font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; color: #888; margin: 2px 0;">Regional Valle del Cauca</p>
+                        <p style="font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; color: #636363; margin: 2px 0;">Regional Valle del Cauca</p>
                     </div>
 
                     <hr style="border: none; border-top: 2px solid #622599; margin: 10px 30px;">
@@ -1418,13 +1440,13 @@ body {
 
                     <!-- Verification code -->
                     <div style="text-align: center; margin: 12px 0; padding: 8px; border: 1px dashed #622599; background: #faf8fd;">
-                        <p style="font-size: 0.75em; color: #888; margin: 0 0 3px;">Codigo de Verificacion</p>
+                        <p style="font-size: 0.75em; color: #636363; margin: 0 0 3px;">Codigo de Verificacion</p>
                         <strong style="font-size: 1em; color: #622599; letter-spacing: 2px;" id="certCode">ASC-2026-XXXXX</strong>
                     </div>
 
                     <!-- Footer -->
                     <div style="text-align: center; margin-top: 12px;">
-                        <p style="font-size: 0.7em; color: #999;">Plataforma de Formacion Rover ASC | vallescout.org.co</p>
+                        <p style="font-size: 0.7em; color: #767676;">Plataforma de Formacion Rover ASC | vallescout.org.co</p>
                     </div>
                 </div>
 
@@ -1520,7 +1542,13 @@ function handleRegistration(event) {
         return;
     }
     saveProgress();
-    sendToGoogleSheets({ action: 'register', ...userProfile });
+    // El curso va EXPLICITO: `userProfile` no lo lleva, y sin el la fila queda con la
+    // columna Curso vacia. Era la unica accion del motor que no lo enviaba -- quiz,
+    // progress y certificate si lo hacian, por eso los certificados salian bien y los
+    // registros no. La plataforma lo corrigio el 03-ago-2026 (ADR-026) y a Rover nadie
+    // se lo paso: el 27-sep-2026 su UNICA fila de registro seguia sin curso, y hubo que
+    // migrarla a mano. Esto es la causa; aquella migracion fue el sintoma.
+    sendToGoogleSheets({ action: 'register', ...userProfile, course: COURSE_CONFIG.courseId });
     showModule(1);
     var firstName = userProfile.fullName.split(' ')[0];
     var welcomeEl = document.getElementById('welcomeName');
@@ -1807,11 +1835,28 @@ function saveCommitment(text) {
 // --- Certificado ---
 function generateCertificate() {
     var date = new Date();
-    var code = 'ASC-' + date.getFullYear() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase();
-
     var el = function (id) { return document.getElementById(id); };
+
+    // IDEMPOTENCIA: el certificado se emite UNA sola vez por curso.
+    // Hasta el 27-sep-2026 esta funcion generaba un codigo ALEATORIO NUEVO en cada
+    // llamada, y la llamada ocurre cada vez que se entra al ultimo modulo. Consecuencias
+    // medidas: el codigo que la persona apunto dejaba de ser el que ve al volver, y
+    // CADA VISITA escribia otra fila en la hoja de Certificados -- inflando el conteo y,
+    // desde el ADR-082, la tasa de completacion que ese conteo alimenta. Lo caza la suite
+    // E2E estrenada ese dia: fue su primer rojo. La plataforma lo resolvio asi y a Rover,
+    // con motor propio, nadie se lo paso.
+    var courseKey = 'certificate_issued_' + COURSE_CONFIG.courseId;
+    var issued = null;
+    try { issued = JSON.parse(localStorage.getItem(courseKey) || 'null'); } catch (e) { issued = null; }
+
+    var esNuevo = !(issued && issued.code);
+    var code = esNuevo
+        ? 'ASC-' + date.getFullYear() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase()
+        : issued.code;
+    var fechaISO = esNuevo ? date.toISOString() : (issued.date || date.toISOString());
+
     if (el('studentName')) el('studentName').textContent = userProfile.fullName || 'Rover Scout';
-    if (el('certDate')) el('certDate').textContent = date.toLocaleDateString('es-CO');
+    if (el('certDate')) el('certDate').textContent = new Date(fechaISO).toLocaleDateString('es-CO');
     if (el('totalTime')) el('totalTime').textContent = studyTime;
     if (el('certGroup')) el('certGroup').textContent = userProfile.group || 'N/A';
     if (el('certRegion')) el('certRegion').textContent = userProfile.region || 'Colombia';
@@ -1822,15 +1867,10 @@ function generateCertificate() {
     // asi que seis quizzes perfectos daban 600/8 = 75. Se promedia sobre los que existen.
     // (19-sep-2026: el certificado imprimia 75 % a quien habia acertado todo, en las 5 lineas.)
     var puntajes = quizScores.filter(function (s) { return typeof s === 'number'; });
-    var avg = puntajes.length > 0 ? Math.round(puntajes.reduce(function (a, b) { return a + b; }, 0) / puntajes.length) : 100;
+    var avg = esNuevo
+        ? (puntajes.length > 0 ? Math.round(puntajes.reduce(function (a, b) { return a + b; }, 0) / puntajes.length) : 100)
+        : issued.score;
     if (el('finalScore')) el('finalScore').textContent = avg;
-
-    sendToGoogleSheets({
-        action: 'certificate', name: userProfile.fullName, email: userProfile.email,
-        group: userProfile.group, region: userProfile.region, certificateCode: code,
-        completionDate: date.toISOString(), score: avg, studyTime: studyTime,
-        course: COURSE_CONFIG.courseId
-    });
 
     // Mismo criterio que el motor compartido: el logro final es el que declara
     // `unlockOnModule: -1`, no el que se llame 'achievement-5'. Aqui acertaba por
@@ -1844,10 +1884,22 @@ function generateCertificate() {
     if (bar) bar.style.width = '100%';
     if (text) text.textContent = '100%';
 
-    localStorage.setItem('certificate_' + code, JSON.stringify({
-        name: userProfile.fullName, code: code, date: date.toISOString(),
-        score: avg, course: COURSE_CONFIG.courseId
-    }));
+    // Solo la PRIMERA emision escribe y sincroniza: es lo que evita la fila duplicada
+    // en la hoja cada vez que alguien vuelve a mirar su certificado.
+    if (esNuevo) {
+        sendToGoogleSheets({
+            action: 'certificate', name: userProfile.fullName, email: userProfile.email,
+            group: userProfile.group, region: userProfile.region, certificateCode: code,
+            completionDate: fechaISO, score: avg, studyTime: studyTime,
+            course: COURSE_CONFIG.courseId
+        });
+        var registro = JSON.stringify({
+            name: userProfile.fullName, code: code, date: fechaISO,
+            score: avg, course: COURSE_CONFIG.courseId
+        });
+        localStorage.setItem('certificate_' + code, registro);
+        localStorage.setItem(courseKey, registro);
+    }
 }
 
 // --- Descargar certificado como PDF ---

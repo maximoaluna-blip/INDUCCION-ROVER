@@ -1,0 +1,44 @@
+// @ts-check
+const { defineConfig, devices } = require('@playwright/test');
+
+/**
+ * Configuracion Fase 0 — pruebas contra el sitio PUBLICO (GitHub Pages).
+ * Ningun test de esta fase escribe en el backend de Apps Script.
+ * La URL base apunta a la carpeta de cursos de Rover (plataforma regional del Valle,
+ * con backend, token y hoja PROPIOS: no comparte nada con las 4 lineas nacionales).
+ */
+const BASE_URL =
+  process.env.ASC_BASE_URL ||
+  'https://maximoaluna-blip.github.io/INDUCCION-ROVER/02-Plataforma-Web/';
+
+module.exports = defineConfig({
+  testDir: './tests',
+  // Carga el catalogo de cursos del ASC_BASE_URL antes de las specs (suite agnostica de linea).
+  globalSetup: require.resolve('./tests/_setup-cursos.js'),
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 1 : 0,
+  workers: process.env.CI ? 2 : undefined,
+  reporter: [['list'], ['html', { open: 'never' }]],
+  timeout: 60_000,
+  expect: { timeout: 10_000 },
+  use: {
+    baseURL: BASE_URL,
+    trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    actionTimeout: 15_000,
+    navigationTimeout: 30_000,
+  },
+  projects: [
+    {
+      name: 'desktop-chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'movil-android',
+      use: { ...devices['Pixel 5'] },
+      // El test de accesibilidad corre solo en escritorio para no duplicar.
+      grepInvert: /@solo-escritorio/,
+    },
+  ],
+});

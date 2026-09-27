@@ -1,0 +1,20 @@
+{
+  "name": "pruebas-e2e-rover",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pruebas E2E con Playwright para Rover (plataforma regional del Valle) (auditoria funcional: smoke, enlaces, a11y, responsive, persistencia, flujo del alumno).",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "smoke": "playwright test smoke",
+    "links": "playwright test links",
+    "a11y": "playwright test a11y",
+    "responsive": "playwright test responsive",
+    "persistence": "playwright test persistence",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.50.0"
+  }
+}

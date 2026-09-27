@@ -45,7 +45,13 @@ function handleRegistration(event) {
         return;
     }
     saveProgress();
-    sendToGoogleSheets({ action: 'register', ...userProfile });
+    // El curso va EXPLICITO: `userProfile` no lo lleva, y sin el la fila queda con la
+    // columna Curso vacia. Era la unica accion del motor que no lo enviaba -- quiz,
+    // progress y certificate si lo hacian, por eso los certificados salian bien y los
+    // registros no. La plataforma lo corrigio el 03-ago-2026 (ADR-026) y a Rover nadie
+    // se lo paso: el 27-sep-2026 su UNICA fila de registro seguia sin curso, y hubo que
+    // migrarla a mano. Esto es la causa; aquella migracion fue el sintoma.
+    sendToGoogleSheets({ action: 'register', ...userProfile, course: COURSE_CONFIG.courseId });
     showModule(1);
     var firstName = userProfile.fullName.split(' ')[0];
     var welcomeEl = document.getElementById('welcomeName');
@@ -332,11 +338,28 @@ function saveCommitment(text) {
 // --- Certificado ---
 function generateCertificate() {
     var date = new Date();
-    var code = 'ASC-' + date.getFullYear() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase();
-
     var el = function (id) { return document.getElementById(id); };
+
+    // IDEMPOTENCIA: el certificado se emite UNA sola vez por curso.
+    // Hasta el 27-sep-2026 esta funcion generaba un codigo ALEATORIO NUEVO en cada
+    // llamada, y la llamada ocurre cada vez que se entra al ultimo modulo. Consecuencias
+    // medidas: el codigo que la persona apunto dejaba de ser el que ve al volver, y
+    // CADA VISITA escribia otra fila en la hoja de Certificados -- inflando el conteo y,
+    // desde el ADR-082, la tasa de completacion que ese conteo alimenta. Lo caza la suite
+    // E2E estrenada ese dia: fue su primer rojo. La plataforma lo resolvio asi y a Rover,
+    // con motor propio, nadie se lo paso.
+    var courseKey = 'certificate_issued_' + COURSE_CONFIG.courseId;
+    var issued = null;
+    try { issued = JSON.parse(localStorage.getItem(courseKey) || 'null'); } catch (e) { issued = null; }
+
+    var esNuevo = !(issued && issued.code);
+    var code = esNuevo
+        ? 'ASC-' + date.getFullYear() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase()
+        : issued.code;
+    var fechaISO = esNuevo ? date.toISOString() : (issued.date || date.toISOString());
+
     if (el('studentName')) el('studentName').textContent = userProfile.fullName || 'Rover Scout';
-    if (el('certDate')) el('certDate').textContent = date.toLocaleDateString('es-CO');
+    if (el('certDate')) el('certDate').textContent = new Date(fechaISO).toLocaleDateString('es-CO');
     if (el('totalTime')) el('totalTime').textContent = studyTime;
     if (el('certGroup')) el('certGroup').textContent = userProfile.group || 'N/A';
     if (el('certRegion')) el('certRegion').textContent = userProfile.region || 'Colombia';
@@ -347,15 +370,10 @@ function generateCertificate() {
     // asi que seis quizzes perfectos daban 600/8 = 75. Se promedia sobre los que existen.
     // (19-sep-2026: el certificado imprimia 75 % a quien habia acertado todo, en las 5 lineas.)
     var puntajes = quizScores.filter(function (s) { return typeof s === 'number'; });
-    var avg = puntajes.length > 0 ? Math.round(puntajes.reduce(function (a, b) { return a + b; }, 0) / puntajes.length) : 100;
+    var avg = esNuevo
+        ? (puntajes.length > 0 ? Math.round(puntajes.reduce(function (a, b) { return a + b; }, 0) / puntajes.length) : 100)
+        : issued.score;
     if (el('finalScore')) el('finalScore').textContent = avg;
-
-    sendToGoogleSheets({
-        action: 'certificate', name: userProfile.fullName, email: userProfile.email,
-        group: userProfile.group, region: userProfile.region, certificateCode: code,
-        completionDate: date.toISOString(), score: avg, studyTime: studyTime,
-        course: COURSE_CONFIG.courseId
-    });
 
     // Mismo criterio que el motor compartido: el logro final es el que declara
     // `unlockOnModule: -1`, no el que se llame 'achievement-5'. Aqui acertaba por
@@ -369,10 +387,22 @@ function generateCertificate() {
     if (bar) bar.style.width = '100%';
     if (text) text.textContent = '100%';
 
-    localStorage.setItem('certificate_' + code, JSON.stringify({
-        name: userProfile.fullName, code: code, date: date.toISOString(),
-        score: avg, course: COURSE_CONFIG.courseId
-    }));
+    // Solo la PRIMERA emision escribe y sincroniza: es lo que evita la fila duplicada
+    // en la hoja cada vez que alguien vuelve a mirar su certificado.
+    if (esNuevo) {
+        sendToGoogleSheets({
+            action: 'certificate', name: userProfile.fullName, email: userProfile.email,
+            group: userProfile.group, region: userProfile.region, certificateCode: code,
+            completionDate: fechaISO, score: avg, studyTime: studyTime,
+            course: COURSE_CONFIG.courseId
+        });
+        var registro = JSON.stringify({
+            name: userProfile.fullName, code: code, date: fechaISO,
+            score: avg, course: COURSE_CONFIG.courseId
+        });
+        localStorage.setItem('certificate_' + code, registro);
+        localStorage.setItem(courseKey, registro);
+    }
 }
 
 // --- Descargar certificado como PDF ---

@@ -9,7 +9,12 @@ const path = require('path');
 const OUT = path.join(__dirname, '.cursos.json');
 
 const DEFAULT_BASE =
-  'https://maximoaluna-blip.github.io/INDUCCION-PROGRAMA-JOVENES/02-Plataforma-Web/';
+  // Rover, no Programa de Jovenes. Este valor por defecto es el SEGUNDO de la suite -el
+  // otro vive en playwright.config.js-, y al forquear la suite el 27-sep-2026 se cambio
+  // aquel y no este: en local y en CI no se noto, porque ambos fijan ASC_BASE_URL, pero la
+  // corrida contra produccion SIN la variable cargo el catalogo de PJ sobre las paginas de
+  // Rover y dio 137 fallos. Dos defaults para lo mismo divergen igual que dos copias.
+  'https://maximoaluna-blip.github.io/INDUCCION-ROVER/02-Plataforma-Web/';
 
 module.exports = async () => {
   const base = process.env.ASC_BASE_URL || DEFAULT_BASE;

@@ -359,6 +359,10 @@ function handleRecover(params) {
   // backend de la plataforma, que es otro despliegue con otra hoja.
   var result = {
     registration: null,
+    // null cuando no se pregunto por un curso; true/false cuando si (ADR-082).
+    // Este GET es publico y sin autenticar, asi que NO escribe: el alta la crea el
+    // motor por POST y con token cuando esto vale false.
+    registeredInCourse: null,
     modules: [],
     quizzes: [],
     certificates: [],
@@ -370,13 +374,19 @@ function handleRecover(params) {
     }
   };
 
+  // El curso que se pregunta. Vacio = no se pregunta por ninguno, y entonces
+  // `registeredInCourse` se queda en null: "no se pregunto" no es "no esta inscrito".
+  var cursoPedido = sanitize(params.course, 200);
+
   // Buscar en Registros
   try {
     var regSheet = getOrCreateSheet(SHEET_CONFIG.registros.name, SHEET_CONFIG.registros.headers);
     var regData = regSheet.getDataRange().getValues();
+    var primera = null;      // la primera fila de esta persona, sea del curso que sea
+    var deEsteCurso = null;  // la del curso preguntado, si existe
     for (var i = 1; i < regData.length; i++) {
       if (String(regData[i][5]).toLowerCase().trim() === email) {
-        result.registration = {
+        var fila = {
           timestamp: regData[i][0],
           fullName: regData[i][1],
           age: regData[i][2],
@@ -385,9 +395,15 @@ function handleRecover(params) {
           email: regData[i][5],
           course: regData[i][7]
         };
-        break; // Tomar el primer registro
+        if (!primera) primera = fila;
+        if (cursoPedido && String(regData[i][7] || '') === cursoPedido) {
+          deEsteCurso = fila;
+          break; // la del curso preguntado manda
+        }
       }
     }
+    result.registration = deEsteCurso || primera;
+    if (cursoPedido) result.registeredInCourse = !!deEsteCurso;
   } catch (err) { /* Hoja puede no existir aun */ }
 
   // Buscar en Progreso
@@ -569,6 +585,15 @@ function handleStats() {
       generatedAt: new Date().toISOString()
     };
 
+    // Las dos caras del cruce persona+curso, para la tasa de completacion.
+    // Rover llega a esto por el camino largo: su panel mostraba 0 % porque este
+    // backend NUNCA emitio `resumen` y el dashboard calculaba la tasa sobre arrays
+    // que aqui no existen. La plataforma lo arreglo el 21-sep (ADR-079); esta linea
+    // se quedo fuera, como se queda casi siempre.
+    var inscripcionKeys = {};
+    var emailsConCertificado = {};
+    var certKeys = [];
+
     // Contar registros
     try {
       var regSheet = getOrCreateSheet(SHEET_CONFIG.registros.name, SHEET_CONFIG.registros.headers);
@@ -582,6 +607,10 @@ function handleStats() {
           stats.courseStats[course] = { registrations: 0, certificates: 0, avgScore: 0, scores: [] };
         }
         stats.courseStats[course].registrations++;
+
+        // La inscripcion es el par persona+curso. Sin correo no hay par que cruzar.
+        var regEmail = String(regData[i][5] || '').toLowerCase();
+        if (regEmail) inscripcionKeys[regEmail + '|' + course] = true;
       }
     } catch (err) { /* Sin datos aun */ }
 
@@ -597,6 +626,12 @@ function handleStats() {
           stats.courseStats[cCourse] = { registrations: 0, certificates: 0, avgScore: 0, scores: [] };
         }
         stats.courseStats[cCourse].certificates++;
+
+        var cEmail = String(certData[j][1] || '').toLowerCase();
+        if (cEmail) emailsConCertificado[cEmail + '|' + cCourse] = true;
+        // Una entrada por FILA, tambien las que no tienen correo: un certificado
+        // sin correo no se puede emparejar con ninguna inscripcion.
+        certKeys.push(cEmail ? (cEmail + '|' + cCourse) : '');
       }
     } catch (err) { /* Sin datos aun */ }
 
@@ -641,6 +676,38 @@ function handleStats() {
         delete cs.scores; // No enviar array crudo
       }
     } catch (err) { /* Sin datos aun */ }
+
+    // --- Resumen agregado: la tasa se mide por INSCRIPCIONES (ADR-082) ---
+    // Nunca fue `certificados / registros` aqui porque este backend no publicaba
+    // tasa ninguna: el panel de Rover mostraba 0 % -calculaba sobre `registros[]` y
+    // `certificados[]`, que este `handleStats` no sirve-. Se publica ya calculada, y
+    // con la formula buena desde el primer dia: numerador y denominador son el MISMO
+    // conjunto de pares persona+curso, asi que no puede pasar del 100 %.
+    var inscripciones = 0;
+    var inscripcionesCompletadas = 0;
+    for (var ik in inscripcionKeys) {
+      inscripciones++;
+      if (emailsConCertificado[ik]) inscripcionesCompletadas++;
+    }
+    // Lo que sobra por el lado de los certificados: emitidos sin inscripcion que
+    // los respalde. En la plataforma eran 7 de 21 y destaparon una linea entera
+    // (ADR-080); aqui se publican desde el principio en vez de esconderse.
+    var certificadosSinInscripcion = 0;
+    for (var ck = 0; ck < certKeys.length; ck++) {
+      if (!certKeys[ck] || !inscripcionKeys[certKeys[ck]]) certificadosSinInscripcion++;
+    }
+
+    stats.resumen = {
+      totalRovers: stats.totalUsers,
+      totalCertificados: stats.totalCertificates,
+      inscripciones: inscripciones,
+      inscripcionesCompletadas: inscripcionesCompletadas,
+      tasaCompletacion: (inscripciones > 0
+        ? Math.round((inscripcionesCompletadas / inscripciones) * 100)
+        : 0),
+      certificadosSinInscripcion: certificadosSinInscripcion,
+      promedioPuntuacion: stats.averageScore || 0
+    };
 
     // Sin metrica de compromisos (hallazgo C4, auditoria del 20-sep-2026).
     // Los dos cursos de Rover guardan el compromiso solo en localStorage y

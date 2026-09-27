@@ -689,6 +689,16 @@ function recoverProgress() {
         return;
     }
 
+    // Ley 1581 de 2012. La autorizacion va donde se capturan los datos, y recuperar
+    // el avance PUEDE CREAR LA INSCRIPCION: es una puerta de entrada mas. La del
+    // registro la bloquea el navegador con `required`; esta no vive dentro de un
+    // <form>, asi que se mira a mano.
+    var consentRec = document.getElementById('consentRecover');
+    if (consentRec && !consentRec.checked) {
+        showNotification('⚠️ Para continuar, autoriza el tratamiento de tus datos', 'warning');
+        return;
+    }
+
     msgDiv.style.display = 'block';
     msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">🔄 Buscando tu avance...</p>';
 
@@ -777,6 +787,32 @@ function recoverProgress() {
                 updateStats();
                 updateProgress();
 
+                // --- Recuperar TAMBIEN inscribe en este curso (ADR-082) ---
+                // `recover` busca por correo y devuelve la inscripcion que encuentre,
+                // sea del curso que sea: se entraba aqui con el registro de OTRO curso,
+                // se hacia este entero y al final se escribia el certificado pero nunca
+                // la inscripcion. En la plataforma eso dejo 7 certificados sin fila y
+                // una linea entera figurando con 0 adultos (ADR-080).
+                // Se inscribe SOLO ante un `false` explicito: un `undefined` de un
+                // despliegue anterior no puede leerse como "vuelve a inscribirla".
+                var inscritoAhora = false;
+                if (serverData.registeredInCourse === false && userProfile && userProfile.fullName) {
+                    // Campo a campo y no con spread, para que se vea que `motivation`
+                    // va vacia: `recover` no la devuelve desde el ADR-074.
+                    sendToGoogleSheets({
+                        action: 'register',
+                        fullName: userProfile.fullName,
+                        age: userProfile.age,
+                        group: userProfile.group,
+                        region: userProfile.region,
+                        email: userProfile.email,
+                        motivation: '',
+                        registrationDate: new Date().toISOString(),
+                        course: COURSE_CONFIG.courseId
+                    });
+                    inscritoAhora = true;
+                }
+
                 // Determinar último módulo completado
                 var lastModule = data.currentModule || 0;
                 if (!lastModule && moduleProgress.length > 0) {
@@ -792,12 +828,21 @@ function recoverProgress() {
                 var completedCount = moduleProgress.filter(Boolean).length;
                 showNotification('¡Avance recuperado, ' + firstName + '! ' + completedCount + ' módulos completados 🎉');
 
-                if (anotaciones > 0 && typeof msgDiv !== 'undefined' && msgDiv) {
+                // Si acabamos de inscribirla en este curso, se dice: el dato se arregla
+                // y el texto lo cuenta, que son la misma mitad de la decision.
+                var avisoInscripcion = inscritoAhora
+                    ? '<p style="color: #2e7d32; margin-top: 10px;">Te inscribimos en <strong>este curso</strong> con esos mismos datos.</p>'
+                    : '';
+                var avisoAnotaciones = anotaciones > 0
+                    ? '<p style="color: #636363; margin-top: 10px;">Tienes <strong>' + anotaciones +
+                      '</strong> anotaciones guardadas. Lo que escribes <strong>no se recupera por correo</strong>: ' +
+                      'se queda en el navegador donde lo escribiste.</p>'
+                    : '';
+
+                if ((anotaciones > 0 || inscritoAhora) && typeof msgDiv !== 'undefined' && msgDiv) {
                     msgDiv.style.display = 'block';
                     msgDiv.innerHTML = '<p style="color: #2e7d32; font-weight: 600;">✅ Recuperamos tu avance.</p>' +
-                        '<p style="color: #636363; margin-top: 10px;">Tienes <strong>' + anotaciones +
-                        '</strong> anotaciones guardadas. Lo que escribes <strong>no se recupera por correo</strong>: ' +
-                        'se queda en el navegador donde lo escribiste.</p>';
+                        avisoInscripcion + avisoAnotaciones;
                 }
                 showModule(lastModule > 0 ? lastModule : 1);
             } else {

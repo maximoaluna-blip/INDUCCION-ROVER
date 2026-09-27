@@ -54,6 +54,8 @@ const SHEETS = {
   'Progreso': [
     ['Timestamp', 'Email', 'Nombre', 'Curso', 'Modulo Completado', 'Nombre Modulo'],
     ['2026-09-01', 'ana@example.com', 'Ana Prueba', 'fundamentos-scout', 0, 'Introduccion'],
+    ['2026-09-02', 'ana@example.com', 'Ana Prueba', 'fundamentos-scout', 1, 'Leccion 1'],
+    ['2026-09-02', 'luis@example.com', 'Luis Prueba', 'fundamentos-scout', 0, 'Introduccion'],
   ],
   'Evaluaciones': [
     ['Timestamp', 'Email', 'Nombre', 'Curso', 'Modulo', 'Puntuacion'],
@@ -143,6 +145,24 @@ check('...y los certificados sin inscripción aparte, no escondidos en el numera
   r.certificadosSinInscripcion === 1, String(r.certificadosSinInscripcion));
 check('...sin que el agregado identifique a nadie',
   !/Ana Prueba|@example\.com/.test(JSON.stringify(d.resumen)));
+
+// --- modulos: el array que el panel pinta ----------------------------------
+const mods = d.modulos;
+check('`stats` publica `modulos`, que es de donde el panel pinta su grafico',
+  Array.isArray(mods) && mods.length > 0,
+  'sin `modulos` el grafico dice "No hay datos para mostrar" con los datos dentro');
+check('...con lo que ese grafico lee de cada barra: nombre y completados',
+  mods && mods[0] && typeof mods[0].nombre === 'string' && typeof mods[0].completados === 'number',
+  JSON.stringify(mods && mods[0]));
+check('...y el MODULO 0 no se pierde en el comodin `?`',
+  !!(d.completionsByModule || {})['fundamentos-scout_modulo_0'] && mods.some(function (m) { return m.modulo === '0'; }),
+  JSON.stringify(Object.keys(d.completionsByModule || {})));
+check('...ordenados por curso y numero de modulo',
+  mods && mods.length >= 2 && mods[0].modulo === '0' && mods[1].modulo === '1',
+  mods && mods.map(function (m) { return m.modulo; }).join(','));
+check('...con el abandono por leccion, que sale de lo que ya se guardaba',
+  mods && mods[0].abandonoPct === 0 && mods[1].abandono === 1 && mods[1].abandonoPct === 50,
+  mods && JSON.stringify(mods.map(function (m) { return [m.modulo, m.completados, m.abandonoPct]; })));
 
 // --- recover: dice si hay inscripcion, y no escribe -------------------------
 const ajeno = get({ action: 'recover', email: 'ana@example.com', course: 'caracteristicas-educativas', token: TOKEN });

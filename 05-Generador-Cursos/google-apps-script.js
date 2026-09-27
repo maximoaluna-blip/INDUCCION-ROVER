@@ -580,6 +580,13 @@ function handleStats() {
       totalCertificates: 0,
       totalQuizzes: 0,
       completionsByModule: {},
+      // El panel pinta su grafico de "Completacion por Modulo" desde `modulos`, y
+      // este backend NUNCA lo ha emitido: tenia el conteo en `completionsByModule`,
+      // con otra forma. Por eso ese grafico lleva toda su vida diciendo "No hay
+      // datos para mostrar" CON LOS DATOS DENTRO -- el mismo defecto que hacia que
+      // la tasa saliera 0 %, en la seccion de al lado y sin un numero imposible que
+      // lo delatara. Se arreglo una de las dos el 27-sep-2026 sin ver la otra.
+      modulos: [],
       courseStats: {},
       averageScore: 0,
       generatedAt: new Date().toISOString()
@@ -635,13 +642,52 @@ function handleStats() {
       }
     } catch (err) { /* Sin datos aun */ }
 
-    // Completaciones por modulo
+    // Completaciones por modulo (agregado + array para el grafico del panel)
     try {
       var progSheet = getOrCreateSheet(SHEET_CONFIG.progreso.name, SHEET_CONFIG.progreso.headers);
       var progData = progSheet.getDataRange().getValues();
+      var moduloAgg = {};
       for (var k = 1; k < progData.length; k++) {
-        var modKey = String(progData[k][3] || 'curso') + '_modulo_' + String(progData[k][4] || '?');
+        var mCurso = String(progData[k][3] || 'curso');
+        // OJO: aqui NO vale `|| '?'`. El modulo 0 -la introduccion- es falsy, y con
+        // eso acababa en el comodin: se perdia el primer modulo de cada curso y con
+        // el se rompia la cadena de abandono. Es el mismo cuidado que la plataforma
+        // tuvo que aprender en el ADR-030, y que aqui seguia sin aplicarse.
+        var bruto = progData[k][4];
+        var mNum = (bruto === '' || bruto === null || bruto === undefined) ? '?' : String(bruto);
+        var mNom = String(progData[k][5] || ('Modulo ' + mNum));
+        var modKey = mCurso + '_modulo_' + mNum;
         stats.completionsByModule[modKey] = (stats.completionsByModule[modKey] || 0) + 1;
+        if (!moduloAgg[modKey]) {
+          moduloAgg[modKey] = { curso: mCurso, modulo: mNum, nombre: mNom, completados: 0 };
+        }
+        moduloAgg[modKey].completados++;
+      }
+
+      for (var mk in moduloAgg) {
+        stats.modulos.push(moduloAgg[mk]);
+      }
+      stats.modulos.sort(function (a, b) {
+        if (a.curso !== b.curso) return a.curso < b.curso ? -1 : 1;
+        var an = parseInt(a.modulo, 10) || 0;
+        var bn = parseInt(b.modulo, 10) || 0;
+        return an - bn;
+      });
+
+      // Abandono por leccion: cuanta gente que completo el modulo anterior NO llego
+      // a este. Sale de lo que ya se guardaba; no hace falta tocar el registro.
+      var previoPorCurso = {};
+      for (var mi = 0; mi < stats.modulos.length; mi++) {
+        var m = stats.modulos[mi];
+        var previo = previoPorCurso[m.curso];
+        if (previo === undefined) {
+          m.abandono = 0;          // primer modulo del curso: no hay de donde caerse
+          m.abandonoPct = 0;
+        } else {
+          m.abandono = Math.max(0, previo - m.completados);
+          m.abandonoPct = previo > 0 ? Math.round((m.abandono / previo) * 100) : 0;
+        }
+        previoPorCurso[m.curso] = m.completados;
       }
     } catch (err) { /* Sin datos aun */ }
 

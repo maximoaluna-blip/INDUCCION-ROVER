@@ -14,7 +14,7 @@
 | Campo | Valor |
 |---|---|
 | `courseId` | `servir-en-manada` |
-| Ruta / nivel | Ruta 1 · Nivel 1 · **rama Manada** (`route: grupo`, `level: 1`, `branch: manada`) |
+| Ruta / nivel | Ruta 1 · Nivel 1 · **unidad Manada (rama Lobatos)** (`route: grupo`, `level: 1`, `branch: manada`) |
 | Público | Rovers de 18 a 20 años que van a servir en la Manada de su Grupo |
 | Duración | ~35 min: bienvenida y 5 lecciones |
 | Fuente principal | ***Guía para el Dirigente de Manada*** (ASC, 2026, 69 pp.). Se citan **las páginas del PDF**, porque el índice impreso tiene otra numeración. Complementos: *Modelo de Aplicación* (proporción de adultos, p. 22) y *Política A Salvo del Peligro* (estrategia 2+1). |
@@ -37,7 +37,7 @@ Es cita literal de la Guía, p. 9. Al Rover que llega queriendo «poner orden» 
 ## Decisiones de diseño
 
 - **Marco y fondo no se confunden.** Según la Guía (p. 30) y el GLOSARIO, el marco simbólico es la **Fantasía**, el fondo motivador es **El Libro de las Tierras Vírgenes** y el ambiente de referencia son los **relatos fantásticos**.
-- **Los personajes de la Familia son de la Familia.** La Manada comparte el libro, pero Raksha, Papá Lobo, Chikai y los demás **se reservan para la Familia de Cachorros**, igual que el Cubil como escenario de esa rama (p. 31). Un Rover que viene de servir en Familia no debe mezclarlos.
+- **Los personajes de la Familia son de la Familia.** La Manada comparte el libro, pero Raksha, Papá Lobo, Chikai y los demás **se reservan para la Familia de Cachorros** (p. 31). Un Rover que viene de servir en Familia no debe mezclarlos.
 - **Akela no se define como cargo.** La Guía lo nombra como personaje del libro (p. 30) y en la ceremonia de paso («es presentado a Akela por el Jefe de Grupo», p. 32), pero no dice qué dirigente lo encarna. El curso dice «los Viejos Lobos» (así llama la Guía a los dirigentes, p. 26 y 58) y no afirma quién es Akela.
 - **A Salvo del Peligro:** la Guía de Manada no trae reglas propias de baño ni de contacto como la de Familia. Remite a la política y a la estrategia 2+1 (p. 64). El curso no inventa reglas: aplica la 2+1 y la gestión del riesgo (p. 64–65), y remite a *Servir en el Grupo*.
 
@@ -69,7 +69,7 @@ El gancho. La Manada tiene niños y niñas de 7 a 10 años, y sus dirigentes son
   - el Viejo Lobo como «narrador que da vida al marco simbólico» (p. 58).
 - **Qué sí le toca al Rover:** vivir la historia, usar los nombres de la Manada, no mezclar personajes de la Familia y preguntar antes de dar vida a un personaje.
 - **Reflexión:** un personaje o un momento de la Selva que recuerdes de tu Manada, y por qué se te quedó.
-- **Quiz (2):** un Rover que viene de Familia y llama «Raksha» a una dirigente de la Manada; y qué es el fondo motivador.
+- **Quiz (2):** un Rover que viene de Familia y llama «Raksha» a una dirigente de la Manada; y un Rover que confunde marco simbólico con fondo motivador.
 
 ### 4 · Aprenden moviéndose y jugando (~7 min)
 - **Anclaje:** el «¡no corran!» que nadie escucha.
@@ -78,7 +78,7 @@ El gancho. La Manada tiene niños y niñas de 7 a 10 años, y sus dirigentes son
   - comunicación con los lobatos: lenguaje sencillo y positivo («Caminemos juntos para estar seguros»), apoyo visual y gestual, escucha emocional, momentos de expresión con tres preguntas, el juego como lenguaje (p. 59–60);
   - **firmeza con ternura**: voz tranquila, normas claras, consecuencias coherentes, trato respetuoso, «sin gritos, sin humillaciones y sin comparaciones» (p. 58–59).
 - **Reflexión:** una frase en negativo que sueles usar, y cómo la dirías en positivo.
-- **Quiz (2):** reformular un «¡no corran!», y un lobato que se burla de otro que perdió.
+- **Quiz (2):** los lobatos que corren y chocan en el pasillo (qué frase en positivo), y un lobato que se burla de otro que perdió.
 
 ### 5 · Seisenas y Consejo de Roca (~6 min)
 - **Anclaje:** en tu Clan, los equipos se arman por proyectos.
@@ -95,11 +95,11 @@ El gancho. La Manada tiene niños y niñas de 7 a 10 años, y sus dirigentes son
 - **Fuentes:**
   - la estrategia 2+1: al menos tres personas, también en las comunicaciones (Guía de Manada p. 64, que cita la política);
   - el botón «Me Pongo A Salvo del Peligro», en la web y en los QR de los sitios de reunión (p. 64);
-  - gestión del riesgo en salidas y campamentos: identificar, evaluar, prevenir, responder y aprender (p. 65);
+  - gestión del riesgo en salidas y campamentos: identificar, evaluar, prevenir, responder y aprender, y «La gestión del riesgo no limita la aventura: la hace responsable» (p. 65);
   - proporción de adultos: uno por cada 6 lobatos más el Jefe de Unidad (*Modelo*, p. 22). El Rover no cuenta (R1).
 - **Caso completo:** una salida al parque, de principio a fin.
 - **Compromiso:** *«En la Manada voy a ___, y nunca voy a ___».*
-- **Quiz (3):** un lobato que se aleja en la salida; un lobato que le escribe al Rover por chat; los adultos que hacen falta para una salida con 12 lobatos.
+- **Quiz (3):** evalúa la gestión del riesgo, no repite los casos de R1: un rastreo en un parque con lago (prevenir); una lobata que escribe al privado desde el celular de su mamá (2+1 en comunicaciones); un lobato que se perdió diez minutos (aprender, en la evaluación).
 
 ## Logros
 1. Ojos de Lobato · 2. Voz de la Selva · 3. Firmeza con Ternura · 4. Todos en el Consejo · 5. Siempre Mejor.

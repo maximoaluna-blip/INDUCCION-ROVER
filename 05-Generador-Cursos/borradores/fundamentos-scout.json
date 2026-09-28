@@ -1,9 +1,10 @@
 {
   "courseId": "fundamentos-scout",
   "title": "Fundamentos del Movimiento Scout",
-  "subtitle": "Formación para Rovers - Sinodales y Ayudantes",
-  "description": "Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, misión, método scout y su impacto global. Preparación integral para servir como sinodal o ayudante.",
-  "contentVersion": "2026-09-21",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 1",
+  "description": "Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, misión, método scout y su impacto global. Base de la ruta para servir en el Grupo, apoyando a las otras ramas.",
+  "contentVersion": "2026-09-27",
+  "registration": { "motivationLabel": "¿Por qué quieres servir en otra rama de tu Grupo?" },
   "icon": "🏕️",
   "duration": "2 horas",
   "totalContentModules": 6,
@@ -33,7 +34,7 @@
             "<strong>Dominar las características esenciales</strong> del escultismo",
             "<strong>Entender los 8 elementos</strong> del método scout correctamente",
             "<strong>Fortalecer conceptos educativos</strong> scouts aplicables a niños y niñas",
-            "<strong>Prepararte para ser sinodal/ayudante</strong> en manada y tropa"
+            "<strong>Prepararte para servir en tu Grupo</strong>, apoyando a las otras ramas"
           ]
         }
       ]
@@ -104,7 +105,7 @@
         }
       ],
       "reflection": {
-        "prompt": "¿Cómo aplicarías estos valores al trabajar con niños y niñas en manada o tropa?"
+        "prompt": "¿Cómo aplicarías estos valores al trabajar con niños y niñas en la rama donde vas a servir?"
       },
       "quiz": {
         "title": "Evaluación - Misión y Propósito",
@@ -274,7 +275,7 @@
         }
       ],
       "reflection": {
-        "prompt": "¿Qué elementos del campamento de Brownsea implementarías en tus actividades con manada o tropa? ¿Por qué crees que fue tan exitoso?"
+        "prompt": "¿Qué elementos del campamento de Brownsea implementarías en la rama donde vas a servir? ¿Por qué crees que fue tan exitoso?"
       },
       "quiz": {
         "title": "Evaluación - Brownsea Island",
@@ -391,7 +392,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "El Método Scout es un sistema educativo único que funciona a través de la interacción de 8 elementos esenciales. Como sinodal/ayudante, es fundamental que comprendas cómo aplicar cada uno."
+          "text": "El Método Scout es un sistema educativo único que funciona a través de la interacción de 8 elementos esenciales. Cuando sirvas en otra rama, es fundamental que comprendas cómo se aplica cada uno."
         },
         {
           "type": "method-grid",
@@ -417,7 +418,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>💡 Para el Sinodal/Ayudante:</strong><br>Al trabajar con manada o tropa, debes aplicar TODOS estos elementos de manera equilibrada. Por ejemplo:<br>• En manada: el marco simbólico de La Fantasía, con El Libro de las Tierras Vírgenes como fondo motivador + sistema de seisenas + progresión por insignias<br>• En tropa: Mayor énfasis en el sistema de patrullas + vida al aire libre + servicio comunitario"
+          "text": "<strong>💡 Para el Rover en servicio:</strong><br>Al apoyar en una rama, verás que el Método funciona cuando TODOS estos elementos actúan de manera equilibrada. Por ejemplo:<br>• En manada: el marco simbólico de La Fantasía, con El Libro de las Tierras Vírgenes como fondo motivador + sistema de seisenas + progresión por insignias<br>• En tropa: Mayor énfasis en el sistema de patrullas + vida al aire libre + servicio comunitario"
         }
       ],
       "reflection": {
@@ -517,7 +518,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Como futuro sinodal/ayudante, ¿cómo contribuirás al impacto positivo del escultismo? ¿Qué legado quieres dejar en los niños y niñas que acompañarás?"
+        "prompt": "Cuando sirvas en otra rama de tu Grupo, ¿cómo contribuirás al impacto positivo del escultismo? ¿Qué legado quieres dejar en los niños y niñas que acompañarás?"
       },
       "quiz": {
         "title": "Evaluación Final - Impacto Global",
@@ -550,6 +551,6 @@
   ],
   "certificate": {
     "courseName": "FUNDAMENTOS DEL MOVIMIENTO SCOUT",
-    "description": "ha completado exitosamente el curso de Historia y Características Esenciales del Movimiento Scout, demostrando comprensión profunda de los fundamentos necesarios para servir como sinodal/ayudante en las ramas de manada y tropa."
+    "description": "ha completado exitosamente el curso de Historia y Características Esenciales del Movimiento Scout, demostrando comprensión profunda de los fundamentos del Movimiento, base para servir en su Grupo Scout."
   }
 }

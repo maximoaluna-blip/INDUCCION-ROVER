@@ -1,9 +1,10 @@
 {
   "courseId": "caracteristicas-educativas",
   "title": "Características Educativas del Movimiento Scout",
-  "subtitle": "Formación para Rovers - Sinodales y Ayudantes",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 1",
   "description": "Curso sobre las características educativas que definen al Movimiento Scout: su propósito, el Método Scout con sus 8 elementos, el sistema de valores y los principios que lo hacen único como movimiento juvenil mundial.",
-  "contentVersion": "2026-09-21",
+  "contentVersion": "2026-09-27",
+  "registration": { "motivationLabel": "¿Por qué quieres servir en otra rama de tu Grupo?" },
   "icon": "📖",
   "duration": "2 horas",
   "totalContentModules": 6,
@@ -17,7 +18,7 @@
       "sections": [
         {
           "type": "info-box",
-          "text": "<strong>Siempre Listo/a para Servir!</strong><br>Este curso te preparará para comprender las bases educativas del Movimiento Scout, esenciales para tu rol como sinodal o ayudante en las ramas de Manada y Scouts."
+          "text": "<strong>Siempre Listo/a para Servir!</strong><br>Este curso te preparará para comprender las bases educativas del Movimiento Scout, esenciales para servir en tu Grupo, apoyando a las otras ramas."
         },
         {
           "type": "paragraph",
@@ -37,7 +38,7 @@
             "<strong>Dominar los 8 elementos</strong> del Método Scout y como se interrelacionan",
             "<strong>Entender el sistema de valores</strong> basado en la Promesa y Ley Scout",
             "<strong>Identificar las características</strong> que definen y diferencian al movimiento",
-            "<strong>Aplicar estos conocimientos</strong> en tu labor como sinodal o ayudante"
+            "<strong>Aplicar estos conocimientos</strong> cuando sirvas en otra rama de tu Grupo"
           ]
         },
         {
@@ -135,7 +136,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Piensa en tu experiencia como rover: ¿en cuál de los cuatro pilares de la educación sientes que el escultismo te ha aportado más? ¿Cómo podrías fortalecer los otros pilares en tu trabajo con las ramas menores?"
+        "prompt": "Piensa en tu experiencia como rover: ¿en cuál de los cuatro pilares de la educación sientes que el escultismo te ha aportado más? ¿Cómo podrías fortalecer los otros pilares cuando sirvas en otra rama?"
       },
       "quiz": {
         "title": "Evaluación - Propósito Educativo",
@@ -270,7 +271,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Como sinodal o ayudante, ¿cómo puedes aplicar los siete principios del aprendizaje en tus actividades con la manada o tropa? Piensa en un ejemplo concreto para al menos tres de estos principios."
+        "prompt": "Cuando sirvas en otra rama, ¿cómo puedes aplicar los siete principios del aprendizaje en las actividades en las que apoyes? Piensa en un ejemplo concreto para al menos tres de estos principios."
       },
       "quiz": {
         "title": "Evaluación - Principios del Aprendizaje",
@@ -603,7 +604,7 @@
         }
       ],
       "reflection": {
-        "prompt": "¿Cómo puedes transmitir los valores scouts a los niños y jóvenes de tu rama sin caer en el adoctrinamiento? Describe una estrategia concreta basada en el ejemplo y la experiencia, no en la instrucción directa."
+        "prompt": "¿Cómo puedes transmitir los valores scouts a los niños, niñas y jóvenes de la rama donde sirves sin caer en el adoctrinamiento? Describe una estrategia concreta basada en el ejemplo y la experiencia, no en la instrucción directa."
       },
       "quiz": {
         "title": "Evaluación - Valores y Principios",
@@ -851,7 +852,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Como futuro sinodal o ayudante, ¿cómo mantendrías la independencia y neutralidad del Movimiento Scout en tu grupo, especialmente si enfrentarás presiones de instituciones externas (religiosas, políticas, comunitarias) que quisieran influir en las actividades?"
+        "prompt": "Cuando sirvas en tu Grupo, ¿cómo mantendrías la independencia y neutralidad del Movimiento Scout en tu grupo, especialmente si enfrentarás presiones de instituciones externas (religiosas, políticas, comunitarias) que quisieran influir en las actividades?"
       },
       "quiz": {
         "title": "Evaluación - El Movimiento en la Sociedad",

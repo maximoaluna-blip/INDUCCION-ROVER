@@ -234,6 +234,13 @@ html[data-theme="dark"] .badge {
 /* ============================================================================
    CURSO: Content Blocks (info-box, data-privacy, mission, timeline, method)
    ============================================================================ */
+/* Citas (tipo blockquote del generador de Rover): traen color en linea para el tema claro,
+   que en oscuro no alcanza contraste AA. Lo cazo a11y.spec al estrenarse en la E1 (ADR-091). */
+html[data-theme="dark"] .module blockquote,
+html[data-theme="dark"] .module blockquote small {
+    color: #cfe3f2 !important;
+}
+
 html[data-theme="dark"] .info-box {
     background: #2a2040;
     border-left-color: #9148d4;

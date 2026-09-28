@@ -151,10 +151,13 @@ test.describe('@solo-escritorio landing por ruta y nivel (ADR-086)', () => {
     for (const c of activos) {
       expect(c.route, `${c.courseId} sin route en cursos.json`).toBeTruthy();
       expect(c.level, `${c.courseId} sin level en cursos.json`).toBeTruthy();
-      const tarjeta = page.locator(
-        `.route-section[data-route="${c.route}"] .level-section[data-level="${c.level}"] .course-card`,
-        { hasText: String(c.title).slice(0, 12) });
-      await expect(tarjeta, `${c.courseId} no aparece en ruta ${c.route}, nivel ${c.level}`).toHaveCount(1);
+      // Por el TITULO exacto: con 'hasText' y las primeras letras, «Servir en el» casaba
+      // tambien la descripcion de F1 y contaba dos tarjetas (ADR-091).
+      const titulos = await page.locator(
+        `.route-section[data-route="${c.route}"] .level-section[data-level="${c.level}"] .course-card .course-title`)
+        .allInnerTexts();
+      const iguales = titulos.filter((t) => t.trim() === String(c.title).trim()).length;
+      expect(iguales, `${c.courseId} no aparece en ruta ${c.route}, nivel ${c.level}`).toBe(1);
     }
   });
 

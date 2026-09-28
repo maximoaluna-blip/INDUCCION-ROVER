@@ -1,0 +1,453 @@
+{
+  "courseId": "servicio-rover",
+  "title": "El servicio Rover",
+  "subtitle": "Tronco común · Empieza aquí",
+  "description": "El primer curso de la plataforma. En ~35 minutos vas a entender por qué «Servir» es el lema de tu rama, qué formas toma el servicio, dónde puedes servir —en tu Grupo o en tu comunidad— y cómo tu servicio entra en tu PARCE sin descuidar a tu Clan.",
+  "contentVersion": "2026-09-27",
+  "route": "tronco",
+  "level": 1,
+  "branch": null,
+  "registration": {
+    "motivationLabel": "¿Qué te gustaría aportar con tu servicio?"
+  },
+  "icon": "🤝",
+  "duration": "35 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "Seguro lo has visto: el servicio del Clan termina siendo la jornada de diciembre, la que se programa cuando ya está todo lo demás. Este curso empieza por lo contrario."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Servir no es algo que el Rover hace cuando le sobra tiempo: es una actitud permanente de vida.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La segunda mitad de esa frase no es nuestra: es como la <em>Guía de Dirigente de Clan</em> (2026) describe el lema de tu rama. Este curso trata de eso, y de algo muy práctico: dónde y cómo vas a servir tú."
+        },
+        {
+          "type": "paragraph",
+          "text": "Esta plataforma es de la <strong>Regional Valle del Cauca</strong> y es solo para Rovers de 18 a 20 años. Organiza el servicio en dos rutas: <strong>Servir en el Grupo</strong>, apoyando en otra rama de tu Grupo Scout, y <strong>Servir en la comunidad</strong>, con las iniciativas de Mundo Mejor. Este curso es la puerta de las dos."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar, una aclaración.</strong> Nada de lo que hagas aquí te convierte en dirigente ni te da un cargo. Lo que vas a construir es tu servicio: algo que eliges, acuerdas y vives como parte de tu propio camino de Rover. <br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión —que leen tú y el equipo de formación— y con dos preguntas. Para seguir hay que acertar las dos; si fallas una, el curso te muestra cuál era y puedes volver a intentarlo."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Explicar</strong> por qué «Servir» es el lema de la rama y qué tiene que ver con la ciudadanía activa",
+            "<strong>Distinguir</strong> una acción espontánea, un servicio social y un servicio como proyecto",
+            "<strong>Elegir</strong> dónde vas a servir y qué ruta de la plataforma te corresponde",
+            "<strong>Ubicar</strong> tu servicio dentro de tu PARCE",
+            "<strong>Formular</strong> un compromiso de servicio que cuide a tu Clan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "«Servir» es el lema",
+      "emoji": "🔥",
+      "navLabel": "El lema",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> el servicio no es una actividad más del Clan; es la forma en que un Rover vive su ciudadanía."
+        },
+        {
+          "type": "paragraph",
+          "text": "Piensa en tu Clan un sábado cualquiera. Pueden estar planeando una salida, discutiendo la carta constitutiva o recogiendo mercado para una familia del barrio. Las tres cosas son vida de Clan. Pero solo una de ellas se parece a lo que tu rama pone en su lema. ¿O no?"
+        },
+        {
+          "type": "paragraph",
+          "text": "La <em>Guía de Dirigente de Clan</em> dice que el marco simbólico de la rama Rover es el ejercicio de la <strong>Ciudadanía Activa</strong> (p. 31). Y cuando explica cómo se aprende en el Clan, dice qué papel tiene ahí el servicio:"
+        },
+        {
+          "type": "blockquote",
+          "text": "«De este modo, el servicio se convierte en una expresión tangible de ciudadanía activa, en la que los valores, principios y compromisos adquiridos en su proceso scout se ponen en práctica con una intención clara de transformar positivamente sus comunidades.»<br><small>— Guía de Dirigente de Clan, ASC, 2026, §4.3, p. 25</small>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Y sobre el lema de la rama, «Servir», la guía no lo trata como una tarea. Lo trata como una manera de estar en el mundo:"
+        },
+        {
+          "type": "blockquote",
+          "text": "«Es el lema de los Rovers. Representa el deber ser y actuar de todos los Rovers. Es un marco de referencia para las actividades que desarrollan. Es una actitud permanente de vida y de disposición en los entornos en los que participan.»<br><small>— Guía de Dirigente de Clan, ASC, 2026, §6.4, p. 33</small>"
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>En simple:</strong> no es que el Clan haga «actividades» y además, de vez en cuando, «servicio». El servicio es el lente con el que miras todo lo demás."
+        },
+        {
+          "type": "paragraph",
+          "text": "Por eso el <em>Modelo de Aplicación</em> define al Clan como <strong>«una comunidad de afianzamiento y servicio»</strong> (p. 21), y a tu rama como el momento de <strong>«compromiso con el servicio a la sociedad»</strong> (p. 19)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Volvamos al sábado. Recoger mercado es servicio, sí. Pero una salida planeada para limpiar la quebrada que usa la vereda también lo es, y una discusión de la carta constitutiva donde el Clan decide a quién quiere servir este año es donde el servicio empieza. Lo que cambia no es la actividad: es el para qué."
+        }
+      ],
+      "reflection": {
+        "prompt": "Recuerda una vez en que tu Clan hizo algo por otras personas. ¿Fue una actividad más o fue servicio? ¿Qué lo hizo una cosa o la otra? Descríbelo sin nombres: basta con el lugar y lo que hicieron."
+      },
+      "quiz": {
+        "title": "Evaluación - El lema",
+        "questions": [
+          {
+            "text": "Un Clan organiza una caminata para disfrutar la montaña y, a mitad de camino, decide recoger la basura que encuentra en el sendero. Según la lección, ¿cómo se entiende mejor lo que pasó?",
+            "options": [
+              "Como una salida recreativa que no cuenta como servicio, porque no estaba planeada",
+              "Como la actitud de servicio actuando en un entorno donde el Clan ya estaba",
+              "Como una buena acción, que no es servicio porque el lema pide proyectos largos"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "En la discusión de la carta constitutiva, un Rover propone: «Este año hagamos nuestras actividades y, si sobra tiempo, un día de servicio en diciembre». Según la lección, ¿qué le falta a esa propuesta?",
+            "options": [
+              "Nada: el servicio es una actividad más, que se programa cuando el calendario deja",
+              "Ver el servicio como el para qué de todo el año: su forma de vivir la ciudadanía",
+              "Programar más jornadas de servicio, porque lo que cuenta es cuántas veces sirve el Clan"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: formas de servir ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Formas de servir",
+      "emoji": "🧭",
+      "navLabel": "Formas",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> no todo servicio es igual. Hay acciones espontáneas, servicios que se planean y servicios que buscan un cambio que dure."
+        },
+        {
+          "type": "paragraph",
+          "text": "Vuelve al mercado del sábado. Si ves a un señor con las bolsas y lo ayudas, es una cosa. Si el Clan recoge mercado cada mes para cinco familias, es otra. Si el Clan arma con esas familias una huerta que ellas mismas van a cuidar, es otra más."
+        },
+        {
+          "type": "paragraph",
+          "text": "La guía anterior de la rama —la <em>Guía para el Dirigente de Clan</em> de 2018, anterior a la vigente de 2026— tenía una distinción que sigue siendo útil para pensar tu servicio. Te la presentamos como lo que es: un antecedente que ayuda a ordenar ideas."
+        },
+        {
+          "type": "timeline",
+          "items": [
+            {
+              "title": "La buena acción",
+              "description": "Acciones aisladas que no requieren planificación: resuelven una necesidad del momento, como ayudar a alguien que lo necesita en la calle."
+            },
+            {
+              "title": "El servicio social",
+              "description": "Actividades planeadas en beneficio de un grupo de personas. Las hacen los Rovers, pero los beneficiarios no participan activamente en ellas."
+            },
+            {
+              "title": "El servicio como proyecto",
+              "description": "Cambios planificados con la comunidad, que participa desde la planeación hasta la evaluación, para que la acción continúe cuando los Rovers se retiren."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "La diferencia entre las dos últimas está en una preposición: el servicio social se hace <strong>para</strong> la comunidad; el servicio como proyecto se hace <strong>con</strong> ella. La misma guía lo decía sin rodeos: el servicio <strong>«no es un Programa de asistencia social»</strong>, es aprendizaje a través de proyectos de promoción humana, y debe empezar por los núcleos sociales más cercanos a los jóvenes (2018, p. 48)."
+        },
+        {
+          "type": "paragraph",
+          "text": "¿Y hoy? La política vigente habla de <strong>servicios prolongados</strong>. El <em>Modelo de Aplicación</em> cuenta que, a través de «empresas, servicios prolongados, viajes y experiencias de liderazgo», los Rovers consolidan su identidad (p. 21), y ubica las <strong>experiencias de servicio prolongado</strong> entre las que muestran que una competencia llegó al nivel de profundización (p. 49). Fíjate en que no es un cuarto tipo: es una pregunta por cuánto dura tu servicio. Una buena acción dura un momento; un servicio pensado para seguir cuando te retires tiende a sostenerse en el tiempo."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>En simple:</strong> una buena acción es valiosa, pero un servicio que se sostiene en el tiempo, que se planea con quienes lo reciben y que deja algo que sigue sin ti, es donde más aprendes y más aportas. A eso apuntan las dos rutas de esta plataforma."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en un servicio que conozcas de tu Clan o de tu Grupo. ¿Se hizo para la comunidad o con ella? ¿Qué habría hecho falta para que siguiera funcionando sin ustedes? Sin nombres: basta el lugar y lo que hicieron."
+      },
+      "quiz": {
+        "title": "Evaluación - Formas de servir",
+        "questions": [
+          {
+            "text": "Un Clan dona útiles escolares a una escuela rural. Al año siguiente vuelve, esta vez con los profesores y las familias, para montar juntos una biblioteca que ellos mismos van a administrar. ¿Qué cambió?",
+            "options": [
+              "Nada de fondo: las dos veces el Clan entregó cosas que la escuela necesitaba",
+              "Pasó de un servicio social a un servicio como proyecto, hecho con la comunidad",
+              "Pasó de una buena acción a un servicio social, porque esta vez sí se planeó"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Según la lección, ¿qué pregunta distingue mejor un servicio como proyecto de un servicio social?",
+            "options": [
+              "¿Cuántas personas recibieron ayuda y cuántos Rovers participaron en el servicio?",
+              "¿El servicio se planeó con anticipación o surgió en el momento, sin preparación?",
+              "¿La comunidad participó en el servicio y puede seguirlo cuando el Clan se retire?"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: dónde servir ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "¿Dónde vas a servir?",
+      "emoji": "🗺️",
+      "navLabel": "Dónde",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> esta plataforma organiza el servicio en dos escenarios, y el tuyo define qué ruta sigues."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "🏕️ Servir en el Grupo"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tu Grupo Scout tiene otras secciones, cada una con niños, niñas y jóvenes de otra edad: la Familia de Cachorros (5 a 6 años), la Manada (7 a 10), la Tropa (11 a 14) y la Comunidad de Nómadas Scout (15 a 17), según el <em>Modelo de Aplicación</em> (p. 19–21). Servir en el Grupo es apoyar en una de ellas."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Con honestidad:</strong> la <em>Guía de Dirigente de Clan</em> de 2026 no describe una figura especial para el Rover que sirve en otra rama. La guía de 2018 sí hablaba de algo parecido, pero con otras reglas: pedía 21 años cumplidos y solo era para Manada y Tropa (p. 49–50). Por eso aquí no hablamos de un cargo: hablamos de un servicio que <strong>acuerdas con tu Grupo</strong>, que no te hace dirigente y que no te pone al frente de la rama."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "🌍 Servir en la comunidad"
+        },
+        {
+          "type": "paragraph",
+          "text": "La otra ruta mira hacia afuera: tu barrio, tu vereda, tu ciudad. La <em>Guía de Dirigente de Clan</em> presenta <strong>Scouts por los ODS</strong> como la propuesta que conecta el Programa de Jóvenes con los Objetivos de Desarrollo Sostenible «mediante seis iniciativas y sus desafíos que promueven el aprendizaje por la acción y el servicio comunitario» (p. 61). Se apoya en el marco de <strong>Mundo Mejor</strong>, que organiza iniciativas y desafíos en cuatro áreas de aprendizaje (<em>Manual de Implementación Marco de Mundo Mejor</em>, p. 9)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Las dos rutas son la forma en que <strong>esta plataforma</strong> ordena sus cursos, no una división oficial del servicio, y no compiten entre sí. Entre las fuentes de inspiración que la guía propone para el Rover está, precisamente, «el servicio desde lo pequeño» (p. 31). Lo importante es que elijas un escenario donde puedas sostener tu servicio en el tiempo."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Hoy, en esta plataforma:</strong> la ruta <strong>Servir en el Grupo</strong> ya está abierta; los cursos de <strong>Servir en la comunidad</strong> se están preparando. Si tu servicio va por ese lado, lo que aprendes en este curso —las formas de servir, tu PARCE, cuidar a tu Clan— te sirve igual."
+        }
+      ],
+      "reflection": {
+        "prompt": "Escribe el lugar concreto donde te ves sirviendo: una rama de tu Grupo (cuál, y qué día se reúne) o un sitio de tu comunidad (tu barrio, una vereda, una organización). Luego, una cosa que ya sabes hacer y que les serviría ahí. Sin nombres de personas: basta la rama o el lugar."
+      },
+      "quiz": {
+        "title": "Evaluación - Dónde servir",
+        "questions": [
+          {
+            "text": "Una Rover quiere apoyar los sábados en la Manada de su Grupo, y un compañero quiere trabajar con su Junta de Acción Comunal en un proyecto de reciclaje. ¿Qué ruta de la plataforma corresponde a cada uno?",
+            "options": [
+              "Ella, Servir en el Grupo; él, Servir en la comunidad",
+              "Los dos siguen la misma ruta, porque ambos son servicio",
+              "Ella, Servir en el Grupo; él, ninguna: no es con su Grupo"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Un Rover empieza a apoyar en la Tropa de su Grupo. Según la lección, ¿qué cambia en su lugar dentro del Grupo?",
+            "options": [
+              "Pasa a ser dirigente de la Tropa mientras dure su servicio",
+              "Nada formal, pero puede corregir a los scouts si el dirigente no está",
+              "Nada de eso: presta un servicio acordado, sin cargo ni mando"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: tu PARCE ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "El servicio en tu PARCE",
+      "emoji": "🛶",
+      "navLabel": "PARCE",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> tu servicio no es un extra de tu progresión; puede ser una de tus Vivencias Rovers."
+        },
+        {
+          "type": "paragraph",
+          "text": "Piensa en la última vez que revisaste tu PARCE con tu dirigente. ¿Aparecía ahí algún servicio, o lo tenías aparte, como algo que hacías «además»?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tu progresión personal en el Clan tiene nombre propio: el <strong>PARCE</strong>, Proceso Autónomo del Rover en Competencias para su Evolución. La <em>Guía de Dirigente de Clan</em> lo describe así:"
+        },
+        {
+          "type": "blockquote",
+          "text": "«Allí, un Rover con el acompañamiento estimulante del dirigente lo co-construye como dueño “de la canoa que rema” y define hacia dónde ir y cómo hacerlo.»<br><small>— Guía de Dirigente de Clan, ASC, 2026, §4.2, p. 24</small>"
+        },
+        {
+          "type": "paragraph",
+          "text": "En el PARCE, las oportunidades de aprendizaje se llaman <strong>Vivencias Rovers</strong> (p. 43), y entre ellas la guía nombra expresamente los <strong>proyectos de servicio comunitario</strong> (p. 42). Tu servicio, entonces, puede ser una Vivencia Rover: algo que eliges porque te hace crecer en competencias concretas."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Un ejemplo de la propia guía.</strong> La competencia terminal de <strong>Trascendencia</strong> dice que el Rover «integra el propósito de sus acciones diarias con sus valores y creencias, participando en prácticas que conectan con lo trascendental y realizando actos de servicio desinteresado para el beneficio de la comunidad» (p. 42). El servicio está escrito dentro de tus competencias, no al lado."
+        },
+        {
+          "type": "paragraph",
+          "text": "Y crece contigo: las competencias se recorren en tres niveles —exploración, aplicación y profundización (p. 44)—. En la profundización, el <em>Modelo de Aplicación</em> espera experiencias como el servicio prolongado (p. 49): el tipo de servicio que viste en la lección de las formas de servir."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>En simple:</strong> tu servicio no compite con tu progresión. Bien elegido, es parte de ella: tú decides cuál, lo conversas con tu dirigente y lo usas para crecer en algo concreto."
+        },
+        {
+          "type": "paragraph",
+          "text": "Por eso decíamos al empezar que servir no es algo que haces cuando te sobra tiempo. Es parte de la canoa que remas tú."
+        }
+      ],
+      "reflection": {
+        "prompt": "Toma la competencia de Trascendencia de esta lección, u otra de tu PARCE si ya la conoces. ¿Qué haría distinto un Rover que está creciendo en ella gracias a su servicio? Escribe una conducta que tú mismo podrías notar; por ejemplo: «pregunto qué necesitan antes de llevar algo»."
+      },
+      "quiz": {
+        "title": "Evaluación - Tu PARCE",
+        "questions": [
+          {
+            "text": "Una Rover va a apoyar un semestre en la Familia de Cachorros y se pregunta si eso «cuenta» para su progresión. Según la lección, ¿qué le responderías?",
+            "options": [
+              "Que puede ser una de sus Vivencias Rovers, si la elige para crecer en una competencia",
+              "Que no cuenta: la progresión se mide solo con lo que hace dentro de su propio Clan",
+              "Que cuenta como un extra aparte, que se suma cuando ya completó sus competencias"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Un Rover le pide a su dirigente de Clan que le asigne un servicio para cumplir con su progresión. Según la lección, ¿qué le falta a ese planteamiento?",
+            "options": [
+              "Nada: en la progresión Rover el dirigente decide qué servicio hace cada joven",
+              "Pedirlo por escrito al Jefe de Grupo, que es quien aprueba los servicios del Clan",
+              "Que el propio Rover lo elija y lo co-construya, como dueño de la canoa que rema"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: tu compromiso ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "El Clan va primero",
+      "emoji": "⛺",
+      "navLabel": "Compromiso",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> el servicio es voluntario, se acuerda, puede quedar a la vista de tu Clan en la carta constitutiva, y no reemplaza la vida de tu Clan."
+        },
+        {
+          "type": "paragraph",
+          "text": "Hay una trampa frecuente: el Rover que empieza a servir en otra rama con tanto entusiasmo que deja de ir a su propio Clan. Termina sirviendo mucho y creciendo poco, porque el lugar donde se acompaña su camino es justamente el Clan."
+        },
+        {
+          "type": "paragraph",
+          "text": "La <em>Guía de Dirigente de Clan</em> da la herramienta para evitarlo. En el Clan, la pertenencia a equipos, su duración y «la responsabilidad voluntariamente adquirida» se establecen «de manera pública en el proceso de construcción o actualización de la carta constitutiva del Clan con participación de todos los y las Rovers» (p. 28). Tu compromiso de servicio también puede ir ahí: a la vista de tu Clan."
+        },
+        {
+          "type": "paragraph",
+          "text": "¿Y no dijimos que el servicio no es para cuando te sobra tiempo? Las dos cosas son ciertas: la actitud de servir no tiene horario, pero un servicio acordado sí necesita uno, y tiene que caber junto a tu Clan."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Un antecedente que sigue siendo buen consejo.</strong> La guía de 2018 hablaba de un servicio parecido en otra rama, pero con otras reglas: pedía 21 años cumplidos y solo era para Manada y Tropa. La guía de 2026 ya no lo trae. Aun así, dejaba dos ideas que siguen siendo buen consejo: ese servicio no se le podía imponer a ningún Rover, y siempre tenía prioridad lo que el Rover hacía con su equipo o su Clan (p. 49–50). La guía de 2026 no repite esas palabras; lo que sí dice es que en el Clan los compromisos se asumen voluntariamente y a la vista de todos (p. 28)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar este curso vas a escribir tu compromiso de servicio. Que sea concreto: <em>«Mi servicio va a ser ___, en ___. Lo voy a conversar primero con ___ antes de ___»</em>. Para la persona con quien lo vas a conversar, piensa en su rol —tu dirigente de Clan, tu Jefe de Grupo—: aquí no hace falta escribir su nombre."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Tu siguiente paso.</strong> Si vas a servir en tu Grupo, sigue con <em>Fundamentos del Movimiento Scout</em> y <em>Características Educativas</em>, y después con <em>Servir en el Grupo</em>, que te prepara para llegar a otra rama. Si vas a servir en tu comunidad, esa ruta viene en camino."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Servir no es algo que el Rover hace cuando le sobra tiempo: es una actitud permanente de vida.</strong><br>Tu servicio empieza con una conversación. Llévala a tu Clan."
+        }
+      ],
+      "reflection": {
+        "prompt": "¿Qué compromisos tiene hoy tu Clan contigo? Con eso en mente, ¿cuánto tiempo real, a la semana o al mes, puedes dedicar a un servicio sin descuidarlos?"
+      },
+      "quiz": {
+        "title": "Evaluación - El Clan va primero",
+        "questions": [
+          {
+            "text": "Una Rover acordó con su Jefe de Grupo apoyar en la Manada los sábados. Su Clan se enteró tres meses después, cuando ella dejó de llegar a las reuniones. ¿Qué paso se saltó?",
+            "options": [
+              "Ninguno: su servicio en otra rama es un asunto entre ella y su Jefe de Grupo",
+              "Llevar su compromiso a la carta constitutiva, para que su Clan lo conociera",
+              "Registrarse ante la jefatura de la Manada donde iba a empezar a servir"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Un Rover sirve en la Manada todos los sábados y ya no le queda tiempo para el proyecto de su Clan. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Seguir igual: el servicio a otra rama pesa más que el proyecto del Clan",
+              "Dejar el servicio en la Manada, porque los dos compromisos no son compatibles",
+              "Conversarlo en su Clan y reacordar su servicio para cuidar los dos compromisos"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Lema Vivo",
+      "emoji": "🔥",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Sabe Servir",
+      "emoji": "🧭",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Escenario Elegido",
+      "emoji": "🗺️",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Dueño de su Canoa",
+      "emoji": "🛶",
+      "unlockOnModule": 5
+    },
+    {
+      "id": "achievement-5",
+      "name": "Compromiso de Servicio",
+      "emoji": "⛺",
+      "unlockOnModule": 6
+    }
+  ],
+  "certificate": {
+    "courseName": "EL SERVICIO ROVER",
+    "description": "ha completado el curso El servicio Rover, que presenta el servicio como lema y actitud de vida del Rover, sus formas y los escenarios donde puede servir: su Grupo Scout y su comunidad.",
+    "commitmentPrompt": "Escribe tu compromiso completando la frase de la última lección: «Mi servicio va a ser ___, en ___. Lo voy a conversar primero con ___ antes de ___». Para la persona, escribe su rol, no su nombre."
+  }
+}

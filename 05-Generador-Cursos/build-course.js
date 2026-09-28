@@ -280,7 +280,7 @@ function renderReflection(moduleId, reflection) {
                 <div class="reflection-area">
                     <h4>🤔 Reflexión Personal</h4>
                     <p>${reflection.prompt}</p>
-                    <textarea id="reflection-${moduleId}" placeholder="Escribe tu reflexión aquí..." onchange="saveReflection(${moduleId}, this.value)"></textarea>
+                    <textarea id="reflection-${moduleId}" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(${moduleId}, this.value)"></textarea>
                 </div>`;
 }
 
@@ -481,7 +481,7 @@ function buildCertificateModule(course, certModuleId) {
 
                     <!-- Title -->
                     <div style="text-align: center; margin: 15px 0 10px;">
-                        <h2 style="color: #622599; font-size: 1.3em; letter-spacing: 2px; margin: 0;">CERTIFICADO DE APROBACION</h2>
+                        <h2 style="color: #622599; font-size: 1.3em; letter-spacing: 2px; margin: 0;">CERTIFICADO DE APROBACIÓN</h2>
                     </div>
 
                     <!-- Course name -->
@@ -514,7 +514,7 @@ function buildCertificateModule(course, certModuleId) {
 
                     <!-- Footer -->
                     <div style="text-align: center; margin-top: 12px;">
-                        <p style="font-size: 0.7em; color: #767676;">Plataforma de Formacion Rover ASC | vallescout.org.co</p>
+                        <p style="font-size: 0.7em; color: #767676;">Plataforma de Formación Rover ASC | vallescout.org.co</p>
                     </div>
                 </div>
 

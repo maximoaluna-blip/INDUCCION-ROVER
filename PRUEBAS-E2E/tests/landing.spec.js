@@ -208,3 +208,30 @@ test.describe('@solo-escritorio una sola portada (ADR-086)', () => {
     }
   });
 });
+
+// --- ADR-091: el filtro de rama ------------------------------------------------------------
+// Con cursos por rama (R1-familia...), la ruta del Grupo pinta un filtro. Por defecto se ven
+// TODAS las ramas; filtrar esconde solo los cursos de OTRA rama, nunca los comunes (F1, F2, R1).
+test.describe('@solo-escritorio filtro de rama (ADR-091)', () => {
+  test('filtrar por una rama esconde las otras y deja los comunes', async ({ page, request }) => {
+    const { activos } = await activosDelCatalogo(request);
+    const conRama = activos.filter((c) => c.route === 'grupo' && c.branch);
+    test.skip(!conRama.length, 'todavia no hay cursos por rama');
+    await page.goto(LANDING, { waitUntil: 'domcontentloaded' });
+    await page.waitForFunction(() => document.querySelectorAll('#coursesGrid .course-card').length > 0,
+      null, { timeout: 15000 });
+    const ruta = page.locator('.route-section[data-route="grupo"]');
+    const todas = await ruta.locator('.course-card:visible').count();
+    expect(todas, 'por defecto se ven todos los cursos de la ruta').toBe(
+      activos.filter((c) => (c.route || 'grupo') === 'grupo').length);
+    const rama = conRama[0].branch;
+    const otra = ['familia', 'manada', 'tropa', 'comunidad'].find((b) => b !== rama);
+    await ruta.locator(`.branch-filter button[data-filter="${otra}"]`).click();
+    await expect(ruta.locator(`.course-card[data-branch="${rama}"]`).first()).toBeHidden();
+    const comunes = activos.filter((c) => (c.route || 'grupo') === 'grupo' && !c.branch).length;
+    expect(await ruta.locator('.course-card:not([data-branch]):visible').count(),
+      'los cursos comunes de la ruta nunca se esconden').toBe(comunes);
+    await ruta.locator(`.branch-filter button[data-filter="${rama}"]`).click();
+    await expect(ruta.locator(`.course-card[data-branch="${rama}"]`).first()).toBeVisible();
+  });
+});

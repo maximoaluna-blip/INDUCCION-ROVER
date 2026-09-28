@@ -1,0 +1,273 @@
+{
+  "courseId": "servir-en-el-grupo",
+  "title": "Servir en el Grupo",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 1",
+  "description": "El curso común de la ruta. En ~35 minutos vas a ubicar la rama donde quieres servir dentro de tu Grupo, entender la diferencia entre apoyar y dirigir, acordar tu servicio con las personas indicadas, aplicar lo básico de A Salvo del Peligro y planear tu primera semana.",
+  "contentVersion": "2026-09-27",
+  "route": "grupo",
+  "level": 1,
+  "branch": null,
+  "registration": { "motivationLabel": "¿En qué rama te gustaría servir, y por qué?" },
+  "icon": "🏕️",
+  "duration": "35 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        { "type": "mission-box", "text": "<strong>En otra rama no llegas a mandar: llegas a sumar. Y sumar bien se prepara.</strong>" },
+        { "type": "paragraph", "text": "Este es el curso común de la ruta <strong>Servir en el Grupo</strong>. Vale para cualquier rama: la Familia de Cachorros, la Manada, la Tropa o la Comunidad. Después de este, el curso de la rama donde vayas a servir te lleva a lo específico." },
+        { "type": "info-box", "text": "<strong>Lo que este curso no es.</strong> No te forma como dirigente ni te habilita para un cargo. Te prepara para un servicio que acuerdas con tu Grupo, que haces con el respaldo de los dirigentes de la rama y que forma parte de tu camino como Rover." },
+        { "type": "course-objectives", "items": [
+          "<strong>Ubicar</strong> la rama donde vas a servir dentro de tu Grupo",
+          "<strong>Distinguir</strong> lo que hace un Rover que apoya de lo que le corresponde al dirigente",
+          "<strong>Acordar</strong> tu servicio con el Jefe de Grupo, el jefe de la rama y tu Clan",
+          "<strong>Aplicar</strong> lo básico de A Salvo del Peligro",
+          "<strong>Planear</strong> tu primera semana de servicio"
+        ] }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "El Grupo por dentro",
+      "emoji": "🗺️",
+      "navLabel": "El Grupo",
+      "sections": [
+        { "type": "paragraph", "text": "<strong>⏱️ 6 minutos · Idea central:</strong> antes de servir en una rama, conviene saber dónde queda dentro del Grupo y quién la conduce." },
+        { "type": "paragraph", "text": "Tú conoces tu Clan por dentro. Pero ¿cuándo fue la última vez que viste una reunión de la Familia de Cachorros de principio a fin? Muchos Rovers pasaron por todas las ramas y aun así llegan a servir en una de ellas con el recuerdo de cuando eran niños, no con la mirada de quien acompaña." },
+        { "type": "method-grid", "items": [
+          { "title": "🐾 Familia de Cachorros", "description": "De 5 a 6 años. Un entorno acogedor y protector, «semejante al calor del hogar».", "color": "#fff3e0", "borderColor": "#ffb74d" },
+          { "title": "🐺 Manada de Lobatos", "description": "De 7 a 10 años. Aventura compartida, relatos y símbolos, con reglas sencillas.", "color": "#e8f5e9", "borderColor": "#81c784" },
+          { "title": "⚜️ Tropa de Scouts", "description": "De 11 a 14 años. Vida en patrullas, autonomía y cooperación.", "color": "#e3f2fd", "borderColor": "#64b5f6" },
+          { "title": "🧭 Comunidad de Nómadas Scout", "description": "De 15 a 17 años. Proyectos colectivos de mayor alcance y vínculo con el territorio.", "color": "#f3e5f5", "borderColor": "#ba68c8" }
+        ] },
+        { "type": "paragraph", "text": "Cada una es una <strong>unidad</strong>: el <em>Modelo de Aplicación</em> la llama «la comunidad educativa básica» (p. 20). La conducen sus dirigentes, y el Grupo entero lo coordina el <strong>Equipo de Jefatura de Grupo</strong>, que arma el Jefe de Grupo con el Subjefe de Grupo y los Jefes y Subjefes de Rama (Reglamento de Grupos, 6.2). Es el Jefe de Grupo quien nombra a los dirigentes de las ramas (6.6.22)." },
+        { "type": "info-box", "text": "<strong>Un dato que te ubica.</strong> El <em>Modelo de Aplicación</em> recomienda cuántos adultos debe tener cada unidad: en la Familia de Cachorros, al menos uno por cada 6 cachorros y mínimo dos dirigentes; en la Manada, uno por cada 6 lobatos más el Jefe de Unidad (p. 22). Esa cuenta la hacen los <strong>dirigentes</strong>. Tu apoyo suma, pero no reemplaza a ninguno de ellos: si una unidad no tiene sus dirigentes, no es tu servicio el que resuelve eso." }
+      ],
+      "reflection": { "prompt": "Piensa en la rama donde quieres servir. ¿Qué sabes hoy de ella —cómo se organiza, qué hacen en una reunión, quién la conduce— y qué no sabes todavía?" },
+      "quiz": {
+        "title": "Evaluación - El Grupo por dentro",
+        "questions": [
+          {
+            "text": "Una Rover quiere servir con niños y niñas de 8 años. ¿En qué unidad de su Grupo va a servir?",
+            "options": [
+              "En la Familia de Cachorros",
+              "En la Manada de Lobatos",
+              "En la Tropa de Scouts"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Una Manada tiene 18 lobatos y un solo dirigente. Un Rover empieza a apoyar allí. Según la lección, ¿qué cambia en la proporción de adultos que recomienda el Modelo?",
+            "options": [
+              "La Manada completa lo recomendado, porque el Rover ya es mayor de edad y cuenta",
+              "Nada: esa cuenta la hacen los dirigentes, y el Rover no reemplaza a uno",
+              "Queda a medias: el Rover cuenta como medio adulto mientras aprende"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: apoyar no es dirigir ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Apoyar no es dirigir",
+      "emoji": "🤲",
+      "navLabel": "Apoyar",
+      "sections": [
+        { "type": "paragraph", "text": "<strong>⏱️ 7 minutos · Idea central:</strong> tu servicio suma a lo que conducen los dirigentes; no ocupa su lugar." },
+        { "type": "paragraph", "text": "El error más común no es de mala fe. Es el Rover entusiasta que, porque sabe hacer las cosas, termina haciéndolas por los niños o por el dirigente: arma la actividad solo, decide quién hace qué, resuelve el conflicto de la patrulla. Todo se ve bien. Y sin querer, le quitó a alguien la oportunidad de aprender o de conducir." },
+        { "type": "paragraph", "text": "La guía anterior de la rama —la de 2018, reemplazada por la de 2026— lo decía con todas las letras cuando hablaba de los Rovers que apoyan en otras ramas: ese servicio no implica que la responsabilidad de la rama se les pueda asignar, ni que asuman la calidad de dirigentes (p. 50). La guía vigente no regula este servicio, pero el principio sigue siendo sensato. Y el Reglamento de Grupos reserva los <em>Ayudantes y Auxiliares de Jefatura</em> para adultos que forman parte del Equipo de Jefatura (6.16): no es lo que tú eres cuando sirves." },
+        { "type": "heading", "level": 3, "text": "✅ Lo que sí" },
+        { "type": "list", "ordered": false, "items": [
+          "Apoyar las actividades que planean los dirigentes de la rama",
+          "Aportar lo que sabes hacer: un juego, una técnica, una canción, una habilidad",
+          "Animar, cuidar y estar atento a quien se queda por fuera",
+          "Observar y comentar después con el dirigente lo que viste"
+        ] },
+        { "type": "heading", "level": 3, "text": "🚫 Lo que no" },
+        { "type": "list", "ordered": false, "items": [
+          "Quedar a cargo de la unidad o de un grupo de niños sin un dirigente presente",
+          "Sancionar, o decidir reglas que la unidad no ha acordado",
+          "Llevar la progresión personal de alguien: acompañarla es función del dirigente (<em>Guía de Dirigente de Clan</em> 2026, p. 43)",
+          "Comunicarte a solas con un niño, niña o joven, en persona o por chat (lo verás en la lección 5)"
+        ] },
+        { "type": "info-box", "text": "<strong>En simple:</strong> en otra rama no llegas a mandar, llegas a sumar. Si dudas si algo te toca, la pregunta es sencilla: <em>¿esto lo decidiría el dirigente?</em> Si la respuesta es sí, se lo preguntas a él." }
+      ],
+      "reflection": { "prompt": "Recuerda una situación, como Rover o cuando eras más joven, en que un apoyo bien intencionado le quitó protagonismo a alguien. ¿Qué habría cambiado si esa persona hubiera preguntado antes de actuar?" },
+      "quiz": {
+        "title": "Evaluación - Apoyar no es dirigir",
+        "questions": [
+          {
+            "text": "Durante una reunión, un lobato le pide al Rover que sirve en su Manada que le firme una etapa de su progresión, porque «el dirigente está ocupado». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Decirle que sí y firmarla, porque el Rover vio que el lobato cumplió lo pedido",
+              "Decirle que espere y llevarle la petición al dirigente, a quien le toca",
+              "Decirle que sí, pero firmarla a lápiz para que el dirigente la confirme"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "¿Cuál de estas acciones es un buen ejemplo de sumar sin dirigir?",
+            "options": [
+              "Proponerle al dirigente un juego nuevo y animarlo si él lo incluye",
+              "Cambiar la actividad del día porque la planeada se veía aburrida para todos",
+              "Separar a una patrulla que discute y decidir quién tuvo la razón"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: tu acuerdo ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Cómo se acuerda tu servicio",
+      "emoji": "🤝",
+      "navLabel": "Acuerdo",
+      "sections": [
+        { "type": "paragraph", "text": "<strong>⏱️ 6 minutos · Idea central:</strong> un servicio que no está acordado depende de la buena voluntad de un sábado; uno acordado se sostiene." },
+        { "type": "paragraph", "text": "Hay tres conversaciones que tienen que ocurrir. La primera, con el <strong>Jefe de Grupo</strong>: él conduce el Equipo de Jefatura y nombra a los dirigentes de las ramas (Reglamento de Grupos, 6.2 y 6.6.22), así que un servicio dentro del Grupo empieza por él. La segunda, con el <strong>jefe de la rama</strong> donde vas a servir: es quien te va a recibir cada semana. La tercera, en tu <strong>Clan</strong>: la <em>Guía de Dirigente de Clan</em> dice que la responsabilidad voluntariamente adquirida se establece de manera pública en la carta constitutiva, con participación de todos los Rovers (p. 28)." },
+        { "type": "paragraph", "text": "La guía de 2018 —antecedente, ya reemplazada— pedía algo parecido: que las condiciones las estableciera claramente el Jefe de Grupo, en concertación con el Jefe de Clan y los jefes de las ramas (p. 50). La lógica no ha cambiado: <strong>nadie debería enterarse de tu servicio el día que llegas</strong>." },
+        { "type": "heading", "level": 3, "text": "Tu acuerdo en cinco preguntas" },
+        { "type": "list", "ordered": true, "items": [
+          "<strong>¿Qué</strong> voy a hacer? (en palabras concretas: «apoyar el juego de apertura», no «ayudar»)",
+          "<strong>¿Con qué</strong> rama y en qué espacios? (reuniones, salidas, campamentos)",
+          "<strong>¿Qué días</strong> y por cuánto tiempo? (un ciclo de programa, un semestre)",
+          "<strong>¿A quién</strong> le reporto lo que pasa? (el jefe de la rama)",
+          "<strong>¿Cuándo</strong> lo revisamos? (una fecha, no «más adelante»)"
+        ] },
+        { "type": "info-box", "text": "Estas cinco preguntas son una herramienta de este curso, no una norma de la Asociación. Úsalas como guía para la conversación: si alguna queda sin respuesta, ahí está el punto débil de tu servicio." }
+      ],
+      "reflection": { "prompt": "De las cinco preguntas, ¿cuál te costaría más responder hoy? ¿Qué necesitas saber, o a quién necesitas preguntarle, para poder responderla?" },
+      "quiz": {
+        "title": "Evaluación - Tu acuerdo",
+        "questions": [
+          {
+            "text": "Un Rover quiere empezar a servir en la Tropa de su Grupo. ¿Por dónde es más coherente empezar, según la lección?",
+            "options": [
+              "Llegando el sábado a la Tropa y ofreciéndose directamente a las patrullas",
+              "Conversando con el Jefe de Grupo, que conduce el Equipo de Jefatura",
+              "Esperando a que la Tropa publique en redes que necesita más apoyo"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Una Rover acordó su servicio en la Comunidad, pero el acuerdo no dice cuándo se revisa. Tres meses después ya nadie recuerda qué se había pactado. ¿Qué pregunta del acuerdo quedó sin responder?",
+            "options": [
+              "¿Qué voy a hacer?",
+              "¿Con qué rama y en qué espacios?",
+              "¿Cuándo lo revisamos?"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: A Salvo del Peligro ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "A Salvo del Peligro: lo que no se negocia",
+      "emoji": "🛡️",
+      "navLabel": "A Salvo",
+      "sections": [
+        { "type": "paragraph", "text": "<strong>⏱️ 8 minutos · Idea central:</strong> cuidar a los niños, niñas y jóvenes es parte de tu servicio, no un tema aparte." },
+        { "type": "paragraph", "text": "La <em>Política Nacional A Salvo del Peligro</em> de la Asociación (diciembre de 2025) no está escrita solo para los dirigentes. Dice que es corresponsabilidad <strong>de todos los adultos y jóvenes</strong> mitigar los riesgos en las actividades, y que todas las personas tienen la obligación de informar, derivar o reportar cualquier acción que represente un posible delito o vulnere la dignidad de sus miembros. Y agrega:" },
+        { "type": "blockquote", "text": "«En ese sentido, no cabrá la posibilidad de guardar ningún secreto, ni será permitido ocultar información.»<br><small>— Política Nacional A Salvo del Peligro, ASC, 2025, p. 21</small>" },
+        { "type": "heading", "level": 3, "text": "1. La regla 2+1" },
+        { "type": "paragraph", "text": "La política describe la <strong>estrategia 2+1</strong>: que siempre haya al menos tres personas presentes en las actividades, interacciones o acompañamientos —dos personas adultas responsables y una menor de edad, o una adulta y dos menores—, y que valga también para las comunicaciones (p. 26). La misma página pide cuidar el contacto en plataformas digitales y la publicación de imágenes de los jóvenes." },
+        { "type": "info-box", "text": "<strong>Qué significa para ti.</strong> Eres mayor de edad, pero en la rama donde sirves no eres el adulto responsable: lo son los dirigentes. Por eso la regla práctica de este curso es sencilla: <strong>nunca a solas con un niño, niña o joven de la rama, ni en persona ni por chat</strong>. Si un niño te escribe al privado, respondes en un canal donde esté el dirigente o su familia. No publicas fotos de la unidad por tu cuenta." },
+        { "type": "heading", "level": 3, "text": "2. Si alguien te cuenta algo" },
+        { "type": "paragraph", "text": "A veces un niño elige a la persona más joven del equipo para contar algo difícil. La <em>Guía de Prevención y Atención del Daño</em> (2021) da pautas claras: no presionar a hablar, no interrumpir, no juzgar, no inventar lo que no sabes, tener paciencia y ser honesto sobre lo que sabes y lo que no (p. 22). Y algo que vale oro: <strong>no prometas guardar el secreto</strong>. Puedes decirle que lo que te contó es importante y que vas a buscar a alguien que pueda ayudar." },
+        { "type": "heading", "level": 3, "text": "3. Tú no investigas: reportas" },
+        { "type": "paragraph", "text": "La política es explícita: la función del adulto en estos casos «en ningún caso» será investigativa ni de gestión del reporte (p. 29). Lo que te toca es avisar de inmediato al dirigente de la rama y asegurarte de que se reporte. La ruta oficial es el botón <strong>«Me Pongo A Salvo del Peligro»</strong>, en la página de Scouts de Colombia, disponible en todo momento y desde cualquier dispositivo (p. 44)." },
+        { "type": "info-box", "text": "<strong>Para ir más lejos.</strong> La línea de Políticas Transversales de la plataforma nacional tiene tres cursos sobre esto: <em>Entornos Seguros</em>, <em>El Adulto como Garante</em> y <em>Mi Compromiso con los Entornos Seguros</em>. Y ten en cuenta que en los eventos, la política exige a los adultos voluntarios y equipos de servicio el curso o módulo oficial de A Salvo del Peligro (p. 33): pregúntale a tu Jefe de Grupo cómo hacerlo." }
+      ],
+      "reflection": { "prompt": "¿Por qué canales te comunicas hoy, o te comunicarías, con los niños, niñas o jóvenes de la rama donde vas a servir, o con sus familias? ¿Cuál de esos canales tendrías que cambiar después de esta lección?" },
+      "quiz": {
+        "title": "Evaluación - A Salvo del Peligro",
+        "questions": [
+          {
+            "text": "Al final de una reunión, una niña de la Manada le cuenta al Rover algo que le pasa en casa y le pide que no se lo diga a nadie. ¿Qué es lo más coherente con la política?",
+            "options": [
+              "Prometerle el secreto para no perder su confianza, y esperar a ver si se repite",
+              "Preguntarle con detalle qué pasó y quién fue, para estar seguro antes de decir algo",
+              "Escucharla sin presionar, no prometer el secreto y avisar al dirigente de inmediato"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "Un scout de la Tropa le escribe al Rover por mensaje privado para preguntarle por el campamento. ¿Qué es lo más coherente con la regla 2+1?",
+            "options": [
+              "Responder en un canal donde estén el dirigente o la familia del scout",
+              "Contestar en privado, pero borrar la conversación apenas termine de responder",
+              "Responder en privado, porque el Rover también es mayor de edad"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: tu primera semana ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Tu primera semana",
+      "emoji": "🚀",
+      "navLabel": "Primera semana",
+      "sections": [
+        { "type": "paragraph", "text": "<strong>⏱️ 5 minutos · Idea central:</strong> el primer día define mucho; conviene llegar preparado y con los ojos abiertos." },
+        { "type": "paragraph", "text": "Lo que sigue no es una norma: son recomendaciones de este curso para que tu servicio empiece bien." },
+        { "type": "timeline", "items": [
+          { "title": "Antes de la primera reunión", "description": "Conversa con el jefe de la rama: qué van a hacer ese día, qué esperan de ti y qué prefieren que no hagas todavía." },
+          { "title": "La primera reunión", "description": "Observa más de lo que hablas. Mira cómo se organizan, cómo se usa el marco simbólico, quién se queda por fuera." },
+          { "title": "Al terminar", "description": "Cuéntale al dirigente lo que viste y pregúntale qué podrías aportar la próxima vez." },
+          { "title": "A las cuatro semanas", "description": "Revisen juntos el acuerdo: qué está funcionando, qué ajustar y si el tiempo que le dedicas es sostenible para ti y para tu Clan." }
+        ] },
+        { "type": "info-box", "text": "<strong>El siguiente paso:</strong> el curso de la rama donde vas a servir. Ahí vas a conocer cómo son los niños, niñas o jóvenes a esa edad, su marco simbólico y cómo aprenden." },
+        { "type": "mission-box", "text": "<strong>En otra rama no llegas a mandar: llegas a sumar. Y sumar bien se prepara.</strong><br>Ya diste el primer paso." }
+      ],
+      "reflection": { "prompt": "¿Qué te gustaría observar en tu primera reunión en la rama? Escribe tres cosas en las que te vas a fijar." },
+      "quiz": {
+        "title": "Evaluación - Tu primera semana",
+        "questions": [
+          {
+            "text": "¿Qué conviene hacer en la primera reunión de la rama donde vas a servir, según la lección?",
+            "options": [
+              "Proponer una actividad propia para mostrar lo que sabes hacer",
+              "Observar más de lo que hablas y comentar después con el dirigente",
+              "Presentarte a cada familia y pedirles su número para el grupo de chat"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "¿Para qué sirve la revisión a las cuatro semanas?",
+            "options": [
+              "Para que el dirigente califique tu desempeño y lo reporte a tu Clan",
+              "Para decidir si ya puedes quedar a cargo de la unidad aunque no haya un dirigente",
+              "Para ajustar el acuerdo y ver si el servicio es sostenible para ti y tu Clan"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    { "id": "achievement-1", "name": "Mapa del Grupo", "emoji": "🗺️", "unlockOnModule": 2 },
+    { "id": "achievement-2", "name": "Sumar sin Mandar", "emoji": "🤲", "unlockOnModule": 3 },
+    { "id": "achievement-3", "name": "Servicio Acordado", "emoji": "🤝", "unlockOnModule": 4 },
+    { "id": "achievement-4", "name": "Guardián del Entorno", "emoji": "🛡️", "unlockOnModule": 5 },
+    { "id": "achievement-5", "name": "Listo para Servir", "emoji": "🚀", "unlockOnModule": 6 }
+  ],
+  "certificate": {
+    "courseName": "SERVIR EN EL GRUPO",
+    "description": "ha completado el curso Servir en el Grupo, que prepara al Rover para acordar y prestar un servicio en otra rama de su Grupo Scout, apoyando a sus dirigentes y cuidando a los niños, niñas y jóvenes según la Política A Salvo del Peligro.",
+    "commitmentPrompt": "Escribe tu compromiso: en qué rama vas a servir, con quién vas a conversar primero (su rol, no su nombre) y qué quieres acordar."
+  }
+}

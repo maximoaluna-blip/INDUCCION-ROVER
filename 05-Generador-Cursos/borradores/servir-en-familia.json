@@ -1,0 +1,483 @@
+{
+  "courseId": "servir-en-familia",
+  "title": "Servir en la Familia de Cachorros",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 1 · Familia de Cachorros",
+  "description": "Para el Rover que va a servir con niños y niñas de 5 y 6 años. En ~35 minutos vas a conocer cómo son a esa edad, cómo cuidar su Fantasía, por qué aprenden jugando, cómo funciona la vida en Familia y las reglas de cuidado que en esta rama no se negocian. Basado en la Guía para el Dirigente de Familia de Cachorros (2026).",
+  "contentVersion": "2026-09-27",
+  "route": "grupo",
+  "level": 1,
+  "branch": "familia",
+  "registration": {
+    "motivationLabel": "¿Por qué quieres servir en la Familia de Cachorros?"
+  },
+  "icon": "🐾",
+  "duration": "35 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "mission-box",
+          "text": "<strong>A los cinco y seis años aprenden mirando: lo que tú haces les enseña más que lo que dices.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La Familia de Cachorros es la primera rama de los Scouts de Colombia: niños y niñas de 5 y 6 años que dan sus primeros pasos en el Movimiento. Sus dirigentes se llaman <strong>Viejos Lobos</strong>. Todo lo que vas a ver en este curso sale de la <em>Guía para el Dirigente de Familia de Cachorros</em> de la Asociación (2026): en esta rama, manda su Guía."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Este curso no te hace Viejo Lobo. Te prepara para apoyar a los Viejos Lobos de la Familia de tu Grupo, cuidando a los cachorros y cuidando lo que ellos construyen. Si no has hecho <em>Servir en el Grupo</em>, conviene que lo hagas antes: ahí están lo básico de A Salvo del Peligro y cómo se acuerda tu servicio."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Describir</strong> cómo son los niños y niñas de 5 y 6 años",
+            "<strong>Distinguir</strong> qué momentos simbólicos conducen los Viejos Lobos y cómo participar en ellos",
+            "<strong>Reformular</strong> una indicación en lenguaje positivo y <strong>proponer</strong> un juego con propósito",
+            "<strong>Decidir</strong> qué preguntar antes de ubicarte en el Círculo y en las ceremonias",
+            "<strong>Aplicar</strong> las reglas de cuidado de la rama: custodia, adultos presentes, baño y contacto"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Cómo son a los 5 y 6 años",
+      "emoji": "🧒",
+      "navLabel": "Los Cachorros",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> a los cinco y seis años aprenden mirando: lo que tú haces les enseña más que lo que dices. Por eso tu ejemplo es tu herramienta más poderosa, y también la más peligrosa."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía de Familia describe a los Cachorros con rasgos muy concretos (p. 8):"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Viven en un universo de imaginación: relatos, símbolos y personajes son su puerta de entrada al aprendizaje",
+            "Necesitan rutinas claras y seguras, que les den confianza",
+            "Están descubriendo las reglas simples y empiezan a regular su conducta",
+            "Aprenden con acciones concretas, imitando a los adultos y compartiendo con sus pares",
+            "Disfrutan de actividades cortas, variadas y llenas de movimiento",
+            "Buscan la aprobación del adulto y, cada vez más, la de sus pares"
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "«[…] comprendiendo que en esta etapa del desarrollo los Cachorros aprenden principalmente a través de la observación y la imitación, el dirigente debe acompañar desde el ejemplo y la coherencia entre su discurso y sus acciones.»<br><small>— Guía para el Dirigente de Familia de Cachorros, ASC, 2026, p. 9</small>"
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> La Guía lo dice del Viejo Lobo, pero también dice que «toda conducta adulta tiene un impacto formativo en los niños» (p. 9). Eso te incluye. Si pierdes un juego y te enojas, eso aprenden. Si esperas tu turno, eso aprenden. Si miras el celular mientras un niño te habla, eso también. No se trata de ser perfecto; se trata de saber que te están mirando."
+        },
+        {
+          "type": "paragraph",
+          "text": "Y hay algo más: como buscan la aprobación del adulto, una palabra tuya pesa mucho. Un «¡lo lograste!» a tiempo construye confianza; una burla, aunque sea en broma, puede quedarse."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en algo que haces sin darte cuenta —un gesto, una palabra, un hábito— y que un cachorro podría copiar. ¿Te gustaría que lo copiara? Si no, ¿qué vas a cuidar?"
+      },
+      "quiz": {
+        "title": "Evaluación - Los Cachorros",
+        "questions": [
+          {
+            "text": "Durante un juego de la Familia, un Rover que apoya contesta mensajes en el celular mientras los cachorros esperan su turno. Según la lección, ¿qué es lo más importante de esa situación?",
+            "options": [
+              "Que los cachorros aprenden imitando, y ese gesto también se aprende",
+              "Que el juego pierde ritmo y los cachorros se aburren un poco más rápido",
+              "Nada grave, porque los cachorros están ocupados esperando su turno"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "El Viejo Lobo te pide que prepares algo para los últimos 20 minutos de la reunión. ¿Qué propuesta va mejor con cómo son los cachorros a esa edad?",
+            "options": [
+              "Un juego de mesa de 20 minutos, para que aprendan a quedarse concentrados",
+              "Un par de juegos cortos y movidos, que abran y cierren con la canción de siempre",
+              "Un torneo por equipos fijos, con puntos y un premio para el equipo ganador"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: la Fantasía ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "La Fantasía y el Cubil",
+      "emoji": "🌙",
+      "navLabel": "La Fantasía",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> la Familia vive en una Fantasía que educa; tú entras en ella para jugarla de verdad, al ritmo que marcan los Viejos Lobos."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagina tu primer sábado: los cachorros se sientan en círculo, alguien empieza a contar una historia y todos bajan la voz. Un niño te mira de reojo, a ver si tú también te la crees. Esta lección es para ese momento."
+        },
+        {
+          "type": "paragraph",
+          "text": "El marco simbólico de la Familia de Cachorros es <strong>la Fantasía</strong>, y su ambiente de referencia son los <strong>relatos infantiles</strong>: fábulas, cuentos, poemas, canciones (p. 35–36). En el centro está un capítulo del <em>Libro de las Tierras Vírgenes</em> de Kipling, «Los Hermanos de Mowgli», que la Guía llama «el fundamento simbólico que da identidad, coherencia y profundidad a la Rama Cachorros» (p. 36–37). El lema es <strong>«Siempre Alegres»</strong> y el color, el <strong>naranja</strong> (p. 35–36)."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía insiste en algo que conviene que sepas antes de llegar: los símbolos «no se explican en exceso. Se viven» (p. 33). Nadie le dice a un cachorro «esto representa el mundo»: lo vive jugando. Y todo pasa en el <strong>Cubil</strong>, que la Guía define como «el hogar simbólico de la Familia», el espacio seguro donde los Cachorros se reúnen, comparten, aprenden y se cuidan (p. 43)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "✨ Lo que sí te toca"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Vivir la historia con ellos: cantar, jugar y hablar dentro del relato, sin salirte a explicarlo",
+            "Usar los nombres que la Familia usa para sus lugares, momentos y personajes",
+            "Si te dan un papel en un relato, hacerlo con ganas",
+            "Si un cachorro te pregunta algo del relato que no sabes, decirle «vamos a preguntarle al Viejo Lobo» en vez de inventar"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Son recomendaciones de este curso, pensadas para que la Fantasía también sea tuya mientras estás con ellos."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "🐺 Lo que es de los Viejos Lobos"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "El <strong>Nombre de Caza</strong> es un nombre de fantasía que se otorga a un Viejo Lobo; lo entregan Raksha o Papá Lobo —así se llama al Jefe de Unidad en la Familia—, según lo que la Familia necesita fortalecer (p. 10–11)",
+            "El <strong>Eo-Wawa</strong>, el grito de felicidad de los Cachorros, lo dirige el Jefe de Unidad o un Viejo Lobo autorizado por él (p. 38)",
+            "La Guía llama al dirigente «mediador del símbolo»: no es su dueño, pero lo conserva con respeto (p. 34)"
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> Tú no eres Viejo Lobo, y no hace falta serlo para vivir la Fantasía con ellos. Dos cosas sí son de los Viejos Lobos: el Nombre de Caza y la conducción de momentos como el Eo-Wawa. Pregúntale al Jefe de Unidad cómo te van a presentar a los cachorros y cómo participas en los momentos simbólicos. Y cuida lo que no se ve: no desmientas el relato («eso de la selva es un cuento»), no te burles de un personaje, no cambies el nombre de las cosas."
+        }
+      ],
+      "reflection": {
+        "prompt": "Recuerda un momento —como cachorro, lobato o scout— en que un adulto te hizo sentir de verdad dentro de la historia, y otro en que alguien la rompió sin querer. ¿Qué hizo distinto cada uno? Sin nombres: basta con su papel (un dirigente, un Rover, un papá)."
+      },
+      "quiz": {
+        "title": "Evaluación - La Fantasía",
+        "questions": [
+          {
+            "text": "Al final de la reunión, el Jefe de Unidad está atendiendo a una mamá y los cachorros te piden a gritos: «¡hagamos el Eo-Wawa!». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Dirigirlo tú, ya que los cachorros están listos y el Jefe está ocupado",
+              "Proponerles otro grito que sí puedas dirigir, para cerrar con alegría",
+              "Animarlos a esperar a su Viejo Lobo y avisarle que lo están pidiendo"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "En su primer día, un cachorro le pregunta al Rover: «¿y tú cómo te llamas en el Cubil?». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Inventar un Nombre de Caza en el momento, para no romper la Fantasía",
+              "Explicarle que eso de los nombres es un juego y decirle su nombre real",
+              "Responder como lo haya acordado con el Jefe de Unidad para presentarse"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: aprenden jugando ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Aprenden jugando",
+      "emoji": "🎲",
+      "navLabel": "El juego",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> en la Familia, el juego no es un premio ni un relleno: es la manera de aprender."
+        },
+        {
+          "type": "paragraph",
+          "text": "Piensa en el juego que más te gustaba de lobato o de scout. No lo recuerdas como una clase, y aun así algo aprendiste: esperar tu turno, perder sin enojarte, confiar en tu equipo. De eso habla la Guía cuando dice que el juego es la manera de aprender."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía dice que en la primera infancia el juego es una <strong>actividad rectora</strong>, una de las formas principales en que los niños crecen y aprenden, y que para el escultismo es «la forma más cercana del elemento del Método Scout “Aprender haciendo”» (p. 26–27). Pero agrega una condición:"
+        },
+        {
+          "type": "blockquote",
+          "text": "«Cuando un juego se realiza sin intención, puede generar entretenimiento momentáneo; pero cuando es planeado con un propósito claro, se convierte en una Oportunidad de Aprendizaje.»<br><small>— Guía para el Dirigente de Familia de Cachorros, ASC, 2026, p. 27</small>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Por eso, cuando propongas o apoyes un juego, pregúntate para qué es. Y cuida tres de las cualidades que la Guía pide a toda actividad en la Familia —son parte de lo que llama DURASLID (p. 25–26)—: que sea <strong>segura</strong> —también emocionalmente: que un niño pueda equivocarse sin miedo—, que sea <strong>lúdica</strong> y que sea <strong>incluyente y diversa</strong>: quien no corre rápido puede narrar el juego; quien es tímido puede tener una tarea pequeña."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "🗣️ Cómo hablarles"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Sencillo y positivo:</strong> frases cortas y tono amable. En lugar de «no hagas eso», «intentemos hacerlo así»",
+            "<strong>Con el cuerpo:</strong> gestos, objetos, dibujos que acompañen las palabras",
+            "<strong>Escucha emocional:</strong> su tono, su mirada o su silencio también dicen algo",
+            "<strong>El juego como lenguaje:</strong> canciones, dramatizaciones o cuentos para explicar una norma"
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "Estas cuatro estrategias vienen de la Guía de Familia (p. 73). No necesitas memorizarlas: basta con que la próxima vez que vayas a decir «¡no!», te detengas un segundo y busques el «intentemos así»."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en un juego que sepas dirigir. ¿Qué podría aprender un cachorro jugándolo? ¿Cómo lo adaptarías para que participe también un niño que no corre rápido o que es muy tímido?"
+      },
+      "quiz": {
+        "title": "Evaluación - Aprenden jugando",
+        "questions": [
+          {
+            "text": "Dos Rovers dirigen el mismo juego de relevos. Uno lo pone «para que se cansen antes del Círculo»; la otra, para que practiquen esperar su turno y animar al compañero. Según la lección, ¿cuál es una Oportunidad de Aprendizaje?",
+            "options": [
+              "Los dos por igual, porque en la Familia todo juego educa por sí solo",
+              "El de la Rover, porque lo planeó con un propósito claro desde antes",
+              "El del Rover, porque cansarse también les enseña a regular su energía"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Un cachorro está pisando el material de otra actividad. ¿Cuál de estas frases va más con la forma de hablarles que propone la Guía?",
+            "options": [
+              "«¡Te dije que no! Sal de ahí ya mismo»",
+              "«Intentemos caminar por el borde, así»",
+              "«No pises eso, por favor, que se daña»"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: la vida en Familia ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "La Familia, el Círculo y las ceremonias",
+      "emoji": "⭕",
+      "navLabel": "La Familia",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> en esta rama nadie queda solo, y cada momento compartido tiene su forma."
+        },
+        {
+          "type": "paragraph",
+          "text": "En tu Clan cada uno tiene su equipo y a veces se trabaja por separado. En la Familia no: a los cinco años nadie se va a otra mesa a trabajar por su cuenta."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Familia de Cachorros no se organiza en equipos permanentes como la Tropa. Su sistema es el <strong>Sistema de Familia</strong>: todos comparten el mismo espacio, las mismas vivencias y el mismo acompañamiento adulto (p. 28). La Guía es tajante: «Nunca habrá un Cachorro aislado o trabajando de manera independiente lejos de sus hermanos Cachorros» y «nunca existirá una Familia de Cachorros sin la presencia activa y permanente de sus Viejos Lobos» (p. 29). Para un juego se pueden formar <strong>Camadas</strong> de unos cinco cachorros, pero son momentáneas y no las dirige nadie (p. 29)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "⭕ El Círculo de Familia"
+        },
+        {
+          "type": "paragraph",
+          "text": "Es la formación propia de la rama. Un Viejo Lobo lo dirige desde el centro, y «los demás Viejos Lobos se deberán ubicar detrás del círculo como símbolo de protección» (p. 29). La Guía explica que el círculo no tiene esquinas ni lugares privilegiados: enseña que todos valen lo mismo (p. 30)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "🗣️ El Encuentro del Cubil y las ceremonias"
+        },
+        {
+          "type": "paragraph",
+          "text": "El <strong>Encuentro del Cubil</strong> es el órgano de participación de los cachorros, guiado por los Viejos Lobos, donde expresan sus ideas con dibujos, tarjetas o la «Piedra de la Palabra» (p. 32). Y hay tres ceremonias que se hacen en presencia del Grupo: la <strong>Investidura</strong>, la de <strong>Fase Máxima de Progresión</strong> y la de <strong>Paso</strong> a la Manada (p. 42)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> En el Círculo y en las ceremonias, pregunta antes dónde ubicarte y qué te toca: son momentos que conducen los Viejos Lobos. En el Encuentro del Cubil, lo más difícil suele ser callarse: esperar a que hable el niño tímido y no «corregir» una idea que te parece mala. Ahí los cachorros aprenden que su voz cuenta."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Un espejo útil.</strong> La Guía dice que los padres que acompañan las reuniones no están para dirigir, corregir o intervenir en la dinámica, sino para apoyar «siempre bajo orientación de los Viejos Lobos» (p. 11–12). Es una buena medida para tu propio papel."
+        }
+      ],
+      "reflection": {
+        "prompt": "Recuerda una reunión de tu Clan en que alguien tardó en decir su idea o propuso algo que te pareció malo. ¿Qué hiciste tú? En un Encuentro del Cubil, ¿qué harías distinto? Sin nombres: basta con lo que pasó."
+      },
+      "quiz": {
+        "title": "Evaluación - La vida en Familia",
+        "questions": [
+          {
+            "text": "Durante una actividad, un cachorro quiere quedarse solo en otro salón terminando su dibujo. Según la Guía de Familia, ¿qué es lo coherente?",
+            "options": [
+              "Permitírselo, porque así desarrolla autonomía y se concentra mejor",
+              "Invitarlo a volver con la Familia: ningún cachorro queda aislado",
+              "Dejarlo solo un rato, mientras el Rover se asoma de vez en cuando"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Es tu primera reunión y el Viejo Lobo llama a formar el Círculo de Familia. Nadie te ha dicho dónde ponerte. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Entrar al círculo de la mano de los cachorros, para acompañarlos",
+              "Preguntarle al Viejo Lobo dónde te ubicas, antes de que empiece",
+              "Ponerte en el centro junto al Viejo Lobo, para ayudarle a dirigir"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: tu apoyo, paso a paso ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Tu apoyo, paso a paso",
+      "emoji": "🛡️",
+      "navLabel": "Paso a paso",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> en la Familia de Cachorros, cuidar tiene reglas concretas, y conocerlas te protege a ti también: si nunca estás a solas con un cachorro, nadie puede poner en duda lo que pasó."
+        },
+        {
+          "type": "paragraph",
+          "text": "El capítulo 11 de la Guía de Familia baja la Política A Salvo del Peligro a esta rama. La Guía escribe estas reglas para los Viejos Lobos; tú las sigues igual, y no reemplazas a ninguno de ellos:"
+        },
+        {
+          "type": "timeline",
+          "items": [
+            {
+              "title": "Llegada y salida: custodia",
+              "description": "La responsabilidad empieza cuando el cachorro es recibido formalmente por los Viejos Lobos y termina cuando es entregado directamente a su padre, madre o acudiente autorizado. «Por ningún motivo se permite que el niño se retire solo» (p. 78)."
+            },
+            {
+              "title": "Siempre acompañados",
+              "description": "Al menos dos adultos presentes, uno por cada cinco cachorros, y «en ningún caso un adulto debe permanecer solo con un niño o con la Familia» (p. 78). En <em>Servir en el Grupo</em> viste que el Modelo de Aplicación pide uno por cada 6, y la regla 2+1. En la Familia manda la Guía, que pide más: nadie queda solo ni con un niño ni con el grupo. Tú sumas cuidado, pero no cuentas como uno de los Viejos Lobos."
+            },
+            {
+              "title": "El baño",
+              "description": "El acompañamiento llega solo hasta la puerta. Ni los Viejos Lobos ni tú entran con el cachorro ni lo ayudan con su higiene o su ropa; si necesita ayuda directa, se la dan solo sus padres o acudientes (p. 78–79). Y como nadie queda a solas con un niño, a la puerta se va con otro adulto."
+            },
+            {
+              "title": "El contacto físico",
+              "description": "Se evita de manera general. Si hace falta tocarlo por seguridad —por ejemplo, para evitar una caída—, en lo posible avísale antes qué vas a hacer y por qué. Si un cachorro quiere abrazarte, te agachas a su altura, sin cargarlo ni levantarlo, y siempre a la vista (p. 79). No se trata de ser frío: la Guía también dice que con ellos comunicarse es «jugar, mirar, sonreír y abrazar» (p. 74). El afecto se queda; cambia la forma."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Un sábado, de principio a fin"
+        },
+        {
+          "type": "paragraph",
+          "text": "Llegas antes y conversas con el Jefe de Unidad sobre lo que harán. Los cachorros llegan y los reciben los Viejos Lobos en el punto acordado. En el Círculo te ubicas donde te indicaron. En el juego de apertura apoyas a los que se quedan atrás. Un cachorro pide ir al baño: lo acompañas con otro adulto hasta la puerta, y esperas afuera. Otro cachorro corre a abrazarte: te agachas a su altura, sin cargarlo. Al final, nadie se va hasta que un Viejo Lobo lo entrega a su acudiente. Después, comentas con el Jefe de Unidad qué viste."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar vas a escribir tu compromiso. Que sea concreto: «En la Familia de Cachorros voy a ___, y nunca voy a ___»."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>A los cinco y seis años aprenden mirando: lo que tú haces les enseña más que lo que dices.</strong><br>¡Siempre Alegres!"
+        }
+      ],
+      "reflection": {
+        "prompt": "De las cuatro reglas de cuidado de esta lección, ¿cuál te parece más fácil de olvidar en medio de una reunión movida? ¿Qué harías para no olvidarla?"
+      },
+      "quiz": {
+        "title": "Evaluación - Paso a paso",
+        "questions": [
+          {
+            "text": "En plena reunión, un cachorro le pide al Rover que lo lleve al baño y le ayude porque no alcanza a subirse la ropa. ¿Qué es lo coherente con la Guía?",
+            "options": [
+              "Ir con otro adulto hasta la puerta y avisar a los Viejos Lobos para que llamen a su acudiente",
+              "Entrar con él, pero junto con otro adulto, para que nadie quede a solas con el niño",
+              "Pedirle a un Viejo Lobo que entre a ayudarlo, porque él sí es el adulto responsable"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Termina la reunión y la mamá de un cachorro avisa por mensaje que llegará media hora tarde. ¿Qué es lo coherente con la Guía?",
+            "options": [
+              "Que dos Rovers esperen con él en la sede, así nunca queda a solas con un adulto",
+              "Que un Rover lo lleve a su casa, ya que queda de camino y es mayor de edad",
+              "Que siga con los Viejos Lobos, que lo entregan en persona a su mamá cuando llegue"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "Al terminar el juego, un cachorro corre hacia ti con los brazos abiertos y te pide que lo cargues. ¿Qué es lo coherente con la Guía?",
+            "options": [
+              "Recibir el abrazo agachado a su altura, sin cargarlo y a la vista de todos",
+              "Cargarlo un momento frente a los Viejos Lobos, ya que todos lo están viendo",
+              "Apartarte con amabilidad y explicarle que a los adultos no se les abraza"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Mirada de Cachorro",
+      "emoji": "🧒",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Guardián de la Fantasía",
+      "emoji": "🌙",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Juego con Sentido",
+      "emoji": "🎲",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Parte de la Familia",
+      "emoji": "⭕",
+      "unlockOnModule": 5
+    },
+    {
+      "id": "achievement-5",
+      "name": "Siempre Alegre",
+      "emoji": "🛡️",
+      "unlockOnModule": 6
+    }
+  ],
+  "certificate": {
+    "courseName": "SERVIR EN LA FAMILIA DE CACHORROS",
+    "description": "ha completado el curso Servir en la Familia de Cachorros, que prepara al Rover para apoyar a los Viejos Lobos de su Grupo conociendo a los niños y niñas de 5 y 6 años, su marco simbólico, su forma de aprender y las reglas de cuidado de la rama.",
+    "commitmentPrompt": "Escribe tu compromiso completando la frase de la última lección: «En la Familia de Cachorros voy a ___, y nunca voy a ___»."
+  }
+}

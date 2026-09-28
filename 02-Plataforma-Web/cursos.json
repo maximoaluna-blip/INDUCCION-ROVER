@@ -24,5 +24,44 @@
     "branch": null,
     "status": "active",
     "file": "caracteristicas-educativas.html"
+  },
+  {
+    "courseId": "servicio-rover",
+    "title": "El servicio Rover",
+    "description": "El primer curso de la plataforma. En ~35 minutos vas a entender por qué «Servir» es el lema de tu rama, qué formas toma el servicio, dónde puedes servir —en tu Grupo o en tu comunidad— y cómo tu servicio entra en tu PARCE sin descuidar a tu Clan.",
+    "icon": "🤝",
+    "duration": "35 minutos",
+    "modules": 6,
+    "route": "tronco",
+    "level": 1,
+    "branch": null,
+    "status": "active",
+    "file": "servicio-rover.html"
+  },
+  {
+    "courseId": "servir-en-el-grupo",
+    "title": "Servir en el Grupo",
+    "description": "El curso común de la ruta. En ~35 minutos vas a ubicar la rama donde quieres servir dentro de tu Grupo, entender la diferencia entre apoyar y dirigir, acordar tu servicio con las personas indicadas, aplicar lo básico de A Salvo del Peligro y planear tu primera semana.",
+    "icon": "🏕️",
+    "duration": "35 minutos",
+    "modules": 6,
+    "route": "grupo",
+    "level": 1,
+    "branch": null,
+    "status": "active",
+    "file": "servir-en-el-grupo.html"
+  },
+  {
+    "courseId": "servir-en-familia",
+    "title": "Servir en la Familia de Cachorros",
+    "description": "Para el Rover que va a servir con niños y niñas de 5 y 6 años. En ~35 minutos vas a conocer cómo son a esa edad, cómo cuidar su Fantasía, por qué aprenden jugando, cómo funciona la vida en Familia y las reglas de cuidado que en esta rama no se negocian. Basado en la Guía para el Dirigente de Familia de Cachorros (2026).",
+    "icon": "🐾",
+    "duration": "35 minutos",
+    "modules": 6,
+    "route": "grupo",
+    "level": 1,
+    "branch": "familia",
+    "status": "active",
+    "file": "servir-en-familia.html"
   }
 ]

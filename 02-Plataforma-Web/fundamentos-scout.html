@@ -609,7 +609,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                 <div class="reflection-area">
                     <h4>🤔 Reflexión Personal</h4>
                     <p>¿Cómo aplicarías estos valores al trabajar con los niños, niñas y jóvenes de la rama donde vas a servir?</p>
-                    <textarea id="reflection-2" placeholder="Escribe tu reflexión aquí..." onchange="saveReflection(2, this.value)"></textarea>
+                    <textarea id="reflection-2" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(2, this.value)"></textarea>
                 </div>
                 <div class="quiz-container">
                     <h3>🧪 Evaluación - Misión y Propósito</h3>
@@ -694,7 +694,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                 <div class="reflection-area">
                     <h4>🤔 Reflexión Personal</h4>
                     <p>¿Qué lecciones de Mafeking aplicarías al trabajar con niños y jóvenes? ¿Cómo les darías responsabilidades apropiadas?</p>
-                    <textarea id="reflection-3" placeholder="Escribe tu reflexión aquí..." onchange="saveReflection(3, this.value)"></textarea>
+                    <textarea id="reflection-3" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(3, this.value)"></textarea>
                 </div>
                 <div class="quiz-container">
                     <h3>🧪 Evaluación - Mafeking</h3>
@@ -799,7 +799,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                 <div class="reflection-area">
                     <h4>🤔 Reflexión Personal</h4>
                     <p>¿Qué elementos del campamento de Brownsea implementarías en la rama donde vas a servir? ¿Por qué crees que fue tan exitoso?</p>
-                    <textarea id="reflection-4" placeholder="Escribe tu reflexión aquí..." onchange="saveReflection(4, this.value)"></textarea>
+                    <textarea id="reflection-4" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(4, this.value)"></textarea>
                 </div>
                 <div class="quiz-container">
                     <h3>🧪 Evaluación - Brownsea Island</h3>
@@ -899,7 +899,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                 <div class="reflection-area">
                     <h4>🤔 Reflexión Personal</h4>
                     <p>¿Cómo crees que el escultismo colombiano puede aportar a la hermandad scout mundial? ¿Qué elementos de nuestra cultura enriquecen el movimiento?</p>
-                    <textarea id="reflection-5" placeholder="Escribe tu reflexión aquí..." onchange="saveReflection(5, this.value)"></textarea>
+                    <textarea id="reflection-5" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(5, this.value)"></textarea>
                 </div>
                 <div class="quiz-container">
                     <h3>🧪 Evaluación - Expansión Mundial</h3>
@@ -992,7 +992,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                 <div class="reflection-area">
                     <h4>🤔 Reflexión Personal</h4>
                     <p>¿Cuál de los 8 elementos consideras más desafiante para implementar? ¿Cómo los integrarías en una actividad específica?</p>
-                    <textarea id="reflection-6" placeholder="Escribe tu reflexión aquí..." onchange="saveReflection(6, this.value)"></textarea>
+                    <textarea id="reflection-6" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(6, this.value)"></textarea>
                 </div>
                 <div class="quiz-container">
                     <h3>🧪 Evaluación - Método Scout</h3>
@@ -1092,7 +1092,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                 <div class="reflection-area">
                     <h4>🤔 Reflexión Personal</h4>
                     <p>Cuando sirvas en otra rama de tu Grupo, ¿cómo contribuirás al impacto positivo del escultismo? ¿Qué legado quieres dejar en los niños, niñas y jóvenes con quienes vas a compartir?</p>
-                    <textarea id="reflection-7" placeholder="Escribe tu reflexión aquí..." onchange="saveReflection(7, this.value)"></textarea>
+                    <textarea id="reflection-7" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(7, this.value)"></textarea>
                 </div>
                 <div class="quiz-container">
                     <h3>🧪 Evaluación Final - Impacto Global</h3>
@@ -1158,7 +1158,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
 
                     <!-- Title -->
                     <div style="text-align: center; margin: 15px 0 10px;">
-                        <h2 style="color: #622599; font-size: 1.3em; letter-spacing: 2px; margin: 0;">CERTIFICADO DE APROBACION</h2>
+                        <h2 style="color: #622599; font-size: 1.3em; letter-spacing: 2px; margin: 0;">CERTIFICADO DE APROBACIÓN</h2>
                     </div>
 
                     <!-- Course name -->
@@ -1191,7 +1191,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
 
                     <!-- Footer -->
                     <div style="text-align: center; margin-top: 12px;">
-                        <p style="font-size: 0.7em; color: #767676;">Plataforma de Formacion Rover ASC | vallescout.org.co</p>
+                        <p style="font-size: 0.7em; color: #767676;">Plataforma de Formación Rover ASC | vallescout.org.co</p>
                     </div>
                 </div>
 
@@ -1433,7 +1433,11 @@ function checkQuiz(moduleNum) {
             module: moduleNum, score: score, course: COURSE_CONFIG.courseId
         });
     } else {
-        showNotification('Puntuación: ' + score + '%. Necesitas 70% para continuar. Revisa el contenido y vuelve a intentarlo.', 'warning');
+        // El 70 % exige, con 2 o 3 preguntas, acertarlas TODAS: se dice asi, no en porcentaje (CHECKLIST §A, ADR-091).
+        var necesarias = Math.ceil(totalQuestions * 0.7);
+        showNotification('Acertaste ' + correctAnswers + ' de ' + totalQuestions + '. Para seguir necesitas ' +
+            (necesarias === totalQuestions ? 'acertarlas todas' : 'acertar ' + necesarias) +
+            ': mira cuál quedó en verde, relee esa parte y vuelve a intentarlo.', 'warning');
         // No auto-reset: en cuanto el usuario hace clic en una opcion, selectOption() limpia las marcas
         // de esa pregunta y vuelve a mostrar el boton "Verificar". Esto evita que un reset por tiempo
         // borrara la nueva seleccion del usuario antes de que pulsara verificar.

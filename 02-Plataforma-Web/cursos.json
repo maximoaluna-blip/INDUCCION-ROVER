@@ -76,5 +76,18 @@
     "branch": "manada",
     "status": "active",
     "file": "servir-en-manada.html"
+  },
+  {
+    "courseId": "servir-en-tropa",
+    "title": "Servir en la Tropa",
+    "description": "Para el Rover que va a servir con scouts de 11 a 14 años. En ~35 minutos vas a conocer cómo son a esa edad, por qué la patrulla es de ellos, cómo se vive la Aventura, cómo aportar lo que sabes sin quitarles protagonismo y cómo ser cercano sin confundir los roles. Basado en la Guía de Dirigente de Tropa (2026).",
+    "icon": "⚜️",
+    "duration": "35 minutos",
+    "modules": 6,
+    "route": "grupo",
+    "level": 1,
+    "branch": "tropa",
+    "status": "active",
+    "file": "servir-en-tropa.html"
   }
 ]

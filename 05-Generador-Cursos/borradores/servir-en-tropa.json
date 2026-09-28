@@ -1,0 +1,255 @@
+{
+  "courseId": "servir-en-tropa",
+  "title": "Servir en la Tropa",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 1 · Tropa",
+  "description": "Para el Rover que va a servir con scouts de 11 a 14 años. En ~35 minutos vas a conocer cómo son a esa edad, por qué la patrulla es de ellos, cómo se vive la Aventura, cómo aportar lo que sabes sin quitarles protagonismo y cómo ser cercano sin confundir los roles. Basado en la Guía de Dirigente de Tropa (2026).",
+  "contentVersion": "2026-09-27",
+  "route": "grupo",
+  "level": 1,
+  "branch": "tropa",
+  "registration": { "motivationLabel": "¿Por qué quieres servir en la Tropa?" },
+  "icon": "⚜️",
+  "duration": "35 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        { "type": "paragraph", "text": "Hace poco tú estabas en una patrulla. Ahora llegas a la Tropa como Rover, los scouts te miran como a un hermano mayor y en la primera excursión alguien te pide que decidas por ellos. Es halagador, y es justo ahí donde empieza este curso." },
+        { "type": "mission-box", "text": "<strong>El dirigente es un formador de líderes, no un sustituto de ellos.</strong>" },
+        { "type": "paragraph", "text": "La frase es de la <em>Guía de Dirigente de Tropa</em> de la Asociación (2026), la fuente de este curso, y si vale para el dirigente, vale todavía más para ti. La Tropa reúne a scouts de 11 a 14 años organizados en patrullas." },
+        { "type": "info-box", "text": "<strong>Antes de empezar.</strong> Este curso no te hace dirigente de Tropa: te prepara para apoyar al equipo de dirigentes de la Tropa de tu Grupo. Si no has hecho <em>Servir en el Grupo</em>, conviene que lo hagas antes.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta." },
+        { "type": "course-objectives", "items": [
+          "<strong>Describir</strong> cómo son los y las scouts de 11 a 14 años, incluida su vida digital",
+          "<strong>Distinguir</strong> el papel del guía de patrulla, del jefe de Tropa y del Rover que apoya",
+          "<strong>Apoyar</strong> la Aventura y las tradiciones de patrulla sin apropiarte de ellas",
+          "<strong>Aprovechar</strong> lo que sabes hacer sin quitarle protagonismo al scout",
+          "<strong>Aplicar</strong> la estrategia 2+1, con atención a la cercanía de edad y a lo digital"
+        ] }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Cómo son de 11 a 14 años",
+      "emoji": "🧑",
+      "navLabel": "Los Scouts",
+      "sections": [
+        { "type": "paragraph", "text": "<strong>⏱️ 6 minutos · Idea central:</strong> entre los 11 y los 14 años todo cambia a la vez; lo que más necesitan de un adulto es que los escuche más de lo que les habla." },
+        { "type": "paragraph", "text": "Recuerda cómo eras a los 12 o 13: el cuerpo cambiando, las preguntas que incomodaban a los adultos, la patrulla como lo más importante de la semana. La Guía de Tropa lo describe así (p. 14–15):" },
+        { "type": "list", "ordered": false, "items": [
+          "<strong>El cuerpo que empieza a hablar:</strong> en una misma Tropa hay scouts con apariencia infantil y otros que ya parecen mayores; «un comentario mal hecho puede herir»",
+          "<strong>La mente que cuestiona:</strong> les gusta poner a prueba a los adultos; lo importante «no es darles todas las respuestas, sino enseñarles a buscar soluciones»",
+          "<strong>Un corazón intenso:</strong> necesitan adultos «que escuchen más que juzguen»",
+          "<strong>La patrulla, su mundo en miniatura:</strong> cuestionan la autoridad adulta, no por rebeldía gratuita, sino para comprobar que su voz cuenta",
+          "<strong>Entre pantallas y redes:</strong> lo digital es parte de su vida, con oportunidades y con riesgos como el ciberacoso o la pérdida de privacidad"
+        ] },
+        { "type": "info-box", "text": "<strong>Qué significa para ti.</strong> Los scouts de esta edad piden, según la Guía, que los escuchen y los tomen en serio, que lo que aprenden tenga sentido y que haya confianza en los adultos que los acompañan (p. 16). La misma página lo resume en una línea que te sirve cada sábado: «Escucha más, habla menos»." }
+      ],
+      "reflection": { "prompt": "Recuerda algo que un adulto te dijo cuando tenías entre 11 y 14 años y que todavía recuerdas, para bien o para mal. ¿Qué lo hizo quedarse contigo? Sin nombres: basta con lo que dijo y cuándo." },
+      "quiz": {
+        "title": "Evaluación - Los Scouts",
+        "questions": [
+          {
+            "text": "En el campamento, un scout de 12 años todavía no ha dado el estirón y otro de su patrulla lo molesta por eso. Un Rover, para aliviar el momento, hace un chiste sobre lo pequeño que se ve. ¿Qué diría la Guía de Tropa?",
+            "options": [
+              "Que un comentario sobre el cuerpo puede herir a esa edad, aunque sea en broma",
+              "Que el humor ayuda a relajar la tensión entre scouts de la misma patrulla",
+              "Que el scout tiene que aprender a aguantar bromas para ganar confianza"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Durante una actividad, una scout le dice al Rover: «¿Y por qué tenemos que hacerlo así? Esa norma no tiene sentido». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Recordarle que las normas no se discuten y que debe cumplirla sin más",
+              "Escucharla y ayudarla a llevar su propuesta al espacio donde se decide",
+              "Darle la razón y cambiar la norma, para ganarse su confianza"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: la patrulla es de ellos ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "La patrulla es de ellos",
+      "emoji": "🚩",
+      "navLabel": "La patrulla",
+      "sections": [
+        { "type": "paragraph", "text": "<strong>⏱️ 7 minutos · Idea central:</strong> en la Tropa, los scouts aprenden a liderar liderando; si tú lideras por ellos, les quitas justamente eso." },
+        { "type": "paragraph", "text": "En tu Clan, cuando alguien hace por ti algo que querías hacer tú, lo notas enseguida. En la patrulla pasa igual, solo que el scout de 12 años quizá no se atreve a decirlo." },
+        { "type": "paragraph", "text": "La Guía llama al Sistema de Patrullas «la columna vertebral de la tropa», según Baden-Powell (p. 27). Cada patrulla —de seis a ocho scouts— tiene su nombre, su banderín, su lema y sus tradiciones. Y hay una regla central: <strong>el guía de patrulla es elegido por sus compañeros, no por el dirigente</strong>; junto a él, el subguía y los cargos de la patrulla (p. 27)." },
+        { "type": "blockquote", "text": "«El dirigente, por su parte, es un formador de líderes, no un sustituto de ellos.»<br><small>— Guía de Dirigente de Tropa, ASC, 2026, §5.3, p. 28</small>" },
+        { "type": "paragraph", "text": "Los espacios de decisión también son de ellos: el <strong>Consejo de Patrulla</strong>, donde planean, se reparten tareas y evalúan, y la <strong>Corte de Honor</strong>, donde los guías y el equipo de dirigentes coordinan la vida de la Tropa (p. 28). Y el Jefe de Tropa es el «custodio del sistema de equipos»: su papel no es dirigir las patrullas, sino garantizar que el método se viva dentro de ellas (p. 29)." },
+        { "type": "info-box", "text": "<strong>Qué significa para ti.</strong> No reemplaces al guía, aunque la patrulla te lo pida. No te sientes en la Corte de Honor si no te invitan. Y si ves que una patrulla funciona mal, no la «arregles» desde afuera: coméntaselo al dirigente, que es quien acompaña a los guías." }
+      ],
+      "reflection": { "prompt": "Recuerda una vez, en tu Clan o en tu paso por la Tropa, en que alguien hizo por ti algo que querías hacer tú. ¿Cómo te sentiste? ¿Qué habrías preferido que hiciera? Sin nombres: basta con lo que pasó." },
+      "quiz": {
+        "title": "Evaluación - La patrulla",
+        "questions": [
+          {
+            "text": "En una excursión, la patrulla discute sin ponerse de acuerdo y le dice al Rover: «Mejor sé tú el guía hoy, a ti sí te hacemos caso». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Decirles que sí solo por ese día, para que la excursión salga bien y nadie se pelee",
+              "Agradecer la confianza y devolverles la decisión, apoyando a su guía elegido",
+              "Aceptar y nombrar tú a un guía nuevo, porque el de ahora no se hace respetar"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Según la Guía de Tropa, ¿quién elige al guía de patrulla?",
+            "options": [
+              "Los compañeros de su patrulla",
+              "El Jefe de Tropa, según méritos",
+              "La Corte de Honor, por votación"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: la Aventura ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "La Aventura y lo que sabes hacer",
+      "emoji": "🧭",
+      "navLabel": "La Aventura",
+      "sections": [
+        { "type": "paragraph", "text": "<strong>⏱️ 7 minutos · Idea central:</strong> en la Tropa todo se vive como Aventura, y lo que tú sabes hacer puede sumarse a ella sin que la conduzcas tú." },
+        { "type": "paragraph", "text": "El marco simbólico de la Tropa es <strong>la Aventura</strong>: el lenguaje común que «transforma una caminata en una expedición, un juego en una misión y un campamento en una hazaña compartida» (p. 30). Se apoya en tres dinámicas propias de la edad: el gusto por explorar, el interés por apropiarse de un territorio —su rincón de patrulla, su carpa, su bandera— y la pertenencia a un grupo de amigos (p. 30)." },
+        { "type": "paragraph", "text": "Cada patrulla tiene sus historias y tradiciones, que el dirigente cuida (p. 31). Y la Tropa tiene una ceremonia propia: la <strong>Promesa al Guía</strong>, en la que los scouts reconocen a su guía de patrulla (p. 32). La Guía insiste en algo que también te toca: «El dirigente no impone las ceremonias: las facilita y las vive con los jóvenes» (p. 32)." },
+        { "type": "heading", "level": 3, "text": "Lo que sabes hacer" },
+        { "type": "paragraph", "text": "Quizá tocas un instrumento, sabes de primeros auxilios, programas o conoces las aves de tu región. En la Tropa eso puede servir de una forma muy concreta. La <em>Guía de Buenas Prácticas para Jefes de Tropa</em> explica que un scout puede crear una especialidad nueva, y que para hacerlo debe «conseguir un sinodal que conozca el tema y pueda asesorar en el proceso» (p. 28)." },
+        { "type": "info-box", "text": "<strong>Qué significa para ti.</strong> En la documentación scout, un sinodal es eso: una persona que sabe de un tema y <strong>asesora</strong> a un joven. No es un cargo. Si un scout te lo pide y el dirigente está de acuerdo, puedes acompañar su especialidad: tú aportas el saber, pero el camino —descubrir, experimentar y compartir (p. 28)— lo recorre él." }
+      ],
+      "reflection": { "prompt": "Piensa en algo que sabes hacer bien: una técnica, un arte, un oficio. ¿Cómo lo compartirías con un scout que quiere aprenderlo, sin terminar haciéndolo tú por él?" },
+      "quiz": {
+        "title": "Evaluación - La Aventura",
+        "questions": [
+          {
+            "text": "Un scout que está creando una especialidad de fotografía te pide que lo asesores, porque sabes del tema. Luego te pide que le diseñes tú la insignia «porque te queda mejor». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Diseñarla tú, porque como asesor te toca asegurar que quede bien hecha",
+              "Guiarlo con ideas y ejemplos, pero que el diseño lo haga él mismo",
+              "Pedirle al dirigente que la diseñe, porque es él quien la debe aprobar"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Una patrulla prepara su Promesa al Guía y te pide que la conduzcas tú, «para que quede más solemne». ¿Qué es lo más coherente con la Guía de Tropa?",
+            "options": [
+              "Conducirla tú, porque la solemnidad la da un mayor y no un compañero",
+              "Proponerles un texto nuevo, más actual, para que la ceremonia tenga fuerza",
+              "Animarlos a vivirla ellos, con el apoyo del dirigente, y acompañar desde tu lugar"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: cercanía sin confusión ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Cercanía sin confusión",
+      "emoji": "📱",
+      "navLabel": "Cercanía",
+      "sections": [
+        { "type": "paragraph", "text": "<strong>⏱️ 6 minutos · Idea central:</strong> puedes ser cercano sin dejar de ser quien sirve; con scouts de esta edad, esa frontera se cuida sobre todo en lo digital." },
+        { "type": "paragraph", "text": "A los pocos sábados, los scouts te siguen en redes, te escriben para preguntarte cosas y te cuentan lo que no le cuentan al dirigente. Es señal de que te ganaste su confianza. También es el momento de cuidarla." },
+        { "type": "paragraph", "text": "La <strong>estrategia 2+1</strong> de la Política A Salvo del Peligro vale para todos, dirigentes incluidos: al menos tres personas presentes en actividades, interacciones y acompañamientos, «tanto en comunicaciones entre adultos - adultos, adultos - jóvenes, jóvenes - jóvenes», y con cuidado especial del contacto en plataformas digitales y de la publicación de imágenes de los jóvenes (Política, p. 26). La Guía de Tropa agrega por qué importa a esta edad: su vida digital los expone al ciberacoso y a la pérdida de privacidad (p. 15)." },
+        { "type": "info-box", "text": "<strong>Qué significa para ti.</strong> Sé cercano en la reunión, no por privado. Si un scout te escribe, respóndele en un canal donde esté el dirigente o su familia. No uses tus redes personales para conversar con ellos, ni publiques fotos de la Tropa por tu cuenta. Y si por chat te cuentan algo difícil —que los molestan, que están mal—, no lo manejes solo: escucha, no prometas el secreto y avisa al dirigente, como viste en <em>Servir en el Grupo</em>." }
+      ],
+      "reflection": { "prompt": "Un scout de la Tropa te pide seguirte en tus redes personales para hablar contigo. Escribe, tal cual, cómo le responderías para cuidar la cercanía sin salirte de la estrategia 2+1." },
+      "quiz": {
+        "title": "Evaluación - Cercanía sin confusión",
+        "questions": [
+          {
+            "text": "Una noche, un scout de 13 años te escribe al privado contando que en el colegio lo están molestando y que no se lo ha dicho a nadie. ¿Qué es lo más coherente con lo que aprendiste?",
+            "options": [
+              "Hablar con él por privado varias noches hasta que se sienta mejor",
+              "Responderle con cuidado, sin prometer el secreto, y avisar al dirigente",
+              "Esperar al sábado para hablarlo en persona, sin decirle nada a nadie"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Después del campamento, tienes fotos muy bonitas de la Tropa y quieres subirlas a tus redes personales. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Publicarlas sin etiquetar a nadie, para que no se sepa quiénes son",
+              "Subirlas, porque son recuerdos del Grupo y a los scouts les gustará",
+              "Compartirlas solo por los canales que el Grupo usa y con su visto bueno"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: tu apoyo, paso a paso ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Tu apoyo, paso a paso",
+      "emoji": "🏕️",
+      "navLabel": "Paso a paso",
+      "sections": [
+        { "type": "paragraph", "text": "<strong>⏱️ 6 minutos · Idea central:</strong> la Aventura es posible porque alguien la piensa con cuidado antes; tú ayudas a sostenerla, sin contar como uno de los adultos a cargo." },
+        { "type": "paragraph", "text": "La Guía de Tropa propone seis elementos para la gestión del riesgo: identificar los riesgos, evaluar su probabilidad e impacto, prevenir y mitigar, tener planes de emergencia y respuesta, capacitar a adultos y jóvenes en seguridad y autocuidado, y aprender de cada experiencia (p. 66). Y el <em>Modelo de Aplicación</em> recomienda para la Tropa un adulto por cada patrulla, sin importar cuántos scouts tenga, más el Jefe de Unidad (p. 22). Como viste en <em>Servir en el Grupo</em>, tú no cuentas en esa cuenta." },
+        { "type": "heading", "level": 3, "text": "Una excursión, de principio a fin" },
+        { "type": "paragraph", "text": "Antes, conversas con el dirigente sobre la ruta y te asigna un papel: apoyar a una patrulla en la construcción de su refugio. La patrulla, con su guía, reparte las tareas en su Consejo. Durante la construcción, un scout se corta con la navaja: avisas al dirigente y ayudas a atenderlo con el botiquín, a la vista del grupo. Al final, en el círculo de evaluación, escuchas más de lo que hablas." },
+        { "type": "heading", "level": 3, "text": "Tu compromiso" },
+        { "type": "paragraph", "text": "Al terminar vas a escribir tu compromiso. Que sea concreto: «En la Tropa voy a ___, y nunca voy a ___»." },
+        { "type": "mission-box", "text": "<strong>El dirigente es un formador de líderes, no un sustituto de ellos.</strong><br>Tú tampoco: tu servicio es ayudarles a liderar." }
+      ],
+      "reflection": { "prompt": "Piensa en la próxima salida de la Tropa. ¿Qué riesgo concreto te preocuparía más, y qué medida propondrías al dirigente para prevenirlo?" },
+      "quiz": {
+        "title": "Evaluación - Paso a paso",
+        "questions": [
+          {
+            "text": "Una patrulla quiere hacer sola una excursión de un día y le dice al dirigente: «No hace falta que venga usted, va el Rover». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Aceptar: el Rover es mayor de edad y puede quedar a cargo de la patrulla ese día",
+              "Aclarar que el Rover apoya pero no cuenta como adulto a cargo de la patrulla",
+              "Dejarlos ir si el Rover lleva botiquín y avisa al dirigente cuando lleguen al sitio"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Una Tropa tiene cuatro patrullas y va de campamento. Según la proporción que recomienda el Modelo de Aplicación, ¿cuántos adultos se necesitan?",
+            "options": [
+              "Cuatro: uno por patrulla, que es lo que pide el Modelo",
+              "Cinco: uno por patrulla más el Jefe de Unidad",
+              "Tres dirigentes más el Rover, que completa el cuarto"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Durante la construcción del refugio, un scout se corta y el dirigente está con otra patrulla a pocos metros. ¿Qué es lo más coherente con lo que aprendiste?",
+            "options": [
+              "Llevarlo aparte a curarlo tranquilo, para que su patrulla siga trabajando",
+              "Avisar al dirigente y atenderlo con el botiquín a la vista del grupo",
+              "Curarlo tú y no avisar, porque es una herida pequeña y lo avergonzaría"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    { "id": "achievement-1", "name": "Recuerdo de Tropa", "emoji": "🧑", "unlockOnModule": 2 },
+    { "id": "achievement-2", "name": "Formador, no Sustituto", "emoji": "🚩", "unlockOnModule": 3 },
+    { "id": "achievement-3", "name": "Espíritu de Aventura", "emoji": "🧭", "unlockOnModule": 4 },
+    { "id": "achievement-4", "name": "Cercano con Límites", "emoji": "📱", "unlockOnModule": 5 },
+    { "id": "achievement-5", "name": "Listo para la Expedición", "emoji": "🏕️", "unlockOnModule": 6 }
+  ],
+  "certificate": {
+    "courseName": "SERVIR EN LA TROPA",
+    "description": "ha completado el curso Servir en la Tropa, que prepara al Rover para apoyar al equipo de dirigentes de su Grupo conociendo a los y las scouts de 11 a 14 años, el sistema de patrullas, la Aventura como marco simbólico y el cuidado en cada actividad.",
+    "commitmentPrompt": "Escribe tu compromiso completando la frase de la última lección: «En la Tropa voy a ___, y nunca voy a ___»."
+  }
+}

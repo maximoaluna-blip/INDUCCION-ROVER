@@ -105,7 +105,7 @@
         }
       ],
       "reflection": {
-        "prompt": "¿Cómo aplicarías estos valores al trabajar con niños y niñas en la rama donde vas a servir?"
+        "prompt": "¿Cómo aplicarías estos valores al trabajar con los niños, niñas y jóvenes de la rama donde vas a servir?"
       },
       "quiz": {
         "title": "Evaluación - Misión y Propósito",
@@ -418,7 +418,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>💡 Para el Rover en servicio:</strong><br>Al apoyar en una rama, verás que el Método funciona cuando TODOS estos elementos actúan de manera equilibrada. Por ejemplo:<br>• En manada: el marco simbólico de La Fantasía, con El Libro de las Tierras Vírgenes como fondo motivador + sistema de seisenas + progresión por insignias<br>• En tropa: Mayor énfasis en el sistema de patrullas + vida al aire libre + servicio comunitario"
+          "text": "<strong>💡 Para el Rover en servicio:</strong><br>Al apoyar en una rama, verás que el Método funciona cuando TODOS estos elementos actúan de manera equilibrada a lo largo del tiempo, aunque en cada actividad unos se noten más que otros. Por ejemplo:<br>• En manada: el marco simbólico de La Fantasía, con El Libro de las Tierras Vírgenes como fondo motivador + sistema de seisenas + progresión por insignias<br>• En tropa: Mayor énfasis en el sistema de patrullas + vida al aire libre + servicio comunitario"
         }
       ],
       "reflection": {
@@ -518,7 +518,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Cuando sirvas en otra rama de tu Grupo, ¿cómo contribuirás al impacto positivo del escultismo? ¿Qué legado quieres dejar en los niños y niñas que acompañarás?"
+        "prompt": "Cuando sirvas en otra rama de tu Grupo, ¿cómo contribuirás al impacto positivo del escultismo? ¿Qué legado quieres dejar en los niños, niñas y jóvenes con quienes vas a compartir?"
       },
       "quiz": {
         "title": "Evaluación Final - Impacto Global",
@@ -551,6 +551,6 @@
   ],
   "certificate": {
     "courseName": "FUNDAMENTOS DEL MOVIMIENTO SCOUT",
-    "description": "ha completado exitosamente el curso de Historia y Características Esenciales del Movimiento Scout, demostrando comprensión profunda de los fundamentos del Movimiento, base para servir en su Grupo Scout."
+    "description": "ha completado exitosamente el curso Fundamentos del Movimiento Scout, demostrando comprensión de su historia y de sus características esenciales, base para servir en su Grupo Scout."
   }
 }

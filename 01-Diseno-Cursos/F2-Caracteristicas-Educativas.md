@@ -58,7 +58,7 @@ Curso sobre las características educativas que definen al Movimiento Scout: su 
 ### 6. El Movimiento Scout en la Sociedad
 - Secciones: 12 · preguntas de quiz: 4
 - Subtemas: 🚫 No Político · 🏛️ Independiente · 🛡️ Protección de la Identidad
-- Reflexión: «Cuando sirvas en tu Grupo, ¿cómo mantendrías la independencia y neutralidad del Movimiento Scout en tu grupo, especialmente si enfrentarás presiones de instituciones externas (religiosas, políticas, comunitarias) que quisieran influir en las actividades?»
+- Reflexión: «Cuando sirvas en tu Grupo, ¿cómo ayudarías a mantener la independencia y neutralidad del Movimiento Scout si llegaran presiones de instituciones externas (religiosas, políticas, comunitarias) que quisieran influir en las actividades?»
 
 ## Fuentes
 

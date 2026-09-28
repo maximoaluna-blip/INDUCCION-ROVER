@@ -11,7 +11,7 @@
 | Público | Rovers de 18 a 20 años de la Regional Valle del Cauca que van a servir en otra rama de su Grupo |
 | Duración declarada | 2 horas (se recorta a ~40 min en la entrega E6, ver spec §4) |
 | `contentVersion` | 2026-09-27 |
-| Certificado | «FUNDAMENTOS DEL MOVIMIENTO SCOUT» — ha completado exitosamente el curso de Historia y Características Esenciales del Movimiento Scout, demostrando comprensión profunda de los fundamentos del Movimiento, base para servir en su Grupo Scout. |
+| Certificado | «FUNDAMENTOS DEL MOVIMIENTO SCOUT» — ha completado exitosamente el curso Fundamentos del Movimiento Scout, demostrando comprensión de su historia y de sus características esenciales, base para servir en su Grupo Scout. |
 | Recomendado antes | S1 «El servicio Rover» (cuando exista); no es requisito |
 
 ## Propósito
@@ -33,7 +33,7 @@ Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, 
 ### 1. Misión y Propósito del Movimiento Scout
 - Secciones: 9 · preguntas de quiz: 2
 - Subtemas: ¿Cómo logramos esta misión? · 🎯 Nuestro Propósito Fundamental · 📜 La Promesa Scout · ⚖️ La Ley Scout
-- Reflexión: «¿Cómo aplicarías estos valores al trabajar con niños y niñas en la rama donde vas a servir?»
+- Reflexión: «¿Cómo aplicarías estos valores al trabajar con los niños, niñas y jóvenes de la rama donde vas a servir?»
 
 ### 2. Mafeking - El Origen del Movimiento Scout
 - Secciones: 6 · preguntas de quiz: 2
@@ -58,7 +58,7 @@ Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, 
 ### 6. El Impacto Global del Movimiento Scout
 - Secciones: 10 · preguntas de quiz: 2
 - Subtemas: 🌟 Más de 100 Años Transformando Vidas · 🏆 Scouts Notables en la Historia · 🌍 Contribuciones del Escultismo al Mundo · 📊 El Impacto en Números · 🇨🇴 El Impacto en Colombia
-- Reflexión: «Cuando sirvas en otra rama de tu Grupo, ¿cómo contribuirás al impacto positivo del escultismo? ¿Qué legado quieres dejar en los niños y niñas que acompañarás?»
+- Reflexión: «Cuando sirvas en otra rama de tu Grupo, ¿cómo contribuirás al impacto positivo del escultismo? ¿Qué legado quieres dejar en los niños, niñas y jóvenes con quienes vas a compartir?»
 
 ## Fuentes
 

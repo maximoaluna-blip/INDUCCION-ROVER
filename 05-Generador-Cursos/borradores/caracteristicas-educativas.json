@@ -18,7 +18,7 @@
       "sections": [
         {
           "type": "info-box",
-          "text": "<strong>Siempre Listo/a para Servir!</strong><br>Este curso te preparará para comprender las bases educativas del Movimiento Scout, esenciales para servir en tu Grupo, apoyando a las otras ramas."
+          "text": "<strong>¡Siempre Listo/a para Servir!</strong><br>Este curso te preparará para comprender las bases educativas del Movimiento Scout, esenciales para servir en tu Grupo, apoyando a las otras ramas."
         },
         {
           "type": "paragraph",
@@ -852,7 +852,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Cuando sirvas en tu Grupo, ¿cómo mantendrías la independencia y neutralidad del Movimiento Scout en tu grupo, especialmente si enfrentarás presiones de instituciones externas (religiosas, políticas, comunitarias) que quisieran influir en las actividades?"
+        "prompt": "Cuando sirvas en tu Grupo, ¿cómo ayudarías a mantener la independencia y neutralidad del Movimiento Scout si llegaran presiones de instituciones externas (religiosas, políticas, comunitarias) que quisieran influir en las actividades?"
       },
       "quiz": {
         "title": "Evaluación - El Movimiento en la Sociedad",

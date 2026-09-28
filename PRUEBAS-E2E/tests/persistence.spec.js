@@ -25,6 +25,23 @@ test('@solo-escritorio persistencia: tema oscuro sobrevive recarga', async ({ pa
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 });
 
+// El compromiso se guarda en localStorage['commitment_<id>'] y la lección le dice al
+// Rover que «se queda en este navegador»: al volver tiene que estar escrito.
+test('@solo-escritorio persistencia: el compromiso reaparece al volver al curso', async ({ page }) => {
+  const id = curso.courseId;
+  await page.addInitScript((cid) => {
+    try {
+      localStorage.setItem('courseProgress_' + cid, JSON.stringify({
+        userProfile: { fullName: 'Prueba Persistencia' }, currentModule: 0,
+        moduleProgress: [], quizScores: [], reflections: {}, studyTime: 0
+      }));
+      localStorage.setItem('commitment_' + cid, 'Voy a llegar a tiempo, y nunca voy a decidir por ellos');
+    } catch (e) {}
+  }, id);
+  await page.goto(curso.file, { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('#commitment')).toHaveValue('Voy a llegar a tiempo, y nunca voy a decidir por ellos');
+});
+
 test('@solo-escritorio persistencia: tema claro no fija data-theme=dark', async ({ page }) => {
   await page.addInitScript(() => {
     try { localStorage.setItem('rover-theme', 'light'); } catch (e) {}

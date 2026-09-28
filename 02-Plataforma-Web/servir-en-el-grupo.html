@@ -1397,6 +1397,9 @@ function loadProgress() {
             var ta = document.getElementById('reflection-' + k);
             if (ta) ta.value = reflections[k];
         });
+        var compromiso = localStorage.getItem('commitment_' + COURSE_CONFIG.courseId);
+        var compromisoTa = document.getElementById('commitment');
+        if (compromiso && compromisoTa) compromisoTa.value = compromiso;
         updateStats();
         updateProgress();
     }

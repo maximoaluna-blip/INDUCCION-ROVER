@@ -79,7 +79,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué significa para ti.</strong> La Guía se lo dice al Viejo Lobo, y vale igual para ti: ante un conflicto entre lobatos, no se trata de resolverlo todo por ellos. Y en su lista final para el dirigente hay una frase que te incluye: «Tu ejemplo educa mucho más que cualquier explicación» (p. 11)."
+          "text": "<strong>Qué significa para ti.</strong> La Guía se lo dice al Viejo Lobo, y vale igual para ti: ante un conflicto entre lobatos, no se trata de resolverlo todo por ellos. Y en la lista con que cierra ese capítulo hay una frase que te incluye: «Tu ejemplo educa mucho más que cualquier explicación» (p. 11)."
         }
       ],
       "reflection": {
@@ -122,7 +122,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Quizá todavía recuerdas la Selva de tu Manada: un nombre, un canto, una ceremonia. Eso que se te quedó es exactamente lo que la Guía llama el marco simbólico."
+          "text": "Quizá todavía recuerdas la Selva de tu Manada: un nombre, un canto, una ceremonia. Todo eso vive dentro de lo que la Guía llama el marco simbólico: la Fantasía de la Selva."
         },
         {
           "type": "heading",
@@ -148,7 +148,7 @@
           "items": [
             "El lema <strong>«Siempre Mejor»</strong> y el color amarillo",
             "El lobo, la Flor Roja y el Libro de Oro",
-            "El <strong>Gran Clamor</strong>, que da fuerza a momentos como la investidura"
+            "El <strong>Gran Clamor</strong>, que se vive con especial fuerza en momentos como la investidura"
           ]
         },
         {
@@ -190,7 +190,7 @@
             "options": [
               "Usarlo sin problema: las dos ramas comparten libro, así que los personajes son comunes",
               "Dejar «Raksha» para la Familia y preguntar cómo llaman aquí a esa dirigente",
-              "Explicarles antes a los lobatos de dónde viene el nombre, y después usarlo sin problema"
+              "Seguir usándolo solo con los lobatos que vienen de la Familia, que ya conocen a Raksha"
             ],
             "correctIndex": 1
           },
@@ -325,10 +325,10 @@
             "correctIndex": 1
           },
           {
-            "text": "El Viejo Lobo conduce el Consejo de Roca y te pidió ayudarle a que participen todos. Hablan siempre los mismos tres lobatos. ¿Qué es lo más coherente con la lección?",
+            "text": "El Viejo Lobo conduce el Consejo de Roca y te pidió apoyarlo. Hablan siempre los mismos tres lobatos y queda poco tiempo. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Invitar a hablar a los que no lo han hecho, y darles tiempo para responder",
-              "Dejar que sigan los tres que saben expresarse, porque así se decide más rápido",
+              "Dejar que sigan los tres, que ya tienen claro qué proponer, para alcanzar a decidir",
               "Resumir tú lo que crees que quieren los que callan, para que quede dicho"
             ],
             "correctIndex": 0
@@ -366,7 +366,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Antes de cada experiencia, sobre todo en salidas y campamentos, la Guía pide cinco pasos (p. 65):"
+          "text": "Antes de cada experiencia, sobre todo en salidas y campamentos, la Guía pide cinco pasos (p. 65). Al lado de cada uno va un ejemplo de cómo se ve en una salida:"
         },
         {
           "type": "list",
@@ -374,7 +374,7 @@
           "items": [
             "<strong>Identificar:</strong> qué puede salir mal (un lago, una calle, un lobato que se aleja)",
             "<strong>Evaluar:</strong> qué tan probable es y qué tan grave sería",
-            "<strong>Prevenir:</strong> límites acordados, y contar a los lobatos al cambiar de zona",
+            "<strong>Prevenir:</strong> límites acordados, y contar cuántos lobatos hay cada vez que cambian de zona",
             "<strong>Responder:</strong> qué hace cada uno si algo pasa, sin que nadie quede a solas con un niño",
             "<strong>Aprender:</strong> en la evaluación, contar qué faltó para la próxima"
           ]
@@ -390,7 +390,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Antes de la salida al parque, conversas con los Viejos Lobos sobre el plan y te asignan un momento concreto: apoyar el juego de rastreo. Al llegar, el equipo revisa el lugar y acuerda los límites. Durante el juego, cuentas a los lobatos cada vez que cambian de zona. Un lobato se aleja persiguiendo una ardilla: lo llamas con calma y avisas al Viejo Lobo más cercano, sin irte solo con él a buscarla. Al final, participas del momento de expresión: «¿qué fue lo que más te gustó?»."
+          "text": "Antes de la salida al parque, conversas con los Viejos Lobos sobre el plan y te asignan un momento concreto: apoyar el juego de rastreo. Al llegar, el equipo revisa el lugar y acuerda los límites. Durante el juego, cuentas cuántos lobatos hay cada vez que cambian de zona. Un lobato se aleja persiguiendo una ardilla: lo llamas con calma y avisas al Viejo Lobo más cercano, sin irte solo con él a buscarla. Al final, participas del momento de expresión: «¿qué fue lo que más te gustó?»."
         },
         {
           "type": "heading",
@@ -399,7 +399,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Al terminar vas a escribir tu compromiso. Que sea concreto: «En la Manada voy a ___, y nunca voy a ___»."
+          "text": "Al terminar vas a escribir tu compromiso. Que sea concreto y para tus primeras cuatro reuniones: «En la Manada voy a ___, y nunca voy a ___»."
         },
         {
           "type": "paragraph",
@@ -419,7 +419,7 @@
           {
             "text": "Los Viejos Lobos planean un juego de rastreo en un parque que tiene un lago, y te piden ideas para la gestión del riesgo. ¿Qué propuesta va más con lo que pide la Guía de Manada?",
             "options": [
-              "Hacer el rastreo con límites visibles lejos del lago, y contar a los lobatos",
+              "Hacer el rastreo con límites visibles lejos del lago, y contar cuántos lobatos hay",
               "Hacer el rastreo dentro del salón: si no hay lago, no hay riesgo que gestionar",
               "Dejar el rastreo como está y, si alguien se acerca al lago, llamarlo con calma"
             ],
@@ -428,8 +428,8 @@
           {
             "text": "Una lobata le escribe al Rover al privado, desde el celular de su mamá, para preguntar si el sábado habrá juego de rastreo. ¿Qué es lo más coherente con la estrategia 2+1?",
             "options": [
-              "Responder en un canal donde estén el Viejo Lobo o su familia",
-              "Responder en privado, porque la pregunta es solo de logística",
+              "Responder en el grupo de la Manada, donde están el Viejo Lobo y las familias",
+              "Responder ahí mismo: el celular es de su mamá, así que ella ya está en la conversación",
               "Responder en privado y contárselo al Viejo Lobo el sábado"
             ],
             "correctIndex": 0
@@ -437,7 +437,7 @@
           {
             "text": "En la salida, un lobato se perdió de vista diez minutos y apareció bien. En la evaluación con los Viejos Lobos, ¿qué es lo más coherente con la gestión del riesgo?",
             "options": [
-              "Contar lo que viste y qué medida faltó, para que la próxima salida la incluya",
+              "Decir cuándo lo perdiste de vista y qué revisar antes de la próxima salida",
               "No mencionarlo: apareció bien, y contarlo solo preocuparía a las familias",
               "Proponer que la Manada no vuelva a ese parque, para que no se repita"
             ],

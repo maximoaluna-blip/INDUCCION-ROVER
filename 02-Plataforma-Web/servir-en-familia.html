@@ -888,7 +888,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
 
                 <h3>Tu compromiso</h3>
 
-                <p>Al terminar vas a escribir tu compromiso. Que sea concreto: «En la Familia de Cachorros voy a ___, y nunca voy a ___».</p>
+                <p>Al terminar vas a escribir tu compromiso. Que sea concreto y para tus primeras cuatro reuniones: «En la Familia de Cachorros voy a ___, y nunca voy a ___».</p>
 
                 <div class="mission-box"><strong>A los cinco y seis años aprenden mirando: lo que tú haces les enseña más que lo que dices.</strong><br>¡Siempre Alegres!</div>
 
@@ -1351,6 +1351,9 @@ function loadProgress() {
             var ta = document.getElementById('reflection-' + k);
             if (ta) ta.value = reflections[k];
         });
+        var compromiso = localStorage.getItem('commitment_' + COURSE_CONFIG.courseId);
+        var compromisoTa = document.getElementById('commitment');
+        if (compromiso && compromisoTa) compromisoTa.value = compromiso;
         updateStats();
         updateProgress();
     }

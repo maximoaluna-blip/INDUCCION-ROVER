@@ -96,7 +96,7 @@ El gancho. La Manada tiene niños y niñas de 7 a 10 años, y sus dirigentes son
   - la estrategia 2+1: al menos tres personas, también en las comunicaciones (Guía de Manada p. 64, que cita la política);
   - el botón «Me Pongo A Salvo del Peligro», en la web y en los QR de los sitios de reunión (p. 64);
   - gestión del riesgo en salidas y campamentos: identificar, evaluar, prevenir, responder y aprender, y «La gestión del riesgo no limita la aventura: la hace responsable» (p. 65);
-  - proporción de adultos: uno por cada 6 lobatos más el Jefe de Unidad (*Modelo*, p. 22). El Rover no cuenta (R1).
+  - proporción de adultos: no se enseña aquí; el curso remite a R1 (el Rover no cuenta).
 - **Caso completo:** una salida al parque, de principio a fin.
 - **Compromiso:** *«En la Manada voy a ___, y nunca voy a ___».*
 - **Quiz (3):** evalúa la gestión del riesgo, no repite los casos de R1: un rastreo en un parque con lago (prevenir); una lobata que escribe al privado desde el celular de su mamá (2+1 en comunicaciones); un lobato que se perdió diez minutos (aprender, en la evaluación).

@@ -89,5 +89,18 @@
     "branch": "tropa",
     "status": "active",
     "file": "servir-en-tropa.html"
+  },
+  {
+    "courseId": "servir-en-comunidad",
+    "title": "Servir en la Comunidad",
+    "description": "Para el Rover que va a servir con jóvenes de 15 a 17 años, casi de su edad. En ~35 minutos vas a conocer cómo son a esa edad, qué deciden ellos, cómo se vive la aventura hacia la ciudadanía, dónde está la frontera de quien sirve y cómo apoyar sus proyectos cuidando el riesgo. Basado en la Guía para el Dirigente de Comunidad de Nómadas Scout (2026).",
+    "icon": "🧭",
+    "duration": "35 minutos",
+    "modules": 6,
+    "route": "grupo",
+    "level": 1,
+    "branch": "comunidad",
+    "status": "active",
+    "file": "servir-en-comunidad.html"
   }
 ]

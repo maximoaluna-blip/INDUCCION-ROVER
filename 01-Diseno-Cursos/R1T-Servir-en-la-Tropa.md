@@ -10,7 +10,7 @@
 | Ruta / nivel | Ruta 1 · Nivel 1 · **rama Tropa** (`route: grupo`, `level: 1`, `branch: tropa`) |
 | Público | Rovers de 18 a 20 años que van a servir en la Tropa de su Grupo |
 | Duración | ~35 min: bienvenida y 5 lecciones |
-| Fuentes | ***Guía de Dirigente de Tropa*** (ASC 2026, 68 pp.) y ***Guía de Buenas Prácticas para Jefes de Tropa*** (2026, 32 pp.). Se citan **las páginas del PDF**. Complementos: *Modelo de Aplicación* (proporción, p. 22) y *Política A Salvo del Peligro* (estrategia 2+1, p. 26). |
+| Fuentes | ***Guía de Dirigente de Tropa*** (ASC 2026, 68 pp.) y ***Guía de Buenas Prácticas para Jefes de Tropa*** (25-oct-2023, 32 pp., documento de apoyo en revisión; ADR-057). La Guía 2026 mantiene las especialidades (p. 18) pero no describe cómo se crean. Se citan **las páginas del PDF**. Complementos: *Modelo de Aplicación* (proporción, p. 22) y *Política A Salvo del Peligro* (estrategia 2+1, p. 26). |
 | Recomendado antes | S1 y R1 |
 
 ## Gancho
@@ -22,9 +22,9 @@ Es cita de la Guía de Tropa, p. 28, y vale todavía más para el Rover. La tent
 ## Objetivos
 
 1. **Describir** cómo son los y las scouts de 11 a 14 años, incluida su vida digital.
-2. **Distinguir** el papel del guía de patrulla, del jefe de Tropa y del Rover que apoya.
-3. **Apoyar** la Aventura, el marco simbólico, y las tradiciones de patrulla sin apropiarse de ellas.
-4. **Aprovechar** un saber propio sin quitarle protagonismo al scout, por ejemplo como sinodal de una especialidad.
+2. **Distinguir** el papel del guía de patrulla, del Jefe de Tropa y del Rover que apoya.
+3. **Decidir** cómo participar en la Aventura y en las ceremonias de la patrulla sin apropiarte de ellas.
+4. **Ofrecer** lo que sabes hacer como asesoría, sin hacer el trabajo por el scout (por ejemplo, en una especialidad).
 5. **Aplicar** la estrategia 2+1, con atención especial a la cercanía de edad y a los canales digitales.
 
 ## Decisiones de diseño
@@ -61,7 +61,7 @@ El gancho. La Tropa reúne a scouts de 11 a 14 años, organizados en patrullas.
   - el Jefe de Tropa como custodio (p. 29).
 - **Para el Rover:** no reemplazar al guía, no sentarse en la Corte de Honor sin que lo inviten y no «arreglar» la patrulla desde afuera.
 - **Reflexión:** una vez en tu Clan en que alguien hizo por ti algo que querías hacer tú.
-- **Quiz (2):** la patrulla que pide al Rover que sea su guía, y quién elige al guía.
+- **Quiz (2):** la patrulla que pide al Rover que sea su guía, y la patrulla Halcones que se queda sin guía con el dirigente de viaje (al guía lo eligen ellos).
 
 ### 4 · La Aventura y lo que sabes hacer (~7 min)
 - **Fuentes:**
@@ -72,7 +72,8 @@ El gancho. La Tropa reúne a scouts de 11 a 14 años, organizados en patrullas.
   - «el dirigente no impone las ceremonias: las facilita» (p. 32).
 - **Lo que sabes hacer:** si un scout crea una especialidad y tú sabes del tema, puede pedirte que lo asesores. La *Guía de Buenas Prácticas* llama **sinodal** a esa persona (p. 28): un experto que asesora, no un cargo, siempre con el conocimiento del dirigente.
 - **Reflexión:** algo que sabes hacer bien (técnica, arte, oficio) y cómo lo compartirías sin hacerlo tú por el scout.
-- **Quiz (2):** un scout que te pide que le diseñes la insignia de su especialidad, y la ceremonia propia de la Tropa.
+- **Quiz (2):** un scout que te pide que le diseñes la insignia de su especialidad (un distractor codifica el uso anterior de «sinodal» como función del Rover), y la Promesa al Guía.
+- **Anclaje e info-box de la Aventura:** la salida que más recuerdas; entrar en la Aventura sin narrarla desde afuera. El info-box del sinodal nombra el uso anterior de la palabra y dice «asesorarlo», no «acompañar» (glosario, «Rover en servicio»).
 
 ### 5 · Cercanía sin confusión (~6 min)
 - **Anclaje:** los scouts te siguen en redes y te escriben como a un amigo.
@@ -81,8 +82,9 @@ El gancho. La Tropa reúne a scouts de 11 a 14 años, organizados en patrullas.
   - la vida digital y el ciberacoso (Guía de Tropa, p. 15);
   - «que se cuide su salud mental y haya confianza en los adultos que los acompañan» (p. 16).
 - **Para el Rover:** ser cercano sin ser su par. No aceptar solicitudes de amistad o de seguimiento para conversar por privado, no compartir su contenido y derivar al dirigente.
-- **Reflexión:** ¿cómo responderías, tal cual, a un scout que te pide seguirte en tus redes?
-- **Quiz (2):** un scout que te cuenta por chat que lo molestan en el colegio, y una foto del campamento en tus redes personales.
+- **Qué significa para ti:** tres gestos concretos: lo del día a día va a un canal con el dirigente; a seguirte en redes, no con cariño; lo difícil por chat se contesta una sola vez, sin moverlo a otro chat ni seguir a solas, y se avisa esa noche. En la 2+1 no cuentas como adulto.
+- **Reflexión:** un scout de 14 años que te pide seguirte en tus redes: cómo decirle que no y qué canal ofrecerle.
+- **Quiz (2):** un scout que te cuenta por chat que lo molestan en el colegio (distractores: llevarlo al chat de la patrulla; seguir a solas guardando pantallazos), y una foto del campamento en tus redes personales.
 
 ### 6 · Tu apoyo, paso a paso (~6 min)
 - **Fuentes:**
@@ -90,7 +92,7 @@ El gancho. La Tropa reúne a scouts de 11 a 14 años, organizados en patrullas.
   - la proporción: un adulto por patrulla más el Jefe de Unidad, y el Rover no cuenta (*Modelo*, p. 22).
 - **Caso completo:** una excursión de patrulla, de principio a fin.
 - **Compromiso:** *«En la Tropa voy a ___, y nunca voy a ___».*
-- **Quiz (3):** la patrulla que quiere ir sola a la excursión «porque va el Rover», cuántos adultos necesita una Tropa con cuatro patrullas, y un scout que se lesiona en una construcción.
+- **Quiz (3):** evalúa la gestión del riesgo, no repite R1: la patrulla que quiere ir sola «porque va el Rover»; la quebrada crecida que ves el día antes (identificar y contarlo antes de salir); un scout con fiebre a las once de la noche (el Rover no completa la 2+1 con otro Rover).
 
 ## Logros
 1. Recuerdo de Tropa · 2. Formador, no Sustituto · 3. Espíritu de Aventura · 4. Cercano con Límites · 5. Listo para la Expedición.

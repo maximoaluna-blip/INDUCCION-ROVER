@@ -35,7 +35,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Antes de empezar.</strong> Este curso no te hace Viejo Lobo: te prepara para apoyar a los Viejos Lobos de la Manada de tu Grupo. Si no has hecho <em>Servir en el Grupo</em>, conviene que lo hagas antes: ahí están lo básico de A Salvo del Peligro y cómo se acuerda tu servicio.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta."
+          "text": "<strong>Antes de empezar.</strong> Este curso no te hace Viejo Lobo: te prepara para apoyar a los Viejos Lobos de la Manada de tu Grupo. Si no has hecho <em>Servir en el Grupo</em>, conviene que lo hagas antes: ahí está lo básico de A Salvo del Peligro y cómo se acuerda tu servicio.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta."
         },
         {
           "type": "course-objectives",
@@ -483,6 +483,6 @@
   "certificate": {
     "courseName": "SERVIR EN LA MANADA",
     "description": "ha completado el curso Servir en la Manada, que prepara al Rover para apoyar a los Viejos Lobos de su Grupo conociendo a los niños y niñas de 7 a 10 años, su marco simbólico, su forma de aprender, la vida en seisenas y el cuidado en cada actividad.",
-    "commitmentPrompt": "Escribe tu compromiso completando la frase de la última lección: «En la Manada voy a ___, y nunca voy a ___»."
+    "commitmentPrompt": "Escribe tu compromiso para tus primeras cuatro reuniones, completando la frase de la última lección: «En la Manada voy a ___, y nunca voy a ___»."
   }
 }

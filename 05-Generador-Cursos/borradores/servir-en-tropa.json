@@ -35,7 +35,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Antes de empezar.</strong> Este curso no te hace dirigente de Tropa: te prepara para apoyar al equipo de dirigentes de la Tropa de tu Grupo. Si no has hecho <em>Servir en el Grupo</em>, conviene que lo hagas antes: ahí están lo básico de A Salvo del Peligro y cómo se acuerda tu servicio.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta."
+          "text": "<strong>Antes de empezar.</strong> Este curso no te hace dirigente de Tropa: te prepara para apoyar al equipo de dirigentes de la Tropa de tu Grupo. Si no has hecho <em>Servir en el Grupo</em>, conviene que lo hagas antes: ahí está lo básico de A Salvo del Peligro y cómo se acuerda tu servicio.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta."
         },
         {
           "type": "course-objectives",
@@ -80,7 +80,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Recuerda algo que un adulto te dijo cuando tenías entre 11 y 14 años y que todavía recuerdas, para bien o para mal. ¿Qué lo hizo quedarse contigo? Sin nombres: basta con lo que dijo y cuándo. No hace falta contar más de lo que quieras: basta con la frase y qué te hizo sentir."
+        "prompt": "Recuerda algo que un adulto te dijo cuando tenías entre 11 y 14 años y que todavía recuerdas, para bien o para mal. ¿Qué lo hizo quedarse contigo? Sin nombres ni más detalles de los que quieras dar: basta con la frase y cómo te hizo sentir."
       },
       "quiz": {
         "title": "Evaluación - Los Scouts",
@@ -154,7 +154,7 @@
             "correctIndex": 1
           },
           {
-            "text": "La patrulla Halcones se queda sin guía porque el suyo pasó a la Comunidad. El dirigente está de viaje, y el Rover, que conoce bien a los scouts, ya sabe quién sería el mejor. ¿Qué es lo más coherente con la lección?",
+            "text": "La patrulla Halcones se queda sin guía porque el suyo pasó a la Comunidad. El dirigente está de viaje, y tú, que conoces bien a los scouts, ya sabes quién sería el mejor. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Sugerirle a la patrulla al scout más responsable, porque tú los conoces bien",
               "Recordarles que al guía lo eligen ellos, y avisar al dirigente para que acompañe",
@@ -190,7 +190,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué significa para ti.</strong> Entra en la Aventura, no la narres desde afuera: si la patrulla llama «expedición» a la salida, tú también. Respeta su rincón, su banderín y sus tradiciones aunque sean distintas de las de tu patrulla de entonces: son de ellos, no las cambies por las tuyas. Y si se te ocurre un reto, propónselo al dirigente para que entre en la Aventura de la Tropa. Son recomendaciones de este curso."
+          "text": "<strong>Qué significa para ti.</strong> Entra en la Aventura, no la narres desde afuera: si la patrulla llama «expedición» a la salida, tú también. Respeta su rincón, su banderín y sus tradiciones aunque sean distintas de las de las que tú viviste: son de ellos, no las cambies por las tuyas. Y si se te ocurre un reto, propónselo al dirigente para que entre en la Aventura de la Tropa. Son recomendaciones de este curso."
         },
         {
           "type": "heading",
@@ -250,11 +250,11 @@
         },
         {
           "type": "paragraph",
-          "text": "La <strong>estrategia 2+1</strong> de la Política A Salvo del Peligro vale para todos, dirigentes incluidos: al menos tres personas presentes en actividades, interacciones y acompañamientos, «tanto en comunicaciones entre adultos - adultos, adultos - jóvenes, jóvenes - jóvenes». Y la misma página pide cuidar el contacto por plataformas digitales y la publicación de fotos de los jóvenes (Política, p. 26). La Guía de Tropa agrega por qué importa a esta edad: su vida digital los expone al ciberacoso y a la pérdida de privacidad (p. 15)."
+          "text": "La <strong>estrategia 2+1</strong> de la Política A Salvo del Peligro vale para todos, dirigentes incluidos: al menos tres personas presentes en actividades, interacciones y acompañamientos —dos personas adultas responsables y una menor de edad, o una adulta y dos menores—, «tanto en comunicaciones entre adultos - adultos, adultos - jóvenes, jóvenes - jóvenes». Y la misma página pide cuidar el contacto por plataformas digitales y la publicación de fotos de los jóvenes (Política, p. 26). La Guía de Tropa agrega por qué importa a esta edad: su vida digital los expone al ciberacoso y a la pérdida de privacidad (p. 15)."
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué significa para ti.</strong> Ser cercano no es ser uno más de ellos: puedes jugar, reírte y escuchar, pero no eres su compañero de patrulla ni su confidente por privado. Tres gestos concretos:<br>• Si un scout te escribe al privado por algo de la Tropa, contéstale en un canal donde esté el dirigente o su familia: «¡Hola! Te respondo por el grupo de la Tropa, así nos enteramos todos».<br>• Si te pide seguirte en tus redes personales, la respuesta es no, con cariño: lo de la Tropa va por los canales de la Tropa.<br>• Si por chat te cuenta algo difícil —que lo molestan, que está mal—, no lo muevas a un chat donde lo lean otros ni sigas la conversación por privado: contéstale corto que lo escuchas y que no te lo puedes guardar, y avisa esa misma noche al dirigente, como viste en <em>Servir en el Grupo</em>.<br>Son recomendaciones de este curso para aplicar la estrategia 2+1. Y te cuidan a ti también: si nunca estás a solas con un scout, ni en persona ni por chat, nadie puede poner en duda lo que pasó."
+          "text": "<strong>Qué significa para ti.</strong> Ser cercano no es ser uno más de ellos: puedes jugar, reírte y escuchar, pero no eres su compañero de patrulla ni su confidente por privado. Tres gestos concretos:<br>• Si un scout te escribe al privado por algo de la Tropa, contéstale en un canal donde esté el dirigente o su familia: «¡Hola! Te respondo por el grupo de la Tropa, así nos enteramos todos».<br>• Si te pide seguirte en tus redes personales, la respuesta es no, con cariño: lo de la Tropa va por los canales de la Tropa.<br>• Si por chat te cuenta algo difícil —que lo molestan, que está mal—, no lo muevas a un chat donde lo lean otros. Contéstale una sola vez, corto: que lo escuchas, que no te lo puedes guardar y que se lo vas a contar al dirigente para que lo ayuden. No sigas la conversación tú solo, y avisa esa misma noche al dirigente, como viste en <em>Servir en el Grupo</em>.<br>Y recuerda lo que viste en ese curso: en la 2+1 no cuentas como uno de los adultos. Dos Rovers con un scout no reemplazan a un dirigente.<br>Son recomendaciones de este curso para aplicar la estrategia 2+1. Y te cuidan a ti también: si no sostienes conversaciones a solas con un scout, ni en persona ni por chat, nadie puede poner en duda lo que pasó."
         }
       ],
       "reflection": {
@@ -268,7 +268,7 @@
             "options": [
               "Pedirle que lo cuente en el chat de su patrulla, para que haya más personas presentes",
               "Contestarle corto que lo escuchas, sin prometer el secreto, y avisar esa noche al dirigente",
-              "Seguir la conversación por privado, pero guardar los pantallazos por si más tarde hacen falta"
+              "Seguir hablando con él por privado esa noche para que se desahogue, y contárselo al dirigente el sábado"
             ],
             "correctIndex": 1
           },
@@ -297,7 +297,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Piensa en la mejor salida que tuviste en la Tropa. Seguro no te enteraste, pero salió bien porque alguien había pensado antes qué podía salir mal. Ahora te toca estar de ese lado, sin ser uno de los adultos a cargo."
+          "text": "¿Te acuerdas de alguna salida —en la Tropa o en tu Clan— que cambió de ruta o de hora a última hora? Casi nunca fue capricho: alguien había pensado antes qué podía salir mal. Ahora te toca estar de ese lado, sin ser uno de los adultos a cargo."
         },
         {
           "type": "paragraph",
@@ -317,7 +317,7 @@
         },
         {
           "type": "paragraph",
-          "text": "A ti te tocan sobre todo el primero y el último: ver riesgos y contárselos al dirigente, y aprender de cada salida. Y el <em>Modelo de Aplicación</em> recomienda para la Tropa un adulto por cada patrulla, sin importar cuántos scouts tenga, más el Jefe de Unidad —en la Tropa, el Jefe de Tropa— (p. 22). Como viste en <em>Servir en el Grupo</em>, tú no cuentas en esa cuenta."
+          "text": "Este curso te recomienda fijarte sobre todo en el primero y el último: ver riesgos y contárselos al dirigente, y aprender de cada salida. Y el <em>Modelo de Aplicación</em> recomienda para la Tropa un adulto por cada patrulla, sin importar cuántos scouts tenga, más el Jefe de Unidad —en la Tropa, el Jefe de Tropa— (p. 22). Como viste en <em>Servir en el Grupo</em>, tú no cuentas en esa cuenta."
         },
         {
           "type": "heading",
@@ -361,7 +361,7 @@
             "text": "El día antes de la excursión llueve fuerte, y ves en un grupo del barrio que la quebrada que cruza la ruta está crecida. El dirigente revisó la ruta la semana pasada. ¿Qué es lo más coherente con la gestión del riesgo?",
             "options": [
               "Contárselo al dirigente antes de salir, para que decida si se cambia la ruta",
-              "No decir nada: el dirigente ya revisó la ruta y sabe más que tú del lugar",
+              "Esperar a ver la quebrada en la ruta y, si está peligrosa, decírselo allá al dirigente",
               "Cambiar tú la ruta con el guía de la patrulla, para no preocupar a nadie"
             ],
             "correctIndex": 0
@@ -369,7 +369,7 @@
           {
             "text": "En el campamento, a las once de la noche, un scout de 12 años llega a la carpa de los Rovers con fiebre y te pide que lo acompañes a la enfermería, que está a 200 metros. ¿Qué es lo más coherente con lo que aprendiste?",
             "options": [
-              "Llevarlo tú solo a la enfermería, rápido, porque es de noche y tiene fiebre",
+              "Llevarlo tú solo a la enfermería y avisarle al dirigente al volver, para no despertarlo",
               "Despertar al dirigente de turno para que sea él quien se encargue, contigo de apoyo",
               "Acompañarlo con otro Rover: así ya son tres personas y se cumple la estrategia 2+1"
             ],
@@ -415,6 +415,6 @@
   "certificate": {
     "courseName": "SERVIR EN LA TROPA",
     "description": "ha completado el curso Servir en la Tropa, que prepara al Rover para apoyar al equipo de dirigentes de su Grupo conociendo a los y las scouts de 11 a 14 años, el sistema de patrullas, la Aventura como marco simbólico y el cuidado en cada actividad.",
-    "commitmentPrompt": "Escribe tu compromiso completando la frase de la última lección: «En la Tropa voy a ___, y nunca voy a ___»."
+    "commitmentPrompt": "Escribe tu compromiso para tus primeras cuatro reuniones, completando la frase de la última lección: «En la Tropa voy a ___, y nunca voy a ___»."
   }
 }

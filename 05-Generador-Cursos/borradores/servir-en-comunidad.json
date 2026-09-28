@@ -1,0 +1,470 @@
+{
+  "courseId": "servir-en-comunidad",
+  "title": "Servir en la Comunidad",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 1 · Comunidad de Nómadas Scout",
+  "description": "Para el Rover que va a servir con jóvenes de 15 a 17 años, casi de su edad. En ~35 minutos vas a conocer cómo son a esa edad, qué deciden ellos, cómo se vive la aventura hacia la ciudadanía, dónde está la frontera de quien sirve y cómo apoyar sus proyectos cuidando el riesgo. Basado en la Guía para el Dirigente de Comunidad de Nómadas Scout (2026).",
+  "contentVersion": "2026-09-27",
+  "route": "grupo",
+  "level": 1,
+  "branch": "comunidad",
+  "registration": {
+    "motivationLabel": "¿Por qué quieres servir en la Comunidad de Nómadas Scout?"
+  },
+  "icon": "🧭",
+  "duration": "35 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "Hace poco eras tú quien estaba en la Comunidad. Ahora vuelves, y algunos de los nómadas te conocen: compartieron campamentos, chistes y quizá un grupo de chat. Entre tú y una nómada de 17 años puede haber un año de diferencia. Este curso trata de eso."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Tu lugar aquí no es el de un compañero más ni el de un jefe: es el de quien sirve.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La frase es de este curso. Se apoya en la <em>Guía para el Dirigente de Comunidad de Nómadas Scout</em> de la Asociación (2026), su fuente, que les pide a los adultos ser facilitadores y orientadores, no protagonistas (p. 8). La Comunidad reúne a jóvenes de 15 a 17 años."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Este curso no te hace dirigente de Comunidad: te prepara para apoyar a los dirigentes de la Comunidad de tu Grupo. Si no has hecho <em>Servir en el Grupo</em>, conviene que lo hagas antes: ahí está lo básico de A Salvo del Peligro y cómo se acuerda tu servicio.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Describir</strong> cómo son los y las jóvenes de 15 a 17 años",
+            "<strong>Respetar</strong> los órganos y los cargos que los nómadas eligen, sin ocupar su lugar",
+            "<strong>Dejar</strong> que vivan la aventura hacia la ciudadanía, sin explicarla en exceso",
+            "<strong>Sostener</strong> la frontera de quien sirve con personas casi de su edad",
+            "<strong>Apoyar</strong> los proyectos de servicio de la Comunidad cuidando la gestión del riesgo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Cómo son de 15 a 17 años",
+      "emoji": "🧑",
+      "navLabel": "Los Nómadas",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> a esta edad los jóvenes necesitan autonomía y participación real; los adultos no deciden por ellos, y tú tampoco."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tú saliste de aquí hace muy poco, así que lo sabes de primera mano (y si no pasaste por la Comunidad, piensa en tu colegio o tu barrio a esa edad). La Guía describe algunos comportamientos comunes a esta edad (p. 7):"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Búsqueda de identidad:</strong> el deseo de autonomía, entre querer pertenecer y querer diferenciarse",
+            "<strong>Los pares primero:</strong> se toma distancia de la familia y ganan peso los amigos",
+            "<strong>Relaciones afectivas:</strong> se desarrollan relaciones románticas y afectivas",
+            "<strong>Cuestionar la autoridad:</strong> los órdenes establecidos se ponen a prueba, y la autoridad se resiste o se legitima"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por eso la Guía pide que el dirigente sea «un acompañante y facilitador» (p. 7) y recuerda que «en el rango de los 15 a 17 años, los jóvenes necesitan autonomía y participación real en la toma de decisiones» (p. 8)."
+        },
+        {
+          "type": "blockquote",
+          "text": "«Nuestro rol como adultos en el movimiento es de facilitadores y orientadores, no de protagonistas.»<br><small>— Guía para el Dirigente de Comunidad de Nómadas Scout, ASC, 2026, p. 8</small>"
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> Que un nómada cuestione un plan no es un desafío que haya que ganar: es parte de su edad y, bien acompañado, es aprendizaje. Y que tú sepas más de algo no te da la decisión: tu aporte es una idea más, no la última palabra."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en cuando tenías 16 años. ¿Qué necesitabas de los adultos del Movimiento, y qué hacían que te hacía sentir que tu voz no contaba? Sin nombres: basta con lo que hacían."
+      },
+      "quiz": {
+        "title": "Evaluación - Los Nómadas",
+        "questions": [
+          {
+            "text": "Presentas una idea para la salida y un nómada responde, delante de todos: «Eso ya lo hicimos el año pasado; ¿por qué otra vez lo mismo?». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Recordarle con calma que tú tienes más experiencia y que por eso lo propusiste",
+              "Preguntarle qué propondría él, y llevar ambas ideas a que la Comunidad decida",
+              "Retirar tu idea de inmediato para evitar el conflicto con él delante del grupo"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Otro Rover comenta: «Ese nómada ya no escucha a nadie: ahora solo le importa lo que digan sus amigos del equipo». ¿Qué le responderías, según la lección?",
+            "options": [
+              "Que tiene razón, y que hay que hablar con él para que vuelva a escuchar a los adultos",
+              "Que es propio de la edad: ganan peso los amigos, y eso se acompaña sin pelearlo",
+              "Que conviene cambiarlo de equipo, para que no dependa tanto de esos amigos"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: lo que ellos eligen ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Lo que ellos eligen",
+      "emoji": "🗳️",
+      "navLabel": "Equipos y Congreso",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> en la Comunidad, los nómadas eligen sus cargos y deciden en su Congreso; tu papel es apoyar, no ocupar su lugar."
+        },
+        {
+          "type": "paragraph",
+          "text": "Seguro recuerdas algún momento en tu Clan en que alguien con más experiencia se llevó una decisión que era de todos. En la Comunidad eso se cuida especialmente."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Equipos, cargos y Grupos de Trabajo"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Equipos</strong> de 3 a 6 nómadas, que no son permanentes y pueden ajustarse según afinidades e intereses (p. 14)",
+            "<strong>Cargos</strong> que la Guía recomienda: Coordinador de Equipo, Navegante, Secretario, Tesorero e Intendente. Se eligen en el Consejo de Equipo o en el Congreso de Comunidad (p. 14)",
+            "El <strong>Navegante</strong> recopila y cuida la memoria de la Comunidad en la <strong>Carta de Navegación</strong> (p. 14)",
+            "<strong>Grupos de Trabajo</strong> temporales para un proyecto, un evento o un desafío, que se disuelven al cumplirlo (p. 14–16)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "El liderazgo en los Equipos «es rotativo, situacional y compartido» (p. 15): no depende de cargos fijos."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "🗳️ El Congreso de Comunidad"
+        },
+        {
+          "type": "paragraph",
+          "text": "Es «la máxima instancia de participación juvenil» de la Comunidad. Lo integran todos los nómadas, «quienes participan con voz y voto»; los dirigentes acompañan «con voz», sin sustituir el protagonismo juvenil. Se privilegia el consenso, y cuando no se logra se usan mecanismos de votación que la Comunidad acordó antes (p. 16)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> El Congreso lo integran los nómadas, y el voto es solo de ellos; ni los dirigentes votan. Tú no eres ni lo uno ni lo otro: vas si te invitan y hablas cuando te den la palabra. Y los cargos son de ellos: si ves algo que el Navegante o el Tesorero podrían hacer mejor, se lo ofreces a él, no lo haces por él."
+        }
+      ],
+      "reflection": {
+        "prompt": "Recuerda una vez en tu Clan en que un compañero con más experiencia se llevó una decisión que era de todos. ¿Cómo se sintió el resto? ¿Qué harías tú distinto si te pasara en la Comunidad? Sin nombres: basta con lo que pasó."
+      },
+      "quiz": {
+        "title": "Evaluación - Equipos y Congreso",
+        "questions": [
+          {
+            "text": "En el Congreso de Comunidad, la votación sobre el destino del campamento queda empatada. Varios nómadas te piden: «Tú desempata, que conoces los dos lugares». ¿Qué es lo más coherente con la Guía?",
+            "options": [
+              "Desempatar tú, porque te lo pidieron los nómadas y conoces bien los dos lugares",
+              "Devolverles la decisión: que usen el desempate que la Comunidad acordó antes",
+              "Pedirle al Jefe de Unidad que desempate él, porque es el adulto que tiene la última palabra"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Después del campamento, escribes una crónica muy completa y quieres que quede en la Carta de Navegación. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Ofrecérsela al Navegante como un aporte, porque la memoria la recoge y la cuida él",
+              "Pegarla tú en la Carta de Navegación, porque así la Comunidad tiene un relato completo",
+              "Guardarla para ti, porque en la Carta de Navegación solo pueden escribir los nómadas"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: la aventura ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "La aventura hacia la ciudadanía",
+      "emoji": "🧭",
+      "navLabel": "La aventura",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> el símbolo se vive, no se explica; y la ciudadanía que se aprende en la Comunidad es activa, pero no partidista."
+        },
+        {
+          "type": "paragraph",
+          "text": "Piensa en un reto real que te marcó a los 16 años: una travesía, un servicio exigente, un proyecto que parecía imposible. Eso es lo que la Comunidad busca."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Marco simbólico:</strong> «La aventura hacia la ciudadanía» (p. 19)",
+            "<strong>Ambiente de referencia:</strong> las Historias de la Humanidad, con el nómada como el aventurero que camina con propósito (p. 19 y 21)",
+            "<strong>Lema:</strong> «Siempre Unidos» (p. 19)",
+            "<strong>La Aventura:</strong> actividades retadoras y desafíos reales, como canotaje, montañismo, viajes o voluntariados exigentes (p. 20)"
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "«No es necesario explicarle al joven la importancia de la reflexión durante una caminata ni definir con palabras el significado de la hermandad alrededor de una fogata. Basta con permitirle vivir la experiencia.»<br><small>— Guía para el Dirigente de Comunidad de Nómadas Scout, ASC, 2026, p. 18</small>"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Una ciudadanía sin partidos"
+        },
+        {
+          "type": "paragraph",
+          "text": "La ciudadanía que propone la Guía es participar, respetar y actuar por el bien común, incluido el control social (p. 20–21). Pero aclara que «comunidad política» no se refiere a partidos ni a militancia: el Movimiento Scout es apartidista, y no toma partido ni hace propaganda (p. 20)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> En una fogata o una ceremonia, no te adelantes a explicar lo que están viviendo. Y en los temas públicos, puedes ayudarles a informarse y a participar, pero no llevas tu candidato ni tu partido a la Comunidad."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en un reto real que te marcó a esa edad. ¿Qué lo hizo importante: el riesgo, las personas, lo que aprendiste? ¿Cómo podrías ayudar a que un nómada de hoy viva algo así, sin quitarle el reto?"
+      },
+      "quiz": {
+        "title": "Evaluación - La aventura",
+        "questions": [
+          {
+            "text": "Es la primera fogata de unos nómadas nuevos. Antes de encenderla, un Rover propone explicarles qué significa la fogata en el escultismo, para que la aprovechen mejor. ¿Qué es lo más coherente con la Guía?",
+            "options": [
+              "Explicarla antes, porque a esta edad entienden mejor lo que se les explica primero",
+              "Explicársela tú al terminar, en el círculo de palabra, para que les quede claro",
+              "Dejar que la vivan, sin explicarla antes, y estar con ellos desde tu lugar"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "La Comunidad prepara un proyecto sobre el agua del barrio. Se acercan elecciones, y un Rover propone invitar al candidato que él apoya, «porque tiene la mejor propuesta sobre el tema». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Aceptarlo, porque la ciudadanía que propone la Guía incluye participar en lo político",
+              "Buscar otra fuente sobre el agua, sin candidatos: la Comunidad no toma partido",
+              "Dejar el proyecto para después de las elecciones: los temas públicos no son de scouts"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: la frontera de quien sirve ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Casi pares: la frontera de quien sirve",
+      "emoji": "🤝",
+      "navLabel": "Casi pares",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> puedes ser cercano con los nómadas, pero no eres uno más: la frontera la sostienes tú, porque ellos son menores de edad y tú sirves en su unidad."
+        },
+        {
+          "type": "paragraph",
+          "text": "Hace dos años quizá estabas en esta misma Comunidad con algunos de ellos. Ellos te siguen viendo como amigo, y está bien que te tengan confianza. Lo que cambia es tu lugar: no es el de un compañero más ni el de un jefe, sino el de quien sirve."
+        },
+        {
+          "type": "paragraph",
+          "text": "La <strong>estrategia 2+1</strong> de la Política A Salvo del Peligro vale para todos, dirigentes incluidos: al menos tres personas presentes en actividades, interacciones y acompañamientos —dos personas adultas responsables y una menor de edad, o una adulta y dos menores—, «tanto en comunicaciones entre adultos - adultos, adultos - jóvenes, jóvenes - jóvenes». Y la misma página pide cuidar el contacto por plataformas digitales y la publicación de imágenes de los jóvenes (Política, p. 26). Y como viste en <em>Servir en el Grupo</em>, este curso te pide no contar como uno de los adultos de la 2+1."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía de Comunidad recuerda, además, que «todos los miembros tienen la obligación de reportar cualquier incidente que vulnere la dignidad o derechos, sin posibilidad de guardar secretos» (p. 46)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Lo que este curso te recomienda"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Sé cercano en la actividad, no por privado. Para lo del día a día —horarios, salidas, materiales—, responde en un canal donde esté el dirigente",
+            "No entres a sus grupos de chat de amigos, aunque antes estuvieras en ellos",
+            "Si coincides con nómadas en una fiesta o en el barrio, no tienes que irte: saluda y sé tú, pero no seas su compañero de fiesta: ni te quedes hasta el final con su grupo, ni te vayas con ellos después",
+            "Si te cuentan algo difícil, en persona o por escrito, escucha y no prometas el secreto. Si te llega por privado, no lo muevas a un grupo donde lo lean otros ni sigas la conversación: contesta corto que lo escuchas y que no te lo puedes guardar. Avisa esa misma noche al dirigente, como viste en <em>Servir en el Grupo</em>. Si tiene que ver con alguien del equipo de la unidad, usa el botón «Me Pongo A Salvo del Peligro», que es la ruta oficial para reportar (Política, p. 44), y si quieres, avisa también al Jefe de Grupo",
+            "Mientras sirves en una Comunidad, <strong>no tengas una relación de pareja con los nómadas de esa unidad</strong>"
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Por qué.</strong> Casi todas son recomendaciones de este curso, no normas escritas así por la Asociación. La de no guardar secretos y avisar, en cambio, sí es una obligación de todos (Política, p. 21). Se apoyan en la estrategia 2+1, en la obligación de no guardar secretos y en algo que la Guía reconoce: a esta edad se desarrollan relaciones románticas y afectivas (p. 7). Esos afectos son legítimos entre ellos; entre quien sirve en la unidad y un nómada menor de edad, no. Si una situación así aparece, lo hablas con el dirigente de la Comunidad antes de que crezca. Y te cuidan a ti también: si nunca estás a solas con un nómada, ni en persona ni por chat, nadie puede poner en duda lo que pasó."
+        }
+      ],
+      "reflection": {
+        "prompt": "Te enteras de que varios nómadas de la Comunidad van a la misma fiesta que tú este sábado. Escribe, en dos frases, qué vas a hacer allá y qué no. Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Casi pares",
+        "questions": [
+          {
+            "text": "Estuviste en la Comunidad hasta hace dos años. Ahora sirves en ella, y un nómada te agrega de nuevo al grupo de chat de los amigos de la Comunidad, donde estabas antes. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Quedarte en el grupo, porque ya estabas ahí antes de empezar a servir en la unidad",
+              "Salir del grupo con un mensaje amable, y seguir en contacto por el canal de la unidad",
+              "Seguir en el grupo pero sin escribir nada, solo para saber lo que está pasando"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Después de una reunión, una nómada te cuenta algo grave que le está pasando y te dice: «Te lo cuento a ti porque tú sí me entiendes; no se lo digas a los dirigentes». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Decirle que la escuchas pero no puedes guardarlo, y avisar esa noche al dirigente",
+              "Guardarlo por ahora, porque te lo contó a ti justamente por no ser dirigente",
+              "Animarla a que ella misma se lo cuente al dirigente, y esperar a ver si lo hace"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Una nómada de 17 años, con la que te llevas muy bien desde que compartieron Comunidad, te dice después de una salida que le gustas y te propone verse un fin de semana. ¿Qué es lo más coherente con lo que te recomienda el curso?",
+            "options": [
+              "Salir con ella solo por fuera del Movimiento, donde ya no eres quien sirve",
+              "Decirle con cariño que no, y hablarlo con el dirigente antes de que crezca",
+              "Decirle que no, y esperar a ver si insiste antes de contárselo al dirigente"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: tu apoyo, paso a paso ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Tu apoyo, paso a paso",
+      "emoji": "🛡️",
+      "navLabel": "Paso a paso",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> los proyectos de servicio son de los nómadas; el análisis de riesgos lo hacen ellos, con responsables claros, y lo revisan con los dirigentes. Tú apoyas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Piensa en el último proyecto de servicio de tu Clan: ¿alguien pensó antes qué podía salir mal, o se resolvió sobre la marcha? En la Comunidad, el análisis previo es parte del proyecto."
+        },
+        {
+          "type": "paragraph",
+          "text": "Mediante proyectos de servicio, dice la Guía, los nómadas ejercen «una ciudadanía activa, solidaria y comprometida» (p. 17). Los proyectos los puede liderar un <strong>Grupo de Trabajo de Proyectos</strong> (p. 17), y en el ciclo de programa, al realizar las actividades, se debe gestionar el riesgo aplicando la Política A Salvo del Peligro (p. 45)."
+        },
+        {
+          "type": "blockquote",
+          "text": "«[…] recomendamos que siempre se haga un análisis previo de los posibles riesgos en pro de plantear acciones concretas y realizables para su mitigación, con responsables claros que aseguren un ambiente seguro en el que los protagonistas de programa puedan desarrollar su potencial.»<br><small>— Guía para el Dirigente de Comunidad de Nómadas Scout, ASC, 2026, p. 46</small>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La misma página dice que esa responsabilidad es compartida, y que seguir los protocolos de gestión del riesgo es «parte fundamental del rol del Dirigente» (p. 46). Los nómadas hacen su análisis y lo revisan con los dirigentes; y tú también cuidas: si ves un riesgo, lo dices."
+        },
+        {
+          "type": "paragraph",
+          "text": "El <em>Modelo de Aplicación</em> recomienda para la Comunidad un adulto por cada equipo, más el Jefe de Unidad (p. 22). Como viste en <em>Servir en el Grupo</em>, tú no cuentas en esa proporción: esa cuenta la hacen los dirigentes."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Un proyecto, de principio a fin"
+        },
+        {
+          "type": "paragraph",
+          "text": "La Comunidad decidió en su Congreso pintar la escuela de una vereda. El Grupo de Trabajo de Proyectos te pide ayuda con la logística. En vez de hacer tú el plan, les preguntas qué podría salir mal: la carretera, la escalera, el calor. Ellos arman la lista de riesgos, con una acción y un responsable para cada uno, y la revisan con los dirigentes. El día del proyecto apoyas donde te asignaron, siempre a la vista de otros. Al final, en la evaluación, cuentas lo que viste y qué faltó para la próxima."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar vas a escribir tu compromiso. Que sea concreto y para tus primeras cuatro reuniones: «En la Comunidad voy a ___, y nunca voy a ___»."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Tu lugar aquí no es el de un compañero más ni el de un jefe: es el de quien sirve.</strong><br>¡Siempre Unidos!"
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en un proyecto de servicio que la Comunidad de tu Grupo podría hacer. ¿Qué riesgo concreto habría que analizar antes, y qué pregunta le harías al Grupo de Trabajo para que ellos mismos encuentren la medida?"
+      },
+      "quiz": {
+        "title": "Evaluación - Paso a paso",
+        "questions": [
+          {
+            "text": "Faltan tres semanas para pintar la escuela. En el Grupo de Trabajo de Proyectos, una nómada dice: «Los riesgos los vemos allá, el día del proyecto». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Dejarlo así: el proyecto es de ellos, y decidir cuándo ver los riesgos también",
+              "Preguntarles ahora qué podría salir mal, para que armen su lista antes del día",
+              "Hacer tú la lista de riesgos por tu cuenta, para tenerla lista por si algo pasa"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "El Grupo de Trabajo te muestra su lista: «Carretera: tener cuidado. Escalera: ojo. Calor: llevar agua». ¿Qué es lo más coherente con la Guía?",
+            "options": [
+              "Aprobarla: ya identificaron los riesgos, que es la parte difícil del análisis",
+              "Completarla tú con las medidas que faltan, para que llegue lista a los dirigentes",
+              "Preguntarles qué harán en concreto con cada riesgo, y quién se encarga de cada uno"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "El Grupo de Trabajo terminó su lista, con una acción y un responsable para cada riesgo, y te dice: «Revísala tú y danos el visto bueno, así no molestamos a los dirigentes». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Darles tú el visto bueno, porque la lista ya tiene una acción y un responsable",
+              "Animarlos a revisarla con los dirigentes, que son quienes responden por la actividad",
+              "Preguntarles si quieren que tú la corrijas antes, para que llegue mejor a los dirigentes"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Mirada de Nómada",
+      "emoji": "🧑",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Su Voz, su Voto",
+      "emoji": "🗳️",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Aventura con Sentido",
+      "emoji": "🧭",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Cercanía con Límites",
+      "emoji": "🤝",
+      "unlockOnModule": 5
+    },
+    {
+      "id": "achievement-5",
+      "name": "Siempre Unidos",
+      "emoji": "🛡️",
+      "unlockOnModule": 6
+    }
+  ],
+  "certificate": {
+    "courseName": "SERVIR EN LA COMUNIDAD",
+    "description": "ha completado el curso Servir en la Comunidad, que prepara al Rover para apoyar a los dirigentes de la Comunidad de Nómadas Scout de su Grupo conociendo a los jóvenes de 15 a 17 años, lo que ellos deciden, su marco simbólico, la frontera de quien sirve y el cuidado en sus proyectos de servicio.",
+    "commitmentPrompt": "Escribe tu compromiso para tus primeras cuatro reuniones, completando la frase de la última lección: «En la Comunidad voy a ___, y nunca voy a ___»."
+  }
+}

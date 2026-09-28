@@ -107,7 +107,7 @@
             "options": [
               "Como una salida recreativa que no cuenta como servicio, porque no estaba planeada",
               "Como la actitud de servicio actuando en un entorno donde el Clan ya estaba",
-              "Como una buena acción, que no es servicio porque el lema pide proyectos largos"
+              "Como servicio solo si el Clan lo anota después como su jornada de servicio del año"
             ],
             "correctIndex": 1
           },
@@ -188,13 +188,13 @@
             "correctIndex": 1
           },
           {
-            "text": "Según la lección, ¿qué pregunta distingue mejor un servicio como proyecto de un servicio social?",
+            "text": "Tu Clan reparte almuerzos cada domingo, todo el año, en el mismo parque; quienes los reciben no participan en planearlo. Un Rover dice: «Como dura todo el año, ya es un servicio como proyecto». ¿Qué le responderías según la lección?",
             "options": [
-              "¿Cuántas personas recibieron ayuda y cuántos Rovers participaron en el servicio?",
-              "¿El servicio se planeó con anticipación o surgió en el momento, sin preparación?",
-              "¿La comunidad participó en el servicio y puede seguirlo cuando el Clan se retire?"
+              "Que es un servicio social: dura todo el año, pero se hace para ellos y no con ellos",
+              "Que tiene razón: un servicio que se sostiene todo un año ya es un servicio como proyecto",
+              "Que es una buena acción repetida, porque cada domingo resuelve una necesidad del momento"
             ],
-            "correctIndex": 2
+            "correctIndex": 0
           }
         ],
         "nextLabel": "Continuar: dónde servir ➡️"
@@ -364,7 +364,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Un antecedente que sigue siendo buen consejo.</strong> La guía de 2018 hablaba de un servicio parecido en otra rama, pero con otras reglas: pedía 21 años cumplidos y solo era para Manada y Tropa. La guía de 2026 ya no lo trae. Aun así, dejaba dos ideas que siguen siendo buen consejo: ese servicio no se le podía imponer a ningún Rover, y siempre tenía prioridad lo que el Rover hacía con su equipo o su Clan (p. 49–50). La guía de 2026 no repite esas palabras; lo que sí dice es que en el Clan los compromisos se asumen voluntariamente y a la vista de todos (p. 28)."
+          "text": "<strong>Un antecedente que sigue siendo buen consejo.</strong> La guía de 2018, que viste en la lección de dónde servir, dejaba dos ideas útiles: ese servicio no se le podía imponer a ningún Rover, y siempre tenía prioridad lo que el Rover hacía con su equipo o su Clan (p. 49–50). La guía de 2026 no repite esas palabras; lo que sí dice es que en el Clan los compromisos se asumen voluntariamente y a la vista de todos (p. 28)."
         },
         {
           "type": "heading",

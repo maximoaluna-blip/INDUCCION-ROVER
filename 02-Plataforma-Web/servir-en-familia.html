@@ -645,7 +645,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
 
                 <p>Imagina tu primer sábado: los cachorros se sientan en círculo, alguien empieza a contar una historia y todos bajan la voz. Un niño te mira de reojo, a ver si tú también te la crees. Esta lección es para ese momento.</p>
 
-                <p>El marco simbólico de la Familia de Cachorros es <strong>la Fantasía</strong>, y su ambiente de referencia son los <strong>relatos infantiles</strong>: fábulas, cuentos, poemas, canciones (p. 35–36). En el centro está un capítulo del <em>Libro de las Tierras Vírgenes</em> de Kipling, «Los Hermanos de Mowgli», que la Guía llama «el fundamento simbólico que da identidad, coherencia y profundidad a la Rama Cachorros» (p. 36–37). El lema es <strong>«Siempre Alegres»</strong> y el color, el <strong>naranja</strong> (p. 35–36).</p>
+                <p>El marco simbólico de la Familia de Cachorros es <strong>la Fantasía</strong> (p. 35–36). En el centro está «Los Hermanos de Mowgli», un capítulo del <em>Libro de las Tierras Vírgenes</em> de Kipling, que la Guía llama «el fundamento simbólico que da identidad, coherencia y profundidad a la Rama Cachorros» (p. 36–37). El lema es <strong>«Siempre Alegres»</strong> (p. 35).</p>
 
                 <p>La Guía insiste en algo que conviene que sepas antes de llegar: los símbolos «no se explican en exceso. Se viven» (p. 33). Nadie le dice a un cachorro «esto representa el mundo»: lo vive jugando. Y todo pasa en el <strong>Cubil</strong>, que la Guía define como «el hogar simbólico de la Familia», el espacio seguro donde los Cachorros se reúnen, comparten, aprenden y se cuidan (p. 43).</p>
 
@@ -908,11 +908,11 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                         </label>
                         <label class="option" onclick="selectOption(this, 1)">
                             <input type="radio" name="q50">
-                            Entrar con él, pero junto con otro adulto, para que nadie quede a solas con el niño
+                            Entrar con él, pero junto con otro adulto de la Familia, para que nadie quede a solas con el niño
                         </label>
                         <label class="option" onclick="selectOption(this, 2)">
                             <input type="radio" name="q50">
-                            Pedirle a un Viejo Lobo que entre a ayudarlo, porque él sí es el adulto a cargo
+                            Pedirle a un Viejo Lobo que entre a ayudarlo con la ropa, porque él sí es el adulto a cargo
                         </label>
                     </div>
 
@@ -924,7 +924,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                         </label>
                         <label class="option" onclick="selectOption(this, 1)">
                             <input type="radio" name="q51">
-                            Que un Rover lo lleve a su casa, ya que queda de camino y es mayor de edad
+                            Que se vaya caminando a su casa, que queda a una cuadra, si la mamá lo autoriza por mensaje
                         </label>
                         <label class="option" onclick="selectOption(this, 2)">
                             <input type="radio" name="q51">
@@ -1033,7 +1033,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                 <div class="reflection-area">
                     <h4>🎯 Compromiso Personal</h4>
                     <p>Escribe tu compromiso completando la frase de la última lección: «En la Familia de Cachorros voy a ___, y nunca voy a ___».</p>
-                    <textarea id="commitment" placeholder="Mi compromiso de servicio es..." onchange="saveCommitment(this.value)"></textarea>
+                    <textarea id="commitment" placeholder="Escribe aquí tu compromiso..." onchange="saveCommitment(this.value)"></textarea>
                 </div>
             </div>
         </div>
@@ -1254,9 +1254,9 @@ function checkQuiz(moduleNum) {
     } else {
         // El 70 % exige, con 2 o 3 preguntas, acertarlas TODAS: se dice asi, no en porcentaje (CHECKLIST §A, ADR-091).
         var necesarias = Math.ceil(totalQuestions * 0.7);
-        showNotification('Acertaste ' + correctAnswers + ' de ' + totalQuestions + '. Para seguir necesitas ' +
+        showNotification('Acertaste ' + correctAnswers + ' de ' + totalQuestions + '; para seguir hay que ' +
             (necesarias === totalQuestions ? 'acertarlas todas' : 'acertar ' + necesarias) +
-            ': mira cuál quedó en verde, relee esa parte y vuelve a intentarlo.', 'warning');
+            '. Donde quedó una en rojo, la verde es la correcta: relee esa parte y vuelve a intentarlo.', 'warning');
         // No auto-reset: en cuanto el usuario hace clic en una opcion, selectOption() limpia las marcas
         // de esa pregunta y vuelve a mostrar el boton "Verificar". Esto evita que un reset por tiempo
         // borrara la nueva seleccion del usuario antes de que pulsara verificar.
@@ -1375,7 +1375,7 @@ function showNotification(message, type) {
     setTimeout(function () {
         n.style.animation = 'slideOut 0.3s';
         setTimeout(function () { n.remove(); }, 300);
-    }, 3000);
+    }, type === 'warning' ? 7000 : 3000); // un aviso de fallo trae instrucciones: que alcance a leerse
 }
 
 // --- Reflexiones ---

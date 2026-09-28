@@ -41,10 +41,10 @@
   {
     "courseId": "servir-en-el-grupo",
     "title": "Servir en el Grupo",
-    "description": "El curso común de la ruta. En ~35 minutos vas a ubicar la rama donde quieres servir dentro de tu Grupo, entender la diferencia entre apoyar y dirigir, acordar tu servicio con las personas indicadas, aplicar lo básico de A Salvo del Peligro y planear tu primera semana.",
+    "description": "El curso común de la ruta. En ~40 minutos vas a ubicar la rama donde quieres servir dentro de tu Grupo, entender la diferencia entre apoyar y dirigir, acordar tu servicio con las personas indicadas, aplicar lo básico de A Salvo del Peligro y planear tu primera semana.",
     "icon": "🏕️",
-    "duration": "35 minutos",
-    "modules": 6,
+    "duration": "40 minutos",
+    "modules": 7,
     "route": "grupo",
     "level": 1,
     "branch": null,

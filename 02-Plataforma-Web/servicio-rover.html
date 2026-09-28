@@ -614,7 +614,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                         </label>
                         <label class="option" onclick="selectOption(this, 2)">
                             <input type="radio" name="q10">
-                            Como una buena acción, que no es servicio porque el lema pide proyectos largos
+                            Como servicio solo si el Clan lo anota después como su jornada de servicio del año
                         </label>
                     </div>
 
@@ -696,18 +696,18 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                     </div>
 
                     <div class="question">
-                        <h4>2. Según la lección, ¿qué pregunta distingue mejor un servicio como proyecto de un servicio social?</h4>
+                        <h4>2. Tu Clan reparte almuerzos cada domingo, todo el año, en el mismo parque; quienes los reciben no participan en planearlo. Un Rover dice: «Como dura todo el año, ya es un servicio como proyecto». ¿Qué le responderías según la lección?</h4>
                         <label class="option" onclick="selectOption(this, 0)">
                             <input type="radio" name="q21">
-                            ¿Cuántas personas recibieron ayuda y cuántos Rovers participaron en el servicio?
+                            Que es un servicio social: dura todo el año, pero se hace para ellos y no con ellos
                         </label>
                         <label class="option" onclick="selectOption(this, 1)">
                             <input type="radio" name="q21">
-                            ¿El servicio se planeó con anticipación o surgió en el momento, sin preparación?
+                            Que tiene razón: un servicio que se sostiene todo un año ya es un servicio como proyecto
                         </label>
                         <label class="option" onclick="selectOption(this, 2)">
                             <input type="radio" name="q21">
-                            ¿La comunidad participó en el servicio y puede seguirlo cuando el Clan se retire?
+                            Que es una buena acción repetida, porque cada domingo resuelve una necesidad del momento
                         </label>
                     </div>
 
@@ -863,7 +863,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
 
                 <p>¿Y no dijimos que el servicio no es para cuando te sobra tiempo? Las dos cosas son ciertas: la actitud de servir no tiene horario, pero un servicio acordado sí necesita uno, y tiene que caber junto a tu Clan.</p>
 
-                <div class="info-box"><strong>Un antecedente que sigue siendo buen consejo.</strong> La guía de 2018 hablaba de un servicio parecido en otra rama, pero con otras reglas: pedía 21 años cumplidos y solo era para Manada y Tropa. La guía de 2026 ya no lo trae. Aun así, dejaba dos ideas que siguen siendo buen consejo: ese servicio no se le podía imponer a ningún Rover, y siempre tenía prioridad lo que el Rover hacía con su equipo o su Clan (p. 49–50). La guía de 2026 no repite esas palabras; lo que sí dice es que en el Clan los compromisos se asumen voluntariamente y a la vista de todos (p. 28).</div>
+                <div class="info-box"><strong>Un antecedente que sigue siendo buen consejo.</strong> La guía de 2018, que viste en la lección de dónde servir, dejaba dos ideas útiles: ese servicio no se le podía imponer a ningún Rover, y siempre tenía prioridad lo que el Rover hacía con su equipo o su Clan (p. 49–50). La guía de 2026 no repite esas palabras; lo que sí dice es que en el Clan los compromisos se asumen voluntariamente y a la vista de todos (p. 28).</div>
 
                 <h3>Tu compromiso</h3>
 
@@ -998,7 +998,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
                 <div class="reflection-area">
                     <h4>🎯 Compromiso Personal</h4>
                     <p>Escribe tu compromiso completando la frase de la última lección: «Mi servicio va a ser ___, en ___. Lo voy a conversar primero con ___ antes de ___». Para la persona, escribe su rol, no su nombre.</p>
-                    <textarea id="commitment" placeholder="Mi compromiso de servicio es..." onchange="saveCommitment(this.value)"></textarea>
+                    <textarea id="commitment" placeholder="Escribe aquí tu compromiso..." onchange="saveCommitment(this.value)"></textarea>
                 </div>
             </div>
         </div>
@@ -1021,7 +1021,7 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
     };
 
     // --- Respuestas correctas (indice base 0) ---
-    var QUIZ_ANSWERS = {"2":[1,1],"3":[1,2],"4":[0,2],"5":[0,2],"6":[1,2]};
+    var QUIZ_ANSWERS = {"2":[1,1],"3":[1,0],"4":[0,2],"5":[0,2],"6":[1,2]};
 
 // ============================================
 // MOTOR DE CURSOS - PLATAFORMA EDUCATIVA ROVER ASC
@@ -1219,9 +1219,9 @@ function checkQuiz(moduleNum) {
     } else {
         // El 70 % exige, con 2 o 3 preguntas, acertarlas TODAS: se dice asi, no en porcentaje (CHECKLIST §A, ADR-091).
         var necesarias = Math.ceil(totalQuestions * 0.7);
-        showNotification('Acertaste ' + correctAnswers + ' de ' + totalQuestions + '. Para seguir necesitas ' +
+        showNotification('Acertaste ' + correctAnswers + ' de ' + totalQuestions + '; para seguir hay que ' +
             (necesarias === totalQuestions ? 'acertarlas todas' : 'acertar ' + necesarias) +
-            ': mira cuál quedó en verde, relee esa parte y vuelve a intentarlo.', 'warning');
+            '. Donde quedó una en rojo, la verde es la correcta: relee esa parte y vuelve a intentarlo.', 'warning');
         // No auto-reset: en cuanto el usuario hace clic en una opcion, selectOption() limpia las marcas
         // de esa pregunta y vuelve a mostrar el boton "Verificar". Esto evita que un reset por tiempo
         // borrara la nueva seleccion del usuario antes de que pulsara verificar.
@@ -1340,7 +1340,7 @@ function showNotification(message, type) {
     setTimeout(function () {
         n.style.animation = 'slideOut 0.3s';
         setTimeout(function () { n.remove(); }, 300);
-    }, 3000);
+    }, type === 'warning' ? 7000 : 3000); // un aviso de fallo trae instrucciones: que alcance a leerse
 }
 
 // --- Reflexiones ---

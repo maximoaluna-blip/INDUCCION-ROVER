@@ -533,7 +533,7 @@ function buildCertificateModule(course, certModuleId) {
                 <div class="reflection-area">
                     <h4>🎯 Compromiso Personal</h4>
                     <p>${course.certificate.commitmentPrompt || 'Escribe tu compromiso de servicio:'}</p>
-                    <textarea id="commitment" placeholder="Mi compromiso de servicio es..." onchange="saveCommitment(this.value)"></textarea>
+                    <textarea id="commitment" placeholder="Escribe aquí tu compromiso..." onchange="saveCommitment(this.value)"></textarea>
                 </div>
             </div>`;
 }

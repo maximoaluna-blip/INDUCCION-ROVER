@@ -194,9 +194,9 @@ function checkQuiz(moduleNum) {
     } else {
         // El 70 % exige, con 2 o 3 preguntas, acertarlas TODAS: se dice asi, no en porcentaje (CHECKLIST §A, ADR-091).
         var necesarias = Math.ceil(totalQuestions * 0.7);
-        showNotification('Acertaste ' + correctAnswers + ' de ' + totalQuestions + '. Para seguir necesitas ' +
+        showNotification('Acertaste ' + correctAnswers + ' de ' + totalQuestions + '; para seguir hay que ' +
             (necesarias === totalQuestions ? 'acertarlas todas' : 'acertar ' + necesarias) +
-            ': mira cuál quedó en verde, relee esa parte y vuelve a intentarlo.', 'warning');
+            '. Donde quedó una en rojo, la verde es la correcta: relee esa parte y vuelve a intentarlo.', 'warning');
         // No auto-reset: en cuanto el usuario hace clic en una opcion, selectOption() limpia las marcas
         // de esa pregunta y vuelve a mostrar el boton "Verificar". Esto evita que un reset por tiempo
         // borrara la nueva seleccion del usuario antes de que pulsara verificar.
@@ -315,7 +315,7 @@ function showNotification(message, type) {
     setTimeout(function () {
         n.style.animation = 'slideOut 0.3s';
         setTimeout(function () { n.remove(); }, 300);
-    }, 3000);
+    }, type === 'warning' ? 7000 : 3000); // un aviso de fallo trae instrucciones: que alcance a leerse
 }
 
 // --- Reflexiones ---

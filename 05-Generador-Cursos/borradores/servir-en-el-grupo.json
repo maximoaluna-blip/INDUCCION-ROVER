@@ -2,7 +2,7 @@
   "courseId": "servir-en-el-grupo",
   "title": "Servir en el Grupo",
   "subtitle": "Ruta Servir en el Grupo · Nivel 1",
-  "description": "El curso común de la ruta. En ~35 minutos vas a ubicar la rama donde quieres servir dentro de tu Grupo, entender la diferencia entre apoyar y dirigir, acordar tu servicio con las personas indicadas, aplicar lo básico de A Salvo del Peligro y planear tu primera semana.",
+  "description": "El curso común de la ruta. En ~40 minutos vas a ubicar la rama donde quieres servir dentro de tu Grupo, entender la diferencia entre apoyar y dirigir, acordar tu servicio con las personas indicadas, aplicar lo básico de A Salvo del Peligro y planear tu primera semana.",
   "contentVersion": "2026-09-27",
   "route": "grupo",
   "level": 1,
@@ -11,8 +11,8 @@
     "motivationLabel": "¿En qué rama te gustaría servir, y por qué?"
   },
   "icon": "🏕️",
-  "duration": "35 minutos",
-  "totalContentModules": 5,
+  "duration": "40 minutos",
+  "totalContentModules": 6,
   "modules": [
     {
       "id": 1,
@@ -123,9 +123,9 @@
           {
             "text": "Una Manada tiene 18 lobatos y un solo dirigente. El dirigente le dice al Rover que empieza a apoyar: «Con usted ya completamos los adultos, así que el sábado se queda con seis lobatos mientras yo atiendo a los otros». ¿Qué es lo más coherente?",
             "options": [
-              "Aceptar: ya es mayor de edad, y con él la Manada completa lo que pide el Modelo",
-              "Decirle con respeto que él apoya pero no reemplaza a un dirigente, y no quedarse solo",
-              "Quedarse solo por esta vez, y pedir que quede escrito en su acuerdo de servicio"
+              "Aceptar: ya es mayor de edad, y con él la Manada completa los adultos que pide el Modelo",
+              "Explicarle con respeto que un Rover apoya pero no reemplaza a un dirigente, y no quedarse solo",
+              "Quedarse solo con ellos por esta vez, y pedir que quede escrito en su acuerdo de servicio"
             ],
             "correctIndex": 1
           }
@@ -269,11 +269,11 @@
             "correctIndex": 2
           },
           {
-            "text": "Una Rover acordó apoyar a la Manada los sábados de este semestre. Pero el acuerdo solo dice «ayudar», y cada sábado le toca algo distinto: un día mueve sillas, otro cuida la puerta. Siente que no aporta. ¿Qué pregunta del acuerdo quedó sin una respuesta concreta?",
+            "text": "Una Rover apoya en la Manada desde hace un mes. Cada reunión llega sin saber qué le toca: un día mueve sillas, otro cuida la puerta, y lo que sabe hacer no se usa. ¿Qué pregunta del acuerdo se quedó sin una respuesta concreta?",
             "options": [
               "¿Qué voy a hacer?",
-              "¿Qué días?",
-              "¿Con qué rama?"
+              "¿A quién le reporto?",
+              "¿Qué días?"
             ],
             "correctIndex": 0
           }
@@ -283,13 +283,13 @@
     },
     {
       "id": 5,
-      "title": "A Salvo del Peligro: lo que no se negocia",
+      "title": "A Salvo del Peligro: nunca a solas",
       "emoji": "🛡️",
-      "navLabel": "A Salvo",
+      "navLabel": "Nunca a solas",
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 8 minutos · Idea central:</strong> cuidar a los niños, niñas y jóvenes es parte de tu servicio, no un tema aparte."
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> cuidar a los niños, niñas y jóvenes es parte de tu servicio, y empieza por no quedarte nunca a solas con ninguno."
         },
         {
           "type": "paragraph",
@@ -306,7 +306,7 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "1. La estrategia 2+1"
+          "text": "La estrategia 2+1"
         },
         {
           "type": "paragraph",
@@ -315,11 +315,50 @@
         {
           "type": "info-box",
           "text": "<strong>Qué significa para ti.</strong> La estrategia 2+1 vale para todos, dirigentes incluidos: nadie queda a solas con un niño, niña o joven, ni en persona ni por chat. Y como en la rama no eres quien responde por la unidad, este curso te pide algo más: no cuentes como uno de los adultos de la 2+1 ni quedes a cargo de niños sin un dirigente presente. Si un scout te escribe al privado, respondes en un canal donde esté el dirigente o su familia; algo tan simple como: «¡Hola! Te respondo por el grupo de la unidad, donde está el dirigente, y así sabemos todos». <strong>Vale también si ya lo conoces</strong>: si estuvieron juntos en la Comunidad o lo sigues en redes, ahora estás sirviendo en su rama. Si un momento te deja a solas —alguien se lastima, un niño se aleja—, llama a otro adulto o muévete a donde te vean. No publicas fotos de la unidad por tu cuenta."
+        }
+      ],
+      "reflection": {
+        "prompt": "Imagina que un scout de la rama te escribe al privado esta noche. Escribe, tal cual, lo que le responderías para pasar la conversación a un canal donde esté el dirigente."
+      },
+      "quiz": {
+        "title": "Evaluación - Nunca a solas",
+        "questions": [
+          {
+            "text": "Un nómada de 16 años, con quien estuviste en la Comunidad hace dos años, te escribe al privado para preguntarte por la salida del sábado. ¿Qué es lo más coherente?",
+            "options": [
+              "Contestarle en un chat donde también esté el dirigente, no por el privado",
+              "Contestarle por el privado: se conocen de antes y la pregunta es de logística",
+              "Contestarle por el privado y luego mandarle al dirigente un pantallazo"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Durante una salida, un lobato se raspa la rodilla y el dirigente está con el resto de la Manada a 50 metros. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Llamar a otro adulto o llevarlo hacia donde el grupo los vea, antes de curarlo",
+              "Llevarlo aparte a curarlo con calma, para que el resto no se asuste con la herida",
+              "Curarlo tú ahí mismo, porque en una emergencia la estrategia 2+1 no se aplica"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: si alguien te cuenta algo ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "A Salvo del Peligro: si alguien te cuenta algo",
+      "emoji": "👂",
+      "navLabel": "Si te cuentan",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> si un niño, niña o joven te cuenta algo difícil, tu tarea es escuchar y avisar; no investigar ni guardar el secreto."
         },
         {
           "type": "heading",
           "level": 3,
-          "text": "2. Si alguien te cuenta algo"
+          "text": "Escuchar sin prometer el secreto"
         },
         {
           "type": "paragraph",
@@ -328,7 +367,7 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "3. Tú no investigas: reportas"
+          "text": "Tú no investigas: avisas"
         },
         {
           "type": "paragraph",
@@ -336,10 +375,10 @@
         }
       ],
       "reflection": {
-        "prompt": "Imagina que un scout de la rama te escribe al privado esta noche. Escribe, tal cual, lo que le responderías para pasar la conversación a un canal donde esté el dirigente."
+        "prompt": "Piensa en a quién acudirías en tu Grupo si alguien de la rama te contara algo difícil: primero, y si esa persona estuviera implicada. Escribe sus roles, no sus nombres."
       },
       "quiz": {
-        "title": "Evaluación - A Salvo del Peligro",
+        "title": "Evaluación - Si alguien te cuenta algo",
         "questions": [
           {
             "text": "Al final de una reunión, una niña de la Manada le cuenta al Rover algo que le pasa en casa y le pide que no se lo diga a nadie. ¿Qué es lo más coherente con la política?",
@@ -351,11 +390,11 @@
             "correctIndex": 2
           },
           {
-            "text": "Un nómada de 16 años, con quien estuviste en la Comunidad hace dos años, te escribe al privado para preguntarte por la salida del sábado. ¿Qué es lo más coherente?",
+            "text": "Una scout de la Tropa te cuenta que un dirigente de la rama le escribe de noche por el privado y le pidió no decirle a nadie. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Contestarle en un chat donde también esté el dirigente, no por el privado",
-              "Contestarle por el privado: se conocen de antes y la pregunta es de logística",
-              "Contestarle por el privado y luego mandarle al dirigente un pantallazo"
+              "Avisar al Jefe de Grupo o usar el botón «Me Pongo A Salvo del Peligro»",
+              "Avisarle al jefe de la rama, que es a quien le reportas lo que pasa en la unidad",
+              "Esperar a tener una prueba, como un pantallazo, antes de avisarle a alguien"
             ],
             "correctIndex": 0
           }
@@ -364,7 +403,7 @@
       }
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "Tu primera semana",
       "emoji": "🚀",
       "navLabel": "Primera semana",
@@ -461,20 +500,26 @@
     },
     {
       "id": "achievement-4",
-      "name": "Guardián del Entorno",
+      "name": "Nunca a Solas",
       "emoji": "🛡️",
       "unlockOnModule": 5
     },
     {
       "id": "achievement-5",
+      "name": "Escuchar y Avisar",
+      "emoji": "👂",
+      "unlockOnModule": 6
+    },
+    {
+      "id": "achievement-6",
       "name": "Listo para Servir",
       "emoji": "🚀",
-      "unlockOnModule": 6
+      "unlockOnModule": 7
     }
   ],
   "certificate": {
     "courseName": "SERVIR EN EL GRUPO",
     "description": "ha completado el curso Servir en el Grupo, que prepara al Rover para acordar y prestar un servicio en otra rama de su Grupo Scout, apoyando a sus dirigentes y cuidando a los niños, niñas y jóvenes según la Política A Salvo del Peligro.",
-    "commitmentPrompt": "Escribe tu compromiso: en qué unidad vas a servir, antes de qué fecha vas a conversar con el Jefe de Grupo o con el jefe de la rama (su rol, no su nombre) y cuál de las cinco preguntas del acuerdo vas a llevar resuelta a esa conversación."
+    "commitmentPrompt": "Escribe tu compromiso: en qué unidad vas a servir, antes de qué fecha vas a conversar con el Jefe de Grupo —y después con el jefe de la rama y con tu Clan— (sus roles, no sus nombres) y cuál de las cinco preguntas del acuerdo vas a llevar resuelta a esa primera conversación."
   }
 }

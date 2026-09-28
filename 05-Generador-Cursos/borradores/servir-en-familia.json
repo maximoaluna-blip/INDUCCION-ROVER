@@ -128,7 +128,7 @@
         },
         {
           "type": "paragraph",
-          "text": "El marco simbólico de la Familia de Cachorros es <strong>la Fantasía</strong>, y su ambiente de referencia son los <strong>relatos infantiles</strong>: fábulas, cuentos, poemas, canciones (p. 35–36). En el centro está un capítulo del <em>Libro de las Tierras Vírgenes</em> de Kipling, «Los Hermanos de Mowgli», que la Guía llama «el fundamento simbólico que da identidad, coherencia y profundidad a la Rama Cachorros» (p. 36–37). El lema es <strong>«Siempre Alegres»</strong> y el color, el <strong>naranja</strong> (p. 35–36)."
+          "text": "El marco simbólico de la Familia de Cachorros es <strong>la Fantasía</strong> (p. 35–36). En el centro está «Los Hermanos de Mowgli», un capítulo del <em>Libro de las Tierras Vírgenes</em> de Kipling, que la Guía llama «el fundamento simbólico que da identidad, coherencia y profundidad a la Rama Cachorros» (p. 36–37). El lema es <strong>«Siempre Alegres»</strong> (p. 35)."
         },
         {
           "type": "paragraph",
@@ -415,8 +415,8 @@
             "text": "En plena reunión, un cachorro le pide al Rover que lo lleve al baño y le ayude porque no alcanza a subirse la ropa. ¿Qué es lo coherente con la Guía?",
             "options": [
               "Ir con otro adulto hasta la puerta y avisar a los Viejos Lobos para que llamen a su acudiente",
-              "Entrar con él, pero junto con otro adulto, para que nadie quede a solas con el niño",
-              "Pedirle a un Viejo Lobo que entre a ayudarlo, porque él sí es el adulto a cargo"
+              "Entrar con él, pero junto con otro adulto de la Familia, para que nadie quede a solas con el niño",
+              "Pedirle a un Viejo Lobo que entre a ayudarlo con la ropa, porque él sí es el adulto a cargo"
             ],
             "correctIndex": 0
           },
@@ -424,7 +424,7 @@
             "text": "Termina la reunión y la mamá de un cachorro avisa por mensaje que llegará media hora tarde. ¿Qué es lo coherente con la Guía?",
             "options": [
               "Que dos Rovers esperen con él en la sede, así nunca queda a solas con un adulto",
-              "Que un Rover lo lleve a su casa, ya que queda de camino y es mayor de edad",
+              "Que se vaya caminando a su casa, que queda a una cuadra, si la mamá lo autoriza por mensaje",
               "Que siga con los Viejos Lobos, que lo entregan en persona a su mamá cuando llegue"
             ],
             "correctIndex": 2

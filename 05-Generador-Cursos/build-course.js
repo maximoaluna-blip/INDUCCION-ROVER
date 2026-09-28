@@ -702,6 +702,12 @@ const entry = {
     icon: course.icon,
     duration: course.duration,
     modules: course.modules.length,
+    // Ruta, nivel y rama los declara el JSON del curso y agrupan la portada (ADR-086).
+    // Se copian aqui porque este bloque REESCRIBE la entrada: sin ellos, recompilar un curso
+    // lo sacaria de su ruta.
+    route: course.route || null,
+    level: course.level || null,
+    branch: course.branch || null,
     status: 'active',
     file: course.courseId + '.html',
     // Sin `folder`: nadie lo lee -las dos paginas miran `file` primero- y era el campo

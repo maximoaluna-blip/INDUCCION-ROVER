@@ -41,6 +41,26 @@ html[data-theme="dark"] .section-title {
     border-bottom-color: #ffe675;
 }
 
+/* --- Catalogo por ruta y nivel (ADR-086) --- */
+html[data-theme="dark"] .route-intro {
+    color: #a0a0a8;
+}
+
+html[data-theme="dark"] .level-title {
+    color: #e0d0ff;
+}
+
+html[data-theme="dark"] .branch-filter button {
+    background: transparent;
+    color: #c59bff;
+    border-color: #c59bff;
+}
+
+html[data-theme="dark"] .branch-filter button[aria-pressed="true"] {
+    background: #c59bff;
+    color: #1a1a1f;
+}
+
 /* --- Course cards --- */
 html[data-theme="dark"] .course-card {
     background: #24242c;

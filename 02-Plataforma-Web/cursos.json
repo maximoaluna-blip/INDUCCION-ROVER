@@ -6,6 +6,9 @@
     "icon": "🏕️",
     "duration": "2 horas",
     "modules": 7,
+    "route": "grupo",
+    "level": 1,
+    "branch": null,
     "status": "active",
     "file": "fundamentos-scout.html"
   },
@@ -16,62 +19,10 @@
     "icon": "📖",
     "duration": "2 horas",
     "modules": 7,
+    "route": "grupo",
+    "level": 1,
+    "branch": null,
     "status": "active",
     "file": "caracteristicas-educativas.html"
-  },
-  {
-    "courseId": "primeros-auxilios",
-    "title": "Primeros Auxilios Scout",
-    "description": "Técnicas de primeros auxilios adaptadas para actividades scout. Incluye emergencias en campamentos y actividades al aire libre.",
-    "icon": "🏥",
-    "duration": "3 horas",
-    "modules": 8,
-    "status": "coming-soon",
-    "file": null,
-    "folder": null
-  },
-  {
-    "courseId": "tecnicas-campismo",
-    "title": "Técnicas de Campismo",
-    "description": "Nudos, amarres, construcciones, orientación y supervivencia. Todo lo necesario para actividades al aire libre.",
-    "icon": "⛺",
-    "duration": "3 horas",
-    "modules": 10,
-    "status": "coming-soon",
-    "file": null,
-    "folder": null
-  },
-  {
-    "courseId": "liderazgo",
-    "title": "Liderazgo y Trabajo en Equipo",
-    "description": "Desarrollo de habilidades de liderazgo juvenil, comunicación efectiva y gestión de grupos scout.",
-    "icon": "🎯",
-    "duration": "2 horas",
-    "modules": 6,
-    "status": "coming-soon",
-    "file": null,
-    "folder": null
-  },
-  {
-    "courseId": "pedagogia-scout",
-    "title": "Pedagogía Scout",
-    "description": "Psicología infantil y juvenil, técnicas educativas y manejo de grupos por edades (manada, tropa, comunidad).",
-    "icon": "👥",
-    "duration": "3 horas",
-    "modules": 8,
-    "status": "coming-soon",
-    "file": null,
-    "folder": null
-  },
-  {
-    "courseId": "juegos-dinamicas",
-    "title": "Juegos y Dinámicas Scout",
-    "description": "Banco de juegos, dinámicas de integración, fogatas y actividades lúdicas para cada rama.",
-    "icon": "🎮",
-    "duration": "1.5 horas",
-    "modules": 5,
-    "status": "coming-soon",
-    "file": null,
-    "folder": null
   }
 ]

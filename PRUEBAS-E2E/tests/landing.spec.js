@@ -15,12 +15,12 @@
 //     enlace existía, la tarjeta se pintaba, y detrás no había nada;
 //  4. que un curso `coming-soon` NO se pinte como disponible — Rover tiene cinco.
 //
-// ⚠️ LO QUE ESTA SUITE **NO** COMPRUEBA, Y NO ES UN OLVIDO: la agrupación por nivel. Las otras
-// cuatro líneas agrupan el catálogo por `level`/`levelName`; **Rover no tiene estructura de
-// niveles en ninguno de sus documentos** y queda fuera de esa convención a propósito (ver el
-// `CLAUDE.md` de la raíz, §7-bis.1). La spec heredada de Programa de Jóvenes exigía
-// `.level-section` y fallaba aquí con razón: la línea no es la misma. *Al forquear una suite,
-// lo primero que hay que decidir es qué convenciones NO comparte el destino.*
+// ⚠️ LA AGRUPACIÓN: hasta el 27-sep-2026 Rover no tenía niveles en ninguno de sus documentos, y
+// la spec heredada de Programa de Jóvenes, que exigía `.level-section`, fallaba aquí con razón.
+// Desde el ADR-086 Rover sí los tiene, pero NO son los de las otras líneas: agrupa por RUTA
+// (`route`) y dentro de cada ruta por NIVEL (`level`), con un filtro por RAMA (`branch`). Lo
+// vigila el bloque «landing por ruta y nivel», al final. *Al forquear una suite, lo primero que
+// hay que decidir es qué convenciones NO comparte el destino — y revisarlo cuando el destino cambia.*
 const { test, expect } = require('@playwright/test');
 
 const BASE = process.env.ASC_BASE_URL
@@ -124,6 +124,87 @@ test.describe('@solo-escritorio landing de Rover', () => {
     for (const c of proximos) {
       const enlazado = hrefs.some((h) => h.includes(c.courseId));
       expect(enlazado, `${c.courseId} esta en coming-soon y la landing lo enlaza`).toBe(false);
+    }
+  });
+});
+
+// --- ADR-086: la landing se organiza por RUTA y NIVEL -------------------------------------
+// Desde el 27-sep-2026 Rover es una plataforma de servicio con un tronco comun y dos rutas
+// (spec: docs/superpowers/specs/2026-09-27-rover-ruta-servicio-design.md). Lo de arriba sigue
+// valiendo; esto vigila la estructura nueva, que antes no existia.
+test.describe('@solo-escritorio landing por ruta y nivel (ADR-086)', () => {
+  async function cargar(page) {
+    await page.goto(LANDING, { waitUntil: 'domcontentloaded' });
+    await page.waitForFunction(
+      () => document.querySelectorAll('#coursesGrid .course-card').length > 0,
+      null, { timeout: 15000 });
+  }
+
+  test('el catalogo ya no promete cursos coming-soon', async ({ request }) => {
+    const { proximos } = await activosDelCatalogo(request);
+    expect(proximos.map((c) => c.title), 'cursos prometidos que nunca llegaron').toEqual([]);
+  });
+
+  test('cada curso activo cae en su ruta y su nivel', async ({ page, request }) => {
+    const { activos } = await activosDelCatalogo(request);
+    await cargar(page);
+    for (const c of activos) {
+      expect(c.route, `${c.courseId} sin route en cursos.json`).toBeTruthy();
+      expect(c.level, `${c.courseId} sin level en cursos.json`).toBeTruthy();
+      const tarjeta = page.locator(
+        `.route-section[data-route="${c.route}"] .level-section[data-level="${c.level}"] .course-card`,
+        { hasText: String(c.title).slice(0, 12) });
+      await expect(tarjeta, `${c.courseId} no aparece en ruta ${c.route}, nivel ${c.level}`).toHaveCount(1);
+    }
+  });
+
+  test('no pinta rutas ni niveles vacios', async ({ page }) => {
+    await cargar(page);
+    const vacios = await page.locator('.level-section').evaluateAll(
+      (ls) => ls.filter((l) => !l.querySelector('.course-card')).map((l) => l.dataset.level));
+    expect(vacios).toEqual([]);
+  });
+
+  test('las horas de contenido suman minutos como minutos', async ({ page, request }) => {
+    const { activos } = await activosDelCatalogo(request);
+    const minutos = activos.reduce((s, c) => {
+      const m = String(c.duration || '').match(/([\d.,]+)\s*(h|min)/i);
+      if (!m) return s;
+      const n = parseFloat(m[1].replace(',', '.'));
+      return s + (/^h/i.test(m[2]) ? n * 60 : n);
+    }, 0);
+    await cargar(page);
+    const horas = parseFloat((await page.locator('#statHoras').innerText()).replace(',', '.'));
+    expect(horas).toBeCloseTo(minutos / 60, 0);
+  });
+
+  test('si el catalogo falla, lo dice en vez de quedarse cargando', async ({ page }) => {
+    await page.route('**/cursos.json', (r) => r.fulfill({ status: 500, body: 'x' }));
+    await page.goto(LANDING, { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('#coursesGrid')).toContainText('Error al cargar', { timeout: 15000 });
+  });
+});
+
+// --- ADR-086: una sola portada -------------------------------------------------------------
+// Habia dos: la raiz y la de 2025 en 02-Plataforma-Web/. El ADR-063 mostro que un segundo
+// camino que funciona esconde al primero que no. Y el verificador de certificados enlazaba
+// «Volver a la Plataforma» a pagina-principal-menu-cursos.html EN LA RAIZ, donde nunca
+// existio: 404 en produccion, en la pagina que valida los certificados (27-sep-2026).
+test.describe('@solo-escritorio una sola portada (ADR-086)', () => {
+  test('la portada de 2025 lleva a la raiz', async ({ page }) => {
+    await page.goto(BASE.replace(/\/?$/, '/') + 'pagina-principal-menu-cursos.html');
+    await page.waitForURL((u) => /\/(index\.html)?$/.test(new URL(u).pathname), { timeout: 15000 });
+    await expect(page.locator('#coursesGrid .course-card').first()).toBeVisible({ timeout: 15000 });
+  });
+
+  test('el verificador vuelve a una portada que existe', async ({ page, request }) => {
+    const verif = LANDING.replace(/\/?$/, '/') + 'verificar-certificado.html';
+    await page.goto(verif, { waitUntil: 'domcontentloaded' });
+    const hrefs = await page.locator('a.footer-back').evaluateAll((as) => as.map((a) => a.href));
+    expect(hrefs.length, 'el verificador no tiene enlace de regreso').toBeGreaterThan(0);
+    for (const h of hrefs) {
+      const r = await request.get(h);
+      expect(r.status(), `${h} desde el verificador`).toBeLessThan(400);
     }
   });
 });

@@ -348,6 +348,46 @@
           "default": "¿Qué te mueve a hacer este curso?"
         }
       }
+    },
+    "route": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "tronco",
+        "grupo",
+        "comunidad",
+        null
+      ],
+      "description": "Ruta de servicio en la portada (ADR-086): tronco comun, Servir en el Grupo o Servir en la comunidad."
+    },
+    "level": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "enum": [
+        1,
+        2,
+        3,
+        null
+      ],
+      "description": "Nivel dentro de la ruta: 1 Conocer, 2 Herramientas, 3 Proyecto (ADR-086)."
+    },
+    "branch": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "familia",
+        "manada",
+        "tropa",
+        "comunidad",
+        null
+      ],
+      "description": "Rama donde sirve el Rover, solo para los cursos por rama; null en los comunes (ADR-086)."
     }
   }
 }

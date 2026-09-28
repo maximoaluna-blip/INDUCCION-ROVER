@@ -63,5 +63,18 @@
     "branch": "familia",
     "status": "active",
     "file": "servir-en-familia.html"
+  },
+  {
+    "courseId": "servir-en-manada",
+    "title": "Servir en la Manada",
+    "description": "Para el Rover que va a servir con niños y niñas de 7 a 10 años. En ~35 minutos vas a conocer cómo son a esa edad, cómo se vive la Selva, cómo hablarles con firmeza y ternura, cómo funcionan las seisenas y el Consejo de Roca, y cómo cuidarlos en cada actividad. Basado en la Guía para el Dirigente de Manada (2026).",
+    "icon": "🐺",
+    "duration": "35 minutos",
+    "modules": 6,
+    "route": "grupo",
+    "level": 1,
+    "branch": "manada",
+    "status": "active",
+    "file": "servir-en-manada.html"
   }
 ]

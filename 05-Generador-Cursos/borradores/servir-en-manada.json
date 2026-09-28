@@ -1,0 +1,448 @@
+{
+  "courseId": "servir-en-manada",
+  "title": "Servir en la Manada",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 1 · Manada",
+  "description": "Para el Rover que va a servir con niños y niñas de 7 a 10 años. En ~35 minutos vas a conocer cómo son a esa edad, cómo se vive la Selva, cómo hablarles con firmeza y ternura, cómo funcionan las seisenas y el Consejo de Roca, y cómo cuidarlos en cada actividad. Basado en la Guía para el Dirigente de Manada (2026).",
+  "contentVersion": "2026-09-27",
+  "route": "grupo",
+  "level": 1,
+  "branch": "manada",
+  "registration": {
+    "motivationLabel": "¿Por qué quieres servir en la Manada?"
+  },
+  "icon": "🐺",
+  "duration": "35 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "Llegas el sábado con ganas de ayudar y encuentras veinte lobatos corriendo, preguntando y hablando al tiempo. La primera tentación es pedir silencio y orden. Este curso empieza por mirar eso de otra manera."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>En la Manada, moverse no es desorden: es aprendizaje en acción.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La frase es de la <em>Guía para el Dirigente de Manada</em> de la Asociación (2026), la fuente de este curso. La Manada reúne a niños y niñas de 7 a 10 años, y a sus dirigentes la Guía los llama <strong>Viejos Lobos</strong>."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Este curso no te hace Viejo Lobo: te prepara para apoyar a los Viejos Lobos de la Manada de tu Grupo. Si no has hecho <em>Servir en el Grupo</em>, conviene que lo hagas antes: ahí están lo básico de A Salvo del Peligro y cómo se acuerda tu servicio.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Describir</strong> cómo son los niños y niñas de 7 a 10 años",
+            "<strong>Distinguir</strong> el marco simbólico, el fondo motivador y los elementos propios de la Manada",
+            "<strong>Reformular</strong> una indicación en lenguaje positivo, con firmeza y sin gritos",
+            "<strong>Apoyar</strong> las seisenas y el Consejo de Roca sin quitarles la palabra a los lobatos",
+            "<strong>Aplicar</strong> la estrategia 2+1 y la gestión del riesgo en las actividades"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Cómo son de 7 a 10 años",
+      "emoji": "🧒",
+      "navLabel": "Los Lobatos",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> en la Manada, moverse no es desorden: es aprendizaje en acción. Entender cómo son a esta edad cambia lo que esperas de ellos."
+        },
+        {
+          "type": "paragraph",
+          "text": "Piensa en tu primera reunión en la Manada: nadie se queda quieto, todos preguntan, alguien llora y a los dos minutos está riéndose. Nada de eso es un problema. La Guía de Manada describe así a los lobatos (p. 9–10):"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Un cuerpo que quiere moverse todo el tiempo:</strong> necesitan correr, saltar, trepar; aprenden con el cuerpo tanto como con la mente",
+            "<strong>Una mente curiosa:</strong> preguntan sin parar y aprenden viendo, tocando, probando y repitiendo; «las explicaciones largas suelen perderlos»",
+            "<strong>Un corazón sensible:</strong> pueden pasar de la risa al llanto en minutos y necesitan sentirse aceptados tal como son",
+            "<strong>Una sola hermandad:</strong> los amigos se vuelven muy importantes, y los roces y pequeños conflictos son normales y necesarios"
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> Ante un conflicto entre lobatos, la Guía es clara: el papel del adulto «no es resolver todo por ellos, sino acompañar, mediar cuando haga falta y enseñar con el ejemplo» (p. 10). Y cierra el capítulo con una frase que te incluye: «Tu ejemplo educa mucho más que cualquier explicación» (p. 11)."
+        }
+      ],
+      "reflection": {
+        "prompt": "¿Cómo eras tú de lobato, o qué recuerdas de esa edad? ¿Qué necesitabas de los adultos que te acompañaban, y qué te molestaba de ellos? Sin nombres: basta con lo que hacían."
+      },
+      "quiz": {
+        "title": "Evaluación - Los Lobatos",
+        "questions": [
+          {
+            "text": "Un Rover prepara un juego nuevo y lo explica durante diez minutos con todas sus reglas. A mitad de la explicación, los lobatos ya están distraídos. ¿Qué le diría la Guía de Manada?",
+            "options": [
+              "Que a esta edad aprenden viendo y probando: mejor explicar poco y empezar a jugar",
+              "Que les falta disciplina: hay que exigirles silencio hasta terminar la explicación",
+              "Que el juego no sirve para esta edad y conviene cambiarlo por uno más sencillo"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Dos lobatos discuten a gritos por quién va primero en el juego. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Decidir tú quién va primero, para que el juego siga y no se pierda tiempo",
+              "Acompañarlos para que lleguen a un acuerdo, mediando solo si hace falta",
+              "Sacar a los dos del juego un rato, para que aprendan que pelear no sirve"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: la Selva ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "La Selva y sus símbolos",
+      "emoji": "🌿",
+      "navLabel": "La Selva",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> la Manada vive en la Selva; entrar en ella con respeto, y sin mezclar historias, es parte de tu servicio."
+        },
+        {
+          "type": "paragraph",
+          "text": "Quizá todavía recuerdas la Selva de tu Manada: un nombre, un canto, una ceremonia. Eso que se te quedó es exactamente lo que la Guía llama el marco simbólico."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tres palabras que no son lo mismo"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Marco simbólico:</strong> la <strong>Fantasía</strong> que envuelve toda la vida de la Manada",
+            "<strong>Fondo motivador:</strong> las historias de <em>El Libro de las Tierras Vírgenes</em>, de Rudyard Kipling",
+            "<strong>Ambiente de referencia:</strong> los relatos fantásticos que dan sentido a las experiencias"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Así lo organiza la Guía (p. 30). En el libro, personajes como <strong>Mowgli, Baloo, Bagheera y Akela</strong> «enseñan a través de sus acciones, no de discursos» (p. 30). Y la Manada tiene sus propios elementos: el lema <strong>«Siempre Mejor»</strong>, el color amarillo, el lobo, la Flor Roja, el Libro de Oro y el <strong>Gran Clamor</strong>, que da fuerza a momentos como la investidura (p. 29–32). Su Ley tiene siete puntos, y el primero dice que el Lobato «Escucha y respeta a los demás» (p. 16)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Ojo si vienes de la Familia de Cachorros.</strong> Las dos ramas comparten el libro, pero la Guía establece que la Familia <strong>se reserva</strong> personajes como Raksha, Papá Lobo, Chikai o Ikki (p. 31). En la Manada no se usan: mezclarlos confunde a quienes pasaron de una rama a la otra."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "✨ Lo que sí te toca"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Vivir la historia con ellos: cantar, jugar y hablar dentro de la Selva, sin salirte a explicarla",
+            "Usar los nombres que la Manada usa para sus lugares, personajes y momentos",
+            "Preguntar a los Viejos Lobos antes de dar vida a un personaje o conducir un momento simbólico",
+            "Dejar que el símbolo actúe: la Guía pide no explicarlo en exceso (p. 29)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Son recomendaciones de este curso. Quien da vida al marco simbólico, dice la Guía, es el Viejo Lobo, «un narrador» (p. 58); tú lo acompañas."
+        }
+      ],
+      "reflection": {
+        "prompt": "Recuerda un personaje, un canto o un momento de la Selva de tu Manada. ¿Por qué crees que se te quedó? ¿Qué aprendiste ahí sin que nadie te lo explicara?"
+      },
+      "quiz": {
+        "title": "Evaluación - La Selva",
+        "questions": [
+          {
+            "text": "Un Rover que sirvió un año en la Familia de Cachorros empieza en la Manada y, para entrar en la historia, llama «Raksha» a una de las dirigentes. ¿Qué es lo más coherente con la Guía de Manada?",
+            "options": [
+              "Usarlo sin problema: las dos ramas comparten libro, así que los personajes son comunes",
+              "Usarlo solo en la Familia: la Guía reserva ese personaje para esa rama, no para la Manada",
+              "Explicarles antes a los lobatos de dónde viene el nombre, y después usarlo sin problema"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "En una reunión, un lobato pregunta: «¿la Selva es de verdad?». Según la lección, ¿qué papel tiene El Libro de las Tierras Vírgenes en la Manada?",
+            "options": [
+              "Es el marco simbólico de la rama, y por eso hay que presentarlo como real",
+              "Es un cuento opcional que cada Manada puede usar o dejar según prefiera",
+              "Es el fondo motivador: sus historias dan hilo a la Fantasía que se vive"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: firmeza con ternura ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Firmeza con ternura",
+      "emoji": "💛",
+      "navLabel": "Cómo hablarles",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> poner límites no requiere gritar; a esta edad, lo que funciona es la firmeza con ternura."
+        },
+        {
+          "type": "paragraph",
+          "text": "Seguro lo has visto: un adulto grita «¡no corran!» y nadie se detiene. No es que los lobatos no escuchen: es que un «no» sin alternativa no les dice qué hacer. Moverse es su manera de aprender; lo que necesitan es saber hacia dónde."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "🗣️ Cómo hablarles"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Sencillo y positivo:</strong> frases claras y orientadas a la acción. En lugar de «no corran», «Caminemos juntos para estar seguros»",
+            "<strong>Con apoyo visual y gestual:</strong> dibujos, objetos, dramatizaciones, canciones",
+            "<strong>Escucha emocional:</strong> el tono, los silencios y el cuerpo también comunican",
+            "<strong>Momentos de expresión:</strong> después de una actividad, preguntas simples como «¿Qué fue lo que más te gustó?», «¿Qué aprendimos hoy?», «¿Cómo te sentiste?»"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Así lo propone la Guía (p. 59–60). Y cuando hace falta un límite, la Guía lo llama <strong>firmeza con ternura</strong>: voz tranquila, normas claras y conocidas, consecuencias coherentes y trato respetuoso, construidos «sin gritos, sin humillaciones y sin comparaciones» (p. 58–59)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>En simple:</strong> la ternura no le quita autoridad a un límite; lo vuelve confiable. Si vas a decir «no», di también «mejor así». Y si un lobato se equivoca, recuerda que para la Guía equivocarse es parte natural del aprendizaje (p. 9)."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en una frase en negativo que sueles usar cuando algo sale mal («¡no hagas eso!», «¡quédate quieto!»). ¿Cómo la dirías en positivo, diciendo qué sí hacer?"
+      },
+      "quiz": {
+        "title": "Evaluación - Firmeza con ternura",
+        "questions": [
+          {
+            "text": "Los lobatos corren hacia la calle al salir de la sede. ¿Cuál de estas frases va más con la forma de hablarles que propone la Guía?",
+            "options": [
+              "«¡Que no corran, les dije! ¡Paren ya!»",
+              "«Caminemos juntos hasta la esquina»",
+              "«El que corra no va al próximo paseo»"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Un lobato se burla de otro que perdió en el juego, y el que perdió se pone a llorar. ¿Qué es lo más coherente con la firmeza con ternura?",
+            "options": [
+              "Recordar con voz tranquila la norma de respeto y acompañar al que llora",
+              "Burlarse un poco del que se burló, para que sienta lo que hizo sentir",
+              "Decirle al que llora que no es para tanto, que fue solo un juego"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: seisenas y Consejo de Roca ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Seisenas y Consejo de Roca",
+      "emoji": "🪨",
+      "navLabel": "Seisenas",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> la Manada se organiza en seisenas, pero pertenece como un todo; y en el Consejo de Roca, los lobatos tienen la palabra."
+        },
+        {
+          "type": "paragraph",
+          "text": "En tu Clan, los equipos se arman por proyectos y cada uno decide dónde estar. En la Manada es distinto: las seisenas —grupos de unos seis lobatos— son una herramienta para acompañar mejor a cada niño, no pequeños equipos que compiten. La Guía lo dice con una imagen: «La pertenencia real no está en la seisena: está en la Manada. La seisena ayuda a cuidar el bosque; la Manada es el bosque» (p. 26)."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "En la seisena <strong>no hay líderes fijos</strong>: las funciones rotan y todos pueden guiar y ser guiados (p. 26–27)",
+            "Los lobatos pueden cambiar de seisena, pero <strong>no como forma de huir de un conflicto</strong>: ahí el adulto acompaña para que aprendan a dialogar (p. 26)"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "🪨 El Consejo de Roca"
+        },
+        {
+          "type": "paragraph",
+          "text": "Es el principal espacio donde los lobatos opinan, proponen, evalúan y toman decisiones sencillas. El papel del adulto es «facilitar el diálogo, cuidar el respeto y asegurarte de que todos tengan oportunidad de hablar» (p. 54). Y la Guía aclara el sentido: «El objetivo no es que dirijan la Manada, sino que experimenten su capacidad de aportar» (p. 54)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> En el Consejo de Roca lo difícil suele ser no llenar el silencio ni «mejorar» las ideas de los lobatos. Si hablan siempre los mismos, la Guía te da la pista: asegurarte de que todos tengan oportunidad de hablar. Pregúntale antes al Viejo Lobo cómo participas tú en ese espacio."
+        }
+      ],
+      "reflection": {
+        "prompt": "Recuerda una reunión de tu Clan en la que alguien tardó en hablar o fue ignorado. ¿Qué pasó? ¿Qué harías distinto en un Consejo de Roca? Sin nombres: basta con lo que pasó."
+      },
+      "quiz": {
+        "title": "Evaluación - Seisenas y Consejo de Roca",
+        "questions": [
+          {
+            "text": "Un lobato te pide que lo cambies de seisena porque siempre pelea con un compañero. ¿Qué es lo más coherente con la Guía?",
+            "options": [
+              "Cambiarlo de inmediato: si en su seisena no está bien, lo mejor es moverlo",
+              "Contárselo al Viejo Lobo para que lo acompañen a dialogar antes de moverlo",
+              "Decirle que las seisenas son fijas y que tiene que aprender a aguantarse"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "En el Consejo de Roca hablan siempre los mismos tres lobatos, y el resto calla. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Buscar que todos tengan oportunidad de hablar, invitando a quienes no han hablado",
+              "Dejar que hablen los tres que saben expresarse, porque así se decide más rápido",
+              "Hablar tú por los que callan, proponiendo lo que crees que ellos quieren"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: tu apoyo, paso a paso ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Tu apoyo, paso a paso",
+      "emoji": "🛡️",
+      "navLabel": "Paso a paso",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> en la Manada, cuidar es parte de cada actividad: la estrategia 2+1 y la gestión del riesgo no son trámites, son lo que hace posible la aventura."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía de Manada recoge la <strong>estrategia 2+1</strong> de la Política A Salvo del Peligro: que siempre haya al menos tres personas presentes —dos adultas responsables y una menor de edad, o una adulta y dos menores—, también en las comunicaciones (p. 64). Vale para todos, dirigentes incluidos. Y como viste en <em>Servir en el Grupo</em>, tú no cuentas como uno de los adultos: la proporción que recomienda el <em>Modelo de Aplicación</em> para la Manada es de un adulto por cada 6 lobatos, más el Jefe de Unidad (p. 22), y esa cuenta la hacen los dirigentes."
+        },
+        {
+          "type": "paragraph",
+          "text": "Para reportar, la Guía recuerda el botón <strong>«Me Pongo A Salvo del Peligro»</strong>: virtual en scout.org.co y físico en los códigos QR de los sitios de reunión (p. 64)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "La gestión del riesgo"
+        },
+        {
+          "type": "paragraph",
+          "text": "Antes de cada experiencia, sobre todo en salidas y campamentos, la Guía pide identificar los riesgos, evaluar su probabilidad e impacto, establecer medidas preventivas, definir cómo responder y aprender de lo vivido: «La gestión del riesgo no limita la aventura: la hace responsable» (p. 65)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Una salida, de principio a fin"
+        },
+        {
+          "type": "paragraph",
+          "text": "Antes de la salida al parque, conversas con los Viejos Lobos sobre el plan y te asignan un momento concreto: apoyar el juego de rastreo. Al llegar, el equipo revisa el lugar y acuerda los límites. Durante el juego, cuentas a los lobatos cada vez que cambian de zona. Un lobato se aleja persiguiendo una ardilla: lo llamas con calma y avisas al Viejo Lobo más cercano, sin irte solo con él a buscarla. Al final, participas del momento de expresión: «¿qué fue lo que más te gustó?»."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar vas a escribir tu compromiso. Que sea concreto: «En la Manada voy a ___, y nunca voy a ___»."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>En la Manada, moverse no es desorden: es aprendizaje en acción.</strong><br>¡Siempre Mejor!"
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en la próxima salida de la Manada donde podrías apoyar. ¿Qué riesgo concreto te preocuparía más, y qué medida preventiva propondrías a los Viejos Lobos?"
+      },
+      "quiz": {
+        "title": "Evaluación - Paso a paso",
+        "questions": [
+          {
+            "text": "En una salida, un lobato se aleja del grupo persiguiendo un perro. El Viejo Lobo está con el resto al otro lado del parque. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Ir tú solo tras él y traerlo de vuelta, para no interrumpir la actividad",
+              "Llamarlo con calma y avisar a un Viejo Lobo, sin quedarte a solas con él",
+              "Esperar a que vuelva por su cuenta, porque a esta edad necesita explorar"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Una lobata le escribe al Rover por mensaje privado para preguntarle si el sábado habrá juego de rastreo. ¿Qué es lo más coherente con la estrategia 2+1?",
+            "options": [
+              "Responder en un canal donde estén el Viejo Lobo o su familia",
+              "Responder en privado, porque la pregunta es solo de logística",
+              "Responder en privado y borrar el chat al terminar de hablar"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "La Manada planea una salida con 12 lobatos. Hay un Jefe de Unidad, un Viejo Lobo y un Rover en servicio. Según la proporción que recomienda el Modelo de Aplicación, ¿qué pasa?",
+            "options": [
+              "Están completos: con el Rover suman tres adultos para doce lobatos",
+              "Falta un dirigente: se necesitan dos, más el Jefe de Unidad, sin contar al Rover",
+              "Sobra el Rover: con un Viejo Lobo por cada doce lobatos es suficiente"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Ojos de Lobato",
+      "emoji": "🧒",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Voz de la Selva",
+      "emoji": "🌿",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Firmeza con Ternura",
+      "emoji": "💛",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Todos en el Consejo",
+      "emoji": "🪨",
+      "unlockOnModule": 5
+    },
+    {
+      "id": "achievement-5",
+      "name": "Siempre Mejor",
+      "emoji": "🛡️",
+      "unlockOnModule": 6
+    }
+  ],
+  "certificate": {
+    "courseName": "SERVIR EN LA MANADA",
+    "description": "ha completado el curso Servir en la Manada, que prepara al Rover para apoyar a los Viejos Lobos de su Grupo conociendo a los niños y niñas de 7 a 10 años, su marco simbólico, su forma de aprender, la vida en seisenas y el cuidado en cada actividad.",
+    "commitmentPrompt": "Escribe tu compromiso completando la frase de la última lección: «En la Manada voy a ___, y nunca voy a ___»."
+  }
+}

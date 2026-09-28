@@ -1,122 +1,67 @@
 ---
 name: generate-course
-description: Genera cursos educativos para la plataforma Rover ASC a partir de documentación base (PDFs/MDs). Analiza el contenido, diseña la estructura pedagógica y genera un JSON borrador revisable.
+description: Diseña un curso de la plataforma de servicio Rover (Regional Valle del Cauca) a partir de las fuentes oficiales y lo traduce a un JSON borrador revisable. Público: Rovers de 18 a 20 años que quieren servir.
 ---
 
-# Generador de Cursos - Plataforma Educativa Rover ASC
+# Generador de Cursos — Plataforma de servicio Rover
 
-## Tu Rol
+> Fuente única de esta guía. `.claude/commands/generate-course.md` solo apunta aquí: si cambia algo, se cambia aquí.
+> Reglas de contenido y trampas del repo: `CLAUDE.md` de Rover. Por qué la plataforma es así: ADR-086 y ADR-091/094–096 en `DECISIONES.md` de la raíz.
 
-Eres un diseñador instruccional especializado en educación scout para jóvenes rovers (18-22 años) de la Asociación Scouts de Colombia. Tu tarea es analizar documentación fuente y generar cursos estructurados en formato JSON.
+## Tu rol
 
-## Flujo de Trabajo
+Diseñas cursos para **Rovers de 18 a 20 años** que van a **servir**: en otra rama de su Grupo (Ruta 1, «Servir en el Grupo») o en la comunidad (Ruta 2, Mundo Mejor). El Rover **no es dirigente, no es «sinodal» ni «ayudante», y no cuenta como adulto** en la proporción de la unidad (*Modelo de Aplicación* p. 19 y 22). Los verbos para él son **servir** y **apoyar**; «acompañar» es del dirigente.
 
-### Paso 1: Leer los documentos de entrada
+## Flujo
 
-Lee TODOS los archivos de la carpeta `05-Generador-Cursos/input/`. Pueden ser PDFs o archivos Markdown.
+1. **Plan primero.** El curso tiene que estar en el plan (`docs/superpowers/plans/`) y en la spec (`docs/superpowers/specs/`). Sin nivel acordado no se diseña un curso suelto.
+2. **Fuentes.** Las oficiales están en `DOCUMENTOS BASE/` de la raíz (Guías de Dirigente por rama 2026, *Modelo de Aplicación*, *Política A Salvo del Peligro* dic-2025). En las Guías de rama se citan **las páginas del PDF**, no las del índice impreso.
+3. **Diseño** en `01-Diseno-Cursos/<Id>-<Titulo>.md`: ficha, gancho, objetivos, decisiones de diseño y, por lección, fuentes con página, reflexión y casos del quiz. Mira los de Familia, Manada, Tropa y Comunidad como molde.
+4. **JSON** en `05-Generador-Cursos/borradores/<courseId>.json`, traducción del diseño.
+5. **Build:** `node 05-Generador-Cursos/build-course.js <courseId>` y **leer los avisos** de las compuertas de quiz.
+6. Auditoría doctrinal y pedagógica (con las instrucciones de Rover), correcciones y **re-auditoría de lo corregido**: la segunda vuelta suele cazar defectos traídos al corregir.
 
-### Paso 2: Analizar el contenido
+## Criterios pedagógicos
 
-Evalúa el material y decide:
+- **Lecciones de 5 a 7 minutos**, ~35 min por curso. Una idea central por lección, con **anclaje** en la experiencia del Rover (su Clan, su paso por la rama).
+- **Quizzes de escenario**, no de memoria. Los distractores son **errores reales**, mejor si son reglas verdaderas en otro contexto (lo de R1 que en esa rama no alcanza). Que no gane la opción «prudente», la más larga, la única que empieza distinto ni **la única que nombra al dirigente** (fuga de conjunto).
+- **La última lección evalúa lo que enseña** (gestión del riesgo, proyectos), no repite casos de *Servir en el Grupo* (proporción, chat privado, «va el Rover»).
+- **Reflexiones:** van a la hoja del backend. **Nunca piden nombres de personas ni algo contado en confianza**; fuerzan un caso concreto («escribe, tal cual…»).
+- **Compromiso con fórmula:** «En la ___ voy a ___, y nunca voy a ___», para las primeras cuatro reuniones.
+- **Reglas del curso ≠ normas de la Asociación.** Lo que no tiene fuente literal se declara «recomendación de este curso»; si es una regla protectora sin fuente, **se consulta al dueño**. Y la etiqueta no puede cubrir una obligación que sí es norma (no guardar secretos, Política p. 21).
+- No enseñar técnica scout sin fuente.
 
-1. **¿Cuántos cursos generar?** Si el contenido es muy extenso o cubre temas claramente diferentes, dividirlo en cursos separados.
-2. **¿Cuántos módulos por curso?** Idealmente 6-8 módulos de contenido (sin contar registro, intro y certificado).
-3. **¿Cómo secuenciar el contenido?** De lo general/introductorio a lo específico/avanzado.
-
-### Paso 3: Diseñar cada curso siguiendo estos criterios pedagógicos
-
-- **Público objetivo:** Rovers 18-22 años que quieren ser sinodales/ayudantes en Manada y Tropa
-- **Duración por módulo:** 45-60 minutos de estudio
-- **Lenguaje:** Claro, motivador, adaptado a jóvenes adultos. Tutear al estudiante.
-- **Contenido:** Basado EXCLUSIVAMENTE en la documentación proporcionada. NO inventar datos, cifras o hechos.
-- **Evaluaciones:** Mínimo 2 preguntas por módulo con quiz. Preguntas que evalúen comprensión, no memorización.
-- **Reflexiones:** 1 por módulo. Preguntas abiertas que conecten el contenido con la práctica como sinodal/ayudante.
-- **Logros:** 4-6 achievements distribuidos a lo largo del curso.
-
-### Paso 4: Generar el JSON
-
-Usa el esquema definido en `05-Generador-Cursos/course-schema.json` como referencia.
-Usa `05-Generador-Cursos/course-schema.example.json` como ejemplo de un curso completo.
-
-El JSON debe guardarse en `05-Generador-Cursos/borradores/<courseId>.json`.
-
-### Paso 5: Mostrar resumen al usuario
-
-Al terminar, muestra:
-- Nombre del curso
-- Número de módulos
-- Temas cubiertos por módulo
-- Duración estimada
-- Número de evaluaciones y reflexiones
-- Ruta del archivo generado
-
-## Estructura del JSON de Salida
+## Estructura del JSON
 
 ```json
 {
   "courseId": "kebab-case-id",
-  "title": "Título del Curso",
-  "subtitle": "Formación para Rovers - Sinodales y Ayudantes",
-  "description": "Descripción corta para el catálogo (2-3 oraciones)",
-  "icon": "emoji representativo",
-  "duration": "X horas",
-  "totalContentModules": N,
+  "title": "Título",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 1 · Manada",
+  "description": "Para el catálogo, 2-3 oraciones",
+  "contentVersion": "AAAA-MM-DD",
+  "route": "tronco | grupo | comunidad",
+  "level": 1,
+  "branch": "familia | manada | tropa | comunidad | null",
+  "registration": { "motivationLabel": "¿Por qué quieres servir en…?" },
+  "icon": "emoji",
+  "duration": "35 minutos",
+  "totalContentModules": 5,
   "modules": [
-    {
-      "id": 1,
-      "title": "Título del Módulo",
-      "emoji": "emoji",
-      "navLabel": "Etiqueta corta",
-      "isIntro": true/false,
-      "sections": [
-        { "type": "paragraph|heading|info-box|mission-box|list|timeline|method-grid|blockquote", ... }
-      ],
-      "reflection": { "prompt": "Pregunta de reflexión" },
-      "quiz": {
-        "title": "Evaluación - Tema",
-        "questions": [
-          { "text": "Pregunta", "options": ["A", "B", "C"], "correctIndex": 0 }
-        ],
-        "nextLabel": "Texto del botón siguiente"
-      }
-    }
+    { "id": 1, "title": "Bienvenido/a", "emoji": "🏠", "navLabel": "Inicio", "isIntro": true, "sections": [] },
+    { "id": 2, "title": "…", "emoji": "…", "navLabel": "…", "sections": [],
+      "reflection": { "prompt": "…" },
+      "quiz": { "title": "Evaluación - …", "questions": [ { "text": "…", "options": ["…", "…", "…"], "correctIndex": 0 } ], "nextLabel": "Continuar ➡️" } }
   ],
-  "achievements": [
-    { "id": "achievement-1", "name": "Nombre", "emoji": "emoji", "unlockOnModule": N }
-  ],
-  "certificate": {
-    "courseName": "NOMBRE EN MAYÚSCULAS",
-    "description": "texto descriptivo del certificado"
-  }
+  "achievements": [ { "id": "achievement-1", "name": "…", "emoji": "…", "unlockOnModule": 2 } ],
+  "certificate": { "courseName": "MAYÚSCULAS", "description": "…", "commitmentPrompt": "…" }
 }
 ```
 
-## Tipos de Secciones Disponibles
+- `route`, `level` y `branch` los **copia el build al catálogo**: sin ellos el curso sale de su ruta en la portada.
+- El módulo 1 es la bienvenida (`isIntro: true`, sin quiz). El registro y el certificado los genera el build.
+- `correctIndex` es base 0; el motor **baraja** las opciones. 2 o 3 preguntas por lección: con eso hay que acertarlas todas.
 
-| Tipo | Uso | Campos |
-|------|-----|--------|
-| `paragraph` | Texto normal | `text` (soporta HTML: `<strong>`, `<em>`, `<br>`) |
-| `heading` | Subtítulos | `text`, `level` (3 o 4) |
-| `info-box` | Recuadro azul informativo | `text` |
-| `mission-box` | Recuadro amarillo para misión/visión | `text` |
-| `list` | Lista con viñetas o números | `items` (array de strings), `ordered` (bool) |
-| `timeline` | Línea de tiempo | `items` (array de `{title, description, subitems?}`) |
-| `method-grid` | Grilla de tarjetas | `items` (array de `{title, description, color, borderColor}`) |
-| `blockquote` | Cita destacada | `text` |
+## Tipos de sección (los 10 que dibuja el build)
 
-## Reglas Importantes
-
-1. **El primer módulo (id: 1) siempre debe ser la intro/bienvenida** con `isIntro: true`. No lleva quiz ni badge.
-2. **Los módulos de contenido llevan quiz obligatorio** con mínimo 2 preguntas.
-3. **correctIndex es base 0** (0 = primera opción, 1 = segunda, 2 = tercera).
-4. **NO incluir módulo 0 (registro) ni el último (certificado)** — se generan automáticamente por el builder.
-5. **El achievement con id "achievement-5"** se reserva para "Rover Certificado" y se desbloquea al completar el curso. Marcarlo con `"unlockOnModule": -1`.
-6. **Usar emojis** en títulos de secciones y módulos para hacer el contenido más visual.
-7. **Cada pregunta necesita exactamente 3 o 4 opciones.** Solo una es correcta.
-
-## Después de Generar
-
-Indicarle al usuario que:
-1. Revise y edite el JSON en `05-Generador-Cursos/borradores/`
-2. Cuando esté satisfecho, ejecute: `node 05-Generador-Cursos/build-course.js <courseId>`
-3. El HTML se generará en `02-Plataforma-Web/<courseId>.html`
+`paragraph`, `heading` (`level` 3 o 4), `info-box`, `mission-box`, `blockquote` (cita: `«…»<br><small>— Fuente, p. X</small>`), `list` (`items`, `ordered`), `timeline`, `method-grid`, `course-objectives` (`items`) y `video`. Un tipo sin dibujante **rompe el build**; no inventes otros.

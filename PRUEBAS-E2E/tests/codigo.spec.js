@@ -143,13 +143,33 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
   // --- ADR-086: Rover pasa a plataforma de servicio ----------------------------
   test('el generador no dice sinodal/ayudante ni 18-22 (ADR-086)', () => {
     // «Sinodal» es en las fuentes el experto que ASESORA al joven (Guia de Clan 2018 p. 43;
-    // Buenas Practicas de Tropa 2026 p. 28), no el Rover en servicio; y la Rama Rover es de
+    // Buenas Practicas de Tropa 2023 p. 28), no el Rover en servicio; y la Rama Rover es de
     // 18 a 20 anos (Modelo de Aplicacion 2026 p. 19 y 21), con salida antes de 21 a. 2 m.
     // Lo que el generador escribe a mano lo hereda cada curso: se vigila en la fuente.
     const src = leer(path.join(GEN, 'build-course.js'));
     expect(src).not.toMatch(/sinodal/i);
     expect(src).not.toMatch(/max="22"/);
     expect(src).toMatch(/min="18" max="21"/);
+  });
+
+  test('las guias de autoria no siembran el vocabulario prohibido (ADR-094)', () => {
+    // SKILL.md y el comando /generate-course siguieron pidiendo «sinodales/ayudantes» de
+    // «18-22 anos» un dia entero despues del ADR-086: lo que la guia pide, el curso lo trae.
+    const lex = JSON.parse(leer(path.join(__dirname, '..', 'lexico.json')));
+    const guias = [
+      path.join(GEN, 'SKILL.md'),
+      path.join(REPO, '.claude', 'commands', 'generate-course.md'),
+    ];
+    const fallos = [];
+    for (const f of guias) {
+      const txt = leer(f);
+      if (txt === null) { fallos.push(`${path.basename(f)}: no existe`); continue; }
+      for (const r of lex.prohibido) {
+        const m = txt.match(new RegExp(r.patron, 'i'));
+        if (m) fallos.push(`${path.basename(f)}: «${m[0]}» — ${r.porQue}`);
+      }
+    }
+    expect(fallos, fallos.join('\n')).toEqual([]);
   });
 
   test('ningun texto publicado usa el vocabulario prohibido (ADR-086)', () => {

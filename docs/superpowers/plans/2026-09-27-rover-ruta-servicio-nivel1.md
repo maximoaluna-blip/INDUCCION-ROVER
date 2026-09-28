@@ -1,5 +1,7 @@
 # Rover: Nivel 1 de la Ruta «Servir en el Grupo» — plan de trabajo
 
+> ✅ **Completado el 27-09-2026.** E0 (ADR-086), E1 (ADR-091), E2 Manada (ADR-094), E3 Tropa (ADR-095) y E4 Comunidad (ADR-096), todos publicados. Lo que difirió del plan y por qué está en esos ADR. El backend terminó en `@8`, no en `@7`.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** limpiar Rover de «sinodal» y de «18–22» en producción (E0), y publicar el Nivel 1 de la Ruta 1: S1, R1 y los cuatro R1-rama (E1–E4).

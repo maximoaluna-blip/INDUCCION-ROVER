@@ -22,10 +22,12 @@ El diseño está en `docs/superpowers/specs/2026-09-27-rover-ruta-servicio-desig
 
 ## 3. Cómo se construye un curso aquí
 
+- **Guía de diseño:** `05-Generador-Cursos/SKILL.md`, fuente única (el comando `/generate-course` solo apunta ahí). Trae los criterios de quiz que las auditorías de la Ruta 1 dejaron: la última lección evalúa lo suyo y no repite casos de R1, y ninguna correcta es la única que nombra al dirigente. `codigo.spec` le pasa `lexico.json`.
 - **Diseño primero:** `01-Diseno-Cursos/<Id>-<Titulo>.md`, con fuentes por afirmación. El JSON (`05-Generador-Cursos/borradores/<courseId>.json`) es su traducción. F1 y F2 tienen diseño **reconstruido desde el JSON** (ADR-086).
 - El JSON declara **`route`** (`tronco`, `grupo` o `comunidad`), **`level`** (1 a 3) y **`branch`** (`familia`, `manada`, `tropa`, `comunidad` o `null`), además de `registration.motivationLabel` y `certificate.commitmentPrompt`. `build-course.js` **copia route, level y branch al catálogo**: si se quitan de ahí, recompilar saca el curso de su ruta.
 - Build: `node 05-Generador-Cursos/build-course.js <courseId>`. **Leer los avisos**: las tres compuertas de quiz son copia **tal cual** de las de PJ (ADR-077). No se reescriben, se sincronizan.
-- Auditoría doctrinal y luego pedagógica. La pedagógica se hace con **instrucciones de Rover** en el prompt: el público es un joven de 18 a 20 años, no un adulto con cargo, y se distingue un defecto de una brecha frente al estándar. La definición compartida del auditor no se toca.
+- **Reglas sin fuente literal:** se declaran «recomendación de este curso», y si protegen a alguien se consultan al dueño (ADR-096). La etiqueta no puede cubrir una obligación que sí es norma, como no guardar secretos (Política ASP p. 21).
+- Auditoría doctrinal y luego pedagógica, y **re-auditoría de lo corregido**: en la Ruta 1 la segunda vuelta cazó defectos traídos al corregir. La pedagógica se hace con **instrucciones de Rover** en el prompt: el público es un joven de 18 a 20 años, no un adulto con cargo, y se distingue un defecto de una brecha frente al estándar. La definición compartida del auditor no se toca.
 - La portada es **una sola**: `index.html`. `02-Plataforma-Web/pagina-principal-menu-cursos.html` es una redirección.
 
 ## 4. Técnica y trampas
@@ -37,4 +39,4 @@ El diseño está en `docs/superpowers/specs/2026-09-27-rover-ruta-servicio-desig
 
 ## 5. Estado
 
-Lo publicado se cuenta en `02-Plataforma-Web/cursos.json` y lo que falta en el plan (`docs/superpowers/plans/`). Por qué pasó cada cosa: `DECISIONES.md` de la raíz (ADR-020, 063, 073–077, 082, 084, **086**).
+Lo publicado se cuenta en `02-Plataforma-Web/cursos.json` y lo que falta en el plan (`docs/superpowers/plans/`). Por qué pasó cada cosa: `DECISIONES.md` de la raíz (ADR-020, 063, 073–077, 082, 084, 086, 091, 094–096). La autonomía que dio el dueño cubrió solo el Nivel 1 de la Ruta 1: **el Nivel 2 y la Ruta 2 se consultan antes de abrirse**.

@@ -1,6 +1,6 @@
 # Rover: plataforma de servicio — diseño
 
-**Fecha:** 2026-09-27 · **Estado:** aprobado por el dueño, sección por sección, en la sesión «Curso de inducción Rover» · **ADR:** 086 (entrega E0); cada entrega siguiente reserva el suyo en voz alta.
+**Fecha:** 2026-09-27 · **Estado:** aprobado por el dueño, sección por sección, en la sesión «Curso de inducción Rover». El Nivel 1 de la Ruta 1 se publicó completo el 27-09-2026 (ADR-086, 091, 094–096); el Nivel 2 y la Ruta 2 están sin plan · **ADR:** 086 (entrega E0); cada entrega siguiente reserva el suyo en voz alta.
 
 ## 1. Por qué
 

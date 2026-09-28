@@ -37,19 +37,21 @@ ese build**, más `probar-backend.js`. El backend se intercepta siempre: **ningu
 
 ## Qué hay
 
+El total de pruebas se lee en la salida de cada corrida (la línea `passed`), no aquí: cambia con cada curso.
+
 | Spec | Qué vigila |
 |---|---|
 | `smoke` | Cada curso carga y renderiza |
 | `links` | Ningún enlace roto |
-| `landing` | Una tarjeta por curso activo, **cada enlace resuelve** (el 404 del ADR-063), ningún `coming-soon` enlazado |
+| `landing` | Una tarjeta por curso activo, **cada enlace resuelve** (el 404 del ADR-063), ningún `coming-soon` enlazado; la portada **agrupa por ruta y nivel** con sus títulos exactos, suma las horas y el **filtro de rama** no esconde los cursos comunes (ADR-086, ADR-091) |
 | `a11y` | WCAG AA en todos los módulos, **claro y oscuro** |
 | `responsive` | Sin scroll horizontal en móvil |
-| `persistence` | El tema elegido sobrevive a una recarga |
+| `persistence` | El tema elegido sobrevive a una recarga, y el **compromiso** escrito reaparece al volver al curso (ADR-094) |
 | `feedback-quiz` | Al fallar, se marca en verde **la correcta** (ADR-061) |
 | `certificado-puntuacion` | Todo acertado imprime **100**, no 75 (ADR-065) |
 | `e2e-flujo` | Registro → quizzes → certificado, **y el código no cambia al volver** |
 | `consentimiento` | La casilla de Ley 1581 es **obligatoria** en registro y en recuperar (ADR-081) |
-| `codigo` | Estáticas sobre el HTML compilado: token de **Rover**, certificado idempotente, registro con curso, ADR-061, secciones vacías, tamaño |
+| `codigo` | Estáticas sobre el HTML compilado: token de **Rover**, certificado idempotente, registro con curso, ADR-061, secciones vacías, tamaño; y el **vocabulario prohibido** de `lexico.json` —«sinodal» como cargo del Rover, «18–22»— en la prosa de los cursos, la portada, el catálogo, el generador y los correos del backend (ADR-086), y en las **guías de autoría** (`SKILL.md` y `/generate-course`, ADR-094) |
 | `panel-a11y` | El panel **conectado y con datos**, claro y oscuro — no la pantalla de conexión |
 
 Y fuera de Playwright: `05-Generador-Cursos/probar-backend.js`, la compuerta del backend (19 comprobaciones sin red).
@@ -59,7 +61,6 @@ Y fuera de Playwright: `05-Generador-Cursos/probar-backend.js`, la compuerta del
 - **`portal.spec`** — Rover está **fuera del portal por decisión** (ADR-020).
 - **`e2e-plan-builder`** — Rover no tiene ese tipo de sección: dibuja 10.
 - **`e2e-integracion`** — no hay Apps Script de pruebas para Rover.
-- **La agrupación por nivel de la landing** — Rover no tiene niveles en ninguno de sus documentos.
 - **La mitad de `codigo.spec`** — vigila convenciones del motor compartido (ADR-034, ADR-046) que Rover **nunca adoptó**.
 
 ## Diferencias que importan al copiar pruebas de otra línea
@@ -67,8 +68,8 @@ Y fuera de Playwright: `05-Generador-Cursos/probar-backend.js`, la compuerta del
 Esta suite es un **fork** de la de Programa de Jóvenes del 27-sep-2026. Dos cosas del dominio cambian lo que
 una prueba tiene que hacer:
 
-- **La edad va de 18 a 22** (`min=18 max=22`): Rover forma a Rovers, no a adultos. Una spec que rellene 30 no
-  pasa del registro.
+- **La edad va de 18 a 21** (`min=18 max=21`; la Rama Rover es de 18 a 20 y se sale antes de los 21 años y 2
+  meses, ADR-086): Rover forma a Rovers, no a adultos. Una spec que rellene 30 no pasa del registro.
 - **El token es `ROVER_ASC_2025`**, no el de la plataforma. Si alguna vez un curso de Rover mandara el otro,
   sus datos estarían yendo a la hoja de las otras cuatro líneas — y `codigo.spec` lo caza.
 

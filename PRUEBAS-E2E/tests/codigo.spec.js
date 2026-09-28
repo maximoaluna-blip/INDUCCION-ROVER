@@ -151,4 +151,29 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     expect(src).not.toMatch(/max="22"/);
     expect(src).toMatch(/min="18" max="21"/);
   });
+
+  test('ningun texto publicado usa el vocabulario prohibido (ADR-086)', () => {
+    // Barre la PROSA, no solo el motor: el defecto vivia en los cursos, la portada y los correos.
+    const lex = JSON.parse(leer(path.join(__dirname, '..', 'lexico.json')));
+    const activos = catalogo().filter((c) => c.status === 'active' && c.file);
+    const archivos = [
+      ...activos.map((c) => path.join(WEB, c.file)),
+      path.join(REPO, 'index.html'),
+      path.join(WEB, 'cursos.json'),
+      path.join(GEN, 'apps-script', 'Código.js'),
+    ];
+    const fallos = [];
+    for (const f of archivos) {
+      const crudo = leer(f);
+      if (crudo === null) { fallos.push(`${path.basename(f)}: no existe`); continue; }
+      const txt = crudo
+        .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ')
+        .replace(/<[^>]+>/g, ' ');
+      for (const r of lex.prohibido) {
+        const m = txt.match(new RegExp(r.patron, 'i'));
+        if (m) fallos.push(`${path.basename(f)}: «${m[0]}» — ${r.porQue} En su lugar: ${r.enSuLugar}`);
+      }
+    }
+    expect(fallos, fallos.join('\n')).toEqual([]);
+  });
 });

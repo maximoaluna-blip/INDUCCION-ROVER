@@ -1,0 +1,29 @@
+{
+  "_porQue": "ADR-086. Rover llamaba 'sinodal/ayudante' al Rover en servicio y decia que su publico era de '18-22' anos. En las fuentes el sinodal es el experto que ASESORA al joven (Guia para el Dirigente de Clan 2018 p. 43; Guia de Buenas Practicas para Jefes de Tropa 2026 p. 28; Reglamento de Grupos art. 2.1.3), y la Rama Rover es de 18 a 20 anos (Modelo de Aplicacion PNPJ 2026 p. 19 y 21; Guia de Dirigente de Clan 2026 p. 8).",
+  "_comoFunciona": "codigo.spec.js barre el TEXTO VISIBLE (sin <script> ni <style> ni etiquetas) de cada curso activo del catalogo, de la portada, del catalogo y de los correos del backend, y falla si alguno casa un patron. A diferencia de las otras lineas, aqui SI barre la prosa de los cursos: el defecto vivia en ella.",
+  "linea": "Rover",
+  "plano": "joven (Rover 18-20) en servicio",
+  "_loQueSiEsCorrectoAqui": "'Sinodal' con su sentido documentado -el experto que asesora a un joven, p. ej. en una especialidad- no lo toca ningun patron.",
+  "prohibido": [
+    {
+      "patron": "sinodal(es)?\\s*(/|o|y)\\s*ayudante",
+      "porQue": "Presenta al Rover con un cargo que no tiene.",
+      "enSuLugar": "Rover en servicio / servir en el Grupo"
+    },
+    {
+      "patron": "(como|ser|futuro|futura|el|al|del|para el)\\s+sinodal\\b",
+      "porQue": "El sinodal es quien asesora, no el Rover en servicio.",
+      "enSuLugar": "cuando sirvas en otra rama"
+    },
+    {
+      "patron": "sinodalato",
+      "porQue": "No aparece en ninguna fuente de la ASC.",
+      "enSuLugar": "servicio"
+    },
+    {
+      "patron": "18\\s*(-|–|a)\\s*22\\s*a",
+      "porQue": "La Rama Rover es de 18 a 20 anos.",
+      "enSuLugar": "18 a 20 anos"
+    }
+  ]
+}

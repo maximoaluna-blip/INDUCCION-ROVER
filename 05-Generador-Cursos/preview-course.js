@@ -100,7 +100,7 @@ function buildCoverPage(course) {
             </div>
             <div class="cover-icon">${course.icon}</div>
             <h1 class="cover-title">${course.title}</h1>
-            <p class="cover-subtitle">${course.subtitle || 'Formación para Rovers - Sinodales y Ayudantes'}</p>
+            <p class="cover-subtitle">${course.subtitle || 'Plataforma de servicio Rover · Regional Valle del Cauca'}</p>
             <div class="cover-divider"></div>
             <p class="cover-description">${course.description}</p>
             <div class="cover-meta">
@@ -201,7 +201,7 @@ function buildRegistrationScreen(course) {
                 </div>
                 <div class="header">
                     <h1>${course.icon} ${course.title}</h1>
-                    <p>${course.subtitle || 'Formación para Rovers - Sinodales y Ayudantes'}</p>
+                    <p>${course.subtitle || 'Plataforma de servicio Rover · Regional Valle del Cauca'}</p>
                     <div class="progress-container"><div class="progress-bar" style="width: 0%;"></div><div class="progress-text">0%</div></div>
                 </div>
             </div>
@@ -217,7 +217,7 @@ function buildRegistrationScreen(course) {
                     <div class="form-group"><label>Grupo Scout</label><input type="text" placeholder="Ej: Grupo Scout 25" disabled></div>
                     <div class="form-group"><label>Región/Departamento</label><select disabled><option>Seleccionar...</option>${deptOptions}</select></div>
                     <div class="form-group"><label>Correo Electrónico</label><input type="email" placeholder="Ej: juan.perez@email.com" disabled></div>
-                    <div class="form-group"><label>¿Por qué quieres ser sinodal/ayudante?</label><textarea placeholder="Describe brevemente tu motivación..." disabled></textarea></div>
+                    <div class="form-group"><label>${(course.registration && course.registration.motivationLabel) || '¿Qué te mueve a hacer este curso?'}</label><textarea placeholder="Describe brevemente tu motivación..." disabled></textarea></div>
                     <div style="text-align: center; margin-top: 20px;">
                         <button class="btn" disabled style="font-size: 1.1rem; padding: 15px 30px;">🚀 Comenzar Curso</button>
                     </div>
@@ -302,7 +302,7 @@ function buildModuleScreen(mod, course, contentIndex, totalContent, screenNumber
                 </div>
                 <div class="header">
                     <h1>${course.icon} ${course.title}</h1>
-                    <p>${course.subtitle || 'Formación para Rovers - Sinodales y Ayudantes'}</p>
+                    <p>${course.subtitle || 'Plataforma de servicio Rover · Regional Valle del Cauca'}</p>
                     <div class="progress-container"><div class="progress-bar" style="width: ${progress}%;"></div><div class="progress-text">${progress}%</div></div>
                 </div>
             </div>

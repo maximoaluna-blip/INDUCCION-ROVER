@@ -139,4 +139,16 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     }
     expect(sinCurso).toEqual([]);
   });
+
+  // --- ADR-086: Rover pasa a plataforma de servicio ----------------------------
+  test('el generador no dice sinodal/ayudante ni 18-22 (ADR-086)', () => {
+    // «Sinodal» es en las fuentes el experto que ASESORA al joven (Guia de Clan 2018 p. 43;
+    // Buenas Practicas de Tropa 2026 p. 28), no el Rover en servicio; y la Rama Rover es de
+    // 18 a 20 anos (Modelo de Aplicacion 2026 p. 19 y 21), con salida antes de 21 a. 2 m.
+    // Lo que el generador escribe a mano lo hereda cada curso: se vigila en la fuente.
+    const src = leer(path.join(GEN, 'build-course.js'));
+    expect(src).not.toMatch(/sinodal/i);
+    expect(src).not.toMatch(/max="22"/);
+    expect(src).toMatch(/min="18" max="21"/);
+  });
 });

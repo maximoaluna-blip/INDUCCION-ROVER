@@ -35,7 +35,7 @@
     "subtitle": {
       "type": "string",
       "description": "Subtitulo opcional que aparece debajo del titulo.",
-      "default": "Formacion para Rovers - Sinodales y Ayudantes"
+      "default": "Plataforma de servicio Rover · Regional Valle del Cauca"
     },
     "description": {
       "type": "string",
@@ -122,17 +122,17 @@
                 "type": {
                   "type": "string",
                   "enum": [
-                      "paragraph",
-                      "heading",
-                      "info-box",
-                      "mission-box",
-                      "list",
-                      "timeline",
-                      "method-grid",
-                      "blockquote",
-                      "course-objectives",
-                      "video"
-                    ],
+                    "paragraph",
+                    "heading",
+                    "info-box",
+                    "mission-box",
+                    "list",
+                    "timeline",
+                    "method-grid",
+                    "blockquote",
+                    "course-objectives",
+                    "video"
+                  ],
                   "description": "Tipo de seccion de contenido. Esta lista es EXACTAMENTE lo que el build-course.js de esta linea sabe dibujar: desde el 19-sep-2026 (ADR-066) un tipo sin `case` hace FALLAR el build en vez de imprimir un parrafo vacio. Lo vigila `python verificar-motor.py`."
                 },
                 "text": {
@@ -330,6 +330,22 @@
           "examples": [
             "ha completado exitosamente el curso de Historia y Caracteristicas Esenciales del Movimiento Scout"
           ]
+        },
+        "commitmentPrompt": {
+          "type": "string",
+          "description": "Invitacion al compromiso final. Sin cargo (ADR-086).",
+          "default": "Escribe tu compromiso de servicio:"
+        }
+      }
+    },
+    "registration": {
+      "type": "object",
+      "description": "Textos del formulario de registro propios del curso (ADR-086).",
+      "properties": {
+        "motivationLabel": {
+          "type": "string",
+          "description": "Pregunta de motivacion del registro. Nunca nombra un cargo.",
+          "default": "¿Qué te mueve a hacer este curso?"
         }
       }
     }

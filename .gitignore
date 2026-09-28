@@ -16,3 +16,6 @@
 Thumbs.db
 Desktop.ini
 .claude/scheduled_tasks.lock
+
+# Espacio de trabajo de planes (ledger local, no se publica)
+.superpowers/

@@ -364,7 +364,7 @@ function buildRegistrationModule(course) {
                     </div>
                     <div class="form-group">
                         <label for="age">Edad</label>
-                        <input type="number" id="age" name="age" min="18" max="22" placeholder="Ej: 19">
+                        <input type="number" id="age" name="age" min="18" max="21" placeholder="Ej: 19">
                     </div>
                     <div class="form-group">
                         <label for="group">Grupo Scout</label>
@@ -382,7 +382,7 @@ function buildRegistrationModule(course) {
                         <input type="email" id="email" name="email" placeholder="Ej: juan.perez@email.com">
                     </div>
                     <div class="form-group">
-                        <label for="motivation">¿Por qué quieres ser sinodal/ayudante?</label>
+                        <label for="motivation">${(course.registration && course.registration.motivationLabel) || '¿Qué te mueve a hacer este curso?'}</label>
                         <textarea id="motivation" name="motivation" rows="4" placeholder="Describe brevemente tu motivación..."></textarea>
                     </div>
                     <div class="consent-box">
@@ -532,8 +532,8 @@ function buildCertificateModule(course, certModuleId) {
 
                 <div class="reflection-area">
                     <h4>🎯 Compromiso Personal</h4>
-                    <p>Escribe tu compromiso como rover certificado para servir a las nuevas generaciones scouts:</p>
-                    <textarea id="commitment" placeholder="Mi compromiso como rover scout certificado es..." onchange="saveCommitment(this.value)"></textarea>
+                    <p>${course.certificate.commitmentPrompt || 'Escribe tu compromiso de servicio:'}</p>
+                    <textarea id="commitment" placeholder="Mi compromiso de servicio es..." onchange="saveCommitment(this.value)"></textarea>
                 </div>
             </div>`;
 }
@@ -591,7 +591,7 @@ function buildHTML(course) {
 
     const certificateHtml = buildCertificateModule(course, certModuleId);
 
-    const subtitle = course.subtitle || 'Formación para Rovers - Sinodales y Ayudantes';
+    const subtitle = course.subtitle || 'Plataforma de servicio Rover · Regional Valle del Cauca';
 
     // Determine asset path prefix (courses are deployed in subfolders: courseId/index.html)
     const assetPrefix = '../assets';

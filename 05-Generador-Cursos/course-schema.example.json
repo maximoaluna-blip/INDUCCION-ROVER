@@ -1,10 +1,15 @@
 {
   "courseId": "fundamentos-scout",
   "title": "Fundamentos del Movimiento Scout",
-  "subtitle": "Formación para Rovers - Sinodales y Ayudantes",
-  "description": "Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, misión, método scout y su impacto global. Preparación integral para servir como sinodal o ayudante.",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 1",
+  "description": "Curso completo sobre los fundamentos esenciales del Movimiento Scout: historia, misión, método scout y su impacto global. Base de la ruta para servir en el Grupo, apoyando a las otras ramas.",
+  "contentVersion": "2026-09-27",
+  "route": "grupo",
+  "level": 1,
+  "branch": null,
+  "registration": { "motivationLabel": "¿Por qué quieres servir en otra rama de tu Grupo?" },
   "icon": "🏕️",
-  "duration": "6 horas",
+  "duration": "2 horas",
   "totalContentModules": 6,
   "modules": [
     {
@@ -32,7 +37,7 @@
             "<strong>Dominar las características esenciales</strong> del escultismo",
             "<strong>Entender los 8 elementos</strong> del método scout correctamente",
             "<strong>Fortalecer conceptos educativos</strong> scouts aplicables a niños y niñas",
-            "<strong>Prepararte para ser sinodal/ayudante</strong> en manada y tropa"
+            "<strong>Prepararte para servir en tu Grupo</strong>, apoyando a las otras ramas"
           ]
         }
       ]
@@ -45,7 +50,7 @@
       "sections": [
         {
           "type": "mission-box",
-          "text": "<h3>🌟 MISIÓN DEL MOVIMIENTO SCOUT</h3><blockquote style=\"font-size: 1.1rem; font-style: italic; text-align: center; margin: 20px 0; color: #1a4b6b;\">\"Contribuir a la educación de los jóvenes para que participen en la construcción de un mundo mejor, donde las personas se desarrollen plenamente y jueguen un papel constructivo en la sociedad.\"</blockquote>"
+          "text": "<h3>🌟 MISIÓN DEL MOVIMIENTO SCOUT</h3><blockquote style=\"font-size: 1.1rem; font-style: italic; text-align: center; margin: 20px 0; color: #1a4b6b;\">\"Contribuir a la educación de los jóvenes, mediante un sistema de valores basado en la Promesa y la Ley Scout, para ayudar a construir un mundo mejor donde las personas se sientan realizadas como individuos y asumen un papel constructivo en la sociedad.\"</blockquote>"
         },
         {
           "type": "heading",
@@ -103,7 +108,7 @@
         }
       ],
       "reflection": {
-        "prompt": "¿Cómo aplicarías estos valores al trabajar con niños y niñas en manada o tropa?"
+        "prompt": "¿Cómo aplicarías estos valores al trabajar con los niños, niñas y jóvenes de la rama donde vas a servir?"
       },
       "quiz": {
         "title": "Evaluación - Misión y Propósito",
@@ -111,7 +116,7 @@
           {
             "text": "¿Cuál es el objetivo principal de la misión scout?",
             "options": [
-              "Enseñar técnicas de campamento",
+              "Enseñar técnicas de campamento y supervivencia al aire libre",
               "Contribuir a la educación para construir un mundo mejor",
               "Formar exploradores profesionales"
             ],
@@ -195,7 +200,7 @@
           {
             "text": "¿Qué descubrió Baden-Powell sobre los jóvenes en Mafeking?",
             "options": [
-              "Que necesitan supervisión constante",
+              "Que necesitan que un adulto les indique constantemente qué hacer",
               "Que son capaces de mucho más cuando se les da responsabilidad",
               "Que solo sirven para tareas simples"
             ],
@@ -206,7 +211,7 @@
             "options": [
               "Mensajeros, primeros auxilios, centinelas y apoyo logístico",
               "Solo observadores",
-              "Combatientes armados"
+              "Combatientes armados en la línea de defensa de la ciudad"
             ],
             "correctIndex": 0
           }
@@ -273,7 +278,7 @@
         }
       ],
       "reflection": {
-        "prompt": "¿Qué elementos del campamento de Brownsea implementarías en tus actividades con manada o tropa? ¿Por qué crees que fue tan exitoso?"
+        "prompt": "¿Qué elementos del campamento de Brownsea implementarías en la rama donde vas a servir? ¿Por qué crees que fue tan exitoso?"
       },
       "quiz": {
         "title": "Evaluación - Brownsea Island",
@@ -286,7 +291,7 @@
           {
             "text": "¿Cuál fue una innovación clave del campamento?",
             "options": [
-              "Disciplina militar estricta",
+              "Disciplina militar estricta y jerárquica",
               "Sistema de patrullas con liderazgo juvenil",
               "Clases teóricas intensivas"
             ],
@@ -370,7 +375,7 @@
         "questions": [
           {
             "text": "¿En cuántos países está presente el movimiento scout actualmente?",
-            "options": ["50 países y territorios", "100 países y territorios", "172 países y territorios"],
+            "options": ["50 países", "100 países y territorios", "172 países y territorios"],
             "correctIndex": 2
           },
           {
@@ -390,7 +395,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "El Método Scout es un sistema educativo único que funciona a través de la interacción de 8 elementos esenciales. Como sinodal/ayudante, es fundamental que comprendas cómo aplicar cada uno."
+          "text": "El Método Scout es un sistema educativo único que funciona a través de la interacción de 8 elementos esenciales. Cuando sirvas en otra rama, es fundamental que comprendas cómo se aplica cada uno."
         },
         {
           "type": "method-grid",
@@ -416,7 +421,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>💡 Para el Sinodal/Ayudante:</strong><br>Al trabajar con manada o tropa, debes aplicar TODOS estos elementos de manera equilibrada. Por ejemplo:<br>• En manada: el marco simbólico de La Fantasía, con El Libro de las Tierras Vírgenes como fondo motivador + sistema de seisenas + progresión por insignias<br>• En tropa: Mayor énfasis en el sistema de patrullas + vida al aire libre + servicio comunitario"
+          "text": "<strong>💡 Para el Rover en servicio:</strong><br>Al apoyar en una rama, verás que el Método funciona cuando TODOS estos elementos actúan de manera equilibrada a lo largo del tiempo, aunque en cada actividad unos se noten más que otros. Por ejemplo:<br>• En manada: el marco simbólico de La Fantasía, con El Libro de las Tierras Vírgenes como fondo motivador + sistema de seisenas + progresión por insignias<br>• En tropa: Mayor énfasis en el sistema de patrullas + vida al aire libre + servicio comunitario"
         }
       ],
       "reflection": {
@@ -516,7 +521,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Como futuro sinodal/ayudante, ¿cómo contribuirás al impacto positivo del escultismo? ¿Qué legado quieres dejar en los niños y niñas que acompañarás?"
+        "prompt": "Cuando sirvas en otra rama de tu Grupo, ¿cómo contribuirás al impacto positivo del escultismo? ¿Qué legado quieres dejar en los niños, niñas y jóvenes con quienes vas a compartir?"
       },
       "quiz": {
         "title": "Evaluación Final - Impacto Global",
@@ -529,7 +534,7 @@
           {
             "text": "¿Cuál es una contribución importante del escultismo?",
             "options": [
-              "Solo actividades recreativas",
+              "Solo actividades recreativas al aire libre",
               "Construcción de paz y servicio comunitario",
               "Únicamente campamentos"
             ],
@@ -549,6 +554,6 @@
   ],
   "certificate": {
     "courseName": "FUNDAMENTOS DEL MOVIMIENTO SCOUT",
-    "description": "ha completado exitosamente el curso de Historia y Características Esenciales del Movimiento Scout, demostrando comprensión profunda de los fundamentos necesarios para servir como sinodal/ayudante en las ramas de manada y tropa."
+    "description": "ha completado exitosamente el curso Fundamentos del Movimiento Scout, demostrando comprensión de su historia y de sus características esenciales, base para servir en su Grupo Scout."
   }
 }

@@ -63,14 +63,14 @@ Cita literal de la Guía, p. 42. Para un casi par es la tensión central: ni ami
 - **El hueco, dicho:** la técnica no está en la Guía; el curso no la enseña.
 - **Quiz (3):** la limpieza de la quebrada «porque siempre se hace» (preguntar qué quieren cambiar); el trimestre sin salidas (explorar un parque del barrio; distractor: aplazarlo a un reto de Tribu Tierra); y la brújula que aprendiste en tu Tropa (contarlo como experiencia, fuente y revisión del dirigente). El ejemplo de la lección es otro (la torre de pionerismo). La Guía **propone para la rama** dos iniciativas del Marco (el *Modelo* 2026 tiene cuatro).
 
-### 4 · Presencia y distancia (~6 min)
+### 4 · Presencia y distancia (~7 min)
 - **Fuentes:** coherencia, cumplir lo prometido, «de jóvenes, apoyado por adultos», el poder (p. 42); las tres preguntas y vivir las consecuencias (p. 40); conversación personal con dos adultos (p. 42); familias (p. 43).
 - **¿Hablo o me callo?** (recomendación del curso): ¿qué cuesta el error? Tiempo, orgullo o una idea que no funcionó → callar; seguridad, alguien por fuera o humillado → hablar en el momento. Con el gancho como cita.
-- **Quiz (3):** el nómada que, delante de su Equipo, pregunta «¿tú qué harías?» (las tres preguntas); el nómada decaído (contárselo al dirigente, que arme la conversación con otro adulto; distractores: a la vista de todos, con otro Rover —que no cuenta como adulto—); y la burla en una reunión de la Comunidad (hablar en el momento; en el Congreso el Rover no tiene voz propia, Guía p. 16).
+- **Quiz (3):** el nómada que, delante de su Equipo, pregunta «¿tú qué harías?» (las tres preguntas); el nómada decaído (contárselo al dirigente, que arme la conversación con otro adulto; distractores: a la vista de todos, ofrecerse de segundo adulto —el Rover no cuenta como adulto—); y la burla en una reunión de la Comunidad (hablar en el momento; en el Congreso el Rover no tiene voz propia, Guía p. 16).
 
 ### 5 · Cuidar: lo que oyes y lo que haces (~7 min)
 - **Fuentes:** entorno seguro (Guía de Comunidad p. 46); señales (*Guía de Prevención* pp. 24-27); PAP (pp. 20-22); Política pp. 21, 29 y 44; peligro inmediato (p. 27).
-- **Quiz (2):** un mes después de contarlo, el nómada falta tres reuniones sin razón (reportar por el botón y contarle al dirigente lo nuevo; distractor: «ya se lo conté»); y el mensaje de despedida a medianoche (Policía o centro de salud de una vez, y enseguida el dirigente; distractores: que decida el dirigente, llamarla y esperar a la mañana).
+- **Quiz (2):** un mes después de contarlo, el nómada falta tres reuniones sin razón (reportar por el botón y contarle al dirigente lo nuevo; distractores: que el dirigente decida si usar el botón, preguntarle al nómada); y el mensaje de despedida a medianoche (Policía o centro de salud de una vez, y enseguida el dirigente; distractores: que decida el dirigente, llamarla y esperar a la mañana).
 
 ### 6 · Arma tu kit (~12 min)
 - **`kit-builder`:** 7 dinámicas con fuente (pp. 13, 23, 25-26, 40); 4 situaciones (dinámica «para los de Tropa», la promesa olvidada, la evaluación de «todo bien», las ramas vivas para la fogata); 5 normas fijas y 3 puntos a elegir.

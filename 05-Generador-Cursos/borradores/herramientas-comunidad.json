@@ -106,7 +106,7 @@
         "title": "Evaluación - Dinámicas",
         "questions": [
           {
-            "text": "Arrancas un juego de roles sobre una negociación entre dos pueblos. A los cinco minutos se desarma: nadie sabe qué le toca y cada Equipo juega con reglas distintas. ¿Qué es lo más coherente con la lección?",
+            "text": "Arrancas un juego de roles sobre una negociación entre dos pueblos. A los cinco minutos, dos Equipos discuten porque cada uno entendió un objetivo distinto, y a tres nómadas nadie les dio papel. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Pararlo, aclarar las reglas y el papel de cada uno, y volver a empezar",
               "Dejar que sigan improvisando, que a esta edad ya saben organizarse por su cuenta",
@@ -143,7 +143,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Lo que la Guía no trae.</strong> La Guía de Comunidad nombra estas técnicas, pero no las enseña: no dice cómo levantar una torre de pionerismo ni cómo navegar. Este curso tampoco. Si el Equipo quiere usar una técnica en un reto real, que la busque en una fuente confiable y que el dirigente la revise antes. Si tú sabes del tema, cuéntalo como lo que es: tu experiencia, no la norma. Es una recomendación de este curso."
+          "text": "<strong>Lo que la Guía no trae.</strong> La Guía de Comunidad nombra estas técnicas, pero no las enseña: no dice cómo levantar una torre de pionerismo ni cómo armar un campamento. Este curso tampoco. Si el Equipo quiere usar una técnica en un reto real, que la busque en una fuente confiable y que el dirigente la revise antes. Si tú sabes del tema, cuéntalo como lo que es: tu experiencia, no la norma. Es una recomendación de este curso."
         },
         {
           "type": "heading",
@@ -188,7 +188,7 @@
             "options": [
               "Contar lo aprendido como experiencia, y que busquen una fuente que revise el dirigente",
               "Enseñarles a usar la brújula esa tarde, y avisarle al dirigente cuando ya la manejen bien",
-              "Decirles que eso no se enseña aquí: la Guía de Comunidad no trae cómo navegar con brújula"
+              "Decirles que eso no se enseña aquí: la Guía de Comunidad no trae la técnica para navegar"
             ],
             "correctIndex": 0
           }
@@ -204,7 +204,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> a veces apoyas proponiendo, a veces callando; y lo que te da autoridad es la coherencia, no el mando."
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> a veces apoyas proponiendo, a veces callando; y lo que te da autoridad es la coherencia, no el mando."
         },
         {
           "type": "paragraph",
@@ -234,7 +234,7 @@
         },
         {
           "type": "paragraph",
-          "text": "La Guía no trae una regla para saber cuál toca; este curso te propone una pregunta: <strong>¿qué cuesta el error?</strong> Si lo que se pierde es tiempo, orgullo o una idea que no funcionó, calla y deja que lo vivan: la Guía pide que vivan sus consecuencias «incluso si no son perfectas» (p. 40). Si está en juego la seguridad de alguien, o que alguien quede por fuera o humillado, habla en ese momento, con calma, y deja en sus manos el resto de la decisión. Es una recomendación de este curso."
+          "text": "La Guía no trae una regla para saber cuál toca; este curso te propone una pregunta: <strong>¿qué cuesta el error?</strong> Si lo que se pierde es tiempo, orgullo o una idea que no funcionó, calla y deja que lo vivan. Si está en juego la seguridad de alguien, o que alguien quede por fuera o humillado, habla en ese momento, con calma, y deja en sus manos el resto de la decisión. Es una recomendación de este curso."
         },
         {
           "type": "heading",
@@ -251,7 +251,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Recuerda un momento, en una actividad, en que alguien mayor se quedó callado y te dejó encontrar la respuesta. ¿Qué te enseñó eso para tu servicio en la Comunidad? Sin nombres."
+        "prompt": "Recuerda un momento, en una actividad, en que alguien mayor se quedó callado y te dejó encontrar la respuesta. ¿Qué costaba el error esa vez, y en qué situación de la Comunidad callarías tú igual? Sin nombres."
       },
       "quiz": {
         "title": "Evaluación - Presencia y distancia",
@@ -269,7 +269,7 @@
             "text": "Al final de la reunión notas a un nómada muy decaído y quieres hablar con él de lo que le pasa. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Hablar con él en un rincón de la sede, a la vista de todos, y luego contarle al dirigente",
-              "Pedirle a otro Rover que se quede contigo, y hablar los dos con él antes de que se vaya",
+              "Contarle al dirigente lo que notaste, y ofrecerte de segundo adulto en esa charla",
               "Contarle al dirigente lo que notaste, y que él arme esa conversación con otro adulto"
             ],
             "correctIndex": 2
@@ -279,7 +279,7 @@
             "options": [
               "Decir en ese momento que aquí se escucha a todos, y dejar que el nómada termine",
               "Callar para no quitarles la reunión, y preguntarles en la evaluación cómo se sintió cada uno",
-              "Dejar que la reunión siga, y contarle al dirigente al final, y que él hable con el Equipo"
+              "Dejar que siga la reunión, y al final pedirle al dirigente que hable con el Equipo"
             ],
             "correctIndex": 0
           }
@@ -325,7 +325,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Los primeros auxilios psicológicos no son solo para profesionales (<em>Guía de Prevención</em>, p. 20). Lo esencial te sirve cuando un nómada está angustiado: no presionarlo para que cuente, no interrumpirlo, no juzgar lo que siente, y ser honesto con lo que no sabes: «No lo sé, pero intentaré averiguárselo» (p. 22). Hazlo a la vista de otros, nunca a solas. Y conoce tu límite (p. 21): si te supera, busca de una vez al dirigente. Esto es para el momento de la crisis, no para que abras tú una conversación personal con él: esa, como viste, la organiza el dirigente con otro adulto."
+          "text": "Los primeros auxilios psicológicos no son solo para profesionales (<em>Guía de Prevención</em>, p. 20). Lo esencial te sirve cuando un nómada está angustiado: no presionarlo para que cuente, no interrumpirlo, no juzgar lo que siente, y ser honesto con lo que no sabes: «No lo sé, pero intentaré averiguárselo» (p. 22). Esto es acompañarlo en el momento de la crisis, no la conversación personal de la lección anterior: hazlo a la vista de otros, nunca a solas, y cuéntaselo al dirigente apenas puedas, aunque ya se haya calmado. Y conoce tu límite (p. 21): si te supera, búscalo de una vez. Contárselo siempre es una recomendación de este curso."
         }
       ],
       "reflection": {
@@ -338,8 +338,8 @@
             "text": "Hace un mes le contaste al dirigente que un nómada dijo, medio en broma, que «en la casa es peor». Desde entonces ha faltado a tres reuniones sin dar razón, y nadie te ha comentado nada. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Reportar con el botón de la Asociación lo que has visto, y contarle al dirigente lo nuevo",
-              "Esperar: ya se lo contaste al dirigente, y lo que sigue ahora le toca a él y a nadie más",
-              "Escribirle al nómada para saber cómo está en su casa, y usar el botón si te cuenta algo"
+              "Contarle al dirigente lo nuevo, y dejar que él decida si hace falta usar el botón",
+              "Preguntarle al nómada qué pasa en su casa, y usar el botón si te cuenta algo"
             ],
             "correctIndex": 0
           },
@@ -347,7 +347,7 @@
             "text": "Pasada la medianoche, en el chat de la Comunidad, una nómada escribe que ya se despidió de todos y que esta noche se acaba todo. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Llamar de una vez a la Policía o al centro de salud, y enseguida contárselo al dirigente",
-              "Avisar de una vez al dirigente, y que él decida si hace falta llamar a la Policía",
+              "Avisarle de una vez al dirigente, para que él llame enseguida a la Policía o al centro de salud",
               "Llamarla para escucharla sin presionar hasta que se calme, y en la mañana contarle al dirigente"
             ],
             "correctIndex": 0
@@ -524,7 +524,7 @@
           {
             "text": "El proyecto de la huerta del colegio no salió: se secó a mitad de camino y el Equipo está desanimado. ¿Qué es lo más coherente con todo el curso?",
             "options": [
-              "Contarles qué falló y qué harían distinto, con la experiencia que tienes",
+              "Preguntarles si quieren intentarlo otra vez, y que el Equipo elija qué sigue",
               "Celebrar con un ritual lo que sí lograron, y dejar la evaluación para cuando estén animados",
               "Proponerles un semáforo: qué decidieron, qué funcionó y qué harían distinto"
             ],

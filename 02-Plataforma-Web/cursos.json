@@ -128,5 +128,18 @@
     "branch": "manada",
     "status": "active",
     "file": "herramientas-manada.html"
+  },
+  {
+    "courseId": "herramientas-tropa",
+    "title": "Herramientas para la Tropa",
+    "description": "Para el Rover que ya sirve en la Tropa y quiere hacerlo mejor. En unos 40 minutos vas a aprender a proponer juegos que reten a adolescentes, a acompañar el aprendizaje de la técnica scout y a asesorar una especialidad, a dar retroalimentación que construye y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía de Dirigente de Tropa (2026).",
+    "icon": "🧰",
+    "duration": "40 minutos",
+    "modules": 6,
+    "route": "grupo",
+    "level": 2,
+    "branch": "tropa",
+    "status": "active",
+    "file": "herramientas-tropa.html"
   }
 ]

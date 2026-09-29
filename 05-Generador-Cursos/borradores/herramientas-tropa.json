@@ -1,0 +1,562 @@
+{
+  "courseId": "herramientas-tropa",
+  "title": "Herramientas para la Tropa",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 2 · Tropa",
+  "description": "Para el Rover que ya sirve en la Tropa y quiere hacerlo mejor. En unos 40 minutos vas a aprender a proponer juegos que reten a adolescentes, a acompañar el aprendizaje de la técnica scout y a asesorar una especialidad, a dar retroalimentación que construye y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía de Dirigente de Tropa (2026).",
+  "contentVersion": "2026-09-28",
+  "route": "grupo",
+  "level": 2,
+  "branch": "tropa",
+  "registration": {
+    "motivationLabel": "¿Qué quieres mejorar de tu servicio en la Tropa?"
+  },
+  "icon": "🧰",
+  "duration": "40 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "Ya conoces la Tropa: cómo son de 11 a 14 años, la patrulla que es de ellos, la Aventura y la frontera de quien sirve. Ahora te piden algo más: que propongas un juego, que ayudes con la carpa, que acompañes una especialidad. Este curso es para eso."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Lo importante no es darles todas las respuestas, sino enseñarles a buscar soluciones, evaluar opciones y aprender de los errores.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La frase es de la <em>Guía de Dirigente de Tropa</em> de la Asociación (2026, p. 14), la fuente principal de este curso; se la dice al dirigente, y vale igual para ti. Las otras son el <em>Manual de Especialidades para Tropa</em> (2019), la <em>Política Nacional A Salvo del Peligro</em> (2025) y la <em>Guía de Prevención y Atención del Daño</em> (2021)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Este es un curso del Nivel 2: da por sabido lo del curso <em>Servir en la Tropa</em>, así que conviene que lo hagas antes. Aquí no se repite: se usa y se va más allá.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta. En la última lección armas tu kit y lo descargas: se queda en tu navegador, no va a ninguna hoja."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Proponer y ajustar</strong> un juego que rete a adolescentes, con reglas que ellos puedan modificar",
+            "<strong>Acompañar</strong> el aprendizaje de la técnica sin hacerlo por ellos ni dejarlos solos, y <strong>asesorar</strong> una especialidad por la vía que fija el Manual",
+            "<strong>Dar retroalimentación</strong> que reconozca el esfuerzo y convierta el error en mejora",
+            "<strong>Reconocer</strong> señales de alerta y <strong>responder</strong> sin investigar",
+            "<strong>Armar</strong> tu kit: tres juegos con su porqué, tus frases y tu lista de cuidado"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Juegos que retan",
+      "emoji": "🎲",
+      "navLabel": "Juegos",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> a esta edad el juego tiene que retarlos y tratarlos como adolescentes; y las reglas también pueden ser de ellos."
+        },
+        {
+          "type": "paragraph",
+          "text": "Quizá propusiste un juego que te encantaba de lobato y la patrulla puso cara de «esto es de niños». No es rebeldía: la Guía explica que a esta edad pueden considerar «infantiles» algunos juegos de la infancia, pero siguen valorando los que incluyen competencia, les dejan demostrar habilidades, tienen desafíos intelectuales, facilitan la interacción y conectan con sus intereses (p. 25)."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Tipos que funcionan:</strong> estrategia y resolución de problemas, roles y simulación, cooperativos con elementos competitivos —colaboran en la patrulla y compiten contra el reloj o su propia marca—, y los que incorporan tecnología (p. 25). Y «los juegos con claves les encantarán» (p. 14)",
+            "<strong>Cómo facilitarlos:</strong> tratar a los scouts «como adolescentes, no como niños», dejar que modifiquen reglas y tomen decisiones durante el juego, conectar con objetivos claros y facilitar la reflexión (p. 25)"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Cuando el juego no funciona"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>«Esto es de niños»:</strong> súbele el reto —una clave, una estrategia, un tiempo— y deja que la patrulla lo ajuste (p. 25)",
+            "<strong>La competencia se vuelve burla:</strong> cambia a un juego cooperativo con elementos competitivos, donde colaboran y compiten contra el reloj o contra su propia marca (p. 25)",
+            "<strong>Quieren cambiar las reglas:</strong> déjalos, si todos lo acuerdan; decidir y asumir las consecuencias también es aprender (p. 15)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Estos ajustes son una recomendación de este curso, tomada de lo que la Guía pide. Llévalos al dirigente cuando le propongas el juego: él decide si entra en la reunión."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en un juego que te gustaba a los 12 o 13 años. ¿Qué tenía que te retaba? ¿Cómo lo adaptarías para que una patrulla de hoy lo sienta como un desafío y no como un juego de niños? Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Juegos",
+        "questions": [
+          {
+            "text": "En un juego de roles, la patrulla Pumas gana y se burla de la patrulla que perdió, que ya no quiere jugar la segunda ronda. ¿Qué ajuste va mejor con lo que pide la Guía?",
+            "options": [
+              "Convertir la segunda ronda en un reto que las dos patrullas vencen juntas al reloj",
+              "Dejar que la patrulla que perdió ajuste a su gusto las reglas de la segunda ronda",
+              "Repetir la ronda igual, y hablarles antes a los Pumas sobre cómo se gana bien"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Termina un juego de estrategia muy reñido y el dirigente te pide cerrar el momento. ¿Qué va más con lo que pide la Guía?",
+            "options": [
+              "Dar una charla corta sobre lo que el juego les quería enseñar del trabajo en equipo",
+              "Pasar a la siguiente actividad mientras todavía tienen la emoción del juego",
+              "Preguntarles qué estrategia les funcionó y qué harían distinto la próxima vez"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: la técnica ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Técnica: aprender haciendo",
+      "emoji": "🏕️",
+      "navLabel": "Técnica",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> la técnica se aprende haciéndola; tu papel es que la patrulla la logre, no hacerla por ella ni dejarla sola."
+        },
+        {
+          "type": "paragraph",
+          "text": "En la Tropa, la Guía le dedica a la técnica scout un apartado propio. Para ella, la naturaleza es un laboratorio donde el scout «aprende a cocinar, a armar su carpa, a orientarse con una brújula» (p. 33), y propone estas <strong>habilidades de vida al aire libre</strong> (pp. 33-34):"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Campismo básico:</strong> armar un campamento, elegir un buen lugar, mantener el orden y la seguridad",
+            "<strong>Orientación y exploración:</strong> leer un mapa, usar la brújula, seguir pistas y diseñar recorridos",
+            "<strong>Cocina al aire libre:</strong> preparar alimentos para la patrulla, cuidar la higiene y administrar recursos",
+            "<strong>Nudos y amarras</strong>, desde lo más sencillo hasta estructuras para el campamento",
+            "<strong>Primeros auxilios y seguridad:</strong> prevenir accidentes, actuar ante emergencias, cuidarse y cuidar a otros"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Y aclara para qué: «El verdadero valor de estas técnicas está en lo que enseñan: autonomía, trabajo en equipo, confianza, creatividad y responsabilidad» (p. 34). Por eso la Guía pide «acompañar sin sobreproteger, permitiendo el aprendizaje a través de errores» (p. 26), y campamentos de bajo impacto, que dejen «el lugar mejor de como lo encontramos» (p. 34)."
+        },
+        {
+          "type": "blockquote",
+          "text": "«Lo importante no es darles todas las respuestas, sino enseñarles a buscar soluciones, evaluar opciones y aprender de los errores.»<br><small>— Guía de Dirigente de Tropa, ASC, 2026, p. 14</small>"
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> Si sabes hacer un amarre y la patrulla no, no lo hagas tú: muéstralo una vez, deja que lo intenten y pregunta antes de corregir. Y antes de intervenir, mide cuánto cuesta el error. Si es barato —nadie corre riesgo y se arregla después, como una cocina mal ubicada o un nudo que se suelta en la práctica—, déjalos equivocarse y conversen al evaluar: la Guía pide permitir el aprendizaje a través de errores (p. 26). Si toca su salud o su seguridad —una carpa floja con lluvia en la noche—, no esperes a que falle: haz ya una pregunta que les deje ver el problema y, si no lo ven, avisa al dirigente; en campismo también cuenta la seguridad (p. 33). Este criterio es una recomendación de este curso. Los nudos y las técnicas están en la <em>Bitácora Scout</em> de la Tropa; este curso no los enseña, enseña a acompañar."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Acompañar una especialidad"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ya viste en <em>Servir en la Tropa</em> que el camino de una especialidad lo recorre el scout. El <em>Manual de Especialidades para Tropa</em> dice que, entre quienes pueden asesorarla, están los «Hermanos Scouts mayores o de otras ramas que ya sean especialista» en el tema (p. 6). A esa persona el Manual la llama sinodal, como viste en el Nivel 1: arma con el scout las tareas y los tiempos, lo asesora y certifica la especialidad (p. 5). No es un cargo: es una tarea puntual, si sabes del tema y el scout se lo informa a su Jefe de Tropa (pp. 5-6)."
+        },
+        {
+          "type": "paragraph",
+          "text": "El plan de trabajo tiene tres fases (p. 6), y cada una te dice qué hacer:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Descubrir</strong> —el scout «investiga»—: le ayudas a armar sus preguntas y a ver dónde buscar; no le das el resumen",
+            "<strong>Experimentar</strong> —aplica lo investigado «mediante acciones concretas»—: lo hace él, contigo al lado; tú observas y preguntas",
+            "<strong>Compartir</strong> —pone lo que sabe «al servicio de los demás»—: le ayudas a preparar cómo se lo enseña a su patrulla"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Lo que te toca en cada fase es una recomendación de este curso."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en un error que viste cometer a una patrulla —o a la tuya, cuando eras scout— en una técnica. ¿Era un error barato o tocaba su seguridad? Escribe qué harías hoy: dejarlos equivocarse o hacer una pregunta a tiempo, y por qué. Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Técnica",
+        "questions": [
+          {
+            "text": "En el campamento de patrulla ves que la carpa quedó con el techo flojo, y en la noche anuncian lluvia. La patrulla ya se fue a cocinar. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Ir a la cocina y preguntarle al guía cómo creen que aguanta ese techo si llueve",
+              "Tensar el techo mientras ellos cocinan, y contarles después qué le ajustaste",
+              "Esperar a que llueva y, si se mojan, conversar con ellos sobre cómo la armaron"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Al mediodía, la patrulla montó su rincón de cocina lejos del agua: te parece que van a caminar de más toda la tarde, pero nadie corre ningún riesgo. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Dejar que cocinen allí y, al evaluar la tarde, preguntarles qué moverían",
+              "Preguntarles ahora si ese es el mejor sitio, y que decidan ellos si lo mueven",
+              "Pedirle al guía que muevan el rincón ya, antes de que empiecen a cocinar"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Asesoras a un scout en su especialidad de campismo, con el visto bueno del Jefe de Tropa. Está en Descubrir y te dice: «Mejor cuéntame tú todo y así avanzo más rápido». ¿Qué es lo más coherente con el Manual?",
+            "options": [
+              "Sentarte con él a armar sus preguntas y ver dónde buscar, y que él investigue",
+              "Contarle en una tarde lo que sabes del tema, y que él lo practique al acampar",
+              "Proponerle pasar ya a Experimentar, y que vaya investigando mientras acampa"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: hablar para que crezcan ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Hablar para que crezcan",
+      "emoji": "💬",
+      "navLabel": "Hablar",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> un error bien conversado enseña; uno señalado delante de todos, humilla."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ya sabes escuchar más de lo que hablas. El siguiente paso es qué decir cuando algo sale mal, y cuándo callar para que ellos decidan."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Retroalimentación constructiva:</strong> «reconocer logros y esfuerzos, señalar errores como oportunidades de mejora» (p. 58)",
+            "<strong>Escuchar sin minimizar</strong> sus emociones, y usar un lenguaje sencillo y positivo (p. 58)",
+            "<strong>Reconocerlos</strong> «por lo que son y no solo por lo que hacen» (p. 14)",
+            "<strong>Dejarlos decidir</strong> y asumir las consecuencias de sus decisiones (p. 15)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Un ejemplo. La patrulla sirve el almuerzo tarde. En vez de «otra vez tarde», prueba: «El menú les quedó bueno y se repartieron bien las tareas. ¿Qué harían distinto para servir a tiempo?». Reconoces algo concreto, señalas un solo punto y les devuelves la pregunta. Es una recomendación de este curso."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> Cuando un scout falla frente a su patrulla, empieza por lo que sí logró y di qué puede mejorar, sin burlas ni comparaciones. Cuando la patrulla decide algo que no harías tú —y no es peligroso—, déjala decidir y conversen después. Con las familias, la Guía pone la comunicación en el dirigente (p. 58): si te preguntan, cuenta algo que viste; de lo demás les habla el dirigente."
+        }
+      ],
+      "reflection": {
+        "prompt": "Recuerda una corrección que te hicieron a los 12 o 13 años y que te ayudó, o una que te hizo sentir mal. ¿Qué la hizo distinta? ¿Cómo corregirías tú un error parecido en la Tropa? Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Hablar para que crezcan",
+        "questions": [
+          {
+            "text": "En la construcción, el amarre de un scout se suelta frente a todos y la patrulla se ríe. ¿Qué va más con lo que pide la Guía?",
+            "options": [
+              "Explicarle frente a la patrulla qué falló, y que los demás aprendan del error",
+              "Reconocer lo que sí logró y mostrarle aparte qué ajustar, para que lo rehaga",
+              "Decirle que eso le pasa a cualquiera, que no le dé importancia, y seguir"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "La patrulla eligió para la excursión su ruta, más larga que la que tú propusiste. Llegan tarde y cansados, y el guía te dice: «Tenías razón». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Preguntarles qué les dejó la ruta y qué decidirían ahora con lo que saben",
+              "Reconocerle al guía que la tuya era mejor, y que la próxima la planeen contigo",
+              "Decirles que lo importante es que llegaron bien, y cambiar de tema para animarlos"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: cuidar ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Cuidar: lo que ves y lo que haces",
+      "emoji": "🛡️",
+      "navLabel": "Cuidar",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> cuidar también es fijarse; lo que ves no lo investigas, y no te lo guardas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Para la Guía, A Salvo del Peligro «es un compromiso y una responsabilidad de toda la membresía» (p. 66). Ya conoces la gestión del riesgo y la frontera digital; recuerda que su vida digital los expone a riesgos como el ciberacoso y la pérdida de privacidad (p. 15). Aquí van dos cosas más."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "1. Las señales de alerta"
+        },
+        {
+          "type": "paragraph",
+          "text": "La <em>Guía de Prevención y Atención del Daño</em> describe señales que pueden indicar maltrato, negligencia o violencia en casa, entre ellas: lesiones o moretones «constantes y sin explicación concisa», temor al contacto físico con adultos (p. 24), llanto constante, agresividad con otros o una extrema falta de confianza en sí mismo (p. 25), o pedir que no se le cuente algo a su papá o a su mamá por miedo a su respuesta (p. 27)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Dos cosas para no confundirte. A esta edad el ánimo cambia mucho: pueden pasar de la risa al llanto en minutos (Guía de Tropa, p. 14), y eso solo no es una señal; este curso te recomienda fijarte en lo que se repite o se sostiene. Y tú no decides si hay maltrato: cuentas lo que viste —qué, cuándo, cuántas veces—, no lo que crees que pasa. Contar no es acusar a nadie."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué haces con lo que ves.</strong><br>• Una señal sola no prueba nada, y tampoco tienes que estar seguro para contarla.<br>• No te toca averiguar qué pasa: la función del adulto en estos casos no es investigativa (Política, p. 29).<br>• No te lo guardes: en la Asociación nadie guarda secretos sobre algo que pueda dañar a alguien (Política, p. 21). Este curso te recomienda contárselo al dirigente de inmediato.<br>• La ruta oficial es el botón «Me Pongo A Salvo del Peligro», en scout.org.co (Política, p. 44), disponible en todo momento; y todas las personas tienen la obligación de reportar (Política, p. 21), también tú.<br>• Si su vida o su integridad corren peligro inmediato, no esperes a nadie: avisa tú de una vez, de palabra, a la Policía Nacional o al centro de salud más cercano (<em>Guía de Prevención</em>, p. 27), y cuéntaselo enseguida al dirigente."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "2. Si un scout está angustiado"
+        },
+        {
+          "type": "paragraph",
+          "text": "Los primeros auxilios psicológicos no son solo para profesionales (<em>Guía de Prevención</em>, p. 20). Están pensados para quien acaba de vivir algo grave, pero lo esencial te sirve también cuando un scout se asusta o se avergüenza: reconfortar, escuchar sin presionar, no juzgar lo que siente y no hacer falsas promesas (pp. 20-23)."
+        }
+      ],
+      "reflection": {
+        "prompt": "Elige una señal de la lista que en tu Tropa podrías confundir con «cosas de la edad». Escribe, tal cual, cómo se la contarías al dirigente: qué viste, cuándo y cuántas veces, sin decir qué crees que pasa. Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Cuidar",
+        "questions": [
+          {
+            "text": "Un scout que era muy conversador lleva cuatro reuniones callado, se aparta en los juegos y hoy se sobresaltó cuando un adulto le puso la mano en el hombro. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Contarle de inmediato al dirigente lo que notaste en estas reuniones, tal como lo viste",
+              "Darle un par de reuniones más: a esta edad los cambios de ánimo son normales",
+              "Pedirle a su guía de patrulla que averigüe qué le pasa, y avisar de inmediato al dirigente"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Un scout se corta un dedo con la navaja, le sale sangre y, muy avergonzado frente a su patrulla, dice que no es nada. ¿Qué va con lo que enseñan los primeros auxilios psicológicos?",
+            "options": [
+              "Avisar al dirigente para curarlo, y quedarte a su lado a la vista de todos",
+              "Curarlo rápido para no hacer escena, y decirle que no le va a quedar ni marca",
+              "Pedirle que primero le cuente al dirigente cómo se cortó, y después curarlo"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: arma tu kit ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Arma tu kit",
+      "emoji": "🧰",
+      "navLabel": "Tu kit",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 12 minutos · Idea central:</strong> lo que aprendiste se vuelve tuyo cuando lo eliges y lo escribes con tus palabras."
+        },
+        {
+          "type": "kit-builder",
+          "labels": {
+            "title": "Tu kit para la Tropa",
+            "intro": "Elige, escribe y descárgalo. Se guarda solo en este navegador: no va a ninguna hoja. Si vuelves desde este mismo navegador, lo encuentras como lo dejaste.",
+            "gamesTitle": "Mis 3 juegos",
+            "gamesHelp": "Marca tres. En cada uno escribe un juego concreto de ese tipo, qué regla pueden cambiar ellos y con qué pregunta lo cierras.",
+            "gameWhyPlaceholder": "Juego concreto · regla que cambian ellos · pregunta de cierre",
+            "phrasesTitle": "Mis frases",
+            "phrasePlaceholder": "Lo que dirías, tal cual",
+            "careTitle": "Mi lista de cuidado",
+            "rulesTitle": "Reglas, siempre (no se eligen):",
+            "careOwnPlaceholder": "Agrega un cuidado propio: algo de las salidas de tu Tropa que tú revisarías (opcional)",
+            "download": "Descargar mi kit (PDF)",
+            "pdfTitle": "Mi kit para la Tropa"
+          },
+          "games": [
+            {
+              "id": "g1",
+              "name": "Juego de estrategia",
+              "detail": "resolver un problema pensando en equipo",
+              "source": "Guía de Tropa, p. 25"
+            },
+            {
+              "id": "g2",
+              "name": "Juego con claves",
+              "detail": "pistas, códigos y acertijos",
+              "source": "Guía de Tropa, p. 14"
+            },
+            {
+              "id": "g3",
+              "name": "Juego de roles o simulación",
+              "detail": "ponerse en otro lugar",
+              "source": "Guía de Tropa, p. 25"
+            },
+            {
+              "id": "g4",
+              "name": "Cooperativo con elementos competitivos",
+              "detail": "colaboran y compiten contra el reloj o su propia marca",
+              "source": "Guía de Tropa, p. 25"
+            },
+            {
+              "id": "g5",
+              "name": "Juego que incorpora tecnología",
+              "detail": "con un objetivo educativo claro",
+              "source": "Guía de Tropa, p. 25"
+            },
+            {
+              "id": "g6",
+              "name": "Reto de orientación",
+              "detail": "mapa, brújula, pistas y recorridos",
+              "source": "Guía de Tropa, p. 33"
+            },
+            {
+              "id": "g7",
+              "name": "Desafío de construcción",
+              "detail": "nudos y amarras para algo útil",
+              "source": "Guía de Tropa, p. 14 y 33"
+            }
+          ],
+          "phrases": [
+            {
+              "id": "f1",
+              "situation": "La patrulla te pide que les armes tú la mesa de cocina porque «a ti te queda mejor»."
+            },
+            {
+              "id": "f2",
+              "situation": "La patrulla discute porque cada uno quiere cocinar algo distinto."
+            },
+            {
+              "id": "f3",
+              "situation": "Un scout se frustra porque no le sale un nudo y dice que es «un inútil»."
+            },
+            {
+              "id": "f4",
+              "situation": "En la caminata nocturna, un scout se asusta y te dice que se quiere ir ya para la casa."
+            }
+          ],
+          "care": [
+            {
+              "id": "c1",
+              "rule": true,
+              "text": "Nunca me quedo a solas con un scout, ni en persona ni por chat: siempre la estrategia 2+1.",
+              "source": "Política ASP, p. 26"
+            },
+            {
+              "id": "c2",
+              "rule": true,
+              "text": "Antes de publicar fotos de los scouts, sigo las directrices del Grupo; si no las conozco, pregunto y no publico.",
+              "source": "Política ASP, p. 26"
+            },
+            {
+              "id": "c3",
+              "rule": true,
+              "text": "Si veo una señal de alerta, no me la guardo: la reporto con el botón «Me Pongo A Salvo del Peligro» y, además, se la cuento al dirigente.",
+              "source": "Política ASP, pp. 21 y 44; contárselo al dirigente: recomendación de este curso"
+            },
+            {
+              "id": "c4",
+              "rule": true,
+              "text": "Ante un peligro inmediato para su vida o su integridad, aviso de una vez a la Policía o al centro de salud.",
+              "source": "Guía de Prevención, p. 27"
+            },
+            {
+              "id": "c5",
+              "text": "Antes de corregir un error, digo lo que sí salió bien.",
+              "source": "Guía de Tropa, p. 58"
+            },
+            {
+              "id": "c6",
+              "text": "No hago por la patrulla la técnica que ella puede aprender.",
+              "source": "Guía de Tropa, p. 26"
+            },
+            {
+              "id": "c7",
+              "text": "Si una familia me pregunta, cuento lo que vi; de lo demás le habla el dirigente.",
+              "source": "Guía de Tropa, p. 58"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar vas a escribir tu compromiso. Hazlo para tus próximas cuatro reuniones, usando tu kit: «En la Tropa voy a proponer ___ y a decir ___, y nunca voy a ___»."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Lo importante no es darles todas las respuestas, sino enseñarles a buscar soluciones, evaluar opciones y aprender de los errores.</strong>"
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en la próxima salida de la Tropa. ¿Cuál de tus tres juegos propondrías, qué técnica pondría en práctica la patrulla, y qué harías si a mitad de camino no les sale? Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Tu kit",
+        "questions": [
+          {
+            "text": "Llevas a la reunión el juego con claves de tu kit. A los diez minutos, dos patrullas ya lo resolvieron y se aburren, y la tercera sigue en la primera pista. ¿Qué es lo más coherente con todo el curso?",
+            "options": [
+              "Subirles el reto a las que acabaron, y orientar a la tercera con una pregunta",
+              "Darle a la tercera patrulla la pista resuelta, y que las tres sigan juntas desde ahí",
+              "Dejar que la tercera siga a su ritmo, y que las otras dos esperen a que termine"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Supón que en tu kit elegiste estrategia, roles y orientación. La próxima reunión es en un salón pequeño y el dirigente quiere que las patrullas practiquen decidir juntas. ¿Qué propuesta va más con todo el curso?",
+            "options": [
+              "Tu juego de estrategia, con una regla que cada patrulla cambie al empezar",
+              "Tu juego de roles, con los personajes y sus parlamentos ya repartidos desde casa",
+              "Tu reto de orientación, con un recorrido por el salón que ya dejas marcado tú"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Juego que Reta",
+      "emoji": "🎲",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Mano que Enseña",
+      "emoji": "🏕️",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Palabra que Construye",
+      "emoji": "💬",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Mirada que Cuida",
+      "emoji": "🛡️",
+      "unlockOnModule": 5
+    },
+    {
+      "id": "achievement-5",
+      "name": "Patrulla que Aprende",
+      "emoji": "🧰",
+      "unlockOnModule": 6
+    }
+  ],
+  "certificate": {
+    "courseName": "HERRAMIENTAS PARA LA TROPA",
+    "description": "ha completado el curso Herramientas para la Tropa, que prepara al Rover para apoyar al equipo de dirigentes de su Grupo proponiendo juegos que retan a scouts de 11 a 14 años, acompañando el aprendizaje de la técnica, asesorando especialidades, dando retroalimentación que construye y reconociendo señales de alerta.",
+    "commitmentPrompt": "Escribe tu compromiso para tus próximas cuatro reuniones, completando la frase de la última lección: «En la Tropa voy a proponer ___ y a decir ___, y nunca voy a ___»."
+  }
+}

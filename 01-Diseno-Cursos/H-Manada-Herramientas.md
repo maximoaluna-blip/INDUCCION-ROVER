@@ -51,10 +51,10 @@ Cita literal de la Guía, p. 9. Es el trabajo del Nivel 2: pasar de conocer la M
   - el juego simbólico en la Selva (p. 10);
   - **juegos democráticos**: votar con fichas o colores, elegir levantando la mano, decidir nombres (p. 54);
   - la Flor Roja, con danzas, cantos y juegos (*Buen Orden* pp. 9-10);
-  - actividades incluyentes (pp. 24-25).
-- **Cuando el juego no funciona** (recomendación del curso): alguien queda por fuera, empieza la comparación, o nadie quiere el juego que propusiste.
+  - desafiar es enfrentarse a uno mismo, no competir contra otros (p. 22).
+- **Cuando el juego no funciona** (recomendación del curso): aparece la comparación, no se ponen de acuerdo, o nadie quiere el juego que propusiste.
 - **Reflexión:** un juego donde una comparación hizo sentir mal a alguien, y cómo lo cambiarías. Sin nombres.
-- **Quiz (2):** el lobato que dice «soy el peor»; y una Manada dividida sobre qué juego hacer (resolverlo con un juego democrático).
+- **Quiz (2):** el lobato que dice «soy el peor» (medir la propia marca; distractor: contar por seisena); y la votación que ya se hizo (aceptar la decisión colectiva, p. 54).
 
 ### 3 · Al aire libre (~7 min)
 - **Fuentes:**
@@ -62,18 +62,18 @@ Cita literal de la Guía, p. 9. Es el trabajo del Nivel 2: pasar de conocer la M
   - las habilidades de la p. 35: exploración, vida en grupo, autocuidado y seguridad, juego;
   - conciencia ambiental (p. 36).
 - **Reflexión:** una salida de tu infancia de la que volviste orgulloso: qué lo hizo posible.
-- **Quiz (2):** en la caminata, los lobatos no han tomado agua (enseñar autocuidado, no hacerlo por ellos); y encontrar un nido en el camino (observar y proteger la fauna).
+- **Quiz (2):** en la caminata, los lobatos no han tomado agua (que lo revisen ellos); y el nido junto al sendero (mirarlo sin tocarlo; distractor: llevarlo y devolverlo después).
 
 ### 4 · Mediar y dar lugar (~6 min)
 - **Fuentes:**
-  - mediar sin resolver todo (p. 10);
-  - no sustituir ni abandonar (p. 58);
+  - **ni resolver ni abandonar**: lo primero es del Nivel 1 (p. 10); lo nuevo es no dejarlos solos ante la dificultad (p. 58);
   - coherencia: «¿Vale la pena parecerme a este adulto?» (p. 58);
   - el error como parte del aprendizaje y el valor de cada logro (p. 59);
   - protagonismo acompañado: elegir, encargos sencillos, acuerdos, opinar (p. 59);
-  - con las familias: procesos, no solo resultados (p. 60).
+  - con las familias: si preguntan, contar algo que viste hoy; del avance habla el Viejo Lobo (la mirada de la p. 60 es de los Viejos Lobos);
+  - no se llama a la Manada con silbato (*Buen Orden*, p. 6).
 - **Reflexión:** una vez que un adulto hizo algo por ti que podías hacer solo.
-- **Quiz (2):** dos lobatos que se disputan el mismo papel (mediar para que acuerden); y el lobato que borra su dibujo porque «quedó feo».
+- **Quiz (3):** la seisena atascada en el reto (una pista, ni la solución ni dejarlos solos); la lobata que arruga su dibujo; y el papá que pregunta por la insignia.
 
 ### 5 · Cuidar: lo que ves y lo que haces (~7 min)
 - **Fuentes:**
@@ -82,18 +82,19 @@ Cita literal de la Guía, p. 9. Es el trabajo del Nivel 2: pasar de conocer la M
   - primeros auxilios psicológicos (pp. 20-23);
   - no investigar (Política, p. 29), avisar de inmediato (Política, p. 21) y el botón (Política, p. 44; Guía de Manada, p. 64).
 - **Reflexión:** qué harías si un lobato te pide «no le cuentes a nadie». Sin nombres.
-- **Quiz (2):** el lobato que se sobresalta cada vez que alguien alza la voz; y el lobato que se cae, se raspa y llora asustado (primeros auxilios psicológicos, sin «no llores»).
+- **Puente:** pasar de la risa al llanto es normal a esta edad; cuenta lo que se repite o se sostiene (recomendación del curso).
+- **Peligro inmediato:** avisar ya; si hace falta, la Policía (*Guía de Prevención*, p. 27).
+- **Quiz (2):** el lobato que se sobresalta con la voz alta (contarlo hoy sin adivinar la causa; distractor: esperar una segunda señal); y el lobato asustado por la lluvia que pregunta si ya viene su mamá (sin falsas promesas).
 
 ### 6 · Arma tu kit (~12 min)
 - **`kit-builder`:**
   - 7 juegos o tipos de juego con fuente;
-  - 4 situaciones que no repiten el quiz;
-  - 4 normas fijas y 3 puntos a elegir.
+  - 3 situaciones que no repiten el quiz;
+  - 4 normas fijas (c4: no guardarse la señal, contarla y el botón, Política pp. 21 y 44) y 3 puntos a elegir.
 - **Compromiso:** «En la Manada voy a proponer ___ y a decir ___, y nunca voy a ___», para tus próximas cuatro reuniones.
-- **Quiz (3):**
-  - un juego para el tema «el agua» (traducir en juego, no en charla);
-  - un papá que pregunta si su hijo «ya ganó la insignia» (hablar de procesos);
-  - un lobato que dice «no le digas a mi papá que rompí el cuaderno, me va a pegar» (escuchar sin prometer y avisar de inmediato).
+- **Quiz (2):**
+  - un juego para el tema «el agua» (reto de toda la Manada; distractor: seisenas que compiten);
+  - un lobato que dice «no le digas a mi papá que rompí el cuaderno, me va a pegar» (escuchar sin prometer y avisar de inmediato; distractor: hablar con el papá).
 
 ## Logros
 1. Juego que Traduce · 2. Huella en la Selva · 3. Mano que Media · 4. Mirada que Cuida · 5. Siempre Mejor.

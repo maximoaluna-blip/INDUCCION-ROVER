@@ -2,7 +2,7 @@
 
 > Diseño del curso (28-09-2026, ADR-106). JSON: `05-Generador-Cursos/borradores/herramientas-tropa.json`. Spec: `docs/superpowers/specs/2026-09-28-rover-nivel2-herramientas-design.md`. Molde: `H-Familia-Herramientas.md` y `H-Manada-Herramientas.md`. Es el único curso del Nivel 2 con **técnica fuerte**, porque la Guía de Tropa sí la trae.
 >
-> **Auditado** (doctrinal y pedagógica, 28-09-2026) y corregido; ver la bitácora del ADR-106.
+> **Auditado y re-auditado** (doctrinal y pedagógica, dos vueltas, 28-09-2026) y corregido; ver la bitácora del ADR-106. «Acompañar» es verbo del dirigente: el Rover **apoya** y **asesora** (`SKILL.md`).
 >
 > **Nace con lo que dejaron las cuatro auditorías anteriores:**
 > - sin cláusula justificativa solo en los distractores;
@@ -35,20 +35,20 @@ Cita literal de la Guía, p. 14. Recorre todo el curso: el juego que ellos ajust
 ## Objetivos
 
 1. **Proponer y ajustar** un juego que rete a adolescentes, con reglas que ellos puedan modificar.
-2. **Acompañar** el aprendizaje de la técnica scout sin hacerlo por ellos ni dejarlos solos, y **asesorar** una especialidad por la vía que fija el Manual.
+2. **Apoyar** el aprendizaje de la técnica scout sin hacerlo por ellos ni dejarlos solos, y **asesorar** una especialidad por la vía que fija el Manual.
 3. **Dar retroalimentación** que reconozca el esfuerzo y convierta el error en mejora.
 4. **Reconocer** señales de alerta y **responder** sin investigar.
 5. **Armar** tu kit.
 
 ## Decisiones de diseño
 
-- **Técnica.** La Guía la pide (p. 33-34): campismo básico, orientación y exploración, cocina al aire libre, nudos y amarras, primeros auxilios y seguridad. El curso **no enseña los nudos** (las tablas de la *Bitácora* son imágenes): enseña **cómo acompañar** que la patrulla los aprenda, y remite a la *Bitácora Scout* y al *Manual de Especialidades*.
+- **Técnica.** La Guía la pide (p. 33-34): campismo básico, orientación y exploración, cocina al aire libre, nudos y amarras, primeros auxilios y seguridad. El curso **no enseña los nudos** (las tablas de la *Bitácora* son imágenes): enseña **cómo apoyar** que la patrulla los aprenda, y remite a la *Bitácora Scout* y al *Manual de Especialidades*.
 - **Especialidades.** Según el *Manual* 2019, entre quienes pueden asesorar una especialidad están los «Hermanos Scouts mayores o de otras ramas que ya sean especialista» (p. 6). A esa persona el Manual la llama **sinodal**: arma con el scout tareas y tiempos, lo asesora y certifica (p. 5). El curso lo dice con ese sentido —una tarea puntual, no un cargo— y el paso es que el scout se lo informe a su **Jefe de Tropa** (pp. 5-6). Lo que el Rover hace en cada fase (Descubrir, Experimentar, Compartir) es recomendación del curso.
 - **Normas fijas del kit, con fuente:**
   - la estrategia 2+1, también por chat (Política p. 26);
   - no guardar una señal (Política p. 21) y el botón (p. 44);
   - ante peligro inmediato, Policía o centro de salud (*Guía de Prevención* p. 27);
-  - las fotos: antes de publicar, las directrices del Grupo; si no las conoce, pregunta y no publica (Política p. 26).
+  - las fotos: antes de publicar, las directrices de la Asociación (Política p. 26); si no las conoce, pregunta y no publica (recomendación del curso).
 - **Criterio del costo del error** (recomendación del curso, auditoría pedagógica H3): error barato → dejarlos equivocarse y conversar al evaluar (Guía p. 26); error que toca salud o seguridad → una pregunta a tiempo y, si no lo ven, avisar al dirigente (p. 33).
 
 ## Lecciones
@@ -62,7 +62,7 @@ Cita literal de la Guía, p. 14. Recorre todo el curso: el juego que ellos ajust
   - facilitarlo «como adolescentes, no como niños», dejar que modifiquen reglas, conectar con objetivos y facilitar la reflexión (p. 25);
   - actividades diversas (p. 25).
 - **Cuando el juego no funciona** (recomendación del curso): «es de niños»; la competencia se vuelve burla; quieren cambiar las reglas.
-- **Quiz (2):** la patrulla que gana y se burla (un reto cooperativo contra el reloj; distractores: que la perdedora cambie las reglas a su gusto, repetir con sermón); y el juego terminado sin cierre (preguntar qué estrategia funcionó; distractores: charla, pasar de largo).
+- **Quiz (2):** la patrulla que le canta «¡perdedores!» a la otra (un reto contra el reloj; distractores: que la perdedora cambie las reglas a su gusto, repetir con sermón); y los relevos que aburren (subirles el reto con una clave; distractores: cambiar el juego que eligió el dirigente por votación, explicarles para qué sirven). El reloj como ejemplo de «cooperativo con elementos competitivos» es recomendación del curso.
 
 ### 3 · Técnica: aprender haciendo (~7 min)
 - **Fuentes:**
@@ -71,8 +71,8 @@ Cita literal de la Guía, p. 14. Recorre todo el curso: el juego que ellos ajust
   - acompañar sin sobreproteger (p. 26);
   - el gancho (p. 14);
   - campamentos de bajo impacto (p. 34);
-  - especialidades: fases Descubrir, Experimentar y Compartir; quién puede acompañar; el paso por el Jefe de Tropa (*Manual* pp. 4-6).
-- **Quiz (3):** la carpa floja con lluvia anunciada (error caro: una pregunta a tiempo); la cocina lejos del agua (error barato: dejarlos y conversar al evaluar); y el scout en Descubrir que pide «cuéntame tú todo» (armar con él sus preguntas).
+  - especialidades: fases Descubrir, Experimentar y Compartir; quién puede asesorar; el paso por el Jefe de Tropa (*Manual* pp. 4-6).
+- **Quiz (3):** la carpa floja con lluvia anunciada (error caro: una pregunta a tiempo); la caja de cocina revuelta (error barato: dejarlos y conversar al evaluar); y el scout que empieza su especialidad y pide «cuéntame tú todo» (ayudarle a anotar qué averiguar; distractor trampa: «investigar le toca a él solo»). Los ejemplos del recuadro (mesa coja, fogón junto a las carpas) no son los del quiz.
 
 ### 4 · Hablar para que crezcan (~6 min)
 - **Fuentes:**
@@ -80,7 +80,7 @@ Cita literal de la Guía, p. 14. Recorre todo el curso: el juego que ellos ajust
   - reconocerlos «por lo que son y no solo por lo que hacen» (p. 14);
   - decidir y asumir las consecuencias (p. 15);
   - con las familias, el dirigente informa (p. 58).
-- **Quiz (2):** el amarre que se suelta frente a todos (reconocer lo logrado y mostrar aparte qué ajustar); y la ruta larga que eligió la patrulla y el guía que dice «tenías razón» (preguntarles qué les dejó y qué decidirían ahora).
+- **Quiz (2):** el amarre que se suelta frente a todos (decirle lo que quedó bien y mostrarle el ajuste mientras la patrulla sigue; distractores: explicarlo en público, felicitarlo y rehacerlo por él); y la ruta larga que eligió la patrulla y el guía que dice «tenías razón» (preguntarles qué les dejó y qué decidirían ahora).
 
 ### 5 · Cuidar: lo que ves y lo que haces (~7 min)
 - **Fuentes:**
@@ -90,15 +90,15 @@ Cita literal de la Guía, p. 14. Recorre todo el curso: el juego que ellos ajust
   - peligro inmediato (p. 27);
   - primeros auxilios psicológicos (pp. 20-23);
   - Política pp. 21, 29 y 44.
-- **Quiz (2):** el scout conversador que lleva cuatro reuniones callado y se sobresalta al contacto de un adulto (contarlo de inmediato, tal como lo vio); y el corte con navaja y la vergüenza (avisar para curarlo y quedarse a su lado).
+- **Quiz (2):** el scout conversador que lleva cuatro reuniones callado: **cómo** contárselo al dirigente (lo visto, sin interpretar ni minimizar); y el corte con navaja y la vergüenza (avisar y quedarse con él hasta que lo curen). La reflexión pide **inventar** un caso: nada de un scout real va a la hoja.
 
 ### 6 · Arma tu kit (~12 min)
 - **`kit-builder`:**
   - 7 juegos o tipos de juego con fuente;
-  - 4 situaciones (una por lección: pedir que se lo hagas, la discusión en la cocina, «soy un inútil», el miedo en la caminata nocturna);
+  - 4 situaciones (una por lección: «hazla tú, que nosotros la dañamos», la discusión en la cocina, «soy un inútil», el miedo en la caminata nocturna);
   - 4 normas fijas y 3 puntos a elegir.
 - **Compromiso:** «En la Tropa voy a proponer ___ y a decir ___, y nunca voy a ___».
-- **Quiz (2):** el juego con claves de tu kit que dos patrullas resuelven en diez minutos (subir el reto y orientar a la tercera con una pregunta); y cuál juego del kit llevar a un salón pequeño para practicar decidir (el de estrategia con una regla que cambia cada patrulla).
+- **Quiz (2):** el juego con claves de tu kit que dos patrullas resuelven en diez minutos (subir el reto y darle a la tercera una pista para pensar); y la plataforma de amarras con un amarre flojo antes de que suba un scout (detenerlos primero: el error caro no se deja pasar).
 
 ## Logros
-1. Juego que Reta · 2. Mano que Enseña · 3. Palabra que Construye · 4. Mirada que Cuida · 5. Siempre Listo.
+1. Juego que Reta · 2. Mano que Enseña · 3. Palabra que Construye · 4. Mirada que Cuida · 5. Patrulla que Aprende.

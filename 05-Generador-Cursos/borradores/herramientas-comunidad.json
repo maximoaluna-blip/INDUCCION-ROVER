@@ -1,0 +1,559 @@
+{
+  "courseId": "herramientas-comunidad",
+  "title": "Herramientas para la Comunidad",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 2 · Comunidad",
+  "description": "Para el Rover que ya sirve en la Comunidad de Nómadas Scout y quiere hacerlo mejor. En unos 40 minutos vas a aprender a proponer dinámicas que los reten y que ellos mismos diseñen, a apoyar la vida al aire libre sin rellenar la técnica que la Guía no trae, a saber cuándo hablar y cuándo callar, y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía para el Dirigente de Comunidad de Nómadas Scout (2026).",
+  "contentVersion": "2026-09-28",
+  "route": "grupo",
+  "level": 2,
+  "branch": "comunidad",
+  "registration": {
+    "motivationLabel": "¿Qué quieres mejorar de tu servicio en la Comunidad?"
+  },
+  "icon": "🧰",
+  "duration": "40 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "Ya conoces la Comunidad: cómo son de 15 a 17 años, lo que ellos eligen, la aventura hacia la ciudadanía y la frontera de quien sirve casi siendo un par. Ahora te piden algo más: que propongas una dinámica, que apoyes una salida, que sepas qué decir cuando te piden consejo. Este curso es para eso."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>En ocasiones, tu presencia será activa: propondrás, orientarás, animarás. En otras, será silenciosa: esperarás que ellos mismos encuentren la respuesta.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La frase es de la <em>Guía para el Dirigente de Comunidad de Nómadas Scout</em> de la Asociación (2026, p. 42), la fuente principal de este curso; se la dice al dirigente, y vale igual para ti. Las otras son la <em>Política Nacional A Salvo del Peligro</em> (2025) y la <em>Guía de Prevención y Atención del Daño</em> (2021)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Este es un curso del Nivel 2: da por sabido lo del curso <em>Servir en la Comunidad</em>, así que conviene que lo hagas antes. Aquí no se repite: se usa y se va más allá.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta. En la última lección armas tu kit y lo descargas: se queda en tu navegador, no va a ninguna hoja."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Proponer</strong> dinámicas que reten a jóvenes de 15 a 17 años, y <strong>dejar</strong> que el Equipo las diseñe",
+            "<strong>Apoyar</strong> la vida al aire libre con máxima independencia, sin enseñar de memoria la técnica que la Guía no trae",
+            "<strong>Saber</strong> cuándo hablar y cuándo callar, y <strong>apoyar</strong> una decisión con preguntas",
+            "<strong>Reconocer</strong> señales de alerta y <strong>responder</strong> sin investigar",
+            "<strong>Armar</strong> tu kit: tres dinámicas con su porqué, tus frases y tu lista de cuidado"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Dinámicas que retan",
+      "emoji": "🎲",
+      "navLabel": "Dinámicas",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> a esta edad el juego sigue, con reglas claras y un reto a su medida; y cuanto más lo diseñan ellos, más les enseña."
+        },
+        {
+          "type": "paragraph",
+          "text": "Para la Guía, «todas las oportunidades de aprendizaje deben incluir una dimensión lúdica», también de 15 a 17 años. Lo que cambia es la forma: actividades complejas y autónomas que permiten el ensayo y error. Y pone una condición: «todo juego debe tener reglas concisas, instrucciones claras antes de comenzar y papeles bien definidos» (p. 13)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "La medida: DURASLID"
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía pide que cada oportunidad de aprendizaje sea <strong>DURASLID</strong>: Desafiante, Útil, Recompensante, Atractiva, Segura, Lúdica, Incluyente y Diversa (p. 13). Tres letras te sirven de entrada:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Desafiante:</strong> «un desafío demasiado grande puede inmovilizar al protagonista y uno demasiado pequeño puede generar desinterés» (p. 13)",
+            "<strong>Útil:</strong> el nómada comprende por qué hace algo y qué le aporta (p. 13)",
+            "<strong>Incluyente:</strong> todos participan y «nadie queda fuera del proceso» (p. 13)"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Que la diseñen ellos"
+        },
+        {
+          "type": "paragraph",
+          "text": "El valor educativo «aumenta significativamente» cuando los jóvenes participan en todo el ciclo de la actividad, desde la concepción hasta la evaluación, «y no solo son consumidores» (p. 12). Para las decisiones, la Guía sugiere dinámicas concretas (p. 40): el <strong>Camino de decisiones</strong>, un mapa con bifurcaciones donde cada uno elige un camino y explica por qué; las <strong>narrativas simbólicas</strong>, como «el cruce del río» o «el faro en la niebla»; y una <strong>evaluación participativa</strong> al final, con un semáforo, un mural de aprendizajes o una bitácora personal."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> No llegues con la dinámica cerrada: lleva el reto y la medida DURASLID, y deja que el Equipo la arme; tú cuidas que sea segura y que las reglas queden claras antes de empezar. Si a mitad de camino se desarma porque nadie sabe qué le toca, para un momento y aclara: eso no les quita autonomía, les devuelve el juego. Es una recomendación de este curso; llévala al dirigente cuando propongas la dinámica."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en una actividad que viviste de nómada que te pareció demasiado fácil o demasiado difícil. ¿Qué le faltó de DURASLID, y qué habría cambiado si la hubieran diseñado ustedes? Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Dinámicas",
+        "questions": [
+          {
+            "text": "Arrancas un juego de roles sobre una negociación entre dos pueblos. A los cinco minutos se desarma: nadie sabe qué le toca y cada Equipo juega con reglas distintas. ¿Qué va más con lo que pide la Guía?",
+            "options": [
+              "Pararlo, aclarar las reglas y el papel de cada uno, y volver a empezar",
+              "Dejar que sigan improvisando, que a esta edad ya saben organizarse por su cuenta",
+              "Terminarlo ahí y, en la evaluación, preguntarles por qué creen que no funcionó"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "El dirigente te pide preparar la actividad de integración del próximo mes. ¿Qué propuesta va más con lo que pide la Guía?",
+            "options": [
+              "Llevar tres actividades listas, y que el Equipo vote cuál hacer el próximo mes",
+              "Diseñarla completa con el dirigente, y que el Equipo la evalúe al terminar",
+              "Llevarle al Equipo el reto y la medida DURASLID, y que el Equipo la diseñe"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: la naturaleza ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Naturaleza: máxima independencia",
+      "emoji": "🌿",
+      "navLabel": "Naturaleza",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> en la Comunidad, la naturaleza es su laboratorio y ellos llevan el timón; y la técnica que la Guía no trae no se rellena de memoria."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía centra la naturaleza en «la máxima independencia del joven» y en la aplicación de habilidades prácticas para la aventura: un laboratorio donde ponen a prueba lo que saben para superar desafíos (p. 25). Y no pide un bosque ideal: también puede vivirse en la ciudad, aprendiendo «a habitar el entorno con ojos atentos y con ética del cuidado» (p. 24). Estas son las habilidades que prioriza (p. 25):"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Físicas y de eficiencia:</strong> resistencia, fuerza, flexibilidad, agilidad y autocontrol",
+            "<strong>Técnicas para la aventura:</strong> campismo, pionerismo, primeros auxilios y navegación",
+            "<strong>Resolución de problemas complejos:</strong> desafíos de la vida real, con un enfoque estructurado",
+            "<strong>Adaptación y exploración personal:</strong> usar las nuevas tecnologías para adaptarse a los cambios"
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Lo que la Guía no trae.</strong> La Guía de Comunidad nombra estas técnicas, pero no las enseña: no dice cómo levantar una torre de pionerismo ni cómo navegar. Este curso tampoco. Si el Equipo quiere usar una técnica en un reto real, que la busque en una fuente confiable y que el dirigente la revise antes. Si tú sabes del tema, cuéntalo como lo que es: tu experiencia, no la norma. Es una recomendación de este curso."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Cuidar el entorno, con propósito"
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía pide conciencia ecológica, pero «evitando el \"activismo\" o la repetición de actividades tradicionales sin comprender su propósito» (p. 24). Para darle propósito, el Marco de Scouts por los ODS ofrece dos iniciativas: <strong>Tribu Tierra</strong>, con desafíos como Plastic Tide Turners, Campeones por la Naturaleza, Scouts Go Solar y YUNGA, y <strong>Mensajeros de Paz</strong> (pp. 25-26)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Y la S de DURASLID: aunque toda actividad tiene un riesgo, este «debe ser previsto y mitigado por protagonistas y adultos voluntarios» (p. 13). En <em>Servir en la Comunidad</em> ya viste cómo apoyarlos con su lista de riesgos."
+        }
+      ],
+      "reflection": {
+        "prompt": "Elige una de las técnicas para la aventura que nombra la Guía. ¿Qué sabes tú de ella, de dónde lo aprendiste, y dónde podría el Equipo encontrar una fuente confiable? Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Naturaleza",
+        "questions": [
+          {
+            "text": "Cada año la Comunidad limpia la misma quebrada, y este año un Equipo propone repetirla «porque siempre se hace». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Proponerles un desafío de Tribu Tierra, que tiene más propósito que limpiar",
+              "Preguntarles qué quieren cambiar allí y cómo sabrían si lo lograron",
+              "Apoyar la limpieza como siempre: la idea salió del Equipo y no de ti"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Este trimestre no hay salidas al campo, y el Equipo dice que la naturaleza «tendrá que esperar al campamento». ¿Qué va más con lo que pide la Guía?",
+            "options": [
+              "Aceptarlo, y guardar para el campamento los retos de aventura que ya tenían",
+              "Darles una charla sobre los ODS mientras llega la fecha del campamento",
+              "Retarlos a explorar un parque del barrio y a decidir qué cuidar allí"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "Un Equipo quiere levantar una torre de pionerismo de tres metros y te pide que les enseñes los amarres que aprendiste de scout. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Contarles lo que sabes como experiencia, y que busquen una fuente que revise el dirigente",
+              "Enseñarles los amarres esa tarde, y avisarle al dirigente cuando la torre esté lista",
+              "Decirles que no se puede: la Guía de Comunidad no trae cómo hacer pionerismo en alto"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: presencia y distancia ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Presencia y distancia",
+      "emoji": "💬",
+      "navLabel": "Presencia",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> a veces apoyas proponiendo, a veces callando; y lo que te da autoridad es la coherencia, no el mando."
+        },
+        {
+          "type": "paragraph",
+          "text": "Con casi su edad, la tentación es doble: hablarles como amigo o mandar como jefe. La Guía le pide al dirigente otra cosa, y te sirve igual a ti (p. 42):"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>La coherencia:</strong> la autoridad «no está en el mando, sino en la coherencia»; cada vez que cumples lo que prometes, les enseñas «que la palabra tiene valor»",
+            "<strong>La iniciativa es de ellos:</strong> el Movimiento es «de jóvenes, apoyado por adultos»; el adulto no reemplaza la iniciativa juvenil: «la protege, la orienta, la hace posible en un marco seguro»",
+            "<strong>El poder:</strong> toda relación educativa está «mediada por el poder»; hacerse consciente de eso evita que se vuelva «una herramienta de control»"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Cuando un nómada tiene que decidir algo, la Guía sugiere preguntas antes que respuestas: «¿Qué te gustaría lograr?, ¿Qué opciones tienes?, ¿Qué pasaría si eliges esto?». Y permitir que vivan las consecuencias de sus decisiones, «incluso si no son perfectas» (p. 40)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Una conversación personal, nunca a solas"
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía es clara: si hace falta una conversación personalizada con un nómada, «al menos dos adultos en el movimiento deberán estar presentes» (p. 42). Tú no la tienes a solas, y tampoco cuentas como uno de esos dos adultos: si notas que un nómada necesita hablar, cuéntaselo al dirigente, y que él organice esa conversación como pide la Guía."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Con las familias.</strong> La Guía pide darles a los nómadas las riendas de la comunicación entre la vida scout y la vida civil, y a la vez que los padres o acudientes estén al tanto de sus avances; eso lo llevan los dirigentes (p. 43). Si una familia te pregunta, cuenta lo que viste; del avance le habla el dirigente."
+        }
+      ],
+      "reflection": {
+        "prompt": "Recuerda un momento en que alguien mayor se quedó callado y te dejó encontrar la respuesta, o uno en que debió hablar y no lo hizo. ¿Qué te enseñó eso para tu servicio en la Comunidad? Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Presencia y distancia",
+        "questions": [
+          {
+            "text": "Un nómada te pide consejo: le ofrecen un trabajo los sábados y no sabe si dejar la Comunidad. «¿Tú qué harías?», te dice. ¿Qué va más con lo que pide la Guía?",
+            "options": [
+              "Contarle con honestidad qué harías en su lugar, y que él decida con eso",
+              "Preguntarle qué quiere lograr, qué opciones tiene y qué pasa con cada una",
+              "Decirle que la decisión es solo suya, y que la vas a respetar sea cual sea"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Al final de la reunión notas a un nómada muy decaído y quieres hablar con él de lo que le pasa. ¿Qué es lo más coherente con la Guía?",
+            "options": [
+              "Invitarlo a caminar a solas, y después contarle al dirigente lo que hablaron",
+              "Escribirle por privado esa noche y, si es algo serio, avisar al dirigente",
+              "Contárselo al dirigente, y que él organice esa conversación como pide la Guía"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: cuidar ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Cuidar: lo que oyes y lo que haces",
+      "emoji": "🛡️",
+      "navLabel": "Cuidar",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> a esta edad una señal puede llegar dicha en broma; no te toca decidir si es en serio, te toca contarla."
+        },
+        {
+          "type": "paragraph",
+          "text": "Para la Guía, un entorno seguro es un espacio «libre de violencia, abuso, negligencia o discriminación» (p. 46). Ya sabes, por el Nivel 1, que nadie guarda secretos. Aquí van dos cosas más."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "1. Las señales de alerta"
+        },
+        {
+          "type": "paragraph",
+          "text": "La <em>Guía de Prevención y Atención del Daño</em> describe señales que pueden indicar maltrato, negligencia o violencia en casa. Entre las que puedes ver o escuchar en la Comunidad: temor al contacto físico con adultos o miedo de volver a su casa (p. 24); «ideas de muerte o frases donde expresen poco placer por la vida» y una extrema falta de confianza en sí mismo (p. 25); faltar una y otra vez sin justificación (p. 26); o pedir que no se le cuente algo a su papá o a su mamá por miedo a su respuesta (p. 27)."
+        },
+        {
+          "type": "paragraph",
+          "text": "A los 15 o 17 años es fácil tomar una de estas frases como drama o como chiste. Tú no decides si es en serio ni si hay maltrato: cuentas lo que oíste y viste —qué, cuándo, dónde—, no lo que crees que pasa. Una frase sobre la muerte no espera a que se repita. Es una recomendación de este curso."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué haces con lo que ves.</strong><br>• Una señal sola no prueba nada, y tampoco tienes que estar seguro para contarla.<br>• No te toca averiguar qué pasa: la función del adulto en estos casos no es investigativa (Política, p. 29).<br>• No te lo guardes: en la Asociación nadie guarda secretos sobre algo que pueda dañar a alguien (Política, p. 21). Este curso te recomienda contárselo al dirigente de inmediato.<br>• La ruta oficial es el botón «Me Pongo A Salvo del Peligro», en scout.org.co (Política, p. 44), disponible en todo momento; y todas las personas tienen la obligación de reportar (Política, p. 21), también tú.<br>• Si su vida o su integridad corren peligro inmediato, no esperes a nadie: avisa tú de una vez, de palabra, a la Policía Nacional o al centro de salud más cercano (<em>Guía de Prevención</em>, p. 27), y cuéntaselo enseguida al dirigente."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "2. Si un nómada está angustiado"
+        },
+        {
+          "type": "paragraph",
+          "text": "Los primeros auxilios psicológicos no son solo para profesionales (<em>Guía de Prevención</em>, p. 20). Lo esencial te sirve cuando un nómada está angustiado: no presionarlo para que cuente, no interrumpirlo, no juzgar lo que siente, y ser honesto con lo que no sabes: «No lo sé, pero intentaré averiguarlo» (p. 22)."
+        }
+      ],
+      "reflection": {
+        "prompt": "Elige una señal de la lista que un nómada podría decir en broma. Inventa un caso —no escribas nada de un nómada real— y escribe, tal cual, cómo se lo contarías al dirigente: qué oíste y en qué momento, sin decir qué crees que pasa."
+      },
+      "quiz": {
+        "title": "Evaluación - Cuidar",
+        "questions": [
+          {
+            "text": "Al terminar el campamento, un nómada da largas para subirse al bus y, medio en broma, dice que «en la casa es peor». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Preguntarle en el bus qué pasa en su casa, y luego contárselo al dirigente",
+              "Contarle al dirigente ese mismo día lo que viste y lo que dijo, tal cual",
+              "Tomarlo como broma de su edad, y fijarte si lo repite en la próxima salida"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Pasada la medianoche, en el chat de la Comunidad, una nómada escribe: «ya nada vale la pena, quisiera desaparecer». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Escribirle por privado toda la noche, y avisar al dirigente en la mañana",
+              "Avisar ya al dirigente, a esa hora, y si temes por su vida, a la Policía",
+              "Llamar a la Policía para que vaya a su casa, sin molestar al dirigente a esa hora"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: arma tu kit ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Arma tu kit",
+      "emoji": "🧰",
+      "navLabel": "Tu kit",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 12 minutos · Idea central:</strong> lo que aprendiste se vuelve tuyo cuando lo eliges y lo escribes con tus palabras."
+        },
+        {
+          "type": "kit-builder",
+          "labels": {
+            "title": "Tu kit para la Comunidad",
+            "intro": "Elige, escribe y descárgalo. Se guarda solo en este navegador: no va a ninguna hoja. Si vuelves desde este mismo navegador, lo encuentras como lo dejaste.",
+            "gamesTitle": "Mis 3 dinámicas",
+            "gamesHelp": "Marca tres. En cada una escribe cómo la harías con tu Comunidad, qué decide el Equipo en ella y con qué pregunta la cierras.",
+            "gameWhyPlaceholder": "Cómo la harías · qué decide el Equipo · pregunta de cierre",
+            "phrasesTitle": "Mis frases",
+            "phrasePlaceholder": "Lo que dirías, tal cual",
+            "careTitle": "Mi lista de cuidado",
+            "rulesTitle": "Reglas, siempre (no se eligen):",
+            "careOwnPlaceholder": "Agrega un cuidado propio: algo de las salidas de tu Comunidad que tú revisarías (opcional)",
+            "download": "Descargar mi kit (PDF)",
+            "pdfTitle": "Mi kit para la Comunidad"
+          },
+          "games": [
+            {
+              "id": "g1",
+              "name": "Camino de decisiones",
+              "detail": "un mapa con bifurcaciones; cada uno elige y explica por qué",
+              "source": "Guía de Comunidad, p. 40"
+            },
+            {
+              "id": "g2",
+              "name": "Narrativa simbólica",
+              "detail": "«el cruce del río», «el faro en la niebla»",
+              "source": "Guía de Comunidad, p. 40"
+            },
+            {
+              "id": "g3",
+              "name": "Juego de roles",
+              "detail": "reglas concisas, instrucciones claras y papeles definidos",
+              "source": "Guía de Comunidad, p. 13"
+            },
+            {
+              "id": "g4",
+              "name": "Evaluación participativa",
+              "detail": "semáforo, mural de aprendizajes o bitácora personal",
+              "source": "Guía de Comunidad, p. 40"
+            },
+            {
+              "id": "g5",
+              "name": "Círculo de palabra",
+              "detail": "cada uno reconoce lo que ha visto avanzar en los demás",
+              "source": "Guía de Comunidad, p. 23"
+            },
+            {
+              "id": "g6",
+              "name": "Ritual simbólico",
+              "detail": "cruzar un puente, sembrar un árbol, compartir un objeto",
+              "source": "Guía de Comunidad, p. 23"
+            },
+            {
+              "id": "g7",
+              "name": "Desafío de Scouts por los ODS",
+              "detail": "Tribu Tierra o Mensajeros de Paz",
+              "source": "Guía de Comunidad, pp. 25-26"
+            }
+          ],
+          "phrases": [
+            {
+              "id": "f1",
+              "situation": "Un nómada dice que la dinámica que propusiste «es para los de Tropa»."
+            },
+            {
+              "id": "f2",
+              "situation": "Prometiste traer un contacto para el proyecto, se te olvidó, y el Equipo está esperando."
+            },
+            {
+              "id": "f3",
+              "situation": "En la evaluación, el Equipo dice que todo salió «bien» y se quiere ir ya."
+            },
+            {
+              "id": "f4",
+              "situation": "Un nómada te escribe por privado, tarde en la noche, que necesita hablar contigo."
+            }
+          ],
+          "care": [
+            {
+              "id": "c1",
+              "rule": true,
+              "text": "Nunca me quedo a solas con un nómada, ni en persona ni por chat: siempre la estrategia 2+1.",
+              "source": "Política ASP, p. 26"
+            },
+            {
+              "id": "c2",
+              "rule": true,
+              "text": "No tengo a solas una conversación personal con un nómada: se la cuento al dirigente, que la organiza con al menos dos adultos presentes.",
+              "source": "Guía de Comunidad, p. 42"
+            },
+            {
+              "id": "c3",
+              "rule": true,
+              "text": "Si veo o escucho una señal de alerta, no me la guardo: la reporto con el botón «Me Pongo A Salvo del Peligro» y, además, se la cuento al dirigente.",
+              "source": "Política ASP, pp. 21 y 44; contárselo al dirigente: recomendación de este curso"
+            },
+            {
+              "id": "c4",
+              "rule": true,
+              "text": "Ante un peligro inmediato para su vida o su integridad, aviso de una vez a la Policía o al centro de salud.",
+              "source": "Guía de Prevención, p. 27"
+            },
+            {
+              "id": "c5",
+              "rule": true,
+              "text": "Antes de publicar fotos de los nómadas, sigo las directrices de la Asociación; si no las conozco, pregunto y no publico.",
+              "source": "Política ASP, p. 26; preguntar y no publicar: recomendación de este curso"
+            },
+            {
+              "id": "c6",
+              "text": "Cumplo lo que prometo; si no puedo, lo digo antes de que me lo pregunten.",
+              "source": "Guía de Comunidad, p. 42"
+            },
+            {
+              "id": "c7",
+              "text": "No enseño de memoria una técnica que la Guía no trae: la buscamos en una fuente y la revisa el dirigente.",
+              "source": "Recomendación de este curso"
+            },
+            {
+              "id": "c8",
+              "text": "Si una familia me pregunta, cuento lo que vi; del avance le habla el dirigente.",
+              "source": "Guía de Comunidad, p. 43; contar lo que viste: recomendación de este curso"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar vas a escribir tu compromiso. Hazlo para tus próximas cuatro reuniones, usando tu kit: «En la Comunidad voy a proponer ___, voy a callar cuando ___, y nunca voy a ___»."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>En ocasiones, tu presencia será activa: propondrás, orientarás, animarás. En otras, será silenciosa: esperarás que ellos mismos encuentren la respuesta.</strong>"
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en la próxima reunión de la Comunidad. ¿Cuál de tus tres dinámicas propondrías, qué decidiría el Equipo en ella, y en qué momento te quedarías callado? Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Tu kit",
+        "questions": [
+          {
+            "text": "Un Equipo lleva dos reuniones discutiendo entre dos proyectos, y cada vez se repiten los mismos argumentos. ¿Qué dinámica de tu kit va más con todo el curso?",
+            "options": [
+              "Un círculo de palabra, donde cada uno reconoce lo que ha aportado el otro",
+              "El Camino de decisiones: cada uno elige una ruta y explica por qué",
+              "El ritual de sembrar un árbol juntos, que les recuerde que son un solo Equipo"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "El proyecto de la huerta del colegio no salió: se secó a mitad de camino y el Equipo está desanimado. ¿Qué es lo más coherente con todo el curso?",
+            "options": [
+              "Contarles qué falló y qué harían distinto, con la experiencia que tienes",
+              "Celebrar con un ritual lo que sí lograron, y no volver a hablar de la huerta",
+              "Proponerles un semáforo: qué decidieron, qué funcionó y qué harían distinto"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Reto a su Medida",
+      "emoji": "🎲",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Ojos Atentos",
+      "emoji": "🌿",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Presencia que Sirve",
+      "emoji": "💬",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Cuidado sin Secretos",
+      "emoji": "🛡️",
+      "unlockOnModule": 5
+    },
+    {
+      "id": "achievement-5",
+      "name": "Travesía Propia",
+      "emoji": "🧰",
+      "unlockOnModule": 6
+    }
+  ],
+  "certificate": {
+    "courseName": "HERRAMIENTAS PARA LA COMUNIDAD",
+    "description": "ha completado el curso Herramientas para la Comunidad, que prepara al Rover para apoyar al equipo de dirigentes de su Grupo proponiendo dinámicas que retan a nómadas de 15 a 17 años y que ellos diseñan, apoyando la vida al aire libre, sabiendo cuándo hablar y cuándo callar, y reconociendo señales de alerta.",
+    "commitmentPrompt": "Escribe tu compromiso para tus próximas cuatro reuniones, completando la frase de la última lección: «En la Comunidad voy a proponer ___, voy a callar cuando ___, y nunca voy a ___»."
+  }
+}

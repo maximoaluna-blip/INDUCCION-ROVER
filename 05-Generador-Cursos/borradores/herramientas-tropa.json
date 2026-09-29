@@ -2,7 +2,7 @@
   "courseId": "herramientas-tropa",
   "title": "Herramientas para la Tropa",
   "subtitle": "Ruta Servir en el Grupo · Nivel 2 · Tropa",
-  "description": "Para el Rover que ya sirve en la Tropa y quiere hacerlo mejor. En unos 40 minutos vas a aprender a proponer juegos que reten a adolescentes, a acompañar el aprendizaje de la técnica scout y a asesorar una especialidad, a dar retroalimentación que construye y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía de Dirigente de Tropa (2026).",
+  "description": "Para el Rover que ya sirve en la Tropa y quiere hacerlo mejor. En unos 40 minutos vas a aprender a proponer juegos que reten a adolescentes, a apoyar el aprendizaje de la técnica scout y a asesorar una especialidad, a dar retroalimentación que construye y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía de Dirigente de Tropa (2026).",
   "contentVersion": "2026-09-28",
   "route": "grupo",
   "level": 2,
@@ -23,7 +23,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "Ya conoces la Tropa: cómo son de 11 a 14 años, la patrulla que es de ellos, la Aventura y la frontera de quien sirve. Ahora te piden algo más: que propongas un juego, que ayudes con la carpa, que acompañes una especialidad. Este curso es para eso."
+          "text": "Ya conoces la Tropa: cómo son de 11 a 14 años, la patrulla que es de ellos, la Aventura y la frontera de quien sirve. Ahora te piden algo más: que propongas un juego, que ayudes con la carpa, que asesores una especialidad. Este curso es para eso."
         },
         {
           "type": "mission-box",
@@ -41,10 +41,10 @@
           "type": "course-objectives",
           "items": [
             "<strong>Proponer y ajustar</strong> un juego que rete a adolescentes, con reglas que ellos puedan modificar",
-            "<strong>Acompañar</strong> el aprendizaje de la técnica sin hacerlo por ellos ni dejarlos solos, y <strong>asesorar</strong> una especialidad por la vía que fija el Manual",
+            "<strong>Apoyar</strong> el aprendizaje de la técnica sin hacerlo por ellos ni dejarlos solos, y <strong>asesorar</strong> una especialidad por la vía que fija el Manual",
             "<strong>Dar retroalimentación</strong> que reconozca el esfuerzo y convierta el error en mejora",
             "<strong>Reconocer</strong> señales de alerta y <strong>responder</strong> sin investigar",
-            "<strong>Armar</strong> tu kit: tres juegos con su porqué, tus frases y tu lista de cuidado"
+            "<strong>Armar</strong> tu kit: tres juegos con su regla y su pregunta de cierre, tus frases y tu lista de cuidado"
           ]
         }
       ]
@@ -67,7 +67,7 @@
           "type": "list",
           "ordered": false,
           "items": [
-            "<strong>Tipos que funcionan:</strong> estrategia y resolución de problemas, roles y simulación, cooperativos con elementos competitivos —colaboran en la patrulla y compiten contra el reloj o su propia marca—, y los que incorporan tecnología (p. 25). Y «los juegos con claves les encantarán» (p. 14)",
+            "<strong>Tipos que funcionan:</strong> estrategia y resolución de problemas, roles y simulación, cooperativos con elementos competitivos, que equilibran las ganas de colaborar y las de competir —por ejemplo, colaboran en la patrulla y compiten contra el reloj o contra su propia marca—, y los que incorporan tecnología (p. 25). Y «los juegos con claves les encantarán» (p. 14)",
             "<strong>Cómo facilitarlos:</strong> tratar a los scouts «como adolescentes, no como niños», dejar que modifiquen reglas y tomen decisiones durante el juego, conectar con objetivos claros y facilitar la reflexión (p. 25)"
           ]
         },
@@ -97,22 +97,22 @@
         "title": "Evaluación - Juegos",
         "questions": [
           {
-            "text": "En un juego de roles, la patrulla Pumas gana y se burla de la patrulla que perdió, que ya no quiere jugar la segunda ronda. ¿Qué ajuste va mejor con lo que pide la Guía?",
+            "text": "En un juego de roles, la patrulla Pumas gana y le canta a la otra «¡perdedores!»; la que perdió ya no quiere jugar la segunda ronda. ¿Qué ajuste es más coherente con la lección?",
             "options": [
-              "Convertir la segunda ronda en un reto que las dos patrullas vencen juntas al reloj",
+              "Convertir la segunda ronda en un reto que las dos patrullas vencen al reloj",
               "Dejar que la patrulla que perdió ajuste a su gusto las reglas de la segunda ronda",
               "Repetir la ronda igual, y hablarles antes a los Pumas sobre cómo se gana bien"
             ],
             "correctIndex": 0
           },
           {
-            "text": "Termina un juego de estrategia muy reñido y el dirigente te pide cerrar el momento. ¿Qué va más con lo que pide la Guía?",
+            "text": "El dirigente eligió para hoy unos relevos que a ti te encantaban de lobato. A los cinco minutos la patrulla corre sin ganas y uno pregunta: «¿Y esto cuándo se acaba?». ¿Qué ajuste va mejor con lo que pide la Guía?",
             "options": [
-              "Dar una charla corta sobre lo que el juego les quería enseñar del trabajo en equipo",
-              "Pasar a la siguiente actividad mientras todavía tienen la emoción del juego",
-              "Preguntarles qué estrategia les funcionó y qué harían distinto la próxima vez"
+              "Meterle a cada relevo una clave por descifrar, y que la patrulla fije su propio tiempo",
+              "Preguntarles qué juego prefieren, y cambiar los relevos por el que la patrulla vote",
+              "Parar un momento y explicarles para qué sirven los relevos, y seguir con el juego"
             ],
-            "correctIndex": 2
+            "correctIndex": 0
           }
         ],
         "nextLabel": "Continuar: la técnica ➡️"
@@ -153,16 +153,16 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué significa para ti.</strong> Si sabes hacer un amarre y la patrulla no, no lo hagas tú: muéstralo una vez, deja que lo intenten y pregunta antes de corregir. Y antes de intervenir, mide cuánto cuesta el error. Si es barato —nadie corre riesgo y se arregla después, como una cocina mal ubicada o un nudo que se suelta en la práctica—, déjalos equivocarse y conversen al evaluar: la Guía pide permitir el aprendizaje a través de errores (p. 26). Si toca su salud o su seguridad —una carpa floja con lluvia en la noche—, no esperes a que falle: haz ya una pregunta que les deje ver el problema y, si no lo ven, avisa al dirigente; en campismo también cuenta la seguridad (p. 33). Este criterio es una recomendación de este curso. Los nudos y las técnicas están en la <em>Bitácora Scout</em> de la Tropa; este curso no los enseña, enseña a acompañar."
+          "text": "<strong>Qué significa para ti.</strong> Si sabes hacer un amarre y la patrulla no, no lo hagas tú: muéstralo una vez, deja que lo intenten y, si hay que corregir, pregunta antes de dar la respuesta. Y antes de intervenir, mide cuánto cuesta el error. Si es barato —nadie corre riesgo y se arregla después, como una mesa de cocina que queda coja o un nudo que se suelta en la práctica—, déjalos equivocarse y conversen al evaluar: la Guía pide permitir el aprendizaje a través de errores (p. 26). Si toca su salud o su seguridad —un fogón prendido junto a las carpas, una olla hirviendo mal apoyada—, no esperes a que falle: si alguien está a punto de lastimarse, detenlos primero; si no, haz ya una pregunta que les deje ver el problema y, si no lo ven, avisa al dirigente; en campismo también cuenta la seguridad (p. 33). Este criterio es una recomendación de este curso. Los nudos y las técnicas están en la <em>Bitácora Scout</em> de la Tropa; este curso no los enseña, enseña a apoyar a quien aprende."
         },
         {
           "type": "heading",
           "level": 3,
-          "text": "Acompañar una especialidad"
+          "text": "Asesorar una especialidad"
         },
         {
           "type": "paragraph",
-          "text": "Ya viste en <em>Servir en la Tropa</em> que el camino de una especialidad lo recorre el scout. El <em>Manual de Especialidades para Tropa</em> dice que, entre quienes pueden asesorarla, están los «Hermanos Scouts mayores o de otras ramas que ya sean especialista» en el tema (p. 6). A esa persona el Manual la llama sinodal, como viste en el Nivel 1: arma con el scout las tareas y los tiempos, lo asesora y certifica la especialidad (p. 5). No es un cargo: es una tarea puntual, si sabes del tema y el scout se lo informa a su Jefe de Tropa (pp. 5-6)."
+          "text": "Ya viste en <em>Servir en la Tropa</em> que el camino de una especialidad lo recorre el scout. El <em>Manual de Especialidades para Tropa</em> dice que, entre quienes pueden asesorarla, están los «Hermanos Scouts mayores o de otras ramas que ya sean especialista» en el tema (p. 6). A esa persona el Manual la llama sinodal, como viste en el Nivel 1: arma con el scout las tareas y los tiempos, lo asesora y certifica la especialidad (p. 5). No es un cargo: es una tarea puntual, si sabes del tema y el Jefe de Tropa está de acuerdo; es con él con quien el scout busca a su sinodal (pp. 5-6)."
         },
         {
           "type": "paragraph",
@@ -193,25 +193,25 @@
             "options": [
               "Ir a la cocina y preguntarle al guía cómo creen que aguanta ese techo si llueve",
               "Tensar el techo mientras ellos cocinan, y contarles después qué le ajustaste",
-              "Esperar a que llueva y, si se mojan, conversar con ellos sobre cómo la armaron"
+              "Esperar a que llueva y, si se mojan, preguntarles al evaluar cómo la armaron"
             ],
             "correctIndex": 0
           },
           {
-            "text": "Al mediodía, la patrulla montó su rincón de cocina lejos del agua: te parece que van a caminar de más toda la tarde, pero nadie corre ningún riesgo. ¿Qué es lo más coherente con la lección?",
+            "text": "Al mediodía, la patrulla guardó ollas, cubiertos y condimentos revueltos en una sola caja. Te parece que en la cena van a perder un buen rato buscando cada cosa. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Dejar que cocinen allí y, al evaluar la tarde, preguntarles qué moverían",
-              "Preguntarles ahora si ese es el mejor sitio, y que decidan ellos si lo mueven",
-              "Pedirle al guía que muevan el rincón ya, antes de que empiecen a cocinar"
+              "Dejar que cocinen así y, al evaluar la cena, conversar qué ordenarían distinto",
+              "Insinuarles ahora que así van a perder tiempo, y dejar que decidan si lo ordenan",
+              "Pedirle al guía que ordenen la caja por secciones antes de empezar la cena"
             ],
             "correctIndex": 0
           },
           {
-            "text": "Asesoras a un scout en su especialidad de campismo, con el visto bueno del Jefe de Tropa. Está en Descubrir y te dice: «Mejor cuéntame tú todo y así avanzo más rápido». ¿Qué es lo más coherente con el Manual?",
+            "text": "Con el visto bueno del Jefe de Tropa, asesoras a un scout que empieza su especialidad de campismo. Todavía no ha leído nada y te dice: «Mejor cuéntame tú todo y así avanzo más rápido». ¿Qué es lo más coherente con el Manual?",
             "options": [
-              "Sentarte con él a armar sus preguntas y ver dónde buscar, y que él investigue",
+              "Ayudarle a anotar qué quiere averiguar y dónde buscarlo, y que él lo investigue",
               "Contarle en una tarde lo que sabes del tema, y que él lo practique al acampar",
-              "Proponerle pasar ya a Experimentar, y que vaya investigando mientras acampa"
+              "Decirle que investigar le toca a él solo, y que te busque cuando lo tenga listo"
             ],
             "correctIndex": 0
           }
@@ -262,8 +262,8 @@
             "text": "En la construcción, el amarre de un scout se suelta frente a todos y la patrulla se ríe. ¿Qué va más con lo que pide la Guía?",
             "options": [
               "Explicarle frente a la patrulla qué falló, y que los demás aprendan del error",
-              "Reconocer lo que sí logró y mostrarle aparte qué ajustar, para que lo rehaga",
-              "Decirle que eso le pasa a cualquiera, que no le dé importancia, y seguir"
+              "Decirle lo que le quedó bien y, mientras la patrulla sigue, mostrarle el ajuste",
+              "Felicitarlo frente a todos por intentarlo, y rehacerle el amarre mientras mira"
             ],
             "correctIndex": 1
           },
@@ -322,26 +322,26 @@
         }
       ],
       "reflection": {
-        "prompt": "Elige una señal de la lista que en tu Tropa podrías confundir con «cosas de la edad». Escribe, tal cual, cómo se la contarías al dirigente: qué viste, cuándo y cuántas veces, sin decir qué crees que pasa. Sin nombres."
+        "prompt": "Elige una señal de la lista que en tu Tropa podrías confundir con «cosas de la edad». Inventa un caso —no escribas nada de un scout real— y escribe, tal cual, cómo se lo contarías al dirigente: qué viste, en qué momento y cuántas veces, sin decir qué crees que pasa."
       },
       "quiz": {
         "title": "Evaluación - Cuidar",
         "questions": [
           {
-            "text": "Un scout que era muy conversador lleva cuatro reuniones callado, se aparta en los juegos y hoy se sobresaltó cuando un adulto le puso la mano en el hombro. ¿Qué es lo más coherente con la lección?",
+            "text": "Un scout que era muy conversador lleva cuatro reuniones callado, se aparta en los juegos y hoy se sobresaltó cuando un adulto le puso la mano en el hombro. Vas a contárselo hoy al dirigente. ¿Cuál forma de decírselo es la más coherente con la lección?",
             "options": [
-              "Contarle de inmediato al dirigente lo que notaste en estas reuniones, tal como lo viste",
-              "Darle un par de reuniones más: a esta edad los cambios de ánimo son normales",
-              "Pedirle a su guía de patrulla que averigüe qué le pasa, y avisar de inmediato al dirigente"
+              "«Lo noto callado y apartado hace cuatro reuniones, y hoy se sobresaltó al contacto»",
+              "«Lo noto callado y asustado con los adultos; creo que algo le está pasando en casa»",
+              "«Lo noto callado y apartado, aunque a esta edad es normal; si sigue, te vuelvo a contar»"
             ],
             "correctIndex": 0
           },
           {
             "text": "Un scout se corta un dedo con la navaja, le sale sangre y, muy avergonzado frente a su patrulla, dice que no es nada. ¿Qué va con lo que enseñan los primeros auxilios psicológicos?",
             "options": [
-              "Avisar al dirigente para curarlo, y quedarte a su lado a la vista de todos",
+              "Avisar al dirigente y quedarte con él, con calma, hasta que lo curen",
               "Curarlo rápido para no hacer escena, y decirle que no le va a quedar ni marca",
-              "Pedirle que primero le cuente al dirigente cómo se cortó, y después curarlo"
+              "Pedirle que primero le cuente él al dirigente cómo se cortó, y después curarlo"
             ],
             "correctIndex": 0
           }
@@ -398,7 +398,7 @@
               "id": "g4",
               "name": "Cooperativo con elementos competitivos",
               "detail": "colaboran y compiten contra el reloj o su propia marca",
-              "source": "Guía de Tropa, p. 25"
+              "source": "Guía de Tropa, p. 25; el ejemplo del reloj: recomendación de este curso"
             },
             {
               "id": "g5",
@@ -422,7 +422,7 @@
           "phrases": [
             {
               "id": "f1",
-              "situation": "La patrulla te pide que les armes tú la mesa de cocina porque «a ti te queda mejor»."
+              "situation": "La patrulla te pide que les armes tú la mesa de cocina: «hazla tú, que nosotros la dañamos»."
             },
             {
               "id": "f2",
@@ -447,8 +447,8 @@
             {
               "id": "c2",
               "rule": true,
-              "text": "Antes de publicar fotos de los scouts, sigo las directrices del Grupo; si no las conozco, pregunto y no publico.",
-              "source": "Política ASP, p. 26"
+              "text": "Antes de publicar fotos de los scouts, sigo las directrices de la Asociación; si no las conozco, pregunto y no publico.",
+              "source": "Política ASP, p. 26; preguntar y no publicar: recomendación de este curso"
             },
             {
               "id": "c3",
@@ -475,7 +475,7 @@
             {
               "id": "c7",
               "text": "Si una familia me pregunta, cuento lo que vi; de lo demás le habla el dirigente.",
-              "source": "Guía de Tropa, p. 58"
+              "source": "Guía de Tropa, p. 58; contar lo que viste: recomendación de este curso"
             }
           ]
         },
@@ -502,18 +502,18 @@
           {
             "text": "Llevas a la reunión el juego con claves de tu kit. A los diez minutos, dos patrullas ya lo resolvieron y se aburren, y la tercera sigue en la primera pista. ¿Qué es lo más coherente con todo el curso?",
             "options": [
-              "Subirles el reto a las que acabaron, y orientar a la tercera con una pregunta",
-              "Darle a la tercera patrulla la pista resuelta, y que las tres sigan juntas desde ahí",
-              "Dejar que la tercera siga a su ritmo, y que las otras dos esperen a que termine"
+              "Subirles el reto a las que acabaron, y darle a la tercera una pista para pensar",
+              "Pedirles a las que acabaron que le ayuden a la tercera, y que terminen las tres juntas",
+              "Darle a la tercera patrulla la pista resuelta, y que las tres sigan juntas desde ahí"
             ],
             "correctIndex": 0
           },
           {
-            "text": "Supón que en tu kit elegiste estrategia, roles y orientación. La próxima reunión es en un salón pequeño y el dirigente quiere que las patrullas practiquen decidir juntas. ¿Qué propuesta va más con todo el curso?",
+            "text": "Llevas el desafío de construcción de tu kit. La patrulla armó una plataforma baja con amarras y está por subir a un scout; ves que un amarre de la base quedó flojo. ¿Qué es lo más coherente con todo el curso?",
             "options": [
-              "Tu juego de estrategia, con una regla que cada patrulla cambie al empezar",
-              "Tu juego de roles, con los personajes y sus parlamentos ya repartidos desde casa",
-              "Tu reto de orientación, con un recorrido por el salón que ya dejas marcado tú"
+              "Detenerlos antes de que suba nadie, y que revisen ellos la base contigo al lado",
+              "Dejar que lo intenten y, si la base cede, conversarlo con ellos al evaluar",
+              "Rehacer el amarre flojo mientras la patrulla sigue con el resto de la plataforma"
             ],
             "correctIndex": 0
           }
@@ -556,7 +556,7 @@
   ],
   "certificate": {
     "courseName": "HERRAMIENTAS PARA LA TROPA",
-    "description": "ha completado el curso Herramientas para la Tropa, que prepara al Rover para apoyar al equipo de dirigentes de su Grupo proponiendo juegos que retan a scouts de 11 a 14 años, acompañando el aprendizaje de la técnica, asesorando especialidades, dando retroalimentación que construye y reconociendo señales de alerta.",
+    "description": "ha completado el curso Herramientas para la Tropa, que prepara al Rover para apoyar al equipo de dirigentes de su Grupo proponiendo juegos que retan a scouts de 11 a 14 años, apoyando el aprendizaje de la técnica, asesorando especialidades, dando retroalimentación que construye y reconociendo señales de alerta.",
     "commitmentPrompt": "Escribe tu compromiso para tus próximas cuatro reuniones, completando la frase de la última lección: «En la Tropa voy a proponer ___ y a decir ___, y nunca voy a ___»."
   }
 }

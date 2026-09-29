@@ -102,5 +102,18 @@
     "branch": "comunidad",
     "status": "active",
     "file": "servir-en-comunidad.html"
+  },
+  {
+    "courseId": "herramientas-familia",
+    "title": "Herramientas para la Familia de Cachorros",
+    "description": "Para el Rover que ya sirve en la Familia de Cachorros y quiere hacerlo mejor. En ~35 minutos vas a aprender a elegir y adaptar juegos para 5 y 6 años, a proponer experiencias al aire libre, a escuchar y poner límites sin gritos, y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía del Dirigente de Familia de Cachorros (2026).",
+    "icon": "🧰",
+    "duration": "35 minutos",
+    "modules": 6,
+    "route": "grupo",
+    "level": 2,
+    "branch": "familia",
+    "status": "active",
+    "file": "herramientas-familia.html"
   }
 ]

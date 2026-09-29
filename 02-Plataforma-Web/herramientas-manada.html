@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas para la Manada - Curso para Rovers</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/png" href="../assets/logo-asc.png">
+    <link rel="stylesheet" href="../assets/dark-theme.css">
+    <!-- Early theme init para evitar FOUC en modo oscuro -->
+    <script>(function(){try{var t=localStorage.getItem('rover-theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+    <style>
+/* ============================================
+   PLATAFORMA EDUCATIVA ROVER - ASC
+   Identidad visual: vallescout.org.co
+   Montserrat | #622599 | #ffe675 | #00afef
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background: #f2f5f7;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    color: #2c2927;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background: #622599; padding: 12px 0; position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+.top-bar-inner {
+    max-width: 940px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.top-bar .logos { display: flex; align-items: center; gap: 15px; }
+.top-bar .logos img { height: 40px; }
+.top-bar .logos .separator { width: 1px; height: 30px; background: rgba(255,255,255,0.3); }
+.top-bar a.back-link {
+    color: #ffe675; text-decoration: none; font-size: 0.85em; font-weight: 600;
+}
+.top-bar a.back-link:hover { text-decoration: underline; }
+
+.container { max-width: 940px; margin: 0 auto; padding: 20px; }
+
+/* --- Header & Progress --- */
+.header {
+    background: white; padding: 25px; margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;
+    border-top: 4px solid #622599;
+}
+.header h1 { color: #622599; margin-bottom: 10px; font-size: 1.8em; font-weight: 700; }
+.header p { color: #636363; font-size: 1em; }
+
+.progress-container {
+    background: #e0e0e0; height: 30px;
+    margin: 20px 0; overflow: hidden; position: relative;
+}
+.progress-bar {
+    background: linear-gradient(90deg, #622599, #8e44ad); height: 100%; width: 0%;
+    transition: width 0.5s ease; display: flex; align-items: center;
+    justify-content: center; color: white; font-weight: 700;
+}
+.progress-text {
+    position: absolute; width: 100%; text-align: center;
+    line-height: 30px; color: #2c2927; font-weight: 700;
+}
+
+/* --- Navigation --- */
+.nav-menu {
+    display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;
+    background: white; padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.nav-btn {
+    flex: 1; min-width: 90px; padding: 10px 8px; background: #f2f5f7;
+    border: 2px solid #ddd; cursor: pointer;
+    transition: all 0.3s; font-size: 13px; text-align: center;
+    font-family: 'Montserrat', sans-serif; font-weight: 600;
+}
+.nav-btn:hover { background: #f3e8ff; border-color: #622599; transform: translateY(-2px); }
+.nav-btn.active { background: #622599; color: white; border-color: #622599; }
+.nav-btn.completed { background: #8e44ad; color: white; border-color: #8e44ad; }
+.nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.mobile-nav {
+    display: none; position: fixed; bottom: 0; left: 0; right: 0;
+    background: white; box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    z-index: 1000; padding: 10px;
+}
+.mobile-nav select {
+    width: 100%; padding: 15px; font-size: 16px;
+    border: 2px solid #622599; background: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Content Area --- */
+.content {
+    background: white; padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* --- Modules --- */
+.module { display: none; animation: fadeIn 0.5s; }
+.module.active { display: block; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.module h2 { color: #622599; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #ffe675; font-weight: 700; }
+.module h3 { color: #622599; margin: 25px 0 15px; font-weight: 700; }
+.module h4 { color: #2c2927; margin: 20px 0 10px; font-weight: 600; }
+.module p { color: #636363; margin-bottom: 15px; text-align: justify; }
+.module ul, .module ol { margin: 15px 0 15px 30px; color: #636363; }
+.module li { margin-bottom: 10px; }
+
+.badge {
+    display: inline-block; background: #ffe675; color: #2c2927;
+    padding: 5px 15px; font-size: 0.85em; margin-bottom: 20px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+
+/* --- Content Blocks --- */
+.info-box {
+    background: #f3e8ff; border-left: 4px solid #622599;
+    padding: 15px; margin: 20px 0;
+}
+/* --- Consentimiento de tratamiento de datos (Ley 1581 de 2012) --- */
+/* Lo mismo que hacen las cuatro lineas de la plataforma desde el ADR-081, y que
+   EVALUACIONES-ASC desde junio: casilla OBLIGATORIA donde se capturan los datos.
+   Un aviso informa; una autorizacion es otra cosa, y la ley pide la segunda. */
+.consent-box {
+    background: #f6f2fb; border-left: 4px solid #622599;
+    padding: 15px; margin: 25px 0 10px;
+}
+.consent-box h4 { margin: 0 0 8px; color: #3d1660; font-size: 1rem; }
+.consent-box p { margin: 0 0 12px; color: #4a4a4a; font-size: 0.9rem; line-height: 1.5; }
+.consent-check {
+    display: flex; gap: 10px; align-items: flex-start;
+    cursor: pointer; font-weight: 600; color: #3d1660;
+}
+.consent-check input { width: 20px; height: 20px; margin: 2px 0 0; flex: 0 0 auto; cursor: pointer; }
+
+/* Modo oscuro con la paleta de la casa. Sin esto la caja se queda con fondo claro
+   y el texto se vuelve claro por herencia: cuatro nodos ilegibles, que es lo que
+   caza a11y en las otras lineas -- y Rover no tiene quien lo cace. */
+[data-theme="dark"] .consent-box { background: #2a1f3a; border-left-color: #b78fee; }
+[data-theme="dark"] .consent-box h4 { color: #d4b8ff; }
+[data-theme="dark"] .consent-box p { color: #ddd; }
+[data-theme="dark"] .consent-check { color: #d4b8ff; }
+
+/* El certificado conserva fondo claro para poder imprimirse, asi que su texto no debe
+   heredar los colores claros del tema oscuro (daba 2.02:1).
+   Portado de Programa de Jovenes, que lo arreglo el 03-ago-2026 al ampliar su
+   auditoria a11y a los modulos ocultos. Rover no tenia auditoria a11y ninguna hasta el
+   27-sep-2026, y su primera corrida lo encontro tal cual, con los mismos numeros. */
+html[data-theme="dark"] .certificate,
+html[data-theme="dark"] .certificate p,
+html[data-theme="dark"] .certificate strong,
+html[data-theme="dark"] .certificate div { color: #2b2b33; }
+
+.data-privacy {
+    background: #fff8e1; border-left: 4px solid #ffe675;
+    padding: 15px; margin: 20px 0;
+}
+.mission-box {
+    background: linear-gradient(135deg, #f3e8ff, #e8d5f5);
+    border: 2px solid #622599; padding: 20px; margin: 20px 0;
+}
+
+/* --- Timeline --- */
+.timeline { position: relative; padding: 20px 0; }
+.timeline-item {
+    background: #f2f5f7; border-left: 4px solid #622599;
+    padding: 15px; margin-bottom: 20px;
+}
+
+/* --- Method Grid --- */
+.method-elements {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; margin: 20px 0;
+}
+.method-element {
+    padding: 20px; border: 2px solid #ddd; transition: transform 0.3s;
+}
+.method-element:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(98,37,153,0.1); }
+
+/* --- Forms --- */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #2c2927; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px; border: 2px solid #ddd;
+    font-size: 15px; transition: border-color 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #622599; outline: none;
+}
+
+/* --- Registration Toggle --- */
+.toggle-buttons { display: flex; gap: 0; margin-bottom: 25px; }
+.toggle-btn {
+    flex: 1; padding: 12px; border: 2px solid #622599; background: #f2f5f7;
+    color: #622599; cursor: pointer; font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 14px; transition: all 0.3s; text-align: center;
+}
+.toggle-btn.active { background: #622599; color: white; }
+.toggle-btn:hover:not(.active) { background: #f3e8ff; }
+.recovery-section { margin-bottom: 20px; }
+
+/* --- Buttons --- */
+.btn {
+    background: #622599; color: white; border: none; padding: 12px 25px;
+    cursor: pointer; font-size: 15px; margin: 10px 5px;
+    transition: all 0.3s; display: inline-block;
+    font-family: 'Montserrat', sans-serif; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+.btn:hover { background: #4a1b75; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(98, 37, 153, 0.3); }
+.btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+/* --- Reflections --- */
+.reflection-area {
+    background: #fff8e1; border-left: 4px solid #ffe675;
+    padding: 20px; margin: 20px 0;
+}
+.reflection-area textarea {
+    width: 100%; min-height: 100px; padding: 10px;
+    border: 2px solid #ffe675; font-family: 'Montserrat', sans-serif; resize: vertical;
+}
+
+/* --- Quizzes --- */
+.quiz-container { background: #f2f5f7; padding: 20px; margin: 20px 0; }
+.question { margin-bottom: 25px; }
+.question h4 { color: #622599; margin-bottom: 15px; font-weight: 700; }
+.option {
+    display: block; padding: 12px; margin: 8px 0; background: white;
+    border: 2px solid #ddd; cursor: pointer; transition: all 0.3s;
+}
+.option:hover { background: #f3e8ff; border-color: #622599; }
+.option.selected { background: #e8d5f5; border-color: #622599; }
+.option.correct { background: #c8e6c9; border-color: #4CAF50; }
+.option.incorrect { background: #ffcdd2; border-color: #f44336; }
+
+/* --- Stats --- */
+.stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px; margin: 20px 0;
+}
+.stat-card {
+    background: #622599;
+    color: white; padding: 20px; text-align: center;
+}
+.stat-card h4 { font-size: 2em; margin-bottom: 5px; color: white; }
+/* `.module p` (color gris para fondo blanco) le ganaba en especificidad al `color: white`
+   de .stat-card, dejando texto #636363 sobre fondo morado: contraste 1.55:1, ilegible.
+   Portado de Programa de Jovenes, que lo arreglo el 03-ago-2026 al ampliar su
+   auditoria a11y a los modulos ocultos. Rover no tenia auditoria a11y ninguna hasta el
+   27-sep-2026, y su primera corrida lo encontro tal cual, con los mismos numeros. */
+.stat-card p, .module .stat-card p { color: #ffffff; }
+
+/* --- Achievements --- */
+.achievements { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.achievement {
+    background: #f3e8ff; color: #622599; padding: 10px 15px;
+    border: 2px solid #622599; font-size: 0.9em;
+    /* opacity 0.4 aplastaba el contraste a 2:1 sobre un diseno que de suyo cumple 7.93:1.
+       Calculado: 0.75 da 4.39:1 (no pasa), 0.85 da 5.57:1. Se conserva la senal visual
+       de "aun no lo tienes" y se cumple WCAG AA.
+       Portado de Programa de Jovenes, que lo arreglo el 03-ago-2026 al ampliar su
+   auditoria a11y a los modulos ocultos. Rover no tenia auditoria a11y ninguna hasta el
+   27-sep-2026, y su primera corrida lo encontro tal cual, con los mismos numeros. */
+    opacity: 0.85; transition: all 0.3s; font-weight: 600;
+}
+.achievement.earned { opacity: 1; transform: scale(1.05); box-shadow: 0 3px 10px rgba(98, 37, 153, 0.3); }
+
+/* --- Certificate --- */
+.certificate {
+    background: linear-gradient(45deg, #ffffff, #f8f9fa);
+    border: 3px solid #ffe675; padding: 40px;
+    text-align: center; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+.certificate h2 { color: #622599; margin-bottom: 20px; }
+.certificate h3 { color: #622599; font-size: 1.8em; margin: 20px 0; }
+.certificate-code {
+    background: #f2f5f7; padding: 15px;
+    font-family: 'Courier New', monospace; font-size: 1.2em;
+    margin: 25px auto; max-width: 400px; border: 2px dashed #622599;
+}
+
+/* --- Modal Overlay --- */
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6); z-index: 5000;
+    justify-content: center; align-items: center;
+}
+.modal-overlay.show { display: flex; }
+.modal-content {
+    background: white; padding: 40px; max-width: 450px; width: 90%;
+    text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.modal-content h3 { color: #622599; margin-bottom: 15px; }
+
+/* --- Indicators --- */
+.sync-indicator {
+    position: fixed; top: 70px; right: 10px; background: #622599;
+    color: white; padding: 5px 10px; font-size: 0.8em;
+    display: none; z-index: 3000; animation: pulse 2s infinite;
+}
+.sync-indicator.show { display: block; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.save-indicator {
+    position: fixed; bottom: 20px; right: 20px; background: #622599;
+    color: white; padding: 10px 20px; font-size: 0.9em;
+    display: none; z-index: 1000;
+}
+.save-indicator.show { display: block; animation: pulse 1s infinite; }
+
+.notification {
+    position: fixed; top: 80px; right: 20px; background: #622599;
+    color: white; padding: 15px 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2); animation: slideIn 0.3s;
+    z-index: 2000; max-width: 400px;
+}
+@keyframes slideIn { from { transform: translateX(400px); } to { transform: translateX(0); } }
+@keyframes slideOut { from { transform: translateX(0); } to { transform: translateX(400px); } }
+
+.hidden { display: none !important; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .container { padding: 10px; }
+    .header h1 { font-size: 1.3em; }
+    .nav-menu { display: none; }
+    .mobile-nav { display: block; }
+    .content { padding: 15px; }
+    .method-elements { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    .certificate { padding: 20px; }
+    .top-bar .logos img { height: 35px; }
+    .toggle-buttons { flex-direction: column; }
+}
+
+/* --- Print --- */
+@media print {
+    body { background: white; }
+    .top-bar, .nav-menu, .mobile-nav, .btn, .save-indicator, .sync-indicator, .modal-overlay { display: none !important; }
+    .certificate { page-break-inside: avoid; }
+}
+
+/* --- Kit del Nivel 2 (ADR-106) --- */
+.kit-builder { margin: 24px 0; }
+.kit-builder fieldset { border: 1px solid #c8d6e0; border-radius: 10px; padding: 12px 16px; margin: 16px 0; }
+.kit-builder legend { font-weight: 700; padding: 0 6px; }
+.kit-game, .kit-phrase, .kit-care-item { margin: 10px 0; }
+.kit-builder textarea { width: 100%; box-sizing: border-box; margin-top: 6px; padding: 8px; border-radius: 6px; border: 1px solid #b0c0cc; font: inherit; }
+.kit-builder textarea[hidden] { display: none; }
+.kit-source { color: #4a5a66; }
+.kit-count { font-weight: 600; }
+html[data-theme="dark"] .kit-builder fieldset { border-color: #4a6275; }
+html[data-theme="dark"] .kit-source { color: #cfe3f2; }
+.kit-rules { margin: 6px 0 12px; padding-left: 20px; }
+.kit-rules li { margin: 6px 0; }
+
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="logos">
+                <img src="../assets/logo-asc.png" alt="Asociacion Scouts de Colombia">
+                <div class="separator"></div>
+                <img src="../assets/logo-vallescout.png" alt="Scouts del Valle">
+            </div>
+            <a href="../index.html" class="back-link">&#8592; Volver a Cursos</a>
+        </div>
+    </div>
+
+    <div class="sync-indicator" id="syncIndicator">☁️ Sincronizado con Google Sheets</div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🧰 Herramientas para la Manada</h1>
+            <p>Ruta Servir en el Grupo · Nivel 2 · Manada</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="progress-text" id="progressText">0%</div>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                ⏱️ Tiempo en el curso: <span id="elapsedTime">0 min</span>
+            </p>
+        </div>
+
+        <div class="nav-menu">
+            <button class="nav-btn active" onclick="showModule(0)">📝 Registro</button>
+            <button class="nav-btn" onclick="showModule(1)">🏠 Inicio</button>
+            <button class="nav-btn" onclick="showModule(2)">🎲 Juegos</button>
+            <button class="nav-btn" onclick="showModule(3)">🌳 Aire libre</button>
+            <button class="nav-btn" onclick="showModule(4)">🤝 Mediar</button>
+            <button class="nav-btn" onclick="showModule(5)">🛡️ Cuidar</button>
+            <button class="nav-btn" onclick="showModule(6)">🧰 Tu kit</button>
+            <button class="nav-btn" onclick="showModule(7)">🏆 Certificado</button>
+        </div>
+
+        <div class="mobile-nav">
+            <select onchange="showModule(this.value)">
+                <option value="0">📝 Registro</option>
+                <option value="1">🏠 Inicio</option>
+                <option value="2">🎲 Juegos</option>
+                <option value="3">🌳 Aire libre</option>
+                <option value="4">🤝 Mediar</option>
+                <option value="5">🛡️ Cuidar</option>
+                <option value="6">🧰 Tu kit</option>
+                <option value="7">🏆 Certificado</option>
+            </select>
+        </div>
+
+        <div class="content">
+
+            <!-- MÓDULO 0: REGISTRO -->
+            <div class="module active" id="module-0">
+                <h2>📝 Registro al Curso</h2>
+
+                <div class="info-box">
+                    <strong>🎯 Objetivo del Curso:</strong><br>
+                    Para el Rover que ya sirve en la Manada y quiere hacerlo mejor. En ~40 minutos vas a aprender a elegir y ajustar juegos para lobatos de 7 a 10 años, a proponer experiencias al aire libre, a mediar sin resolverlo todo y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía para el Dirigente de Manada (2026).
+                </div>
+
+                <div class="toggle-buttons">
+                    <button class="toggle-btn active" id="toggleNewReg" onclick="toggleRegistrationMode('new')">🆕 Nuevo Registro</button>
+                    <button class="toggle-btn" id="toggleRecover" onclick="toggleRegistrationMode('recover')">🔄 Recuperar mi Avance</button>
+                </div>
+
+                <div class="recovery-section hidden" id="recoverySection">
+                    <h3>🔄 Recuperar tu avance anterior</h3>
+                    <p style="color: #636363; margin-bottom: 15px;">Ingresa el correo con el que te registraste en cualquier curso de esta plataforma. Recuperamos tu avance y, si es la primera vez que entras a este curso, te inscribimos con esos mismos datos.</p>
+                    <div class="form-group">
+                        <label for="recoveryEmail">Correo Electronico</label>
+                        <input type="email" id="recoveryEmail" placeholder="Ej: juan.perez@email.com" required>
+                    </div>
+                    <div class="consent-box">
+                        <p>Recuperar tu avance puede <strong>inscribirte en este curso</strong>, así que aquí autorizas lo mismo que en el registro: que la Asociación Scouts de Colombia trate tus datos y lo que escribas, solo para la formación, sin compartirlos con terceros y pudiendo pedir su eliminación. Conforme a la <strong>Ley 1581 de 2012</strong> (Habeas Data).</p>
+                        <label class="consent-check" for="consentRecover">
+                            <input type="checkbox" id="consentRecover">
+                            <span>He leído y autorizo el tratamiento de mis datos.</span>
+                        </label>
+                    </div>
+                    <div style="text-align: center;">
+                        <button class="btn" onclick="recoverProgress()">🔍 Recuperar</button>
+                    </div>
+                    <div id="recoveryMessage" style="margin-top: 15px; text-align: center; display: none;"></div>
+                </div>
+
+                <form id="registrationForm" onsubmit="handleRegistration(event)">
+                    <div class="form-group">
+                        <label for="fullName">Nombre Completo *</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Ej: Juan Carlos Pérez Gómez">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Edad</label>
+                        <input type="number" id="age" name="age" min="18" max="21" placeholder="Ej: 19">
+                    </div>
+                    <div class="form-group">
+                        <label for="group">Grupo Scout</label>
+                        <input type="text" id="group" name="group" placeholder="Ej: Grupo Scout 25">
+                    </div>
+                    <div class="form-group">
+                        <label for="region">Región/Departamento</label>
+                        <select id="region" name="region">
+                            <option value="">Seleccionar...</option>
+                            <option value="Amazonas">Amazonas</option>
+                            <option value="Antioquia">Antioquia</option>
+                            <option value="Arauca">Arauca</option>
+                            <option value="Atlántico">Atlántico</option>
+                            <option value="Bogotá D.C.">Bogotá D.C.</option>
+                            <option value="Bolívar">Bolívar</option>
+                            <option value="Boyacá">Boyacá</option>
+                            <option value="Caldas">Caldas</option>
+                            <option value="Caquetá">Caquetá</option>
+                            <option value="Casanare">Casanare</option>
+                            <option value="Cauca">Cauca</option>
+                            <option value="Cesar">Cesar</option>
+                            <option value="Chocó">Chocó</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Cundinamarca">Cundinamarca</option>
+                            <option value="Guainía">Guainía</option>
+                            <option value="Guaviare">Guaviare</option>
+                            <option value="Huila">Huila</option>
+                            <option value="La Guajira">La Guajira</option>
+                            <option value="Magdalena">Magdalena</option>
+                            <option value="Meta">Meta</option>
+                            <option value="Nariño">Nariño</option>
+                            <option value="Norte de Santander">Norte de Santander</option>
+                            <option value="Putumayo">Putumayo</option>
+                            <option value="Quindío">Quindío</option>
+                            <option value="Risaralda">Risaralda</option>
+                            <option value="San Andrés y Providencia">San Andrés y Providencia</option>
+                            <option value="Santander">Santander</option>
+                            <option value="Sucre">Sucre</option>
+                            <option value="Tolima">Tolima</option>
+                            <option value="Valle del Cauca">Valle del Cauca</option>
+                            <option value="Vaupés">Vaupés</option>
+                            <option value="Vichada">Vichada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="Ej: juan.perez@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="motivation">¿Qué quieres mejorar de tu servicio en la Manada?</label>
+                        <textarea id="motivation" name="motivation" rows="4" placeholder="Describe brevemente tu motivación..."></textarea>
+                    </div>
+                    <div class="consent-box">
+                        <h4>Tratamiento de datos personales</h4>
+                        <p>Autorizo a la Asociación Scouts de Colombia a tratar mis datos (nombre, edad, grupo, región y correo) y lo que escriba en las reflexiones de este curso, con el único fin de acompañar y mejorar la formación. No se comparten con terceros y puedo solicitar su eliminación. Conforme a la <strong>Ley 1581 de 2012</strong> (Habeas Data).</p>
+                        <label class="consent-check" for="consent">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <span>He leído y autorizo el tratamiento de mis datos.</span>
+                        </label>
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn" style="font-size: 1.1rem; padding: 15px 30px;">🚀 Comenzar Curso</button>
+                    </div>
+                </form>
+
+                <div class="data-privacy">
+                    <h4>📊 Qué se guarda, dónde y quién lo ve</h4>
+                    <p>Este curso guarda dos cosas en dos sitios distintos:</p>
+                    <ul>
+                        <li>📱 <strong>En este navegador:</strong> todo tu avance y lo que escribes, para que puedas seguir sin internet</li>
+                        <li>☁️ <strong>En una hoja de la Asociación:</strong> tu registro, los módulos que completas, tus puntuaciones y tu certificado — y también <strong>tus reflexiones</strong>, que el equipo de formación puede leer</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-size: 0.9em;"><strong>Tu compromiso del cierre se queda solo en este navegador</strong>, y si recuperas tu avance con tu correo vuelven tus módulos y tus puntuaciones, no lo que escribiste. Tus datos solo se usan para fines educativos de la Asociación Scouts de Colombia.</p>
+                </div>
+            </div>
+
+            <!-- MÓDULO 1: BIENVENIDO/A -->
+            <div class="module" id="module-1">
+                <h2>🏠 Bienvenido/a <span id="welcomeName"></span></h2>
+
+                <p>Ya conoces la Manada: cómo son de 7 a 10 años, la Selva, la firmeza con ternura, las seisenas y el Consejo de Roca. Ahora el Viejo Lobo te dice: «Este sábado propón tú algo». Este curso es para ese momento.</p>
+
+                <div class="mission-box"><strong>Tu papel es traducir lo complejo en algo sencillo, lo abstracto en juego, lo técnico en historia o desafío.</strong></div>
+
+                <p>La frase es de la <em>Guía para el Dirigente de Manada</em> de la Asociación (2026, p. 9), la fuente principal de este curso. Las otras son el <em>Manual de Presentación y Buen Orden de la Manada</em>, la <em>Política Nacional A Salvo del Peligro</em> (2025) y la <em>Guía de Prevención y Atención del Daño</em> (2021).</p>
+
+                <div class="info-box"><strong>Antes de empezar.</strong> Este es un curso del Nivel 2: da por sabido lo del curso <em>Servir en la Manada</em>, así que conviene que lo hagas antes. Aquí no se repite: se usa y se va más allá.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta. En la última lección armas tu kit y lo descargas: se queda en tu navegador, no va a ninguna hoja.</div>
+
+                <h3>🎯 Objetivos del Curso</h3>
+<ul>
+                    <li><strong>Elegir y ajustar</strong> un juego para lobatos, sin comparaciones y con la voz de todos</li>
+                    <li><strong>Proponer</strong> experiencias al aire libre que desarrollen su autocuidado</li>
+                    <li><strong>Mediar</strong> un conflicto sin resolverlo por ellos y <strong>dar lugar</strong> a que elijan y opinen</li>
+                    <li><strong>Reconocer</strong> señales de alerta y <strong>responder</strong> sin investigar</li>
+                    <li><strong>Armar</strong> tu kit: tres juegos con su porqué, tus frases y tu lista de cuidado</li>
+                </ul>
+
+                <h3>🏆 Logros por Desbloquear</h3>
+                <div class="achievements">
+                    <div class="achievement" id="achievement-1">🎲 Juego que Traduce</div>
+                    <div class="achievement" id="achievement-2">🌳 Huella en la Selva</div>
+                    <div class="achievement" id="achievement-3">🤝 Mano que Media</div>
+                    <div class="achievement" id="achievement-4">🛡️ Mirada que Cuida</div>
+                    <div class="achievement" id="achievement-5">🧰 Siempre Mejor</div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card"><h4 id="modulesCompleted">0</h4><p>Módulos Completados</p></div>
+                    <div class="stat-card"><h4 id="quizzesCompleted">0</h4><p>Evaluaciones Aprobadas</p></div>
+                    <div class="stat-card"><h4 id="studyTime">0</h4><p>Minutos de Estudio</p></div>
+                </div>
+
+                <button class="btn" onclick="showModule(2)">🚀 Comenzar el Curso</button>
+            </div>
+
+            <!-- MÓDULO 2: JUEGOS QUE TRADUCEN -->
+            <div class="module" id="module-2">
+                <h2>🎲 Juegos que traducen</h2>
+                <div class="badge">Módulo 1/5</div>
+
+                <p><strong>⏱️ 7 minutos · Idea central:</strong> un buen juego para lobatos traduce una idea en acción, no compara a nadie y deja que ellos decidan algo.</p>
+
+                <p>En el curso anterior viste que en la Manada moverse es aprender. Ahora el juego lo propones tú, y aparecen preguntas nuevas: ¿qué hago con el que siempre pierde?, ¿y si no se ponen de acuerdo?, ¿y si nadie quiere mi juego?</p>
+
+                <p>La Guía pide traducir «lo abstracto en juego» (p. 9) y usar el juego simbólico de la Selva para «explorar roles, expresar emociones y ensayar formas de actuar» (p. 10). Y avisa algo que el juego saca a flote: «Las comparaciones aparecen de forma natural, por eso tu tarea es cuidar que cada Lobato se sienta capaz y valioso tal como es» (p. 9).</p>
+
+                <h3>Juegos donde ellos deciden</h3>
+
+                <p>La Guía propone <strong>juegos democráticos</strong>: votar con fichas o colores, elegir entre opciones levantando la mano, decidir el nombre de un juego o proponer ideas en grupo. Con ellos los lobatos aprenden a respetar opiniones distintas, a aceptar decisiones colectivas y «que ganar o perder no define su valor» (p. 54). Y la Manada tiene sus propios momentos de juego, como la Flor Roja, con cantos, danzas y juegos de todos (<em>Buen Orden</em>, pp. 9-10).</p>
+
+                <h3>Cuando el juego no funciona</h3>
+
+                <ul>
+                    <li><strong>Aparece la comparación</strong> («soy el peor»): cambia el reto para que cada uno mida su propio avance, no contra otro (p. 9)</li>
+                    <li><strong>No se ponen de acuerdo</strong> en qué jugar: que decidan con un juego democrático, como votar con fichas (p. 54)</li>
+                    <li><strong>Nadie quiere tu juego:</strong> ofréceles dos opciones y que elijan; no lo impongas ni lo abandones (p. 59)</li>
+                </ul>
+
+                <p>Estos ajustes son una recomendación de este curso, tomada de lo que la Guía pide. Llévalos al Viejo Lobo cuando le propongas el juego: él decide si entra en la reunión.</p>
+
+                <div class="reflection-area">
+                    <h4>🤔 Reflexión Personal</h4>
+                    <p>Piensa en un juego que hayas visto donde una comparación hizo sentir mal a alguien. ¿Qué cambiarías para que cada lobato mida su propio avance? Sin nombres: basta con lo que pasó.</p>
+                    <textarea id="reflection-2" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(2, this.value)"></textarea>
+                </div>
+                <div class="quiz-container">
+                    <h3>🧪 Evaluación - Juegos</h3>
+
+                    <div class="question">
+                        <h4>1. En un juego de puntería, un lobato falla otra vez y dice en voz alta: «Soy el peor de todos». ¿Qué ajuste va mejor con lo que pide la Guía?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q10">
+                            Recordarle que otros también fallaron, así que no es el único que falla
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q10">
+                            Cambiar el reto para que cada uno intente superar su propio tiro anterior
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q10">
+                            Darle un tiro extra solo a él, y seguir contando los puntos como siempre se hace
+                        </label>
+                    </div>
+
+                    <div class="question">
+                        <h4>2. La Manada está dividida: la mitad quiere un juego de rastreo y la otra mitad uno de relevos. Se empieza a armar una discusión. ¿Qué es lo más coherente con la lección?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q11">
+                            Proponer que decidan con una votación de fichas y hacer el juego que gane
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q11">
+                            Elegir tú el juego que te parezca mejor, y explicarles luego el porqué
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q11">
+                            Pedirles que hagan primero el del lobato que más insiste, y luego el otro
+                        </label>
+                    </div>
+
+                    <button class="btn" onclick="checkQuiz(2)" id="checkBtn-2">Verificar Respuestas</button>
+                    <button class="btn hidden" onclick="completeModule(2)" id="nextBtn-2">Continuar: al aire libre ➡️</button>
+                </div>
+            </div>
+
+            <!-- MÓDULO 3: AL AIRE LIBRE -->
+            <div class="module" id="module-3">
+                <h2>🌳 Al aire libre</h2>
+                <div class="badge">Módulo 2/5</div>
+
+                <p><strong>⏱️ 7 minutos · Idea central:</strong> al aire libre los lobatos aprenden a cuidarse, a cooperar y a cuidar el entorno; tu apoyo es que lo hagan ellos.</p>
+
+                <p>Seguro recuerdas una salida de la que volviste orgulloso. La Guía lo explica: «Encender una fogata con ayuda, completar una caminata, cruzar un obstáculo o dormir fuera de casa son experiencias que generan orgullo sano y sensación de logro» (p. 34). También dice que en la naturaleza aprenden a cooperar, a asumir pequeñas responsabilidades y a cuidar el entorno (p. 34).</p>
+
+                <p>Para eso, la Guía pide cuatro grupos de <strong>habilidades de vida al aire libre</strong> (p. 35):</p>
+
+                <ul>
+                    <li><strong>Exploración:</strong> identificar elementos naturales, orientarse de forma sencilla, reconocer señales del entorno</li>
+                    <li><strong>Vida en grupo:</strong> cooperar, distribuir tareas sencillas, respetar normas compartidas</li>
+                    <li><strong>Autocuidado y seguridad:</strong> reconocer riesgos básicos, seguir indicaciones de seguridad y «cuidar su hidratación, alimentación y descanso»</li>
+                    <li><strong>Juego y recreación</strong> al aire libre</li>
+                </ul>
+
+                <p>Y la conciencia ambiental pasa «de la conciencia a la acción»: sembrar, cuidar espacios cercanos, reducir, reutilizar y reciclar, ahorrar agua y energía, proteger la fauna silvestre (p. 36).</p>
+
+                <div class="info-box"><strong>Qué significa para ti.</strong> La Guía nombra la fogata o el campamento, pero no enseña cómo hacerlos, y este curso tampoco: esa técnica la dirigen los Viejos Lobos. Lo que sí te toca es que ellos practiquen su autocuidado: en vez de repartir tú el agua, pregúntales cuándo tomaron la última vez. Los cinco pasos de la gestión del riesgo ya los viste en <em>Servir en la Manada</em>.</div>
+
+                <div class="reflection-area">
+                    <h4>🤔 Reflexión Personal</h4>
+                    <p>Piensa en una salida de tu infancia de la que volviste orgulloso o orgullosa. ¿Qué la hizo posible, y qué hicieron los adultos para que lo lograras tú?</p>
+                    <textarea id="reflection-3" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(3, this.value)"></textarea>
+                </div>
+                <div class="quiz-container">
+                    <h3>🧪 Evaluación - Al aire libre</h3>
+
+                    <div class="question">
+                        <h4>1. A mitad de una caminata soleada, notas que varios lobatos no han tomado agua desde que salieron. ¿Qué va mejor con las habilidades que pide la Guía?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q20">
+                            Pedirles que revisen quién no ha tomado agua, y que cada uno tome la suya
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q20">
+                            Pasar tú por la fila dándole la botella a cada uno, para ir más rápido
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q20">
+                            Parar la caminata un rato largo, hasta que todos y todas hayan tomado su agua
+                        </label>
+                    </div>
+
+                    <div class="question">
+                        <h4>2. En la caminata, un lobato encuentra un nido con huevos al lado del sendero y quiere llevárselo para mostrarlo en la sede. ¿Qué es lo más coherente con la lección?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q21">
+                            Dejar que lo lleve con cuidado, así los huevos no se rompen en el camino
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q21">
+                            Mirarlo entre todos sin tocarlo, y dejarlo donde estaba para protegerlo
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q21">
+                            Tomarle una foto al nido y explicarle en la sede por qué no se lo podía llevar
+                        </label>
+                    </div>
+
+                    <button class="btn" onclick="checkQuiz(3)" id="checkBtn-3">Verificar Respuestas</button>
+                    <button class="btn hidden" onclick="completeModule(3)" id="nextBtn-3">Continuar: mediar y dar lugar ➡️</button>
+                </div>
+            </div>
+
+            <!-- MÓDULO 4: MEDIAR Y DAR LUGAR -->
+            <div class="module" id="module-4">
+                <h2>🤝 Mediar y dar lugar</h2>
+                <div class="badge">Módulo 3/5</div>
+
+                <p><strong>⏱️ 6 minutos · Idea central:</strong> no resuelvas por ellos lo que pueden resolver, pero no los dejes solos con la dificultad.</p>
+
+                <p>Ya sabes poner límites con firmeza y ternura. El paso siguiente es más fino: cuándo intervenir y cuándo dejar que lo intenten. La Guía lo dice así: el adulto «no sustituye al Lobato en lo que puede hacer por sí mismo, ni lo abandona ante la dificultad» (p. 58).</p>
+
+                <ul>
+                    <li><strong>Mediar, no resolver:</strong> los roces son normales; tu papel es «acompañar, mediar cuando haga falta y enseñar con el ejemplo» (p. 10)</li>
+                    <li><strong>El error es parte del aprendizaje</strong> y cada logro, por pequeño que sea, se valora (p. 59)</li>
+                    <li><strong>Dar lugar:</strong> elegir entre opciones, asumir encargos sencillos, participar en acuerdos y opinar después (p. 59)</li>
+                    <li><strong>Coherencia:</strong> los lobatos se preguntan «¿Vale la pena parecerme a este adulto?» (p. 58)</li>
+                </ul>
+
+                <div class="info-box"><strong>Qué significa para ti.</strong> Cuando dos lobatos discuten, pregúntales qué propone cada uno antes de dar tu solución. Cuando uno se frustra con algo que puede hacer, acompáñalo sin hacerlo por él. Y si una familia te pregunta cómo va su hijo, la Guía pide contar procesos —autonomía, convivencia, participación— y no solo insignias (p. 60); lo demás se lo cuenta el Viejo Lobo.</div>
+
+                <div class="reflection-area">
+                    <h4>🤔 Reflexión Personal</h4>
+                    <p>Recuerda una vez en que un adulto hizo por ti algo que podías hacer solo o sola. ¿Cómo te sentiste, y qué habría sido mejor que hiciera?</p>
+                    <textarea id="reflection-4" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(4, this.value)"></textarea>
+                </div>
+                <div class="quiz-container">
+                    <h3>🧪 Evaluación - Mediar y dar lugar</h3>
+
+                    <div class="question">
+                        <h4>1. Dos lobatos quieren ser Baloo en la dramatización y empiezan a jalar el mismo disfraz. ¿Qué es lo más coherente con la lección?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q30">
+                            Quitarles el disfraz y dárselo a un tercero, para que ninguno de los dos pelee
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q30">
+                            Preguntarles qué propone cada uno, y acompañarlos hasta que se pongan de acuerdo
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q30">
+                            Decidir tú quién hace de Baloo hoy, según quién llegó primero a la reunión de la Manada
+                        </label>
+                    </div>
+
+                    <div class="question">
+                        <h4>2. Una lobata arruga su dibujo de la Selva y dice que quedó feo. ¿Qué va mejor con lo que pide la Guía?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q31">
+                            Rehacérselo tú rápido y bien hecho, para que no se quede sin su dibujo
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q31">
+                            Decirle que está bonito así aunque ella no lo crea, para que se calme y siga
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q31">
+                            Mostrarle algo que sí logró, para que decida ella qué cambiar al rehacerlo
+                        </label>
+                    </div>
+
+                    <button class="btn" onclick="checkQuiz(4)" id="checkBtn-4">Verificar Respuestas</button>
+                    <button class="btn hidden" onclick="completeModule(4)" id="nextBtn-4">Continuar: cuidar ➡️</button>
+                </div>
+            </div>
+
+            <!-- MÓDULO 5: CUIDAR: LO QUE VES Y LO QUE HACES -->
+            <div class="module" id="module-5">
+                <h2>🛡️ Cuidar: lo que ves y lo que haces</h2>
+                <div class="badge">Módulo 4/5</div>
+
+                <p><strong>⏱️ 7 minutos · Idea central:</strong> cuidar también es fijarse; lo que ves no lo investigas: se lo cuentas al Viejo Lobo de inmediato.</p>
+
+                <p>La Guía de Manada pone la base: proteger «la integridad física, emocional y moral de cada niño» y actuar «de manera oportuna ante cualquier señal de riesgo» (p. 64). Ya conoces la 2+1 y la gestión del riesgo; aquí van dos cosas más.</p>
+
+                <h3>1. Las señales de alerta</h3>
+
+                <p>La <em>Guía de Prevención y Atención del Daño</em> describe señales que pueden indicar maltrato, negligencia o violencia en casa, entre ellas: temor al contacto con adultos, llanto constante, verse con frecuencia sucio o con hambre (pp. 24-26), mostrar temor cuando alguien habla fuerte, o pedir que no se le cuente algo a su papá o a su mamá por miedo a su respuesta (p. 27). Y desmiente un mito: «Si no deja una marca o herida grave, no es violencia», que es falso (p. 36).</p>
+
+                <div class="info-box"><strong>Qué haces con lo que ves.</strong> Una señal sola no prueba nada, y tampoco tienes que estar seguro para contarla: contarla es justo lo que te toca. No te toca averiguar qué pasa: la Política A Salvo del Peligro dice que la función del adulto en estos casos no es investigativa (p. 29). Díselo al Viejo Lobo de inmediato; en la Asociación nadie guarda secretos sobre algo que pueda dañar a alguien (Política, p. 21). La ruta oficial para reportar es el botón «Me Pongo A Salvo del Peligro», en scout.org.co y en los códigos QR de los sitios de reunión (Política, p. 44; Guía de Manada, p. 64), y cualquiera puede usarlo: úsalo tú si tiene que ver con alguien del equipo de adultos, o si ves que la situación sigue igual.</div>
+
+                <h3>2. Si un lobato está angustiado</h3>
+
+                <p>Los primeros auxilios psicológicos no son solo para profesionales (<em>Guía de Prevención</em>, p. 20), y lo que enseñan te sirve también cuando un lobato se asusta. Lo esencial: reconfortar y ayudar a calmarse, escuchar sin presionar a que cuente, no juzgar lo que siente —nada de «no deberías sentirte así»— y no hacer falsas promesas (pp. 20-23).</p>
+
+                <div class="reflection-area">
+                    <h4>🤔 Reflexión Personal</h4>
+                    <p>Si un lobato te dijera «no le cuentes a nadie», ¿qué le responderías, tal cual, para no prometerle el secreto sin que sienta que lo traicionas? Sin nombres.</p>
+                    <textarea id="reflection-5" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(5, this.value)"></textarea>
+                </div>
+                <div class="quiz-container">
+                    <h3>🧪 Evaluación - Cuidar</h3>
+
+                    <div class="question">
+                        <h4>1. Hace varias reuniones notas que un lobato se encoge y se asusta cada vez que alguien alza la voz, aunque sea jugando. ¿Qué es lo más coherente con la lección?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q40">
+                            Preguntarle a él qué le pasa en casa, y contárselo después al Viejo Lobo
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q40">
+                            Contárselo al Viejo Lobo de inmediato, sin sacar conclusiones tú solo
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q40">
+                            Esperar un mes más a ver si sigue igual, y ahí contárselo al Viejo Lobo
+                        </label>
+                    </div>
+
+                    <div class="question">
+                        <h4>2. Un lobato se cae corriendo, se raspa la rodilla y llora asustado mientras el Viejo Lobo trae el botiquín. ¿Qué va con los primeros auxilios psicológicos?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q41">
+                            Decirle que los lobos no lloran por un raspón, para que se anime
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q41">
+                            Preguntarle por qué corría tan rápido, para que aprenda a cuidarse la próxima
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q41">
+                            Agacharte a su altura y hablarle con calma, para que se sienta seguro
+                        </label>
+                    </div>
+
+                    <button class="btn" onclick="checkQuiz(5)" id="checkBtn-5">Verificar Respuestas</button>
+                    <button class="btn hidden" onclick="completeModule(5)" id="nextBtn-5">Continuar: arma tu kit ➡️</button>
+                </div>
+            </div>
+
+            <!-- MÓDULO 6: ARMA TU KIT -->
+            <div class="module" id="module-6">
+                <h2>🧰 Arma tu kit</h2>
+                <div class="badge">Módulo 5/5</div>
+
+                <p><strong>⏱️ 12 minutos · Idea central:</strong> lo que aprendiste se vuelve tuyo cuando lo eliges y lo escribes con tus palabras.</p>
+
+                <div class="kit-builder" data-kit-builder data-max-games="3" data-pdf-title="Mi kit para la Manada">
+                <h3>Tu kit para la Manada</h3>
+                <p>Elige, escribe y descárgalo. Se guarda solo en este navegador: no va a ninguna hoja. Si vuelves al curso, lo encuentras como lo dejaste.</p>
+                <fieldset class="kit-games">
+                    <legend>Mis 3 juegos</legend>
+                    <p>Marca tres. En cada uno escribe un juego concreto de ese tipo y responde: ¿qué idea traduce?, ¿cómo evitas la comparación?, ¿qué deciden ellos?</p>
+                    <p class="kit-count" data-kit-count aria-live="polite"></p>
+                    <div class="kit-game">
+                        <input type="checkbox" id="kit-game-g1" data-kit-game="g1">
+                        <label for="kit-game-g1"><strong>Juego simbólico de la Selva</strong> — ensayar roles y emociones dentro de la historia <small class="kit-source">Guía de Manada, p. 10</small></label>
+                        <textarea id="kit-why-g1" data-kit-why="g1" rows="2" hidden aria-label="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos" placeholder="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos"></textarea>
+                    </div>
+                    <div class="kit-game">
+                        <input type="checkbox" id="kit-game-g2" data-kit-game="g2">
+                        <label for="kit-game-g2"><strong>Juego democrático</strong> — votar con fichas, elegir levantando la mano, decidir nombres <small class="kit-source">Guía de Manada, p. 54</small></label>
+                        <textarea id="kit-why-g2" data-kit-why="g2" rows="2" hidden aria-label="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos" placeholder="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos"></textarea>
+                    </div>
+                    <div class="kit-game">
+                        <input type="checkbox" id="kit-game-g3" data-kit-game="g3">
+                        <label for="kit-game-g3"><strong>Cantos y danzas de la Flor Roja</strong> — el momento de juego y compartir de la Manada <small class="kit-source">Buen Orden, pp. 9-10</small></label>
+                        <textarea id="kit-why-g3" data-kit-why="g3" rows="2" hidden aria-label="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos" placeholder="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos"></textarea>
+                    </div>
+                    <div class="kit-game">
+                        <input type="checkbox" id="kit-game-g4" data-kit-game="g4">
+                        <label for="kit-game-g4"><strong>Reto físico sencillo</strong> — correr, saltar, trepar, con metas propias <small class="kit-source">Guía de Manada, p. 9</small></label>
+                        <textarea id="kit-why-g4" data-kit-why="g4" rows="2" hidden aria-label="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos" placeholder="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos"></textarea>
+                    </div>
+                    <div class="kit-game">
+                        <input type="checkbox" id="kit-game-g5" data-kit-game="g5">
+                        <label for="kit-game-g5"><strong>Juego de exploración</strong> — identificar elementos y señales del entorno <small class="kit-source">Guía de Manada, p. 35</small></label>
+                        <textarea id="kit-why-g5" data-kit-why="g5" rows="2" hidden aria-label="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos" placeholder="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos"></textarea>
+                    </div>
+                    <div class="kit-game">
+                        <input type="checkbox" id="kit-game-g6" data-kit-game="g6">
+                        <label for="kit-game-g6"><strong>Desafío en grupo</strong> — algo que solo se logra cooperando <small class="kit-source">Guía de Manada, p. 34-35</small></label>
+                        <textarea id="kit-why-g6" data-kit-why="g6" rows="2" hidden aria-label="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos" placeholder="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos"></textarea>
+                    </div>
+                    <div class="kit-game">
+                        <input type="checkbox" id="kit-game-g7" data-kit-game="g7">
+                        <label for="kit-game-g7"><strong>Juego de cuidar el planeta</strong> — sembrar, reciclar, ahorrar agua <small class="kit-source">Guía de Manada, p. 36</small></label>
+                        <textarea id="kit-why-g7" data-kit-why="g7" rows="2" hidden aria-label="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos" placeholder="Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos"></textarea>
+                    </div>
+                </fieldset>
+                <fieldset class="kit-phrases">
+                    <legend>Mis frases</legend>
+                    <div class="kit-phrase">
+                        <label for="kit-phrase-f1">Un lobato no quiere participar porque «siempre pierde».</label>
+                        <textarea id="kit-phrase-f1" data-kit-phrase="f1" rows="2" placeholder="Lo que diría, tal cual"></textarea>
+                    </div>
+                    <div class="kit-phrase">
+                        <label for="kit-phrase-f2">La Manada está muy alborotada y hay que volver a empezar.</label>
+                        <textarea id="kit-phrase-f2" data-kit-phrase="f2" rows="2" placeholder="Lo que diría, tal cual"></textarea>
+                    </div>
+                    <div class="kit-phrase">
+                        <label for="kit-phrase-f3">Un lobato le dice a otro que es un bebé.</label>
+                        <textarea id="kit-phrase-f3" data-kit-phrase="f3" rows="2" placeholder="Lo que diría, tal cual"></textarea>
+                    </div>
+                    <div class="kit-phrase">
+                        <label for="kit-phrase-f4">Se acabó el juego y un lobato quiere seguir jugando solo.</label>
+                        <textarea id="kit-phrase-f4" data-kit-phrase="f4" rows="2" placeholder="Lo que diría, tal cual"></textarea>
+                    </div>
+                </fieldset>
+                <fieldset class="kit-care">
+                    <legend>Mi lista de cuidado</legend>
+                    <p class="kit-rules-title"><strong>Reglas, siempre (no se eligen):</strong></p>
+                    <ul class="kit-rules">
+                        <li data-kit-rule="c1">Nunca me quedo a solas con un lobato, ni en persona ni por chat: siempre la 2+1. <small class="kit-source">Guía de Manada, p. 64</small></li>
+                        <li data-kit-rule="c2">Nunca llamo a la Manada con silbato. <small class="kit-source">Buen Orden, p. 6</small></li>
+                        <li data-kit-rule="c3">Pongo límites sin gritos, sin humillaciones y sin comparaciones. <small class="kit-source">Guía de Manada, p. 58</small></li>
+                        <li data-kit-rule="c4">Si veo una señal de alerta, se la cuento al Viejo Lobo de inmediato. <small class="kit-source">Guía de Manada, p. 64; Política ASP, p. 21</small></li>
+                    </ul>
+                    <div class="kit-care-item">
+                        <input type="checkbox" id="kit-care-c5" data-kit-care="c5">
+                        <label for="kit-care-c5">Pregunto a los lobatos por su agua y su descanso en vez de hacerlo por ellos. <small class="kit-source">Guía de Manada, p. 35</small></label>
+                    </div>
+                    <div class="kit-care-item">
+                        <input type="checkbox" id="kit-care-c6" data-kit-care="c6">
+                        <label for="kit-care-c6">Antes de dar mi solución, pregunto qué propone cada uno. <small class="kit-source">Guía de Manada, p. 10</small></label>
+                    </div>
+                    <div class="kit-care-item">
+                        <input type="checkbox" id="kit-care-c7" data-kit-care="c7">
+                        <label for="kit-care-c7">Con las familias, hablo de procesos y no solo de insignias. <small class="kit-source">Guía de Manada, p. 60</small></label>
+                    </div>
+                    <label for="kit-care-own" class="kit-care-own-label">Agrega un punto de cuidado propio (opcional)</label>
+                    <textarea id="kit-care-own" data-kit-care-own rows="2" placeholder="Agrega un punto de cuidado propio (opcional)"></textarea>
+                </fieldset>
+                <button type="button" class="btn" data-kit-download onclick="downloadKitPDF()">Descargar mi kit (PDF)</button>
+            </div>
+
+                <h3>Tu compromiso</h3>
+
+                <p>Al terminar vas a escribir tu compromiso. Hazlo para tus próximas cuatro reuniones, usando tu kit: «En la Manada voy a proponer ___ y a decir ___, y nunca voy a ___».</p>
+
+                <div class="mission-box"><strong>Tu papel es traducir lo complejo en algo sencillo, lo abstracto en juego, lo técnico en historia o desafío.</strong><br>¡Siempre Mejor!</div>
+
+                <div class="reflection-area">
+                    <h4>🤔 Reflexión Personal</h4>
+                    <p>Piensa en tu próxima reunión. ¿En qué momento usarías uno de tus tres juegos, y qué ajuste harías si a los dos minutos no funciona? Sin nombres de niños.</p>
+                    <textarea id="reflection-6" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(6, this.value)"></textarea>
+                </div>
+                <div class="quiz-container">
+                    <h3>🧪 Evaluación - Tu kit</h3>
+
+                    <div class="question">
+                        <h4>1. El Viejo Lobo te pide proponer algo para que los lobatos entiendan por qué hay que cuidar el agua. ¿Cuál propuesta va más con todo lo del curso?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q50">
+                            Una charla corta sobre el ciclo del agua, con láminas para que la entiendan
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q50">
+                            Un reto en la Selva donde cada seisena gana si gasta menos agua que las otras
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q50">
+                            Un reto en la Selva donde la Manada entera busca ahorrar agua en la reunión
+                        </label>
+                    </div>
+
+                    <div class="question">
+                        <h4>2. A la salida, un papá te pregunta: «¿Mi hijo ya se ganó la insignia?». ¿Qué es lo más coherente con la lección?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q51">
+                            Contarle cómo ha avanzado en compartir y en cumplir sus encargos
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q51">
+                            Contarle que todavía no, y cuáles son las pruebas que le faltan
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q51">
+                            Decirle que de insignias solo habla el Viejo Lobo con las familias
+                        </label>
+                    </div>
+
+                    <div class="question">
+                        <h4>3. Al final de la reunión, un lobato te dice bajito: «No le digas a mi papá que rompí el cuaderno, me va a pegar». ¿Qué es lo más coherente con la lección?</h4>
+                        <label class="option" onclick="selectOption(this, 0)">
+                            <input type="radio" name="q52">
+                            Prometerle que no le vas a contar a nadie, para que siga confiando en ti
+                        </label>
+                        <label class="option" onclick="selectOption(this, 1)">
+                            <input type="radio" name="q52">
+                            Escucharlo sin prometer el secreto y contárselo al Viejo Lobo de inmediato
+                        </label>
+                        <label class="option" onclick="selectOption(this, 2)">
+                            <input type="radio" name="q52">
+                            Hablar tú con su papá a la salida y después contárselo al Viejo Lobo
+                        </label>
+                    </div>
+
+                    <button class="btn" onclick="checkQuiz(6)" id="checkBtn-6">Verificar Respuestas</button>
+                    <button class="btn hidden" onclick="completeModule(6)" id="nextBtn-6">Obtener Certificado 🏆</button>
+                </div>
+            </div>
+
+            <!-- MÓDULO 7: CERTIFICADO -->
+            <div class="module" id="module-7">
+                <div class="certificate" style="max-width: 700px; margin: 0 auto; background: white; border: 3px solid #622599; border-radius: 0; padding: 30px 35px; position: relative; overflow: hidden;">
+                    <!-- Decorative corners -->
+                    <div style="position: absolute; top: 0; left: 0; width: 60px; height: 60px; border-top: 4px solid #ffe675; border-left: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; border-top: 4px solid #ffe675; border-right: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 60px; height: 60px; border-bottom: 4px solid #ffe675; border-left: 4px solid #ffe675;"></div>
+                    <div style="position: absolute; bottom: 0; right: 0; width: 60px; height: 60px; border-bottom: 4px solid #ffe675; border-right: 4px solid #ffe675;"></div>
+
+                    <!-- Header -->
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 10px;">
+                            <img src="../assets/logo-asc.png" alt="ASC" style="height: 45px;">
+                            <div style="width: 1px; height: 35px; background: #ddd;"></div>
+                            <img src="../assets/logo-vallescout.png" alt="Valle Scout" style="height: 45px;">
+                        </div>
+                        <p style="font-size: 0.75em; text-transform: uppercase; letter-spacing: 2px; color: #622599; font-weight: 600; margin: 5px 0;">Asociacion Scouts de Colombia</p>
+                        <p style="font-size: 0.7em; text-transform: uppercase; letter-spacing: 1.5px; color: #636363; margin: 2px 0;">Regional Valle del Cauca</p>
+                    </div>
+
+                    <hr style="border: none; border-top: 2px solid #622599; margin: 10px 30px;">
+
+                    <!-- Title -->
+                    <div style="text-align: center; margin: 15px 0 10px;">
+                        <h2 style="color: #622599; font-size: 1.3em; letter-spacing: 2px; margin: 0;">CERTIFICADO DE APROBACIÓN</h2>
+                    </div>
+
+                    <!-- Course name -->
+                    <div style="text-align: center; background: linear-gradient(135deg, #622599 0%, #3d1660 100%); color: white; padding: 10px 20px; margin: 10px 0;">
+                        <h3 style="font-size: 1.1em; letter-spacing: 1px; margin: 0; color: white;">HERRAMIENTAS PARA LA MANADA</h3>
+                    </div>
+
+                    <!-- Body -->
+                    <div style="text-align: center; margin: 15px 0;">
+                        <p style="font-size: 0.9em; color: #636363; margin-bottom: 8px;">Se otorga el presente certificado a</p>
+                        <h3 style="color: #622599; font-size: 1.5em; margin: 8px 0; border-bottom: 2px solid #ffe675; display: inline-block; padding-bottom: 5px;" id="studentName"></h3>
+                        <p style="font-size: 0.85em; color: #636363; margin-top: 10px; line-height: 1.5;">ha completado el curso Herramientas para la Manada, que prepara al Rover para apoyar a los Viejos Lobos de su Grupo eligiendo y ajustando juegos para niños y niñas de 7 a 10 años, proponiendo experiencias al aire libre, mediando sin resolverlo todo y reconociendo señales de alerta.</p>
+                    </div>
+
+                    <!-- Details grid -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; margin: 15px 0; padding: 12px 15px; background: #f9f7fc; border-left: 3px solid #622599; font-size: 0.82em;">
+                        <p style="margin: 0;"><strong>Fecha:</strong> <span id="certDate"></span></p>
+                        <p style="margin: 0;"><strong>Puntuacion:</strong> <span id="finalScore"></span>%</p>
+                        <p style="margin: 0;"><strong>Grupo Scout:</strong> <span id="certGroup"></span></p>
+                        <p style="margin: 0;"><strong>Region:</strong> <span id="certRegion"></span></p>
+                        <p style="margin: 0;"><strong>Tiempo de estudio:</strong> <span id="totalTime"></span> min</p>
+                        <p style="margin: 0;"><strong>Estado:</strong> <span style="color: #2e7d32; font-weight: 700;">APROBADO ✅</span></p>
+                    </div>
+
+                    <!-- Verification code -->
+                    <div style="text-align: center; margin: 12px 0; padding: 8px; border: 1px dashed #622599; background: #faf8fd;">
+                        <p style="font-size: 0.75em; color: #636363; margin: 0 0 3px;">Codigo de Verificacion</p>
+                        <strong style="font-size: 1em; color: #622599; letter-spacing: 2px;" id="certCode">ASC-2026-XXXXX</strong>
+                    </div>
+
+                    <!-- Footer -->
+                    <div style="text-align: center; margin-top: 12px;">
+                        <p style="font-size: 0.7em; color: #767676;">Plataforma de Formación Rover ASC | vallescout.org.co</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">🎯 Logros Desbloqueados</h3>
+                <div class="achievements">
+                    <div class="achievement earned">🎲 Juego que Traduce</div>
+                    <div class="achievement earned">🌳 Huella en la Selva</div>
+                    <div class="achievement earned">🤝 Mano que Media</div>
+                    <div class="achievement earned">🛡️ Mirada que Cuida</div>
+                    <div class="achievement earned">🧰 Siempre Mejor</div>
+                </div>
+
+                <div style="text-align: center; margin: 30px 0;">
+                    <button class="btn" onclick="downloadCertificatePDF()">📥 Descargar PDF</button>
+                    <button class="btn" onclick="window.print()">🖨️ Imprimir Certificado</button>
+                    <button class="btn" onclick="shareResults()">📤 Compartir Logros</button>
+                    <button class="btn" onclick="restartCourse()">🔄 Reiniciar Curso</button>
+                </div>
+
+                <div class="reflection-area">
+                    <h4>🎯 Compromiso Personal</h4>
+                    <p>Escribe tu compromiso para tus próximas cuatro reuniones, completando la frase de la última lección: «En la Manada voy a proponer ___ y a decir ___, y nunca voy a ___».</p>
+                    <textarea id="commitment" placeholder="Escribe aquí tu compromiso..." onchange="saveCommitment(this.value)"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="save-indicator" id="saveIndicator">💾 Guardando...</div>
+
+    <!-- jsPDF para generar el certificado en una sola página A4 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+    // --- Configuracion del curso (generada automaticamente) ---
+    var COURSE_CONFIG = {
+        courseId: "herramientas-manada",
+        title: "Herramientas para la Manada",
+        totalModules: 8,
+        contentModules: 5,
+        googleScriptUrl: "https://script.google.com/macros/s/AKfycbzHd4KB4MafCKKPp8kEf9V-vLnlsCKUhmqR6eMFB-Qvz2f03xy9bYSx86eGUuS5RkfX2g/exec",
+        achievements: [{"id":"achievement-1","name":"Juego que Traduce","emoji":"🎲","unlockOnModule":2},{"id":"achievement-2","name":"Huella en la Selva","emoji":"🌳","unlockOnModule":3},{"id":"achievement-3","name":"Mano que Media","emoji":"🤝","unlockOnModule":4},{"id":"achievement-4","name":"Mirada que Cuida","emoji":"🛡️","unlockOnModule":5},{"id":"achievement-5","name":"Siempre Mejor","emoji":"🧰","unlockOnModule":6}]
+    };
+
+    // --- Respuestas correctas (indice base 0) ---
+    var QUIZ_ANSWERS = {"2":[1,0],"3":[0,1],"4":[1,2],"5":[1,2],"6":[2,0,1]};
+
+// ============================================
+// MOTOR DE CURSOS - PLATAFORMA EDUCATIVA ROVER ASC
+// Este archivo es generado automaticamente por build-course.js
+// Las variables COURSE_CONFIG y QUIZ_ANSWERS son inyectadas por el builder
+// ============================================
+
+// --- Variables globales ---
+let currentModule = 0;
+let moduleProgress = [];
+let quizScores = [];
+let startTime = new Date();
+let studyTime = 0;
+let sessionStartTime = null;
+let reflections = {};
+let userProfile = {};
+
+// --- Inicializacion ---
+window.addEventListener('DOMContentLoaded', function () {
+    moduleProgress = new Array(COURSE_CONFIG.totalModules).fill(false);
+    sessionStartTime = new Date();
+    shuffleQuizOptions();
+    loadProgress();
+    initKitBuilder();
+    updateElapsedTime();
+});
+
+window.addEventListener('beforeunload', function () {
+    saveProgress();
+});
+
+// --- Registro ---
+function handleRegistration(event) {
+    event.preventDefault();
+    var formData = new FormData(event.target);
+    userProfile = {
+        fullName: formData.get('fullName'),
+        age: formData.get('age'),
+        group: formData.get('group'),
+        region: formData.get('region'),
+        email: formData.get('email'),
+        motivation: formData.get('motivation'),
+        registrationDate: new Date().toISOString()
+    };
+    if (!userProfile.fullName || userProfile.fullName.trim() === '') {
+        showNotification('⚠️ El nombre es requerido', 'warning');
+        return;
+    }
+    saveProgress();
+    // El curso va EXPLICITO: `userProfile` no lo lleva, y sin el la fila queda con la
+    // columna Curso vacia. Era la unica accion del motor que no lo enviaba -- quiz,
+    // progress y certificate si lo hacian, por eso los certificados salian bien y los
+    // registros no. La plataforma lo corrigio el 03-ago-2026 (ADR-026) y a Rover nadie
+    // se lo paso: el 27-sep-2026 su UNICA fila de registro seguia sin curso, y hubo que
+    // migrarla a mano. Esto es la causa; aquella migracion fue el sintoma.
+    sendToGoogleSheets({ action: 'register', ...userProfile, course: COURSE_CONFIG.courseId });
+    showModule(1);
+    var firstName = userProfile.fullName.split(' ')[0];
+    var welcomeEl = document.getElementById('welcomeName');
+    if (welcomeEl) welcomeEl.textContent = firstName;
+    showNotification('¡Bienvenido/a ' + firstName + '! 🎉');
+}
+
+// --- Navegacion de modulos ---
+function showModule(moduleIndex) {
+    moduleIndex = parseInt(moduleIndex);
+    if (moduleIndex > 0 && (!userProfile || !userProfile.fullName)) {
+        showNotification('⚠️ Debes completar el registro primero', 'warning');
+        return;
+    }
+    // Pause and unload videos in the previously active module to free memory
+    document.querySelectorAll('.module.active video[data-src]').forEach(function (v) {
+        try { v.pause(); } catch (e) {}
+        if (v.src) { v.removeAttribute('src'); v.load(); }
+    });
+    document.querySelectorAll('.module').forEach(function (m) { m.classList.remove('active'); });
+    var target = document.getElementById('module-' + moduleIndex);
+    if (target) {
+        target.classList.add('active');
+        // Lazy-load videos in the now-active module: copy data-src to src
+        target.querySelectorAll('video[data-src]').forEach(function (v) {
+            if (!v.src) { v.src = v.getAttribute('data-src'); }
+        });
+    }
+
+    document.querySelectorAll('.nav-btn').forEach(function (btn, index) {
+        btn.classList.remove('active');
+        if (index === moduleIndex) btn.classList.add('active');
+    });
+
+    var mobileSelect = document.querySelector('.mobile-nav select');
+    if (mobileSelect) mobileSelect.value = moduleIndex;
+
+    currentModule = moduleIndex;
+
+    if (moduleIndex === COURSE_CONFIG.totalModules - 1) {
+        generateCertificate();
+    }
+    updateProgress();
+    saveProgress();
+    window.scrollTo(0, 0);
+}
+
+// --- Sistema de evaluaciones ---
+function selectOption(element, optionIndex) {
+    var question = element.closest('.question');
+    // Limpiar marcas previas (selected, correct, incorrect) de TODAS las opciones de la pregunta:
+    // permite reintentar sin que queden colores fantasma de un intento anterior.
+    question.querySelectorAll('.option').forEach(function (opt) {
+        opt.classList.remove('selected', 'correct', 'incorrect');
+    });
+    element.classList.add('selected');
+    element.setAttribute('data-selected-index', optionIndex);
+    // Si el boton "Verificar" estaba oculto tras un fallo, lo restauramos en cuanto el usuario cambia de opcion.
+    var quizContainer = element.closest('.quiz-container');
+    if (quizContainer) {
+        var checkBtn = quizContainer.querySelector('[id^="checkBtn-"]');
+        if (checkBtn) checkBtn.style.display = '';
+    }
+}
+
+// Baraja las opciones de cada pregunta una vez por sesion (Fisher-Yates).
+// Cada <label class="option"> conserva su onclick="selectOption(this, oi)" con su indice original,
+// asi que CALIFICAR sigue siendo correcto sin tocar build-course.js.
+// ⚠️ Pero el FEEDBACK no lo era: checkQuiz indexaba el DOM ya barajado con el indice
+// del JSON y resaltaba en verde una opcion equivocada al fallar. Por eso aqui se sella
+// data-option-index (ADR-061). Rover llego tarde a este arreglo porque su motor es
+// propio: nunca se migro a _MOTOR/ (ADR-025), asi que sincronizar-motor.py no lo toca.
+function shuffleQuizOptions() {
+    document.querySelectorAll('.quiz-container .question').forEach(function (question) {
+        var options = Array.prototype.slice.call(question.querySelectorAll('.option'));
+        if (options.length < 2) return;
+        // Sella el indice ORIGINAL antes de mover nada: aqui el DOM todavia esta en el
+        // orden del JSON, asi que la posicion ES el indice.
+        options.forEach(function (opt, i) {
+            if (!opt.hasAttribute('data-option-index')) opt.setAttribute('data-option-index', String(i));
+        });
+        for (var i = options.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = options[i]; options[i] = options[j]; options[j] = tmp;
+        }
+        options.forEach(function (opt) { question.appendChild(opt); });
+    });
+}
+
+function checkQuiz(moduleNum) {
+    var quizData = QUIZ_ANSWERS[moduleNum];
+    if (!quizData) return;
+
+    var questions = document.querySelectorAll('#module-' + moduleNum + ' .question');
+    var correctAnswers = 0;
+    var totalQuestions = quizData.length;
+
+    questions.forEach(function (question, qIndex) {
+        var selectedOption = question.querySelector('.option.selected');
+        if (selectedOption) {
+            var selectedIdx = parseInt(selectedOption.getAttribute('data-selected-index'));
+            if (selectedIdx === quizData[qIndex]) {
+                selectedOption.classList.add('correct');
+                correctAnswers++;
+            } else {
+                selectedOption.classList.add('incorrect');
+                // Mostrar la correcta POR EL ATRIBUTO, no por la posicion: el DOM esta
+                // barajado (ADR-061).
+                var laCorrecta = question.querySelector('.option[data-option-index="' + quizData[qIndex] + '"]');
+                if (!laCorrecta) {
+                    // Sin sellar (HTML viejo servido con motor nuevo): el orden del DOM
+                    // es el del JSON y la posicion vuelve a valer.
+                    laCorrecta = question.querySelectorAll('.option')[quizData[qIndex]];
+                }
+                if (laCorrecta) laCorrecta.classList.add('correct');
+            }
+        }
+    });
+
+    var score = Math.round((correctAnswers / totalQuestions) * 100);
+    quizScores[moduleNum] = score;
+
+    var checkBtn = document.getElementById('checkBtn-' + moduleNum);
+    if (checkBtn) checkBtn.style.display = 'none';
+
+    if (score >= 70) {
+        var nextBtn = document.getElementById('nextBtn-' + moduleNum);
+        if (nextBtn) nextBtn.classList.remove('hidden');
+
+        // Desbloquear logros
+        COURSE_CONFIG.achievements.forEach(function (ach) {
+            if (ach.unlockOnModule === moduleNum) unlockAchievement(ach.id);
+        });
+
+        showNotification('¡Excelente! Obtuviste ' + score + '% ✅');
+        sendToGoogleSheets({
+            action: 'quiz', name: userProfile.fullName, email: userProfile.email,
+            module: moduleNum, score: score, course: COURSE_CONFIG.courseId
+        });
+    } else {
+        // El 70 % exige, con 2 o 3 preguntas, acertarlas TODAS: se dice asi, no en porcentaje (CHECKLIST §A, ADR-091).
+        var necesarias = Math.ceil(totalQuestions * 0.7);
+        showNotification('Acertaste ' + correctAnswers + ' de ' + totalQuestions + '; para seguir hay que ' +
+            (necesarias === totalQuestions ? 'acertarlas todas' : 'acertar ' + necesarias) +
+            '. Donde quedó una en rojo, la verde es la correcta: relee esa parte y vuelve a intentarlo.', 'warning');
+        // No auto-reset: en cuanto el usuario hace clic en una opcion, selectOption() limpia las marcas
+        // de esa pregunta y vuelve a mostrar el boton "Verificar". Esto evita que un reset por tiempo
+        // borrara la nueva seleccion del usuario antes de que pulsara verificar.
+    }
+    saveProgress();
+}
+
+function completeModule(moduleNum) {
+    moduleProgress[moduleNum] = true;
+    sendToGoogleSheets({
+        action: 'progress', name: userProfile.fullName, email: userProfile.email,
+        moduleCompleted: moduleNum, course: COURSE_CONFIG.courseId
+    });
+    var navBtns = document.querySelectorAll('.nav-btn');
+    if (navBtns[moduleNum]) navBtns[moduleNum].classList.add('completed');
+    showModule(moduleNum + 1);
+    saveProgress();
+    updateProgress();
+    updateStats();
+}
+
+// --- Progreso ---
+function updateProgress() {
+    var completed = moduleProgress.filter(Boolean).length;
+    var total = COURSE_CONFIG.contentModules;
+    var pct = Math.round((completed / total) * 100);
+    var bar = document.getElementById('progressBar');
+    var text = document.getElementById('progressText');
+    if (bar) bar.style.width = pct + '%';
+    if (text) text.textContent = pct + '%';
+
+    updateElapsedTime();
+}
+
+function updateElapsedTime() {
+    var timeEl = document.getElementById('elapsedTime');
+    if (!timeEl || !sessionStartTime) return;
+    var totalMinutes = studyTime;
+    if (totalMinutes < 60) {
+        timeEl.textContent = totalMinutes + ' min';
+    } else {
+        var hours = Math.floor(totalMinutes / 60);
+        var mins = totalMinutes % 60;
+        timeEl.textContent = hours + 'h ' + (mins < 10 ? '0' : '') + mins + 'min';
+    }
+}
+
+function updateStats() {
+    var completed = moduleProgress.filter(Boolean).length;
+    var quizzes = quizScores.filter(function (s) { return s >= 70; }).length;
+    var el1 = document.getElementById('modulesCompleted');
+    var el2 = document.getElementById('quizzesCompleted');
+    var el3 = document.getElementById('studyTime');
+    if (el1) el1.textContent = completed;
+    if (el2) el2.textContent = quizzes;
+    if (el3) el3.textContent = studyTime;
+}
+
+// --- Persistencia ---
+function saveProgress() {
+    var key = 'courseProgress_' + COURSE_CONFIG.courseId;
+    var progress = {
+        userProfile: userProfile, moduleProgress: moduleProgress,
+        quizScores: quizScores, studyTime: studyTime, reflections: reflections,
+        currentModule: currentModule, startTime: startTime.toISOString(),
+        lastSaved: new Date().toISOString(), version: '3.0'
+    };
+    localStorage.setItem(key, JSON.stringify(progress));
+    var indicator = document.getElementById('saveIndicator');
+    if (indicator) { indicator.classList.add('show'); setTimeout(function () { indicator.classList.remove('show'); }, 2000); }
+}
+
+function loadProgress() {
+    var key = 'courseProgress_' + COURSE_CONFIG.courseId;
+    var saved = localStorage.getItem(key);
+    if (saved) {
+        var p = JSON.parse(saved);
+        userProfile = p.userProfile || {};
+        moduleProgress = p.moduleProgress || new Array(COURSE_CONFIG.totalModules).fill(false);
+        quizScores = p.quizScores || [];
+        studyTime = p.studyTime || 0;
+        reflections = p.reflections || {};
+        currentModule = p.currentModule || 0;
+        startTime = new Date(p.startTime || new Date());
+        if (userProfile.fullName) {
+            showModule(currentModule);
+            var welcomeEl = document.getElementById('welcomeName');
+            if (welcomeEl) welcomeEl.textContent = userProfile.fullName.split(' ')[0];
+            showNotification('¡Bienvenido de vuelta, ' + userProfile.fullName.split(' ')[0] + '! 👋');
+        }
+        Object.keys(reflections).forEach(function (k) {
+            var ta = document.getElementById('reflection-' + k);
+            if (ta) ta.value = reflections[k];
+        });
+        var compromiso = localStorage.getItem('commitment_' + COURSE_CONFIG.courseId);
+        var compromisoTa = document.getElementById('commitment');
+        if (compromiso && compromisoTa) compromisoTa.value = compromiso;
+        updateStats();
+        updateProgress();
+    }
+}
+
+// --- Logros ---
+function unlockAchievement(achievementId) {
+    var el = document.getElementById(achievementId);
+    if (el && !el.classList.contains('earned')) {
+        el.classList.add('earned');
+        showNotification('¡Logro desbloqueado: ' + el.textContent + '! 🏆');
+    }
+}
+
+// --- Notificaciones ---
+function showNotification(message, type) {
+    var n = document.createElement('div');
+    n.className = 'notification';
+    if (type === 'warning') n.style.background = '#FF9800';
+    n.textContent = message;
+    document.body.appendChild(n);
+    setTimeout(function () {
+        n.style.animation = 'slideOut 0.3s';
+        setTimeout(function () { n.remove(); }, 300);
+    }, type === 'warning' ? 7000 : 3000); // un aviso de fallo trae instrucciones: que alcance a leerse
+}
+
+// --- Reflexiones ---
+function saveReflection(moduleNum, text) {
+    reflections[moduleNum] = text;
+    saveProgress();
+    // Sincronizacion en segundo plano al backend (fire-and-forget)
+    if (userProfile && userProfile.email && typeof sendToGoogleSheets === 'function') {
+        sendToGoogleSheets({
+            action: 'reflection',
+            email: userProfile.email,
+            name: userProfile.fullName,
+            course: COURSE_CONFIG.courseId,
+            moduleId: String(moduleNum),
+            texto: text || ''
+        });
+    }
+}
+
+function saveCommitment(text) {
+    localStorage.setItem('commitment_' + COURSE_CONFIG.courseId, text);
+}
+
+// --- Certificado ---
+function generateCertificate() {
+    var date = new Date();
+    var el = function (id) { return document.getElementById(id); };
+
+    // IDEMPOTENCIA: el certificado se emite UNA sola vez por curso.
+    // Hasta el 27-sep-2026 esta funcion generaba un codigo ALEATORIO NUEVO en cada
+    // llamada, y la llamada ocurre cada vez que se entra al ultimo modulo. Consecuencias
+    // medidas: el codigo que la persona apunto dejaba de ser el que ve al volver, y
+    // CADA VISITA escribia otra fila en la hoja de Certificados -- inflando el conteo y,
+    // desde el ADR-082, la tasa de completacion que ese conteo alimenta. Lo caza la suite
+    // E2E estrenada ese dia: fue su primer rojo. La plataforma lo resolvio asi y a Rover,
+    // con motor propio, nadie se lo paso.
+    var courseKey = 'certificate_issued_' + COURSE_CONFIG.courseId;
+    var issued = null;
+    try { issued = JSON.parse(localStorage.getItem(courseKey) || 'null'); } catch (e) { issued = null; }
+
+    var esNuevo = !(issued && issued.code);
+    var code = esNuevo
+        ? 'ASC-' + date.getFullYear() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase()
+        : issued.code;
+    var fechaISO = esNuevo ? date.toISOString() : (issued.date || date.toISOString());
+
+    if (el('studentName')) el('studentName').textContent = userProfile.fullName || 'Rover Scout';
+    if (el('certDate')) el('certDate').textContent = new Date(fechaISO).toLocaleDateString('es-CO');
+    if (el('totalTime')) el('totalTime').textContent = studyTime;
+    if (el('certGroup')) el('certGroup').textContent = userProfile.group || 'N/A';
+    if (el('certRegion')) el('certRegion').textContent = userProfile.region || 'Colombia';
+    if (el('certCode')) el('certCode').textContent = code;
+
+    // quizScores se indexa por NUMERO DE MODULO, y los modulos con quiz empiezan en el 2:
+    // los indices bajos quedan VACIOS. reduce() se salta los huecos pero length los CUENTA,
+    // asi que seis quizzes perfectos daban 600/8 = 75. Se promedia sobre los que existen.
+    // (19-sep-2026: el certificado imprimia 75 % a quien habia acertado todo, en las 5 lineas.)
+    var puntajes = quizScores.filter(function (s) { return typeof s === 'number'; });
+    var avg = esNuevo
+        ? (puntajes.length > 0 ? Math.round(puntajes.reduce(function (a, b) { return a + b; }, 0) / puntajes.length) : 100)
+        : issued.score;
+    if (el('finalScore')) el('finalScore').textContent = avg;
+
+    // Mismo criterio que el motor compartido: el logro final es el que declara
+    // `unlockOnModule: -1`, no el que se llame 'achievement-5'. Aqui acertaba por
+    // coincidencia (en Fundamentos el logro final SI se llama asi); se barre por la
+    // convencion para que un tercer curso de la linea no herede el defecto.
+    COURSE_CONFIG.achievements.forEach(function (ach) {
+        if (ach.unlockOnModule === -1) unlockAchievement(ach.id);
+    });
+    var bar = document.getElementById('progressBar');
+    var text = document.getElementById('progressText');
+    if (bar) bar.style.width = '100%';
+    if (text) text.textContent = '100%';
+
+    // Solo la PRIMERA emision escribe y sincroniza: es lo que evita la fila duplicada
+    // en la hoja cada vez que alguien vuelve a mirar su certificado.
+    if (esNuevo) {
+        sendToGoogleSheets({
+            action: 'certificate', name: userProfile.fullName, email: userProfile.email,
+            group: userProfile.group, region: userProfile.region, certificateCode: code,
+            completionDate: fechaISO, score: avg, studyTime: studyTime,
+            course: COURSE_CONFIG.courseId
+        });
+        var registro = JSON.stringify({
+            name: userProfile.fullName, code: code, date: fechaISO,
+            score: avg, course: COURSE_CONFIG.courseId
+        });
+        localStorage.setItem('certificate_' + code, registro);
+        localStorage.setItem(courseKey, registro);
+    }
+}
+
+// --- Descargar certificado como PDF ---
+function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+        || (window.innerWidth <= 768);
+}
+
+// --- Utilidades internas para el PDF ---
+function _txt(id, fallback) {
+    var el = document.getElementById(id);
+    return el ? (el.textContent || '').trim() : (fallback || '');
+}
+
+function _imgToDataURL(imgEl) {
+    return new Promise(function(resolve) {
+        if (!imgEl) { resolve(null); return; }
+        try {
+            var canvas = document.createElement('canvas');
+            var w = imgEl.naturalWidth || imgEl.width || 200;
+            var h = imgEl.naturalHeight || imgEl.height || 200;
+            canvas.width = w; canvas.height = h;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(imgEl, 0, 0, w, h);
+            resolve({ data: canvas.toDataURL('image/png'), w: w, h: h });
+        } catch (e) { resolve(null); }
+    });
+}
+
+function _wrapText(pdf, text, maxWidth) {
+    return pdf.splitTextToSize(text || '', maxWidth);
+}
+
+function downloadCertificatePDF() {
+    var certModule = document.getElementById('module-' + (COURSE_CONFIG.totalModules - 1));
+    var cert = certModule ? certModule.querySelector('.certificate') : null;
+    if (!cert) {
+        showNotification('El certificado aún no está disponible.');
+        return;
+    }
+
+    // Localizar jsPDF (viene incluido en el bundle de html2pdf)
+    var JsPDF = (window.jspdf && window.jspdf.jsPDF) || (typeof jsPDF !== 'undefined' ? jsPDF : null);
+    if (!JsPDF) {
+        showNotification('La librería de PDF no cargó. Verifica tu conexión.');
+        if (confirm('¿Deseas usar la opción de Imprimir en su lugar?')) { window.print(); }
+        return;
+    }
+
+    var code = _txt('certCode', 'certificado');
+    var filename = 'Certificado-' + code + '.pdf';
+    var mobile = isMobileDevice();
+    showNotification('Generando PDF...');
+
+    // Datos del certificado
+    var student = _txt('studentName', 'Estudiante');
+    var date = _txt('certDate', '');
+    var score = _txt('finalScore', '');
+    var group = _txt('certGroup', '');
+    var region = _txt('certRegion', '');
+    var totalTime = _txt('totalTime', '');
+    var courseName = (COURSE_CONFIG.certificateCourseName || COURSE_CONFIG.title || '').toUpperCase();
+    var courseDescription = COURSE_CONFIG.certificateDescription ||
+        'ha completado exitosamente el curso de formación de la Plataforma Rover ASC';
+
+    // Cargar logos
+    var ascImg = cert.querySelector('img[src*="logo-asc"]');
+    var valleImg = cert.querySelector('img[src*="logo-vallescout"]');
+
+    Promise.all([_imgToDataURL(ascImg), _imgToDataURL(valleImg)]).then(function(logos) {
+        var logoASC = logos[0], logoValle = logos[1];
+
+        // A4 portrait: 210 x 297 mm
+        var pdf = new JsPDF('p', 'mm', 'a4');
+        var pageW = 210, pageH = 297;
+
+        // --- Marco morado exterior ---
+        pdf.setDrawColor(98, 37, 153);
+        pdf.setLineWidth(1.2);
+        pdf.rect(8, 8, pageW - 16, pageH - 16);
+
+        // --- Esquinas decorativas amarillas ---
+        pdf.setDrawColor(255, 230, 117);
+        pdf.setLineWidth(2);
+        var cs = 20; // corner size
+        // Top-left
+        pdf.line(8, 8, 8 + cs, 8);
+        pdf.line(8, 8, 8, 8 + cs);
+        // Top-right
+        pdf.line(pageW - 8, 8, pageW - 8 - cs, 8);
+        pdf.line(pageW - 8, 8, pageW - 8, 8 + cs);
+        // Bottom-left
+        pdf.line(8, pageH - 8, 8 + cs, pageH - 8);
+        pdf.line(8, pageH - 8, 8, pageH - 8 - cs);
+        // Bottom-right
+        pdf.line(pageW - 8, pageH - 8, pageW - 8 - cs, pageH - 8);
+        pdf.line(pageW - 8, pageH - 8, pageW - 8, pageH - 8 - cs);
+
+        var y = 30; // cursor vertical
+
+        // --- Logos ---
+        var logoH = 18;
+        var logoGap = 8;
+        var logoASCw = logoASC ? logoH * (logoASC.w / logoASC.h) : 0;
+        var logoValleW = logoValle ? logoH * (logoValle.w / logoValle.h) : 0;
+        var totalLogosW = logoASCw + logoGap + logoValleW;
+        var logosX = (pageW - totalLogosW) / 2;
+        if (logoASC) pdf.addImage(logoASC.data, 'PNG', logosX, y, logoASCw, logoH);
+        if (logoValle) pdf.addImage(logoValle.data, 'PNG', logosX + logoASCw + logoGap, y, logoValleW, logoH);
+        y += logoH + 6;
+
+        // --- Encabezado institucional ---
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(10);
+        pdf.setTextColor(98, 37, 153);
+        pdf.text('ASOCIACIÓN SCOUTS DE COLOMBIA', pageW / 2, y, { align: 'center' });
+        y += 5;
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(8);
+        pdf.setTextColor(120, 120, 120);
+        pdf.text('Regional Valle del Cauca', pageW / 2, y, { align: 'center' });
+        y += 5;
+
+        // --- Línea divisoria morada ---
+        pdf.setDrawColor(98, 37, 153);
+        pdf.setLineWidth(0.6);
+        pdf.line(40, y, pageW - 40, y);
+        y += 10;
+
+        // --- Título "CERTIFICADO DE APROBACIÓN" ---
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(22);
+        pdf.setTextColor(98, 37, 153);
+        pdf.text('CERTIFICADO DE APROBACIÓN', pageW / 2, y, { align: 'center' });
+        y += 12;
+
+        // --- Banner morado con nombre del curso ---
+        pdf.setFillColor(98, 37, 153);
+        pdf.rect(20, y, pageW - 40, 14, 'F');
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(13);
+        pdf.setTextColor(255, 255, 255);
+        var courseLines = _wrapText(pdf, courseName, pageW - 50);
+        if (courseLines.length > 1) {
+            pdf.setFontSize(11);
+        }
+        pdf.text(courseLines[0], pageW / 2, y + 9, { align: 'center' });
+        y += 20;
+
+        // --- "Se otorga a" ---
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(11);
+        pdf.setTextColor(99, 99, 99);
+        pdf.text('Se otorga el presente certificado a', pageW / 2, y, { align: 'center' });
+        y += 10;
+
+        // --- Nombre del estudiante ---
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(20);
+        pdf.setTextColor(98, 37, 153);
+        pdf.text(student, pageW / 2, y, { align: 'center' });
+        // Subrayado amarillo bajo el nombre
+        var nameW = pdf.getTextWidth(student);
+        pdf.setDrawColor(255, 230, 117);
+        pdf.setLineWidth(1.5);
+        pdf.line((pageW - nameW) / 2 - 5, y + 2, (pageW + nameW) / 2 + 5, y + 2);
+        y += 12;
+
+        // --- Descripción ---
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(10);
+        pdf.setTextColor(99, 99, 99);
+        var descLines = _wrapText(pdf, courseDescription, pageW - 60);
+        for (var i = 0; i < descLines.length && i < 3; i++) {
+            pdf.text(descLines[i], pageW / 2, y, { align: 'center' });
+            y += 5;
+        }
+        y += 5;
+
+        // --- Tarjeta de detalles ---
+        var detX = 25, detW = pageW - 50, detH = 38;
+        pdf.setFillColor(249, 247, 252);
+        pdf.rect(detX, y, detW, detH, 'F');
+        pdf.setFillColor(98, 37, 153);
+        pdf.rect(detX, y, 2, detH, 'F'); // borde izquierdo morado
+
+        var colX1 = detX + 8;
+        var colX2 = detX + detW / 2 + 5;
+        var rowY = y + 8;
+        var rowGap = 7;
+
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(9);
+        pdf.setTextColor(60, 60, 60);
+
+        function _detail(label, value, x, yy) {
+            pdf.setFont('helvetica', 'bold');
+            pdf.setTextColor(98, 37, 153);
+            pdf.text(label, x, yy);
+            pdf.setFont('helvetica', 'normal');
+            pdf.setTextColor(60, 60, 60);
+            pdf.text(String(value || '-'), x + pdf.getTextWidth(label) + 2, yy);
+        }
+
+        _detail('Fecha: ', date, colX1, rowY);
+        _detail('Puntuación: ', score + '%', colX2, rowY);
+        _detail('Grupo Scout: ', group, colX1, rowY + rowGap);
+        _detail('Región: ', region, colX2, rowY + rowGap);
+        _detail('Tiempo: ', totalTime + ' min', colX1, rowY + rowGap * 2);
+        pdf.setFont('helvetica', 'bold');
+        pdf.setTextColor(98, 37, 153);
+        pdf.text('Estado: ', colX2, rowY + rowGap * 2);
+        pdf.setTextColor(46, 125, 50);
+        pdf.text('APROBADO', colX2 + pdf.getTextWidth('Estado: ') + 2, rowY + rowGap * 2);
+
+        y += detH + 8;
+
+        // --- Código de verificación ---
+        var codeBoxH = 14;
+        pdf.setDrawColor(98, 37, 153);
+        pdf.setLineWidth(0.4);
+        pdf.setLineDashPattern([1.5, 1.5], 0);
+        pdf.setFillColor(250, 248, 253);
+        pdf.rect(50, y, pageW - 100, codeBoxH, 'FD');
+        pdf.setLineDashPattern([], 0);
+
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(7);
+        pdf.setTextColor(140, 140, 140);
+        pdf.text('CÓDIGO DE VERIFICACIÓN', pageW / 2, y + 5, { align: 'center' });
+        pdf.setFont('courier', 'bold');
+        pdf.setFontSize(11);
+        pdf.setTextColor(98, 37, 153);
+        pdf.text(code, pageW / 2, y + 11, { align: 'center' });
+        y += codeBoxH + 6;
+
+        // --- Footer ---
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(7);
+        pdf.setTextColor(150, 150, 150);
+        pdf.text('Plataforma de Formación Rover ASC  |  vallescout.org.co', pageW / 2, pageH - 16, { align: 'center' });
+        pdf.setFontSize(6);
+        pdf.text('Verifica este certificado ingresando el código en la plataforma web', pageW / 2, pageH - 12, { align: 'center' });
+
+        // --- Guardar ---
+        if (mobile) {
+            var blob = pdf.output('blob');
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement('a');
+            link.href = url; link.download = filename; link.target = '_blank';
+            document.body.appendChild(link); link.click();
+            setTimeout(function() { document.body.removeChild(link); URL.revokeObjectURL(url); }, 5000);
+        } else {
+            pdf.save(filename);
+        }
+        showNotification('PDF descargado: ' + filename + ' 📥');
+    }).catch(function(err) {
+        if (typeof console !== 'undefined') console.error('Error PDF:', err);
+        showNotification('Error al generar PDF. Intenta con Imprimir.', 'warning');
+        if (confirm('¿Deseas usar la opción de Imprimir?')) { window.print(); }
+    });
+}
+
+// --- Compartir ---
+function shareResults() {
+    var text = '¡He completado el curso ' + COURSE_CONFIG.title + '! 🏕️\n\n' +
+        'Certificado: ' + document.getElementById('certCode').textContent + '\n' +
+        'Puntuación: ' + document.getElementById('finalScore').textContent + '%\n\n' +
+        '#ScoutsSiempreListos #RoverScout #ASC';
+    if (navigator.share) {
+        navigator.share({ title: COURSE_CONFIG.title + ' Completado', text: text });
+    } else {
+        navigator.clipboard.writeText(text);
+        showNotification('¡Texto copiado al portapapeles! 📋');
+    }
+}
+
+function restartCourse() {
+    if (confirm('¿Estás seguro de que quieres reiniciar el curso? Se perderá todo el progreso.')) {
+        localStorage.removeItem('courseProgress_' + COURSE_CONFIG.courseId);
+        localStorage.removeItem('commitment_' + COURSE_CONFIG.courseId);
+        location.reload();
+    }
+}
+
+// --- Registration mode toggle ---
+function toggleRegistrationMode(mode) {
+    var newRegBtn = document.getElementById('toggleNewReg');
+    var recoverBtn = document.getElementById('toggleRecover');
+    var recoverySection = document.getElementById('recoverySection');
+    var registrationForm = document.getElementById('registrationForm');
+
+    if (mode === 'recover') {
+        newRegBtn.classList.remove('active');
+        recoverBtn.classList.add('active');
+        recoverySection.classList.remove('hidden');
+        registrationForm.style.display = 'none';
+    } else {
+        newRegBtn.classList.add('active');
+        recoverBtn.classList.remove('active');
+        recoverySection.classList.add('hidden');
+        registrationForm.style.display = '';
+    }
+}
+
+// --- Recovery from server ---
+function recoverProgress() {
+    var emailInput = document.getElementById('recoveryEmail');
+    var email = emailInput.value.trim();
+    var msgDiv = document.getElementById('recoveryMessage');
+
+    if (!email) {
+        showNotification('⚠️ Ingresa tu correo electronico', 'warning');
+        return;
+    }
+
+    // Ley 1581 de 2012. La autorizacion va donde se capturan los datos, y recuperar
+    // el avance PUEDE CREAR LA INSCRIPCION: es una puerta de entrada mas. La del
+    // registro la bloquea el navegador con `required`; esta no vive dentro de un
+    // <form>, asi que se mira a mano.
+    var consentRec = document.getElementById('consentRecover');
+    if (consentRec && !consentRec.checked) {
+        showNotification('⚠️ Para continuar, autoriza el tratamiento de tus datos', 'warning');
+        return;
+    }
+
+    msgDiv.style.display = 'block';
+    msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">🔄 Buscando tu avance...</p>';
+
+    var url = COURSE_CONFIG.googleScriptUrl +
+        '?action=recover&email=' + encodeURIComponent(email) +
+        '&course=' + encodeURIComponent(COURSE_CONFIG.courseId) +
+        '&token=ROVER_ASC_2025';
+
+    fetch(url, { redirect: 'follow' })
+        .then(function(response) {
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            return response.json();
+        })
+        .then(function(data) {
+
+            // El Apps Script devuelve: { success: true, data: { registration, modules, quizzes, certificates } }
+            var isFound = (data && data.found) || (data && data.success && data.data);
+
+            if (isFound) {
+                var serverData = data.data || data;
+                var reg = serverData.registration || data.userProfile || {};
+                var mods = serverData.modules || [];
+                var quizzes = serverData.quizzes || [];
+
+                // Reconstruir userProfile desde registration
+                if (reg.fullName || reg.name) {
+                    userProfile = {
+                        fullName: reg.fullName || reg.name || '',
+                        age: reg.age || '',
+                        group: reg.group || '',
+                        region: reg.region || '',
+                        email: reg.email || email,
+                        motivation: reg.motivation || '',
+                        registrationDate: reg.registrationDate || reg.timestamp || ''
+                    };
+                } else if (data.userProfile) {
+                    userProfile = data.userProfile;
+                }
+
+                // Reconstruir moduleProgress desde modules array
+                if (mods.length > 0) {
+                    moduleProgress = new Array(COURSE_CONFIG.totalModules).fill(false);
+                    mods.forEach(function(m) {
+                        var modNum = m.moduleCompleted || m.module;
+                        if (modNum !== undefined && modNum < moduleProgress.length) {
+                            moduleProgress[modNum] = true;
+                        }
+                    });
+                } else if (data.moduleProgress) {
+                    moduleProgress = data.moduleProgress;
+                }
+
+                // Reconstruir quizScores desde quizzes array
+                if (quizzes.length > 0) {
+                    quizScores = [];
+                    quizzes.forEach(function(q) {
+                        var modNum = q.module;
+                        var score = q.score;
+                        if (modNum !== undefined && score !== undefined) {
+                            quizScores[modNum] = parseInt(score);
+                        }
+                    });
+                } else if (data.quizScores) {
+                    quizScores = data.quizScores;
+                }
+
+                // StudyTime: el unico dato de sesion que el backend sigue devolviendo
+                if (data.studyTime) studyTime = data.studyTime;
+
+                // ADR-074 - AQUI NO SE HIDRATA NINGUN TEXTO, A PROPOSITO.
+                // `recover` no esta autenticado: pide un correo y nada mas. Por eso el
+                // backend de Rover -que es propio, con su hoja y su token- dejo de mandar
+                // lo que la persona escribio y solo dice QUE hay guardado (serverData.saved).
+                // Lo escrito vive en el navegador donde se escribio, y alli sigue.
+                var guardado = serverData.saved || {};
+                var anotaciones = 0;
+                Object.keys(guardado.reflections || {}).forEach(function (cid) {
+                    anotaciones += (guardado.reflections[cid] || []).length;
+                });
+                Object.keys(guardado.commitments || {}).forEach(function (cid) {
+                    anotaciones += guardado.commitments[cid] || 0;
+                });
+                anotaciones += (guardado.plans || []).length + (guardado.assessments || []).length;
+
+                saveProgress();
+                updateStats();
+                updateProgress();
+
+                // --- Recuperar TAMBIEN inscribe en este curso (ADR-082) ---
+                // `recover` busca por correo y devuelve la inscripcion que encuentre,
+                // sea del curso que sea: se entraba aqui con el registro de OTRO curso,
+                // se hacia este entero y al final se escribia el certificado pero nunca
+                // la inscripcion. En la plataforma eso dejo 7 certificados sin fila y
+                // una linea entera figurando con 0 adultos (ADR-080).
+                // Se inscribe SOLO ante un `false` explicito: un `undefined` de un
+                // despliegue anterior no puede leerse como "vuelve a inscribirla".
+                var inscritoAhora = false;
+                if (serverData.registeredInCourse === false && userProfile && userProfile.fullName) {
+                    // Campo a campo y no con spread, para que se vea que `motivation`
+                    // va vacia: `recover` no la devuelve desde el ADR-074.
+                    sendToGoogleSheets({
+                        action: 'register',
+                        fullName: userProfile.fullName,
+                        age: userProfile.age,
+                        group: userProfile.group,
+                        region: userProfile.region,
+                        email: userProfile.email,
+                        motivation: '',
+                        registrationDate: new Date().toISOString(),
+                        course: COURSE_CONFIG.courseId
+                    });
+                    inscritoAhora = true;
+                }
+
+                // Determinar último módulo completado
+                var lastModule = data.currentModule || 0;
+                if (!lastModule && moduleProgress.length > 0) {
+                    for (var i = moduleProgress.length - 1; i >= 0; i--) {
+                        if (moduleProgress[i]) { lastModule = i + 1; break; }
+                    }
+                }
+
+                var firstName = userProfile.fullName ? userProfile.fullName.split(' ')[0] : 'Scout';
+                var welcomeEl = document.getElementById('welcomeName');
+                if (welcomeEl) welcomeEl.textContent = firstName;
+
+                var completedCount = moduleProgress.filter(Boolean).length;
+                showNotification('¡Avance recuperado, ' + firstName + '! ' + completedCount + ' módulos completados 🎉');
+
+                // Si acabamos de inscribirla en este curso, se dice: el dato se arregla
+                // y el texto lo cuenta, que son la misma mitad de la decision.
+                var avisoInscripcion = inscritoAhora
+                    ? '<p style="color: #2e7d32; margin-top: 10px;">Te inscribimos en <strong>este curso</strong> con esos mismos datos.</p>'
+                    : '';
+                var avisoAnotaciones = anotaciones > 0
+                    ? '<p style="color: #636363; margin-top: 10px;">Tienes <strong>' + anotaciones +
+                      '</strong> anotaciones guardadas. Lo que escribes <strong>no se recupera por correo</strong>: ' +
+                      'se queda en el navegador donde lo escribiste.</p>'
+                    : '';
+
+                if ((anotaciones > 0 || inscritoAhora) && typeof msgDiv !== 'undefined' && msgDiv) {
+                    msgDiv.style.display = 'block';
+                    msgDiv.innerHTML = '<p style="color: #2e7d32; font-weight: 600;">✅ Recuperamos tu avance.</p>' +
+                        avisoInscripcion + avisoAnotaciones;
+                }
+                showModule(lastModule > 0 ? lastModule : 1);
+            } else {
+                var reason = (data && data.message) ? data.message : 'No se encontro avance asociado a este correo.';
+                msgDiv.innerHTML = '<p style="color: #FF9800; font-weight: 600;">⚠️ ' + reason + '</p>' +
+                    '<p style="color: #636363; margin-top: 10px;">Puedes registrarte como nuevo usuario.</p>' +
+                    '<button class="btn" style="margin-top: 10px;" onclick="toggleRegistrationMode(\'new\')">🆕 Registrarme</button>';
+            }
+        })
+        .catch(function(err) {
+            if (typeof console !== 'undefined') console.error('[Recovery] Error:', err);
+            msgDiv.innerHTML = '<p style="color: #f44336; font-weight: 600;">❌ Error al conectar con el servidor.</p>' +
+                '<p style="color: #636363; margin-top: 10px;">Error: ' + err.message + '</p>' +
+                '<p style="color: #636363; margin-top: 5px;">Verifica tu conexion a internet e intenta de nuevo.</p>';
+        });
+}
+
+// --- Google Sheets ---
+function sendToGoogleSheets(data) {
+    if (!COURSE_CONFIG.googleScriptUrl) return;
+    try {
+        var indicator = document.getElementById('syncIndicator');
+        if (indicator) indicator.classList.add('show');
+        var payload = Object.assign({}, data, {
+            token: 'ROVER_ASC_2025',
+            timestamp: new Date().toISOString(),
+            url: window.location.href
+        });
+
+        // Try CORS first, fall back to no-cors
+        fetch(COURSE_CONFIG.googleScriptUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        }).then(function (response) {
+            if (indicator) {
+                indicator.textContent = '☁️ Guardado en la nube';
+                indicator.classList.add('show');
+                setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+            }
+            return response.json().catch(function() { return {}; });
+        }).catch(function () {
+            // Fallback to no-cors mode for older Apps Script deployments
+            fetch(COURSE_CONFIG.googleScriptUrl, {
+                method: 'POST', mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).then(function () {
+                if (indicator) {
+                    indicator.textContent = '☁️ Sincronizado con Google Sheets';
+                    indicator.classList.add('show');
+                    setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+                }
+            }).catch(function () {
+                if (indicator) {
+                    indicator.textContent = '💾 Guardado localmente';
+                    indicator.classList.add('show');
+                    setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+                }
+                // Datos guardados localmente (fallback silencioso)
+            });
+        });
+    } catch (e) {
+        // Google Sheets no disponible, progreso guardado localmente
+        var indicator = document.getElementById('syncIndicator');
+        if (indicator) {
+            indicator.textContent = '💾 Guardado localmente';
+            indicator.classList.add('show');
+            setTimeout(function () { indicator.classList.remove('show'); }, 2000);
+        }
+    }
+}
+
+// --- Timers ---
+// Incrementar studyTime cada minuto y guardar progreso (solo si esta en un modulo de contenido)
+setInterval(function () {
+    if (currentModule > 0) {
+        studyTime += 1;
+        updateStats();
+        updateElapsedTime();
+    }
+    saveProgress();
+}, 60000);
+
+// --- Kit del Nivel 2 (ADR-106) ---
+// Se guarda SOLO en localStorage: nada de esto pasa por el backend (ADR-087).
+function _kitKey() { return 'rover:kit_' + COURSE_CONFIG.courseId; }
+function _kitRoot() { return document.querySelector('[data-kit-builder]'); }
+
+function loadKit() {
+    try { return JSON.parse(localStorage.getItem(_kitKey())) || null; } catch (e) { return null; }
+}
+
+function saveKit() {
+    var root = _kitRoot();
+    if (!root) return;
+    var kit = { games: {}, phrases: {}, care: [], careOwn: '' };
+    root.querySelectorAll('[data-kit-game]').forEach(function (cb) {
+        if (!cb.checked) return;
+        var id = cb.getAttribute('data-kit-game');
+        var ta = root.querySelector('[data-kit-why="' + id + '"]');
+        kit.games[id] = ta ? ta.value : '';
+    });
+    root.querySelectorAll('[data-kit-phrase]').forEach(function (ta) {
+        kit.phrases[ta.getAttribute('data-kit-phrase')] = ta.value;
+    });
+    root.querySelectorAll('[data-kit-care]').forEach(function (cb) {
+        if (cb.checked) kit.care.push(cb.getAttribute('data-kit-care'));
+    });
+    var own = root.querySelector('[data-kit-care-own]');
+    kit.careOwn = own ? own.value : '';
+    try { localStorage.setItem(_kitKey(), JSON.stringify(kit)); } catch (e) {}
+}
+
+function _kitRefresh() {
+    var root = _kitRoot();
+    if (!root) return;
+    var max = parseInt(root.getAttribute('data-max-games'), 10) || 3;
+    var boxes = root.querySelectorAll('[data-kit-game]');
+    var n = 0;
+    boxes.forEach(function (cb) { if (cb.checked) n++; });
+    boxes.forEach(function (cb) {
+        cb.disabled = !cb.checked && n >= max;
+        var ta = root.querySelector('[data-kit-why="' + cb.getAttribute('data-kit-game') + '"]');
+        if (ta) ta.hidden = !cb.checked;
+    });
+    var count = root.querySelector('[data-kit-count]');
+    if (count) count.textContent = n + ' de ' + max + ' elegidos';
+}
+
+function initKitBuilder() {
+    var root = _kitRoot();
+    if (!root) return;
+    var kit = loadKit();
+    if (kit) {
+        Object.keys(kit.games || {}).forEach(function (id) {
+            var cb = root.querySelector('[data-kit-game="' + id + '"]');
+            var ta = root.querySelector('[data-kit-why="' + id + '"]');
+            if (cb) cb.checked = true;
+            if (ta) ta.value = kit.games[id] || '';
+        });
+        Object.keys(kit.phrases || {}).forEach(function (id) {
+            var ta = root.querySelector('[data-kit-phrase="' + id + '"]');
+            if (ta) ta.value = kit.phrases[id] || '';
+        });
+        (kit.care || []).forEach(function (id) {
+            var cb = root.querySelector('[data-kit-care="' + id + '"]');
+            if (cb) cb.checked = true;
+        });
+        var own = root.querySelector('[data-kit-care-own]');
+        if (own) own.value = kit.careOwn || '';
+    }
+    root.addEventListener('change', function () { _kitRefresh(); saveKit(); });
+    root.addEventListener('input', function () { saveKit(); });
+    _kitRefresh();
+}
+
+function downloadKitPDF() {
+    var root = _kitRoot();
+    if (!root) return;
+    saveKit();
+    var JsPDF = (window.jspdf && window.jspdf.jsPDF) || (typeof jsPDF !== 'undefined' ? jsPDF : null);
+    if (!JsPDF) { showNotification('La librería de PDF no cargó. Verifica tu conexión.'); return; }
+    var pdf = new JsPDF({ unit: 'mm', format: 'a4' });
+    var M = 18, y = 20, ancho = 210 - 2 * M;
+    function linea(texto, tam, negrita) {
+        pdf.setFont('helvetica', negrita ? 'bold' : 'normal');
+        pdf.setFontSize(tam);
+        _wrapText(pdf, texto, ancho).forEach(function (l) {
+            if (y > 280) { pdf.addPage(); y = 20; }
+            pdf.text(l, M, y); y += tam * 0.45;
+        });
+        y += 1.5;
+    }
+    function textoDe(el) { return el ? el.textContent.replace(/\s+/g, ' ').trim() : ''; }
+    linea(root.getAttribute('data-pdf-title') || 'Mi kit', 16, true);
+    var nombre = (userProfile && userProfile.fullName) ? userProfile.fullName : '';
+    linea([nombre, COURSE_CONFIG.title, new Date().toLocaleDateString('es-CO')].filter(Boolean).join(' · '), 10, false);
+    y += 3;
+    linea(textoDe(root.querySelector('.kit-games legend')), 13, true);
+    root.querySelectorAll('[data-kit-game]').forEach(function (cb) {
+        if (!cb.checked) return;
+        var id = cb.getAttribute('data-kit-game');
+        linea('• ' + textoDe(root.querySelector('label[for="kit-game-' + id + '"]')), 11, true);
+        var ta = root.querySelector('[data-kit-why="' + id + '"]');
+        if (ta && ta.value.trim()) linea(ta.value.trim(), 11, false);
+    });
+    y += 3;
+    linea(textoDe(root.querySelector('.kit-phrases legend')), 13, true);
+    root.querySelectorAll('[data-kit-phrase]').forEach(function (ta) {
+        var id = ta.getAttribute('data-kit-phrase');
+        linea(textoDe(root.querySelector('label[for="kit-phrase-' + id + '"]')), 11, true);
+        linea(ta.value.trim() ? '«' + ta.value.trim() + '»' : '—', 11, false);
+    });
+    y += 3;
+    linea(textoDe(root.querySelector('.kit-care legend')), 13, true);
+    // Las normas de la Guia van SIEMPRE: no dependen de lo que el Rover marque.
+    root.querySelectorAll('[data-kit-rule]').forEach(function (li) {
+        linea('• ' + textoDe(li), 11, false);
+    });
+    root.querySelectorAll('[data-kit-care]').forEach(function (cb) {
+        if (cb.checked) linea('[x] ' + textoDe(root.querySelector('label[for="' + cb.id + '"]')), 11, false);
+    });
+    var own = root.querySelector('[data-kit-care-own]');
+    if (own && own.value.trim()) linea('[x] ' + own.value.trim(), 11, false);
+    pdf.save('Kit-' + COURSE_CONFIG.courseId + '.pdf');
+    showNotification('Kit descargado 📥');
+}
+
+    </script>
+    <script src="../assets/theme-toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+{
+  "courseId": "herramientas-manada",
+  "title": "Herramientas para la Manada",
+  "subtitle": "Ruta Servir en el Grupo · Nivel 2 · Manada",
+  "description": "Para el Rover que ya sirve en la Manada y quiere hacerlo mejor. En ~40 minutos vas a aprender a elegir y ajustar juegos para lobatos de 7 a 10 años, a proponer experiencias al aire libre, a mediar sin resolverlo todo y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía para el Dirigente de Manada (2026).",
+  "contentVersion": "2026-09-28",
+  "route": "grupo",
+  "level": 2,
+  "branch": "manada",
+  "registration": {
+    "motivationLabel": "¿Qué quieres mejorar de tu servicio en la Manada?"
+  },
+  "icon": "🧰",
+  "duration": "40 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "Ya conoces la Manada: cómo son de 7 a 10 años, la Selva, la firmeza con ternura, las seisenas y el Consejo de Roca. Ahora el Viejo Lobo te dice: «Este sábado propón tú algo». Este curso es para ese momento."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Tu papel es traducir lo complejo en algo sencillo, lo abstracto en juego, lo técnico en historia o desafío.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La frase es de la <em>Guía para el Dirigente de Manada</em> de la Asociación (2026, p. 9), la fuente principal de este curso. Las otras son el <em>Manual de Presentación y Buen Orden de la Manada</em>, la <em>Política Nacional A Salvo del Peligro</em> (2025) y la <em>Guía de Prevención y Atención del Daño</em> (2021)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Este es un curso del Nivel 2: da por sabido lo del curso <em>Servir en la Manada</em>, así que conviene que lo hagas antes. Aquí no se repite: se usa y se va más allá.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta. En la última lección armas tu kit y lo descargas: se queda en tu navegador, no va a ninguna hoja."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Elegir y ajustar</strong> un juego para lobatos, sin comparaciones y con la voz de todos",
+            "<strong>Proponer</strong> experiencias al aire libre que desarrollen su autocuidado",
+            "<strong>Mediar</strong> un conflicto sin resolverlo por ellos y <strong>dar lugar</strong> a que elijan y opinen",
+            "<strong>Reconocer</strong> señales de alerta y <strong>responder</strong> sin investigar",
+            "<strong>Armar</strong> tu kit: tres juegos con su porqué, tus frases y tu lista de cuidado"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Juegos que traducen",
+      "emoji": "🎲",
+      "navLabel": "Juegos",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> un buen juego para lobatos traduce una idea en acción, no compara a nadie y deja que ellos decidan algo."
+        },
+        {
+          "type": "paragraph",
+          "text": "En el curso anterior viste que en la Manada moverse es aprender. Ahora el juego lo propones tú, y aparecen preguntas nuevas: ¿qué hago con el que siempre pierde?, ¿y si no se ponen de acuerdo?, ¿y si nadie quiere mi juego?"
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía pide traducir «lo abstracto en juego» (p. 9) y usar el juego simbólico de la Selva para «explorar roles, expresar emociones y ensayar formas de actuar» (p. 10). Y avisa algo que el juego saca a flote: «Las comparaciones aparecen de forma natural, por eso tu tarea es cuidar que cada Lobato se sienta capaz y valioso tal como es» (p. 9)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Juegos donde ellos deciden"
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía propone <strong>juegos democráticos</strong>: votar con fichas o colores, elegir entre opciones levantando la mano, decidir el nombre de un juego o proponer ideas en grupo. Con ellos los lobatos aprenden a respetar opiniones distintas, a aceptar decisiones colectivas y «que ganar o perder no define su valor» (p. 54). Y la Manada tiene sus propios momentos de juego, como la Flor Roja, con cantos, danzas y juegos de todos (<em>Buen Orden</em>, pp. 9-10)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Cuando el juego no funciona"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Aparece la comparación</strong> («soy el peor»): cambia el reto para que cada uno mida su propio avance, no contra otro (p. 9)",
+            "<strong>No se ponen de acuerdo</strong> en qué jugar: que decidan con un juego democrático, como votar con fichas (p. 54)",
+            "<strong>Nadie quiere tu juego:</strong> ofréceles dos opciones y que elijan; no lo impongas ni lo abandones (p. 59)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Estos ajustes son una recomendación de este curso, tomada de lo que la Guía pide. Llévalos al Viejo Lobo cuando le propongas el juego: él decide si entra en la reunión."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en un juego que hayas visto donde una comparación hizo sentir mal a alguien. ¿Qué cambiarías para que cada lobato mida su propio avance? Sin nombres: basta con lo que pasó."
+      },
+      "quiz": {
+        "title": "Evaluación - Juegos",
+        "questions": [
+          {
+            "text": "En un juego de puntería, un lobato falla otra vez y dice en voz alta: «Soy el peor de todos». ¿Qué ajuste va mejor con lo que pide la Guía?",
+            "options": [
+              "Recordarle que otros también fallaron, así que no es el único que falla",
+              "Cambiar el reto para que cada uno intente superar su propio tiro anterior",
+              "Darle un tiro extra solo a él, y seguir contando los puntos como siempre se hace"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "La Manada está dividida: la mitad quiere un juego de rastreo y la otra mitad uno de relevos. Se empieza a armar una discusión. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Proponer que decidan con una votación de fichas y hacer el juego que gane",
+              "Elegir tú el juego que te parezca mejor, y explicarles luego el porqué",
+              "Pedirles que hagan primero el del lobato que más insiste, y luego el otro"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: al aire libre ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Al aire libre",
+      "emoji": "🌳",
+      "navLabel": "Aire libre",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> al aire libre los lobatos aprenden a cuidarse, a cooperar y a cuidar el entorno; tu apoyo es que lo hagan ellos."
+        },
+        {
+          "type": "paragraph",
+          "text": "Seguro recuerdas una salida de la que volviste orgulloso. La Guía lo explica: «Encender una fogata con ayuda, completar una caminata, cruzar un obstáculo o dormir fuera de casa son experiencias que generan orgullo sano y sensación de logro» (p. 34). También dice que en la naturaleza aprenden a cooperar, a asumir pequeñas responsabilidades y a cuidar el entorno (p. 34)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Para eso, la Guía pide cuatro grupos de <strong>habilidades de vida al aire libre</strong> (p. 35):"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Exploración:</strong> identificar elementos naturales, orientarse de forma sencilla, reconocer señales del entorno",
+            "<strong>Vida en grupo:</strong> cooperar, distribuir tareas sencillas, respetar normas compartidas",
+            "<strong>Autocuidado y seguridad:</strong> reconocer riesgos básicos, seguir indicaciones de seguridad y «cuidar su hidratación, alimentación y descanso»",
+            "<strong>Juego y recreación</strong> al aire libre"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Y la conciencia ambiental pasa «de la conciencia a la acción»: sembrar, cuidar espacios cercanos, reducir, reutilizar y reciclar, ahorrar agua y energía, proteger la fauna silvestre (p. 36)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> La Guía nombra la fogata o el campamento, pero no enseña cómo hacerlos, y este curso tampoco: esa técnica la dirigen los Viejos Lobos. Lo que sí te toca es que ellos practiquen su autocuidado: en vez de repartir tú el agua, pregúntales cuándo tomaron la última vez. Los cinco pasos de la gestión del riesgo ya los viste en <em>Servir en la Manada</em>."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en una salida de tu infancia de la que volviste orgulloso o orgullosa. ¿Qué la hizo posible, y qué hicieron los adultos para que lo lograras tú?"
+      },
+      "quiz": {
+        "title": "Evaluación - Al aire libre",
+        "questions": [
+          {
+            "text": "A mitad de una caminata soleada, notas que varios lobatos no han tomado agua desde que salieron. ¿Qué va mejor con las habilidades que pide la Guía?",
+            "options": [
+              "Pedirles que revisen quién no ha tomado agua, y que cada uno tome la suya",
+              "Pasar tú por la fila dándole la botella a cada uno, para ir más rápido",
+              "Parar la caminata un rato largo, hasta que todos y todas hayan tomado su agua"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "En la caminata, un lobato encuentra un nido con huevos al lado del sendero y quiere llevárselo para mostrarlo en la sede. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Dejar que lo lleve con cuidado, así los huevos no se rompen en el camino",
+              "Mirarlo entre todos sin tocarlo, y dejarlo donde estaba para protegerlo",
+              "Tomarle una foto al nido y explicarle en la sede por qué no se lo podía llevar"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: mediar y dar lugar ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Mediar y dar lugar",
+      "emoji": "🤝",
+      "navLabel": "Mediar",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> no resuelvas por ellos lo que pueden resolver, pero no los dejes solos con la dificultad."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ya sabes poner límites con firmeza y ternura. El paso siguiente es más fino: cuándo intervenir y cuándo dejar que lo intenten. La Guía lo dice así: el adulto «no sustituye al Lobato en lo que puede hacer por sí mismo, ni lo abandona ante la dificultad» (p. 58)."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Mediar, no resolver:</strong> los roces son normales; tu papel es «acompañar, mediar cuando haga falta y enseñar con el ejemplo» (p. 10)",
+            "<strong>El error es parte del aprendizaje</strong> y cada logro, por pequeño que sea, se valora (p. 59)",
+            "<strong>Dar lugar:</strong> elegir entre opciones, asumir encargos sencillos, participar en acuerdos y opinar después (p. 59)",
+            "<strong>Coherencia:</strong> los lobatos se preguntan «¿Vale la pena parecerme a este adulto?» (p. 58)"
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> Cuando dos lobatos discuten, pregúntales qué propone cada uno antes de dar tu solución. Cuando uno se frustra con algo que puede hacer, acompáñalo sin hacerlo por él. Y si una familia te pregunta cómo va su hijo, la Guía pide contar procesos —autonomía, convivencia, participación— y no solo insignias (p. 60); lo demás se lo cuenta el Viejo Lobo."
+        }
+      ],
+      "reflection": {
+        "prompt": "Recuerda una vez en que un adulto hizo por ti algo que podías hacer solo o sola. ¿Cómo te sentiste, y qué habría sido mejor que hiciera?"
+      },
+      "quiz": {
+        "title": "Evaluación - Mediar y dar lugar",
+        "questions": [
+          {
+            "text": "Dos lobatos quieren ser Baloo en la dramatización y empiezan a jalar el mismo disfraz. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Quitarles el disfraz y dárselo a un tercero, para que ninguno de los dos pelee",
+              "Preguntarles qué propone cada uno, y acompañarlos hasta que se pongan de acuerdo",
+              "Decidir tú quién hace de Baloo hoy, según quién llegó primero a la reunión de la Manada"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Una lobata arruga su dibujo de la Selva y dice que quedó feo. ¿Qué va mejor con lo que pide la Guía?",
+            "options": [
+              "Rehacérselo tú rápido y bien hecho, para que no se quede sin su dibujo",
+              "Decirle que está bonito así aunque ella no lo crea, para que se calme y siga",
+              "Mostrarle algo que sí logró, para que decida ella qué cambiar al rehacerlo"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: cuidar ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Cuidar: lo que ves y lo que haces",
+      "emoji": "🛡️",
+      "navLabel": "Cuidar",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> cuidar también es fijarse; lo que ves no lo investigas: se lo cuentas al Viejo Lobo de inmediato."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Guía de Manada pone la base: proteger «la integridad física, emocional y moral de cada niño» y actuar «de manera oportuna ante cualquier señal de riesgo» (p. 64). Ya conoces la 2+1 y la gestión del riesgo; aquí van dos cosas más."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "1. Las señales de alerta"
+        },
+        {
+          "type": "paragraph",
+          "text": "La <em>Guía de Prevención y Atención del Daño</em> describe señales que pueden indicar maltrato, negligencia o violencia en casa, entre ellas: temor al contacto con adultos, llanto constante, verse con frecuencia sucio o con hambre (pp. 24-26), mostrar temor cuando alguien habla fuerte, o pedir que no se le cuente algo a su papá o a su mamá por miedo a su respuesta (p. 27). Y desmiente un mito: «Si no deja una marca o herida grave, no es violencia», que es falso (p. 36)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué haces con lo que ves.</strong> Una señal sola no prueba nada, y tampoco tienes que estar seguro para contarla: contarla es justo lo que te toca. No te toca averiguar qué pasa: la Política A Salvo del Peligro dice que la función del adulto en estos casos no es investigativa (p. 29). Díselo al Viejo Lobo de inmediato; en la Asociación nadie guarda secretos sobre algo que pueda dañar a alguien (Política, p. 21). La ruta oficial para reportar es el botón «Me Pongo A Salvo del Peligro», en scout.org.co y en los códigos QR de los sitios de reunión (Política, p. 44; Guía de Manada, p. 64), y cualquiera puede usarlo: úsalo tú si tiene que ver con alguien del equipo de adultos, o si ves que la situación sigue igual."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "2. Si un lobato está angustiado"
+        },
+        {
+          "type": "paragraph",
+          "text": "Los primeros auxilios psicológicos no son solo para profesionales (<em>Guía de Prevención</em>, p. 20), y lo que enseñan te sirve también cuando un lobato se asusta. Lo esencial: reconfortar y ayudar a calmarse, escuchar sin presionar a que cuente, no juzgar lo que siente —nada de «no deberías sentirte así»— y no hacer falsas promesas (pp. 20-23)."
+        }
+      ],
+      "reflection": {
+        "prompt": "Si un lobato te dijera «no le cuentes a nadie», ¿qué le responderías, tal cual, para no prometerle el secreto sin que sienta que lo traicionas? Sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Cuidar",
+        "questions": [
+          {
+            "text": "Hace varias reuniones notas que un lobato se encoge y se asusta cada vez que alguien alza la voz, aunque sea jugando. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Preguntarle a él qué le pasa en casa, y contárselo después al Viejo Lobo",
+              "Contárselo al Viejo Lobo de inmediato, sin sacar conclusiones tú solo",
+              "Esperar un mes más a ver si sigue igual, y ahí contárselo al Viejo Lobo"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Un lobato se cae corriendo, se raspa la rodilla y llora asustado mientras el Viejo Lobo trae el botiquín. ¿Qué va con los primeros auxilios psicológicos?",
+            "options": [
+              "Decirle que los lobos no lloran por un raspón, para que se anime",
+              "Preguntarle por qué corría tan rápido, para que aprenda a cuidarse la próxima",
+              "Agacharte a su altura y hablarle con calma, para que se sienta seguro"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: arma tu kit ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Arma tu kit",
+      "emoji": "🧰",
+      "navLabel": "Tu kit",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 12 minutos · Idea central:</strong> lo que aprendiste se vuelve tuyo cuando lo eliges y lo escribes con tus palabras."
+        },
+        {
+          "type": "kit-builder",
+          "labels": {
+            "title": "Tu kit para la Manada",
+            "intro": "Elige, escribe y descárgalo. Se guarda solo en este navegador: no va a ninguna hoja. Si vuelves al curso, lo encuentras como lo dejaste.",
+            "gamesTitle": "Mis 3 juegos",
+            "gamesHelp": "Marca tres. En cada uno escribe un juego concreto de ese tipo y responde: ¿qué idea traduce?, ¿cómo evitas la comparación?, ¿qué deciden ellos?",
+            "gameWhyPlaceholder": "Juego concreto · qué traduce · cómo evitas la comparación · qué deciden ellos",
+            "phrasesTitle": "Mis frases",
+            "phrasePlaceholder": "Lo que diría, tal cual",
+            "careTitle": "Mi lista de cuidado",
+            "rulesTitle": "Reglas, siempre (no se eligen):",
+            "careOwnPlaceholder": "Agrega un punto de cuidado propio (opcional)",
+            "download": "Descargar mi kit (PDF)",
+            "pdfTitle": "Mi kit para la Manada"
+          },
+          "games": [
+            {
+              "id": "g1",
+              "name": "Juego simbólico de la Selva",
+              "detail": "ensayar roles y emociones dentro de la historia",
+              "source": "Guía de Manada, p. 10"
+            },
+            {
+              "id": "g2",
+              "name": "Juego democrático",
+              "detail": "votar con fichas, elegir levantando la mano, decidir nombres",
+              "source": "Guía de Manada, p. 54"
+            },
+            {
+              "id": "g3",
+              "name": "Cantos y danzas de la Flor Roja",
+              "detail": "el momento de juego y compartir de la Manada",
+              "source": "Buen Orden, pp. 9-10"
+            },
+            {
+              "id": "g4",
+              "name": "Reto físico sencillo",
+              "detail": "correr, saltar, trepar, con metas propias",
+              "source": "Guía de Manada, p. 9"
+            },
+            {
+              "id": "g5",
+              "name": "Juego de exploración",
+              "detail": "identificar elementos y señales del entorno",
+              "source": "Guía de Manada, p. 35"
+            },
+            {
+              "id": "g6",
+              "name": "Desafío en grupo",
+              "detail": "algo que solo se logra cooperando",
+              "source": "Guía de Manada, p. 34-35"
+            },
+            {
+              "id": "g7",
+              "name": "Juego de cuidar el planeta",
+              "detail": "sembrar, reciclar, ahorrar agua",
+              "source": "Guía de Manada, p. 36"
+            }
+          ],
+          "phrases": [
+            {
+              "id": "f1",
+              "situation": "Un lobato no quiere participar porque «siempre pierde»."
+            },
+            {
+              "id": "f2",
+              "situation": "La Manada está muy alborotada y hay que volver a empezar."
+            },
+            {
+              "id": "f3",
+              "situation": "Un lobato le dice a otro que es un bebé."
+            },
+            {
+              "id": "f4",
+              "situation": "Se acabó el juego y un lobato quiere seguir jugando solo."
+            }
+          ],
+          "care": [
+            {
+              "id": "c1",
+              "rule": true,
+              "text": "Nunca me quedo a solas con un lobato, ni en persona ni por chat: siempre la 2+1.",
+              "source": "Guía de Manada, p. 64"
+            },
+            {
+              "id": "c2",
+              "rule": true,
+              "text": "Nunca llamo a la Manada con silbato.",
+              "source": "Buen Orden, p. 6"
+            },
+            {
+              "id": "c3",
+              "rule": true,
+              "text": "Pongo límites sin gritos, sin humillaciones y sin comparaciones.",
+              "source": "Guía de Manada, p. 58"
+            },
+            {
+              "id": "c4",
+              "rule": true,
+              "text": "Si veo una señal de alerta, se la cuento al Viejo Lobo de inmediato.",
+              "source": "Guía de Manada, p. 64; Política ASP, p. 21"
+            },
+            {
+              "id": "c5",
+              "text": "Pregunto a los lobatos por su agua y su descanso en vez de hacerlo por ellos.",
+              "source": "Guía de Manada, p. 35"
+            },
+            {
+              "id": "c6",
+              "text": "Antes de dar mi solución, pregunto qué propone cada uno.",
+              "source": "Guía de Manada, p. 10"
+            },
+            {
+              "id": "c7",
+              "text": "Con las familias, hablo de procesos y no solo de insignias.",
+              "source": "Guía de Manada, p. 60"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar vas a escribir tu compromiso. Hazlo para tus próximas cuatro reuniones, usando tu kit: «En la Manada voy a proponer ___ y a decir ___, y nunca voy a ___»."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Tu papel es traducir lo complejo en algo sencillo, lo abstracto en juego, lo técnico en historia o desafío.</strong><br>¡Siempre Mejor!"
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en tu próxima reunión. ¿En qué momento usarías uno de tus tres juegos, y qué ajuste harías si a los dos minutos no funciona? Sin nombres de niños."
+      },
+      "quiz": {
+        "title": "Evaluación - Tu kit",
+        "questions": [
+          {
+            "text": "El Viejo Lobo te pide proponer algo para que los lobatos entiendan por qué hay que cuidar el agua. ¿Cuál propuesta va más con todo lo del curso?",
+            "options": [
+              "Una charla corta sobre el ciclo del agua, con láminas para que la entiendan",
+              "Un reto en la Selva donde cada seisena gana si gasta menos agua que las otras",
+              "Un reto en la Selva donde la Manada entera busca ahorrar agua en la reunión"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "A la salida, un papá te pregunta: «¿Mi hijo ya se ganó la insignia?». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Contarle cómo ha avanzado en compartir y en cumplir sus encargos",
+              "Contarle que todavía no, y cuáles son las pruebas que le faltan",
+              "Decirle que de insignias solo habla el Viejo Lobo con las familias"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Al final de la reunión, un lobato te dice bajito: «No le digas a mi papá que rompí el cuaderno, me va a pegar». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Prometerle que no le vas a contar a nadie, para que siga confiando en ti",
+              "Escucharlo sin prometer el secreto y contárselo al Viejo Lobo de inmediato",
+              "Hablar tú con su papá a la salida y después contárselo al Viejo Lobo"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Juego que Traduce",
+      "emoji": "🎲",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Huella en la Selva",
+      "emoji": "🌳",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Mano que Media",
+      "emoji": "🤝",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Mirada que Cuida",
+      "emoji": "🛡️",
+      "unlockOnModule": 5
+    },
+    {
+      "id": "achievement-5",
+      "name": "Siempre Mejor",
+      "emoji": "🧰",
+      "unlockOnModule": 6
+    }
+  ],
+  "certificate": {
+    "courseName": "HERRAMIENTAS PARA LA MANADA",
+    "description": "ha completado el curso Herramientas para la Manada, que prepara al Rover para apoyar a los Viejos Lobos de su Grupo eligiendo y ajustando juegos para niños y niñas de 7 a 10 años, proponiendo experiencias al aire libre, mediando sin resolverlo todo y reconociendo señales de alerta.",
+    "commitmentPrompt": "Escribe tu compromiso para tus próximas cuatro reuniones, completando la frase de la última lección: «En la Manada voy a proponer ___ y a decir ___, y nunca voy a ___»."
+  }
+}

@@ -18,8 +18,14 @@ const OUTPUT_DIR = path.join(BASE_DIR, '..', '02-Plataforma-Web');
 const CATALOGO_PATH = path.join(OUTPUT_DIR, 'cursos.json');
 
 // --- Leer argumentos ---
-const courseName = process.argv[2];
-if (!courseName) {
+// `node build-course.js <curso>` compila borradores/<curso>.json y actualiza el catalogo.
+// `node build-course.js --json <entrada.json> --salida <salida.html>` compila un curso de
+// PRUEBA a una ruta propia y NO toca el catalogo (lo usa PRUEBAS-E2E/tests/kit-builder.spec).
+const argv = process.argv.slice(2);
+const opt = (k) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : null; };
+const MODO_PRUEBA = argv.includes('--json');
+const courseName = MODO_PRUEBA ? null : argv[0];
+if (!MODO_PRUEBA && !courseName) {
     console.error('❌ Uso: node build-course.js <nombre-curso>');
     console.error('   Ejemplo: node build-course.js fundamentos-scout');
     console.error('\n   Cursos disponibles en borradores/:');
@@ -31,7 +37,7 @@ if (!courseName) {
 }
 
 // --- Leer JSON del curso ---
-const jsonPath = path.join(BORRADORES_DIR, courseName + '.json');
+const jsonPath = MODO_PRUEBA ? path.resolve(opt('--json')) : path.join(BORRADORES_DIR, courseName + '.json');
 if (!fs.existsSync(jsonPath)) {
     console.error('❌ No se encontró: ' + jsonPath);
     process.exit(1);
@@ -690,9 +696,10 @@ ${jsEngine}
 
 // --- Generar y guardar ---
 const html = buildHTML(course);
-const outputPath = path.join(OUTPUT_DIR, course.courseId + '.html');
+const outputPath = MODO_PRUEBA ? path.resolve(opt('--salida')) : path.join(OUTPUT_DIR, course.courseId + '.html');
 fs.writeFileSync(outputPath, html, 'utf-8');
 console.log('✅ Curso generado: ' + outputPath);
+if (MODO_PRUEBA) process.exit(0);
 
 // --- Actualizar catalogo ---
 let catalogo = [];

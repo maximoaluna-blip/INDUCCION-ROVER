@@ -1,0 +1,41 @@
+{
+  "courseId": "kit-prueba",
+  "title": "Kit de prueba",
+  "description": "Curso mínimo para probar el kit-builder.",
+  "icon": "🧪",
+  "duration": "5 minutos",
+  "totalContentModules": 2,
+  "modules": [
+    { "id": 1, "title": "Inicio", "emoji": "🏠", "navLabel": "Inicio", "isIntro": true,
+      "sections": [ { "type": "paragraph", "text": "Prueba." } ] },
+    { "id": 2, "title": "Arma tu kit", "emoji": "🧰", "navLabel": "Kit",
+      "sections": [ {
+        "type": "kit-builder",
+        "labels": { "title": "Tu kit", "intro": "Elige y escribe.", "gamesTitle": "Mis 3 juegos",
+          "gamesHelp": "Marca exactamente tres.", "gameWhyPlaceholder": "¿Por qué y cómo lo adaptarías?",
+          "phrasesTitle": "Mis frases", "phrasePlaceholder": "Lo que diría, tal cual",
+          "careTitle": "Mi lista de cuidado", "careOwnPlaceholder": "Agrega un punto propio",
+          "download": "Descargar mi kit", "pdfTitle": "Mi kit de prueba" },
+        "games": [
+          { "id": "g1", "name": "Juego 1", "detail": "d", "source": "Guía, p. 1" },
+          { "id": "g2", "name": "Juego 2", "detail": "d", "source": "Guía, p. 1" },
+          { "id": "g3", "name": "Juego 3", "detail": "d", "source": "Guía, p. 1" },
+          { "id": "g4", "name": "Juego 4", "detail": "d", "source": "Guía, p. 1" },
+          { "id": "g5", "name": "Juego 5", "detail": "d", "source": "Guía, p. 1" } ],
+        "phrases": [ { "id": "f1", "situation": "Situación 1" }, { "id": "f2", "situation": "Situación 2" }, { "id": "f3", "situation": "Situación 3" } ],
+        "care": [ { "id": "c1", "text": "Cuidado 1", "source": "Guía, p. 2" }, { "id": "c2", "text": "Cuidado 2", "source": "Guía, p. 2" }, { "id": "c3", "text": "Cuidado 3", "source": "Guía, p. 2" } ]
+      } ],
+      "reflection": { "prompt": "Prueba." },
+      "quiz": { "title": "Evaluación", "questions": [
+        { "text": "¿Uno?", "options": ["a", "b", "c"], "correctIndex": 0 },
+        { "text": "¿Dos?", "options": ["a", "b", "c"], "correctIndex": 1 } ], "nextLabel": "Siguiente" } },
+    { "id": 3, "title": "Cierre", "emoji": "🏁", "navLabel": "Cierre",
+      "sections": [ { "type": "paragraph", "text": "Fin." } ],
+      "reflection": { "prompt": "Prueba." },
+      "quiz": { "title": "Evaluación", "questions": [
+        { "text": "¿Tres?", "options": ["a", "b", "c"], "correctIndex": 2 },
+        { "text": "¿Cuatro?", "options": ["a", "b", "c"], "correctIndex": 0 } ], "nextLabel": "Certificado" } }
+  ],
+  "achievements": [ { "id": "achievement-1", "name": "Prueba", "emoji": "🧪", "unlockOnModule": 2 } ],
+  "certificate": { "courseName": "PRUEBA", "description": "prueba" }
+}

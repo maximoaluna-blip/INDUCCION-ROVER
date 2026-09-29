@@ -92,7 +92,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Y para cerrar un ciclo, la Guía nombra otras dos (p. 23): el <strong>círculo de palabra</strong>, donde cada uno reconoce lo que ha visto avanzar en los demás, y el <strong>ritual simbólico</strong>, como cruzar un puente o sembrar un árbol, para marcar un logro. Sirven para reconocer y celebrar; para decidir, mejor las de arriba."
+          "text": "Y para reconocer un logro, la Guía nombra entre sus ceremonias otras dos (p. 23): el <strong>círculo de palabra</strong>, donde cada uno reconoce lo que ha visto avanzar en los demás, y el <strong>ritual simbólico</strong>, como cruzar un puente o sembrar un árbol, para marcar un logro. Sirven para reconocer y celebrar; para decidir, mejor las de arriba."
         },
         {
           "type": "info-box",
@@ -275,11 +275,11 @@
             "correctIndex": 2
           },
           {
-            "text": "En el Congreso de Comunidad, un nómada nuevo presenta su propuesta y varios del Equipo se ríen de cómo habla, mientras nadie dice nada. ¿Qué es lo más coherente con la lección?",
+            "text": "En una reunión de la Comunidad, un nómada nuevo presenta al Equipo su propuesta y varios se ríen de cómo habla, mientras nadie dice nada. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Decir en ese momento que aquí se escucha a todos, y dejar que el nómada termine",
-              "Callar para no quitarles el Congreso, y preguntarles en la evaluación cómo se sintió cada uno",
-              "Dejar que el Congreso siga, y contarle al dirigente al final, y que él hable con el Equipo"
+              "Callar para no quitarles la reunión, y preguntarles en la evaluación cómo se sintió cada uno",
+              "Dejar que la reunión siga, y contarle al dirigente al final, y que él hable con el Equipo"
             ],
             "correctIndex": 0
           }
@@ -316,7 +316,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué haces con lo que ves.</strong><br>• Una señal sola no prueba nada, y tampoco tienes que estar seguro para contarla (recomendación de este curso).<br>• No te toca averiguar qué pasa: la función del adulto en estos casos no es investigativa (Política, p. 29).<br>• No te lo guardes: en la Asociación nadie guarda secretos sobre algo que pueda dañar a alguien (Política, p. 21). Este curso te recomienda contárselo al dirigente de inmediato.<br>• La ruta oficial es el botón «Me Pongo A Salvo del Peligro», en scout.org.co (Política, p. 44), disponible en todo momento; y todas las personas tienen la obligación de reportar (Política, p. 21), también tú.<br>• Si su vida o su integridad corren peligro inmediato, no esperes a nadie: avisa tú de una vez, de palabra, a la Policía Nacional o al centro de salud más cercano (<em>Guía de Prevención</em>, p. 27), y cuéntaselo enseguida al dirigente."
+          "text": "<strong>Qué haces con lo que ves.</strong><br>• Una señal sola no prueba nada, y tampoco tienes que estar seguro para contarla (recomendación de este curso).<br>• No te toca averiguar qué pasa: la función del adulto en estos casos no es investigativa (Política, p. 29).<br>• No te lo guardes: en la Asociación nadie guarda secretos sobre algo que pueda dañar a alguien (Política, p. 21). Este curso te recomienda contárselo al dirigente de inmediato.<br>• La ruta oficial es el botón «Me Pongo A Salvo del Peligro», en scout.org.co (Política, p. 44), disponible en todo momento; y todas las personas tienen la obligación de reportar (Política, p. 21), también tú.<br>• Si su vida o su integridad corren peligro inmediato, no esperes a nadie: avisa tú de una vez, de palabra, a la Policía Nacional o al centro de salud más cercano (<em>Guía de Prevención</em>, p. 27; Política, p. 21), y cuéntaselo enseguida al dirigente."
         },
         {
           "type": "heading",
@@ -325,7 +325,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Los primeros auxilios psicológicos no son solo para profesionales (<em>Guía de Prevención</em>, p. 20). Lo esencial te sirve cuando un nómada está angustiado: no presionarlo para que cuente, no interrumpirlo, no juzgar lo que siente, y ser honesto con lo que no sabes: «No lo sé, pero intentaré averiguárselo» (p. 22). Hazlo a la vista de otros, nunca a solas, y conoce tu límite: si te supera, busca de una vez al dirigente (p. 21)."
+          "text": "Los primeros auxilios psicológicos no son solo para profesionales (<em>Guía de Prevención</em>, p. 20). Lo esencial te sirve cuando un nómada está angustiado: no presionarlo para que cuente, no interrumpirlo, no juzgar lo que siente, y ser honesto con lo que no sabes: «No lo sé, pero intentaré averiguárselo» (p. 22). Hazlo a la vista de otros, nunca a solas. Y conoce tu límite (p. 21): si te supera, busca de una vez al dirigente. Esto es para el momento de la crisis, no para que abras tú una conversación personal con él: esa, como viste, la organiza el dirigente con otro adulto."
         }
       ],
       "reflection": {

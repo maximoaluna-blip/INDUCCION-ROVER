@@ -66,7 +66,7 @@ Cita literal de la Guía, p. 42. Para un casi par es la tensión central: ni ami
 ### 4 · Presencia y distancia (~6 min)
 - **Fuentes:** coherencia, cumplir lo prometido, «de jóvenes, apoyado por adultos», el poder (p. 42); las tres preguntas y vivir las consecuencias (p. 40); conversación personal con dos adultos (p. 42); familias (p. 43).
 - **¿Hablo o me callo?** (recomendación del curso): ¿qué cuesta el error? Tiempo, orgullo o una idea que no funcionó → callar; seguridad, alguien por fuera o humillado → hablar en el momento. Con el gancho como cita.
-- **Quiz (3):** el nómada que, delante de su Equipo, pregunta «¿tú qué harías?» (las tres preguntas); el nómada decaído (contárselo al dirigente, que arme la conversación con otro adulto; distractores: a la vista de todos, con otro Rover —que no cuenta como adulto—); y la burla en el Congreso (hablar en el momento).
+- **Quiz (3):** el nómada que, delante de su Equipo, pregunta «¿tú qué harías?» (las tres preguntas); el nómada decaído (contárselo al dirigente, que arme la conversación con otro adulto; distractores: a la vista de todos, con otro Rover —que no cuenta como adulto—); y la burla en una reunión de la Comunidad (hablar en el momento; en el Congreso el Rover no tiene voz propia, Guía p. 16).
 
 ### 5 · Cuidar: lo que oyes y lo que haces (~7 min)
 - **Fuentes:** entorno seguro (Guía de Comunidad p. 46); señales (*Guía de Prevención* pp. 24-27); PAP (pp. 20-22); Política pp. 21, 29 y 44; peligro inmediato (p. 27).

@@ -52,6 +52,7 @@ El total de pruebas se lee en la salida de cada corrida (la línea `passed`), no
 | `e2e-flujo` | Registro → quizzes → certificado, **y el código no cambia al volver** |
 | `consentimiento` | La casilla de Ley 1581 es **obligatoria** en registro y en recuperar (ADR-081) |
 | `codigo` | Estáticas sobre el HTML compilado: token de **Rover**, certificado idempotente, registro con curso, ADR-061, secciones vacías, tamaño; y el **vocabulario prohibido** de `lexico.json` —«sinodal» como cargo del Rover, «18–22»— en la prosa de los cursos, la portada, el catálogo, el generador y los correos del backend (ADR-086), y en las **guías de autoría** (`SKILL.md` y `/generate-course`, ADR-094) |
+| `kit-builder` | El kit del Nivel 2: tope de 3, persiste al recargar, el PDF lleva las **normas fijas**, con menos de 3 avisa y no descarga, y **ninguna petición al backend** (ADR-106) |
 | `panel-a11y` | El panel **conectado y con datos**, claro y oscuro — no la pantalla de conexión |
 
 Y fuera de Playwright: `05-Generador-Cursos/probar-backend.js`, la compuerta del backend (19 comprobaciones sin red).

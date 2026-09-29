@@ -39,4 +39,4 @@ El diseño está en `docs/superpowers/specs/2026-09-27-rover-ruta-servicio-desig
 
 ## 5. Estado
 
-Lo publicado se cuenta en `02-Plataforma-Web/cursos.json` y lo que falta en el plan (`docs/superpowers/plans/`). Por qué pasó cada cosa: `DECISIONES.md` de la raíz (ADR-020, 063, 073–077, 082, 084, 086, 091, 094–096). La autonomía que dio el dueño cubrió solo el Nivel 1 de la Ruta 1: **el Nivel 2 y la Ruta 2 se consultan antes de abrirse**.
+Lo publicado se cuenta en `02-Plataforma-Web/cursos.json` y lo que falta en el plan (`docs/superpowers/plans/`). Por qué pasó cada cosa: `DECISIONES.md` de la raíz (ADR-020, 063, 073–077, 082, 084, 086, 091, 094–096, 106). La autonomía del dueño cubrió el Nivel 1 y luego el Nivel 2 de la Ruta 1, y **se agotó al cerrarlo**: **el Nivel 3 y la Ruta 2 se consultan antes de abrirse**.

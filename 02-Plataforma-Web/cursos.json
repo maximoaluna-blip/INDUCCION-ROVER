@@ -132,7 +132,7 @@
   {
     "courseId": "herramientas-tropa",
     "title": "Herramientas para la Tropa",
-    "description": "Para el Rover que ya sirve en la Tropa y quiere hacerlo mejor. En unos 40 minutos vas a aprender a proponer juegos que reten a adolescentes, a acompañar el aprendizaje de la técnica scout y a asesorar una especialidad, a dar retroalimentación que construye y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía de Dirigente de Tropa (2026).",
+    "description": "Para el Rover que ya sirve en la Tropa y quiere hacerlo mejor. En unos 40 minutos vas a aprender a proponer juegos que reten a adolescentes, a apoyar el aprendizaje de la técnica scout y a asesorar una especialidad, a dar retroalimentación que construye y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía de Dirigente de Tropa (2026).",
     "icon": "🧰",
     "duration": "40 minutos",
     "modules": 6,
@@ -141,5 +141,18 @@
     "branch": "tropa",
     "status": "active",
     "file": "herramientas-tropa.html"
+  },
+  {
+    "courseId": "herramientas-comunidad",
+    "title": "Herramientas para la Comunidad",
+    "description": "Para el Rover que ya sirve en la Comunidad de Nómadas Scout y quiere hacerlo mejor. En unos 40 minutos vas a aprender a proponer dinámicas que los reten y que ellos mismos diseñen, a apoyar la vida al aire libre sin rellenar la técnica que la Guía no trae, a saber cuándo hablar y cuándo callar, y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía para el Dirigente de Comunidad de Nómadas Scout (2026).",
+    "icon": "🧰",
+    "duration": "40 minutos",
+    "modules": 6,
+    "route": "grupo",
+    "level": 2,
+    "branch": "comunidad",
+    "status": "active",
+    "file": "herramientas-comunidad.html"
   }
 ]

@@ -50,7 +50,7 @@ Cita literal de la Guía, p. 9. Es el trabajo del Nivel 2: pasar de conocer la M
   - «Las comparaciones aparecen de forma natural», y hay que cuidar que cada lobato se sienta capaz (p. 9);
   - el juego simbólico en la Selva (p. 10);
   - **juegos democráticos**: votar con fichas o colores, elegir levantando la mano, decidir nombres (p. 54);
-  - la Flor Roja, con danzas, cantos y juegos (*Buen Orden* pp. 9-10);
+  - la Flor Roja, con danzas, cantos y juegos (*Buen Orden* pp. 9-10), y que a la Manada no se la llama con silbato (*Buen Orden* p. 6);
   - desafiar es enfrentarse a uno mismo, no competir contra otros (p. 22).
 - **Cuando el juego no funciona** (recomendación del curso): aparece la comparación, no se ponen de acuerdo, o nadie quiere el juego que propusiste.
 - **Reflexión:** un juego donde una comparación hizo sentir mal a alguien, y cómo lo cambiarías. Sin nombres.
@@ -71,7 +71,6 @@ Cita literal de la Guía, p. 9. Es el trabajo del Nivel 2: pasar de conocer la M
   - el error como parte del aprendizaje y el valor de cada logro (p. 59);
   - protagonismo acompañado: elegir, encargos sencillos, acuerdos, opinar (p. 59);
   - con las familias: si preguntan, contar algo que viste hoy; del avance habla el Viejo Lobo (la mirada de la p. 60 es de los Viejos Lobos);
-  - no se llama a la Manada con silbato (*Buen Orden*, p. 6).
 - **Reflexión:** una vez que un adulto hizo algo por ti que podías hacer solo.
 - **Quiz (3):** la seisena atascada en el reto (una pista, ni la solución ni dejarlos solos); la lobata que arruga su dibujo; y el papá que pregunta por la insignia.
 
@@ -93,7 +92,7 @@ Cita literal de la Guía, p. 9. Es el trabajo del Nivel 2: pasar de conocer la M
   - 4 normas fijas (c4: no guardarse la señal, contarla y el botón, Política pp. 21 y 44) y 3 puntos a elegir.
 - **Compromiso:** «En la Manada voy a proponer ___ y a decir ___, y nunca voy a ___», para tus próximas cuatro reuniones.
 - **Quiz (2):**
-  - un juego para el tema «el agua» (reto de toda la Manada; distractor: seisenas que compiten);
+  - una actividad para cuidar el parque (reto de toda la Manada que ellos deciden; distractores: charla, seisenas que compiten);
   - un lobato que dice «no le digas a mi papá que rompí el cuaderno, me va a pegar» (escuchar sin prometer y avisar de inmediato; distractor: hablar con el papá).
 
 ## Logros

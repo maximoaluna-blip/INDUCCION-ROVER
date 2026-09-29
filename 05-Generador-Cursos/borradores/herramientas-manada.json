@@ -42,7 +42,7 @@
           "items": [
             "<strong>Elegir y ajustar</strong> un juego para lobatos, sin comparaciones y con la voz de todos",
             "<strong>Proponer</strong> experiencias al aire libre que desarrollen su autocuidado",
-            "<strong>Mediar</strong> un conflicto sin resolverlo por ellos y <strong>dar lugar</strong> a que elijan y opinen",
+            "<strong>Acompañar</strong> sin resolver por ellos ni dejarlos solos, y <strong>dar lugar</strong> a que elijan y opinen",
             "<strong>Reconocer</strong> señales de alerta y <strong>responder</strong> sin investigar",
             "<strong>Armar</strong> tu kit: tres juegos con su porqué, tus frases y tu lista de cuidado"
           ]
@@ -74,7 +74,7 @@
         },
         {
           "type": "paragraph",
-          "text": "La Guía propone <strong>juegos democráticos</strong>: votar con fichas o colores, elegir entre opciones levantando la mano, decidir el nombre de un juego o proponer ideas en grupo. Con ellos los lobatos aprenden a respetar opiniones distintas, a aceptar decisiones colectivas y «que ganar o perder no define su valor» (p. 54). Y la Manada tiene sus propios momentos de juego, como la Flor Roja, con cantos, danzas y juegos de todos (<em>Buen Orden</em>, pp. 9-10)."
+          "text": "La Guía propone <strong>juegos democráticos</strong>: votar con fichas o colores, elegir entre opciones levantando la mano, decidir el nombre de un juego o proponer ideas en grupo. Con ellos los lobatos aprenden a respetar opiniones distintas, a aceptar decisiones colectivas y «que ganar o perder no define su valor» (p. 54). Y la Manada tiene sus propios momentos de juego, como la Flor Roja, con cantos, danzas y juegos de todos (<em>Buen Orden</em>, pp. 9-10). Y para empezar el juego, recuerda que a la Manada no se la llama con silbato (<em>Buen Orden</em>, p. 6): pregúntale al Viejo Lobo cómo la llaman en la tuya."
         },
         {
           "type": "heading",
@@ -105,8 +105,8 @@
             "text": "En un juego de puntería, un lobato falla otra vez y dice en voz alta: «Soy el peor de todos». ¿Qué ajuste va mejor con lo que pide la Guía?",
             "options": [
               "Pasar a que cada uno anote sus aciertos e intente mejorar su marca anterior",
-              "Pasar a contar los aciertos por seisena para que nadie quede señalado solo",
-              "Darle un tiro extra solo a él y seguir contando los puntos de todos como siempre"
+              "Pasar a contar los aciertos por seisena y premiar a la seisena que más sume",
+              "Darle un tiro extra a él y seguir contando los puntos como se venían contando"
             ],
             "correctIndex": 0
           },
@@ -171,7 +171,7 @@
             "options": [
               "Pedirles que revisen quién no ha tomado agua, y que cada uno tome la suya",
               "Pasar tú por la fila dándole la botella a cada uno, para ir más rápido",
-              "Esperar a llegar a la sede, y ahí recordarles que hay que tomar agua seguido"
+              "Seguir hasta el descanso que ya estaba previsto, y ahí recordarles tomar agua"
             ],
             "correctIndex": 0
           },
@@ -179,7 +179,7 @@
             "text": "En la caminata, un lobato encuentra un nido con huevos al lado del sendero y quiere llevárselo para mostrarlo en la sede. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Mirarlo entre todos sin tocarlo y dejarlo donde estaba para protegerlo",
-              "Dejar que lo lleve con cuidado hasta la sede y devolverlo el sábado siguiente",
+              "Dejar que lo lleve sin apretarlo hasta la sede y devolverlo el sábado siguiente",
               "Decirle que no se puede y seguir caminando rápido para que no se distraiga"
             ],
             "correctIndex": 0
@@ -214,7 +214,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué significa para ti.</strong> Cuando dos lobatos discuten, pregúntales qué propone cada uno antes de dar tu solución. Cuando un grupo se atasca, no le des la respuesta ni lo dejes solo: dale una pista. Y si una familia te pregunta cómo va su hijo, cuéntale algo que viste hoy —cómo compartió, qué intentó, qué encargo cumplió— y no solo insignias: es la mirada que la Guía les pide a los Viejos Lobos (p. 60). Del avance de su hijo le habla el Viejo Lobo.<br><br>Y una norma de la Manada que quizá no conocías: a la Manada no se la llama con silbato (<em>Buen Orden</em>, p. 6). Pregúntale al Viejo Lobo cómo la llaman en la tuya."
+          "text": "<strong>Qué significa para ti.</strong> Cuando dos lobatos discuten, pregúntales qué propone cada uno antes de dar tu solución. Cuando un grupo se atasca, no le des la respuesta ni lo dejes solo: dale una pista. Y si una familia te pregunta cómo va su hijo, cuéntale algo que viste hoy —cómo compartió, qué intentó, qué encargo cumplió— y no solo insignias: es la mirada que la Guía les pide a los Viejos Lobos (p. 60). Del avance de su hijo le habla el Viejo Lobo."
         }
       ],
       "reflection": {
@@ -245,7 +245,7 @@
             "text": "A la salida, un papá te pregunta: «¿Mi hijo ya se ganó la insignia?». ¿Qué es lo más coherente con la lección?",
             "options": [
               "Contarle algo que le viste hacer hoy, y que del avance le cuenta el Viejo Lobo",
-              "Revisar con él la lista de insignias y decirle cuáles le faltan a su hijo",
+              "Contarle cuáles insignias le faltan, según la lista que lleva la Manada",
               "Contarle que va a la par con su seisena, según lo que te dijo el Viejo Lobo"
             ],
             "correctIndex": 0
@@ -279,11 +279,11 @@
         },
         {
           "type": "paragraph",
-          "text": "Ojo con lo que ya sabes de esta edad: pasar de la risa al llanto en minutos es normal. Este curso te recomienda fijarte en lo que se repite o se sostiene, como un llanto constante; y tampoco te toca decidir si es grave: te toca contarlo."
+          "text": "Ojo con lo que ya sabes de esta edad: pasar de la risa al llanto en pocos minutos es normal (Guía de Manada, p. 9), y ese cambio de ánimo, solo, no es una señal. Este curso te recomienda fijarte en lo que se repite o se sostiene, como un llanto constante. Pero lo que un lobato te cuenta con miedo —como pedirte que no le digas algo a su papá— no esperas a que se repita. Y en ningún caso te toca decidir si es grave: te toca contarlo."
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué haces con lo que ves.</strong><br>• Una señal sola no prueba nada, y tampoco tienes que estar seguro para contarla: contarla es justo lo que te toca.<br>• No te toca averiguar qué pasa: la Política A Salvo del Peligro dice que la función del adulto en estos casos no es investigativa (p. 29).<br>• No te lo guardes: en la Asociación nadie guarda secretos sobre algo que pueda dañar a alguien (Política, p. 21). Este curso te recomienda contárselo al Viejo Lobo de inmediato.<br>• La ruta oficial para reportar es el botón «Me Pongo A Salvo del Peligro», en scout.org.co y en los códigos QR de los sitios de reunión (Política, p. 44; Guía de Manada, p. 64), y cualquiera puede usarlo, también tú, sin pedirle permiso a nadie. Úsalo sin falta si tiene que ver con alguien del equipo de adultos, o si ves que no se hizo nada.<br>• Si ves un peligro inmediato para su vida o su integridad, avisa ya al Viejo Lobo; si hace falta, se llama a la Policía (<em>Guía de Prevención</em>, p. 27)."
+          "text": "<strong>Qué haces con lo que ves.</strong><br>• Una señal sola no prueba nada, y tampoco tienes que estar seguro para contarla: contarla es justo lo que te toca.<br>• No te toca averiguar qué pasa: la Política A Salvo del Peligro dice que la función del adulto en estos casos no es investigativa (p. 29).<br>• No te lo guardes: en la Asociación nadie guarda secretos sobre algo que pueda dañar a alguien (Política, p. 21). Este curso te recomienda contárselo al Viejo Lobo de inmediato.<br>• La ruta oficial para reportar es el botón «Me Pongo A Salvo del Peligro», en scout.org.co y en los códigos QR de los sitios de reunión (Política, p. 44; Guía de Manada, p. 64), y cualquiera puede usarlo, también tú, sin pedirle permiso a nadie. Úsalo sin falta si tiene que ver con alguien del equipo de adultos, o si ves que no se hizo nada.<br>• Si ves que su vida o su integridad corren peligro inmediato, no esperes: la <em>Guía de Prevención</em> dice que ahí se avisa de una vez, de palabra, a la Policía Nacional o al centro de salud más cercano (p. 27). Si el Viejo Lobo no está a tu lado en ese momento, hazlo tú, y cuéntaselo enseguida."
         },
         {
           "type": "heading",
@@ -306,16 +306,16 @@
             "options": [
               "Contarle hoy mismo al Viejo Lobo lo que has visto sin adivinar la causa",
               "Preguntarle hoy mismo qué le pasa en casa y luego contárselo al Viejo Lobo",
-              "Contarle al Viejo Lobo lo que has visto cuando notes una segunda señal"
+              "Contarle al Viejo Lobo, sin alarmarlo, lo que viste cuando notes otra señal"
             ],
             "correctIndex": 0
           },
           {
             "text": "En una salida empieza a llover fuerte y un lobato, asustado, te pregunta llorando: «¿Mi mamá ya viene?». Faltan dos horas para la recogida. ¿Qué va con lo que enseñan los primeros auxilios psicológicos?",
             "options": [
-              "Decirle que te quedas con él mientras el Viejo Lobo ve qué sigue",
-              "Decirle que su mamá ya viene en camino aunque no lo sepas seguro",
-              "Decirle que ya está grande y que el Viejo Lobo no quiere ver miedo"
+              "Decirle que estás ahí con él y la Manada mientras el Viejo Lobo ve qué sigue",
+              "Decirle que su mamá ya viene en camino, aunque no lo sepas con seguridad",
+              "Decirle que ya está grande para llorar, que el Viejo Lobo lo necesita"
             ],
             "correctIndex": 0
           }
@@ -429,7 +429,7 @@
             {
               "id": "c4",
               "rule": true,
-              "text": "Si veo una señal de alerta, no me la guardo: se la cuento al Viejo Lobo de inmediato, y el botón «Me Pongo A Salvo del Peligro» también está para mí.",
+              "text": "Si veo una señal de alerta, no me la guardo: la reporto con el botón «Me Pongo A Salvo del Peligro» o se la cuento al Viejo Lobo de inmediato.",
               "source": "Política ASP, pp. 21 y 44; Guía de Manada, p. 64"
             },
             {
@@ -464,17 +464,17 @@
         }
       ],
       "reflection": {
-        "prompt": "Piensa en tu próxima reunión. ¿En qué momento usarías uno de tus tres juegos, y qué ajuste harías si a los dos minutos no funciona? Sin nombres de niños."
+        "prompt": "Piensa en tu próxima reunión de la Manada. ¿En qué momento usarías uno de tus tres juegos, qué decidirían los lobatos en él, y qué harías si a los dos minutos alguien dice «soy el peor»? Sin nombres de niños."
       },
       "quiz": {
         "title": "Evaluación - Tu kit",
         "questions": [
           {
-            "text": "El Viejo Lobo te pide proponer algo para que los lobatos entiendan por qué hay que cuidar el agua. ¿Cuál propuesta va más con todo lo del curso?",
+            "text": "El Viejo Lobo te pide una actividad para que los lobatos aprendan a cuidar el parque donde se reúnen. ¿Cuál propuesta va más con todo lo del curso?",
             "options": [
-              "Una charla corta sobre el ciclo del agua, con láminas para que la entiendan",
-              "Un reto en la Selva donde cada seisena gana si gasta menos agua que las otras",
-              "Un reto en la Selva donde la Manada entera busca ahorrar agua en la reunión"
+              "Una charla corta sobre por qué no se bota basura, con láminas del parque",
+              "Un reto en la Selva donde gana la seisena que recoja más basura del parque",
+              "Un reto en la Selva donde la Manada entera decide qué rincón cuidar"
             ],
             "correctIndex": 2
           },
@@ -483,7 +483,7 @@
             "options": [
               "Prometerle que no le vas a contar a nadie, para que siga confiando en ti",
               "Escucharlo sin prometer el secreto y contárselo al Viejo Lobo de inmediato",
-              "Hablar con su papá a la salida y contárselo al Viejo Lobo de inmediato"
+              "Hablar con su papá sin acusarlo y contárselo al Viejo Lobo de inmediato"
             ],
             "correctIndex": 1
           }

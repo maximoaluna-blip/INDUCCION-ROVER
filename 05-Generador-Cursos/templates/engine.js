@@ -1042,6 +1042,12 @@ function downloadKitPDF() {
     var root = _kitRoot();
     if (!root) return;
     saveKit();
+    // Un kit con menos juegos de los pedidos no esta listo: se avisa y no se descarga.
+    var max = parseInt(root.getAttribute('data-max-games'), 10) || 3;
+    if (root.querySelectorAll('[data-kit-game]:checked').length < max) {
+        showNotification('Te faltan juegos: marca tres antes de descargar tu kit.', 'warning');
+        return;
+    }
     var JsPDF = (window.jspdf && window.jspdf.jsPDF) || (typeof jsPDF !== 'undefined' ? jsPDF : null);
     if (!JsPDF) { showNotification('La librería de PDF no cargó. Verifica tu conexión.'); return; }
     var pdf = new JsPDF({ unit: 'mm', format: 'a4' });
@@ -1077,7 +1083,8 @@ function downloadKitPDF() {
     });
     y += 3;
     linea(textoDe(root.querySelector('.kit-care legend')), 13, true);
-    // Las normas de la Guia van SIEMPRE: no dependen de lo que el Rover marque.
+    // Las normas de la Guia van SIEMPRE, con su rotulo: no dependen de lo que el Rover marque.
+    if (root.querySelector('[data-kit-rule]')) linea(textoDe(root.querySelector('.kit-rules-title')), 11, true);
     root.querySelectorAll('[data-kit-rule]').forEach(function (li) {
         linea('• ' + textoDe(li), 11, false);
     });

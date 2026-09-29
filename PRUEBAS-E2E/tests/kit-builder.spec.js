@@ -60,7 +60,7 @@ test.describe('@solo-escritorio kit-builder', () => {
 
   test('descargar produce un PDF', async ({ page }) => {
     await abrirKit(page);
-    await page.check('[data-kit-game="g1"]');
+    for (const g of ['g1', 'g2', 'g3']) await page.check(`[data-kit-game="${g}"]`);
     await page.waitForFunction(() => window.jspdf && window.jspdf.jsPDF, null, { timeout: 15000 });
     const [descarga] = await Promise.all([page.waitForEvent('download'), page.click('[data-kit-download]')]);
     expect(descarga.suggestedFilename()).toMatch(/\.pdf$/);
@@ -70,6 +70,7 @@ test.describe('@solo-escritorio kit-builder', () => {
     await abrirKit(page);
     await expect(page.locator('[data-kit-rule="c1"]')).toBeVisible();
     await expect(page.locator('[data-kit-care="c1"]')).toHaveCount(0);
+    for (const g of ['g1', 'g2', 'g3']) await page.check(`[data-kit-game="${g}"]`);
     await page.waitForFunction(() => window.jspdf && window.jspdf.jsPDF, null, { timeout: 15000 });
     const textos = await page.evaluate(() => {
       const Orig = window.jspdf.jsPDF; const vistos = [];
@@ -80,8 +81,22 @@ test.describe('@solo-escritorio kit-builder', () => {
       };
       downloadKitPDF(); return vistos.join(' ');
     });
+    expect(textos).toContain('Reglas de la Guía (siempre)');
     expect(textos).toContain('Cuidado 1');
     expect(textos).not.toContain('Cuidado 2');
+  });
+
+  test('con menos de 3 juegos no descarga y avisa', async ({ page }) => {
+    await abrirKit(page);
+    await page.check('[data-kit-game="g1"]');
+    await page.waitForFunction(() => window.jspdf && window.jspdf.jsPDF, null, { timeout: 15000 });
+    const guardo = await page.evaluate(() => {
+      const Orig = window.jspdf.jsPDF; let g = false;
+      window.jspdf.jsPDF = function (o) { const pdf = new Orig(o); pdf.save = () => { g = true; }; return pdf; };
+      downloadKitPDF(); return g;
+    });
+    expect(guardo).toBe(false);
+    await expect(page.locator('.notification').last()).toContainText('marca tres');
   });
 
   test('ninguna petición al backend', async ({ page }) => {

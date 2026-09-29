@@ -692,6 +692,7 @@ function restartCourse() {
     if (confirm('¿Estás seguro de que quieres reiniciar el curso? Se perderá todo el progreso.')) {
         localStorage.removeItem('courseProgress_' + COURSE_CONFIG.courseId);
         localStorage.removeItem('commitment_' + COURSE_CONFIG.courseId);
+        localStorage.removeItem('rover:kit_' + COURSE_CONFIG.courseId);
         location.reload();
     }
 }
@@ -970,8 +971,26 @@ setInterval(function () {
 function _kitKey() { return 'rover:kit_' + COURSE_CONFIG.courseId; }
 function _kitRoot() { return document.querySelector('[data-kit-builder]'); }
 
+// Busca por atributo sin armar un selector con el id: un id raro no rompe nada.
+function _kitFind(root, attr, id) {
+    var els = root.querySelectorAll('[' + attr + ']');
+    for (var i = 0; i < els.length; i++) if (els[i].getAttribute(attr) === id) return els[i];
+    return null;
+}
+
+// Un kit guardado corrupto o de otra version no puede dejar el kit sin tope ni sin guardado:
+// se normaliza su forma y, si no se puede leer, se descarta.
 function loadKit() {
-    try { return JSON.parse(localStorage.getItem(_kitKey())) || null; } catch (e) { return null; }
+    var raw;
+    try { raw = JSON.parse(localStorage.getItem(_kitKey())); } catch (e) { raw = null; }
+    if (!raw || typeof raw !== 'object') return null;
+    var obj = function (v) { return (v && typeof v === 'object' && !Array.isArray(v)) ? v : {}; };
+    return {
+        games: obj(raw.games),
+        phrases: obj(raw.phrases),
+        care: Array.isArray(raw.care) ? raw.care : [],
+        careOwn: typeof raw.careOwn === 'string' ? raw.careOwn : ''
+    };
 }
 
 function saveKit() {
@@ -981,7 +1000,7 @@ function saveKit() {
     root.querySelectorAll('[data-kit-game]').forEach(function (cb) {
         if (!cb.checked) return;
         var id = cb.getAttribute('data-kit-game');
-        var ta = root.querySelector('[data-kit-why="' + id + '"]');
+        var ta = _kitFind(root, 'data-kit-why', id);
         kit.games[id] = ta ? ta.value : '';
     });
     root.querySelectorAll('[data-kit-phrase]').forEach(function (ta) {
@@ -1004,7 +1023,7 @@ function _kitRefresh() {
     boxes.forEach(function (cb) { if (cb.checked) n++; });
     boxes.forEach(function (cb) {
         cb.disabled = !cb.checked && n >= max;
-        var ta = root.querySelector('[data-kit-why="' + cb.getAttribute('data-kit-game') + '"]');
+        var ta = _kitFind(root, 'data-kit-why', cb.getAttribute('data-kit-game'));
         if (ta) ta.hidden = !cb.checked;
     });
     var count = root.querySelector('[data-kit-count]');
@@ -1016,22 +1035,26 @@ function initKitBuilder() {
     if (!root) return;
     var kit = loadKit();
     if (kit) {
-        Object.keys(kit.games || {}).forEach(function (id) {
-            var cb = root.querySelector('[data-kit-game="' + id + '"]');
-            var ta = root.querySelector('[data-kit-why="' + id + '"]');
-            if (cb) cb.checked = true;
-            if (ta) ta.value = kit.games[id] || '';
+        // Nunca se restauran mas juegos que el tope, aunque el guardado traiga mas.
+        var max = parseInt(root.getAttribute('data-max-games'), 10) || 3;
+        var marcados = 0;
+        Object.keys(kit.games).forEach(function (id) {
+            var cb = _kitFind(root, 'data-kit-game', id);
+            var ta = _kitFind(root, 'data-kit-why', id);
+            if (!cb || marcados >= max) return;
+            cb.checked = true; marcados++;
+            if (ta) ta.value = String(kit.games[id] || '');
         });
-        Object.keys(kit.phrases || {}).forEach(function (id) {
-            var ta = root.querySelector('[data-kit-phrase="' + id + '"]');
-            if (ta) ta.value = kit.phrases[id] || '';
+        Object.keys(kit.phrases).forEach(function (id) {
+            var ta = _kitFind(root, 'data-kit-phrase', id);
+            if (ta) ta.value = String(kit.phrases[id] || '');
         });
-        (kit.care || []).forEach(function (id) {
-            var cb = root.querySelector('[data-kit-care="' + id + '"]');
+        kit.care.forEach(function (id) {
+            var cb = _kitFind(root, 'data-kit-care', String(id));
             if (cb) cb.checked = true;
         });
         var own = root.querySelector('[data-kit-care-own]');
-        if (own) own.value = kit.careOwn || '';
+        if (own) own.value = kit.careOwn;
     }
     root.addEventListener('change', function () { _kitRefresh(); saveKit(); });
     root.addEventListener('input', function () { saveKit(); });
@@ -1044,7 +1067,7 @@ function downloadKitPDF() {
     saveKit();
     // Un kit con menos juegos de los pedidos no esta listo: se avisa y no se descarga.
     var max = parseInt(root.getAttribute('data-max-games'), 10) || 3;
-    if (root.querySelectorAll('[data-kit-game]:checked').length < max) {
+    if (root.querySelectorAll('[data-kit-game]:checked').length !== max) {
         showNotification('Te faltan juegos: marca tres antes de descargar tu kit.', 'warning');
         return;
     }
@@ -1071,7 +1094,7 @@ function downloadKitPDF() {
         if (!cb.checked) return;
         var id = cb.getAttribute('data-kit-game');
         linea('• ' + textoDe(root.querySelector('label[for="kit-game-' + id + '"]')), 11, true);
-        var ta = root.querySelector('[data-kit-why="' + id + '"]');
+        var ta = _kitFind(root, 'data-kit-why', id);
         if (ta && ta.value.trim()) linea(ta.value.trim(), 11, false);
     });
     y += 3;

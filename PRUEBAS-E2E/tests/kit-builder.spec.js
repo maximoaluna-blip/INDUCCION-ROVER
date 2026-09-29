@@ -111,6 +111,39 @@ test.describe('@solo-escritorio kit-builder', () => {
     expect(alBackend).toEqual([]);
   });
 
+  async function sembrarKit(page, kit) {
+    await page.addInitScript((k) => {
+      try { if (!sessionStorage.getItem('sembrado')) { localStorage.setItem('rover:kit_kit-prueba', k); sessionStorage.setItem('sembrado', '1'); } } catch (e) {}
+    }, kit);
+  }
+
+  test('un kit guardado corrupto no deja el kit sin tope ni sin guardado', async ({ page }) => {
+    await sembrarKit(page, JSON.stringify({ games: { 'a"b]': 'x' }, care: 'x', phrases: 5 }));
+    await abrirKit(page);
+    for (const g of ['g1', 'g2', 'g3']) await page.check(`[data-kit-game="${g}"]`);
+    await expect(page.locator('[data-kit-game="g4"]')).toBeDisabled();
+    const guardado = await page.evaluate(() => JSON.parse(localStorage.getItem('rover:kit_kit-prueba')));
+    expect(Object.keys(guardado.games).sort()).toEqual(['g1', 'g2', 'g3']);
+  });
+
+  test('un kit guardado con más juegos que el tope se restaura con tres', async ({ page }) => {
+    await sembrarKit(page, JSON.stringify({ games: { g1: '', g2: '', g3: '', g4: '' }, phrases: {}, care: [], careOwn: '' }));
+    await abrirKit(page);
+    await expect(page.locator('[data-kit-game]:checked')).toHaveCount(3);
+    await expect(page.locator('[data-kit-count]')).toContainText('3 de 3');
+  });
+
+  test('reiniciar el curso borra el kit', async ({ page }) => {
+    await abrirKit(page);
+    await page.check('[data-kit-game="g1"]');
+    await Promise.all([
+      page.waitForEvent('load'),
+      page.evaluate(() => { window.confirm = () => true; restartCourse(); }),
+    ]);
+    const kit = await page.evaluate(() => localStorage.getItem('rover:kit_kit-prueba'));
+    expect(kit).toBeNull();
+  });
+
   test('las funciones del kit no llaman al backend (estatica)', () => {
     // Lo que el Rover escribe en su kit no viaja a la hoja (ADR-087): ni una llamada a
     // sendToGoogleSheets dentro del bloque del kit del motor.

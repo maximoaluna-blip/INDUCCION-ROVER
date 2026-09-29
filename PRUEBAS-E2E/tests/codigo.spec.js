@@ -196,4 +196,49 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     }
     expect(fallos, fallos.join('\n')).toEqual([]);
   });
+
+  // --- ADR-106: kit-builder (Nivel 2) -----------------------------------------
+  const kitBueno = () => ({
+    type: 'kit-builder',
+    labels: { title: 'T', intro: 'I', gamesTitle: 'G', gamesHelp: 'GH', gameWhyPlaceholder: 'P',
+      phrasesTitle: 'F', phrasePlaceholder: 'FP', careTitle: 'C', careOwnPlaceholder: 'CO',
+      download: 'D', pdfTitle: 'PDF' },
+    games: [1, 2, 3, 4, 5].map((n) => ({ id: 'g' + n, name: 'J' + n, detail: 'd', source: 'Guía, p. 1' })),
+    phrases: [1, 2, 3].map((n) => ({ id: 'f' + n, situation: 'S' + n })),
+    care: [1, 2, 3].map((n) => ({ id: 'c' + n, text: 'C' + n, source: 'Guía, p. 2' })),
+  });
+  const KIT = () => require(path.join(GEN, 'kit-builder.js'));
+
+  test('validateKit acepta un kit completo (ADR-106)', () => {
+    expect(KIT().validateKit(kitBueno())).toEqual([]);
+  });
+
+  test('validateKit rechaza labels incompletos, pocos juegos, frases fuera de rango e ids repetidos (ADR-106)', () => {
+    const a = kitBueno(); delete a.labels.pdfTitle;
+    const b = kitBueno(); b.games = b.games.slice(0, 4);
+    const c = kitBueno(); c.phrases = c.phrases.slice(0, 2);
+    const d = kitBueno(); d.care = d.care.slice(0, 2);
+    const e = kitBueno(); e.games[1].id = 'g1';
+    for (const k of [a, b, c, d, e]) expect(KIT().validateKit(k).length).toBeGreaterThan(0);
+  });
+
+  test('renderKit dibuja los ganchos del motor y escapa atributos (ADR-106)', () => {
+    const k = kitBueno(); k.labels.pdfTitle = 'Mi "kit" <1>'; k.labels.gameWhyPlaceholder = 'a"b';
+    const html = KIT().renderKit(k);
+    expect(html).toContain('data-kit-builder');
+    expect(html).toContain('data-max-games="3"');
+    expect((html.match(/data-kit-game="/g) || []).length).toBe(5);
+    expect((html.match(/data-kit-why="/g) || []).length).toBe(5);
+    expect((html.match(/data-kit-phrase="/g) || []).length).toBe(3);
+    expect((html.match(/data-kit-care="/g) || []).length).toBe(3);
+    expect(html).toContain('data-kit-care-own');
+    expect(html).toContain('data-kit-download');
+    expect(html).toContain('data-pdf-title="Mi &quot;kit&quot; &lt;1&gt;"');
+    expect(html).not.toContain('placeholder="a"b"');
+  });
+
+  test('el esquema y el build de Rover conocen kit-builder (ADR-106)', () => {
+    expect(leer(path.join(GEN, 'course-schema.json'))).toContain('"kit-builder"');
+    expect(leer(path.join(GEN, 'build-course.js'))).toMatch(/case 'kit-builder'/);
+  });
 });

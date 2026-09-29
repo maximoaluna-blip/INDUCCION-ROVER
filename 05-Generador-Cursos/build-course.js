@@ -8,6 +8,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const KIT = require('./kit-builder');
 
 // --- Rutas ---
 const BASE_DIR = __dirname;
@@ -147,6 +148,9 @@ function validate(course) {
                 if (!q.options || q.options.length < 3) errors.push(`Modulo ${mod.id}, pregunta ${qi}: necesita al menos 3 opciones`);
             });
         }
+        (mod.sections || []).forEach((s) => {
+            if (s.type === 'kit-builder') KIT.validateKit(s).forEach((m) => errors.push(`Modulo ${mod.id}: ${m}`));
+        });
     });
 
     return errors;
@@ -252,6 +256,8 @@ function renderSection(section) {
                         Tu navegador no soporta video HTML5.
                     </video>${caption}
                 </div>`;
+        case 'kit-builder':
+            return KIT.renderKit(section);
         default:
             // ⚠️ 19-sep-2026 (ADR-066): hasta hoy esto devolvia `<p>${section.text || ''}</p>`,
             // es decir, un parrafo VACIO y sin aviso para cualquier tipo que este build no

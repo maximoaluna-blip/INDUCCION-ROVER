@@ -1077,6 +1077,10 @@ function downloadKitPDF() {
     });
     y += 3;
     linea(textoDe(root.querySelector('.kit-care legend')), 13, true);
+    // Las normas de la Guia van SIEMPRE: no dependen de lo que el Rover marque.
+    root.querySelectorAll('[data-kit-rule]').forEach(function (li) {
+        linea('• ' + textoDe(li), 11, false);
+    });
     root.querySelectorAll('[data-kit-care]').forEach(function (cb) {
         if (cb.checked) linea('[x] ' + textoDe(root.querySelector('label[for="' + cb.id + '"]')), 11, false);
     });

@@ -66,6 +66,24 @@ test.describe('@solo-escritorio kit-builder', () => {
     expect(descarga.suggestedFilename()).toMatch(/\.pdf$/);
   });
 
+  test('las normas salen fijas y siempre van al PDF', async ({ page }) => {
+    await abrirKit(page);
+    await expect(page.locator('[data-kit-rule="c1"]')).toBeVisible();
+    await expect(page.locator('[data-kit-care="c1"]')).toHaveCount(0);
+    await page.waitForFunction(() => window.jspdf && window.jspdf.jsPDF, null, { timeout: 15000 });
+    const textos = await page.evaluate(() => {
+      const Orig = window.jspdf.jsPDF; const vistos = [];
+      window.jspdf.jsPDF = function (o) {
+        const pdf = new Orig(o); const t = pdf.text.bind(pdf);
+        pdf.text = (s, ...r) => { vistos.push(String(s)); return t(s, ...r); };
+        pdf.save = () => {}; return pdf;
+      };
+      downloadKitPDF(); return vistos.join(' ');
+    });
+    expect(textos).toContain('Cuidado 1');
+    expect(textos).not.toContain('Cuidado 2');
+  });
+
   test('ninguna petición al backend', async ({ page }) => {
     const alBackend = [];
     page.on('request', (r) => { if (/script\.google\.com/.test(r.url())) alBackend.push(r.url()); });
@@ -73,7 +91,7 @@ test.describe('@solo-escritorio kit-builder', () => {
     await page.check('[data-kit-game="g1"]');
     await page.fill('[data-kit-why="g1"]', 'x');
     await page.fill('[data-kit-phrase="f2"]', 'y');
-    await page.check('[data-kit-care="c1"]');
+    await page.check('[data-kit-care="c2"]');
     await page.waitForTimeout(500);
     expect(alBackend).toEqual([]);
   });

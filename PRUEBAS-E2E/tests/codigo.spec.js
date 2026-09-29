@@ -237,6 +237,19 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     expect(html).not.toContain('placeholder="a"b"');
   });
 
+  test('las normas del kit salen fijas, sin casilla, y piden su titulo (ADR-106)', () => {
+    // Una norma de la Guia ("nunca a solas con un cachorro") no se elige: si saliera como
+    // casilla, el Rover podria descargar su lista sin ella (auditoria doctrinal, M3).
+    const k = kitBueno(); k.care[0].rule = true; k.care[1].rule = true;
+    expect(KIT().validateKit(k).join(' ')).toMatch(/rulesTitle/);
+    k.labels.rulesTitle = 'Reglas de la Guía';
+    expect(KIT().validateKit(k)).toEqual([]);
+    const html = KIT().renderKit(k);
+    expect((html.match(/data-kit-rule="/g) || []).length).toBe(2);
+    expect((html.match(/data-kit-care="/g) || []).length).toBe(1);
+    expect(html).not.toContain('data-kit-care="c1"');
+  });
+
   test('el esquema y el build de Rover conocen kit-builder (ADR-106)', () => {
     expect(leer(path.join(GEN, 'course-schema.json'))).toContain('"kit-builder"');
     expect(leer(path.join(GEN, 'build-course.js'))).toMatch(/case 'kit-builder'/);

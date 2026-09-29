@@ -29,6 +29,8 @@ function validateKit(s) {
   games.forEach((g) => { if (!g.name || !g.source) e.push('kit-builder: juego "' + g.id + '" sin name o source'); });
   phrases.forEach((f) => { if (!f.situation) e.push('kit-builder: frase "' + f.id + '" sin situation'); });
   care.forEach((c) => { if (!c.text) e.push('kit-builder: cuidado "' + c.id + '" sin text'); });
+  // Una norma de la Guia no se elige: sale fija y necesita su propio titulo.
+  if (care.some((c) => c.rule) && !L.rulesTitle) e.push('kit-builder: hay care con rule:true y falta labels.rulesTitle');
   return e;
 }
 
@@ -45,7 +47,14 @@ function renderKit(s) {
                         <label for="kit-phrase-${esc(f.id)}">${f.situation}</label>
                         <textarea id="kit-phrase-${esc(f.id)}" data-kit-phrase="${esc(f.id)}" rows="2" placeholder="${esc(L.phrasePlaceholder)}"></textarea>
                     </div>`).join('');
-  const care = s.care.map((c) => `
+  const src = (c) => (c.source ? ' <small class="kit-source">' + c.source + '</small>' : '');
+  const reglas = s.care.filter((c) => c.rule);
+  const rules = reglas.length ? `
+                    <p class="kit-rules-title"><strong>${L.rulesTitle}</strong></p>
+                    <ul class="kit-rules">${reglas.map((c) => `
+                        <li data-kit-rule="${esc(c.id)}">${c.text}${src(c)}</li>`).join('')}
+                    </ul>` : '';
+  const care = rules + s.care.filter((c) => !c.rule).map((c) => `
                     <div class="kit-care-item">
                         <input type="checkbox" id="kit-care-${esc(c.id)}" data-kit-care="${esc(c.id)}">
                         <label for="kit-care-${esc(c.id)}">${c.text}${c.source ? ' <small class="kit-source">' + c.source + '</small>' : ''}</label>

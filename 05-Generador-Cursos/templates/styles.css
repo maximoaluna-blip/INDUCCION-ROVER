@@ -355,3 +355,5 @@ html[data-theme="dark"] .certificate div { color: #2b2b33; }
 .kit-count { font-weight: 600; }
 html[data-theme="dark"] .kit-builder fieldset { border-color: #4a6275; }
 html[data-theme="dark"] .kit-source { color: #cfe3f2; }
+.kit-rules { margin: 6px 0 12px; padding-left: 20px; }
+.kit-rules li { margin: 6px 0; }

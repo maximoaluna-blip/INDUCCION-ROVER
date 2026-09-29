@@ -2,7 +2,7 @@
   "courseId": "herramientas-familia",
   "title": "Herramientas para la Familia de Cachorros",
   "subtitle": "Ruta Servir en el Grupo · Nivel 2 · Familia de Cachorros",
-  "description": "Para el Rover que ya sirve en la Familia de Cachorros y quiere hacerlo mejor. En ~35 minutos vas a aprender a elegir y adaptar juegos para 5 y 6 años, a proponer experiencias al aire libre, a escuchar y poner límites sin gritos, y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía del Dirigente de Familia de Cachorros (2026).",
+  "description": "Para el Rover que ya sirve en la Familia de Cachorros y quiere hacerlo mejor. En ~35 minutos vas a aprender a elegir y adaptar juegos para 5 y 6 años, a proponer experiencias al aire libre, a escuchar y poner límites sin gritos, y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía para el Dirigente de Familia de Cachorros (2026).",
   "contentVersion": "2026-09-28",
   "route": "grupo",
   "level": 2,
@@ -11,7 +11,7 @@
     "motivationLabel": "¿Qué quieres mejorar de tu servicio en la Familia de Cachorros?"
   },
   "icon": "🧰",
-  "duration": "35 minutos",
+  "duration": "40 minutos",
   "totalContentModules": 5,
   "modules": [
     {
@@ -31,7 +31,7 @@
         },
         {
           "type": "paragraph",
-          "text": "La frase es de la <em>Guía del Dirigente de Familia de Cachorros</em> de la Asociación (2026, p. 26), la fuente principal de este curso. La otra es la <em>Guía de Prevención y Atención del Daño</em> (2021)."
+          "text": "La frase es de la <em>Guía para el Dirigente de Familia de Cachorros</em> de la Asociación (2026, p. 26), la fuente principal de este curso. Las otras son la <em>Política Nacional A Salvo del Peligro</em> (2025) y la <em>Guía de Prevención y Atención del Daño</em> (2021)."
         },
         {
           "type": "info-box",
@@ -61,15 +61,15 @@
         },
         {
           "type": "paragraph",
-          "text": "Ya sabes que en la Familia el juego tiene intención. Ahora te toca proponerlo tú, y ahí aparecen las preguntas: ¿cuál?, ¿cuánto dura?, ¿qué hago con el que siempre pierde?"
+          "text": "En el curso anterior viste que el juego tiene intención y que nadie se queda por fuera. Ahora el juego lo propones tú, y las preguntas son otras: ¿cuál elijo?, ¿cómo lo explico?, ¿qué hago cuando no funciona?"
         },
         {
           "type": "paragraph",
-          "text": "La Guía dice que el juego no es un premio: es «la metodología esencial» (p. 26). Pide planearlo con un propósito claro, y lo conecta con los cuentos, el arte y la exploración del entorno, a través de «dinámicas, rondas, juegos de roles y símbolos» (p. 27). A esta edad disfrutan las actividades «cortas, variadas y llenas de movimiento», y están descubriendo las reglas simples (p. 8)."
+          "text": "La Guía lo dice así: el juego «no es el fin, sino el mediador» (p. 26). Pide planearlo con un propósito claro y lo conecta con los cuentos, el arte y la exploración del entorno, a través de «dinámicas, rondas, juegos de roles y símbolos» (p. 27). A esta edad disfrutan las actividades «cortas, variadas y llenas de movimiento» (p. 8)."
         },
         {
           "type": "blockquote",
-          "text": "«Quien no corre rápido puede narrar o observar; quién es más tímido puede guiar un pequeño grupo o encargarse de una tarea específica.»<br><small>— Guía del Dirigente de Familia de Cachorros, ASC, 2026, p. 26</small>"
+          "text": "«[…] quien no corre rápido puede narrar o observar; quién es más tímido puede guiar un pequeño grupo o encargarse de una tarea específica.»<br><small>— Guía para el Dirigente de Familia de Cachorros, ASC, 2026, p. 26</small>"
         },
         {
           "type": "heading",
@@ -86,33 +86,47 @@
           ]
         },
         {
+          "type": "heading",
+          "level": 3,
+          "text": "Cuando el juego no funciona"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Alguien queda por fuera</strong> (lo tocaron, siempre pierde): cambia la regla para que vuelva a entrar, o dale otro papel en el mismo juego (p. 26)",
+            "<strong>No lo entienden:</strong> no lo expliques más largo; muéstralo jugando tú una ronda y suma las reglas de a una (apoyo visual y corporal, p. 73)",
+            "<strong>Se salió de control:</strong> para con una señal que ya conozcan —una canción, una palmada—, no con un grito (p. 73), y cierra antes de que se aburran"
+          ]
+        },
+        {
           "type": "paragraph",
-          "text": "Son una recomendación de este curso, tomada de lo que la Guía pide. Llévalas al Viejo Lobo cuando le propongas el juego: él decide si entra en la reunión."
+          "text": "Las tres preguntas y estos ajustes son una recomendación de este curso, tomada de lo que la Guía pide. Llévalos al Viejo Lobo cuando le propongas el juego: él decide si entra en la reunión."
         }
       ],
       "reflection": {
-        "prompt": "Piensa en un juego de tu infancia que recuerdes con gusto. ¿Qué aprendías jugándolo sin darte cuenta? ¿Cómo lo adaptarías para cachorros de 5 y 6 años?"
+        "prompt": "Piensa en un juego que hayas visto en tu Grupo o en tu Clan donde alguien se quedó por fuera o se aburrió. ¿Qué regla le cambiarías para que funcione con cachorros de 5 y 6 años? Sin nombres: basta con lo que pasó."
       },
       "quiz": {
         "title": "Evaluación - Juegos",
         "questions": [
           {
-            "text": "En un juego de relevos, el mismo cachorro queda siempre de último y ya no quiere jugar. ¿Qué es lo más coherente con la Guía?",
+            "text": "Propones «Congelados» y a los dos minutos cinco cachorros ya están tocados, sentados a un lado y aburridos. ¿Qué ajuste va mejor con lo que pide la Guía?",
             "options": [
-              "Animarlo a esforzarse más, para que aprenda que con práctica se puede ganar",
-              "Darle otro papel en el mismo juego, como narrar la carrera o marcar la salida",
-              "Dejarlo sentado mirando un rato, para que descanse y no se frustre más"
+              "Terminar ese juego ya y empezar otro, para que los tocados no esperen más",
+              "Cambiar la regla para que un compañero pueda descongelar al que tocaron",
+              "Pedirles a los tocados que esperen sentados, para que aprendan a perder"
             ],
             "correctIndex": 1
           },
           {
-            "text": "Un Rover prepara un juego nuevo con ocho reglas y lo explica durante diez minutos antes de empezar. ¿Qué le diría la Guía de Familia?",
+            "text": "Tu juego nuevo tiene cuatro reglas y es la primera vez que los cachorros lo juegan. ¿Cómo lo presentas?",
             "options": [
-              "Que acierta: con las reglas claras desde el inicio, el juego sale sin discusiones",
-              "Que acierta si al final les pregunta qué reglas recuerdan, para reforzarlas",
-              "Que a esta edad funciona mejor algo corto, con pocas reglas y con movimiento"
+              "Explicar las cuatro reglas antes de empezar, para que nadie se equivoque",
+              "Jugar tú una ronda para que lo vean, y después sumar las reglas de a una",
+              "Escribirlas en un cartel grande, para que las consulten durante el juego"
             ],
-            "correctIndex": 2
+            "correctIndex": 1
           }
         ],
         "nextLabel": "Continuar: al aire libre ➡️"
@@ -126,11 +140,11 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> a los 5 y 6 años, la naturaleza se explora y se cuida; la técnica scout viene después."
+          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> a los 5 y 6 años, la naturaleza se explora y se cuida; la técnica scout no es lo central a esta edad."
         },
         {
           "type": "paragraph",
-          "text": "Quizá lo primero que piensas al oír «aire libre» es nudos, carpas y fogata. La Guía de Familia no pide eso a esta edad. Pide cinco <strong>habilidades de vida al aire libre</strong> (p. 48-49):"
+          "text": "Quizá lo primero que piensas al oír «aire libre» es nudos, carpas y fogata. Para esta edad, la Guía de Familia pone el acento en otra cosa: cinco <strong>habilidades de vida al aire libre</strong> (p. 48-49):"
         },
         {
           "type": "list",
@@ -149,7 +163,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Sobre la técnica scout.</strong> Nudos, cocina o fuego no son lo que la Guía propone para esta edad, y este curso no los enseña. Esa técnica la aprendes en tu Clan y en la formación de la Asociación."
+          "text": "<strong>Sobre la técnica scout.</strong> Nudos, cocina o fuego no están entre las habilidades que la Guía pide para esta edad, y este curso no los enseña. Si un cachorro intenta algo así, como un nudo sencillo, la Guía te dice cómo acompañar: no lo haces por él, pero tampoco lo dejas frustrarse solo (p. 65)."
         },
         {
           "type": "heading",
@@ -171,8 +185,8 @@
             "text": "En una caminata corta, la Familia llega a un charco grande y los cachorros se detienen. ¿Qué va mejor con las habilidades que propone la Guía?",
             "options": [
               "Buscar tú el paso más fácil y guiarlos uno por uno, para no perder tiempo",
-              "Preguntarles cómo podrían cruzarlo y dejar que prueben, con los adultos cerca",
-              "Preguntarles si prefieren devolverse por otro camino, para que nadie se moje"
+              "Preguntarles cómo cruzarlo, para que lo resuelvan con los adultos atentos",
+              "Devolverse por otro camino sin preguntarles, para que nadie se moje"
             ],
             "correctIndex": 1
           },
@@ -208,13 +222,15 @@
           "text": "«En la Familia de Cachorros, la autoridad del adulto no se basa en la imposición, el grito, ni el miedo, sino en la orientación consciente.»<br><small>— Guía del Dirigente de Familia de Cachorros, ASC, 2026, p. 73</small>"
         },
         {
+          "type": "paragraph",
+          "text": "Ya conoces la escucha emocional y el juego como lenguaje (p. 73). La misma página trae dos más:"
+        },
+        {
           "type": "list",
           "ordered": false,
           "items": [
             "<strong>Límites claros, sin miedo ni comparación.</strong> No se hace lo que el cachorro puede hacer solo, pero tampoco se le deja solo ante la dificultad (p. 73)",
-            "<strong>Pequeñas decisiones:</strong> elegir entre opciones sencillas fortalece su autonomía (p. 73)",
-            "<strong>Escucha emocional:</strong> el tono, la mirada o el silencio también comunican (p. 73)",
-            "<strong>El juego como lenguaje:</strong> canciones, dramatizaciones o cuentos para explicar normas (p. 73)"
+            "<strong>Pequeñas decisiones:</strong> elegir entre opciones sencillas fortalece su autonomía (p. 73)"
           ]
         },
         {
@@ -223,7 +239,7 @@
         }
       ],
       "reflection": {
-        "prompt": "Elige una norma de la Familia (esperar el turno, recoger, escuchar al que habla). ¿Cómo la explicarías con una canción, un cuento o un juego, en vez de con un discurso?"
+        "prompt": "Piensa en una orden que se oye mucho en una reunión («¡recojan!», «¡hagan silencio!», «¡hagan fila!»). Reescríbela como una elección entre dos opciones sencillas, y di qué harías si el cachorro no elige ninguna."
       },
       "quiz": {
         "title": "Evaluación - Escuchar y poner límites",
@@ -232,7 +248,7 @@
             "text": "Después de un juego, un cachorro se sienta aparte con los ojos llorosos. Le preguntas qué le pasa y responde: «nada». ¿Qué es lo más coherente con la lección?",
             "options": [
               "Insistirle con cariño hasta que te cuente, porque así puedes ayudarlo",
-              "Quedarte cerca, a su altura y a la vista, y decirle que estás ahí",
+              "Sentarte a su lado, a la vista de todos, para que sepa que estás ahí",
               "Invitarlo rápido a otro juego, para que se distraiga y se le pase"
             ],
             "correctIndex": 1
@@ -242,7 +258,7 @@
             "options": [
               "Decirle «mira a tu compañera, ella sí está recogiendo lo suyo»",
               "Preguntarle «¿recoges primero los conos o las pelotas?»",
-              "Recogerlo tú, para no terminar la reunión con una pelea"
+              "Recogerlo tú en silencio y seguir con el cierre de la reunión"
             ],
             "correctIndex": 1
           }
@@ -280,11 +296,11 @@
         },
         {
           "type": "paragraph",
-          "text": "La <em>Guía de Prevención y Atención del Daño</em> describe señales que pueden indicar maltrato o negligencia, entre ellas: temor al contacto físico con adultos, volver a no controlar esfínteres cuando antes lo hacía, llanto constante, verse constantemente sucio o con hambre, o que casi nunca lleguen a tiempo a recogerlo (pp. 24-26). Y desmiente un mito: «Si no deja una marca o herida grave, no es violencia. FALSO» (p. 36)."
+          "text": "La <em>Guía de Prevención y Atención del Daño</em> describe señales que pueden indicar maltrato o negligencia, entre ellas: temor al contacto físico con adultos, volver a no controlar esfínteres cuando antes lo hacía, llanto constante, verse constantemente sucio o con hambre, o que casi nunca lleguen a tiempo a recogerlo (pp. 24-26). Y desmiente un mito: «Si no deja una marca o herida grave, no es violencia», que es falso (p. 36): por eso también cuenta lo que notas en su ánimo, aunque no veas ninguna marca."
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué haces con lo que ves.</strong> Una señal no prueba nada, y no te toca averiguar qué pasa: la Política A Salvo del Peligro dice que la función del adulto en estos casos no es investigativa (p. 29). Lo que sí te toca es contárselo al Viejo Lobo, y este curso te recomienda hacerlo ese mismo día. Si tiene que ver con alguien del equipo, usa el botón «Me Pongo A Salvo del Peligro» (Guía de Familia, p. 77)."
+          "text": "<strong>Qué haces con lo que ves.</strong> Una señal sola no prueba nada, y tampoco tienes que estar seguro para contarla: contarla es justo lo que te toca. No te toca averiguar qué pasa: la Política A Salvo del Peligro dice que la función del adulto en estos casos no es investigativa (p. 29). Díselo al Viejo Lobo de inmediato; la Guía de Familia pide reportar así (p. 79), y en la Asociación nadie guarda secretos sobre algo que pueda dañar a alguien (Política, p. 21). La ruta oficial para reportar es el botón «Me Pongo A Salvo del Peligro», en scout.org.co y en los códigos QR de los sitios de reunión (Política, p. 44; Guía de Familia, p. 77), y cualquiera puede usarlo: úsalo tú si tiene que ver con alguien del equipo de adultos, o si ves que la situación sigue igual."
         },
         {
           "type": "heading",
@@ -293,7 +309,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Los primeros auxilios psicológicos no son solo para profesionales (<em>Guía de Prevención</em>, p. 20). Lo esencial: reconfortar y ayudar a calmarse, escuchar sin presionar a que cuente, no juzgar lo que siente —nada de «no deberías sentirte así»— y no hacer falsas promesas (pp. 20-23)."
+          "text": "Los primeros auxilios psicológicos no son solo para profesionales (<em>Guía de Prevención</em>, p. 20), y lo que enseñan te sirve también cuando un cachorro se asusta o se angustia. Lo esencial: reconfortar y ayudar a calmarse, escuchar sin presionar a que cuente, no juzgar lo que siente —nada de «no deberías sentirte así»— y no hacer falsas promesas (pp. 20-23)."
         }
       ],
       "reflection": {
@@ -306,7 +322,7 @@
             "text": "Hace varias semanas un cachorro llega sin haber comido, y casi siempre es el último al que recogen. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Hablar tú con su mamá a la salida y después contarle al Viejo Lobo lo que te dijo",
-              "Contárselo al Viejo Lobo ese mismo día, sin sacar conclusiones tú solo",
+              "Contárselo al Viejo Lobo de inmediato, sin sacar conclusiones tú solo",
               "Esperar unas semanas más y, si sigue igual, contárselo al Viejo Lobo"
             ],
             "correctIndex": 1
@@ -314,8 +330,8 @@
           {
             "text": "En un juego de equilibrio sobre un tronco bajo, un cachorro se tambalea y está a punto de caer. ¿Qué es lo más coherente con la Guía?",
             "options": [
-              "Decirle «te voy a tomar de la mano para que no te caigas» y sujetarlo",
-              "No tocarlo, porque con los cachorros el contacto físico se evita siempre",
+              "Avisarle «te tomo de la mano» y sujetarlo, para que recupere el equilibrio",
+              "Decirle «¡bájate ya!» sin tocarlo, porque el contacto físico se evita siempre",
               "Cargarlo y bajarlo del tronco, para que no vuelva a subir a ese juego"
             ],
             "correctIndex": 0
@@ -332,7 +348,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 6 minutos · Idea central:</strong> lo que aprendiste se vuelve tuyo cuando lo eliges y lo escribes con tus palabras."
+          "text": "<strong>⏱️ 12 minutos · Idea central:</strong> lo que aprendiste se vuelve tuyo cuando lo eliges y lo escribes con tus palabras."
         },
         {
           "type": "kit-builder",
@@ -340,14 +356,15 @@
             "title": "Tu kit para la Familia de Cachorros",
             "intro": "Elige, escribe y descárgalo. Se guarda solo en este navegador: no va a ninguna hoja. Si vuelves al curso, lo encuentras como lo dejaste.",
             "gamesTitle": "Mis 3 juegos",
-            "gamesHelp": "Marca exactamente tres. En cada uno, escribe para qué lo usarías y cómo lo adaptarías para que todos jueguen.",
-            "gameWhyPlaceholder": "Para qué lo usaría y cómo lo adaptaría",
+            "gamesHelp": "Marca tres. En cada uno escribe un juego concreto de ese tipo y responde las tres preguntas: ¿para qué?, ¿cómo lo haces corto y simple?, ¿qué papel tiene el que no corre rápido o el tímido?",
+            "gameWhyPlaceholder": "Juego concreto · para qué · cómo lo haces corto · cómo juegan todos",
             "phrasesTitle": "Mis frases",
             "phrasePlaceholder": "Lo que diría, tal cual",
             "careTitle": "Mi lista de cuidado",
             "careOwnPlaceholder": "Agrega un punto de cuidado propio (opcional)",
             "download": "Descargar mi kit (PDF)",
-            "pdfTitle": "Mi kit para la Familia de Cachorros"
+            "pdfTitle": "Mi kit para la Familia de Cachorros",
+            "rulesTitle": "Reglas de la Guía, siempre (no se eligen):"
           },
           "games": [
             {
@@ -372,12 +389,12 @@
               "id": "g4",
               "name": "Exploración sin dañar",
               "detail": "descubrir el entorno con los sentidos",
-              "source": "Guía de Familia, p. 27 y 48"
+              "source": "Guía de Familia, p. 27, 48 y 49"
             },
             {
               "id": "g5",
-              "name": "Clasificar residuos por colores",
-              "detail": "cuidar el entorno jugando",
+              "name": "Juego de cuidar el entorno",
+              "detail": "clasificar residuos, sembrar, observar sin dañar",
               "source": "Guía de Familia, p. 49"
             },
             {
@@ -404,43 +421,64 @@
             },
             {
               "id": "f3",
-              "situation": "Un cachorro llora y dice que no le pasa nada."
+              "situation": "Un cachorro se burla del que perdió el juego."
             },
             {
               "id": "f4",
-              "situation": "Un cachorro no quiere recoger el material."
+              "situation": "Se acabó el tiempo del juego y todos quieren seguir."
             }
           ],
           "care": [
             {
               "id": "c1",
-              "text": "Nunca me quedo a solas con un cachorro: siempre a la vista de otro adulto.",
+              "rule": true,
+              "text": "Nunca me quedo a solas con un cachorro ni solo con la Familia: siempre a la vista de otro adulto.",
               "source": "Guía de Familia, p. 77-78"
             },
             {
               "id": "c2",
-              "text": "Nunca dejo que un cachorro se vaya solo: la entrega la hace el Viejo Lobo.",
+              "rule": true,
+              "text": "Nunca dejo que un cachorro se vaya solo: la entrega la hacen los Viejos Lobos.",
               "source": "Guía de Familia, p. 78"
             },
             {
               "id": "c3",
-              "text": "Al baño acompaño solo hasta la puerta.",
+              "rule": true,
+              "text": "Al baño acompaño solo hasta la puerta, y con otro adulto.",
               "source": "Guía de Familia, p. 78-79"
             },
             {
               "id": "c4",
-              "text": "Si tengo que tocarlo para evitar un accidente, le digo antes qué voy a hacer.",
+              "rule": true,
+              "text": "Si tengo que tocarlo para evitar un accidente, si puedo, le digo antes qué voy a hacer.",
               "source": "Guía de Familia, p. 79"
             },
             {
               "id": "c5",
+              "rule": true,
               "text": "Si me pide un abrazo, me agacho a su altura y no lo cargo.",
               "source": "Guía de Familia, p. 79"
             },
             {
               "id": "c6",
-              "text": "Si veo una señal de alerta, se la cuento al Viejo Lobo ese mismo día.",
-              "source": "Guía de Prevención, p. 24-26"
+              "rule": true,
+              "text": "Si veo una señal de alerta, se la cuento al Viejo Lobo de inmediato.",
+              "source": "Guía de Familia, p. 79; señales: Guía de Prevención, p. 24-26"
+            },
+            {
+              "id": "c7",
+              "text": "Llego antes y reviso el lugar con los Viejos Lobos.",
+              "source": "Guía de Familia, p. 79"
+            },
+            {
+              "id": "c8",
+              "text": "Hablo con las familias de lo que su hijo vivió, no de si «se portó bien».",
+              "source": "Guía de Familia, p. 74"
+            },
+            {
+              "id": "c9",
+              "text": "Cuando un juego se sale de control, lo paro con una señal, no con un grito.",
+              "source": "Guía de Familia, p. 73"
             }
           ]
         },
@@ -451,7 +489,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Al terminar vas a escribir tu compromiso. Que sea concreto y para tus primeras cuatro reuniones: «En la Familia voy a ___, y nunca voy a ___»."
+          "text": "Al terminar vas a escribir tu compromiso. Hazlo para tus próximas cuatro reuniones, usando tu kit: «En la Familia voy a proponer ___ y a decir ___, y nunca voy a ___»."
         },
         {
           "type": "mission-box",
@@ -459,7 +497,7 @@
         }
       ],
       "reflection": {
-        "prompt": "De los tres juegos que elegiste, ¿cuál propondrías primero al Viejo Lobo, y qué le dirías para explicarle su para qué?"
+        "prompt": "Piensa en tu próxima reunión. ¿En qué momento usarías uno de tus tres juegos, y qué ajuste harías si a los dos minutos no funciona? Sin nombres de niños."
       },
       "quiz": {
         "title": "Evaluación - Tu kit",
@@ -468,16 +506,16 @@
             "text": "El Viejo Lobo te pide proponer algo para que los cachorros aprendan a cuidar el agua. ¿Cuál propuesta va más con todo lo del curso?",
             "options": [
               "Un taller corto sobre el ciclo del agua, con dibujos para que lo entiendan",
-              "Un cuento de «Guardianes del agua» que se juega, con un papel para cada uno",
-              "Una carrera de relevos con baldes, donde el equipo que llegue último pierde"
+              "Un cuento del agua que se juega, donde cada cachorro es gota, nube o planta",
+              "Un cuento del agua que se juega, con diez personajes y las reglas de cada uno"
             ],
             "correctIndex": 1
           },
           {
             "text": "A la salida, la mamá de un cachorro te pregunta: «¿Se portó mal hoy?». ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Contarle lo que hizo mal hoy, para que ella lo corrija en casa esta semana",
-              "Decirle que de cómo van los cachorros solo habla el Viejo Lobo con las familias",
+              "Contarle lo que hizo mal hoy y pedirle que lo hable con el Viejo Lobo",
+              "Contarle que se portó bien, porque obedeció todo lo que le pidieron",
               "Contarle algo que disfrutó, y que el Viejo Lobo le cuenta el resto"
             ],
             "correctIndex": 2
@@ -485,9 +523,9 @@
           {
             "text": "Un cachorro se separó de la Familia cinco minutos en el parque y, cuando lo encuentran, llora sin parar. ¿Qué va con los primeros auxilios psicológicos?",
             "options": [
-              "Decirle que ya pasó, que no es para tanto, para que se calme pronto",
-              "Preguntarle por qué se alejó, para que no vuelva a pasar",
-              "Hablarle con calma, quedarte cerca y dejar que se tranquilice"
+              "Decirle que ya pasó y que no es para tanto, para que se calme pronto",
+              "Preguntarle por qué se alejó, para que entienda que no debe volver a hacerlo",
+              "Agacharte a su altura y hablarle despacio, para que se calme a su ritmo"
             ],
             "correctIndex": 2
           }
@@ -511,7 +549,7 @@
     },
     {
       "id": "achievement-3",
-      "name": "Oído de Viejo Lobo",
+      "name": "Oído que Escucha",
       "emoji": "👂",
       "unlockOnModule": 4
     },
@@ -531,6 +569,6 @@
   "certificate": {
     "courseName": "HERRAMIENTAS PARA LA FAMILIA DE CACHORROS",
     "description": "ha completado el curso Herramientas para la Familia de Cachorros, que prepara al Rover para apoyar a los Viejos Lobos de su Grupo eligiendo y adaptando juegos para niños y niñas de 5 y 6 años, proponiendo experiencias al aire libre, escuchando y poniendo límites sin gritos, y reconociendo señales de alerta.",
-    "commitmentPrompt": "Escribe tu compromiso para tus primeras cuatro reuniones, completando la frase de la última lección: «En la Familia voy a ___, y nunca voy a ___»."
+    "commitmentPrompt": "Escribe tu compromiso para tus próximas cuatro reuniones, completando la frase de la última lección: «En la Familia voy a proponer ___ y a decir ___, y nunca voy a ___»."
   }
 }

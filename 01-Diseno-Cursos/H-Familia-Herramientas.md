@@ -11,15 +11,15 @@
 | `courseId` | `herramientas-familia` |
 | Ruta / nivel | Ruta 1 · Nivel 2 · Familia (`route: grupo`, `level: 2`, `branch: familia`) |
 | Público | Rovers de 18 a 20 años que ya sirven, o van a servir, en la Familia de Cachorros |
-| Duración | ~35 min: bienvenida y 5 lecciones |
-| Fuentes | ***Guía del Dirigente de Familia de Cachorros*** (ASC 2026), páginas del PDF. ***Guía de Prevención y Atención del Daño*** (ASC, V3 2021). *Política Nacional A Salvo del Peligro* (dic-2025) para no investigar (p. 29) |
+| Duración | ~40 min: bienvenida y 5 lecciones (la del kit, 12 min) |
+| Fuentes | ***Guía para el Dirigente de Familia de Cachorros*** (ASC 2026), páginas del PDF. ***Guía de Prevención y Atención del Daño*** (ASC, V3 2021). *Política Nacional A Salvo del Peligro* (dic-2025) para no investigar (p. 29) |
 | Recomendado antes | `servir-en-familia` (Nivel 1) |
 
 ## Gancho
 
 > **«El juego no es el fin, sino el mediador; es el camino para alcanzar el aprendizaje.»**
 
-Cita literal de la Guía, p. 26. El Nivel 1 dijo que el juego tiene intención; este curso enseña a **elegirlo, adaptarlo y cuidar a quien juega**. Aparece en la bienvenida, en la lección 1 y en el cierre.
+Cita literal de la Guía, p. 26. El Nivel 1 dijo que el juego tiene intención; este curso enseña a **elegirlo, adaptarlo y cuidar a quien juega**. Aparece en la bienvenida, en la lección de juegos y en el cierre.
 
 ## Objetivos
 
@@ -31,8 +31,8 @@ Cita literal de la Guía, p. 26. El Nivel 1 dijo que el juego tiene intención; 
 
 ## Decisiones de diseño
 
-- **Técnica scout.** La Guía no pide nudos, fuego ni cocina a los 5 y 6 años: pide **habilidades de vida al aire libre** (p. 48-49). El curso lo dice así y remite la técnica al Clan y a la formación oficial (decisión del dueño, 28-09-2026).
-- **Señales de alerta.** La *Guía de Prevención* (2021) describe señales de maltrato y negligencia (pp. 24-26) y dice que el adulto que conoce la situación la pone en conocimiento de las autoridades (p. 26). El Rover **no diagnostica ni investiga** (Política, p. 29): se lo cuenta al Viejo Lobo ese mismo día. «Ese mismo día» es recomendación de este curso.
+- **Técnica scout.** Nudos, cocina o fuego no están entre las **habilidades de vida al aire libre** que la Guía pide a los 5 y 6 años (p. 48-49), aunque la Guía sí nombra el nudo sencillo de un cachorro (p. 65) y el fuego ceremonial (p. 34). El curso no enseña técnica (decisión del dueño, 28-09-2026) y, si un cachorro intenta un nudo, remite a cómo acompañar (p. 65).
+- **Señales de alerta.** La *Guía de Prevención* (2021) describe señales de maltrato y negligencia (pp. 24-26) y dice que el adulto que conoce la situación la pone en conocimiento de las autoridades (p. 26). El Rover **no diagnostica ni investiga** (Política, p. 29): se lo cuenta al Viejo Lobo **de inmediato** (Guía de Familia, p. 79; Política, p. 21, «todas las personas»), y el botón es la ruta oficial que cualquiera puede usar (Política, p. 44). La ruta de la Guía de Prevención p. 26 («adulto voluntario», «referente ASP») está superada por la Política 2025 (ADR-035). Las páginas de la *Guía de Prevención* son las del PDF.
 - **Contacto para prevenir un accidente** (p. 79): nuevo frente al Nivel 1. El distractor del quiz es la regla del Nivel 1 aplicada de más («no tocarlo nunca»).
 - **Primeros auxilios psicológicos** (*Guía de Prevención* pp. 20-23): no presionar a contar, no juzgar lo que siente, no hacer falsas promesas.
 
@@ -42,7 +42,8 @@ Cita literal de la Guía, p. 26. El Nivel 1 dijo que el juego tiene intención; 
 El gancho. Qué trae el Nivel 2 frente al Nivel 1: criterio y un kit propio. Recordatorio del curso recomendado.
 
 ### 2 · Juegos con intención (~7 min)
-- **Anclaje:** ya sabes que el juego tiene intención; ahora te toca proponerlo.
+- **Anclaje:** en el Nivel 1 viste que el juego tiene intención; ahora lo propones tú: ¿cuál?, ¿cómo lo explico?, ¿qué hago si no funciona?
+- **Cuando el juego no funciona** (recomendación del curso): alguien queda por fuera → cambia la regla o el papel (p. 26); no lo entienden → muéstralo jugando y suma reglas de a una (p. 73); se salió de control → una señal conocida, no un grito (p. 73).
 - **Fuentes:**
   - el juego es la metodología esencial y no un premio (p. 26);
   - planear con propósito; se conecta con la literatura, el arte y la exploración del medio; dinámicas, rondas, juegos de roles y símbolos (p. 27);
@@ -50,7 +51,7 @@ El gancho. Qué trae el Nivel 2 frente al Nivel 1: criterio y un kit propio. Rec
   - **incluyentes**: «quien no corre rápido puede narrar o observar» (p. 26).
 - **Tres preguntas para elegir** (recomendación del curso): ¿para qué? ¿cabe en su edad? ¿todos pueden jugar?
 - **Reflexión:** un juego de tu infancia, y qué aprendías sin darte cuenta.
-- **Quiz (2):** el cachorro que siempre queda último en los relevos; y un juego con ocho reglas explicado en diez minutos.
+- **Quiz (2):** «Congelados» con cinco tocados aburridos (cambiar la regla); y presentar un juego de cuatro reglas (jugarlo y sumar de a una; el cartel no sirve, a los 5 años no leen).
 
 ### 3 · Al aire libre (~7 min)
 - **Fuentes:**
@@ -79,13 +80,13 @@ El gancho. Qué trae el Nivel 2 frente al Nivel 1: criterio y un kit propio. Rec
 - **Reflexión:** qué señal te costaría contar «porque seguro no es nada», y cómo se lo dirías al Viejo Lobo. Sin nombres.
 - **Quiz (2):** el cachorro que llega sin comer y al que siempre recogen tarde; y el cachorro que se tambalea en el tronco (advertir y sujetarlo; el distractor es «no tocarlo nunca»).
 
-### 6 · Arma tu kit (~6 min)
+### 6 · Arma tu kit (~12 min)
 - **`kit-builder`:**
   - 7 juegos o tipos de juego con fuente: ronda con canción, juego de roles, cuento que se juega, exploración sin dañar, clasificar residuos, retos pequeños con reglas simples, arte con material reutilizable;
-  - 4 situaciones para las frases;
-  - 6 puntos de cuidado con fuente.
-- **Compromiso:** «En la Familia voy a ___, y nunca voy a ___», para tus primeras cuatro reuniones.
+  - 4 situaciones para las frases (ninguna repite un caso del quiz);
+  - cuidado: **6 reglas de la Guía, fijas y sin casilla** (`rule: true`, siempre en el PDF) y 3 puntos que el Rover elige.
+- **Compromiso:** «En la Familia voy a proponer ___ y a decir ___, y nunca voy a ___», para tus próximas cuatro reuniones.
 - **Quiz (3):** proponer un juego sobre el agua (intención, edad, inclusión); la mamá que pregunta si su hijo «se portó mal»; y el cachorro que se perdió cinco minutos y aparece llorando (primeros auxilios psicológicos). Ninguno repite un caso del Nivel 1.
 
 ## Logros
-1. Juego con Intención · 2. Explorador de la Selva · 3. Oído de Viejo Lobo · 4. Mirada que Cuida · 5. Siempre Alegres.
+1. Juego con Intención · 2. Explorador de la Selva · 3. Oído que Escucha · 4. Mirada que Cuida · 5. Siempre Alegres.

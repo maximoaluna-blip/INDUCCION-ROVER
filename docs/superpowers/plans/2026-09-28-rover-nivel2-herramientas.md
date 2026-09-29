@@ -1,5 +1,7 @@
 # Rover · Nivel 2 «Herramientas» — plan de implementación
 
+> ✅ **Completado el 2026-09-28.** Los cuatro cursos publicados (Rover `f29b2a5`), ADR-106 cerrado en la raíz (`5a48c16`). Desviaciones y hallazgos: ver el ADR-106.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** publicar los cuatro cursos «Herramientas» de la Ruta 1 (Familia, Manada, Tropa, Comunidad), cada uno con un kit propio que el Rover arma y descarga, y cerrar el Nivel 2 con el ADR-106.
@@ -54,7 +56,7 @@
   - cuidado `input[type=checkbox][data-kit-care="<id>"]` y `textarea[data-kit-care-own]`;
   - botón `button[data-kit-download]`, con `onclick="downloadKitPDF()"`.
 
-- [ ] **Step 1: Escribir las pruebas que fallan** (al final del `describe` de `codigo.spec.js`)
+- [x] **Step 1: Escribir las pruebas que fallan** (al final del `describe` de `codigo.spec.js`)
 
 ```js
   // --- ADR-106: kit-builder (Nivel 2) -----------------------------------------
@@ -103,12 +105,12 @@
   });
 ```
 
-- [ ] **Step 2: Correr y ver que fallen**
+- [x] **Step 2: Correr y ver que fallen**
 
 Run: `cd PRUEBAS-E2E && npx playwright test tests/codigo.spec.js -g "kit" --project=desktop-chromium`
 Expected: FAIL, porque no encuentra el módulo `kit-builder.js`.
 
-- [ ] **Step 3: Crear `05-Generador-Cursos/kit-builder.js`**
+- [x] **Step 3: Crear `05-Generador-Cursos/kit-builder.js`**
 
 ```js
 // kit-builder (ADR-106): el kit propio del Nivel 2 de Rover. Aqui vive lo que el BUILD
@@ -186,7 +188,7 @@ function renderKit(s) {
 module.exports = { validateKit, renderKit, esc, MAX_GAMES };
 ```
 
-- [ ] **Step 4: Conectar el módulo en `build-course.js`**
+- [x] **Step 4: Conectar el módulo en `build-course.js`**
 
 Después de `const path = require('path');`:
 
@@ -211,7 +213,7 @@ En `renderSection`, antes de `default:`:
 
 En `course-schema.json`, agregar `"kit-builder"` al `enum` del `type` de las secciones, justo después de `"video"`.
 
-- [ ] **Step 5: Correr y ver que pasen**
+- [x] **Step 5: Correr y ver que pasen**
 
 Run: `cd PRUEBAS-E2E && npx playwright test tests/codigo.spec.js --project=desktop-chromium`
 Expected: PASS, con las 4 pruebas nuevas y todas las de antes.
@@ -219,7 +221,7 @@ Expected: PASS, con las 4 pruebas nuevas y todas las de antes.
 Run desde la raíz del proyecto: `python verificar-motor.py`
 Expected: sin desajustes entre el esquema y el build de Rover.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add 05-Generador-Cursos/kit-builder.js 05-Generador-Cursos/build-course.js 05-Generador-Cursos/course-schema.json PRUEBAS-E2E/tests/codigo.spec.js
@@ -244,7 +246,7 @@ git commit -m "kit-builder: validación y dibujo en el build de Rover (ADR-106)"
   - en el motor: `initKitBuilder()`, `saveKit()`, `loadKit() -> {games:{id:str}, phrases:{id:str}, care:[id], careOwn:str} | null`, `downloadKitPDF()`, y la clave `'rover:kit_' + COURSE_CONFIG.courseId`;
   - en el build: `node build-course.js --json <ruta.json> --salida <ruta.html>`.
 
-- [ ] **Step 1: Curso de prueba `PRUEBAS-E2E/fixtures/kit-prueba.json`** (se escribe con la herramienta Write)
+- [x] **Step 1: Curso de prueba `PRUEBAS-E2E/fixtures/kit-prueba.json`** (se escribe con la herramienta Write)
 
 ```json
 {
@@ -284,7 +286,7 @@ git commit -m "kit-builder: validación y dibujo en el build de Rover (ADR-106)"
 }
 ```
 
-- [ ] **Step 2: Escribir la prueba de flujo `PRUEBAS-E2E/tests/kit-builder.spec.js`**
+- [x] **Step 2: Escribir la prueba de flujo `PRUEBAS-E2E/tests/kit-builder.spec.js`**
 
 ```js
 // kit-builder (ADR-106): el kit del Nivel 2 se elige, se guarda SOLO en el navegador,
@@ -367,12 +369,12 @@ test.describe('@solo-escritorio kit-builder', () => {
 });
 ```
 
-- [ ] **Step 3: Correr y ver que falle**
+- [x] **Step 3: Correr y ver que falle**
 
 Run: `cd PRUEBAS-E2E && npx playwright test tests/kit-builder.spec.js --project=desktop-chromium`
 Expected: FAIL en `beforeAll`, porque `build-course.js` todavía no entiende `--json`.
 
-- [ ] **Step 4: Modo `--json/--salida` en `build-course.js`**
+- [x] **Step 4: Modo `--json/--salida` en `build-course.js`**
 
 Reemplazar el bloque «Leer argumentos» y «Leer JSON del curso», hasta `const course = …`, por:
 
@@ -414,7 +416,7 @@ console.log('✅ Curso generado: ' + outputPath);
 if (MODO_PRUEBA) process.exit(0);
 ```
 
-- [ ] **Step 5: Funciones del kit en `templates/engine.js`**
+- [x] **Step 5: Funciones del kit en `templates/engine.js`**
 
 En el `DOMContentLoaded`, justo después de `loadProgress();`:
 
@@ -547,7 +549,7 @@ function downloadKitPDF() {
 }
 ```
 
-- [ ] **Step 6: Estilos al final de `templates/styles.css`**
+- [x] **Step 6: Estilos al final de `templates/styles.css`**
 
 ```css
 /* --- Kit del Nivel 2 (ADR-106) --- */
@@ -564,19 +566,19 @@ html[data-theme="dark"] .kit-source { color: #cfe3f2; }
 
 Y crear o ampliar `PRUEBAS-E2E/.gitignore` con la línea `fixtures/*.html`.
 
-- [ ] **Step 7: Correr y ver que pase**
+- [x] **Step 7: Correr y ver que pase**
 
 Run: `cd PRUEBAS-E2E && npx playwright test tests/kit-builder.spec.js --project=desktop-chromium`
 Expected: 4 passed.
 
-- [ ] **Step 8: Recompilar los ocho cursos y correr la suite local completa** (avisar antes a las otras sesiones)
+- [x] **Step 8: Recompilar los ocho cursos y correr la suite local completa** (avisar antes a las otras sesiones)
 
 Run desde `05-Generador-Cursos`: `for c in fundamentos-scout caracteristicas-educativas servicio-rover servir-en-el-grupo servir-en-familia servir-en-manada servir-en-tropa servir-en-comunidad; do node build-course.js $c | grep "⚠\|❌"; done`
 Expected: sin avisos ni errores.
 Run: `cd PRUEBAS-E2E && ASC_BASE_URL=http://localhost:8132/02-Plataforma-Web/ npx playwright test`
 Expected: 0 failed. El total sube con las 8 pruebas nuevas de las Tareas 1 y 2.
 
-- [ ] **Step 9: Commit**
+- [x] **Step 9: Commit**
 
 ```bash
 git add 05-Generador-Cursos PRUEBAS-E2E 02-Plataforma-Web
@@ -597,23 +599,23 @@ git commit -m "kit-builder en el motor: elegir 3, guardar solo en el navegador, 
 - Consumes: el tipo `kit-builder` (Tareas 1 y 2) y el curso de Nivel 1 `servir-en-familia` (qué ya enseñó; no repetirlo).
 - Produces: el molde de los cursos H, que siguen las Tareas 4 a 6.
 
-- [ ] **Step 1: Extraer la fuente.** Con pypdf, *Guía del Dirigente de Familia de Cachorros* (2026): pp. 8, 26-27, 47-49, 63-66, 72-80. Y *Guía de Prevención y Atención del Daño* (2021): pp. 20-28 y 35-38. Guardar en el scratchpad como `familia-n2.txt`, marcando la página. Releer `borradores/servir-en-familia.json` y anotar qué ya se enseñó.
-- [ ] **Step 2: Diseño `.md`** con el molde del Nivel 1: ficha, gancho, objetivos, decisiones de diseño, y por lección fuentes con página, reflexión y casos del quiz. La lección 5 incluye el contenido completo del kit: al menos 5 juegos o tipos de juego con fuente, 3 o 4 situaciones para las frases, y al menos 3 puntos de cuidado con fuente (custodia, baño, contacto físico, 2+1: pp. 76-80).
-- [ ] **Step 3: JSON** según la plantilla de `SKILL.md`, con la sección `kit-builder` en la lección 5.
-- [ ] **Step 4: Build.**
+- [x] **Step 1: Extraer la fuente.** Con pypdf, *Guía del Dirigente de Familia de Cachorros* (2026): pp. 8, 26-27, 47-49, 63-66, 72-80. Y *Guía de Prevención y Atención del Daño* (2021): pp. 20-28 y 35-38. Guardar en el scratchpad como `familia-n2.txt`, marcando la página. Releer `borradores/servir-en-familia.json` y anotar qué ya se enseñó.
+- [x] **Step 2: Diseño `.md`** con el molde del Nivel 1: ficha, gancho, objetivos, decisiones de diseño, y por lección fuentes con página, reflexión y casos del quiz. La lección 5 incluye el contenido completo del kit: al menos 5 juegos o tipos de juego con fuente, 3 o 4 situaciones para las frases, y al menos 3 puntos de cuidado con fuente (custodia, baño, contacto físico, 2+1: pp. 76-80).
+- [x] **Step 3: JSON** según la plantilla de `SKILL.md`, con la sección `kit-builder` en la lección 5.
+- [x] **Step 4: Build.**
   Run: `node 05-Generador-Cursos/build-course.js herramientas-familia`
   Expected: sin «⚠» ni «❌». Si aparecen avisos de quiz, corregir los **distractores**, no la correcta.
-- [ ] **Step 5: Auditorías en paralelo.** `auditor-doctrinal-asc` y `auditor-pedagogico-asc`, con las instrucciones de Rover en el prompt: público de 18 a 20 años; reflexiones sin nombres; DEFECTO frente a BRECHA; el quiz final no repite el Nivel 1; fuga de conjunto por palabra.
-- [ ] **Step 6: Aplicar las correcciones** con un script en el scratchpad, recompilar sin avisos y lanzar la **re-auditoría acotada** de lo corregido, las dos, en paralelo. Repetir hasta que den APTO o APTO CON MENORES, y aplicar esos menores.
-- [ ] **Step 7: Suite local**, avisando antes.
+- [x] **Step 5: Auditorías en paralelo.** `auditor-doctrinal-asc` y `auditor-pedagogico-asc`, con las instrucciones de Rover en el prompt: público de 18 a 20 años; reflexiones sin nombres; DEFECTO frente a BRECHA; el quiz final no repite el Nivel 1; fuga de conjunto por palabra.
+- [x] **Step 6: Aplicar las correcciones** con un script en el scratchpad, recompilar sin avisos y lanzar la **re-auditoría acotada** de lo corregido, las dos, en paralelo. Repetir hasta que den APTO o APTO CON MENORES, y aplicar esos menores.
+- [x] **Step 7: Suite local**, avisando antes.
   Run: `cd PRUEBAS-E2E && ASC_BASE_URL=http://localhost:8132/02-Plataforma-Web/ npx playwright test`
   Expected: 0 failed. El landing muestra el grupo «Nivel 2 · Herramientas».
-- [ ] **Step 8: Commit, push y producción.**
+- [x] **Step 8: Commit, push y producción.**
   - `git add 01-Diseno-Cursos 05-Generador-Cursos/borradores 02-Plataforma-Web && git commit && git push`.
   - Esperar a que el build de Pages termine en `built`.
   - `curl` a la página del curso y a `cursos.json`: esperar 200.
   - Suite sin `ASC_BASE_URL`: esperar 0 failed.
-- [ ] **Step 9: Raíz, con turno.** Agregar las filas de trazabilidad (una por afirmación o cita) y la fila en `ESTADO-AUDITORIA.md`. Commit con pathspec y push.
+- [x] **Step 9: Raíz, con turno.** Agregar las filas de trazabilidad (una por afirmación o cita) y la fila en `ESTADO-AUDITORIA.md`. Commit con pathspec y push.
 
 ### Task 4: E6 · `herramientas-manada`
 
@@ -645,11 +647,11 @@ La lección 2 dice abiertamente que la técnica se aprende en el Clan. Si la gu�
 
 Después, el cierre:
 
-- [ ] **ADR-106** en `DECISIONES.md`, insertado arriba del ADR descendente inmediatamente menor que exista. Subir la versión del pie, sin cambiar el conteo de abiertas salvo que se abra o cierre alguna. Glosario, si hizo falta (pedir número de versión a las otras sesiones). Entrada en `docs/BITACORA.md`. `python generar-estado.py`. Commit con pathspec y push.
-- [ ] **Docs de Rover:**
+- [x] **ADR-106** en `DECISIONES.md`, insertado arriba del ADR descendente inmediatamente menor que exista. Subir la versión del pie, sin cambiar el conteo de abiertas salvo que se abra o cierre alguna. Glosario, si hizo falta (pedir número de versión a las otras sesiones). Entrada en `docs/BITACORA.md`. `python generar-estado.py`. Commit con pathspec y push.
+- [x] **Docs de Rover:**
   - `SKILL.md`, para que documente el tipo `kit-builder` (11 tipos);
   - `CLAUDE.md`, con la línea de autonomía;
   - README de la suite, con la fila `kit-builder`;
   - plan y spec marcados como completados.
   - Commit y push.
-- [ ] **Memoria:** `linea-rover.md`, `autonomia-cursos-rover.md` (agotada) y `MEMORY.md`. Preguntar al dueño antes de abrir el Nivel 3 o la Ruta 2.
+- [x] **Memoria:** `linea-rover.md`, `autonomia-cursos-rover.md` (agotada) y `MEMORY.md`. Preguntar al dueño antes de abrir el Nivel 3 o la Ruta 2.

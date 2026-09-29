@@ -1,6 +1,6 @@
 # Rover · Ruta 1, Nivel 2 «Herramientas» — diseño
 
-**Fecha:** 2026-09-28 · **Estado:** aprobado por el dueño en tres partes (molde, componente, fuentes) en la sesión «Curso de inducción Rover». Autonomía delegada de la creación a la publicación hasta cerrar el nivel · **ADR:** 106 · **Spec madre:** `2026-09-27-rover-ruta-servicio-design.md` §3 (tabla de la Ruta 1, fila «2 · Herramientas»).
+**Fecha:** 2026-09-28 · **Estado:** ✅ **completado el 2026-09-28** (los cuatro cursos publicados; ADR-106 cerrado). Aprobado por el dueño en tres partes (molde, componente, fuentes) en la sesión «Curso de inducción Rover». Autonomía delegada de la creación a la publicación hasta cerrar el nivel · **ADR:** 106 · **Spec madre:** `2026-09-27-rover-ruta-servicio-design.md` §3 (tabla de la Ruta 1, fila «2 · Herramientas»).
 
 ## 1. Qué se busca
 

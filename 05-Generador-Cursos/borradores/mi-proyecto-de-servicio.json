@@ -2,16 +2,16 @@
   "courseId": "mi-proyecto-de-servicio",
   "title": "Mi proyecto de servicio",
   "subtitle": "Ruta Servir en el Grupo · Nivel 3 · Proyecto",
-  "description": "Para el Rover que ya sirve en una rama de su Grupo y quiere hacer un proyecto propio para ella. En unos 35 minutos diagnosticas qué necesita la rama, diseñas tu proyecto, lo cuidas, lo acuerdas y decides cómo lo vas a evaluar. Lección a lección vas armando tu plan, y al final lo descargas para llevarlo a la reunión donde lo acuerdas. Basado en el Modelo de Aplicación de la Política de Programa de Jóvenes (2026) y la Guía de Dirigente de Clan (2026).",
+  "description": "Para el Rover que ya sirve en una rama de su Grupo y quiere hacer un proyecto propio para ella. En unos 45 minutos diagnosticas qué necesita la rama, diseñas tu proyecto, lo cuidas, lo acuerdas y decides cómo lo vas a evaluar. Lección a lección vas armando tu plan, y al final lo descargas para llevarlo a la reunión donde lo acuerdas. Basado en el Modelo de Aplicación de la Política de Programa de Jóvenes (2026) y la Guía de Dirigente de Clan (2026).",
   "contentVersion": "2026-10-02",
   "route": "grupo",
   "level": 3,
   "branch": null,
   "registration": {
-    "motivationLabel": "¿Para qué rama de tu Grupo quieres hacer tu proyecto?"
+    "motivationLabel": "¿Qué te mueve a hacer un proyecto para una rama de tu Grupo?"
   },
   "icon": "🧭",
-  "duration": "35 minutos",
+  "duration": "45 minutos",
   "totalContentModules": 4,
   "modules": [
     {
@@ -31,15 +31,15 @@
         },
         {
           "type": "paragraph",
-          "text": "La pregunta es del <em>Modelo de Aplicación de la Política Nacional de Programa de Jóvenes</em> (2026, p. 78), que pide mantenerla viva en todo proyecto. Es la fuente principal de este curso, junto con la <em>Guía de Dirigente de Clan</em> (2026) y la <em>Política Nacional A Salvo del Peligro</em> (2025)."
+          "text": "La pregunta es del <em>Modelo de Aplicación de la Política Nacional de Programa de Jóvenes</em> (2026, p. 78), que les pide a los dirigentes mantenerla viva en todas las etapas. También es la pregunta de tu proyecto. Es la fuente principal de este curso, junto con la <em>Guía de Dirigente de Clan</em> (2026) y la <em>Política Nacional A Salvo del Peligro</em> (2025)."
         },
         {
           "type": "paragraph",
-          "text": "En <em>El servicio Rover</em> viste la diferencia: el servicio social se hace <strong>para</strong> alguien; el servicio como proyecto se hace <strong>con</strong> él. Aquí, con la rama y con sus dirigentes. Tú diseñas y ejecutas tu proyecto; lo educativo de la rama sigue siendo de sus dirigentes. Y tu proyecto puede ser parte de tu progresión: en el Clan, un adulto acompañante asesora hasta cinco proyectos de Rovers (<em>Modelo</em>, p. 22). Conviene que el tuyo sea uno de ellos."
+          "text": "En <em>El servicio Rover</em> viste la diferencia: el servicio social se hace <strong>para</strong> alguien; el servicio como proyecto se hace <strong>con</strong> él. Aquí, con la rama y con sus dirigentes. Tú diseñas y ejecutas tu proyecto; lo educativo de la rama sigue siendo de sus dirigentes. Tu proyecto puede ser parte de tu progresión: en el PARCE, cada Rover define en qué proyectos participa y con qué rol (<em>Guía de Dirigente de Clan</em>, p. 28). Y en el Clan, un adulto acompañante asesora hasta cinco proyectos, clubes o iniciativas (<em>Modelo</em>, p. 22). Te recomendamos que el tuyo sea uno de ellos."
         },
         {
           "type": "info-box",
-          "text": "<strong>Antes de empezar.</strong> Este es el curso del Nivel 3: da por sabido lo de <em>Servir en el Grupo</em> y el curso de herramientas de tu rama, así que conviene que los hagas antes. Aquí no se repiten.<br><br><strong>Cómo avanzas.</strong> En cada lección llenas una parte de tu plan. Se guarda solo en este navegador: no va a ninguna hoja. En la última lección lo ves completo y lo descargas en PDF para llevarlo a la reunión donde lo acuerdas. Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas."
+          "text": "<strong>Antes de empezar.</strong> Este es el curso del Nivel 3: da por sabido lo de <em>Servir en el Grupo</em> y el curso de herramientas de tu rama, así que conviene que los hagas antes. Aquí no se repiten.<br><br><strong>Cómo avanzas.</strong> En cada lección llenas una parte de tu plan. Se guarda solo en este navegador: no va a ninguna hoja. Si cambias de equipo o de navegador, o reinicias el curso, el plan no viene contigo: descárgalo antes. En la última lección lo ves completo y lo descargas en PDF para llevarlo a la reunión donde lo acuerdas. Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas."
         },
         {
           "type": "course-objectives",
@@ -68,9 +68,9 @@
             },
             {
               "id": "tipo",
-              "label": "En una línea, ¿qué tienes en mente?",
+              "label": "Tu idea inicial, en una línea",
               "kind": "short",
-              "help": "Es un punto de partida: en la lección siguiente lo vas a contrastar con lo que la rama necesita."
+              "help": "Es un punto de partida: en la lección siguiente la vas a contrastar con lo que la rama necesita."
             }
           ]
         }
@@ -84,11 +84,11 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> el proyecto empieza por lo que la rama necesita, y eso se pregunta; no se adivina."
+          "text": "<strong>⏱️ 7 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> el proyecto empieza por lo que la rama necesita, y eso se pregunta; no se adivina."
         },
         {
           "type": "paragraph",
-          "text": "El <em>Modelo de Aplicación</em> llama a este momento <strong>diagnóstico participativo</strong>: «mirar y escuchar». Se lee el entorno y se formula una pregunta guía que nace de una necesidad o una oportunidad concreta, con preguntas como estas (p. 76):"
+          "text": "El <em>Modelo de Aplicación</em> llama a este momento <strong>diagnóstico participativo</strong>: «mirar y escuchar». La rama lee su entorno y formula, con sus jóvenes, una pregunta guía que nace de una necesidad o una oportunidad concreta, con preguntas como estas (p. 76):"
         },
         {
           "type": "list",
@@ -106,7 +106,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué significa para ti.</strong> Llega a esa conversación con una idea, no con una decisión. Pregunta qué necesita la rama y escucha si tu idea responde a eso; si no, cámbiala. Y anota lo que te dijeron por el rol de quien lo dijo, no por su nombre. Este paso es una recomendación de este curso, apoyada en el diagnóstico del <em>Modelo</em>."
+          "text": "<strong>Qué significa para ti.</strong> Llega a esa conversación con una idea, no con una decisión. Pregunta qué necesita la rama y escucha si tu idea responde a eso; si no, cámbiala. Y anota lo que te dijeron por el rol de quien lo dijo, no por su nombre. Este paso es una recomendación de este curso, apoyada en el diagnóstico del <em>Modelo</em>.<br><br>Si todavía no has conversado con ellos, llena lo que puedas y sigue: después vuelves a esta lección con «Editar esta parte». Hazlo en este mismo navegador: el plan no viaja a otro equipo."
         },
         {
           "type": "plan-builder",
@@ -114,47 +114,55 @@
           "fields": [
             {
               "id": "necesidad",
-              "label": "¿Qué necesita la rama?",
+              "label": "¿Qué crees que necesita la rama?",
               "kind": "long",
               "required": true,
-              "help": "En tus palabras, después de conversar con sus dirigentes."
+              "help": "Tu primera lectura. Cuando converses con sus dirigentes, vuelve y corrígela."
             },
             {
               "id": "con-quien",
-              "label": "¿Con quién lo conversaste?",
+              "label": "¿Con quién lo vas a conversar, y cuándo?",
               "kind": "short",
               "required": true,
-              "help": "Por su rol, no por su nombre: por ejemplo, «el jefe de la Manada»."
+              "help": "Por su rol, no por su nombre: por ejemplo, «el jefe de la Manada, después de la reunión del sábado»."
+            },
+            {
+              "id": "que-preguntaras",
+              "label": "¿Qué le vas a preguntar?",
+              "kind": "long",
+              "required": true,
+              "help": "Preguntas abiertas, como las del diagnóstico: ¿qué duele?, ¿qué falta?"
             },
             {
               "id": "que-dijeron",
-              "label": "¿Qué te dijeron que no sabías?",
-              "kind": "long"
+              "label": "Después de conversar: ¿qué te dijeron que no sabías, y qué le cambias a tu idea?",
+              "kind": "long",
+              "help": "Llénalo cuando hayas conversado. Tu plan te espera en este navegador."
             }
           ]
         }
       ],
       "reflection": {
-        "prompt": "Piensa en una necesidad que hayas notado en una rama de tu Grupo. ¿Qué le preguntarías a sus dirigentes para saber si de verdad es lo que más necesitan? Sin nombres."
+        "prompt": "Recuerda una vez que alguien quiso ayudarte —a ti o a tu Clan— con algo que no necesitaban, o que preguntó antes de ayudar. ¿Qué cambió en cómo lo recibieron? Escríbelo en dos o tres líneas, sin nombres."
       },
       "quiz": {
         "title": "Evaluación - Diagnosticar",
         "questions": [
           {
-            "text": "Un Rover ve que la Manada usa unas pañoletas viejas y decide que su proyecto será conseguirles nuevas. No lo ha hablado con nadie. ¿Qué es lo más coherente con la lección?",
+            "text": "Un Rover ve que la Manada usa unas pañoletas viejas y quiere que su proyecto sea conseguirles nuevas. Todavía no lo ha hablado con nadie. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Conseguirlas ya y llevárselas al jefe de la Manada para que la rama las estrene",
-              "Conversar con el jefe de la Manada sobre qué necesita la rama antes de decidir",
-              "Seguir con la idea y conseguirlas antes de la próxima ceremonia de la Manada"
+              "Preguntarle al jefe de la Manada si le parece bien que consiga pañoletas nuevas",
+              "Preguntarle al jefe qué necesita hoy la Manada, y ver si las pañoletas encajan ahí",
+              "Preguntarles a los lobatos, antes que al jefe, si quieren pañoletas: ellos las usan"
             ],
             "correctIndex": 1
           },
           {
             "text": "Le preguntas al jefe de la Tropa qué necesita la rama y te responde: «Nos falta de todo». ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Preguntar qué es lo más fácil de conseguir, para tener pronto algo que mostrar",
-              "Preguntarle qué es lo que más les afecta hoy, y a quién le serviría resolverlo primero",
-              "Armar un proyecto grande que cubra todo lo que a la Tropa le falta, por partes"
+              "Preguntarle por la lista de lo que falta, y escoger de ahí lo que tú mejor sabes hacer",
+              "Preguntarle qué les afecta más hoy, y a quién le serviría resolverlo primero",
+              "Armar un proyecto por etapas que vaya cubriendo lo que a la Tropa le falta"
             ],
             "correctIndex": 1
           }
@@ -170,11 +178,11 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> un buen diseño dice qué cambia, para quién y cuándo; y deja lo educativo de la rama en manos de sus dirigentes."
+          "text": "<strong>⏱️ 7 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> un buen diseño dice qué cambia, para quién y cuándo; y deja lo educativo de la rama en manos de sus dirigentes."
         },
         {
           "type": "paragraph",
-          "text": "En la planificación, el <em>Modelo</em> pide acordar el producto y su destinatario, redactar «criterios de éxito en lenguaje claro», armar metas con sus riesgos y apoyos, y verificar que la actividad sea DURASLID (pp. 76-77). Para tu proyecto, eso se traduce en tres piezas:"
+          "text": "En la planificación, el <em>Modelo</em> pide acordar el producto y su destinatario, redactar «criterios de éxito en lenguaje claro», armar metas con sus riesgos y apoyos, y verificar que la actividad sea DURASLID (p. 76). Para tu proyecto, eso se traduce en tres piezas:"
         },
         {
           "type": "list",
@@ -191,7 +199,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Apoyar no es dirigir.</strong> El proyecto es tuyo: lo diseñas y lo ejecutas tú. Pero lo que se enseña, se juega o se decide con la rama sigue siendo de sus dirigentes. Si al diseñar se te ocurre cambiar algo de eso, proponlo; no lo decidas. Que el proyecto quepa en unas semanas es una recomendación de este curso."
+          "text": "<strong>Apoyar no es dirigir.</strong> El proyecto es tuyo: lo diseñas y lo ejecutas tú. Pero lo que se enseña, se juega o se decide con la rama sigue siendo de sus dirigentes. Si al diseñar se te ocurre cambiar algo de eso, proponlo; no lo decidas. Que el proyecto quepa en unas semanas es una recomendación de este curso. Y tu objetivo es tu respuesta a la pregunta del inicio: <strong>¿para quién hacemos esto y qué cambia gracias a nosotros?</strong>"
         },
         {
           "type": "plan-builder",
@@ -201,13 +209,14 @@
               "id": "objetivo",
               "label": "Tu objetivo: qué va a cambiar, para quién y para cuándo",
               "kind": "long",
-              "required": true
+              "required": true,
+              "help": "Las tres partes: qué cambia, para quién y para cuándo. Piensa en semanas, no en años."
             },
             {
               "id": "actividades",
               "label": "Tus actividades",
               "kind": "rows",
-              "max": 8,
+              "max": 5,
               "required": true,
               "columns": [
                 {
@@ -222,7 +231,8 @@
                   "id": "con-quien",
                   "label": "Con quién (por su rol)"
                 }
-              ]
+              ],
+              "help": "Con 3 a 5 filas basta. Si una actividad es con la rama, revisa que sea DURASLID y que tenga dos adultos del equipo presentes."
             },
             {
               "id": "recursos",
@@ -233,26 +243,26 @@
         }
       ],
       "reflection": {
-        "prompt": "Mira el proyecto que tienes en mente. ¿Qué parte es tuya para decidir, y qué parte le toca decidir a los dirigentes de la rama? Escríbelo en dos líneas. Sin nombres."
+        "prompt": "Escribe un objetivo para un proyecto inventado —no el tuyo—, por ejemplo para tu Clan, con sus tres partes: qué cambia, para quién y para cuándo. Sin nombres."
       },
       "quiz": {
         "title": "Evaluación - Diseñar",
         "questions": [
           {
-            "text": "¿Cuál de estos objetivos va más con lo que pide la lección?",
+            "text": "Tu proyecto es para la Familia de Cachorros, que no tiene dónde guardar su material. ¿Cuál objetivo va más con lo que pide la lección?",
             "options": [
-              "Mejorar la Manada de mi Grupo con mucho compromiso, alegría y entrega durante el año",
-              "Que antes del campamento de noviembre la Manada tenga señalizada su sede",
-              "Hacer antes de fin de año varias actividades útiles para la Manada"
+              "Que antes de fin de año la Familia de Cachorros tenga su material más ordenado",
+              "Que antes de las vacaciones de junio la Familia guarde su material en su estante",
+              "Construir con la Familia un estante para su material en cuatro sábados de abril"
             ],
             "correctIndex": 1
           },
           {
             "text": "Tu proyecto es preparar el material de un rally para la Tropa. Mientras lo diseñas, se te ocurre que el rally entero debería ser otro. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Rediseñar el rally completo y avisarle al jefe: el proyecto es tuyo y lo ejecutas tú",
-              "Proponérselo al jefe de la Tropa, y seguir con tu material si él no lo cambia",
-              "Guardarte la idea: lo educativo de la Tropa no es asunto de quien sirve"
+              "Proponérselo al jefe y, mientras decide, ir armando el material del rally nuevo",
+              "Proponérselo al jefe y seguir con tu material, porque el rally lo decide él",
+              "Proponérselo a los guías de patrulla, porque la Tropa decide su propio rally"
             ],
             "correctIndex": 1
           }
@@ -268,7 +278,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> la seguridad se diseña desde el principio, y un proyecto acordado no sorprende a nadie."
+          "text": "<strong>⏱️ 7 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> la seguridad se diseña desde el principio, y un proyecto acordado no sorprende a nadie."
         },
         {
           "type": "paragraph",
@@ -284,7 +294,7 @@
           "ordered": false,
           "items": [
             "<strong>Nunca a solas con un niño, niña o joven</strong>, ni en persona ni por chat: la estrategia 2+1 (Política A Salvo del Peligro, p. 26)",
-            "<strong>Tú no cuentas como adulto.</strong> Los Rovers son protagonistas de programa (<em>Modelo</em>, p. 19). Si tu proyecto incluye estar con la rama, tiene que haber dos adultos del equipo presentes, y tú no eres uno de ellos",
+            "<strong>Tú no cuentas como adulto.</strong> Sigues siendo protagonista de programa: la Rama Rover «representa el final como Protagonista de Programa» (<em>Modelo</em>, p. 19). Si tu proyecto incluye estar con la rama, que haya al menos dos adultos del equipo presentes, y tú no eres uno de ellos. Esto último es una regla de esta plataforma, en línea con la proporción de adultos por rama que recomienda el <em>Modelo</em> (p. 22)",
             "<strong>Las fotos de los niños, niñas y jóvenes</strong> siguen las directrices de la Asociación (Política, p. 26). Si no las conoces, pregunta y no publiques: eso es una recomendación de este curso",
             "<strong>Lo que veas que pueda dañar a alguien, no te lo guardas</strong> (Política, p. 21); la ruta oficial es el botón «Me Pongo A Salvo del Peligro» (p. 44)"
           ]
@@ -296,7 +306,7 @@
         },
         {
           "type": "paragraph",
-          "text": "En <em>Servir en el Grupo</em> viste las tres conversaciones de un servicio: con el Jefe de Grupo, con el jefe de la rama y en tu Clan. Un proyecto se acuerda igual, y en el Clan conviene sumar a tu adulto acompañante, que es quien asesora los proyectos de los Rovers (<em>Modelo</em>, p. 22). Lleva tu plan escrito: al final de este curso lo descargas con un recuadro para que firmen quienes lo acuerdan."
+          "text": "En <em>Servir en el Grupo</em> viste las tres conversaciones de un servicio: con el Jefe de Grupo, con el jefe de la rama y en tu Clan (allí, el Consejo de Clan orienta y evalúa los proyectos que presentan sus integrantes: <em>Guía de Dirigente de Clan</em>, p. 29). Un proyecto se acuerda igual, y en el Clan conviene sumar a tu adulto acompañante, que es quien asesora los proyectos de los Rovers (<em>Modelo</em>, p. 22). Lleva tu plan escrito: al final de este curso lo descargas con un recuadro para que firmen quienes lo acuerdan."
         },
         {
           "type": "plan-builder",
@@ -306,7 +316,7 @@
               "id": "riesgos",
               "label": "Los riesgos de tu proyecto",
               "kind": "rows",
-              "max": 8,
+              "max": 6,
               "required": true,
               "columns": [
                 {
@@ -315,9 +325,14 @@
                 },
                 {
                   "id": "que-hare",
-                  "label": "Qué harás"
+                  "label": "Qué se hará"
+                },
+                {
+                  "id": "quien",
+                  "label": "Quién (por su rol)"
                 }
-              ]
+              ],
+              "help": "Uno por fila. Si tu proyecto incluye estar con la rama, escribe quiénes son los dos adultos del equipo presentes, por su rol."
             },
             {
               "id": "acuerdo-con",
@@ -336,26 +351,26 @@
         }
       ],
       "reflection": {
-        "prompt": "¿Qué riesgo de tu proyecto sería el más fácil de pasar por alto, y qué harías si ocurre? Escríbelo como lo pondrías en tu plan. Sin nombres."
+        "prompt": "Inventa un riesgo para un proyecto que no es el tuyo —por ejemplo, una jornada de pintura en una sede— y escribe qué se haría y quién, como iría en un plan. No pongas aquí riesgos de tu proyecto ni datos de niños, niñas o jóvenes: eso va solo en tu plan."
       },
       "quiz": {
         "title": "Evaluación - Cuidar y acordar",
         "questions": [
           {
-            "text": "Tu proyecto es armar una huerta con la Tropa durante tres sábados. El jefe de la Tropa te dice que esos días solo podrá estar él. ¿Qué es lo más coherente con la lección?",
+            "text": "Tu proyecto incluye un sábado arreglando con la Manada el jardín de la sede, y ese día tiene que haber dos adultos del equipo presentes. ¿Cuándo es mejor resolver quiénes serán?",
             "options": [
-              "Hacerlo igual en esas fechas, porque con el jefe de la Tropa y contigo ya son dos adultos",
-              "Hacerlo tú con la Tropa, y que alguien del equipo de la Tropa pase a revisar cómo va",
-              "Hacerlo en otras fechas o sumando otro adulto del equipo, y luego seguir con el plan"
+              "La semana anterior, cuando ya sepas cuántos lobatos van a trabajar en el jardín",
+              "Ahora, al escribir esa actividad en tu plan: si no se resuelve, no hay actividad",
+              "El mismo sábado, con los dirigentes de la Manada que lleguen a la reunión"
             ],
-            "correctIndex": 2
+            "correctIndex": 1
           },
           {
-            "text": "Tu proyecto ocupa tres sábados que coinciden con la salida de tu Clan. ¿Qué es lo más coherente con la lección?",
+            "text": "Tu proyecto es arreglar con la Tropa la cerca de alambre de la sede durante dos sábados. ¿Cuál fila de riesgos está mejor escrita para tu plan?",
             "options": [
-              "Acordarlo con el Grupo como está, y contarle a tu adulto acompañante que faltarás al Clan",
-              "Llevarlo a tu Clan y a tu adulto acompañante, y mover las salidas o el proyecto hasta que encajen",
-              "Dejar el proyecto para el próximo año, cuando tu Clan tenga menos salidas"
+              "Qué puede pasar: que alguien se lastime. Qué se hará: estar muy pendientes de todos",
+              "Qué puede pasar: cortes con el alambre. Qué se hará: guantes para todos y botiquín",
+              "Qué puede pasar: lo que surja ese día. Qué se hará: revisarlo con el jefe al terminar"
             ],
             "correctIndex": 1
           }
@@ -371,15 +386,15 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 7 minutos · Idea central:</strong> antes de empezar, decide cómo vas a saber si funcionó; y al terminar, cuéntalo a quien lo recibe."
+          "text": "<strong>⏱️ 7 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> antes de empezar, decide cómo vas a saber si funcionó; y al terminar, cuéntalo a quien lo recibe."
         },
         {
           "type": "paragraph",
-          "text": "El <em>Modelo</em> cierra el ciclo con dos momentos (p. 77). En la <strong>presentación</strong> se comparte el resultado con su destinatario y se explica «por qué se tomaron ciertas decisiones»: «Es un acto de ciudadanía, no un show». En la <strong>evaluación</strong> se recogen «evidencias observables» de lo que se hizo y de lo que se aprendió, y se piensa qué te llevas."
+          "text": "El <em>Modelo</em> organiza el ciclo en cinco momentos; aquí viste el diagnóstico y la planificación, y la ejecución la haces tú después. El ciclo cierra con dos (p. 77). En la <strong>presentación pública</strong> se comparte el resultado con su destinatario y se explica «por qué se tomaron ciertas decisiones»: «Es un acto de ciudadanía, no un show». En la <strong>evaluación y transferencia</strong> se recogen «evidencias observables» de lo que se hizo y de lo que se aprendió, y se piensa qué te llevas."
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué significa para ti.</strong> Escribe ahora una o dos señales que se puedan ver en la rama si tu proyecto sirvió: algo que pasa, no algo que sientes. Fija una fecha para evaluarlo con el jefe de la rama y con tu adulto acompañante del Clan. Este curso certifica que <strong>diseñaste</strong> tu plan; si lo ejecutas, eso lo reconoce tu Clan, en tu progresión."
+          "text": "<strong>Qué significa para ti.</strong> Escribe ahora una o dos señales que se puedan ver en la rama si tu proyecto sirvió: algo que pasa, no algo que sientes. Fija una fecha para evaluarlo con el jefe de la rama y con tu adulto acompañante del Clan. Para obtener tu certificado, tu plan tiene que estar completo: el curso certifica que <strong>diseñaste</strong> tu plan. Si lo ejecutas, eso puede contar en tu progresión, como lo acuerdes en tu Clan."
         },
         {
           "type": "plan-builder",
@@ -404,6 +419,12 @@
               "kind": "short",
               "required": true,
               "help": "Por su rol."
+            },
+            {
+              "id": "presentacion",
+              "label": "¿Cuándo y cómo vas a mostrar el resultado a la rama?",
+              "kind": "short",
+              "help": "Por ejemplo, en qué reunión y con quién presente."
             }
           ]
         },
@@ -431,7 +452,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Al terminar vas a escribir tu compromiso: «Voy a acordar mi proyecto con ___ antes del ___, y lo voy a evaluar con ___»."
+          "text": "Al terminar vas a escribir tu compromiso: «Antes del ___ voy a conversar con ___ sobre lo que necesita la rama, y nunca voy a ___ sin acordarlo»."
         },
         {
           "type": "mission-box",
@@ -439,7 +460,7 @@
         }
       ],
       "reflection": {
-        "prompt": "¿Qué señal, que se pueda ver en la rama, te diría que tu proyecto sirvió? ¿Y quién estaría en mejor lugar para notarla? Por su rol, sin nombres."
+        "prompt": "Piensa en la última actividad que preparaste para tu Clan. ¿Qué señal, que se pudiera ver, te habría dicho si funcionó? Escríbela en una o dos líneas, sin nombres."
       },
       "quiz": {
         "title": "Evaluación - Evaluar y cerrar",
@@ -447,18 +468,18 @@
           {
             "text": "Tu proyecto fue señalizar la sede para la Manada. ¿Cuál señal te diría mejor que funcionó?",
             "options": [
-              "Que la Manada y su jefe quedaron contentos, y que la pasaron muy bien",
-              "Que en el campamento la Manada se ubicó sola con los letreros que pusiste",
-              "Que trabajaste mucho y cumpliste todo lo que te habías propuesto hacer en la sede"
+              "Que el jefe de la Manada te dijo que los letreros le quedaron muy útiles a la rama",
+              "Que en el campamento la Manada se ubicó sola con los letreros que pusiste en la sede",
+              "Que pusiste los doce letreros del plan, en las fechas que habías acordado"
             ],
             "correctIndex": 1
           },
           {
             "text": "Terminaste tu proyecto con la Tropa. ¿Qué es lo más coherente con la lección para cerrarlo?",
             "options": [
-              "Subir a tus redes las fotos de la Tropa con el resultado, para que se vea tu trabajo",
-              "Entregarlo al jefe y seguir con lo siguiente: evaluar es tarea de los dirigentes",
-              "Mostrarlo a la Tropa y a su jefe, contar por qué decidiste así y oír qué mejorar"
+              "Presentarle a la Tropa fotos del antes y el después, para que vea lo que cambió",
+              "Pedirle al jefe de la Tropa que lo evalúe y te mande por escrito qué mejorar",
+              "Contarles a la Tropa y a su jefe por qué decidiste así, y oír qué mejorarían"
             ],
             "correctIndex": 2
           }
@@ -495,7 +516,7 @@
   ],
   "certificate": {
     "courseName": "MI PROYECTO DE SERVICIO",
-    "description": "ha completado el curso Mi proyecto de servicio, en el que diseñó un plan de proyecto de servicio para una rama de su Grupo: diagnóstico, diseño, cuidado, acuerdo y evaluación.",
-    "commitmentPrompt": "Escribe tu compromiso completando la frase: «Voy a acordar mi proyecto con ___ antes del ___, y lo voy a evaluar con ___»."
+    "description": "ha completado el curso Mi proyecto de servicio, en el que diseñó un plan de proyecto de servicio para una rama de su Grupo: lo que necesita la rama, el diseño, sus cuidados, con quién acordarlo y cómo evaluarlo.",
+    "commitmentPrompt": "Escribe tu compromiso completando la frase: «Antes del ___ voy a conversar con ___ sobre lo que necesita la rama, y nunca voy a ___ sin acordarlo»."
   }
 }

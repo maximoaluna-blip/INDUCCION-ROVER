@@ -17,7 +17,7 @@ Decisiones del dueño (02-oct-2026):
 
 ## 2. El curso
 
-- ~40 minutos: bienvenida y 5 lecciones de 6 a 7 minutos.
+- ~45 minutos: bienvenida y 4 lecciones (7 minutos de lectura cada una, más lo que tome el plan). *Ajustado el 02-oct tras la auditoría pedagógica (M2): la tabla de abajo cuenta la bienvenida como fila 1.*
 - `route: grupo`, `level: 3`, `branch: null` (la rama la elige el Rover en el plan). El catálogo lo agrupa en la Ruta 1, Nivel 3. Que la Ruta 2 lo reutilice se decide al diseñarla.
 - Se recomienda antes *Servir en el Grupo* (R1) y el curso de Nivel 2 de la rama (ADR-019: nada se exige).
 - **Hilo:** la distinción de *El servicio Rover* (S1): el servicio social se hace **para** la comunidad; el servicio como proyecto, **con** ella. Aquí, con la rama y sus dirigentes. Apoyar no es dirigir.
@@ -27,7 +27,7 @@ Decisiones del dueño (02-oct-2026):
 | 1 | Bienvenida | Proyecto (con inicio y fin) frente al servicio continuo que ya acordó en R1; cómo cuenta en su PARCE (*Guía de Clan* §8.7–8.9) | Rama y tipo de proyecto |
 | 2 | Diagnosticar | Mirar qué necesita la rama **preguntándole a sus dirigentes**, no suponerlo; el diagnóstico del ciclo de programa (*Guía de Clan* cap. 11) | Necesidad, con quién la habló, qué le dijeron |
 | 3 | Diseñar | Objetivo concreto; actividades, recursos y fechas; DURASLID si toca a niños y jóvenes (*Guía de Clan* §4.4) | Objetivo, actividades, recursos, fechas |
-| 4 | Cuidar y acordar | Riesgos del proyecto; A Salvo del Peligro (2+1, nunca a solas, fotos; **el Rover no cuenta como adulto**, decisión del dueño 02-oct-2026); con quién se acuerda, retomando las cinco preguntas de R1 (Jefe de Grupo, jefe de rama, Clan) | Riesgos y qué hará con cada uno; con quién y cuándo acuerda |
+| 4 | Cuidar y acordar | Riesgos del proyecto; A Salvo del Peligro (2+1, nunca a solas, fotos; **el Rover no cuenta como adulto**, decisión del dueño 02-oct-2026); con quién se acuerda, retomando las tres conversaciones de R1 (Jefe de Grupo, jefe de rama, Clan) y sumando al adulto acompañante del Clan (*Modelo* p. 22) | Riesgos y qué hará con cada uno; con quién y cuándo acuerda |
 | 5 | Evaluar y cerrar | Cómo sabrá si funcionó y con quién lo evalúa; plan completo y descarga | Indicadores, fecha y con quién evalúa |
 
 **Lo que el curso no hace:** no presenta al Rover como quien dirige la rama ni decide lo educativo; no pide en las reflexiones datos del proyecto real que identifiquen menores (ADR-087: el plan con esos datos vive solo en el navegador); no enseña técnica scout para el proyecto (remite a la fuente de la rama, como el Nivel 2); no certifica la ejecución.
@@ -67,13 +67,14 @@ Tipo de sección **solo de Rover** (`build-course.js` + `templates/engine.js`; `
 
 ### 3.4 El PDF
 
-jsPDF A4: título, nombre del Rover, curso y fecha; cada fase con sus campos (las filas como lista); al final un recuadro **«Acordado con»** con los roles de `agreementRoles` (Jefe de Grupo, jefe de la rama, dirigente del Clan) y espacio para fecha y firma, en blanco: el acuerdo es presencial y el curso no lo registra. El texto se **sanea** a lo que imprime la fuente (fuera de Latin-1 se omite) y un título de fase no queda huérfano al pie de página.
+jsPDF A4: título, nombre del Rover, curso y fecha; cada fase con sus campos (las filas como lista); al final un recuadro **«Acordado con»** con los roles de `agreementRoles` (Jefe de Grupo, jefe de la rama, adulto acompañante del Clan) y espacio para fecha y firma, en blanco: el acuerdo es presencial y el curso no lo registra. El texto se **sanea** a lo que imprime la fuente (fuera de Latin-1 se omite) y un título de fase no queda huérfano al pie de página.
 
 ## 4. Certificado
 
 - `courseName`: «MI PROYECTO DE SERVICIO».
 - Descripción: el Rover **diseñó un plan de proyecto de servicio** para la rama de su Grupo —diagnóstico, diseño, cuidado, acuerdo y evaluación—. Nunca que lo ejecutó, nunca un cargo.
-- `commitmentPrompt`: «Voy a acordar mi proyecto con ___ antes del ___, y lo voy a evaluar con ___».
+- `commitmentPrompt`: «Antes del ___ voy a conversar con ___ sobre lo que necesita la rama, y nunca voy a ___ sin acordarlo». *(Cambiado tras la auditoría pedagógica, B3: el anterior duplicaba campos del plan.)*
+- **El certificado exige el plan completo:** la lección del resumen no se completa mientras falte un campo obligatorio (auditorías de S2, H5/M2), así «diseñó un plan» queda comprobado.
 
 ## 5. Fuentes
 

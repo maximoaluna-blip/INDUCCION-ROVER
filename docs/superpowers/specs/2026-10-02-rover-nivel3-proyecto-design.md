@@ -1,6 +1,6 @@
 # Rover · Nivel 3 «Proyecto» — diseño
 
-**Fecha:** 2026-10-02 · **Estado:** aprobado por el dueño en tres partes (curso, componente, certificado y publicación) en la sesión «Curso de inducción Rover». Autonomía delegada de la creación a la publicación hasta publicar el curso · **ADR:** 120 (reservado) · **Spec madre:** `2026-09-27-rover-ruta-servicio-design.md` §3 (filas S2 y «3 · Proyecto»).
+**Fecha:** 2026-10-02 · **Estado:** ✅ **completado el 2026-10-03** (publicado; ADR-120 cerrado en la raíz `5903425`). Aprobado por el dueño en tres partes (curso, componente, certificado y publicación) en la sesión «Curso de inducción Rover». Autonomía delegada de la creación a la publicación hasta publicar el curso · **ADR:** 120 (reservado) · **Spec madre:** `2026-09-27-rover-ruta-servicio-design.md` §3 (filas S2 y «3 · Proyecto»).
 
 ## 1. Qué se construye
 

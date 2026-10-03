@@ -31,7 +31,8 @@ Diseñas cursos para **Rovers de 18 a 20 años** que van a **servir**: en otra r
 - **Reglas del curso ≠ normas de la Asociación.** Lo que no tiene fuente literal se declara «recomendación de este curso»; si es una regla protectora sin fuente, **se consulta al dueño**. Y la etiqueta no puede cubrir una obligación que sí es norma (no guardar secretos, Política p. 21).
 - No enseñar técnica scout sin fuente. Si la Guía de la rama solo la **nombra** (Comunidad p. 25), el curso **lo dice** y enseña qué hacer: fuente, revisión del dirigente, lo propio contado como experiencia.
 - **Cursos hermanos se auditan entre sí** (Nivel 2, ADR-106): una pregunta o un trío de distractores que ya salió en otra rama se contesta de memoria. Y **el vocabulario de la tesis es una fuga**: si la correcta siempre «pregunta» o siempre «se lo pasa al dirigente», la palabra basta; que haya correctas donde toca **hablar o actuar**.
-- **Reflexión sobre señales de alerta:** pedir un caso **inventado**, nunca uno real (qué, cuándo, cuántas veces identifica).
+- **Reflexión sobre señales de alerta:** pedir un caso **inventado**, nunca uno real (qué, cuándo, cuántas veces identifica). Lo mismo con el proyecto real: el plan vive en el navegador y la reflexión no lo duplica.
+- **La fuga también es de carácter** (ADR-120): con el vocabulario en cero, la opción prudente y dialogante puede ganar 8 de 8. Que algún distractor sea también prudente y esté mal, y que alguna correcta se justifique.
 
 ## Estructura del JSON
 
@@ -64,8 +65,10 @@ Diseñas cursos para **Rovers de 18 a 20 años** que van a **servir**: en otra r
 - El módulo 1 es la bienvenida (`isIntro: true`, sin quiz). El registro y el certificado los genera el build.
 - `correctIndex` es base 0; el motor **baraja** las opciones. 2 o 3 preguntas por lección: con eso hay que acertarlas todas.
 
-## Tipos de sección (los 11 que dibuja el build)
+## Tipos de sección (los 12 que dibuja el build)
 
-`paragraph`, `heading` (`level` 3 o 4), `info-box`, `mission-box`, `blockquote` (cita: `«…»<br><small>— Fuente, p. X</small>`), `list` (`items`, `ordered`), `timeline`, `method-grid`, `course-objectives` (`items`), `video` y **`kit-builder`** (solo Rover, ADR-106). Un tipo sin dibujante **rompe el build**; no inventes otros.
+`paragraph`, `heading` (`level` 3 o 4), `info-box`, `mission-box`, `blockquote` (cita: `«…»<br><small>— Fuente, p. X</small>`), `list` (`items`, `ordered`), `timeline`, `method-grid`, `course-objectives` (`items`), `video`, **`kit-builder`** (solo Rover, ADR-106) y **`plan-builder`** (solo Rover, ADR-120). Un tipo sin dibujante **rompe el build**; no inventes otros.
 
 **`kit-builder`** (`05-Generador-Cursos/kit-builder.js` valida y dibuja; `templates/engine.js` guarda y descarga): `labels` (title, intro, gamesTitle, gamesHelp, gameWhyPlaceholder, phrasesTitle, phrasePlaceholder, careTitle, careOwnPlaceholder, download, pdfTitle, y `rulesTitle` si hay reglas), `games` ≥ 5 (se eligen 3), `phrases` 3–4, `care` ≥ 3, ids únicos. Un `care` con `"rule": true` es **norma fija**: no se elige y siempre sale en el PDF; su `source` separa lo que es norma de lo que es «recomendación de este curso». Todo vive en `localStorage['rover:kit_<courseId>']`: **nada va al backend**.
+
+**`plan-builder`** (`05-Generador-Cursos/plan-builder.js` valida **a nivel de curso** y dibuja; el motor guarda, arma el resumen y descarga): una sección de campos por lección (`title`, `fields` con `id` único en el curso y `^[a-z0-9-]+$`, `label`, `kind` ∈ short/long/date/choice/rows, `help`, `required`; `rows` con `columns` y `max` ≤ 8; `choice` con `options`) y **exactamente una** sección `"summary": true`, después de todas, con `labels` (title, intro, missingTitle, download, pdfTitle, agreementTitle, agreementRoles). Un mismo plan en `localStorage['rover:plan_<courseId>']`; **nada va al backend**. **El certificado exige el plan completo**, y desde el ADR-120 ningún curso de Rover entrega el certificado (ni desde la barra de navegación) sin las lecciones aprobadas. Los campos que dependen de una conversación real van en **futuro** («¿con quién lo vas a conversar?»), o el Rover inventa para descargar.

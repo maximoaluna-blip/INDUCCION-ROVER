@@ -40,7 +40,7 @@ Pregunta literal del *Modelo* (p. 78), que les pide a los dirigentes mantenerla 
 - **Reglas fijas** en la lección 4: 2+1 (Política p. 26), el Rover no cuenta como adulto (*Modelo* pp. 19 y 22 + decisión del dueño: **regla de la plataforma**), fotos según directrices (p. 26; «pregunta y no publiques» es recomendación), no guardar lo que dañe (p. 21) y el botón (p. 44).
 - **El plan vive en el navegador** y no se pide en las reflexiones: estas trabajan con casos **inventados** o de la propia experiencia del Rover, nunca con su proyecto real (auditoría pedagógica, M1).
 - **El certificado exige el plan completo** (motor: la lección del resumen no se completa con faltantes). Los campos del diagnóstico están en **futuro** («¿con quién lo vas a conversar?») para que el plan se pueda completar antes de la conversación real; el Rover vuelve a corregirlo después (H4).
-- **Progresión:** el proyecto cabe en el PARCE (*Guía de Clan* p. 28); el Consejo de Clan orienta y evalúa los proyectos de sus integrantes (p. 29).
+- **Progresión:** el proyecto cabe en el PARCE (*Guía de Clan* p. 28); el Consejo de Clan orienta y evalúa los proyectos en los que participa el Clan, también los de sus integrantes (p. 29).
 
 ## Lecciones
 
@@ -50,22 +50,22 @@ Proyecto frente a servicio continuo; «para / con» (S1); el PARCE (*Guía de Cl
 ### 2 · Diagnosticar (~7 min)
 - **Fuentes:** diagnóstico participativo y sus preguntas guía (*Modelo* p. 76).
 - **Plan:** qué cree que necesita la rama, con quién y cuándo lo va a conversar, qué le va a preguntar; y, después de conversar, qué le dijeron y qué le cambia a su idea.
-- **Quiz (2):** las pañoletas (preguntar qué necesita hoy la Manada y ver si encajan; distractores: pedir permiso para la idea propia, preguntarles a los lobatos antes que al jefe); «nos falta de todo» (qué afecta más y a quién serviría; distractores: escoger de la lista lo que mejor sabe hacer, un proyecto por etapas que cubra todo). Las tres opciones abren igual.
+- **Quiz (2):** las pañoletas (preguntarle al jefe qué le está costando hoy a la Manada y ver si encajan; distractores: pedir permiso para la idea propia, preguntarles a los lobatos antes que al jefe); «nos falta de todo» (qué les pesa más y a quiénes les cambiaría; distractores: «haré lo que me asigne» —la regla de S1, falsa en un proyecto—, un proyecto por etapas que cubra todo).
 
 ### 3 · Diseñar (~7 min)
 - **Fuentes:** planificación con criterios de éxito, metas, riesgos y apoyos, DURASLID (*Modelo* p. 76; *Guía de Clan* pp. 25-26); microciclo (p. 78).
 - **Plan:** objetivo, actividades (qué, cuándo, con quién; hasta 5), recursos.
-- **Quiz (2):** el estante de la Familia (objetivo con qué cambia, para quién y para cuándo; distractores: uno vago con fecha, una actividad en vez de un objetivo); el rally (proponérselo al jefe y seguir con su material porque lo decide él; distractores: armar ya el rally nuevo, proponérselo a los guías de patrulla).
+- **Quiz (2):** el estante de la Familia, en abril (objetivo en semanas: antes de junio; distractores: el mismo objetivo para el otro año, una actividad en vez de un objetivo); el rally (proponérselo al jefe y seguir con su material mientras él y la Tropa deciden; distractores: armar ya el rally nuevo, pedirles a los guías de patrulla que presionen). La lección dice ahora que una actividad no es un objetivo. *Re-auditorías: «el rally lo decide él» contradecía el protagonismo juvenil (Guía de Tropa pp. 59-60).*
 
 ### 4 · Cuidar y acordar (~7 min)
 - **Fuentes:** seguridad desde el inicio (*Modelo* p. 79); Política pp. 21, 26, 44; *Modelo* pp. 19 y 22.
 - **Plan:** riesgos (qué puede pasar, qué se hará, quién; hasta 6), con quiénes y cuándo lo acuerda.
-- **Quiz (2):** cuándo se resuelve quiénes son los dos adultos del equipo (ahora, al escribir la actividad; distractores: la semana anterior, el mismo sábado); la fila de riesgos bien escrita (cortes con alambre → guantes y botiquín; distractores: riesgo genérico, «revisarlo al terminar»). *La huerta y el choque con el Clan salieron: repetían casos de R1 y S1.*
+- **Quiz (2):** cuándo resolver quiénes son los dos adultos del equipo (ahora, al escribir la actividad, acordándolo con el jefe; distractores: la semana anterior, el mismo sábado); la fila de riesgos de la picadura de abeja (le falta quién atiende y a quién se avisa; distractores: «con botiquín ya está cubierto», eliminar la actividad).
 
 ### 5 · Evaluar y cerrar (~7 min)
 - **Fuentes:** presentación pública y evaluación con evidencias observables (*Modelo* p. 77).
-- **Plan:** cómo sabrá si funcionó, cuándo y con quién lo evalúa, cuándo y cómo lo mostrará a la rama; **resumen y descarga**.
-- **Quiz (2):** la señal observable (la Manada se ubicó sola; distractores: la opinión del jefe, lo que el Rover hizo); cerrar con la Tropa (contar por qué y oír qué mejorarían; distractores: fotos del antes y el después, pedirle al jefe la evaluación por escrito).
+- **Plan:** cómo sabrá si funcionó, cuándo y con quién lo evalúa, cuándo le contará a la rama qué hizo y por qué; **resumen y descarga**. El certificado exige el plan completo y lecciones aprobadas (también desde la barra de navegación).
+- **Quiz (2):** la señal observable (la Manada se ubicó sola; distractores: la opinión del jefe, lo que el Rover hizo); cerrar con la Tropa (contar por qué lo hizo así y oír qué cambiarían; distractores: una ronda de lo que más gustó, pedirle al jefe la evaluación por escrito).
 - **Compromiso:** «Antes del ___ voy a conversar con ___ sobre lo que necesita la rama, y nunca voy a ___ sin acordarlo».
 
 ## Logros

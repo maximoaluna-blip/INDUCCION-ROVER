@@ -197,6 +197,15 @@ test.describe('@solo-escritorio plan-builder', () => {
     expect(await page.evaluate(() => localStorage.getItem('certificate_issued_plan-prueba'))).toBeNull();
   });
 
+  test('al volver al curso, una lección con el quiz aprobado conserva su botón de avance', async ({ page }) => {
+    // Quien se bloquea por el plan y vuelve otro dia no debe contestar otra vez el quiz.
+    await abrir(page);
+    await page.evaluate(() => { quizScores[3] = 100; saveProgress(); });
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await expect(page.locator('#nextBtn-3')).not.toHaveClass(/hidden/);
+    await expect(page.locator('#nextBtn-2')).toHaveClass(/hidden/);
+  });
+
   test('ninguna petición al backend', async ({ page }) => {
     const alBackend = [];
     page.on('request', (r) => { if (/script\.google\.com/.test(r.url())) alBackend.push(r.url()); });

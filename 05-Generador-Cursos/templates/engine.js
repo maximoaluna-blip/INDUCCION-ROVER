@@ -219,8 +219,8 @@ function completeModule(moduleNum) {
     if (modEl && modEl.querySelector('[data-plan-summary]') && typeof planMissing === 'function') {
         var faltan = planMissing();
         if (faltan.length) {
-            showNotification('Para tu certificado te falta completar tu plan: ' +
-                faltan.map(_planFaltaTexto).join('; ') + '.', 'warning');
+            showNotification('Tu certificado espera tu plan completo. Te falta: ' +
+                faltan.map(_planFaltaTexto).join('; ') + '. Sube a «Tu plan completo»: cada parte tiene su botón «Editar esta parte».', 'warning');
             return;
         }
     }
@@ -296,6 +296,12 @@ function loadProgress() {
         userProfile = p.userProfile || {};
         moduleProgress = p.moduleProgress || new Array(COURSE_CONFIG.totalModules).fill(false);
         quizScores = p.quizScores || [];
+        // Un quiz ya aprobado conserva su boton de avance al volver: quien se bloqueo por el
+        // plan y regresa otro dia no tiene que contestarlo de nuevo (ADR-120).
+        quizScores.forEach(function (sc, m) {
+            var nb = sc >= 70 ? document.getElementById('nextBtn-' + m) : null;
+            if (nb) nb.classList.remove('hidden');
+        });
         studyTime = p.studyTime || 0;
         reflections = p.reflections || {};
         currentModule = p.currentModule || 0;

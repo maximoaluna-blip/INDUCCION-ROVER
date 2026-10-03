@@ -183,8 +183,18 @@ test.describe('@solo-escritorio plan-builder', () => {
     await expect(page.locator('.notification').last()).toContainText('Necesidad');
     await irA(page, 2);
     await llenarTodo(page);
-    await page.evaluate(() => completeModule(3));
+    // La leccion 2 (con quiz) tiene que estar completa para llegar al certificado.
+    await page.evaluate(() => { moduleProgress[2] = true; completeModule(3); });
     await expect(page.locator('#module-4')).toHaveClass(/active/);
+  });
+
+  test('por la navegación no se llega al certificado sin lecciones ni plan', async ({ page }) => {
+    // La barra de navegacion lleva al certificado con un clic: el candado va en showModule.
+    await abrir(page);
+    await page.evaluate(() => showModule(4));
+    await expect(page.locator('#module-4')).not.toHaveClass(/active/);
+    await expect(page.locator('.notification').last()).toContainText('certificado');
+    expect(await page.evaluate(() => localStorage.getItem('certificate_issued_plan-prueba'))).toBeNull();
   });
 
   test('ninguna petición al backend', async ({ page }) => {

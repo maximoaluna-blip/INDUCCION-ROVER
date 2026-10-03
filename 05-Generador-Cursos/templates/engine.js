@@ -68,6 +68,12 @@ function showModule(moduleIndex) {
         showNotification('⚠️ Debes completar el registro primero', 'warning');
         return;
     }
+    // Al certificado solo se llega con las lecciones completas y, donde hay plan, con el plan
+    // completo: la barra de navegacion lleva ahi con un clic (re-auditoria de S2, ADR-120).
+    if (moduleIndex === COURSE_CONFIG.totalModules - 1 && !_certificadoPermitido()) {
+        showNotification('Para tu certificado te falta terminar el curso: ' + _certificadoFalta() + '.', 'warning');
+        return;
+    }
     // Pause and unload videos in the previously active module to free memory
     document.querySelectorAll('.module.active video[data-src]').forEach(function (v) {
         try { v.pause(); } catch (e) {}
@@ -356,6 +362,28 @@ function saveCommitment(text) {
 }
 
 // --- Certificado ---
+// Lo que falta para el certificado: lecciones con quiz sin completar y campos del plan vacios.
+function _certificadoFalta() {
+    var faltan = [];
+    document.querySelectorAll('[id^="checkBtn-"]').forEach(function (b) {
+        var n = parseInt(b.id.replace('checkBtn-', ''), 10);
+        if (!moduleProgress[n]) {
+            var nav = document.querySelectorAll('.nav-btn')[n];
+            faltan.push('la lección ' + (nav ? '«' + nav.textContent.replace(/\s+/g, ' ').trim() + '»' : n));
+        }
+    });
+    if (document.querySelector('[data-plan-summary]') && typeof planMissing === 'function') {
+        planMissing().forEach(function (x) { faltan.push(_planFaltaTexto(x)); });
+    }
+    return faltan.join('; ');
+}
+
+function _certificadoPermitido() {
+    // Quien ya tiene su certificado emitido vuelve a verlo sin condiciones.
+    try { if (JSON.parse(localStorage.getItem('certificate_issued_' + COURSE_CONFIG.courseId) || 'null')) return true; } catch (e) {}
+    return _certificadoFalta() === '';
+}
+
 function generateCertificate() {
     var date = new Date();
     var el = function (id) { return document.getElementById(id); };

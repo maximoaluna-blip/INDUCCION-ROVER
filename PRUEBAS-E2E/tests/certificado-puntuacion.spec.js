@@ -10,6 +10,7 @@
 // registro -> quizzes -> certificado y comprobaba el CODIGO del certificado, nunca su
 // PUNTUACION. Lo que no se mira, deriva.
 const { test, expect } = require('@playwright/test');
+const { llenarPlan } = require('./_plan');
 const { CURSOS } = require('./cursos');
 const { stubBackend } = require('./_backend');
 
@@ -46,6 +47,7 @@ test.describe('@solo-escritorio puntuacion del certificado', () => {
       await stubBackend(page);
       await page.goto(curso.file, { waitUntil: 'domcontentloaded' });
       await registrarse(page);
+      await llenarPlan(page); // el certificado del Nivel 3 exige el plan completo (ADR-120)
 
       const respuestas = await page.evaluate(() => QUIZ_ANSWERS);
       const idsQuiz = Object.keys(respuestas).map(Number).sort((a, b) => a - b);

@@ -6,6 +6,7 @@
 // Checklist: §F (mecanica de componentes), §G (flujo y certificado).
 // El codigo de certificado se genera en el cliente (engine.js generateCertificate).
 const { test, expect } = require('@playwright/test');
+const { llenarPlan } = require('./_plan');
 const { CURSOS } = require('./cursos');
 const { stubBackend, porAccion } = require('./_backend');
 
@@ -60,6 +61,7 @@ for (const curso of CURSOS) {
 
     await page.goto(curso.file, { waitUntil: 'domcontentloaded' });
     await registrarse(page);
+    await llenarPlan(page); // el certificado del Nivel 3 exige el plan completo (ADR-120)
 
     const respuestas = await page.evaluate(() => QUIZ_ANSWERS);
     const cfg = await page.evaluate(() => COURSE_CONFIG);

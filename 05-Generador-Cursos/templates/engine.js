@@ -207,6 +207,17 @@ function checkQuiz(moduleNum) {
 }
 
 function completeModule(moduleNum) {
+    // El certificado del Nivel 3 dice que el Rover DISEÑÓ su plan: la leccion del resumen no
+    // se completa con el plan incompleto (ADR-120).
+    var modEl = document.getElementById('module-' + moduleNum);
+    if (modEl && modEl.querySelector('[data-plan-summary]') && typeof planMissing === 'function') {
+        var faltan = planMissing();
+        if (faltan.length) {
+            showNotification('Para tu certificado te falta completar tu plan: ' +
+                faltan.map(_planFaltaTexto).join('; ') + '.', 'warning');
+            return;
+        }
+    }
     moduleProgress[moduleNum] = true;
     sendToGoogleSheets({
         action: 'progress', name: userProfile.fullName, email: userProfile.email,

@@ -169,6 +169,20 @@ test.describe('@solo-escritorio plan-builder', () => {
     await expect(page.locator('[data-plan-input="necesidad"]')).toHaveValue('Conservado');
   });
 
+  test('el certificado exige el plan completo', async ({ page }) => {
+    // El certificado dice que el Rover DISEÑÓ su plan: no se llega a él con el plan en blanco.
+    await abrir(page);
+    await irA(page, 3);
+    await page.evaluate(() => completeModule(3));
+    await expect(page.locator('#module-3')).toHaveClass(/active/);
+    await expect(page.locator('.notification').last()).toContainText('certificado');
+    await expect(page.locator('.notification').last()).toContainText('Necesidad');
+    await irA(page, 2);
+    await llenarTodo(page);
+    await page.evaluate(() => completeModule(3));
+    await expect(page.locator('#module-4')).toHaveClass(/active/);
+  });
+
   test('ninguna petición al backend', async ({ page }) => {
     const alBackend = [];
     page.on('request', (r) => { if (/script\.google\.com/.test(r.url())) alBackend.push(r.url()); });

@@ -9,6 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const KIT = require('./kit-builder');
+const PLAN = require('./plan-builder');
 
 // --- Rutas ---
 const BASE_DIR = __dirname;
@@ -44,6 +45,8 @@ if (!fs.existsSync(jsonPath)) {
 }
 
 const course = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
+// El plan del Nivel 3 cruza modulos: la summary necesita saber que campos hay y donde (ADR-120).
+const PLAN_INDEX = PLAN.planIndex(course);
 console.log('📖 Leyendo curso: ' + course.title);
 
 // --- Leer templates ---
@@ -158,6 +161,7 @@ function validate(course) {
             if (s.type === 'kit-builder') KIT.validateKit(s).forEach((m) => errors.push(`Modulo ${mod.id}: ${m}`));
         });
     });
+    PLAN.validatePlan(course).forEach((m) => errors.push(m));
 
     return errors;
 }
@@ -211,7 +215,7 @@ const DEPARTAMENTOS = [
 ];
 
 // --- Generadores de HTML para cada tipo de seccion ---
-function renderSection(section) {
+function renderSection(section, moduleId) {
     switch (section.type) {
         case 'paragraph':
             return `<p>${section.text}</p>`;
@@ -264,6 +268,8 @@ function renderSection(section) {
                 </div>`;
         case 'kit-builder':
             return KIT.renderKit(section);
+        case 'plan-builder':
+            return PLAN.renderPlanSection(section, moduleId, PLAN_INDEX);
         default:
             // ⚠️ 19-sep-2026 (ADR-066): hasta hoy esto devolvia `<p>${section.text || ''}</p>`,
             // es decir, un parrafo VACIO y sin aviso para cualquier tipo que este build no
@@ -425,7 +431,7 @@ function buildRegistrationModule(course) {
 function buildContentModule(mod, course, contentIndex, totalContent, isLast) {
     const badge = mod.isIntro ? '' : `\n                <div class="badge">Módulo ${contentIndex}/${totalContent}</div>`;
 
-    const sectionsHtml = mod.sections.map(s => renderSection(s)).join('\n\n                ');
+    const sectionsHtml = mod.sections.map(s => renderSection(s, mod.id)).join('\n\n                ');
 
     // Si es intro, agregar achievements y stats
     let introExtras = '';

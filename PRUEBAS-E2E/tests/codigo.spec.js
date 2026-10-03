@@ -254,4 +254,68 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     expect(leer(path.join(GEN, 'course-schema.json'))).toContain('"kit-builder"');
     expect(leer(path.join(GEN, 'build-course.js'))).toMatch(/case 'kit-builder'/);
   });
+
+  // --- ADR-120: plan-builder (Nivel 3) -----------------------------------------
+  // El plan cruza modulos: se valida a nivel de CURSO, no de seccion.
+  const resumen = () => ({ type: 'plan-builder', summary: true, labels: {
+    title: 'Tu plan', intro: 'I', missingTitle: 'Falta', download: 'Descargar', pdfTitle: 'Mi plan',
+    agreementTitle: 'Acordado con', agreementRoles: ['Jefe de Grupo', 'Jefe de la rama'] } });
+  const planBueno = () => ({ modules: [
+    { id: 1, sections: [] },
+    { id: 2, sections: [{ type: 'plan-builder', title: 'Diagnóstico', fields: [
+      { id: 'necesidad', label: 'Necesidad', kind: 'long', required: true },
+      { id: 'actividades', label: 'Actividades', kind: 'rows', max: 8, required: true,
+        columns: [{ id: 'que', label: 'Qué' }, { id: 'cuando', label: 'Cuándo' }] }] }] },
+    { id: 3, sections: [{ type: 'plan-builder', title: 'Cierre', fields: [
+      { id: 'fecha', label: 'Fecha', kind: 'date', required: true },
+      { id: 'rama', label: 'Rama', kind: 'choice', options: ['Manada', 'Tropa'] }] }, resumen()] },
+  ] });
+  const PLAN = () => require(path.join(GEN, 'plan-builder.js'));
+
+  test('validatePlan acepta un plan completo (ADR-120)', () => {
+    expect(PLAN().validatePlan(planBueno())).toEqual([]);
+    expect(PLAN().validatePlan({ modules: [{ id: 1, sections: [] }] })).toEqual([]);
+  });
+
+  test('validatePlan rechaza lo que el contrato prohibe (ADR-120)', () => {
+    const casos = [
+      (c) => { c.modules[2].sections[0].fields[0].id = 'necesidad'; },
+      (c) => { c.modules[1].sections[0].fields[0].id = 'Mal Id'; },
+      (c) => { c.modules[1].sections[0].fields[0].kind = 'numero'; },
+      (c) => { delete c.modules[1].sections[0].fields[1].columns; },
+      (c) => { c.modules[1].sections[0].fields[1].max = 9; },
+      (c) => { delete c.modules[2].sections[0].fields[1].options; },
+      (c) => { c.modules[2].sections.pop(); },
+      (c) => { c.modules[2].sections.push(resumen()); },
+      (c) => { c.modules[1].sections.push(resumen()); c.modules[2].sections.pop(); },
+      (c) => { c.modules[1].sections.push({ type: 'plan-builder', title: 'Otra', fields: [{ id: 'x', label: 'X', kind: 'short' }] }); },
+      (c) => { delete c.modules[2].sections[1].labels.agreementRoles; },
+    ];
+    casos.forEach((romper, i) => {
+      const c = planBueno(); romper(c);
+      expect(PLAN().validatePlan(c).length, 'caso ' + i).toBeGreaterThan(0);
+    });
+  });
+
+  test('renderPlanSection escapa y deja los ganchos del motor (ADR-120)', () => {
+    const c = planBueno(); c.modules[1].sections[0].fields[0].label = 'Qué "pasa" <ya>';
+    const idx = PLAN().planIndex(c);
+    const campos = PLAN().renderPlanSection(c.modules[1].sections[0], 2, idx);
+    expect(campos).not.toContain('<ya>');
+    expect(campos).toContain('data-plan-section');
+    expect(campos).toContain('data-plan-field="necesidad"');
+    expect(campos).toContain('data-plan-rows="actividades"');
+    expect(campos).toContain('data-max="8"');
+    const sum = PLAN().renderPlanSection(c.modules[2].sections[1], 3, idx);
+    expect(sum).toContain('data-plan-summary');
+    expect(sum).toContain('data-plan-goto="2"');
+    expect(sum).toContain('data-plan-value="necesidad"');
+    expect(sum).toContain('data-plan-download');
+    expect(sum).toContain('data-plan-missing');
+  });
+
+  test('el esquema y el build de Rover conocen plan-builder (ADR-120)', () => {
+    expect(leer(path.join(GEN, 'course-schema.json'))).toContain('"plan-builder"');
+    expect(leer(path.join(GEN, 'build-course.js'))).toMatch(/case 'plan-builder'/);
+  });
 });

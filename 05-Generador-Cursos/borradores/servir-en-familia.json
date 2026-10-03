@@ -3,7 +3,7 @@
   "title": "Servir en la Familia de Cachorros",
   "subtitle": "Ruta Servir en el Grupo · Nivel 1 · Familia de Cachorros",
   "description": "Para el Rover que va a servir con niños y niñas de 5 y 6 años. En ~35 minutos vas a conocer cómo son a esa edad, cómo cuidar su Fantasía, por qué aprenden jugando, cómo funciona la vida en Familia y las reglas de cuidado que en esta rama no se negocian. Basado en la Guía para el Dirigente de Familia de Cachorros (2026).",
-  "contentVersion": "2026-09-27",
+  "contentVersion": "2026-10-02",
   "route": "grupo",
   "level": 1,
   "branch": "familia",
@@ -374,7 +374,7 @@
             },
             {
               "title": "El baño",
-              "description": "El acompañamiento llega solo hasta la puerta. Ni los Viejos Lobos ni tú entran con el cachorro ni lo ayudan con su higiene o su ropa; si necesita ayuda directa, se la dan solo sus padres o acudientes (p. 78–79). Y como nadie queda a solas con un niño, a la puerta se va con otro adulto."
+              "description": "El acompañamiento llega solo hasta la puerta. Ni los Viejos Lobos ni tú entran con el cachorro ni lo ayudan con su higiene o su ropa; si necesita ayuda directa, se la dan solo sus padres o acudientes (p. 78–79). Y como nadie queda a solas con un niño, a la puerta se va con dos adultos del equipo: tú no cuentas como uno de ellos."
             },
             {
               "title": "El contacto físico",
@@ -389,7 +389,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Llegas antes y conversas con el Jefe de Unidad sobre lo que harán. Los cachorros llegan y los reciben los Viejos Lobos en el punto acordado. En el Círculo te ubicas donde te indicaron. En el juego de apertura apoyas a los que se quedan atrás. Un cachorro pide ir al baño: lo acompañas con otro adulto hasta la puerta, y esperas afuera. Otro cachorro corre a abrazarte: te agachas a su altura, sin cargarlo. Al final, nadie se va hasta que un Viejo Lobo lo entrega a su acudiente. Después, comentas con el Jefe de Unidad qué viste."
+          "text": "Llegas antes y conversas con el Jefe de Unidad sobre lo que harán. Los cachorros llegan y los reciben los Viejos Lobos en el punto acordado. En el Círculo te ubicas donde te indicaron. En el juego de apertura apoyas a los que se quedan atrás. Un cachorro pide ir al baño: va hasta la puerta con dos adultos del equipo —tú no cuentas como uno de ellos—, y nadie entra. Otro cachorro corre a abrazarte: te agachas a su altura, sin cargarlo. Al final, nadie se va hasta que un Viejo Lobo lo entrega a su acudiente. Después, comentas con el Jefe de Unidad qué viste."
         },
         {
           "type": "heading",
@@ -414,7 +414,7 @@
           {
             "text": "En plena reunión, un cachorro le pide al Rover que lo lleve al baño y le ayude porque no alcanza a subirse la ropa. ¿Qué es lo coherente con la Guía?",
             "options": [
-              "Ir con otro adulto hasta la puerta y avisar a los Viejos Lobos para que llamen a su acudiente",
+              "Avisar a los Viejos Lobos para que lo lleven hasta la puerta y llamen a su acudiente",
               "Entrar con él, pero junto con otro adulto de la Familia, para que nadie quede a solas con el niño",
               "Pedirle a un Viejo Lobo que entre a ayudarlo con la ropa, porque él sí es el adulto a cargo"
             ],

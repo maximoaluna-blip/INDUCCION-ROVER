@@ -3,7 +3,7 @@
   "title": "Herramientas para la Familia de Cachorros",
   "subtitle": "Ruta Servir en el Grupo · Nivel 2 · Familia de Cachorros",
   "description": "Para el Rover que ya sirve en la Familia de Cachorros y quiere hacerlo mejor. En unos 40 minutos vas a aprender a elegir y adaptar juegos para 5 y 6 años, a proponer experiencias al aire libre, a escuchar y poner límites sin gritos, y a reconocer señales de alerta. Al final armas y descargas tu propio kit. Basado en la Guía para el Dirigente de Familia de Cachorros (2026).",
-  "contentVersion": "2026-09-28",
+  "contentVersion": "2026-10-02",
   "route": "grupo",
   "level": 2,
   "branch": "familia",
@@ -432,7 +432,7 @@
             {
               "id": "c1",
               "rule": true,
-              "text": "Nunca me quedo a solas con un cachorro ni solo con la Familia: siempre a la vista de otro adulto.",
+              "text": "Nunca me quedo a solas con un cachorro ni solo con la Familia: siempre a la vista de los Viejos Lobos.",
               "source": "Guía de Familia, p. 77-78"
             },
             {
@@ -444,7 +444,7 @@
             {
               "id": "c3",
               "rule": true,
-              "text": "Al baño acompaño solo hasta la puerta, y con otro adulto.",
+              "text": "Al baño acompaño solo hasta la puerta, y con dos adultos del equipo: yo no cuento como uno de ellos.",
               "source": "Guía de Familia, p. 78-79"
             },
             {

@@ -6,7 +6,7 @@ Asociación Scouts de Colombia · **Regional Valle del Cauca**. Formación gratu
 - **Repositorio:** https://github.com/maximoaluna-blip/INDUCCION-ROVER
 - **Qué cursos hay:** `02-Plataforma-Web/cursos.json` (fuente) y el `ESTADO.md` de la raíz (generado). Este índice no lleva cifras.
 - **Cómo se trabaja aquí:** `CLAUDE.md`. **Cómo se diseña un curso:** `05-Generador-Cursos/SKILL.md`.
-- **Hacia dónde va:** spec `docs/superpowers/specs/2026-09-27-rover-ruta-servicio-design.md` y plan `docs/superpowers/plans/`.
+- **Hacia dónde va:** spec madre `docs/superpowers/specs/2026-09-27-rover-ruta-servicio-design.md`; una spec y un plan por nivel en `docs/superpowers/` (Nivel 2 «Herramientas», ADR-106; Nivel 3 «Proyecto», ADR-120). **La Ruta 1 está completa**; la Ruta 2 se consulta al dueño antes de abrirse.
 
 Rover es un producto **regional**: queda fuera del portal y del panel nacionales a propósito (ADR-020), con backend, token y hoja propios.
 
@@ -26,7 +26,8 @@ Alumno → GitHub Pages (HTML estático) → Google Apps Script (token ROVER_ASC
 
 - Motor **propio** (`05-Generador-Cursos/templates/engine.js` + `styles.css`): Rover **no usa `_MOTOR/`**, así que los arreglos de las otras líneas no le llegan solos.
 - Cursos generados con Node (`build-course.js`): JSON → un HTML autocontenido por curso.
-- Certificado PDF en el navegador (html2canvas + jsPDF), verificable en `verificar-certificado.html`.
+- Dos tipos de sección propios de Rover, solo en el navegador (nada va al backend): **`kit-builder`** (Nivel 2: el kit que el Rover elige y descarga, ADR-106) y **`plan-builder`** (Nivel 3: el plan del proyecto, armado lección por lección, ADR-120). Validan en el build (`kit-builder.js`, `plan-builder.js`) y viven en `engine.js`.
+- Certificado PDF en el navegador (html2canvas + jsPDF). **Solo se entrega con las lecciones aprobadas** y, donde hay plan, con el plan completo; ni la barra de navegación lo salta (ADR-120). Su pie enlaza a `verificar-certificado.html?codigo=…`, que verifica solo y **solo da por válido un código que el backend encontró** (ADR-128).
 - Tema oscuro con `assets/dark-theme.css` y `assets/theme-toggle.js` (preferencia en `localStorage['rover-theme']`).
 
 ## Carpetas
@@ -77,4 +78,5 @@ Suite: ver `PRUEBAS-E2E/README.md` (por defecto mira **producción**; antes de p
 
 - `courseProgress_<courseId>`: perfil, progreso, puntajes, tiempo y reflexiones.
 - `commitment_<courseId>`: el compromiso de la última lección. Se restaura al volver al curso (ADR-094).
-- El certificado emitido se guarda para que su código no cambie al volver.
+- El certificado emitido se guarda (`certificate_issued_<courseId>`) para que su código no cambie al volver. «Recuperar mi avance» lo reabre con el mismo código si la hoja ya lo tiene, y solo recupera el avance de **ese** curso (ADR-120).
+- `rover:kit_<courseId>` (kit del Nivel 2) y `rover:plan_<courseId>` (plan del Nivel 3): se quedan en el navegador donde se escribieron; «Reiniciar curso» los borra.

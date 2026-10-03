@@ -1245,14 +1245,30 @@ function planMissing() {
 
 function _planFaltaTexto(x) { return x.label + (x.lesson ? ' (lección «' + x.lesson + '»)' : ''); }
 
+// Fechas del plan en DD/MM/AAAA (lo que se lleva a firmar no va en ISO).
+function _planFecha(v) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || '');
+    return m ? m[3] + '/' + m[2] + '/' + m[1] : (v || '');
+}
+
+// Cada fila se lee sola: «Columna: valor · Columna: valor».
 function _planValueText(f) {
     if (f.getAttribute('data-kind') === 'rows') {
-        return _planRowsData(f.querySelector('[data-plan-rows]')).map(function (r) {
-            return Object.keys(r).map(function (k) { return String(r[k]).trim(); }).filter(Boolean).join(' · ');
+        var box = f.querySelector('[data-plan-rows]');
+        var rotulos = {};
+        box.querySelector('template').content.querySelectorAll('.plan-col').forEach(function (c) {
+            var inp = c.querySelector('[data-col]'), sp = c.querySelector('span');
+            if (inp) rotulos[inp.getAttribute('data-col')] = sp ? sp.textContent.trim() : '';
+        });
+        return _planRowsData(box).map(function (r) {
+            return Object.keys(r).filter(function (k) { return String(r[k]).trim(); }).map(function (k) {
+                return (rotulos[k] ? rotulos[k] + ': ' : '') + String(r[k]).trim();
+            }).join(' · ');
         }).filter(Boolean);
     }
     var inp = f.querySelector('[data-plan-input]');
-    return inp ? inp.value.trim() : '';
+    var v = inp ? inp.value.trim() : '';
+    return f.getAttribute('data-kind') === 'date' ? _planFecha(v) : v;
 }
 
 // El resumen se escribe con textContent: lo que el Rover teclea se ve tal cual, nunca como HTML.
@@ -1375,7 +1391,7 @@ function downloadPlanPDF() {
     var roles = [];
     try { roles = JSON.parse(sum.getAttribute('data-agreement-roles') || '[]'); } catch (e) {}
     titulo(sum.getAttribute('data-agreement-title') || '');
-    roles.forEach(function (r) { linea(r + ' — Fecha: ____________  Firma: ______________________', 11, false); y += 3; });
+    roles.forEach(function (r) { linea(r + ' · Fecha: ____________ · Firma: ______________________', 11, false); y += 3; });
     pdf.save('Plan-' + COURSE_CONFIG.courseId + '.pdf');
     showNotification('Plan descargado 📥');
 }

@@ -158,6 +158,10 @@ test.describe('@solo-escritorio plan-builder', () => {
       expect(textos).toContain(t);
     }
     expect(textos).not.toContain('🙂');
+    // Lo que se lleva a firmar se lee solo: cada fila con el nombre de su columna y las fechas en DD/MM/AAAA.
+    expect(textos).toContain('Qué: Pintar letreros');
+    expect(textos).toContain('15/11/2026');
+    expect(textos).not.toContain('2026-11-15');
   });
 
   test('editar lleva a la lección de esa parte', async ({ page }) => {

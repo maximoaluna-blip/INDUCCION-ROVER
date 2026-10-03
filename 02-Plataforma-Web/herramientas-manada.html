@@ -370,6 +370,27 @@ html[data-theme="dark"] .kit-source { color: #cfe3f2; }
 .kit-rules { margin: 6px 0 12px; padding-left: 20px; }
 .kit-rules li { margin: 6px 0; }
 
+/* plan-builder (ADR-120): el plan del Nivel 3, armado leccion por leccion */
+.plan-builder { margin: 24px 0; border: 1px solid #c8d6e0; border-radius: 10px; padding: 12px 16px; }
+.plan-field { margin: 14px 0; }
+.plan-label { display: block; margin-bottom: 4px; }
+.plan-req { color: #a3341b; }
+.plan-help { color: #4a5a66; margin: 2px 0 6px; font-size: 0.95em; }
+.plan-builder input[type="text"], .plan-builder input[type="date"], .plan-builder select, .plan-builder textarea {
+    width: 100%; box-sizing: border-box; padding: 8px; border-radius: 6px; border: 1px solid #b0c0cc; font: inherit; }
+.plan-row { display: flex; gap: 8px; align-items: flex-end; margin: 8px 0; flex-wrap: wrap; }
+.plan-col { flex: 1 1 140px; display: flex; flex-direction: column; font-size: 0.95em; }
+.plan-remove, .plan-add, .plan-goto { font: inherit; border-radius: 6px; border: 1px solid #b0c0cc; background: transparent; padding: 6px 10px; cursor: pointer; }
+.plan-add:disabled { opacity: 0.6; cursor: not-allowed; }
+.plan-phase { border-top: 1px solid #dfe7ed; padding-top: 8px; margin-top: 12px; }
+.plan-phase dt { font-weight: 600; margin-top: 6px; }
+.plan-phase dd { margin: 2px 0 0; white-space: pre-wrap; }
+.plan-missing { margin: 12px 0; color: #7a2a14; }
+html[data-theme="dark"] .plan-builder, html[data-theme="dark"] .plan-phase { border-color: #4a6275; }
+html[data-theme="dark"] .plan-help { color: #cfe3f2; }
+html[data-theme="dark"] .plan-req, html[data-theme="dark"] .plan-missing { color: #ffb4a0; }
+html[data-theme="dark"] .plan-remove, html[data-theme="dark"] .plan-add, html[data-theme="dark"] .plan-goto { color: inherit; border-color: #6d8597; }
+
     </style>
 </head>
 <body>
@@ -1136,6 +1157,7 @@ window.addEventListener('DOMContentLoaded', function () {
     shuffleQuizOptions();
     loadProgress();
     initKitBuilder();
+    initPlanBuilder();
     updateElapsedTime();
 });
 
@@ -1180,6 +1202,12 @@ function showModule(moduleIndex) {
     moduleIndex = parseInt(moduleIndex);
     if (moduleIndex > 0 && (!userProfile || !userProfile.fullName)) {
         showNotification('⚠️ Debes completar el registro primero', 'warning');
+        return;
+    }
+    // Al certificado solo se llega con las lecciones completas y, donde hay plan, con el plan
+    // completo: la barra de navegacion lleva ahi con un clic (re-auditoria de S2, ADR-120).
+    if (moduleIndex === COURSE_CONFIG.totalModules - 1 && !_certificadoPermitido()) {
+        showNotification('Para tu certificado te falta terminar el curso: ' + _certificadoFalta() + '.', 'warning');
         return;
     }
     // Pause and unload videos in the previously active module to free memory
@@ -1321,6 +1349,17 @@ function checkQuiz(moduleNum) {
 }
 
 function completeModule(moduleNum) {
+    // El certificado del Nivel 3 dice que el Rover DISEÑÓ su plan: la leccion del resumen no
+    // se completa con el plan incompleto (ADR-120).
+    var modEl = document.getElementById('module-' + moduleNum);
+    if (modEl && modEl.querySelector('[data-plan-summary]') && typeof planMissing === 'function') {
+        var faltan = planMissing();
+        if (faltan.length) {
+            showNotification('Tu certificado espera tu plan completo. Te falta: ' +
+                faltan.map(_planFaltaTexto).join('; ') + '. Sube a «Tu plan completo»: cada parte tiene su botón «Editar esta parte».', 'warning');
+            return;
+        }
+    }
     moduleProgress[moduleNum] = true;
     sendToGoogleSheets({
         action: 'progress', name: userProfile.fullName, email: userProfile.email,
@@ -1393,6 +1432,12 @@ function loadProgress() {
         userProfile = p.userProfile || {};
         moduleProgress = p.moduleProgress || new Array(COURSE_CONFIG.totalModules).fill(false);
         quizScores = p.quizScores || [];
+        // Un quiz ya aprobado conserva su boton de avance al volver: quien se bloqueo por el
+        // plan y regresa otro dia no tiene que contestarlo de nuevo (ADR-120).
+        quizScores.forEach(function (sc, m) {
+            var nb = sc >= 70 ? document.getElementById('nextBtn-' + m) : null;
+            if (nb) nb.classList.remove('hidden');
+        });
         studyTime = p.studyTime || 0;
         reflections = p.reflections || {};
         currentModule = p.currentModule || 0;
@@ -1459,6 +1504,28 @@ function saveCommitment(text) {
 }
 
 // --- Certificado ---
+// Lo que falta para el certificado: lecciones con quiz sin completar y campos del plan vacios.
+function _certificadoFalta() {
+    var faltan = [];
+    document.querySelectorAll('[id^="checkBtn-"]').forEach(function (b) {
+        var n = parseInt(b.id.replace('checkBtn-', ''), 10);
+        if (!moduleProgress[n]) {
+            var nav = document.querySelectorAll('.nav-btn')[n];
+            faltan.push('la lección ' + (nav ? '«' + nav.textContent.replace(/\s+/g, ' ').trim() + '»' : n));
+        }
+    });
+    if (document.querySelector('[data-plan-summary]') && typeof planMissing === 'function') {
+        planMissing().forEach(function (x) { faltan.push(_planFaltaTexto(x)); });
+    }
+    return faltan.join('; ');
+}
+
+function _certificadoPermitido() {
+    // Quien ya tiene su certificado emitido vuelve a verlo sin condiciones.
+    try { if (JSON.parse(localStorage.getItem('certificate_issued_' + COURSE_CONFIG.courseId) || 'null')) return true; } catch (e) {}
+    return _certificadoFalta() === '';
+}
+
 function generateCertificate() {
     var date = new Date();
     var el = function (id) { return document.getElementById(id); };
@@ -1808,6 +1875,7 @@ function restartCourse() {
         localStorage.removeItem('courseProgress_' + COURSE_CONFIG.courseId);
         localStorage.removeItem('commitment_' + COURSE_CONFIG.courseId);
         localStorage.removeItem('rover:kit_' + COURSE_CONFIG.courseId);
+        localStorage.removeItem('rover:plan_' + COURSE_CONFIG.courseId);
         location.reload();
     }
 }
@@ -2233,6 +2301,269 @@ function downloadKitPDF() {
     if (own && own.value.trim()) linea('[x] ' + own.value.trim(), 11, false);
     pdf.save('Kit-' + COURSE_CONFIG.courseId + '.pdf');
     showNotification('Kit descargado 📥');
+}
+
+// --- Plan del Nivel 3 (ADR-120) ---
+// Varias secciones, en distintas lecciones, escriben UN mismo plan; la de cierre lo muestra
+// completo y lo descarga. Se guarda SOLO en este navegador: nada del plan va a la hoja (ADR-087).
+function _planKey() { return 'rover:plan_' + COURSE_CONFIG.courseId; }
+
+// Busca por atributo sin armar un selector con datos: un id raro no rompe nada.
+function _planFind(root, attr, id) {
+    var els = (root || document).querySelectorAll('[' + attr + ']');
+    for (var i = 0; i < els.length; i++) if (els[i].getAttribute(attr) === id) return els[i];
+    return null;
+}
+
+function _planFields() { return document.querySelectorAll('[data-plan-section] [data-plan-field]'); }
+
+function _planCols(box) {
+    var cols = [];
+    box.querySelector('template').content.querySelectorAll('[data-col]').forEach(function (c) { cols.push(c.getAttribute('data-col')); });
+    return cols;
+}
+
+// Un guardado corrupto, viejo o de otra version no puede romper el plan: se normaliza contra
+// los campos que el curso tiene HOY, y si no se puede leer se descarta.
+function loadPlan() {
+    var raw;
+    try { raw = JSON.parse(localStorage.getItem(_planKey())); } catch (e) {
+        try { localStorage.removeItem(_planKey()); } catch (e2) {}
+        return {};
+    }
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {};
+    var plan = {};
+    _planFields().forEach(function (f) {
+        var id = f.getAttribute('data-plan-field'), v = raw[id];
+        if (f.getAttribute('data-kind') === 'rows') {
+            if (!Array.isArray(v)) return;
+            var box = f.querySelector('[data-plan-rows]');
+            var max = parseInt(box.getAttribute('data-max'), 10) || 1;
+            var cols = _planCols(box);
+            plan[id] = v.filter(function (r) { return r && typeof r === 'object' && !Array.isArray(r); })
+                .slice(0, max).map(function (r) {
+                    var limpia = {};
+                    cols.forEach(function (c) { limpia[c] = typeof r[c] === 'string' ? r[c] : ''; });
+                    return limpia;
+                });
+        } else if (typeof v === 'string') {
+            plan[id] = v;
+        }
+    });
+    return plan;
+}
+
+function _planRowsData(box) {
+    var filas = [];
+    box.querySelectorAll('[data-plan-row]').forEach(function (row) {
+        var r = {};
+        row.querySelectorAll('[data-col]').forEach(function (inp) { r[inp.getAttribute('data-col')] = inp.value; });
+        filas.push(r);
+    });
+    return filas;
+}
+
+function savePlan() {
+    var plan = {};
+    _planFields().forEach(function (f) {
+        var id = f.getAttribute('data-plan-field');
+        if (f.getAttribute('data-kind') === 'rows') plan[id] = _planRowsData(f.querySelector('[data-plan-rows]'));
+        else { var inp = f.querySelector('[data-plan-input]'); plan[id] = inp ? inp.value : ''; }
+    });
+    try { localStorage.setItem(_planKey(), JSON.stringify(plan)); } catch (e) {}
+}
+
+function _planRefreshRows(box) {
+    var max = parseInt(box.getAttribute('data-max'), 10) || 1;
+    var add = box.querySelector('[data-plan-add-row]');
+    if (add) add.disabled = box.querySelectorAll('[data-plan-row]').length >= max;
+}
+
+function _planAddRow(box, datos) {
+    var max = parseInt(box.getAttribute('data-max'), 10) || 1;
+    var list = box.querySelector('[data-plan-row-list]');
+    if (list.querySelectorAll('[data-plan-row]').length >= max) return;
+    var row = box.querySelector('template').content.firstElementChild.cloneNode(true);
+    if (datos) row.querySelectorAll('[data-col]').forEach(function (inp) { inp.value = datos[inp.getAttribute('data-col')] || ''; });
+    list.appendChild(row);
+    _planRefreshRows(box);
+}
+
+// Una fila agregada y dejada en blanco no cuenta como dato.
+function _planFilled(f) {
+    if (f.getAttribute('data-kind') === 'rows') {
+        return _planRowsData(f.querySelector('[data-plan-rows]')).some(function (r) {
+            return Object.keys(r).some(function (k) { return String(r[k]).trim() !== ''; });
+        });
+    }
+    var inp = f.querySelector('[data-plan-input]');
+    return !!(inp && inp.value.trim());
+}
+
+function planMissing() {
+    var faltan = [];
+    _planFields().forEach(function (f) {
+        if (f.getAttribute('data-required') !== 'true' || _planFilled(f)) return;
+        var sec = f.closest('[data-plan-section]');
+        var mid = sec ? sec.getAttribute('data-module') : '';
+        var fase = _planFind(document, 'data-plan-phase', mid);
+        faltan.push({ fieldId: f.getAttribute('data-plan-field'), label: f.getAttribute('data-label') || '',
+            moduleId: mid, lesson: fase ? fase.getAttribute('data-lesson') : '' });
+    });
+    return faltan;
+}
+
+function _planFaltaTexto(x) { return x.label + (x.lesson ? ' (lección «' + x.lesson + '»)' : ''); }
+
+// Fechas del plan en DD/MM/AAAA (lo que se lleva a firmar no va en ISO).
+function _planFecha(v) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || '');
+    return m ? m[3] + '/' + m[2] + '/' + m[1] : (v || '');
+}
+
+// Cada fila se lee sola: «Columna: valor · Columna: valor».
+function _planValueText(f) {
+    if (f.getAttribute('data-kind') === 'rows') {
+        var box = f.querySelector('[data-plan-rows]');
+        var rotulos = {};
+        box.querySelector('template').content.querySelectorAll('.plan-col').forEach(function (c) {
+            var inp = c.querySelector('[data-col]'), sp = c.querySelector('span');
+            if (inp) rotulos[inp.getAttribute('data-col')] = sp ? sp.textContent.trim() : '';
+        });
+        return _planRowsData(box).map(function (r) {
+            return Object.keys(r).filter(function (k) { return String(r[k]).trim(); }).map(function (k) {
+                return (rotulos[k] ? rotulos[k] + ': ' : '') + String(r[k]).trim();
+            }).join(' · ');
+        }).filter(Boolean);
+    }
+    var inp = f.querySelector('[data-plan-input]');
+    var v = inp ? inp.value.trim() : '';
+    return f.getAttribute('data-kind') === 'date' ? _planFecha(v) : v;
+}
+
+// El resumen se escribe con textContent: lo que el Rover teclea se ve tal cual, nunca como HTML.
+function renderPlanSummary() {
+    var sum = document.querySelector('[data-plan-summary]');
+    if (!sum) return;
+    _planFields().forEach(function (f) {
+        var dd = _planFind(sum, 'data-plan-value', f.getAttribute('data-plan-field'));
+        if (!dd) return;
+        var v = _planValueText(f);
+        dd.textContent = '';
+        if (Array.isArray(v)) {
+            if (!v.length) { dd.textContent = '—'; return; }
+            var ul = document.createElement('ul');
+            v.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+            dd.appendChild(ul);
+        } else dd.textContent = v || '—';
+    });
+    var box = sum.querySelector('[data-plan-missing]');
+    if (!box) return;
+    var faltan = planMissing();
+    box.textContent = '';
+    if (!faltan.length) return;
+    var p = document.createElement('p');
+    p.textContent = box.getAttribute('data-missing-title') || '';
+    box.appendChild(p);
+    var ul2 = document.createElement('ul');
+    faltan.forEach(function (x) { var li = document.createElement('li'); li.textContent = _planFaltaTexto(x); ul2.appendChild(li); });
+    box.appendChild(ul2);
+}
+
+function initPlanBuilder() {
+    if (!document.querySelector('[data-plan-section], [data-plan-summary]')) return;
+    var plan = loadPlan();
+    _planFields().forEach(function (f) {
+        var id = f.getAttribute('data-plan-field');
+        if (f.getAttribute('data-kind') === 'rows') {
+            var box = f.querySelector('[data-plan-rows]');
+            (plan[id] || []).forEach(function (r) { _planAddRow(box, r); });
+            _planRefreshRows(box);
+        } else if (typeof plan[id] === 'string') {
+            var inp = f.querySelector('[data-plan-input]');
+            if (inp) inp.value = plan[id];
+        }
+    });
+    function cambio() { savePlan(); renderPlanSummary(); }
+    document.querySelectorAll('[data-plan-section]').forEach(function (sec) {
+        sec.addEventListener('input', cambio);
+        sec.addEventListener('change', cambio);
+        sec.addEventListener('click', function (ev) {
+            var add = ev.target.closest('[data-plan-add-row]');
+            var rem = ev.target.closest('[data-plan-remove-row]');
+            if (add) { _planAddRow(add.closest('[data-plan-rows]')); cambio(); }
+            if (rem) {
+                var box = rem.closest('[data-plan-rows]');
+                rem.closest('[data-plan-row]').remove();
+                _planRefreshRows(box); cambio();
+            }
+        });
+    });
+    var sum = document.querySelector('[data-plan-summary]');
+    if (sum) {
+        sum.addEventListener('click', function (ev) {
+            var go = ev.target.closest('[data-plan-goto]');
+            if (go) showModule(parseInt(go.getAttribute('data-plan-goto'), 10));
+            if (ev.target.closest('[data-plan-download]')) downloadPlanPDF();
+        });
+    }
+    renderPlanSummary();
+}
+
+// Lo que la fuente del PDF no imprime (emoji y otros fuera de Latin-1) se omite.
+function _planSanear(t) { return String(t == null ? '' : t).replace(/[^\x09\x0A\x0D\x20-\xFF]/g, ''); }
+
+function downloadPlanPDF() {
+    var sum = document.querySelector('[data-plan-summary]');
+    if (!sum) return;
+    savePlan(); renderPlanSummary();
+    var faltan = planMissing();
+    if (faltan.length) {
+        showNotification('Te falta: ' + faltan.map(_planFaltaTexto).join('; ') + '.', 'warning');
+        return;
+    }
+    var JsPDF = (window.jspdf && window.jspdf.jsPDF) || (typeof jsPDF !== 'undefined' ? jsPDF : null);
+    if (!JsPDF) { showNotification('La librería de PDF no cargó. Verifica tu conexión.'); return; }
+    var pdf = new JsPDF({ unit: 'mm', format: 'a4' });
+    var M = 18, y = 20, ancho = 210 - 2 * M;
+    function linea(texto, tam, negrita) {
+        var t = _planSanear(texto);
+        if (!t.trim()) return;
+        pdf.setFont('helvetica', negrita ? 'bold' : 'normal');
+        pdf.setFontSize(tam);
+        _wrapText(pdf, t, ancho).forEach(function (l) {
+            if (y > 280) { pdf.addPage(); y = 20; }
+            pdf.text(l, M, y); y += tam * 0.45;
+        });
+        y += 1.5;
+    }
+    // Un titulo no queda huerfano al pie: si no caben ~12 mm, va a la pagina siguiente.
+    function titulo(texto) { if (y > 268) { pdf.addPage(); y = 20; } linea(texto, 13, true); }
+    linea(sum.getAttribute('data-pdf-title') || 'Mi plan', 16, true);
+    var nombre = (userProfile && userProfile.fullName) ? userProfile.fullName : '';
+    linea([nombre, COURSE_CONFIG.title, new Date().toLocaleDateString('es-CO')].filter(Boolean).join(' · '), 10, false);
+    y += 3;
+    sum.querySelectorAll('[data-plan-phase]').forEach(function (fase) {
+        var h = fase.querySelector('h4');
+        titulo(h ? h.textContent : '');
+        fase.querySelectorAll('[data-plan-value]').forEach(function (dd) {
+            var f = _planFind(document, 'data-plan-field', dd.getAttribute('data-plan-value'));
+            if (!f) return;
+            linea(f.getAttribute('data-label') || '', 11, true);
+            var v = _planValueText(f);
+            if (Array.isArray(v)) {
+                if (!v.length) linea('—', 11, false);
+                v.forEach(function (t) { linea('• ' + t, 11, false); });
+            } else linea(v || '—', 11, false);
+        });
+        y += 2;
+    });
+    var roles = [];
+    try { roles = JSON.parse(sum.getAttribute('data-agreement-roles') || '[]'); } catch (e) {}
+    titulo(sum.getAttribute('data-agreement-title') || '');
+    roles.forEach(function (r) { linea(r + ' · Fecha: ____________ · Firma: ______________________', 11, false); y += 3; });
+    pdf.save('Plan-' + COURSE_CONFIG.courseId + '.pdf');
+    showNotification('Plan descargado 📥');
 }
 
     </script>

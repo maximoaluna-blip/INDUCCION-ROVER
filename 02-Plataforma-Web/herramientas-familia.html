@@ -575,7 +575,7 @@ html[data-theme="dark"] .plan-remove, html[data-theme="dark"] .plan-add, html[da
 
                 <p>La frase es de la <em>Guía para el Dirigente de Familia de Cachorros</em> de la Asociación (2026, p. 26), la fuente principal de este curso. Las otras son la <em>Política Nacional A Salvo del Peligro</em> (2025) y la <em>Guía de Prevención y Atención del Daño</em> (2021).</p>
 
-                <div class="info-box"><strong>Antes de empezar.</strong> Este es un curso del Nivel 2: da por sabido lo del curso <em>Servir en la Familia de Cachorros</em>, así que conviene que lo hagas antes. Aquí no se repite: se usa y se va más allá.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas, y si fallas, el curso te muestra la correcta. En la última lección armas tu kit y lo descargas: se queda en tu navegador, no va a ninguna hoja.</div>
+                <div class="info-box"><strong>Antes de empezar.</strong> Este es un curso del Nivel 2: da por sabido lo del curso <em>Servir en la Familia de Cachorros</em>, así que conviene que lo hagas antes. Aquí no se repite: se usa y se va más allá.<br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas; si fallas, el curso te dice cuál pregunta revisar y puedes intentarlo las veces que quieras. En la última lección armas tu kit y lo descargas: se queda en tu navegador, no va a ninguna hoja.</div>
 
                 <h3>🎯 Objetivos del Curso</h3>
 <ul>
@@ -1296,12 +1296,21 @@ function shuffleQuizOptions() {
         options.forEach(function (opt, i) {
             if (!opt.hasAttribute('data-option-index')) opt.setAttribute('data-option-index', String(i));
         });
-        for (var i = options.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var tmp = options[i]; options[i] = options[j]; options[j] = tmp;
-        }
-        options.forEach(function (opt) { question.appendChild(opt); });
+        barajarOpciones(question);
     });
+}
+
+// Baraja las opciones de UNA pregunta (Fisher-Yates). La usa shuffleQuizOptions al cargar
+// y checkQuiz al fallar (ADR-127): rebarajar la pregunta fallada evita que el reintento
+// se resuelva por la posicion de la opcion descartada.
+function barajarOpciones(question) {
+    var options = Array.prototype.slice.call(question.querySelectorAll('.option'));
+    if (options.length < 2) return;
+    for (var i = options.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = options[i]; options[i] = options[j]; options[j] = tmp;
+    }
+    options.forEach(function (opt) { question.appendChild(opt); });
 }
 
 function checkQuiz(moduleNum) {
@@ -1312,35 +1321,53 @@ function checkQuiz(moduleNum) {
     var correctAnswers = 0;
     var totalQuestions = quizData.length;
 
+    var acertadas = [];
+    // Primero se califica y despues se marca: lo que se muestra depende de si aprueba (ADR-127).
     questions.forEach(function (question, qIndex) {
         var selectedOption = question.querySelector('.option.selected');
+        var ok = false;
         if (selectedOption) {
             var selectedIdx = parseInt(selectedOption.getAttribute('data-selected-index'));
-            if (selectedIdx === quizData[qIndex]) {
-                selectedOption.classList.add('correct');
-                correctAnswers++;
-            } else {
-                selectedOption.classList.add('incorrect');
-                // Mostrar la correcta POR EL ATRIBUTO, no por la posicion: el DOM esta
-                // barajado (ADR-061).
-                var laCorrecta = question.querySelector('.option[data-option-index="' + quizData[qIndex] + '"]');
-                if (!laCorrecta) {
-                    // Sin sellar (HTML viejo servido con motor nuevo): el orden del DOM
-                    // es el del JSON y la posicion vuelve a valer.
-                    laCorrecta = question.querySelectorAll('.option')[quizData[qIndex]];
-                }
-                if (laCorrecta) laCorrecta.classList.add('correct');
-            }
+            ok = selectedIdx === quizData[qIndex];
         }
+        acertadas.push(ok);
+        if (ok) correctAnswers++;
     });
 
     var score = Math.round((correctAnswers / totalQuestions) * 100);
     quizScores[moduleNum] = score;
+    var aprueba = score >= 70;
+    var falladas = [];
+
+    questions.forEach(function (question, qIndex) {
+        var selectedOption = question.querySelector('.option.selected');
+        if (acertadas[qIndex]) {
+            if (selectedOption) selectedOption.classList.add('correct');
+            return;
+        }
+        falladas.push(qIndex + 1);
+        if (aprueba) {
+            // Aprobo con alguna mala: ahi si se ensena cual era la buena.
+            if (selectedOption) selectedOption.classList.add('incorrect');
+            // POR EL ATRIBUTO, no por la posicion: el DOM esta barajado (ADR-061).
+            var laCorrecta = question.querySelector('.option[data-option-index="' + quizData[qIndex] + '"]');
+            if (!laCorrecta) laCorrecta = question.querySelectorAll('.option')[quizData[qIndex]];
+            if (laCorrecta) laCorrecta.classList.add('correct');
+        } else {
+            // No aprobo: NO se revela la correcta ni se marca la descartada (ADR-127).
+            question.querySelectorAll('.option').forEach(function (opt) {
+                opt.classList.remove('selected', 'correct', 'incorrect');
+                var radio = opt.querySelector('input[type="radio"]');
+                if (radio) radio.checked = false;
+            });
+            barajarOpciones(question);
+        }
+    });
 
     var checkBtn = document.getElementById('checkBtn-' + moduleNum);
     if (checkBtn) checkBtn.style.display = 'none';
 
-    if (score >= 70) {
+    if (aprueba) {
         var nextBtn = document.getElementById('nextBtn-' + moduleNum);
         if (nextBtn) nextBtn.classList.remove('hidden');
 
@@ -1355,11 +1382,11 @@ function checkQuiz(moduleNum) {
             module: moduleNum, score: score, course: COURSE_CONFIG.courseId
         });
     } else {
-        // El 70 % exige, con 2 o 3 preguntas, acertarlas TODAS: se dice asi, no en porcentaje (CHECKLIST §A, ADR-091).
-        var necesarias = Math.ceil(totalQuestions * 0.7);
-        showNotification('Acertaste ' + correctAnswers + ' de ' + totalQuestions + '; para seguir hay que ' +
-            (necesarias === totalQuestions ? 'acertarlas todas' : 'acertar ' + necesarias) +
-            '. Donde quedó una en rojo, la verde es la correcta: relee esa parte y vuelve a intentarlo.', 'warning');
+        // Habla de preguntas, no de porcentajes (ADR-091) y ya no revela la buena (ADR-127).
+        var cuales = falladas.length === 1
+            ? 'Fallaste la pregunta ' + falladas[0]
+            : 'Fallaste las preguntas ' + falladas.slice(0, -1).join(', ') + ' y ' + falladas[falladas.length - 1];
+        showNotification(cuales + '. Revisa esa parte de la lección y vuelve a intentarlo; puedes hacerlo las veces que quieras.', 'warning');
         // No auto-reset: en cuanto el usuario hace clic en una opcion, selectOption() limpia las marcas
         // de esa pregunta y vuelve a mostrar el boton "Verificar". Esto evita que un reset por tiempo
         // borrara la nueva seleccion del usuario antes de que pulsara verificar.
@@ -1645,6 +1672,21 @@ function _wrapText(pdf, text, maxWidth) {
     return pdf.splitTextToSize(text || '', maxWidth);
 }
 
+// Dirección de la página que verifica los certificados de ESTA línea (ADR-128). Se
+// deduce de la URL del curso: los cursos viven en <repo>/02-Plataforma-Web/ y la
+// página en la raíz del repo (ADR-070). Sin http(s) (curso abierto como archivo) no
+// hay dirección que imprimir y se devuelve null.
+function urlVerificacion(code) {
+    if (!/^https?:$/.test(location.protocol)) return null;
+    var base = location.pathname.replace(/\/02-Plataforma-Web\/[^\/]*$/, '/');
+    if (base === location.pathname) base = location.pathname.replace(/[^\/]*$/, '');
+    var pagina = location.host + base + 'verificar-certificado.html';
+    return {
+        visible: pagina,
+        enlace: location.protocol + '//' + pagina + (code ? '?codigo=' + encodeURIComponent(code) : '')
+    };
+}
+
 function downloadCertificatePDF() {
     var certModule = document.getElementById('module-' + (COURSE_CONFIG.totalModules - 1));
     var cert = certModule ? certModule.querySelector('.certificate') : null;
@@ -1854,7 +1896,15 @@ function downloadCertificatePDF() {
         pdf.setTextColor(150, 150, 150);
         pdf.text('Plataforma de Formación Rover ASC  |  vallescout.org.co', pageW / 2, pageH - 16, { align: 'center' });
         pdf.setFontSize(6);
-        pdf.text('Verifica este certificado ingresando el código en la plataforma web', pageW / 2, pageH - 12, { align: 'center' });
+        // ADR-128: el pie dice DONDE se verifica y, en el PDF, se puede pulsar con el
+        // codigo ya puesto. Antes decia «en la plataforma web» sin decir cual.
+        var verif = urlVerificacion(code);
+        if (verif) {
+            var pie = 'Verifica este certificado en ' + verif.visible;
+            pdf.textWithLink(pie, (pageW - pdf.getTextWidth(pie)) / 2, pageH - 12, { url: verif.enlace });
+        } else {
+            pdf.text('Verifica este certificado con su código en la página de verificación de la plataforma', pageW / 2, pageH - 12, { align: 'center' });
+        }
 
         // --- Guardar ---
         if (mobile) {

@@ -149,6 +149,8 @@ test.describe('@solo-escritorio plan-builder', () => {
     await llenarTodo(page);
     await irA(page, 2);
     await page.fill('[data-plan-input="necesidad"]', '🙂 ' + 'palabra '.repeat(400));
+    // Los teclados de celular ponen comillas y apostrofos tipograficos: no pueden desaparecer.
+    await page.fill('[data-plan-input="tipo"]', 'Rover’s “plan” — listo…');
     await irA(page, 3);
     await espiarPdf(page);
     await page.click('[data-plan-download]');
@@ -158,6 +160,7 @@ test.describe('@solo-escritorio plan-builder', () => {
       expect(textos).toContain(t);
     }
     expect(textos).not.toContain('🙂');
+    expect(textos).toContain("Rover's \"plan\" - listo...");
     // Lo que se lleva a firmar se lee solo: cada fila con el nombre de su columna y las fechas en DD/MM/AAAA.
     expect(textos).toContain('Qué: Pintar letreros');
     expect(textos).toContain('15/11/2026');
@@ -204,6 +207,38 @@ test.describe('@solo-escritorio plan-builder', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await expect(page.locator('#nextBtn-3')).not.toHaveClass(/hidden/);
     await expect(page.locator('#nextBtn-2')).toHaveClass(/hidden/);
+  });
+
+  // «Recuperar mi avance» con un backend simulado: devuelve filas de TODOS los cursos del correo.
+  async function recuperarCon(page, datos) {
+    await page.route(/script\.google\.com/, (route) => route.fulfill({
+      status: 200, contentType: 'application/json',
+      body: JSON.stringify({ success: true, data: Object.assign({ registration: { fullName: 'Rover Prueba', email: 'r@x.co' },
+        modules: [], quizzes: [], certificates: [], registeredInCourse: true }, datos) }) }));
+    await page.evaluate(() => {
+      document.getElementById('recoveryEmail').value = 'r@x.co';
+      const c = document.getElementById('consentRecover'); if (c) c.checked = true;
+      recoverProgress();
+    });
+    await page.waitForFunction(() => /recuperado/i.test([...document.querySelectorAll('.notification')].map((n) => n.textContent).join(' ')));
+  }
+
+  test('recuperar el avance no trae lecciones de OTRO curso', async ({ page }) => {
+    await abrir(page);
+    await recuperarCon(page, {
+      modules: [{ course: 'otro-curso', moduleCompleted: 2 }, { course: 'otro-curso', moduleCompleted: 3 }],
+      quizzes: [{ course: 'otro-curso', module: 2, score: 100 }] });
+    expect(await page.evaluate(() => [!!moduleProgress[2], !!moduleProgress[3], quizScores[2]])).toEqual([false, false, undefined]);
+  });
+
+  test('recuperar el avance en otro equipo reabre el certificado ya emitido, con su código', async ({ page }) => {
+    await abrir(page);
+    await recuperarCon(page, {
+      modules: [{ course: 'plan-prueba', moduleCompleted: 2 }, { course: 'plan-prueba', moduleCompleted: 3 }],
+      certificates: [{ course: 'plan-prueba', certificateCode: 'ASC-2026-ABCDE', completionDate: '2026-09-30T12:00:00.000Z', score: 100 }] });
+    await page.evaluate(() => showModule(4));
+    await expect(page.locator('#module-4')).toHaveClass(/active/);
+    await expect(page.locator('#certCode')).toHaveText('ASC-2026-ABCDE');
   });
 
   test('ninguna petición al backend', async ({ page }) => {

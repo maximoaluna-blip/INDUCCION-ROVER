@@ -1971,8 +1971,27 @@ function recoverProgress() {
             if (isFound) {
                 var serverData = data.data || data;
                 var reg = serverData.registration || data.userProfile || {};
-                var mods = serverData.modules || [];
-                var quizzes = serverData.quizzes || [];
+                // El backend devuelve filas de TODOS los cursos del correo: solo cuentan las de
+                // este curso. Sin este filtro, terminar la Tropa abria el certificado de la Manada
+                // (revision final del ADR-120).
+                var deEsteCurso = function (x) { return x && x.course === COURSE_CONFIG.courseId; };
+                var mods = (serverData.modules || []).filter(deEsteCurso);
+                var quizzes = (serverData.quizzes || []).filter(deEsteCurso);
+                // Un certificado ya emitido para este curso se reabre en este equipo con su mismo
+                // codigo: el plan del Nivel 3 vive solo en el navegador donde se escribio, y sin
+                // esto un certificado ganado quedaba bloqueado (y al rehacerlo, salia otro codigo).
+                var certEmitido = (serverData.certificates || []).filter(deEsteCurso)[0];
+                if (certEmitido && certEmitido.certificateCode) {
+                    try {
+                        var claveCert = 'certificate_issued_' + COURSE_CONFIG.courseId;
+                        if (!localStorage.getItem(claveCert)) {
+                            localStorage.setItem(claveCert, JSON.stringify({
+                                name: (reg && reg.fullName) || '', code: certEmitido.certificateCode,
+                                date: certEmitido.completionDate || '', score: certEmitido.score,
+                                course: COURSE_CONFIG.courseId }));
+                        }
+                    } catch (e) {}
+                }
 
                 // Reconstruir userProfile desde registration
                 if (reg.fullName || reg.name) {
@@ -2539,8 +2558,15 @@ function initPlanBuilder() {
     renderPlanSummary();
 }
 
-// Lo que la fuente del PDF no imprime (emoji y otros fuera de Latin-1) se omite.
-function _planSanear(t) { return String(t == null ? '' : t).replace(/[^\x09\x0A\x0D\x20-\xFF]/g, ''); }
+// Lo que la fuente del PDF no imprime (emoji y otros fuera de Latin-1) se omite. Antes se
+// traduce la tipografia que ponen los teclados de celular: un apostrofo o unas comillas no
+// pueden desaparecer del documento que se firma (revision final del ADR-120).
+function _planSanear(t) {
+    return String(t == null ? '' : t)
+        .replace(/[‘’‚′]/g, "'").replace(/[“”„″]/g, '"')
+        .replace(/[–—−]/g, '-').replace(/…/g, '...').replace(/•/g, '-')
+        .replace(/[^\x09\x0A\x0D\x20-\xFF]/g, '');
+}
 
 function downloadPlanPDF() {
     var sum = document.querySelector('[data-plan-summary]');

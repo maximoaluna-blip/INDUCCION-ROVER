@@ -20,7 +20,7 @@ function planSections(course) {
   const out = [];
   (course.modules || []).forEach((m, mi) => {
     (m.sections || []).forEach((s, si) => {
-      if (s && s.type === 'plan-builder') out.push({ moduleId: m.id, mi, si, s });
+      if (s && s.type === 'plan-builder') out.push({ moduleId: m.id, moduleTitle: m.title || '', mi, si, s });
     });
   });
   return out;
@@ -71,7 +71,7 @@ function validatePlan(course) {
 
 function planIndex(course) {
   return planSections(course).filter((x) => !x.s.summary)
-    .map(({ moduleId, s }) => ({ moduleId, title: s.title || '', fields: s.fields || [] }));
+    .map(({ moduleId, moduleTitle, s }) => ({ moduleId, moduleTitle, title: s.title || '', fields: s.fields || [] }));
 }
 
 function renderField(f) {
@@ -108,7 +108,7 @@ function renderField(f) {
 function renderSummary(s, index) {
   const L = s.labels;
   const fases = index.map((fase) => `
-                <div class="plan-phase" data-plan-phase="${fase.moduleId}" data-phase-title="${esc(fase.title)}">
+                <div class="plan-phase" data-plan-phase="${fase.moduleId}" data-lesson="${esc(fase.moduleTitle)}">
                     <h4>${esc(fase.title)}</h4>
                     <dl>${fase.fields.map((f) => `<dt>${esc(f.label)}</dt><dd data-plan-value="${esc(f.id)}" data-kind="${esc(f.kind)}"></dd>`).join('')}</dl>
                     <button type="button" class="plan-goto" data-plan-goto="${fase.moduleId}">Editar esta parte</button>

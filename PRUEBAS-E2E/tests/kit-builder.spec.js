@@ -136,9 +136,12 @@ test.describe('@solo-escritorio kit-builder', () => {
   test('reiniciar el curso borra el kit', async ({ page }) => {
     await abrirKit(page);
     await page.check('[data-kit-game="g1"]');
+    // restartCourse recarga la pagina: el evaluate puede perder su contexto en la recarga. Y hay
+    // que esperar el 'load' de la PRIMERA carga, o el waitForEvent lo toma por el de la recarga.
+    await page.waitForLoadState('load');
     await Promise.all([
       page.waitForEvent('load'),
-      page.evaluate(() => { window.confirm = () => true; restartCourse(); }),
+      page.evaluate(() => { window.confirm = () => true; restartCourse(); }).catch(() => {}),
     ]);
     const kit = await page.evaluate(() => localStorage.getItem('rover:kit_kit-prueba'));
     expect(kit).toBeNull();

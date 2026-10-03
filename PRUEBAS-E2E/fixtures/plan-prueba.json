@@ -1,0 +1,43 @@
+{
+  "courseId": "plan-prueba",
+  "title": "Plan de prueba",
+  "description": "Curso de prueba del plan-builder (ADR-120).",
+  "icon": "🧪",
+  "duration": "5 minutos",
+  "totalContentModules": 2,
+  "modules": [
+    { "id": 1, "title": "Inicio", "emoji": "🏠", "navLabel": "Inicio", "isIntro": true,
+      "sections": [{ "type": "paragraph", "text": "Prueba." }] },
+    { "id": 2, "title": "Diagnóstico", "emoji": "🔎", "navLabel": "Diagnóstico",
+      "sections": [
+        { "type": "paragraph", "text": "Lección de prueba." },
+        { "type": "plan-builder", "title": "Tu plan: el diagnóstico", "fields": [
+          { "id": "tipo", "label": "Tipo de proyecto", "kind": "short" },
+          { "id": "necesidad", "label": "Necesidad", "kind": "long", "required": true, "help": "Lo que te dijeron." },
+          { "id": "actividades", "label": "Actividades", "kind": "rows", "max": 3, "required": true,
+            "columns": [ { "id": "que", "label": "Qué" }, { "id": "cuando", "label": "Cuándo" } ] }
+        ] }
+      ],
+      "reflection": { "prompt": "Prueba." },
+      "quiz": { "title": "Evaluación", "questions": [
+        { "text": "¿Uno?", "options": ["a", "b", "c"], "correctIndex": 0 },
+        { "text": "¿Dos?", "options": ["a", "b", "c"], "correctIndex": 1 } ], "nextLabel": "Siguiente" } },
+    { "id": 3, "title": "Cierre", "emoji": "✅", "navLabel": "Cierre",
+      "sections": [
+        { "type": "plan-builder", "title": "Tu plan: el cierre", "fields": [
+          { "id": "fecha", "label": "Fecha del acuerdo", "kind": "date", "required": true },
+          { "id": "rama", "label": "Rama", "kind": "choice", "options": ["Manada", "Tropa"] }
+        ] },
+        { "type": "plan-builder", "summary": true, "labels": {
+          "title": "Tu plan completo", "intro": "Revísalo.", "missingTitle": "Te falta:",
+          "download": "Descargar mi plan (PDF)", "pdfTitle": "Mi plan de prueba",
+          "agreementTitle": "Acordado con", "agreementRoles": ["Jefe de Grupo", "Jefe de la rama", "Dirigente del Clan"] } }
+      ],
+      "reflection": { "prompt": "Prueba." },
+      "quiz": { "title": "Evaluación", "questions": [
+        { "text": "¿Uno?", "options": ["a", "b", "c"], "correctIndex": 0 },
+        { "text": "¿Dos?", "options": ["a", "b", "c"], "correctIndex": 1 } ], "nextLabel": "Fin" } }
+  ],
+  "achievements": [ { "id": "achievement-1", "name": "Prueba", "emoji": "🧪", "unlockOnModule": 2 } ],
+  "certificate": { "courseName": "PRUEBA", "description": "prueba" }
+}

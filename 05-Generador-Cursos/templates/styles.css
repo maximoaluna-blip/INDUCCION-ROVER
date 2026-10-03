@@ -357,3 +357,24 @@ html[data-theme="dark"] .kit-builder fieldset { border-color: #4a6275; }
 html[data-theme="dark"] .kit-source { color: #cfe3f2; }
 .kit-rules { margin: 6px 0 12px; padding-left: 20px; }
 .kit-rules li { margin: 6px 0; }
+
+/* plan-builder (ADR-120): el plan del Nivel 3, armado leccion por leccion */
+.plan-builder { margin: 24px 0; border: 1px solid #c8d6e0; border-radius: 10px; padding: 12px 16px; }
+.plan-field { margin: 14px 0; }
+.plan-label { display: block; margin-bottom: 4px; }
+.plan-req { color: #a3341b; }
+.plan-help { color: #4a5a66; margin: 2px 0 6px; font-size: 0.95em; }
+.plan-builder input[type="text"], .plan-builder input[type="date"], .plan-builder select, .plan-builder textarea {
+    width: 100%; box-sizing: border-box; padding: 8px; border-radius: 6px; border: 1px solid #b0c0cc; font: inherit; }
+.plan-row { display: flex; gap: 8px; align-items: flex-end; margin: 8px 0; flex-wrap: wrap; }
+.plan-col { flex: 1 1 140px; display: flex; flex-direction: column; font-size: 0.95em; }
+.plan-remove, .plan-add, .plan-goto { font: inherit; border-radius: 6px; border: 1px solid #b0c0cc; background: transparent; padding: 6px 10px; cursor: pointer; }
+.plan-add:disabled { opacity: 0.6; cursor: not-allowed; }
+.plan-phase { border-top: 1px solid #dfe7ed; padding-top: 8px; margin-top: 12px; }
+.plan-phase dt { font-weight: 600; margin-top: 6px; }
+.plan-phase dd { margin: 2px 0 0; white-space: pre-wrap; }
+.plan-missing { margin: 12px 0; color: #7a2a14; }
+html[data-theme="dark"] .plan-builder, html[data-theme="dark"] .plan-phase { border-color: #4a6275; }
+html[data-theme="dark"] .plan-help { color: #cfe3f2; }
+html[data-theme="dark"] .plan-req, html[data-theme="dark"] .plan-missing { color: #ffb4a0; }
+html[data-theme="dark"] .plan-remove, html[data-theme="dark"] .plan-add, html[data-theme="dark"] .plan-goto { color: inherit; border-color: #6d8597; }

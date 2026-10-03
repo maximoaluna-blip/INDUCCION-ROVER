@@ -154,5 +154,18 @@
     "branch": "comunidad",
     "status": "active",
     "file": "herramientas-comunidad.html"
+  },
+  {
+    "courseId": "mi-proyecto-de-servicio",
+    "title": "Mi proyecto de servicio",
+    "description": "Para el Rover que ya sirve en una rama de su Grupo y quiere hacer un proyecto propio para ella. En unos 35 minutos diagnosticas qué necesita la rama, diseñas tu proyecto, lo cuidas, lo acuerdas y decides cómo lo vas a evaluar. Lección a lección vas armando tu plan, y al final lo descargas para llevarlo a la reunión donde lo acuerdas. Basado en el Modelo de Aplicación de la Política de Programa de Jóvenes (2026) y la Guía de Dirigente de Clan (2026).",
+    "icon": "🧭",
+    "duration": "35 minutos",
+    "modules": 5,
+    "route": "grupo",
+    "level": 3,
+    "branch": null,
+    "status": "active",
+    "file": "mi-proyecto-de-servicio.html"
   }
 ]

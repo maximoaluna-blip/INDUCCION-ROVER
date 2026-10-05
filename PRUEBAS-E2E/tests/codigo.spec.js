@@ -345,23 +345,37 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     expect(build).not.toMatch(/Módulo \$\{contentIndex\}/);
   });
 
-  // --- Ruta 2 (ADR-141) ---
+  // --- Reflexiones sin nombres ni iniciales (ADR-141, ADR-145) ---
   // Las reflexiones viajan a la hoja (ADR-087). La Ruta 1 enseñó «piénsalo con nombre; aquí
-  // basta su inicial», y la costumbre se copia: en la Ruta 2 ningún ENUNCIADO pide ni eso.
-  // ⚠️ Esto mira solo `reflection.prompt` del JSON. El placeholder fijo de la caja, que pone
-  // build-course.js para TODOS los cursos de Rover, todavía dice «basta el rol o la inicial»:
-  // cambiarlo es decisión del dueño (revisión final de los ADR-141/142).
-  test('ninguna reflexión de la Ruta 2 pide nombres ni iniciales (ADR-141)', () => {
+  // basta su inicial», y la costumbre se copiaba. Hasta el ADR-145 la caja de TODOS los cursos
+  // lo sugería con su placeholder fijo («basta el rol o la inicial»), y la prueba de la Ruta 2
+  // no lo veía porque solo leía los enunciados del JSON. Ahora mira las tres fuentes.
+  const PIDE_IDENTIFICAR = /inicial|nombre de|cómo se llama|nómbra|apellido/i;
+
+  test('ningún enunciado de reflexión pide nombres ni iniciales (ADR-145)', () => {
     const dir = path.join(GEN, 'borradores');
-    const ruta2 = fs.readdirSync(dir).filter((f) => f.endsWith('.json'))
-      .map((f) => JSON.parse(leer(path.join(dir, f))))
-      .filter((c) => c.route === 'comunidad');
-    expect(ruta2.length, 'no hay ningún curso de la ruta comunidad').toBeGreaterThan(0);
+    const cursos = fs.readdirSync(dir).filter((f) => f.endsWith('.json'))
+      .map((f) => JSON.parse(leer(path.join(dir, f))));
+    expect(cursos.filter((c) => c.route === 'comunidad').length, 'no hay ningún curso de la ruta comunidad').toBeGreaterThan(0);
     const malas = [];
-    for (const c of ruta2) {
+    for (const c of cursos) {
       for (const m of c.modules || []) {
         const p = m.reflection && m.reflection.prompt;
-        if (p && /inicial|nombre de|cómo se llama/i.test(p)) malas.push(`${c.courseId} m${m.id}: ${p}`);
+        if (p && PIDE_IDENTIFICAR.test(p)) malas.push(`${c.courseId} m${m.id}: ${p}`);
+      }
+    }
+    expect(malas).toEqual([]);
+  });
+
+  test('la caja de la reflexión no sugiere iniciales, ni en el build ni en lo compilado (ADR-145)', () => {
+    const build = leer(path.join(GEN, 'build-course.js'));
+    const enBuild = [...build.matchAll(/id="reflection-[^"]*"[^>]*placeholder="([^"]*)"/g)].map((x) => x[1]);
+    expect(enBuild.length, 'el build ya no dibuja la caja de reflexión con placeholder').toBeGreaterThan(0);
+    expect(enBuild.filter((p) => PIDE_IDENTIFICAR.test(p))).toEqual([]);
+    const malas = [];
+    for (const f of fs.readdirSync(WEB).filter((x) => x.endsWith('.html'))) {
+      for (const x of leer(path.join(WEB, f)).matchAll(/id="reflection-[^"]*"[^>]*placeholder="([^"]*)"/g)) {
+        if (PIDE_IDENTIFICAR.test(x[1])) { malas.push(`${f}: ${x[1]}`); break; }
       }
     }
     expect(malas).toEqual([]);

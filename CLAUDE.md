@@ -16,7 +16,7 @@ El diseño está en `docs/superpowers/specs/2026-09-27-rover-ruta-servicio-desig
 
 - **Nombrar un cargo para el Rover.** Ni «sinodal», ni «ayudante», ni «dirigente». En las fuentes, el **sinodal es el experto que asesora al joven** (*Guía para el Dirigente de Clan* 2018 p. 43; *Buenas Prácticas de Tropa* 2023 p. 28; *Reglamento de Grupos* art. 2.1.3). «Sinodal» solo puede aparecer con ese sentido. Lo vigila `PRUEBAS-E2E/lexico.json`, que **sí barre la prosa** de los cursos, la portada, el catálogo y los correos del backend.
 - **Decir «18–22».** La Rama Rover es de **18 a 20 años** (*Modelo de Aplicación* 2026 p. 19 y 21) y se sale del Clan antes de los 21 años y 2 meses (*Guía de Clan* 2026 p. 52). El registro acepta de 18 a 21.
-- **Pedir en una reflexión el nombre de una persona** (sobre todo de un menor) **o algo contado en confianza.** Las reflexiones van a la hoja del backend. Fórmula: «piénsalo con nombre; aquí basta su inicial».
+- **Pedir en una reflexión el nombre de una persona** (sobre todo de un menor) **o algo contado en confianza.** Las reflexiones van a la hoja del backend. Se piensa en alguien concreto, pero se escribe **por su rol o el tipo de lugar: sin nombres ni iniciales** (ADR-145; la caja de la reflexión lo dice y `codigo.spec` lo vigila).
 - **Enseñar técnica scout sin fuente.** La política 2026 no trae nudos, amarres ni campismo. No se rellenan de memoria.
 - **Presentar el servicio como formación de dirigente.** El servicio es parte de la progresión del Rover (PARCE), no un cargo.
 

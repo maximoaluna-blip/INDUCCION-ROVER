@@ -16,7 +16,7 @@
 
 - Público: **Rovers de 18 a 20 años** de la **Regional Valle del Cauca**. La edad del registro es min 18 y max 21, porque la salida del Clan ocurre antes de los 21 años y 2 meses.
 - Ningún texto dice que el Rover es o será «sinodal», «ayudante» o «dirigente». «Sinodal» solo aparece como el experto que asesora.
-- Las reflexiones no piden nombres ni confidencias. Fórmula: «piénsalo con nombre; aquí basta su inicial».
+- Las reflexiones no piden nombres ni confidencias. Fórmula: «piénsalo con nombre; aquí basta su inicial» (⚠️ superada por el ADR-145: ni nombres ni iniciales).
 - El certificado es regional, uno por curso, y dice lo que se completó.
 - Duración de un curso nuevo: de 25 a 40 minutos.
 - No se toca `_MOTOR/`, ni otras líneas, ni los portales. Los archivos compartidos de la raíz (`DECISIONES.md`, `TRAZABILIDAD.csv`, `GLOSARIO-ASC.md`, `docs/BITACORA.md`) se tocan con aviso a PJ y DI, pull antes y commit inmediato.

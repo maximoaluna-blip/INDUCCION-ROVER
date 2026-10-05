@@ -298,7 +298,7 @@ function renderReflection(moduleId, reflection) {
                 <div class="reflection-area">
                     <h4>🤔 Reflexión Personal</h4>
                     <p>${reflection.prompt}</p>
-                    <textarea id="reflection-${moduleId}" placeholder="Escribe tu reflexión aquí. Sin nombres de personas: basta el rol o la inicial." onchange="saveReflection(${moduleId}, this.value)"></textarea>
+                    <textarea id="reflection-${moduleId}" placeholder="Escribe tu reflexión aquí. Sin nombres ni iniciales: escribe el rol o el tipo de lugar." onchange="saveReflection(${moduleId}, this.value)"></textarea>
                 </div>`;
 }
 

@@ -49,7 +49,7 @@ Cita literal de la *Guía de Dirigente de Clan* 2026, §9.1, p. 54. Se enuncia e
   - «No pierdas de vista el para quién: sin destinatario real, el desafío se vacía» (*Modelo*, p. 102).
 - **Caso:** el parque pintado que necesitaba luz; el servicio alternativo (acompañar a la junta a pedir el alumbrado) es ejemplo del curso.
 - **Reflexión:** una necesidad de su entorno y quiénes la viven, descritos por lo que son.
-- **Quiz (2):** mercado mensual frente a reunirse con la junta; la campaña «para el mundo» sin destinatario.
+- **Quiz (2):** la junta que ya sabe lo que necesita (sumarse, no volver a preguntar); la campaña de reciclaje que necesita un para quién concreto.
 
 ### 3 · Mundo Mejor y sus iniciativas (~10 min)
 - **Idea central:** Scouts por los ODS ordena el servicio en cuatro iniciativas con desafíos; elegir una da marco, método y reconocimiento.
@@ -62,7 +62,7 @@ Cita literal de la *Guía de Dirigente de Clan* 2026, §9.1, p. 54. Se enuncia e
   - ODS «sin convertirlo en cátedra» (*Modelo*, p. 68).
 - **Lectura opcional:** enlace a `fundamentos-scout.html` (misión e impacto global), como dice la spec madre.
 - **Reflexión:** con qué iniciativa se conecta su necesidad; «no encaja» también vale.
-- **Quiz (2):** la biblioteca y las historias de los fundadores (Mensajeros de la Paz); la autoevaluación inicial.
+- **Quiz (2):** el recorrido de memoria con los abuelos del barrio (Mensajeros de la Paz); la cancha sin desafío elegido (el desafío enmarca, no condiciona).
 
 ### 4 · Con quién se sirve (~10 min)
 - **Idea central:** fuera del Grupo se sirve con el Clan, con un adulto acompañante y con una organización aliada.
@@ -74,7 +74,7 @@ Cita literal de la *Guía de Dirigente de Clan* 2026, §9.1, p. 54. Se enuncia e
   - a quién pedir asesoría (*Equipo de Bolsillo - Rover*, 2025, p. 17).
 - **Sugerencias del curso** (rotuladas): cómo llegar a una organización, y preguntar por su política de protección.
 - **Reflexión:** el tipo de organización que ya trabaja en su necesidad y qué podría aportarle.
-- **Quiz (2):** el equipo con amigos de la universidad; el proyecto que no pasó por el Consejo de Clan.
+- **Quiz (2):** el equipo mixto que igual pasa por el Consejo de Clan; qué le toca al adulto acompañante (presentar y seguir al tanto).
 
 ### 5 · Cuidarte y cuidar fuera del Grupo (~9 min)
 - **Idea central:** el cuidado sigue al Rover afuera; unas reglas son norma, otras recomendación.
@@ -86,15 +86,20 @@ Cita literal de la *Guía de Dirigente de Clan* 2026, §9.1, p. 54. Se enuncia e
   - práctica 2+1 (p. 26) y directrices para publicar imágenes de jóvenes (p. 26); «fotos responsables» (*Modelo*, p. 71).
 - **El Rover no es el adulto a cargo** ni cuenta en la proporción de adultos (glosario; *Modelo*, pp. 19 y 22).
 - **Recomendación de este curso** (spec §6): con menores que no son scouts, nunca a solas; siempre con un adulto de la organización presente; adulto acompañante del Clan al tanto; seguir la política de protección de la organización aliada; y si algo preocupa, contarlo al responsable de la organización y al adulto acompañante.
-- **Compromiso:** «La necesidad que vi es ___; la voy a trabajar con ___, en el marco de ___».
+- **Norma aparte del recuadro:** el deber de reportar un posible delito contra un niño, scout o no (p. 21: «cualquier acción que represente un posible delito»), ese mismo día, y el botón (p. 44).
+- **Compromiso:** «La necesidad que vi es ___. Antes del ___ voy a preguntarle a ___ qué necesita, y lo voy a llevar a mi Consejo de Clan».
 - **Reflexión:** qué situación podría dejarlo a solas con alguien y cómo evitarla.
-- **Quiz (2):** la coordinadora que sale una hora; el Rover de otro Clan que pide guardar un secreto fuera de una actividad scout.
+- **Quiz (2):** la fundación que no permite fotos de los niños; el niño de la fundación que pide guardar un secreto (se reporta ese mismo día).
 
 ## Logros
 1. Hacer Con · 2. Mundo Mejor · 3. Bien Acompañado · 4. Cuidado Fuera.
 
+## Auditorías (04-10-2026)
+- Doctrinal: 4 mayores (alcance de la Política p. 23 con su condición; el deber de reportar fuera del recuadro; nombres Health Allies / Life Leaders con fuente; caso del secreto) y menores, aplicados. Re-auditoría: 1 mayor (distractor de seguridad vial defendible) y 4 menores, aplicados.
+- Pedagógica: regla ciega 8/8 en la primera vuelta y 3–4/4 en la segunda (fuga de tesis y de convergencia); los 8 ítems se reescribieron dos veces.
+
 ## Medición de la fuga (04-10-2026, `ciega.py`)
-Ningún marcador solo en la correcta (adulto, Consejo de Clan, organización, pregunt, acord, sin, solo, Política, fundación, porque); sin fuga de apertura; correcta más larga en 3 de 8; ningún quiz se aprueba eligiendo siempre la más corta.
+Tras la segunda vuelta: ningún marcador solo en la correcta (adulto, Consejo de Clan, organización, pregunt, acord, sin, solo, Política, fundación, porque, junta, comunidad); sin fuga de apertura; correcta más larga en 3 de 8; ningún quiz se aprueba eligiendo siempre la más corta.
 
 ## Validación contra el marco
 Knowles adaptado a 18–20: cada lección dice para qué y parte de un caso del entorno del Rover. Lecciones de 9 a 10 minutos. Quizzes de aplicación con distractores que son errores reales (asistencialismo, decidir solo, quedarse a solas, guardar el secreto). Cierra con un compromiso conversable con el Clan.

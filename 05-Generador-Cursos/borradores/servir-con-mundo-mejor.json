@@ -93,7 +93,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Volvamos al parque. El problema no era la pintura: era que el Clan decidió solo. Si antes se hubiera sentado con la junta del barrio, habría oído lo de la luz. Y quizá el servicio habría sido otro: acompañar a la junta a pedir el alumbrado a la alcaldía, que es algo que la cuadra puede seguir haciendo cuando el Clan ya no esté. Pintar solos el parque fue un gesto de héroe solitario; acompañar a la junta es servir como ciudadano solidario."
+          "text": "Volvamos al parque. El problema no era la pintura: era que el Clan decidió solo. Si antes se hubiera sentado con la junta del barrio, habría oído lo de la luz. Y quizá el servicio habría sido otro: acompañar a la junta a pedir el alumbrado a la alcaldía, que es algo que la cuadra puede seguir haciendo cuando el Clan ya no esté. Pintar solos el parque fue un gesto de héroe solitario; acompañar a la junta es servir como ciudadano solidario. Y si la comunidad ya se organizó y te dice qué necesita, hacer con es sumarte a lo que ella lleva, no volver a empezar la pregunta."
         }
       ],
       "reflection": {
@@ -103,11 +103,11 @@
         "title": "Evaluación - Hacer con",
         "questions": [
           {
-            "text": "La junta de una vereda le cuenta a tu Clan que el camino a la escuela se inunda cada invierno, y que ya tiene un comité que le pide la obra a la alcaldía. ¿Qué es lo más coherente con la lección?",
+            "text": "La junta de una vereda le pide a tu Clan que la ayude a redactar la carta a la alcaldía por el camino que se inunda cada invierno. Un Rover propone hacer antes una asamblea con toda la vereda, para confirmar que eso es lo que de verdad necesita. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Armar el Clan su propia petición a la alcaldía, más completa, para que la obra salga antes",
-              "Ofrecerle al comité lo que el Clan sabe hacer —redactar, tomar fotos— y que el comité siga al frente",
-              "Hacer antes una encuesta casa por casa, para estar seguros de que el camino es lo que de verdad necesitan"
+              "Hacer primero la asamblea, para que la decisión salga de toda la vereda y no solo de la junta",
+              "Redactar la carta con el comité: la necesidad ya la dijo la vereda, y su junta va al frente",
+              "Redactar la carta y llevarla el Clan a la alcaldía: así el trámite no depende de la junta"
             ],
             "correctIndex": 1
           },
@@ -179,14 +179,14 @@
         {
           "type": "list",
           "items": [
-            "<strong>Un punto de partida medible.</strong> Según el <em>Manual de Implementación Marco de Mundo Mejor</em> (2021), los procesos de aprendizaje de sus desafíos empiezan y terminan con una autoevaluación (p. 11). La primera te dice de dónde partes; la última, cuánto cambiaste.",
+            "<strong>Un punto de partida medible.</strong> Según el <em>Manual de Implementación Marco de Mundo Mejor</em> (2021), en los desafíos de Mensajeros de la Paz el proceso empieza y termina con una autoevaluación (p. 11). La primera te dice de dónde partes; la última, cuánto cambiaste.",
             "<strong>Un reconocimiento con sentido.</strong> Las insignias de desafío y las distinciones de iniciativa «atestiguan un proceso con criterios, destinatarios, reflexión y transferencia» (<em>Modelo</em>, p. 101). No son la meta: son la huella de lo que aprendiste.",
             "<strong>Un puente con el territorio.</strong> Los desafíos «conectan con actores locales, escuela, familia, instituciones y naturaleza» (<em>Modelo</em>, p. 101)."
           ]
         },
         {
           "type": "info-box",
-          "text": "<strong>Sin volverlo cátedra.</strong> El <em>Modelo</em> pide conectar las acciones con los ODS «sin convertirlo en cátedra»: lo importante es comprender haciendo (p. 68). No necesitas saberte los 17 objetivos para empezar. Necesitas una necesidad real, un para quién y un desafío que la enmarque. Y si tu necesidad no encaja en ningún desafío, también puedes servir: el marco ayuda, pero no es una condición."
+          "text": "<strong>Sin volverlo cátedra.</strong> El <em>Modelo</em> pide conectar las acciones con los ODS «sin convertirlo en cátedra»: lo importante es comprender haciendo (p. 68). No necesitas saberte los 17 objetivos para empezar. Necesitas una necesidad real, un para quién y un desafío que la enmarque. Y si tu necesidad no encaja en ningún desafío, también puedes servir: el marco ayuda, pero no es una condición. La <em>Guía de Clan</em> cuenta los proyectos de servicio comunitario entre tus Vivencias Rovers (pp. 42–43)."
         },
         {
           "type": "info-box",
@@ -200,22 +200,22 @@
         "title": "Evaluación - Mundo Mejor",
         "questions": [
           {
-            "text": "Tu Clan quiere trabajar con la junta de acción comunal en una campaña de seguridad vial frente al colegio del barrio. Según la lección, ¿en qué iniciativa encaja?",
+            "text": "Tu Clan y la junta quieren recoger con los abuelos del barrio cómo se fundó, y armar con eso un recorrido por sus calles. Según la lección, ¿en qué iniciativa encaja?",
             "options": [
-              "Health Allies, porque prevenir accidentes es cuidar la salud de los niños",
-              "Mensajeros de la Paz, que también incluye campañas de seguridad vial en el barrio",
-              "Tribu Tierra, que incluye la movilidad activa y el uso de las calles del barrio"
+              "Life Leaders: entrevistar y armar un recorrido son habilidades para la vida",
+              "Tribu Tierra: el recorrido se hace a pie y es movilidad activa por el barrio",
+              "Mensajeros de la Paz: recoger la memoria del barrio es parte de su trabajo"
             ],
-            "correctIndex": 1
+            "correctIndex": 2
           },
           {
-            "text": "Tu Clan ya acordó con una junta apoyar su biblioteca comunitaria, pero todavía no ha elegido ningún desafío. Un Rover dice que así no pueden empezar. ¿Qué es lo más coherente con la lección?",
+            "text": "Tu Clan ya acordó con una junta ayudar a recuperar la cancha del barrio, pero todavía no ha elegido ningún desafío. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Empezar: un desafío le da marco a un servicio, pero no es una condición para servir",
-              "Esperar: primero va la autoevaluación inicial del desafío, y sin ella no se arranca",
-              "Empezar, sabiendo que sin un desafío ese servicio no cuenta como Vivencia de su PARCE"
+              "Elegir primero un desafío de Mensajeros de la Paz: sin marco, el servicio no tiene cómo medirse ni reconocerse",
+              "Esperar a que la junta proponga el desafío: si lo elige el Clan, ya no sería un servicio hecho con ella",
+              "Empezar con la junta: el desafío ayuda a enmarcar, pero lo que no puede faltar es la necesidad y el para quién"
             ],
-            "correctIndex": 0
+            "correctIndex": 2
           }
         ],
         "nextLabel": "Continuar: con quién se sirve ➡️"
@@ -286,22 +286,22 @@
         "title": "Evaluación - Con quién",
         "questions": [
           {
-            "text": "Una Rover arma un proyecto de huertas en su barrio y quiere que entren dos amigos de la universidad que no son scouts. Según la lección, ¿cómo lo arma?",
+            "text": "Una Rover suma a su proyecto de huertas a dos amigos de la universidad que no son scouts. Un compañero del Clan le advierte: «Aunque sean de afuera, el proyecto igual tiene que pasar por el Consejo de Clan». Según la lección, ¿tiene razón?",
             "options": [
-              "Le pide al Consejo de Clan que los admita en el Clan mientras dure el proyecto",
-              "Los suma al equipo del proyecto y lleva el proyecto a su Consejo de Clan",
-              "Los suma, y lo presenta como iniciativa personal, porque ya no es solo del Clan"
-            ],
-            "correctIndex": 1
-          },
-          {
-            "text": "Un Rover quiere dar talleres en la biblioteca de su barrio, pero no conoce a nadie allá. Según la lección, ¿qué le toca a su adulto acompañante?",
-            "options": [
-              "Diseñar los talleres con la biblioteca y asignarle al Rover las sesiones que puede dar",
-              "Esperar a que el Rover lo pida, porque el proyecto es suyo y él no debe interferir en él",
-              "Conectarlo con la biblioteca y cuidar el marco ético; los talleres los diseña el Rover"
+              "Tiene razón a medias: pasa por el Consejo de Clan, pero los amigos salen del equipo hasta que lo aprueben",
+              "No: con gente de afuera el proyecto ya es del equipo, y lo acuerdan entre los que lo hacen",
+              "Sí: el equipo puede ser mixto, y el Consejo de Clan igual establece, orienta y evalúa el proyecto"
             ],
             "correctIndex": 2
+          },
+          {
+            "text": "Un Rover quiere dar talleres de dibujo en la casa de la cultura de su municipio, y su adulto acompañante conoce a la coordinadora. Según la lección, ¿qué le toca al adulto?",
+            "options": [
+              "Dejar que el Rover busque solo el contacto, para no interferir en la autonomía propia de la Rama",
+              "Presentarle a la coordinadora y seguir al tanto; los talleres los arma el Rover",
+              "Ir él a acordar los talleres con la casa de la cultura y luego pasarle al Rover las fechas"
+            ],
+            "correctIndex": 1
           }
         ],
         "nextLabel": "Continuar: cuidar fuera del Grupo ➡️"
@@ -354,7 +354,7 @@
         },
         {
           "type": "paragraph",
-          "text": "<strong>Y una cosa que no es recomendación.</strong> Si lo que ves o te cuentan puede ser un delito contra un niño o una niña, scout o no, la Política obliga a reportarlo y no permite guardar el secreto: el reporte va a los órganos de protección de la Asociación y a los sistemas estatales de salud, protección o justicia (p. 21). Avisa a tu adulto acompañante y usa el botón «Me Pongo A Salvo del Peligro» (p. 44)."
+          "text": "<strong>Y una cosa que no es recomendación.</strong> Si lo que ves o te cuentan puede ser un delito contra un niño o una niña, la Política habla de «cualquier acción que represente un posible delito»: hay que reportarlo, y no se puede guardar el secreto; el reporte va a los órganos de protección de la Asociación y a los sistemas estatales de salud, protección o justicia (p. 21). Avisa ese mismo día a tu adulto acompañante, sin esperar a la próxima reunión, y usa el botón «Me Pongo A Salvo del Peligro» (p. 44)."
         },
         {
           "type": "paragraph",
@@ -381,16 +381,16 @@
         "title": "Evaluación - Cuidar fuera del Grupo",
         "questions": [
           {
-            "text": "La fundación donde tu Clan da refuerzo escolar les pide a los voluntarios no tomar fotos de los niños, ni de lejos. Un compañero dice que en el Grupo sí toman «fotos responsables» y que con eso basta. ¿Qué es lo más coherente con la lección?",
+            "text": "La fundación donde tu Clan da refuerzo escolar les pide a los voluntarios no tomar fotos de los niños, ni de lejos. Tu Clan tiene que mostrarle a su Consejo cómo va el proyecto. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "No tomarlas, porque cuando sirves con la fundación su política de protección también es la tuya",
-              "Tomar solo fotos responsables, como en el Grupo, porque la Política de la Asociación pesa más",
-              "No volver a la fundación hasta que el Consejo de Clan revise si esa regla choca con nuestra Política"
+              "Fotos de los niños de espaldas, sin caras, que es lo que en el Grupo se llama «fotos responsables»",
+              "Fotos solo para el informe del Consejo de Clan, sin publicarlas en redes ni en grupos de chat",
+              "Fotos del salón y los materiales, ninguna de los niños; lo demás lo cuentan por escrito"
             ],
-            "correctIndex": 0
+            "correctIndex": 2
           },
           {
-            "text": "En el refuerzo escolar, un niño de la fundación le cuenta a la Rover algo que le pasa en su casa y que puede estarle haciendo daño, y le pide que no le diga a nadie. ¿Qué es lo más coherente con la lección?",
+            "text": "Al salir del refuerzo escolar, un niño de la fundación le cuenta a la Rover algo que le pasa en su casa y que puede estarle haciendo daño, y le pide que no le diga a nadie. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Le promete el secreto, porque el niño no es scout y la Política de la Asociación no lo cubre",
               "No promete el secreto: ese mismo día avisa a su adulto acompañante y lo reporta por el botón",

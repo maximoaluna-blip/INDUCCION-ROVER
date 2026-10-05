@@ -2,7 +2,7 @@
   "courseId": "mi-proyecto-en-la-comunidad",
   "title": "Mi proyecto de servicio en la comunidad",
   "subtitle": "Ruta Servir en la comunidad · Nivel 3 · Proyecto",
-  "description": "Para el Rover que quiere hacer un proyecto de servicio con una organización de su comunidad. En unos 45 minutos ves la necesidad con quienes la viven, diseñas tu proyecto, lo cuidas, lo acuerdas y decides cómo lo vas a evaluar y a mostrar. Lección a lección vas armando tu plan, y al final lo descargas para llevarlo a la reunión donde lo acuerdas. Basado en el Modelo de Aplicación de la Política de Programa de Jóvenes (2026), la Guía de Dirigente de Clan (2026) y el Equipo de Bolsillo - Rover (2025).",
+  "description": "Para el Rover que quiere hacer un proyecto de servicio con una organización de su comunidad. En unos 45 minutos ves la necesidad con quienes la viven, diseñas tu proyecto, lo cuidas, lo acuerdas y decides cómo lo vas a evaluar y a mostrar. Lección a lección vas armando tu plan, y al final lo descargas para llevarlo a la reunión donde lo acuerdas. Basado en el Modelo de Aplicación de la Política Nacional de Programa de Jóvenes (2026), la Guía de Dirigente de Clan (2026) y el Equipo de Bolsillo - Rover (2025).",
   "contentVersion": "2026-10-04",
   "route": "comunidad",
   "level": 3,
@@ -23,7 +23,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "Ya viste una necesidad en tu comunidad y sabes con quién se acuerda un servicio fuera del Grupo. Un proyecto es el paso siguiente: algo que diseñas con una organización de tu comunidad, que empieza y termina, y que deja algo hecho. Este curso es para diseñarlo bien."
+          "text": "Ya viste una necesidad en tu comunidad y sabes con quién se acuerda un servicio fuera del Grupo. Un proyecto es el paso siguiente: algo que diseñas con una organización de tu comunidad, que empieza y termina, y que deja algo hecho. Muchos proyectos de servicio terminan en una jornada bonita que nadie había pedido. Este curso es para que el tuyo no."
         },
         {
           "type": "mission-box",
@@ -31,7 +31,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Así resume la <em>Guía de Dirigente de Clan</em> (2026, p. 54) el espíritu del servicio en la comunidad. Este curso se apoya en ella, en el <em>Modelo de Aplicación de la Política Nacional de Programa de Jóvenes</em> (2026), en la <em>Política Nacional A Salvo del Peligro</em> (2025) y en el <em>Equipo de Bolsillo - Rover</em> de la Comisión Nacional Rover (2025)."
+          "text": "Así resume la <em>Guía de Dirigente de Clan</em>, hablando del servicio en la comunidad, el espíritu del escultismo (2026, p. 54). Este curso se apoya en ella, en el <em>Modelo de Aplicación de la Política Nacional de Programa de Jóvenes</em> (2026), en la <em>Política Nacional A Salvo del Peligro</em> (2025) y en el <em>Equipo de Bolsillo - Rover</em> de la Comisión Nacional Rover (2025)."
         },
         {
           "type": "paragraph",
@@ -92,7 +92,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 7 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> el proyecto empieza por saber para quién es y qué quieren ellos; y eso se averigua con la organización y con la gente, no se supone."
+          "text": "<strong>⏱️ Unos 7 minutos, con tu plan · Idea central:</strong> el proyecto empieza por saber para quién es y qué quieren ellos; y eso se averigua con la organización y con la gente, no se supone."
         },
         {
           "type": "paragraph",
@@ -145,26 +145,26 @@
         }
       ],
       "reflection": {
-        "prompt": "¿Qué pregunta le harías a una organización de tu barrio para saber si tu idea le sirve, sin que suene a que ya decidiste? Escríbela tal como la dirías."
+        "prompt": "Imagina que una junta de acción comunal le pide a tu Clan «ayudar con los niños del barrio». Escribe, tal como la dirías, una pregunta para saber qué necesitan de verdad, sin que suene a que ya decidiste."
       },
       "quiz": {
         "title": "Evaluación - La necesidad",
         "questions": [
           {
-            "text": "Una Rover quiere hacer su proyecto con el comedor comunitario de su barrio y ya tiene una idea: una colecta de mercado. ¿Qué es lo más coherente con la lección?",
+            "text": "Un Rover propone pintar la fachada de un hogar de adultos mayores. La directora le agradece, pero le cuenta que lo que más les pesa es que los residentes casi no reciben visitas. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Hacer la colecta ya, porque sobra quien done, y después ver qué más falta",
-              "Sentarse antes con quienes llevan el comedor, porque ellos saben qué falta",
-              "Llevar la idea al Consejo de Clan, porque ya es concreta y el comedor la agradece"
+              "Pintar la fachada, como lo pensó: la directora ya le dio el sí y la idea es suya",
+              "Cambiar su idea hacia las visitas y contarle a la directora cómo piensa hacerlo con ellos",
+              "Llevar las dos ideas al Consejo de Clan para que el Clan decida cuál le conviene más"
             ],
             "correctIndex": 1
           },
           {
-            "text": "El comedor le dice a la Rover que necesita tres cosas: alguien que cocine los sábados, arreglar la nevera y donantes fijos. ¿Qué hace ella con su plan?",
+            "text": "El hogar le pide tres cosas: visitas los domingos, arreglar el jardín y ayuda con trámites de salud; lo que más pesa son las visitas. El Rover tiene cuatro sábados libres. ¿Qué hace con su plan?",
             "options": [
-              "Elige una de las tres, porque es mejor poco y bien, y escribe qué incluye y qué no",
-              "Incluye las tres, porque debe responder a todo lo que el comedor le contó",
-              "Escoge la que pueda hacer sola, para no tener que acordarla con nadie más"
+              "Escoge las visitas y anota en su plan que el jardín y los trámites quedan por fuera",
+              "Escoge las visitas y deja abierto lo demás, por si en el camino le alcanza el tiempo",
+              "Toma las tres, una por sábado, porque fue el hogar el que se las pidió todas"
             ],
             "correctIndex": 0
           }
@@ -180,7 +180,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 7 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> un buen diseño dice qué cambia, cuánto y para cuándo; y deja claro qué se necesita y quién responde por ello."
+          "text": "<strong>⏱️ Unos 7 minutos, con tu plan · Idea central:</strong> un buen diseño dice qué cambia, cuánto y para cuándo; y deja claro qué se necesita y quién responde por ello."
         },
         {
           "type": "paragraph",
@@ -201,7 +201,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Si tus actividades son con personas, el <em>Modelo</em> pide que sean <strong>DURASLID</strong> y alineadas al desafío (p. 101): desafiantes, útiles, recompensantes, atractivas, lúdicas, seguras, incluyentes y diversas."
+          "text": "El <em>Modelo</em> pide que tus actividades sean <strong>DURASLID</strong> y alineadas al desafío (p. 101): desafiantes, útiles, recompensantes, atractivas, seguras, lúdicas, inclusivas y diversas (p. 69). Pruébalo con una: una tarde de juegos en el comedor es segura si hay alguien del comedor presente, e inclusiva si pueden jugar también quienes no se mueven con facilidad."
         },
         {
           "type": "plan-builder",
@@ -239,7 +239,9 @@
             {
               "id": "recursos",
               "label": "¿Qué necesitas, de dónde va a salir y quién responde por la plata?",
-              "kind": "long"
+              "kind": "long",
+              "required": true,
+              "help": "Si no necesitas nada, escribe «nada»; si la organización pone algo, dilo aquí."
             }
           ]
         }
@@ -251,20 +253,20 @@
         "title": "Evaluación - Diseñar",
         "questions": [
           {
-            "text": "Estamos en marzo. ¿Cuál objetivo cumple mejor lo que pide la lección para el proyecto con el comedor comunitario?",
+            "text": "Estamos en marzo y el proyecto del Rover son las visitas al hogar de adultos mayores. ¿Cuál objetivo va más con lo que pide la lección?",
             "options": [
-              "Que el comedor comunitario tenga más donantes durante el año",
-              "Que antes de junio el comedor tenga diez donantes fijos de mercado cada mes",
-              "Visitar cuatro tiendas del barrio y pedirles que donen al comedor"
+              "Que el Rover haga ocho visitas al hogar entre abril y mayo, dos horas cada sábado",
+              "Que antes de junio cada residente que no recibía visitas tenga una por semana",
+              "Que este año los residentes del hogar se sientan más acompañados y felices"
             ],
             "correctIndex": 1
           },
           {
-            "text": "Para su proyecto, un Rover necesita comprar semillas y herramientas. Según el Equipo de Bolsillo - Rover, ¿quién responde por esos recursos?",
+            "text": "A mitad del proyecto, al Rover le faltan $150.000 para el material de las visitas, y en su plan no quedó escrito de dónde saldría. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Los adultos de la Asociación, porque el proyecto hace parte de la progresión",
-              "Los de la organización aliada: al final, el proyecto le sirve a ella",
-              "Los Rovers del proyecto, y eso se deja claro desde que se formula el plan"
+              "Pedirle a su adulto acompañante del Clan un apoyo de la Asociación, porque es parte de su progresión",
+              "Que el hogar lo ponga, de palabra: al final el proyecto le sirve a él",
+              "Ajustar lo que hará a lo que él y su Clan consigan, y anotar en el plan de dónde sale"
             ],
             "correctIndex": 2
           }
@@ -280,7 +282,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 8 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> el cuidado de las personas se escribe en el plan desde el principio, y un proyecto fuera del Grupo se acuerda con tres partes."
+          "text": "<strong>⏱️ Unos 7 minutos, con tu plan · Idea central:</strong> el cuidado de las personas se escribe en el plan desde el principio, y un proyecto fuera del Grupo se acuerda con tres partes."
         },
         {
           "type": "paragraph",
@@ -295,8 +297,9 @@
           "type": "list",
           "ordered": false,
           "items": [
-            "<strong>Lo que pueda dañar a alguien no se guarda</strong>: «no cabrá la posibilidad de guardar ningún secreto» (Política A Salvo del Peligro, p. 21); la ruta oficial es el botón «Me Pongo A Salvo del Peligro» (p. 44). La Política alcanza también a las organizaciones aliadas (p. 23)",
-            "<strong>Tú no eres el adulto a cargo.</strong> Sigues siendo protagonista de programa: la Rama Rover «representa el final como Protagonista de Programa» (<em>Modelo</em>, p. 19)",
+            "<strong>Lo que pueda ser un delito no se guarda, sea scout o no la persona afectada.</strong> La Política habla de «cualquier acción que represente un posible delito»: «no cabrá la posibilidad de guardar ningún secreto», y el reporte va a la Asociación y a las autoridades de salud, protección o justicia (Política A Salvo del Peligro, p. 21). Avisa ese mismo día a tu adulto acompañante y usa el botón «Me Pongo A Salvo del Peligro» (p. 44)",
+            "<strong>La Política te acompaña a ti</strong>: aplica donde actúes como scout, también en un proyecto fuera del Grupo (p. 24). A la organización aliada la alcanza solo si participa en el cuidado de los scouts (p. 23); por eso sigues también su propia política",
+            "<strong>Tú no eres el adulto a cargo</strong> ni cuentas como uno en la proporción de adultos: sigues siendo Protagonista de Programa; la Rama Rover «representa el final como Protagonista de Programa» (<em>Modelo</em>, pp. 19 y 22)",
             "<strong>Las fotos</strong> siguen las directrices de la Asociación (Política, p. 26) y las de la organización. Si no las conoces, pregunta y no publiques: eso es una recomendación de este curso",
             "<strong>Con menores de edad que no son scouts</strong> (recomendación de este curso, no norma de la Asociación): nunca a solas; siempre con un adulto de la organización presente; tu adulto acompañante del Clan al tanto; y sigue la política de protección de la organización aliada"
           ]
@@ -308,7 +311,7 @@
         },
         {
           "type": "paragraph",
-          "text": "En <em>Servir más allá del Grupo</em> viste las tres partes de un servicio fuera del Grupo. Tu proyecto se acuerda con las tres: el <strong>Consejo de Clan</strong>, que establece, orienta y evalúa los proyectos en que participa el Clan, también los que vienen de sus integrantes o de otras organizaciones (<em>Guía de Dirigente de Clan</em>, p. 29); tu <strong>adulto acompañante del Clan</strong>, que asesora los proyectos de los Rovers «para cuidar el marco ético, el cuidado y el enlace» (<em>Modelo</em>, p. 22); y el <strong>responsable de la organización aliada</strong>, que es quien conoce a la gente con la que vas a trabajar. Lleva tu plan escrito: al final de este curso lo descargas con un recuadro para que firmen quienes lo acuerdan."
+          "text": "Las tres partes ya las viste en <em>Servir más allá del Grupo</em>: tu <strong>Consejo de Clan</strong>, que establece, orienta y evalúa los proyectos del Clan (<em>Guía de Dirigente de Clan</em>, p. 29); tu <strong>adulto acompañante del Clan</strong>, que asesora los proyectos de los Rovers (<em>Modelo</em>, p. 22); y el <strong>responsable de la organización aliada</strong>. Aquí lo nuevo es que el acuerdo va <strong>por escrito y antes de empezar</strong>: al final de este curso descargas tu plan con un recuadro para que lo firmen las tres. Acordarlo con las tres partes, y que firmen, es una recomendación de este curso; el ejemplo del <em>Equipo de Bolsillo</em> empieza justo por establecer acuerdos con los aliados (p. 26)."
         },
         {
           "type": "plan-builder",
@@ -368,20 +371,20 @@
           {
             "text": "El proyecto de un Rover es leerles cuentos a niños del barrio en la biblioteca comunitaria, los sábados. ¿Qué debería decir el campo de cuidados de su plan?",
             "options": [
-              "Que, como ya es mayor de edad, él puede quedarse a cargo de los niños mientras les lee",
-              "Que no estará a solas con ellos, que habrá alguien de la biblioteca y que seguirá su política",
-              "Que, como esos niños no son scouts, basta con que la bibliotecaria le dé su permiso de palabra"
+              "Que irá con su adulto acompañante del Clan, así que nadie de la biblioteca necesita estar",
+              "Que leerá con alguien de la biblioteca presente y que antes conocerá su política",
+              "Que, como ya es mayor de edad, puede quedarse con los niños si la bibliotecaria sale un rato"
             ],
             "correctIndex": 1
           },
           {
-            "text": "Una Rover va a hacer su proyecto con una fundación de su barrio. Según la lección, ¿con quiénes lo acuerda?",
+            "text": "La fundación ya le dijo que sí al proyecto de una Rover, y su Consejo de Clan lo aprobó en la última reunión. Ella quiere empezar este sábado. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Con el Jefe de Grupo, el jefe de la rama y su adulto acompañante del Clan",
-              "Solo con el Consejo de Clan y la fundación, que son los que aprueban el proyecto",
-              "Con el Consejo de Clan, su adulto acompañante y el responsable de la fundación"
+              "Empezar el sábado, porque con su Clan y la fundación de acuerdo ya quedó acordado",
+              "Llevarle antes el plan a su adulto acompañante, porque falta su revisión, y luego empezar",
+              "Avisarle a su adulto acompañante en la siguiente reunión del Clan, y empezar ya el sábado"
             ],
-            "correctIndex": 2
+            "correctIndex": 1
           }
         ],
         "nextLabel": "Continuar: evaluar y mostrar ➡️"
@@ -395,15 +398,15 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 8 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> antes de empezar, acuerda cómo vas a saber si funcionó; y al terminar, muéstralo a quienes lo vivieron."
+          "text": "<strong>⏱️ Unos 7 minutos, con tu plan · Idea central:</strong> antes de empezar, acuerda cómo vas a saber si funcionó; y al terminar, muéstralo a quienes lo vivieron."
         },
         {
           "type": "paragraph",
-          "text": "El <em>Modelo</em> pide, para cada proyecto de un desafío, acordar <strong>«criterios de calidad simples (2–4) y revisables públicamente»</strong> (p. 101): pocos, claros, y que la organización y tu Clan puedan ver. Pide también cerrar cada hito reflexionando —qué hicimos, qué observamos o sentimos, qué comprendimos, a dónde lo llevamos— y documentar evidencias observables: «fotos responsables, registros, prototipos, testimonios» (p. 101)."
+          "text": "El <em>Modelo</em> aconseja, para cada proyecto de un desafío, acordar <strong>«criterios de calidad simples (2–4) y revisables públicamente»</strong> (p. 101): pocos, claros, y que la organización y tu Clan puedan ver. Pide también cerrar cada hito reflexionando —qué hicimos, qué observamos o sentimos, qué comprendimos, a dónde lo llevamos— y documentar evidencias observables: «fotos responsables, registros, prototipos, testimonios» (p. 101)."
         },
         {
           "type": "paragraph",
-          "text": "Y al final, una <strong>presentación pública</strong> «ante quienes participaron, intervinieron o se vieron beneficiados», recogiendo sus impresiones (p. 101). Si trabajas con un desafío, recuerda también la autoevaluación: según el <em>Manual de Implementación Marco de Mundo Mejor</em>, el proceso empieza y termina con una (2021, p. 11)."
+          "text": "Y al final, una <strong>presentación pública</strong> «ante quienes participaron, intervinieron o se vieron beneficiados», recogiendo sus impresiones (p. 101). Si trabajas con un desafío, recuerda también la autoevaluación: según el <em>Manual de Implementación Marco de Mundo Mejor</em>, en los desafíos de Mensajeros de la Paz el proceso empieza y termina con una (2021, p. 11). El <em>Equipo de Bolsillo</em> sugiere también mostrarlo en redes (p. 23): si hay fotos de personas, primero las directrices de la lección anterior."
         },
         {
           "type": "info-box",
@@ -431,7 +434,7 @@
               "label": "¿Con quién lo vas a evaluar?",
               "kind": "short",
               "required": true,
-              "help": "Por su rol."
+              "help": "Por su rol: tu adulto acompañante del Clan y alguien de la organización."
             },
             {
               "id": "presentacion",
@@ -465,7 +468,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Al terminar vas a escribir tu compromiso: «Antes del ___ voy a presentar mi plan a ___ y a ___, y no voy a empezar sin ___»."
+          "text": "Al terminar vas a escribir tu compromiso: «Antes del ___ voy a llevar mi plan a mi Consejo de Clan, a mi adulto acompañante y a ___ de la organización, y no voy a empezar sin ___»."
         },
         {
           "type": "mission-box",
@@ -473,28 +476,28 @@
         }
       ],
       "reflection": {
-        "prompt": "¿Ante quiénes presentarías un proyecto hecho con tu comunidad, para que de verdad lo vean quienes lo vivieron? Escribe qué tipo de espacio usarías —una reunión de la junta, una cartelera, una feria— y por qué."
+        "prompt": "Toma este objetivo inventado: «que antes de agosto una biblioteca comunitaria tenga un club de lectura al que lleguen niños cada sábado». Escribe dos criterios que se puedan ver en la biblioteca —no algo que tú sientas— y di con quién los compartirías, por su rol."
       },
       "quiz": {
         "title": "Evaluación - Evaluar y mostrar",
         "questions": [
           {
-            "text": "Una Rover escribió en su plan doce criterios para saber si su proyecto funcionó, y solo ella los conoce. Según la lección, ¿qué le cambiarías?",
+            "text": "Para sus visitas al hogar, un Rover escribió tres criterios y los compartió con el hogar y su Clan: «que cada residente reciba una visita por semana», «que el hogar pida repetirlo» y «que yo me sienta útil». ¿Qué le cambiarías?",
             "options": [
-              "Nada: entre más criterios tenga, más completa le quedará la evaluación final",
-              "Dejar de dos a cuatro criterios simples y compartirlos con la organización y su Clan",
-              "Guardarlos hasta el final, para que ni la organización ni el Clan trabajen solo por cumplirlos"
+              "Nada: son tres, son simples y ya los conocen el hogar y su Clan, como pide el Modelo",
+              "Reemplazar «que yo me sienta útil» por algo que pase en el hogar y que se pueda ver",
+              "Agregar dos o tres criterios más, para que la evaluación final no se quede corta"
             ],
             "correctIndex": 1
           },
           {
-            "text": "Terminó el proyecto con el comedor comunitario. ¿Qué cierre va más con lo que pide el Modelo?",
+            "text": "El Rover va a presentar su proyecto en el hogar, ante los residentes y quienes lo ayudaron. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Publicar en redes las fotos de la jornada, porque así lo ven las familias del comedor",
-              "Entregarle al Consejo de Clan un informe con las cifras del proyecto",
-              "Presentarlo ante el comedor y quienes participaron, porque así se oye qué opinan"
+              "Mostrar qué pasó con sus criterios y dejar que los residentes digan cómo lo vivieron",
+              "Mostrar las fotos que tomó de cada residente, porque así ellos se reconocen en el proyecto",
+              "Contar sábado por sábado lo que hizo: así el hogar ve todo el trabajo que hubo"
             ],
-            "correctIndex": 2
+            "correctIndex": 0
           }
         ],
         "nextLabel": "Obtener Certificado 🏆"
@@ -530,6 +533,6 @@
   "certificate": {
     "courseName": "MI PROYECTO DE SERVICIO EN LA COMUNIDAD",
     "description": "ha completado el curso Mi proyecto de servicio en la comunidad, en el que diseñó un plan de proyecto de servicio con una organización de su comunidad: la necesidad, el diseño, sus cuidados, con quién acordarlo y cómo evaluarlo y mostrarlo.",
-    "commitmentPrompt": "Escribe tu compromiso completando la frase: «Antes del ___ voy a presentar mi plan a ___ y a ___, y no voy a empezar sin ___». Para las personas, escribe su rol, no su nombre."
+    "commitmentPrompt": "Escribe tu compromiso completando la frase: «Antes del ___ voy a llevar mi plan a mi Consejo de Clan, a mi adulto acompañante y a ___ de la organización, y no voy a empezar sin ___». Para las personas, escribe su rol, no su nombre."
   }
 }

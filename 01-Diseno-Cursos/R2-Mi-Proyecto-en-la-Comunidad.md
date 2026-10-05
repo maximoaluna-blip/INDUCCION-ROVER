@@ -55,7 +55,7 @@
 
 - **Curso hermano, no S2 con dos escenarios** (spec §1): no toca el motor ni el S2 publicado.
 - **Nombres de iniciativa con fuente.** «Aliados de la Salud» y «Líderes de Vida» eran traducciones nuestras: la auditoría doctrinal de la E1 (04-10-2026) las marcó. Se usan **Health Allies** y **Life Leaders** con el nombre del área en español (*Modelo* §16.1; glosario).
-- **«Todavía no la sé»** es respuesta válida (el *Modelo* no exige encajar en un desafío, p. 68): la prueba `proyecto-comunidad.spec` lo vigila.
+- **«Todavía no la sé»** es respuesta válida (los propósitos del Proyecto Rover no mencionan ODS ni iniciativas: *Equipo de Bolsillo*, p. 11): la prueba `proyecto-comunidad.spec` lo vigila.
 - **Casos propios** (el comedor comunitario, la biblioteca de los cuentos): ninguno repite S2 (pañoletas, letreros, rally, jardín) ni la E1 (parque, vereda, refuerzo escolar).
 - **Cuidado:** L3 aplica la recomendación de spec §6 y la norma con página; el campo `cuidados` obliga a escribirlo.
 - **Paso 7** (registrar insignias y competencias) se nombra y se deja al Clan.
@@ -63,13 +63,19 @@
 
 ## Lecciones
 
-1. **Ver la necesidad con quien la vive** (~7 min): el comedor que necesitaba otra cosa; paso 1 del *Modelo*; «Elige poco y bien»; alcance del *Equipo de Bolsillo*. Quiz: sentarse con el comedor antes de decidir; elegir una de tres necesidades y escribir el alcance.
-2. **Objetivo y actividades** (~7 min): SMART, tareas, cronograma por semanas, recursos y la responsabilidad financiera; DURASLID. Quiz: el objetivo medible; quién responde por los recursos.
-3. **Riesgos, cuidados y acuerdo** (~8 min): seguridad como condición de calidad; plan B; norma y recomendación; acuerdo a tres. Quiz: el campo de cuidados en la lectura de cuentos; con quiénes se acuerda (distractor con los roles de S2).
-4. **Evaluar y mostrar** (~8 min): 2–4 criterios revisables públicamente; reflexión y evidencias; presentación pública; autoevaluación; paso 7. Resumen del plan y descarga. Quiz: los doce criterios privados; el cierre ante el comedor.
+1. **Ver la necesidad con quien la vive** (~7 min con el plan): el comedor que necesitaba otra cosa; paso 1 del *Modelo*; «Elige poco y bien»; alcance del *Equipo de Bolsillo*.
+2. **Objetivo y actividades**: SMART, tareas, cronograma por semanas, recursos (obligatorio) y la responsabilidad financiera (p. 13); DURASLID en el orden de la p. 69, con un ejemplo.
+3. **Riesgos, cuidados y acuerdo**: seguridad como condición de calidad (p. 102); plan B (p. 22); deber de reportar un posible delito, sea scout o no la persona (p. 21, norma); la Política acompaña al Rover y alcanza a la organización solo si cuida a los scouts (pp. 23–24); recomendación de spec §6 rotulada; acuerdo a tres **rotulado como recomendación de este curso** (Equipo de Bolsillo p. 26).
+4. **Evaluar y mostrar**: el *Modelo* **aconseja** 2–4 criterios revisables públicamente, reflexión, evidencias y presentación pública (p. 101); autoevaluación en Mensajeros de la Paz (Manual MM p. 11); redes según el *Equipo de Bolsillo* (p. 23) con las directrices de fotos; evaluar con el Clan, el adulto acompañante y la organización; paso 7 al Clan. Resumen, descarga y compromiso a tres partes.
+
+**Quizzes** (caso del hogar de adultos mayores, que no aparece en las lecciones; y la biblioteca de los cuentos): la idea que ya coincide con la necesidad y se acuerda con la directora; elegir una de tres necesidades y dejar el resto fuera; el objetivo que dice qué cambia; aceptar la plata del hogar y dejarla en el plan; los cuidados en la lectura de cuentos; empezar cuando las tres partes firmaron; criterios que ya están bien; la presentación que oye a los residentes. En cada quiz una correcta es el Rover **actuando** y los distractores son la tesis leída por exceso.
+
+## Auditorías (04-10-2026)
+- Doctrinal: 4 mayores (alcance de la p. 23; deber de reportar con no scouts; acuerdo con la organización sin fuente → rotulado; glosario) y 7 menores, aplicados. Re-auditoría: 0 mayores, 8 menores, aplicados.
+- Pedagógica: regla ciega 8/8 en las dos primeras vueltas (correcta = tesis o prudencia); en la tercera se invirtió la polaridad de un ítem por quiz.
 
 ## Pruebas
 `PRUEBAS-E2E/tests/proyecto-comunidad.spec.js` (5): el certificado se niega sin `cuidados`; con el plan completo se llega al certificado; «Todavía no la sé» cuenta; el plan de S2 no se cruza; el PDF lleva los tres roles y se llama `Plan-mi-proyecto-en-la-comunidad.pdf`.
 
 ## Medición de la fuga (04-10-2026, `ciega.py`)
-Sin marcadores solo en la correcta (adulto, Consejo de Clan, organización, pregunt, acord, sin, solo, Política, fundación, porque, comedor); correcta más larga en 2 de 8; ningún quiz se aprueba con la más corta; build sin avisos. La regla ciega de contenido la mide la auditoría pedagógica (Task 5).
+Sin marcadores solo en la correcta (adulto, Consejo de Clan, organización, pregunt, acord, sin, solo, Política, fundación, porque, comedor); correcta más larga en 1 de 8; ningún quiz se aprueba con la más corta; build sin avisos.

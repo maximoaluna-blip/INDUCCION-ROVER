@@ -151,16 +151,16 @@
         "title": "Evaluación - La necesidad",
         "questions": [
           {
-            "text": "Un Rover propone pintar la fachada de un hogar de adultos mayores. La directora le agradece, pero le cuenta que lo que más les pesa es que los residentes casi no reciben visitas. ¿Qué es lo más coherente con la lección?",
+            "text": "Un Rover propone hacer visitas en un hogar de adultos mayores. La directora le dice que eso es justo lo que más les falta: los residentes casi no reciben visitas. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Pintar la fachada, como lo pensó: la directora ya le dio el sí y la idea es suya",
-              "Cambiar su idea hacia las visitas y contarle a la directora cómo piensa hacerlo con ellos",
-              "Llevar las dos ideas al Consejo de Clan para que el Clan decida cuál le conviene más"
+              "Seguir con las visitas y definir con la directora qué días y a qué residentes les sirven",
+              "Dejar que la directora le arme el proyecto entero, porque ella sabe qué necesita el hogar",
+              "Sumarles a las visitas pintar la fachada: así el proyecto deja algo que se vea"
             ],
-            "correctIndex": 1
+            "correctIndex": 0
           },
           {
-            "text": "El hogar le pide tres cosas: visitas los domingos, arreglar el jardín y ayuda con trámites de salud; lo que más pesa son las visitas. El Rover tiene cuatro sábados libres. ¿Qué hace con su plan?",
+            "text": "El hogar le pide tres cosas: visitas los fines de semana, arreglar el jardín y ayuda con trámites de salud; lo que más pesa son las visitas. El Rover tiene cuatro sábados libres. ¿Qué hace con su plan?",
             "options": [
               "Escoge las visitas y anota en su plan que el jardín y los trámites quedan por fuera",
               "Escoge las visitas y deja abierto lo demás, por si en el camino le alcanza el tiempo",
@@ -201,7 +201,7 @@
         },
         {
           "type": "paragraph",
-          "text": "El <em>Modelo</em> pide que tus actividades sean <strong>DURASLID</strong> y alineadas al desafío (p. 101): desafiantes, útiles, recompensantes, atractivas, seguras, lúdicas, inclusivas y diversas (p. 69). Pruébalo con una: una tarde de juegos en el comedor es segura si hay alguien del comedor presente, e inclusiva si pueden jugar también quienes no se mueven con facilidad."
+          "text": "El <em>Modelo</em> aconseja que tus actividades sean <strong>DURASLID</strong> y alineadas al desafío (p. 101): desafiantes, útiles, recompensantes, atractivas, seguras, lúdicas, inclusivas y diversas (p. 69). Pruébalo con una: una tarde de juegos en el comedor es más segura si hay alguien del comedor presente, e inclusiva si pueden jugar también quienes no se mueven con facilidad."
         },
         {
           "type": "plan-builder",
@@ -253,22 +253,22 @@
         "title": "Evaluación - Diseñar",
         "questions": [
           {
-            "text": "Estamos en marzo y el proyecto del Rover son las visitas al hogar de adultos mayores. ¿Cuál objetivo va más con lo que pide la lección?",
+            "text": "En marzo, el Rover escribe el objetivo de sus visitas al hogar de adultos mayores. ¿Cuál lo dice mejor?",
             "options": [
-              "Que el Rover haga ocho visitas al hogar entre abril y mayo, dos horas cada sábado",
-              "Que antes de junio cada residente que no recibía visitas tenga una por semana",
+              "Que el Rover haga cuatro visitas al hogar en abril, de dos horas cada sábado",
+              "Que al terminar abril cada residente que no recibía visitas tenga una por semana",
               "Que este año los residentes del hogar se sientan más acompañados y felices"
             ],
             "correctIndex": 1
           },
           {
-            "text": "A mitad del proyecto, al Rover le faltan $150.000 para el material de las visitas, y en su plan no quedó escrito de dónde saldría. ¿Qué es lo más coherente con la lección?",
+            "text": "A mitad del proyecto, al Rover le faltan $150.000 para el material de las visitas, y la directora le ofrece que el hogar los ponga. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Pedirle a su adulto acompañante del Clan un apoyo de la Asociación, porque es parte de su progresión",
-              "Que el hogar lo ponga, de palabra: al final el proyecto le sirve a él",
-              "Ajustar lo que hará a lo que él y su Clan consigan, y anotar en el plan de dónde sale"
+              "Aceptarla, y dejar en el plan qué pone el hogar y quién responde por esa plata",
+              "No aceptarla y conseguirla con su Clan: los recursos son responsabilidad de los Rovers",
+              "Aceptarla y pedir también un apoyo de la Asociación, por si el hogar se queda corto otra vez"
             ],
-            "correctIndex": 2
+            "correctIndex": 0
           }
         ],
         "nextLabel": "Continuar: cuidar y acordar ➡️"
@@ -282,7 +282,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ Unos 7 minutos, con tu plan · Idea central:</strong> el cuidado de las personas se escribe en el plan desde el principio, y un proyecto fuera del Grupo se acuerda con tres partes."
+          "text": "<strong>⏱️ Unos 7 minutos, con tu plan · Idea central:</strong> el cuidado de las personas se escribe en el plan desde el principio, y te recomendamos acordar un proyecto fuera del Grupo con tres partes."
         },
         {
           "type": "paragraph",
@@ -297,9 +297,9 @@
           "type": "list",
           "ordered": false,
           "items": [
-            "<strong>Lo que pueda ser un delito no se guarda, sea scout o no la persona afectada.</strong> La Política habla de «cualquier acción que represente un posible delito»: «no cabrá la posibilidad de guardar ningún secreto», y el reporte va a la Asociación y a las autoridades de salud, protección o justicia (Política A Salvo del Peligro, p. 21). Avisa ese mismo día a tu adulto acompañante y usa el botón «Me Pongo A Salvo del Peligro» (p. 44)",
+            "<strong>Lo que pueda ser un delito no se guarda, sea scout o no la persona afectada.</strong> La Política habla de «cualquier acción que represente un posible delito»: «no cabrá la posibilidad de guardar ningún secreto», y el reporte va a la Asociación y a las autoridades de salud, protección o justicia (Política A Salvo del Peligro, p. 21). Avisa sin demora a tu adulto acompañante —la Política habla de un reporte oportuno (p. 21)— y usa el botón «Me Pongo A Salvo del Peligro» (p. 44)",
             "<strong>La Política te acompaña a ti</strong>: aplica donde actúes como scout, también en un proyecto fuera del Grupo (p. 24). A la organización aliada la alcanza solo si participa en el cuidado de los scouts (p. 23); por eso sigues también su propia política",
-            "<strong>Tú no eres el adulto a cargo</strong> ni cuentas como uno en la proporción de adultos: sigues siendo Protagonista de Programa; la Rama Rover «representa el final como Protagonista de Programa» (<em>Modelo</em>, pp. 19 y 22)",
+            "<strong>Tú no eres el adulto a cargo</strong> ni cuentas como uno en la proporción de adultos: sigues siendo Protagonista de Programa; la Rama Rover «representa el final como Protagonista de Programa» (<em>Modelo</em>, pp. 19, 21 y 22)",
             "<strong>Las fotos</strong> siguen las directrices de la Asociación (Política, p. 26) y las de la organización. Si no las conoces, pregunta y no publiques: eso es una recomendación de este curso",
             "<strong>Con menores de edad que no son scouts</strong> (recomendación de este curso, no norma de la Asociación): nunca a solas; siempre con un adulto de la organización presente; tu adulto acompañante del Clan al tanto; y sigue la política de protección de la organización aliada"
           ]
@@ -369,7 +369,7 @@
         "title": "Evaluación - Cuidar y acordar",
         "questions": [
           {
-            "text": "El proyecto de un Rover es leerles cuentos a niños del barrio en la biblioteca comunitaria, los sábados. ¿Qué debería decir el campo de cuidados de su plan?",
+            "text": "El proyecto de un Rover es leerles cuentos a niños del barrio en la biblioteca comunitaria, los sábados. Según la lección, ¿qué debería decir el campo de cuidados de su plan?",
             "options": [
               "Que irá con su adulto acompañante del Clan, así que nadie de la biblioteca necesita estar",
               "Que leerá con alguien de la biblioteca presente y que antes conocerá su política",
@@ -378,11 +378,11 @@
             "correctIndex": 1
           },
           {
-            "text": "La fundación ya le dijo que sí al proyecto de una Rover, y su Consejo de Clan lo aprobó en la última reunión. Ella quiere empezar este sábado. ¿Qué es lo más coherente con la lección?",
+            "text": "La fundación, el Consejo de Clan y el adulto acompañante de una Rover firmaron su plan el martes, con los cuidados escritos. Ella quiere empezar este sábado. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Empezar el sábado, porque con su Clan y la fundación de acuerdo ya quedó acordado",
-              "Llevarle antes el plan a su adulto acompañante, porque falta su revisión, y luego empezar",
-              "Avisarle a su adulto acompañante en la siguiente reunión del Clan, y empezar ya el sábado"
+              "Esperar a la siguiente reunión del Clan, porque el Consejo debe revisarlo una vez más",
+              "Empezar el sábado, porque así quedó en el plan que firmaron las tres partes",
+              "Pedirle a la fundación una carta aparte que la autorice"
             ],
             "correctIndex": 1
           }
@@ -402,7 +402,7 @@
         },
         {
           "type": "paragraph",
-          "text": "El <em>Modelo</em> aconseja, para cada proyecto de un desafío, acordar <strong>«criterios de calidad simples (2–4) y revisables públicamente»</strong> (p. 101): pocos, claros, y que la organización y tu Clan puedan ver. Pide también cerrar cada hito reflexionando —qué hicimos, qué observamos o sentimos, qué comprendimos, a dónde lo llevamos— y documentar evidencias observables: «fotos responsables, registros, prototipos, testimonios» (p. 101)."
+          "text": "El <em>Modelo</em> aconseja, para cada proyecto de un desafío, acordar <strong>«criterios de calidad simples (2–4) y revisables públicamente»</strong> (p. 101): pocos, claros, y que la organización y tu Clan puedan ver. Aconseja también cerrar cada hito reflexionando —qué hicimos, qué observamos o sentimos, qué comprendimos, a dónde lo llevamos— y documentar evidencias observables: «fotos responsables, registros, prototipos, testimonios» (p. 101)."
         },
         {
           "type": "paragraph",
@@ -410,7 +410,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Qué significa para ti.</strong> Escribe ahora dos a cuatro criterios que se puedan ver: algo que pasa en la comunidad, no algo que sientes. Compártelos con la organización y con tu Clan. Fija una fecha para evaluar con tu adulto acompañante y con la organización. El último paso del <em>Modelo</em> —registrar insignias y competencias en tu progresión (p. 101)— no lo hace este curso: lo acuerdas en tu Clan. Para obtener tu certificado, tu plan tiene que estar completo: el curso certifica que <strong>diseñaste</strong> tu plan, no que lo ejecutaste."
+          "text": "<strong>Qué significa para ti.</strong> Escribe ahora dos a cuatro criterios que se puedan ver: algo que pasa en la comunidad, no algo que sientes. Compártelos con la organización y con tu Clan. Fija una fecha para evaluar con tu Clan, tu adulto acompañante y la organización. El último paso del <em>Modelo</em> —registrar insignias y competencias en tu progresión (p. 101)— no lo hace este curso: lo acuerdas en tu Clan. Para obtener tu certificado, tu plan tiene que estar completo: el curso certifica que <strong>diseñaste</strong> tu plan, no que lo ejecutaste."
         },
         {
           "type": "plan-builder",
@@ -434,7 +434,7 @@
               "label": "¿Con quién lo vas a evaluar?",
               "kind": "short",
               "required": true,
-              "help": "Por su rol: tu adulto acompañante del Clan y alguien de la organización."
+              "help": "Por su rol: tu Consejo de Clan, tu adulto acompañante del Clan y alguien de la organización."
             },
             {
               "id": "presentacion",
@@ -482,19 +482,19 @@
         "title": "Evaluación - Evaluar y mostrar",
         "questions": [
           {
-            "text": "Para sus visitas al hogar, un Rover escribió tres criterios y los compartió con el hogar y su Clan: «que cada residente reciba una visita por semana», «que el hogar pida repetirlo» y «que yo me sienta útil». ¿Qué le cambiarías?",
+            "text": "Para sus visitas al hogar, un Rover escribió tres criterios y los compartió con el hogar y su Clan: «que cada residente sin visitas reciba una por semana», «que el hogar pida repetirlo» y «que el hogar lleve un registro de las visitas de cada residente». ¿Qué le cambiarías?",
             "options": [
-              "Nada: son tres, son simples y ya los conocen el hogar y su Clan, como pide el Modelo",
-              "Reemplazar «que yo me sienta útil» por algo que pase en el hogar y que se pueda ver",
-              "Agregar dos o tres criterios más, para que la evaluación final no se quede corta"
+              "Nada: son tres, todos se pueden ver en el hogar y ya están compartidos",
+              "Agregar «que yo me sienta útil»: lo que vive el Rover también cuenta",
+              "Nada de fondo, pero sumar dos o tres criterios más del hogar para no quedarse corto"
             ],
-            "correctIndex": 1
+            "correctIndex": 0
           },
           {
             "text": "El Rover va a presentar su proyecto en el hogar, ante los residentes y quienes lo ayudaron. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Mostrar qué pasó con sus criterios y dejar que los residentes digan cómo lo vivieron",
-              "Mostrar las fotos que tomó de cada residente, porque así ellos se reconocen en el proyecto",
+              "Mostrar las fotos que tomó de cada residente, sin preguntarle antes al hogar, para que se reconozcan",
               "Contar sábado por sábado lo que hizo: así el hogar ve todo el trabajo que hubo"
             ],
             "correctIndex": 0

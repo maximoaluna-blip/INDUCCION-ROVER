@@ -1,0 +1,535 @@
+{
+  "courseId": "mi-proyecto-en-la-comunidad",
+  "title": "Mi proyecto de servicio en la comunidad",
+  "subtitle": "Ruta Servir en la comunidad · Nivel 3 · Proyecto",
+  "description": "Para el Rover que quiere hacer un proyecto de servicio con una organización de su comunidad. En unos 45 minutos ves la necesidad con quienes la viven, diseñas tu proyecto, lo cuidas, lo acuerdas y decides cómo lo vas a evaluar y a mostrar. Lección a lección vas armando tu plan, y al final lo descargas para llevarlo a la reunión donde lo acuerdas. Basado en el Modelo de Aplicación de la Política de Programa de Jóvenes (2026), la Guía de Dirigente de Clan (2026) y el Equipo de Bolsillo - Rover (2025).",
+  "contentVersion": "2026-10-04",
+  "route": "comunidad",
+  "level": 3,
+  "branch": null,
+  "registration": {
+    "motivationLabel": "¿Qué te mueve a hacer un proyecto con tu comunidad?"
+  },
+  "icon": "🌱",
+  "duration": "45 minutos",
+  "totalContentModules": 4,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "Ya viste una necesidad en tu comunidad y sabes con quién se acuerda un servicio fuera del Grupo. Un proyecto es el paso siguiente: algo que diseñas con una organización de tu comunidad, que empieza y termina, y que deja algo hecho. Este curso es para diseñarlo bien."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Aprender para servir, y servir para crecer.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Así resume la <em>Guía de Dirigente de Clan</em> (2026, p. 54) el espíritu del servicio en la comunidad. Este curso se apoya en ella, en el <em>Modelo de Aplicación de la Política Nacional de Programa de Jóvenes</em> (2026), en la <em>Política Nacional A Salvo del Peligro</em> (2025) y en el <em>Equipo de Bolsillo - Rover</em> de la Comisión Nacional Rover (2025)."
+        },
+        {
+          "type": "paragraph",
+          "text": "El <em>Equipo de Bolsillo</em> dice para qué sirve un Proyecto Rover: responder a una necesidad concreta o a un problema claramente identificado, generar aprendizaje significativo trabajando con otros y aportar a las competencias de tu progresión (p. 11). Lo puedes hacer solo o con tu Clan (p. 16). Y en el Clan, un adulto acompañante asesora hasta cinco proyectos, clubes o iniciativas (<em>Modelo</em>, p. 22): te recomendamos que el tuyo sea uno de ellos."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Este es el curso del Nivel 3 de la ruta Servir en la comunidad: da por sabido lo de <em>Servir más allá del Grupo: Mundo Mejor</em>, así que conviene que lo hagas antes. Aquí no se repite.<br><br><strong>Cómo avanzas.</strong> En cada lección llenas una parte de tu plan. Se guarda solo en este navegador: no va a ninguna hoja. Si cambias de equipo o de navegador, o reinicias el curso, el plan no viene contigo, y el PDF solo se descarga cuando el plan está completo: termina el curso en el mismo navegador. En la última lección lo ves completo, lo descargas para llevarlo a la reunión donde lo acuerdas y, con el plan completo, recibes tu certificado. Cada lección cierra con una reflexión y con preguntas; para seguir hay que acertarlas todas."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Ver</strong> la necesidad con quienes la viven y con la organización que ya trabaja en ella",
+            "<strong>Diseñar</strong> un proyecto con un objetivo medible, actividades, fechas y recursos claros",
+            "<strong>Cuidar</strong> a las personas con las que trabajas y <strong>acordar</strong> tu proyecto con tu Clan, tu adulto acompañante y la organización",
+            "<strong>Decidir</strong> cómo vas a saber si funcionó y cómo lo vas a mostrar, y <strong>descargar</strong> tu plan"
+          ]
+        },
+        {
+          "type": "plan-builder",
+          "title": "Tu plan: el punto de partida",
+          "fields": [
+            {
+              "id": "iniciativa",
+              "label": "¿En qué iniciativa de Scouts por los ODS se enmarca tu proyecto?",
+              "kind": "choice",
+              "options": [
+                "Tribu Tierra",
+                "Mensajeros de la Paz",
+                "Health Allies (Salud y Bienestar)",
+                "Life Leaders (Habilidades para la Vida)",
+                "Todavía no la sé"
+              ],
+              "required": true,
+              "help": "Si todavía no la sabes, es una respuesta válida: el marco ayuda, pero no es una condición."
+            },
+            {
+              "id": "desafio",
+              "label": "¿Qué desafío, si ya lo elegiste?",
+              "kind": "short",
+              "help": "Por ejemplo, Constructores de Paz, HeForShe o Campeones por la Naturaleza. Puedes dejarlo en blanco."
+            },
+            {
+              "id": "tipo",
+              "label": "Tu idea inicial, en una línea",
+              "kind": "short",
+              "help": "Es un punto de partida: en la lección siguiente la vas a contrastar con lo que dicen quienes viven la necesidad."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Ver la necesidad con quien la vive",
+      "emoji": "🔎",
+      "navLabel": "La necesidad",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> el proyecto empieza por saber para quién es y qué quieren ellos; y eso se averigua con la organización y con la gente, no se supone."
+        },
+        {
+          "type": "paragraph",
+          "text": "Una Rover quiere hacer su proyecto con el comedor comunitario de su barrio. Su primera idea es una colecta de mercado. Antes de decidirlo, se sienta con quienes llevan el comedor. Le cuentan que comida reciben, más o menos; lo que les falta es gente que cocine los sábados, una nevera que funcione y donantes que no se vayan después de diciembre."
+        },
+        {
+          "type": "paragraph",
+          "text": "Cuando el <em>Modelo de Aplicación</em> explica cómo convertir un desafío de Scouts por los ODS en un proyecto, el primer paso es este: <strong>«Define el “para quién” (audiencia/destinatario) y el producto esperado»</strong> (p. 101). Y entre sus consejos finales deja otro que te sirve aquí: <strong>«Elige poco y bien»</strong> (p. 101)."
+        },
+        {
+          "type": "paragraph",
+          "text": "El <em>Equipo de Bolsillo - Rover</em> lo dice a su manera. Su primer paso para armar un proyecto pregunta qué quieres hacer y qué quieres cambiar, y pide ponerle alcance a tu idea: <strong>¿qué incluye y qué no incluye tu proyecto?</strong> (p. 19)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> Llega a la organización con una idea, no con una decisión. Pregúntale qué necesita la gente con la que trabaja y escucha si tu idea responde a eso; si no, cámbiala. Elige una parte de lo que te digan, no todo. Y anota lo que te dijeron por el rol de quien lo dijo, no por su nombre. Este paso es una recomendación de este curso, apoyada en el <em>Modelo</em> y el <em>Equipo de Bolsillo</em>.<br><br>Si todavía no has conversado con ellos, llena lo que puedas y sigue: después vuelves a esta lección con «Editar esta parte». Hazlo en este mismo navegador: el plan no viaja a otro equipo."
+        },
+        {
+          "type": "plan-builder",
+          "title": "Tu plan: la necesidad",
+          "fields": [
+            {
+              "id": "organizacion",
+              "label": "¿Con qué organización o grupo de la comunidad lo vas a trabajar?",
+              "kind": "short",
+              "required": true,
+              "help": "Una junta de acción comunal, una fundación, una biblioteca, un colegio… Es una organización, no una persona."
+            },
+            {
+              "id": "necesidad",
+              "label": "¿Qué necesidad viste, y para quién?",
+              "kind": "long",
+              "required": true,
+              "help": "Tu primera lectura. Cuando converses con la organización, vuelve y corrígela."
+            },
+            {
+              "id": "que-preguntaras",
+              "label": "¿Qué le vas a preguntar a la organización?",
+              "kind": "long",
+              "required": true,
+              "help": "Preguntas abiertas: ¿qué les falta?, ¿a quién le serviría?, ¿qué han intentado ya?"
+            },
+            {
+              "id": "que-dijeron",
+              "label": "Después de conversar: ¿qué te dijeron que no sabías, y qué parte vas a tomar?",
+              "kind": "long",
+              "help": "Llénalo cuando hayas conversado. Por el rol de quien lo dijo, no por su nombre."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "prompt": "¿Qué pregunta le harías a una organización de tu barrio para saber si tu idea le sirve, sin que suene a que ya decidiste? Escríbela tal como la dirías."
+      },
+      "quiz": {
+        "title": "Evaluación - La necesidad",
+        "questions": [
+          {
+            "text": "Una Rover quiere hacer su proyecto con el comedor comunitario de su barrio y ya tiene una idea: una colecta de mercado. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Hacer la colecta ya, porque sobra quien done, y después ver qué más falta",
+              "Sentarse antes con quienes llevan el comedor, porque ellos saben qué falta",
+              "Llevar la idea al Consejo de Clan, porque ya es concreta y el comedor la agradece"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "El comedor le dice a la Rover que necesita tres cosas: alguien que cocine los sábados, arreglar la nevera y donantes fijos. ¿Qué hace ella con su plan?",
+            "options": [
+              "Elige una de las tres, porque es mejor poco y bien, y escribe qué incluye y qué no",
+              "Incluye las tres, porque debe responder a todo lo que el comedor le contó",
+              "Escoge la que pueda hacer sola, para no tener que acordarla con nadie más"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: diseñar ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Objetivo y actividades",
+      "emoji": "🧭",
+      "navLabel": "Diseñar",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 7 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> un buen diseño dice qué cambia, cuánto y para cuándo; y deja claro qué se necesita y quién responde por ello."
+        },
+        {
+          "type": "paragraph",
+          "text": "El <em>Equipo de Bolsillo - Rover</em> pide redactar un objetivo que diga el impacto que esperas, con la técnica <strong>SMART</strong>: metas específicas, medibles, alcanzables, relevantes y con tiempo definido (p. 19). Después viene el plan: dividir el proyecto en tareas cortas, ponerles fecha y responsable, y decir qué recursos necesitas y de dónde va a salir la plata (p. 20)."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Un objetivo medible:</strong> «ayudar al comedor» no es un objetivo; «que antes de junio el comedor tenga diez donantes fijos de mercado» sí. Y «visitar las tiendas del barrio» tampoco: es una actividad; el objetivo es lo que cambia cuando ya las visitaste",
+            "<strong>Las actividades:</strong> qué harás, cuándo y con quién. El ejemplo del <em>Equipo de Bolsillo</em> arma su cronograma por semanas, de la 1 a la 6 (p. 27)",
+            "<strong>Los recursos:</strong> lo que necesitas, de dónde va a salir y quién responde por la plata"
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>La plata, desde el principio.</strong> Según el <em>Equipo de Bolsillo</em>, los recursos del proyecto —fondos, materiales, logística— son responsabilidad exclusiva de los Rovers que lo hacen; solo de manera excepcional la Asociación podría apoyar, y con acuerdos explícitos previos. Por eso las responsabilidades económicas deben quedar claras desde la formulación (p. 13). Si la organización aliada pone algo, que también quede escrito."
+        },
+        {
+          "type": "paragraph",
+          "text": "Si tus actividades son con personas, el <em>Modelo</em> pide que sean <strong>DURASLID</strong> y alineadas al desafío (p. 101): desafiantes, útiles, recompensantes, atractivas, lúdicas, seguras, incluyentes y diversas."
+        },
+        {
+          "type": "plan-builder",
+          "title": "Tu plan: el diseño",
+          "fields": [
+            {
+              "id": "objetivo",
+              "label": "Tu objetivo: qué va a cambiar, cuánto y para cuándo",
+              "kind": "long",
+              "required": true,
+              "help": "Que se pueda medir: qué cambia, para quién, cuánto y para cuándo."
+            },
+            {
+              "id": "actividades",
+              "label": "Tus actividades",
+              "kind": "rows",
+              "max": 5,
+              "required": true,
+              "columns": [
+                {
+                  "id": "que",
+                  "label": "Qué harás"
+                },
+                {
+                  "id": "cuando",
+                  "label": "Cuándo"
+                },
+                {
+                  "id": "con-quien",
+                  "label": "Con quién (por su rol)"
+                }
+              ],
+              "help": "Con 3 a 5 filas basta. Si una actividad es con niños, niñas o jóvenes de la comunidad, revisa en la lección siguiente cómo la vas a cuidar."
+            },
+            {
+              "id": "recursos",
+              "label": "¿Qué necesitas, de dónde va a salir y quién responde por la plata?",
+              "kind": "long"
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "prompt": "Toma una idea de servicio que hayas oído —de tu Clan o de otro— y conviértela en un objetivo que se pueda medir: qué cambia, cuánto y para cuándo. Sin nombres de personas."
+      },
+      "quiz": {
+        "title": "Evaluación - Diseñar",
+        "questions": [
+          {
+            "text": "Estamos en marzo. ¿Cuál objetivo cumple mejor lo que pide la lección para el proyecto con el comedor comunitario?",
+            "options": [
+              "Que el comedor comunitario tenga más donantes durante el año",
+              "Que antes de junio el comedor tenga diez donantes fijos de mercado cada mes",
+              "Visitar cuatro tiendas del barrio y pedirles que donen al comedor"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Para su proyecto, un Rover necesita comprar semillas y herramientas. Según el Equipo de Bolsillo - Rover, ¿quién responde por esos recursos?",
+            "options": [
+              "Los adultos de la Asociación, porque el proyecto hace parte de la progresión",
+              "Los de la organización aliada: al final, el proyecto le sirve a ella",
+              "Los Rovers del proyecto, y eso se deja claro desde que se formula el plan"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: cuidar y acordar ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Riesgos, cuidados y acuerdo",
+      "emoji": "🛡️",
+      "navLabel": "Cuidar y acordar",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 8 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> el cuidado de las personas se escribe en el plan desde el principio, y un proyecto fuera del Grupo se acuerda con tres partes."
+        },
+        {
+          "type": "paragraph",
+          "text": "El <em>Modelo</em> lo pide como condición de calidad: <strong>«Mantén seguridad e inclusión como condiciones de calidad, no como anexos»</strong> (p. 102). Y el <em>Equipo de Bolsillo</em> pide identificar qué cosas malas podrían pasar en el proyecto y preparar un plan B: a eso lo llama gestión del riesgo (p. 22). Por eso tu plan lleva sus riesgos, cada uno con lo que se hará y quién."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Cómo vas a cuidar a las personas"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "<strong>Lo que pueda dañar a alguien no se guarda</strong>: «no cabrá la posibilidad de guardar ningún secreto» (Política A Salvo del Peligro, p. 21); la ruta oficial es el botón «Me Pongo A Salvo del Peligro» (p. 44). La Política alcanza también a las organizaciones aliadas (p. 23)",
+            "<strong>Tú no eres el adulto a cargo.</strong> Sigues siendo protagonista de programa: la Rama Rover «representa el final como Protagonista de Programa» (<em>Modelo</em>, p. 19)",
+            "<strong>Las fotos</strong> siguen las directrices de la Asociación (Política, p. 26) y las de la organización. Si no las conoces, pregunta y no publiques: eso es una recomendación de este curso",
+            "<strong>Con menores de edad que no son scouts</strong> (recomendación de este curso, no norma de la Asociación): nunca a solas; siempre con un adulto de la organización presente; tu adulto acompañante del Clan al tanto; y sigue la política de protección de la organización aliada"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Con quién se acuerda"
+        },
+        {
+          "type": "paragraph",
+          "text": "En <em>Servir más allá del Grupo</em> viste las tres partes de un servicio fuera del Grupo. Tu proyecto se acuerda con las tres: el <strong>Consejo de Clan</strong>, que establece, orienta y evalúa los proyectos en que participa el Clan, también los que vienen de sus integrantes o de otras organizaciones (<em>Guía de Dirigente de Clan</em>, p. 29); tu <strong>adulto acompañante del Clan</strong>, que asesora los proyectos de los Rovers «para cuidar el marco ético, el cuidado y el enlace» (<em>Modelo</em>, p. 22); y el <strong>responsable de la organización aliada</strong>, que es quien conoce a la gente con la que vas a trabajar. Lleva tu plan escrito: al final de este curso lo descargas con un recuadro para que firmen quienes lo acuerdan."
+        },
+        {
+          "type": "plan-builder",
+          "title": "Tu plan: el cuidado y el acuerdo",
+          "fields": [
+            {
+              "id": "riesgos",
+              "label": "Los riesgos de tu proyecto",
+              "kind": "rows",
+              "max": 6,
+              "required": true,
+              "columns": [
+                {
+                  "id": "que-puede-pasar",
+                  "label": "Qué puede pasar"
+                },
+                {
+                  "id": "que-hare",
+                  "label": "Qué se hará"
+                },
+                {
+                  "id": "quien",
+                  "label": "Quién (por su rol)"
+                }
+              ],
+              "help": "Uno por fila, con su plan B."
+            },
+            {
+              "id": "cuidados",
+              "label": "Cómo vas a cuidar a las personas con las que trabajas",
+              "kind": "long",
+              "required": true,
+              "help": "Quién de la organización estará presente, cómo evitarás quedarte a solas con alguien, qué harás con las fotos y a quién le cuentas si algo te preocupa. Por su rol, sin nombres."
+            },
+            {
+              "id": "acuerdo-con",
+              "label": "¿Con quiénes lo vas a acordar?",
+              "kind": "short",
+              "required": true,
+              "help": "Por su rol: el Consejo de Clan, tu adulto acompañante del Clan y el responsable de la organización."
+            },
+            {
+              "id": "fecha-acuerdo",
+              "label": "¿Cuándo lo vas a acordar?",
+              "kind": "date",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "prompt": "Inventa un riesgo para un proyecto con una organización de la comunidad —no el tuyo— y escribe qué se haría y quién, por su rol, como iría en un plan. No pongas datos de personas reales."
+      },
+      "quiz": {
+        "title": "Evaluación - Cuidar y acordar",
+        "questions": [
+          {
+            "text": "El proyecto de un Rover es leerles cuentos a niños del barrio en la biblioteca comunitaria, los sábados. ¿Qué debería decir el campo de cuidados de su plan?",
+            "options": [
+              "Que, como ya es mayor de edad, él puede quedarse a cargo de los niños mientras les lee",
+              "Que no estará a solas con ellos, que habrá alguien de la biblioteca y que seguirá su política",
+              "Que, como esos niños no son scouts, basta con que la bibliotecaria le dé su permiso de palabra"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Una Rover va a hacer su proyecto con una fundación de su barrio. Según la lección, ¿con quiénes lo acuerda?",
+            "options": [
+              "Con el Jefe de Grupo, el jefe de la rama y su adulto acompañante del Clan",
+              "Solo con el Consejo de Clan y la fundación, que son los que aprueban el proyecto",
+              "Con el Consejo de Clan, su adulto acompañante y el responsable de la fundación"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: evaluar y mostrar ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Evaluar y mostrar",
+      "emoji": "🌱",
+      "navLabel": "Evaluar",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 8 minutos de lectura, más lo que tardes en tu plan · Idea central:</strong> antes de empezar, acuerda cómo vas a saber si funcionó; y al terminar, muéstralo a quienes lo vivieron."
+        },
+        {
+          "type": "paragraph",
+          "text": "El <em>Modelo</em> pide, para cada proyecto de un desafío, acordar <strong>«criterios de calidad simples (2–4) y revisables públicamente»</strong> (p. 101): pocos, claros, y que la organización y tu Clan puedan ver. Pide también cerrar cada hito reflexionando —qué hicimos, qué observamos o sentimos, qué comprendimos, a dónde lo llevamos— y documentar evidencias observables: «fotos responsables, registros, prototipos, testimonios» (p. 101)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Y al final, una <strong>presentación pública</strong> «ante quienes participaron, intervinieron o se vieron beneficiados», recogiendo sus impresiones (p. 101). Si trabajas con un desafío, recuerda también la autoevaluación: según el <em>Manual de Implementación Marco de Mundo Mejor</em>, el proceso empieza y termina con una (2021, p. 11)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Qué significa para ti.</strong> Escribe ahora dos a cuatro criterios que se puedan ver: algo que pasa en la comunidad, no algo que sientes. Compártelos con la organización y con tu Clan. Fija una fecha para evaluar con tu adulto acompañante y con la organización. El último paso del <em>Modelo</em> —registrar insignias y competencias en tu progresión (p. 101)— no lo hace este curso: lo acuerdas en tu Clan. Para obtener tu certificado, tu plan tiene que estar completo: el curso certifica que <strong>diseñaste</strong> tu plan, no que lo ejecutaste."
+        },
+        {
+          "type": "plan-builder",
+          "title": "Tu plan: la evaluación",
+          "fields": [
+            {
+              "id": "como-sabre",
+              "label": "¿Cómo vas a saber si funcionó? Escribe de 2 a 4 criterios",
+              "kind": "long",
+              "required": true,
+              "help": "Criterios que se puedan ver en la comunidad, y que la organización y tu Clan conozcan."
+            },
+            {
+              "id": "fecha-evaluacion",
+              "label": "¿Cuándo lo vas a evaluar?",
+              "kind": "date",
+              "required": true
+            },
+            {
+              "id": "evalua-con",
+              "label": "¿Con quién lo vas a evaluar?",
+              "kind": "short",
+              "required": true,
+              "help": "Por su rol."
+            },
+            {
+              "id": "presentacion",
+              "label": "¿Cuándo y ante quiénes vas a presentar lo que hicieron?",
+              "kind": "short",
+              "help": "Ante quienes participaron o se beneficiaron. Cuenta por qué decidiste así y escucha qué opinan."
+            }
+          ]
+        },
+        {
+          "type": "plan-builder",
+          "summary": true,
+          "labels": {
+            "title": "Tu plan completo",
+            "intro": "Revísalo. Si algo cambió, usa «Editar esta parte»: te lleva a la lección donde lo escribiste. Cuando esté completo, descárgalo y llévalo a la reunión donde lo acuerdas.",
+            "missingTitle": "Para descargarlo y recibir tu certificado te falta:",
+            "download": "Descargar mi plan (PDF)",
+            "pdfTitle": "Mi proyecto de servicio en la comunidad",
+            "agreementTitle": "Acordado con",
+            "agreementRoles": [
+              "Consejo de Clan",
+              "Adulto acompañante del Clan",
+              "Responsable de la organización aliada"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar vas a escribir tu compromiso: «Antes del ___ voy a presentar mi plan a ___ y a ___, y no voy a empezar sin ___»."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Aprender para servir, y servir para crecer.</strong>"
+        }
+      ],
+      "reflection": {
+        "prompt": "¿Ante quiénes presentarías un proyecto hecho con tu comunidad, para que de verdad lo vean quienes lo vivieron? Escribe qué tipo de espacio usarías —una reunión de la junta, una cartelera, una feria— y por qué."
+      },
+      "quiz": {
+        "title": "Evaluación - Evaluar y mostrar",
+        "questions": [
+          {
+            "text": "Una Rover escribió en su plan doce criterios para saber si su proyecto funcionó, y solo ella los conoce. Según la lección, ¿qué le cambiarías?",
+            "options": [
+              "Nada: entre más criterios tenga, más completa le quedará la evaluación final",
+              "Dejar de dos a cuatro criterios simples y compartirlos con la organización y su Clan",
+              "Guardarlos hasta el final, para que ni la organización ni el Clan trabajen solo por cumplirlos"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Terminó el proyecto con el comedor comunitario. ¿Qué cierre va más con lo que pide el Modelo?",
+            "options": [
+              "Publicar en redes las fotos de la jornada, porque así lo ven las familias del comedor",
+              "Entregarle al Consejo de Clan un informe con las cifras del proyecto",
+              "Presentarlo ante el comedor y quienes participaron, porque así se oye qué opinan"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Para Quién",
+      "emoji": "🔎",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Objetivo Medible",
+      "emoji": "🧭",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Acuerdo a Tres",
+      "emoji": "🛡️",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Proyecto a la Vista",
+      "emoji": "🌱",
+      "unlockOnModule": 5
+    }
+  ],
+  "certificate": {
+    "courseName": "MI PROYECTO DE SERVICIO EN LA COMUNIDAD",
+    "description": "ha completado el curso Mi proyecto de servicio en la comunidad, en el que diseñó un plan de proyecto de servicio con una organización de su comunidad: la necesidad, el diseño, sus cuidados, con quién acordarlo y cómo evaluarlo y mostrarlo.",
+    "commitmentPrompt": "Escribe tu compromiso completando la frase: «Antes del ___ voy a presentar mi plan a ___ y a ___, y no voy a empezar sin ___». Para las personas, escribe su rol, no su nombre."
+  }
+}

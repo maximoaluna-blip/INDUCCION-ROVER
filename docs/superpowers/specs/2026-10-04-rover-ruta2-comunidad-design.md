@@ -42,7 +42,7 @@ Molde de «El servicio Rover»: bienvenida con caso, cuatro lecciones con quiz y
 
 - **Bienvenida:** un Rover ve una necesidad en su barrio y quiere «ir a ayudar»; el curso lo lleva de la buena intención al servicio bien hecho.
 - **L1 · Hacer con, no hacer por.** El servicio comunitario «no es un apéndice» y «no busca héroes solitarios, sino ciudadanos solidarios» (*Guía de Clan* 2026, cap. 9); la ciudadanía global se materializa en el servicio (*Guía de Clan* p. 31); «no “hacer por”, sino “hacer con”» (*Modelo* 2026 p. 16); «sin destinatario real, el desafío se vacía» (*Modelo* p. 102).
-- **L2 · Mundo Mejor y sus iniciativas.** Las cuatro iniciativas y sus desafíos (*Modelo* §16.1): Tribu Tierra (Campeones de la Naturaleza, Tide Turners, Scouts Go Solar, YUNGA), Mensajeros de la Paz (Constructores de Paz, Diálogos por la Paz, HeForShe, Patrimonito, Diálogo Interreligioso), Aliados de la Salud y Líderes de Vida. Las dos últimas **solo se nombran**: el corpus no trae nada de ellas. ODS «sin convertirlo en cátedra» (*Modelo* p. 68). Autoevaluación al iniciar y al terminar (Manual de Implementación Mundo Mejor). Remite a los tres cursos de eje.
+- **L2 · Mundo Mejor y sus iniciativas.** Las cuatro iniciativas y sus desafíos (*Modelo* §16.1): Tribu Tierra (Campeones de la Naturaleza, Tide Turners, Scouts Go Solar, YUNGA), Mensajeros de la Paz (Constructores de Paz, Diálogos por la Paz, HeForShe, Patrimonito, Diálogo Interreligioso), Health Allies y Life Leaders. Las dos últimas **solo se nombran**: el corpus no trae nada de ellas. ODS «sin convertirlo en cátedra» (*Modelo* p. 68). Autoevaluación al iniciar y al terminar (Manual de Implementación Mundo Mejor). Remite a los tres cursos de eje.
 - **L3 · Con quién se sirve.** El Consejo de Clan establece, orienta y evalúa los proyectos, también los presentados por sus integrantes u otras organizaciones (*Guía de Clan* p. 29); un equipo de proyecto puede incluir jóvenes externos a la Asociación (p. 29); el adulto **enlaza** al Rover con instituciones (*Modelo* §9.2.3, ejemplo del proyecto ambiental municipal). Cómo acercarse a una organización aliada y qué acordar con ella.
 - **L4 · Cuidarte y cuidar fuera del Grupo.** Ver §6.
 - **Resumen y compromiso:** qué necesidad vi, con quién la trabajaré, qué iniciativa la enmarca. El compromiso queda en el navegador.
@@ -59,7 +59,7 @@ El armazón de S2 (`mi-proyecto-de-servicio`): bienvenida y cuatro lecciones, ca
 
 | S2 | Curso hermano | Obligatorio | Fuente o razón |
 |---|---|---|---|
-| `rama` (choice, 4) | `iniciativa` (choice): Tribu Tierra · Mensajeros de la Paz · Aliados de la Salud · Líderes de Vida · Todavía no la sé | sí | *Modelo* §16.1; no forzar el encaje (*Modelo* p. 68) |
+| `rama` (choice, 4) | `iniciativa` (choice): Tribu Tierra · Mensajeros de la Paz · Health Allies (Salud y Bienestar) · Life Leaders (Habilidades para la Vida) · Todavía no la sé | sí | *Modelo* §16.1; no forzar el encaje (*Modelo* p. 68) |
 | — | `desafio` (short) | no | El desafío, si ya lo eligió |
 | `con-quien` | `organizacion` (short): la organización o el grupo de la comunidad | sí | «Hacer con» (*Modelo* p. 16) |
 | — | `cuidados` (long, en L3): cómo cuidarás a las personas con las que trabajas | sí | Lleva a la práctica §6 |

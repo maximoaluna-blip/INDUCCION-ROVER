@@ -347,7 +347,10 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
 
   // --- Ruta 2 (ADR-141) ---
   // Las reflexiones viajan a la hoja (ADR-087). La Ruta 1 enseñó «piénsalo con nombre; aquí
-  // basta su inicial», y la costumbre se copia: en la Ruta 2 ninguna reflexión pide ni eso.
+  // basta su inicial», y la costumbre se copia: en la Ruta 2 ningún ENUNCIADO pide ni eso.
+  // ⚠️ Esto mira solo `reflection.prompt` del JSON. El placeholder fijo de la caja, que pone
+  // build-course.js para TODOS los cursos de Rover, todavía dice «basta el rol o la inicial»:
+  // cambiarlo es decisión del dueño (revisión final de los ADR-141/142).
   test('ninguna reflexión de la Ruta 2 pide nombres ni iniciales (ADR-141)', () => {
     const dir = path.join(GEN, 'borradores');
     const ruta2 = fs.readdirSync(dir).filter((f) => f.endsWith('.json'))

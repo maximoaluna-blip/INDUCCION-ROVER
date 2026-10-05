@@ -1,6 +1,6 @@
 # Ruta 2 «Servir en la comunidad» (Mundo Mejor) — diseño
 
-**Fecha:** 2026-10-04 · **Estado:** aprobado por el dueño sección por sección (sesión «Curso de inducción Rover»), pendiente de su lectura de este documento · **Spec madre:** `2026-09-27-rover-ruta-servicio-design.md` · **ADR:** cada entrega reserva el suyo en voz alta (el siguiente libre al escribir esto: 141).
+**Fecha:** 2026-10-04 · **Estado:** aprobado por el dueño (secciones y documento). **E1 y E2 publicadas el 05-10-2026** (ADR-141, 142; Rover `612c3c7`); E3 a E5 pendientes, con su propio plan · **Spec madre:** `2026-09-27-rover-ruta-servicio-design.md` · **ADR:** cada entrega reserva el suyo en voz alta (el siguiente libre al escribir esto: 141).
 
 ## 1. Qué se construye y para qué
 

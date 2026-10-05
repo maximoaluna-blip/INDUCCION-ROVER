@@ -6,7 +6,7 @@
 
 Formación gratuita para **Rovers de 18 a 20 años** de la **Regional Valle del Cauca** que quieren **servir**. Desde el **ADR-086 (27-sep-2026)** es una plataforma de servicio con un **tronco común** y **dos rutas**:
 - **Servir en el Grupo:** en otra rama de su Grupo, de Familia de Cachorros a Comunidad.
-- **Servir en la comunidad:** Mundo Mejor. Todavía no se ha diseñado.
+- **Servir en la comunidad:** Mundo Mejor. Diseño en `docs/superpowers/specs/2026-10-04-rover-ruta2-comunidad-design.md`: un curso general, tres de herramientas por iniciativa (Tribu Tierra; Mensajeros de la Paz · paz y diálogo; Mensajeros de la Paz · género y patrimonio) y un curso hermano de S2 para el proyecto. Con menores que no son scouts rige una **recomendación del dueño** (spec §6), rotulada como tal; el deber de reportar un posible delito (Política p. 21) va aparte, como norma.
 
 La Ruta 1 tiene tres niveles: **1 Conocer**, **2 Herramientas por rama** y **3 Proyecto**. En vivo: https://maximoaluna-blip.github.io/INDUCCION-ROVER/
 
@@ -39,4 +39,4 @@ El diseño está en `docs/superpowers/specs/2026-09-27-rover-ruta-servicio-desig
 
 ## 5. Estado
 
-Lo publicado se cuenta en `02-Plataforma-Web/cursos.json` y lo que falta en el plan (`docs/superpowers/plans/`). Por qué pasó cada cosa: `DECISIONES.md` de la raíz (ADR-020, 063, 073–077, 082, 084, 086, 091, 094–096, 106, 120). **La Ruta 1 está completa** (Niveles 1, 2 y 3). La autonomía del dueño cubrió los tres niveles y **se agotó al cerrarlos**: **la Ruta 2 se consulta antes de abrirse**.
+Lo publicado se cuenta en `02-Plataforma-Web/cursos.json` y lo que falta en el plan (`docs/superpowers/plans/`). Por qué pasó cada cosa: `DECISIONES.md` de la raíz (ADR-020, 063, 073–077, 082, 084, 086, 091, 094–096, 106, 120, 141, 142). **La Ruta 1 está completa** (Niveles 1, 2 y 3). **La Ruta 2 está abierta** con sus extremos (Nivel 1 y Nivel 3, ADR-141 y 142); faltan los tres cursos de herramientas, que reciben su propio plan y se consultan con el dueño. ⚠️ En Rover un enlace dentro de un `info-box` no pasa contraste en modo oscuro: no se ponen enlaces ahí.

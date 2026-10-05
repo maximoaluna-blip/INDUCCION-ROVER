@@ -39,7 +39,7 @@ La plataforma Rover se presentaba como formación para «sinodales y ayudantes»
 | 2 · Herramientas | H-familia · H-manada · H-tropa · H-comunidad | uno por rama: juegos y dinámicas para esa edad · técnica **con fuente** (vida en la naturaleza según la guía; especialidades en Tropa; seguridad en actividades) · escuchar y hablar con niños y niñas de esa edad · buen trato y cuidado a esa edad |
 | 3 · Proyecto | S2 | con escenario en la rama |
 
-**Ruta 2: Servir en la comunidad (Mundo Mejor).** Se diseña en otro ciclo. Su Nivel 3 es S2, con escenario en la comunidad. La parte de F1 sobre misión e impacto global se le ofrece como lectura opcional.
+**Ruta 2: Servir en la comunidad (Mundo Mejor).** Se diseña en otro ciclo. Su Nivel 3 es S2, con escenario en la comunidad. ⚠️ **Corregido el 04-10-2026 (ADR-142):** el Nivel 3 de la Ruta 2 es un **curso hermano** de S2 (`mi-proyecto-en-la-comunidad`), no S2 con dos escenarios. Ver `2026-10-04-rover-ruta2-comunidad-design.md`. La parte de F1 sobre misión e impacto global se le ofrece como lectura opcional.
 
 **Los 5 cursos en «próximamente»** (Primeros Auxilios, Campismo, Liderazgo, Pedagogía, Juegos) **salen del catálogo**. Lo que tenga fuente lo absorben los cursos H.
 

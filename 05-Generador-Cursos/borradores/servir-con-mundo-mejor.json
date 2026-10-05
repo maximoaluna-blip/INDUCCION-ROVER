@@ -1,0 +1,433 @@
+{
+  "courseId": "servir-con-mundo-mejor",
+  "title": "Servir más allá del Grupo: Mundo Mejor",
+  "subtitle": "Servir en la comunidad · Nivel 1",
+  "description": "La puerta de la ruta Servir en la comunidad. En ~40 minutos vas a ver qué cambia cuando sirves con tu comunidad y no para ella, cómo se ordenan las iniciativas de Scouts por los ODS, con quién se acuerda un servicio fuera del Grupo y cómo cuidarte y cuidar a otros cuando sirves afuera.",
+  "contentVersion": "2026-10-04",
+  "route": "comunidad",
+  "level": 1,
+  "branch": null,
+  "registration": {
+    "motivationLabel": "¿Qué necesidad de tu comunidad te gustaría ayudar a cambiar?"
+  },
+  "icon": "🌍",
+  "duration": "40 minutos",
+  "totalContentModules": 4,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "Vas por tu barrio y lo ves: el parque sin luz, la quebrada llena de basura, los niños de la cuadra sin dónde hacer las tareas. Te dan ganas de juntar a tu Clan e ir a arreglarlo un sábado. Esas ganas son el comienzo. Este curso trata de lo que viene después."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>El involucramiento comunitario no busca héroes solitarios, sino ciudadanos solidarios.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La frase es de la <em>Guía de Dirigente de Clan</em> (2026, p. 54). Un héroe solitario llega, resuelve y se va. Un ciudadano solidario mira con la gente que vive el problema, lo trabaja con ella y deja algo que sigue sin él. Esta ruta es para lo segundo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Esta plataforma es de la <strong>Regional Valle del Cauca</strong> y es solo para Rovers de 18 a 20 años. Este es el primer curso de la ruta <strong>Servir en la comunidad</strong>: servir fuera de tu Grupo Scout, con las iniciativas de Mundo Mejor. Si todavía no hiciste <em>El servicio Rover</em>, empieza por ese: aquí partimos de lo que allá viste."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Nada de lo que hagas aquí te da un cargo ni te convierte en dirigente: lo que vas a construir es tu servicio. <br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión —que leen tú y el equipo de formación— y con dos preguntas. Para seguir hay que acertar las dos; si fallas una, el curso te dice cuál revisar y puedes intentarlo las veces que quieras."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Distinguir</strong> un servicio hecho con la comunidad de uno hecho por ella",
+            "<strong>Ubicar</strong> una necesidad de tu comunidad en una de las cuatro iniciativas de Scouts por los ODS",
+            "<strong>Identificar</strong> con quién acuerdas un servicio fuera del Grupo: tu Consejo de Clan, tu adulto acompañante y la organización aliada",
+            "<strong>Aplicar</strong> las reglas de cuidado cuando sirves fuera del Grupo, sabiendo cuáles son norma y cuáles recomendación"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Hacer con, no hacer por",
+      "emoji": "🤝",
+      "navLabel": "Hacer con",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> servir en la comunidad no es llevarle algo a la gente; es trabajar con ella en lo que ella necesita."
+        },
+        {
+          "type": "paragraph",
+          "text": "Un Clan decide pintar el parque del barrio. Consigue la pintura, madruga un sábado y lo deja precioso. A la semana, una vecina comenta que lo que la cuadra llevaba años pidiendo era luz: de noche nadie se atreve a pasar por ahí. El parque quedó bonito y siguió igual de vacío."
+        },
+        {
+          "type": "paragraph",
+          "text": "En <em>El servicio Rover</em> viste la diferencia entre servir <strong>para</strong> la comunidad y servir <strong>con</strong> ella. Fuera del Grupo esa diferencia se nota más, porque la gente con la que sirves no es tu Clan: tiene su historia, sus organizaciones y sus propias ideas sobre lo que le falta. El <em>Modelo de Aplicación</em> lo dice así:"
+        },
+        {
+          "type": "blockquote",
+          "text": "«Este elemento, bien implementado, evita el asistencialismo superficial: el servicio no es “hacer por”, sino “hacer con”, desde la ciudadanía activa, la cooperación y el reconocimiento de la dignidad del otro.»<br><small>— Modelo de Aplicación de la Política Nacional de Programa de Jóvenes, ASC, 2026, p. 16</small>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Y la <em>Guía de Dirigente de Clan</em> le da al servicio en la comunidad un lugar central: el involucramiento comunitario <strong>«no es un apéndice ni una actividad más del calendario»</strong>, es la prueba de que el escultismo educa para la vida (p. 54). Al enfrentarse a realidades distintas a las suyas, dice la guía, los jóvenes aprenden a mirar con compasión, a cuestionar prejuicios y a comprender las causas de los problemas."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Sin destinatario real, no hay servicio"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hacer con alguien exige saber con quién. Cuando el <em>Modelo</em> explica cómo se vive un desafío de Scouts por los ODS, deja un consejo corto: <strong>«No pierdas de vista el para quién: sin destinatario real, el desafío se vacía»</strong> (p. 102). Una campaña «para el planeta» o «para los jóvenes» suena bien, pero no tiene a nadie concreto a quien preguntarle qué necesita ni cómo saber si le sirvió."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>En simple:</strong> antes de decidir qué vas a hacer, averigua con quién. Una cuadra, las familias de una escuela, una junta de acción comunal, los usuarios de una biblioteca. Ellos saben cosas de su problema que tú no sabes."
+        },
+        {
+          "type": "paragraph",
+          "text": "Volvamos al parque. El problema no era la pintura: era que el Clan decidió solo. Si antes se hubiera sentado con la junta del barrio, habría oído lo de la luz. Y quizá el servicio habría sido otro: acompañar a la junta a pedir el alumbrado a la alcaldía, que es algo que la cuadra puede seguir haciendo cuando el Clan ya no esté."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en una necesidad que ves en tu barrio, tu vereda o tu ciudad. ¿Quiénes la viven? Descríbelos por lo que son —los vecinos de una cuadra, las familias de una escuela—, sin nombres de personas. ¿Qué crees que te dirían ellos si les preguntaras qué hace falta?"
+      },
+      "quiz": {
+        "title": "Evaluación - Hacer con",
+        "questions": [
+          {
+            "text": "En un Clan, un Rover propone llevar un mercado al mes a las familias de una vereda. Otra Rover propone reunirse primero con la junta de la vereda para ver qué quieren cambiar ellos. Según la lección, ¿qué distingue las dos propuestas?",
+            "options": [
+              "La primera es mejor, porque resuelve hoy mismo una necesidad concreta que se puede contar",
+              "La segunda hace con la vereda, porque parte de lo que ellos saben y los suma a decidir",
+              "Ninguna: las dos son servicio, y lo que importa es cuántas familias se atienden al mes"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Una Rover arma una campaña en redes sobre el reciclaje «para el mundo», sin un barrio, un colegio o un grupo concreto que la reciba. Según el Modelo de Aplicación, ¿qué riesgo tiene su idea?",
+            "options": [
+              "Ninguno: en redes llega a mucha más gente, y por eso le sirve a muchas más personas",
+              "Que no cuenta como servicio, porque el servicio solo se hace en persona y con todo el Clan",
+              "Que se vacía, porque le falta un para quién real: no sabrá a quién sirve ni si le sirvió"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: Mundo Mejor ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Mundo Mejor y sus iniciativas",
+      "emoji": "🌍",
+      "navLabel": "Iniciativas",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 10 minutos · Idea central:</strong> Scouts por los ODS ordena el servicio en la comunidad en cuatro iniciativas, cada una con sus desafíos. Elegir una le da a tu servicio un marco, un método y un reconocimiento."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ya tienes una necesidad y un para quién. ¿Por dónde empiezas? No tienes que inventarlo todo: el Movimiento Scout tiene una propuesta para eso, y se llama <strong>Scouts por los ODS</strong>. La <em>Guía de Dirigente de Clan</em> la presenta como la propuesta que conecta el Programa de Jóvenes con los Objetivos de Desarrollo Sostenible, con iniciativas y desafíos «que promueven el aprendizaje por la acción y el servicio comunitario» (p. 61). Se apoya en el marco de <strong>Mundo Mejor</strong>."
+        },
+        {
+          "type": "paragraph",
+          "text": "El <em>Modelo de Aplicación</em> la ordena en <strong>cuatro áreas focales</strong>, una por iniciativa (§16.1, pp. 98–100). La <em>Guía de Clan</em> anuncia «seis iniciativas», pero describe estas mismas cuatro con sus desafíos (pp. 61–65). Aquí trabajamos con las cuatro."
+        },
+        {
+          "type": "method-grid",
+          "items": [
+            {
+              "title": "🕊️ Mensajeros de la Paz",
+              "description": "Paz e involucramiento comunitario: convivencia, diálogo, memoria, patrimonio y acción humanitaria. Cinco desafíos: Diálogos por la Paz, Patrimonito, HeForShe, Diálogo Interreligioso y Constructores de Paz."
+            },
+            {
+              "title": "🌱 Tribu Tierra",
+              "description": "Medio ambiente y sostenibilidad. Cuatro desafíos: Campeones por la Naturaleza, Plastic Tide Turners (en la biblioteca, Mareas Plásticas), Scouts Go Solar y YUNGA."
+            },
+            {
+              "title": "💚 Aliados de la Salud (Health Allies)",
+              "description": "Salud y bienestar. Dos desafíos: Nutrición y Constructores de Mentes."
+            },
+            {
+              "title": "💡 Líderes de Vida (LifeLeaders)",
+              "description": "Habilidades para la vida. Dos desafíos: Innovadores del Impacto e Inteligencia Emocional en Acción."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "<small>Iniciativas y desafíos: <em>Guía de Dirigente de Clan</em>, ASC, 2026, §11.3, pp. 61–65; áreas y propósitos: <em>Modelo de Aplicación</em>, §16.1, pp. 98–100.</small>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Cada iniciativa abarca más de lo que suena. Mensajeros de la Paz, por ejemplo, incluye el rescate de historias barriales, las rutas de memoria viva y las campañas de seguridad vial (<em>Modelo</em>, p. 99). Tribu Tierra incluye desde el manejo de residuos hasta las huertas y la movilidad activa (p. 98)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Lo que te da elegir un desafío"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Un punto de partida medible.</strong> Según el <em>Manual de Implementación Marco de Mundo Mejor</em>, todos los procesos de aprendizaje empiezan y terminan con una autoevaluación (p. 11). La primera te dice de dónde partes; la última, cuánto cambiaste.",
+            "<strong>Un reconocimiento con sentido.</strong> Las insignias de desafío y las distinciones de iniciativa «atestiguan un proceso con criterios, destinatarios, reflexión y transferencia» (<em>Modelo</em>, p. 101). No son la meta: son la huella de lo que aprendiste.",
+            "<strong>Un puente con el territorio.</strong> Los desafíos «conectan con actores locales, escuela, familia, instituciones y naturaleza» (<em>Modelo</em>, p. 101)."
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Sin volverlo cátedra.</strong> El <em>Modelo</em> pide conectar las acciones con los ODS «sin convertirlo en cátedra»: lo importante es comprender haciendo (p. 68). No necesitas saberte los 17 objetivos para empezar. Necesitas una necesidad real, un para quién y un desafío que la enmarque. Y si tu necesidad no encaja en ningún desafío, también puedes servir: el marco ayuda, pero no es una condición."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Lo que sigue en esta ruta.</strong> Los cursos de herramientas de esta ruta van por eje: Mensajeros de la Paz en paz y diálogo, Mensajeros de la Paz en género y patrimonio, y Tribu Tierra. Se están preparando. Esta plataforma no tiene cursos de Aliados de la Salud ni de Líderes de Vida: la Asociación todavía no publica sus materiales. <br><br><strong>Lectura opcional.</strong> Si quieres ver el Movimiento Scout en su escala mundial, las lecciones de misión e impacto global de <a href=\"fundamentos-scout.html\">Fundamentos del Movimiento Scout</a> te sirven, aunque ese curso es de la otra ruta."
+        }
+      ],
+      "reflection": {
+        "prompt": "Vuelve a la necesidad que pensaste en la lección anterior. ¿Con cuál de las cuatro iniciativas se conecta, y por qué esa? Si no encaja en ninguna, dilo: también es una respuesta."
+      },
+      "quiz": {
+        "title": "Evaluación - Mundo Mejor",
+        "questions": [
+          {
+            "text": "Un Rover quiere trabajar con la biblioteca comunitaria de su barrio para recoger y contar las historias de quienes lo fundaron. Según la lección, ¿en qué iniciativa encaja mejor?",
+            "options": [
+              "Mensajeros de la Paz, porque incluye la cultura, el patrimonio y la memoria barrial",
+              "Líderes de Vida, porque contar historias bien es una de las habilidades para la vida",
+              "Tribu Tierra, porque el barrio es el territorio que el Rover quiere cuidar y conocer"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Una Rover elige un desafío y quiere empezar ya, dejando la autoevaluación «para cuando termine». Según el Manual de Mundo Mejor, ¿qué pierde?",
+            "options": [
+              "Pierde solo tiempo: la autoevaluación se hace al final, cuando se pide la insignia",
+              "Pierde su punto de partida, porque la autoevaluación final ya no tiene con qué compararse",
+              "Nada importante, porque la autoevaluación es opcional y la decide su adulto acompañante"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: con quién se sirve ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Con quién se sirve",
+      "emoji": "🧭",
+      "navLabel": "Con quién",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 10 minutos · Idea central:</strong> fuera del Grupo no sirves solo. Tu Clan decide contigo, un adulto acompañante te enlaza y una organización de la comunidad trabaja a tu lado."
+        },
+        {
+          "type": "paragraph",
+          "text": "Un Rover encuentra una fundación que da refuerzo escolar en su barrio y le ofrece ayuda. La fundación acepta encantada y él empieza el martes siguiente. Su Clan se entera dos meses después. ¿Hizo algo mal? Lo que hizo estaba bien; lo que se saltó fue con quién decidirlo."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu Clan: el Consejo de Clan"
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre las funciones del Consejo de Clan, la <em>Guía de Dirigente de Clan</em> pone esta: <strong>«Establecer, orientar y evaluar los proyectos en los que participa el Clan, ya sean presentados por sus integrantes, red de jóvenes, u otras organizaciones»</strong> (p. 29). Tu servicio fuera del Grupo no es un asunto privado entre tú y una fundación: tu Clan lo establece contigo, lo orienta y lo evalúa."
+        },
+        {
+          "type": "paragraph",
+          "text": "Y no tienes que hacerlo con puros scouts. La misma guía dice que un equipo de proyecto se forma a partir del liderazgo de un Rover, y que <strong>«puede también incluir a otros jóvenes externos a la Asociación»</strong> (p. 29). Tus amigos de la universidad o de la cuadra pueden estar en tu proyecto."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu adulto acompañante: el que enlaza"
+        },
+        {
+          "type": "paragraph",
+          "text": "En el Clan hay al menos un adulto acompañante por cada 7 u 8 Rovers, y cada uno asesora un máximo de 5 proyectos, clubes o iniciativas, «para cuidar el marco ético, el cuidado y el enlace, sin interferir en la autonomía propia de la Rama» (<em>Modelo de Aplicación</em>, p. 22). Fíjate en el orden: el proyecto es tuyo; él cuida y enlaza."
+        },
+        {
+          "type": "paragraph",
+          "text": "Enlazar es justo lo que necesitas cuando sirves afuera. El <em>Modelo</em> lo describe como conectar al joven con recursos, mentores, redes, instituciones y experiencias externas, y pone un ejemplo que se parece a esta ruta: <strong>«Un Rover decide liderar un proyecto ambiental en su municipio. El dirigente lo enlaza con instituciones locales y expertos»</strong> (pp. 59–60)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "La organización aliada"
+        },
+        {
+          "type": "paragraph",
+          "text": "Casi siempre alguien ya trabaja en la necesidad que viste: una junta de acción comunal, una fundación, una biblioteca, un colegio, una entidad pública. El <em>Equipo de Bolsillo - Rover</em> de la Comisión Nacional Rover sugiere buscar asesoría en otros Rovers, profesionales, la Red de Jóvenes de tu región, la Comisión Rover regional, mentores, tu universidad, entidades públicas u organizaciones (2025, p. 17). Sumarte a quien ya está es casi siempre mejor que empezar de cero."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Cuando llegues a una organización</strong> (sugerencias de este curso): preséntate como Rover y di de qué Clan vienes; pregúntales qué necesitan antes de ofrecer lo que tú quieres hacer; acuerden qué hace cada uno, cuándo y quién de ellos responde por la actividad; y pregunta si tienen una política de protección de niños y niñas, porque la vas a seguir. Luego llévalo todo a tu Consejo de Clan."
+        },
+        {
+          "type": "paragraph",
+          "text": "Volvamos al Rover de la fundación. Su servicio puede seguir igual de bueno, pero ahora con tres apoyos: su Clan, que lo conoce y lo evalúa; su adulto acompañante, que lo cuida y le abre puertas; y la fundación, que sabe del barrio más que él."
+        }
+      ],
+      "reflection": {
+        "prompt": "¿Qué tipo de organización de tu comunidad trabaja ya con la necesidad que pensaste: una junta, una fundación, una biblioteca, un colegio, una entidad pública? Escribe solo el tipo. ¿Qué podrías aportarle tú que hoy no tenga?"
+      },
+      "quiz": {
+        "title": "Evaluación - Con quién",
+        "questions": [
+          {
+            "text": "Una Rover arma un proyecto de huertas en su barrio con dos amigos de la universidad que no son scouts. Una compañera del Clan le dice que no puede, porque los proyectos Rover son solo para el Clan. Según la Guía de Clan, ¿quién tiene razón?",
+            "options": [
+              "La compañera, porque un proyecto Rover solo lo pueden formar integrantes de su propio Clan",
+              "Las dos, si el Jefe de Grupo inscribe antes a los amigos como miembros activos",
+              "La Rover: un equipo de proyecto puede incluir jóvenes externos a la Asociación"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "Un Rover ya acordó su proyecto con una fundación y piensa contárselo a su Clan cuando esté andando. Según la lección, ¿qué está dejando de lado?",
+            "options": [
+              "Que el Consejo de Clan establece, orienta y evalúa los proyectos en que participa el Clan",
+              "Nada: el Consejo de Clan solo revisa los proyectos del Grupo; este lo evalúa la fundación",
+              "Que primero la fundación lo inscriba en sus registros como su voluntario oficial"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: cuidar fuera del Grupo ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Cuidarte y cuidar fuera del Grupo",
+      "emoji": "🛡️",
+      "navLabel": "Cuidar",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> el cuidado no se queda en la sede del Grupo. Unas reglas son norma de la Asociación; otras son recomendaciones de este curso para lo que la norma no alcanza a decir."
+        },
+        {
+          "type": "paragraph",
+          "text": "Una Rover da refuerzo escolar en un salón comunal, con una fundación. Un día la coordinadora tiene que salir una hora y le pide que se quede sola con tres niños. La Rover es mayor de edad, conoce a los niños y quiere ayudar. ¿Qué hace?"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Lo que dice la norma"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>La Política te sigue afuera.</strong> La <em>Política Nacional A Salvo del Peligro</em> alcanza también a colaboradores externos y a «organizaciones aliadas o convenios con corresponsabilidad operativa» (2025, p. 23), y se aplica incluso cuando, sin representar a Scouts de Colombia, sus miembros interactúan entre sí (p. 24). Prevé también el abuso entre personas particulares y miembros de la Asociación «con ocasión de eventos, actividades, programas, proyectos» (p. 15).",
+            "<strong>No se guardan secretos.</strong> Ante cualquier acción que pueda ser un delito o vulnere la dignidad de un miembro, hay obligación de informar o reportar: «no cabrá la posibilidad de guardar ningún secreto, ni será permitido ocultar información» (p. 21). La ruta oficial es el botón <strong>«Me Pongo A Salvo del Peligro»</strong> de la página de Scouts de Colombia (p. 44).",
+            "<strong>La práctica 2+1.</strong> Que siempre haya al menos tres personas en las actividades, interacciones o acompañamientos: dos adultos responsables y un menor, o un adulto y dos menores (p. 26).",
+            "<strong>Las imágenes también se cuidan.</strong> La Política pide directrices para publicar imágenes y contenidos de jóvenes (p. 26), y el <em>Modelo</em> habla de «fotos responsables» al contar lo que se hizo (p. 71)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Y una cosa que vale en las dos rutas: tú eres un joven de la Rama Rover, no un adulto del Movimiento. Aunque tengas 18 o 20 años, <strong>no eres el adulto a cargo</strong> de nadie ni cuentas en la proporción de adultos de una actividad."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Lo que la norma no alcanza a decir"
+        },
+        {
+          "type": "paragraph",
+          "text": "La Política se escribió pensando en los miembros de la Asociación. Ninguna fuente de la Asociación dice cómo debe servir un Rover con niños y niñas de la comunidad que no son scouts. Para ese caso, este curso te deja unas reglas propias:"
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Recomendación de este curso</strong> (no es una norma de la Asociación): con menores de edad que no son scouts, <strong>nunca a solas</strong>; <strong>siempre con un adulto de la organización presente</strong>; tu <strong>adulto acompañante del Clan al tanto</strong> del proyecto; y <strong>sigue la política de protección de la organización aliada</strong>. Si algo te preocupa de un niño o una niña, no lo guardas: lo cuentas al responsable de la organización y a tu adulto acompañante."
+        },
+        {
+          "type": "paragraph",
+          "text": "Volvamos al salón comunal. La Rover no se queda sola con los tres niños: le dice a la coordinadora que la espera, o que siguen cuando haya alguien de la fundación en el salón. No es desconfianza de nadie. Es la forma de cuidarlos a ellos, y de cuidarse ella."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar este curso vas a escribir tu compromiso: <em>«La necesidad que vi es ___; la voy a trabajar con ___, en el marco de ___»</em>. Para la organización, escribe su tipo —una junta, una fundación—, y para las personas, su rol: aquí no hace falta ningún nombre."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>El involucramiento comunitario no busca héroes solitarios, sino ciudadanos solidarios.</strong><br>Tu servicio en la comunidad empieza preguntando, sigue acordando y se sostiene cuidando."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en el lugar donde te ves sirviendo. ¿Qué situación ahí podría dejarte a solas con alguien, sobre todo con un menor de edad? ¿Qué harías para evitarla desde el principio?"
+      },
+      "quiz": {
+        "title": "Evaluación - Cuidar fuera del Grupo",
+        "questions": [
+          {
+            "text": "Una Rover da refuerzo escolar con una fundación. La coordinadora tiene que salir una hora y le pide que se quede sola con tres niños. Según la lección, ¿qué hace la Rover?",
+            "options": [
+              "Se queda: con tres niños en el salón no aplica el 2+1, porque no está a solas con uno",
+              "No ve problema: ya es mayor de edad, y la fundación confía en ella para esa hora",
+              "No se queda sola: espera, o siguen cuando haya alguien de la fundación en el salón con ellos"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "En un proyecto de huertas, un Rover de otro Clan le cuenta a tu compañera que un adulto del Movimiento lo está presionando, y le pide que no se lo diga a nadie. Están fuera de una actividad scout. Según la Política, ¿qué hace ella?",
+            "options": [
+              "Reporta: no cabe guardar secretos, y la Política aplica aunque no sea actividad scout",
+              "Guarda el secreto, porque fuera de una actividad scout la Política no aplica a nadie",
+              "Le promete no contarlo y le aconseja que primero lo hable con su propio Clan y su adulto"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Hacer Con",
+      "emoji": "🤝",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Mundo Mejor",
+      "emoji": "🌍",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Bien Acompañado",
+      "emoji": "🧭",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Cuidado Fuera",
+      "emoji": "🛡️",
+      "unlockOnModule": 5
+    }
+  ],
+  "certificate": {
+    "courseName": "SERVIR MÁS ALLÁ DEL GRUPO: MUNDO MEJOR",
+    "description": "ha completado el curso Servir más allá del Grupo: Mundo Mejor, que presenta el servicio con la comunidad, las iniciativas de Scouts por los ODS, con quién se acuerda un servicio fuera del Grupo y cómo cuidarse y cuidar a otros al servir afuera.",
+    "commitmentPrompt": "Escribe tu compromiso completando la frase de la última lección: «La necesidad que vi es ___; la voy a trabajar con ___, en el marco de ___». Para la organización, escribe su tipo; para las personas, su rol, no su nombre."
+  }
+}

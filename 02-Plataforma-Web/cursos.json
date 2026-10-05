@@ -167,5 +167,18 @@
     "branch": null,
     "status": "active",
     "file": "mi-proyecto-de-servicio.html"
+  },
+  {
+    "courseId": "servir-con-mundo-mejor",
+    "title": "Servir más allá del Grupo: Mundo Mejor",
+    "description": "La puerta de la ruta Servir en la comunidad. En ~40 minutos vas a ver qué cambia cuando sirves con tu comunidad y no para ella, cómo se ordenan las iniciativas de Scouts por los ODS, con quién se acuerda un servicio fuera del Grupo y cómo cuidarte y cuidar a otros cuando sirves afuera.",
+    "icon": "🌍",
+    "duration": "40 minutos",
+    "modules": 5,
+    "route": "comunidad",
+    "level": 1,
+    "branch": null,
+    "status": "active",
+    "file": "servir-con-mundo-mejor.html"
   }
 ]

@@ -168,6 +168,16 @@ test.describe('@solo-escritorio landing por ruta y nivel (ADR-086)', () => {
     expect(vacios).toEqual([]);
   });
 
+  // La Ruta 2 tiene tres cursos de eje, no cuatro ramas: no lleva filtro (ADR-141).
+  test('la ruta comunidad se pinta sin filtro de rama (ADR-141)', async ({ page }) => {
+    await cargar(page);
+    const comunidad = page.locator('section[data-route="comunidad"]');
+    await expect(comunidad).toBeVisible();
+    await expect(comunidad.locator('.level-section[data-level="1"]')).toHaveCount(1);
+    await expect(comunidad.locator('.branch-filter')).toHaveCount(0);
+    await expect(page.locator('section[data-route="grupo"] .branch-filter')).toHaveCount(1);
+  });
+
   test('las horas de contenido suman minutos como minutos', async ({ page, request }) => {
     const { activos } = await activosDelCatalogo(request);
     const minutos = activos.reduce((s, c) => {

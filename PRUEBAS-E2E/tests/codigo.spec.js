@@ -344,4 +344,23 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     expect(build).toMatch(/Lección \$\{nLeccion\} de \$\{totalLecciones\}/);
     expect(build).not.toMatch(/Módulo \$\{contentIndex\}/);
   });
+
+  // --- Ruta 2 (ADR-141) ---
+  // Las reflexiones viajan a la hoja (ADR-087). La Ruta 1 enseñó «piénsalo con nombre; aquí
+  // basta su inicial», y la costumbre se copia: en la Ruta 2 ninguna reflexión pide ni eso.
+  test('ninguna reflexión de la Ruta 2 pide nombres ni iniciales (ADR-141)', () => {
+    const dir = path.join(GEN, 'borradores');
+    const ruta2 = fs.readdirSync(dir).filter((f) => f.endsWith('.json'))
+      .map((f) => JSON.parse(leer(path.join(dir, f))))
+      .filter((c) => c.route === 'comunidad');
+    expect(ruta2.length, 'no hay ningún curso de la ruta comunidad').toBeGreaterThan(0);
+    const malas = [];
+    for (const c of ruta2) {
+      for (const m of c.modules || []) {
+        const p = m.reflection && m.reflection.prompt;
+        if (p && /inicial|nombre de|cómo se llama/i.test(p)) malas.push(`${c.courseId} m${m.id}: ${p}`);
+      }
+    }
+    expect(malas).toEqual([]);
+  });
 });

@@ -331,6 +331,13 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     }
   });
 
+  test('el aviso de fallo tiene contraste AA con el texto blanco (ADR-138)', () => {
+    // #FF9800 con texto blanco daba 2,2:1; #B34700 da ≈5,5:1.
+    const motor = leer(path.join(GEN, 'templates', 'engine.js'));
+    expect(motor).toContain("if (type === 'warning') n.style.background = '#B34700';");
+    expect(motor).not.toContain("n.style.background = '#FF9800'");
+  });
+
   test('la cabecera de cada lección dice «Lección N de M», y en Rover sin contar la Bienvenida (ADR-134)', () => {
     const build = leer(path.join(GEN, 'build-course.js'));
     expect(build).toContain('const LA_BIENVENIDA_ES_LECCION_1 = false;');

@@ -318,4 +318,23 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     expect(leer(path.join(GEN, 'course-schema.json'))).toContain('"plan-builder"');
     expect(leer(path.join(GEN, 'build-course.js'))).toMatch(/case 'plan-builder'/);
   });
+
+  // --- ADR-129 y ADR-134 (decisiones del dueño para las cinco líneas) ---------------
+  test('el certificado en pantalla y la página de verificación llevan tilde (ADR-129)', () => {
+    const build = leer(path.join(GEN, 'build-course.js'));
+    for (const t of ['CERTIFICADO DE APROBACIÓN', 'Puntuación:', 'Región:', 'Código de Verificación']) {
+      expect(build, t).toContain(t);
+    }
+    const verif = leer(path.join(REPO, 'verificar-certificado.html'));
+    for (const t of ['Certificado Válido', 'Fecha de emisión', 'Ingresa el código', 'ningún certificado']) {
+      expect(verif, t).toContain(t);
+    }
+  });
+
+  test('la cabecera de cada lección dice «Lección N de M», y en Rover sin contar la Bienvenida (ADR-134)', () => {
+    const build = leer(path.join(GEN, 'build-course.js'));
+    expect(build).toContain('const LA_BIENVENIDA_ES_LECCION_1 = false;');
+    expect(build).toMatch(/Lección \$\{nLeccion\} de \$\{totalLecciones\}/);
+    expect(build).not.toMatch(/Módulo \$\{contentIndex\}/);
+  });
 });

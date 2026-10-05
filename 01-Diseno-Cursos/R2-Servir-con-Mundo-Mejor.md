@@ -30,7 +30,7 @@ Cita literal de la *Guía de Dirigente de Clan* 2026, §9.1, p. 54. Se enuncia e
 
 - **No repite S1.** S1 ya enseña el lema, los tipos de servicio (para / con) y las dos rutas. Aquí se parte de ahí («En *El servicio Rover* viste…») y se cambian los casos: el parque sin luz, la vereda, la fundación del refuerzo escolar.
 - **Cuatro iniciativas, no seis.** La *Guía de Clan* §11.3 anuncia «seis iniciativas» (p. 61) pero describe cuatro (pp. 61–65), las mismas cuatro áreas del *Modelo* §16.1 (pp. 98–100) y del glosario («Las cuatro iniciativas de Scouts por los ODS»). El curso lo dice. ⚠️ **S1 cita «seis iniciativas»** (L4): no es falso como cita, pero queda para revisar (hallazgo para el dueño).
-- **Aliados de la Salud y Líderes de Vida solo se nombran**, con sus desafíos tal como los da la *Guía de Clan* (pp. 64–65). La Asociación no publica sus materiales.
+- **Health Allies y Life Leaders solo se nombran** (con esos nombres: «Aliados de la Salud» y «Líderes de Vida» eran traducciones sin fuente), con sus desafíos tal como los da la *Guía de Clan* (pp. 64–65). La Asociación no publica sus materiales.
 - **El «manual de proyectos de la Asociación»** que cita la *Guía de Clan* (p. 29) no está publicado: la subcategoría DNDI › Proyectos de la biblioteca está vacía (04-10-2026). No se cita.
 - **El Equipo de Bolsillo - Rover** (Comisión Nacional Rover, 2025) se cita en L3 parafraseado, sin la palabra «sinodal» de su lista (p. 17), para no pisar el léxico de la plataforma.
 - **Norma frente a recomendación** (spec §6, decisión del dueño del 04-10-2026): L4 separa lo que es norma (con página) de la recomendación sobre menores que no son scouts, rotulada «Recomendación de este curso».
@@ -60,7 +60,7 @@ Cita literal de la *Guía de Dirigente de Clan* 2026, §9.1, p. 54. Se enuncia e
   - autoevaluación al iniciar y al terminar (*Manual de Implementación Marco de Mundo Mejor*, ASC, 2021, p. 11);
   - insignias y distinciones «atestiguan un proceso con criterios, destinatarios, reflexión y transferencia» y los desafíos como puente con el territorio (*Modelo*, §16.2, p. 101);
   - ODS «sin convertirlo en cátedra» (*Modelo*, p. 68).
-- **Lectura opcional:** enlace a `fundamentos-scout.html` (misión e impacto global), como dice la spec madre.
+- **Lectura opcional:** las lecciones «Misión y Propósito del Movimiento Scout» y «El Impacto Global del Movimiento Scout» de *Fundamentos*, nombradas sin enlace (un enlace en un `info-box` no pasa contraste en oscuro).
 - **Reflexión:** con qué iniciativa se conecta su necesidad; «no encaja» también vale.
 - **Quiz (2):** el recorrido de memoria con los abuelos del barrio (Mensajeros de la Paz); la cancha sin desafío elegido (el desafío enmarca, no condiciona).
 
@@ -85,7 +85,7 @@ Cita literal de la *Guía de Dirigente de Clan* 2026, §9.1, p. 54. Se enuncia e
   - «no cabrá la posibilidad de guardar ningún secreto…» (p. 21) y el botón «Me Pongo A Salvo del Peligro» (p. 44);
   - práctica 2+1 (p. 26) y directrices para publicar imágenes de jóvenes (p. 26); «fotos responsables» (*Modelo*, p. 71).
 - **El Rover no es el adulto a cargo** ni cuenta en la proporción de adultos (glosario; *Modelo*, pp. 19 y 22).
-- **Recomendación de este curso** (spec §6): con menores que no son scouts, nunca a solas; siempre con un adulto de la organización presente; adulto acompañante del Clan al tanto; seguir la política de protección de la organización aliada; y si algo preocupa, contarlo al responsable de la organización y al adulto acompañante.
+- **Recomendación de este curso** (spec §6): con menores que no son scouts, nunca a solas; siempre con un adulto de la organización presente; adulto acompañante del Clan al tanto; seguir la política de protección de la organización aliada.
 - **Norma aparte del recuadro:** el deber de reportar un posible delito contra un niño, scout o no (p. 21: «cualquier acción que represente un posible delito»), ese mismo día, y el botón (p. 44).
 - **Compromiso:** «La necesidad que vi es ___. Antes del ___ voy a preguntarle a ___ qué necesita, y lo voy a llevar a mi Consejo de Clan».
 - **Reflexión:** qué situación podría dejarlo a solas con alguien y cómo evitarla.

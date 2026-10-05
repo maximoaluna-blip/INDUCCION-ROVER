@@ -106,7 +106,7 @@
             "text": "La junta de una vereda le pide a tu Clan que la ayude a redactar la carta a la alcaldía por el camino que se inunda cada invierno. Un Rover propone hacer antes una asamblea con toda la vereda, para confirmar que eso es lo que de verdad necesita. ¿Qué es lo más coherente con la lección?",
             "options": [
               "Hacer primero la asamblea, para que la decisión salga de toda la vereda y no solo de la junta",
-              "Redactar la carta con el comité: la necesidad ya la dijo la vereda, y su junta va al frente",
+              "Redactar la carta con quienes la piden: la necesidad ya la dijo la vereda, y su junta va al frente",
               "Redactar la carta y llevarla el Clan a la alcaldía: así el trámite no depende de la junta"
             ],
             "correctIndex": 1
@@ -190,7 +190,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Lo que sigue en esta ruta.</strong> Los cursos de herramientas de esta ruta van por eje: Mensajeros de la Paz en paz y diálogo, Mensajeros de la Paz en género y patrimonio, y Tribu Tierra. Se están preparando. Esta plataforma no tiene cursos de Health Allies ni de Life Leaders: a octubre de 2026, la Asociación no ha publicado sus materiales. <br><br><strong>Lectura opcional.</strong> Si quieres ver el Movimiento Scout en su escala mundial, las lecciones «Misión y Propósito» e «Impacto Global» del curso <em>Fundamentos del Movimiento Scout</em> te sirven, aunque ese curso es de la otra ruta: lo encuentras en la portada de esta plataforma."
+          "text": "<strong>Lo que sigue en esta ruta.</strong> Los cursos de herramientas de esta ruta van por eje: Mensajeros de la Paz en paz y diálogo, Mensajeros de la Paz en género y patrimonio, y Tribu Tierra. Se están preparando. Esta plataforma no tiene cursos de Health Allies ni de Life Leaders: a octubre de 2026, la Asociación no ha publicado sus materiales. <br><br><strong>Lectura opcional.</strong> Si quieres ver el Movimiento Scout en su escala mundial, las lecciones «Misión y Propósito del Movimiento Scout» y «El Impacto Global del Movimiento Scout» del curso <em>Fundamentos del Movimiento Scout</em> te sirven, aunque ese curso es de la otra ruta: lo encuentras en la portada de esta plataforma."
         }
       ],
       "reflection": {

@@ -40,7 +40,7 @@
 | L1 | `que-dijeron` | long | no |
 | L2 | `objetivo` | long | sí |
 | L2 | `actividades` (qué · cuándo · con quién; máx. 5) | rows | sí |
-| L2 | `recursos` (incluye quién responde por la plata) | long | no |
+| L2 | `recursos` (incluye quién responde por la plata) | long | sí |
 | L3 | `riesgos` (qué puede pasar · qué se hará · quién; máx. 6) | rows | sí |
 | L3 | `cuidados` | long | sí |
 | L3 | `acuerdo-con` | short | sí |

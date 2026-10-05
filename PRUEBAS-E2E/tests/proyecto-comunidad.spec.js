@@ -73,6 +73,10 @@ test.describe('@solo-escritorio proyecto en la comunidad (ADR-142)', () => {
     await page.evaluate(() => showModule(5));
     await expect(page.locator('[data-plan-value="iniciativa"]')).toHaveText('Todavía no la sé');
     await expect(page.locator('[data-plan-missing]')).not.toContainText('iniciativa', { ignoreCase: true });
+    // Y con esa respuesta se llega al certificado: no basta con que no figure como faltante.
+    await aprobarLecciones(page);
+    await page.evaluate(() => completeModule(5));
+    await expect(page.locator('#module-6')).toHaveClass(/active/);
   });
 
   test('el plan de S2 no se cruza con este', async ({ page }) => {

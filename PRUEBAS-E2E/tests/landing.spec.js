@@ -174,6 +174,7 @@ test.describe('@solo-escritorio landing por ruta y nivel (ADR-086)', () => {
     const comunidad = page.locator('section[data-route="comunidad"]');
     await expect(comunidad).toBeVisible();
     await expect(comunidad.locator('.level-section[data-level="1"]')).toHaveCount(1);
+    await expect(comunidad.locator('.level-section[data-level="3"]')).toHaveCount(1);
     await expect(comunidad.locator('.branch-filter')).toHaveCount(0);
     await expect(page.locator('section[data-route="grupo"] .branch-filter')).toHaveCount(1);
   });

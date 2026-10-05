@@ -367,6 +367,17 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     expect(malas).toEqual([]);
   });
 
+  // «comunidad» es a la vez una ruta y una rama (index.html, RAMAS). Un curso de la ruta
+  // comunidad con `branch` haría aparecer el filtro de ramas en esa ruta.
+  test('ningún curso de la ruta comunidad declara rama (ADR-145)', () => {
+    const dir = path.join(GEN, 'borradores');
+    const conRama = fs.readdirSync(dir).filter((f) => f.endsWith('.json'))
+      .map((f) => JSON.parse(leer(path.join(dir, f))))
+      .filter((c) => c.route === 'comunidad' && c.branch)
+      .map((c) => `${c.courseId}: branch ${c.branch}`);
+    expect(conRama).toEqual([]);
+  });
+
   test('la caja de la reflexión no sugiere iniciales, ni en el build ni en lo compilado (ADR-145)', () => {
     const build = leer(path.join(GEN, 'build-course.js'));
     const enBuild = [...build.matchAll(/id="reflection-[^"]*"[^>]*placeholder="([^"]*)"/g)].map((x) => x[1]);

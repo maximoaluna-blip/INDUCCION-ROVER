@@ -350,7 +350,10 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
   // basta su inicial», y la costumbre se copiaba. Hasta el ADR-145 la caja de TODOS los cursos
   // lo sugería con su placeholder fijo («basta el rol o la inicial»), y la prueba de la Ruta 2
   // no lo veía porque solo leía los enunciados del JSON. Ahora mira las tres fuentes.
-  const PIDE_IDENTIFICAR = /inicial|nombre de|cómo se llama|nómbra|apellido/i;
+  const PIDE_IDENTIFICAR_RE = /inicial|nombre de|cómo se llama|nómbra|apellido/i;
+  // Lo que PROHÍBE identificar («sin nombres ni iniciales», «su rol, no su nombre») no cuenta.
+  const PROHIBE = /sin nombres?( de personas)?( ni iniciales)?|ni iniciales|no su nombre/gi;
+  const PIDE_IDENTIFICAR = { test: (t) => PIDE_IDENTIFICAR_RE.test(String(t).replace(PROHIBE, '')) };
 
   test('ningún enunciado de reflexión pide nombres ni iniciales (ADR-145)', () => {
     const dir = path.join(GEN, 'borradores');

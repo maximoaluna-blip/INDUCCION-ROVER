@@ -70,3 +70,10 @@ Proyecto frente a servicio continuo; «para / con» (S1); el PARCE (*Guía de Cl
 
 ## Logros
 1. Ojos que Escuchan · 2. Plan con Propósito · 3. Cuidado Acordado · 4. Proyecto con Huella.
+
+## Revisión contra el *Equipo de Bolsillo - Rover* (05-10-2026, ADR-145)
+
+El curso se escribió antes de que el *Equipo de Bolsillo - Rover* (Comisión Nacional Rover, 2025) entrara al corpus. Una auditoría doctrinal acotada no encontró contradicciones y pidió lo mínimo, ya aplicado (`contentVersion` 2026-10-05):
+- **L3, recursos:** la plata es responsabilidad de los Rovers y se aclara desde la formulación (p. 13); el campo `recursos` pasa a obligatorio y pregunta quién responde por la plata; que lo que ponga la rama o el Grupo quede escrito y acordado antes es recomendación del curso.
+- **L3, objetivo:** la ayuda pide decir qué incluye y qué no incluye el proyecto (p. 19).
+- El *Equipo de Bolsillo* se suma a las fuentes de la descripción y de la bienvenida.

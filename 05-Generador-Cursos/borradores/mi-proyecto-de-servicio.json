@@ -2,8 +2,8 @@
   "courseId": "mi-proyecto-de-servicio",
   "title": "Mi proyecto de servicio",
   "subtitle": "Ruta Servir en el Grupo · Nivel 3 · Proyecto",
-  "description": "Para el Rover que ya sirve en una rama de su Grupo y quiere hacer un proyecto propio para ella. En unos 45 minutos diagnosticas qué necesita la rama, diseñas tu proyecto, lo cuidas, lo acuerdas y decides cómo lo vas a evaluar. Lección a lección vas armando tu plan, y al final lo descargas para llevarlo a la reunión donde lo acuerdas. Basado en el Modelo de Aplicación de la Política de Programa de Jóvenes (2026) y la Guía de Dirigente de Clan (2026).",
-  "contentVersion": "2026-10-02",
+  "description": "Para el Rover que ya sirve en una rama de su Grupo y quiere hacer un proyecto propio para ella. En unos 45 minutos diagnosticas qué necesita la rama, diseñas tu proyecto, lo cuidas, lo acuerdas y decides cómo lo vas a evaluar. Lección a lección vas armando tu plan, y al final lo descargas para llevarlo a la reunión donde lo acuerdas. Basado en el Modelo de Aplicación de la Política de Programa de Jóvenes (2026) y la Guía de Dirigente de Clan (2026) y el Equipo de Bolsillo - Rover (2025).",
+  "contentVersion": "2026-10-05",
   "route": "grupo",
   "level": 3,
   "branch": null,
@@ -31,7 +31,7 @@
         },
         {
           "type": "paragraph",
-          "text": "La pregunta es del <em>Modelo de Aplicación de la Política Nacional de Programa de Jóvenes</em> (2026, p. 78), que les pide a los dirigentes mantenerla viva en todas las etapas. También es la pregunta de tu proyecto. El <em>Modelo</em> es la fuente principal de este curso, junto con la <em>Guía de Dirigente de Clan</em> (2026) y la <em>Política Nacional A Salvo del Peligro</em> (2025)."
+          "text": "La pregunta es del <em>Modelo de Aplicación de la Política Nacional de Programa de Jóvenes</em> (2026, p. 78), que les pide a los dirigentes mantenerla viva en todas las etapas. También es la pregunta de tu proyecto. El <em>Modelo</em> es la fuente principal de este curso, junto con la <em>Guía de Dirigente de Clan</em> (2026), la <em>Política Nacional A Salvo del Peligro</em> (2025) y el <em>Equipo de Bolsillo - Rover</em> de la Comisión Nacional Rover (2025)."
         },
         {
           "type": "paragraph",
@@ -190,7 +190,7 @@
           "items": [
             "<strong>Un objetivo concreto:</strong> qué va a cambiar, para quién y para cuándo. «Ayudar a la Manada» no es un objetivo; «que la Manada tenga señalizada la sede antes del campamento de noviembre» sí. Y «hacer los letreros» tampoco: es una actividad; el objetivo es lo que cambia cuando ya están puestos",
             "<strong>Las actividades:</strong> qué harás, cuándo y con quién",
-            "<strong>Los recursos:</strong> lo que necesitas y de dónde va a salir"
+            "<strong>Los recursos:</strong> lo que necesitas, de dónde va a salir y quién responde por la plata"
           ]
         },
         {
@@ -199,7 +199,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Apoyar no es dirigir.</strong> El proyecto es tuyo: lo diseñas y lo ejecutas tú. Pero lo que se enseña, se juega o se decide con la rama sigue siendo de la rama y sus dirigentes, no tuyo. Si al diseñar se te ocurre cambiar algo de eso, proponlo; no lo decidas. Que el proyecto quepa en unas semanas es una recomendación de este curso. Y tu objetivo es tu respuesta a la pregunta del inicio: <strong>¿para quién hacemos esto y qué cambia gracias a nosotros?</strong>"
+          "text": "<strong>Apoyar no es dirigir.</strong> El proyecto es tuyo: lo diseñas y lo ejecutas tú. Pero lo que se enseña, se juega o se decide con la rama sigue siendo de la rama y sus dirigentes, no tuyo. Si al diseñar se te ocurre cambiar algo de eso, proponlo; no lo decidas. Que el proyecto quepa en unas semanas es una recomendación de este curso. <br><br><strong>La plata, desde el principio.</strong> Según el <em>Equipo de Bolsillo - Rover</em>, los recursos de un Proyecto Rover son responsabilidad de los Rovers que lo hacen, y lo económico tiene que quedar claro desde que lo formulas (p. 13). Si la rama o el Grupo van a poner algo, que quede escrito en tu plan y acordado antes: esto último es una recomendación de este curso. Y tu objetivo es tu respuesta a la pregunta del inicio: <strong>¿para quién hacemos esto y qué cambia gracias a nosotros?</strong>"
         },
         {
           "type": "plan-builder",
@@ -210,7 +210,7 @@
               "label": "Tu objetivo: qué va a cambiar, para quién y para cuándo",
               "kind": "long",
               "required": true,
-              "help": "Las tres partes: qué cambia, para quién y para cuándo. Piensa en semanas, no en años."
+              "help": "Las tres partes: qué cambia, para quién y para cuándo. Piensa en semanas, no en años. Y di qué incluye y qué no incluye tu proyecto (Equipo de Bolsillo, p. 19): lo educativo de la rama queda fuera."
             },
             {
               "id": "actividades",
@@ -236,8 +236,10 @@
             },
             {
               "id": "recursos",
-              "label": "¿Qué necesitas y de dónde va a salir?",
-              "kind": "long"
+              "label": "¿Qué necesitas, de dónde va a salir y quién responde por la plata?",
+              "kind": "long",
+              "required": true,
+              "help": "Si no necesitas nada, escribe «nada»; si la rama o el Grupo ponen algo, dilo aquí."
             }
           ]
         }

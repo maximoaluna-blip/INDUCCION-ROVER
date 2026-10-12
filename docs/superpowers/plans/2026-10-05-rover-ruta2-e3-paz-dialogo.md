@@ -1,5 +1,7 @@
 # Rover · Ruta 2, entrega E3 «Mensajeros de la Paz: paz y diálogo» — plan de implementación
 
+> ✅ **Tasks 1 a 3 completadas el 12-10-2026.** Publicado (Rover `21a6fb6`), ADR-146 en la raíz (`2bb1507`).
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** publicar `herramientas-paz-dialogo`, el primer curso de herramientas (Nivel 2) de la Ruta 2, con su `kit-builder`, para el Rover que va a servir en la comunidad con el desafío Constructores de Paz o con el método de Diálogos por la Paz.

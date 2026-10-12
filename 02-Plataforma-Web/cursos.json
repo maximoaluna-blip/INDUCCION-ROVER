@@ -206,5 +206,18 @@
     "branch": null,
     "status": "active",
     "file": "herramientas-paz-dialogo.html"
+  },
+  {
+    "courseId": "herramientas-genero-patrimonio",
+    "title": "Mensajeros de la Paz: género y patrimonio",
+    "description": "Para el Rover que va a servir en su comunidad con el desafío HeForShe o con Patrimonito. En unos 40 minutos conoces la ruta y el reconocimiento de cada uno, las actividades del Clan para la igualdad de género, cómo trabajar un patrimonio con quienes lo viven y los cuidados que no se negocian. Al final armas y descargas tu propio kit. Basado en el Kit de Acción HeForShe (ASC con ONU Mujeres, 2021), el Kit de Acción Patrimonito (ASC, 2021) y el Manual de Implementación Marco de Mundo Mejor (ASC, 2021).",
+    "icon": "🤝",
+    "duration": "40 minutos",
+    "modules": 6,
+    "route": "comunidad",
+    "level": 2,
+    "branch": null,
+    "status": "active",
+    "file": "herramientas-genero-patrimonio.html"
   }
 ]

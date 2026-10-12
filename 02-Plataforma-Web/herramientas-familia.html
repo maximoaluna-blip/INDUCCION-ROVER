@@ -2337,7 +2337,8 @@ function _kitRefresh() {
         if (ta) ta.hidden = !cb.checked;
     });
     var count = root.querySelector('[data-kit-count]');
-    if (count) count.textContent = n + ' de ' + max + ' elegidos';
+    // Rótulo opcional (labels.countLabel): «elegidas» cuando lo que se elige son actividades.
+    if (count) count.textContent = n + ' de ' + max + ' ' + (root.getAttribute('data-count-label') || 'elegidos');
 }
 
 function initKitBuilder() {

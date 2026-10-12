@@ -421,6 +421,7 @@
             "intro": "Elige, escribe y descárgalo. Se guarda solo en este navegador: no va a ninguna hoja. Si vuelves desde este mismo navegador, lo encuentras como lo dejaste.",
             "gamesTitle": "Mis 3 actividades",
             "gamesHelp": "Marca tres, de uno de los dos desafíos o de los dos. En cada una escribe con qué grupo de tu comunidad la harías, qué le adaptarías y con qué pregunta la cierras.",
+            "countLabel": "elegidas",
             "gameWhyPlaceholder": "Con qué grupo · qué le adapto · pregunta de cierre",
             "phrasesTitle": "Mis frases",
             "phrasePlaceholder": "Lo que dirías, tal cual",

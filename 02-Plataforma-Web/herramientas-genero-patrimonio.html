@@ -947,7 +947,7 @@ html[data-theme="dark"] .plan-remove, html[data-theme="dark"] .plan-add, html[da
 
                 <p><strong>⏱️ 8 minutos · Idea central:</strong> lo que aprendiste se vuelve tuyo cuando lo eliges y lo escribes con tus palabras.</p>
 
-                <div class="kit-builder" data-kit-builder data-max-games="3" data-pdf-title="Mi kit de género y patrimonio" data-missing-games="Te faltan actividades: marca tres antes de descargar tu kit.">
+                <div class="kit-builder" data-kit-builder data-max-games="3" data-pdf-title="Mi kit de género y patrimonio" data-missing-games="Te faltan actividades: marca tres antes de descargar tu kit." data-count-label="elegidas">
                 <h3>Tu kit de género y patrimonio</h3>
                 <p>Elige, escribe y descárgalo. Se guarda solo en este navegador: no va a ninguna hoja. Si vuelves desde este mismo navegador, lo encuentras como lo dejaste.</p>
                 <fieldset class="kit-games">
@@ -2397,7 +2397,8 @@ function _kitRefresh() {
         if (ta) ta.hidden = !cb.checked;
     });
     var count = root.querySelector('[data-kit-count]');
-    if (count) count.textContent = n + ' de ' + max + ' elegidos';
+    // Rótulo opcional (labels.countLabel): «elegidas» cuando lo que se elige son actividades.
+    if (count) count.textContent = n + ' de ' + max + ' ' + (root.getAttribute('data-count-label') || 'elegidos');
 }
 
 function initKitBuilder() {

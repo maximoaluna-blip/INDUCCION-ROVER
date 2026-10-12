@@ -119,6 +119,27 @@ test.describe('@solo-escritorio kit-builder', () => {
     await expect(page.locator('.notification').last()).not.toContainText('juegos');
   });
 
+  test('el contador concuerda con lo que se elige: «elegidos» por defecto, «elegidas» con actividades (ADR-150)', async ({ page }) => {
+    await abrirKit(page);
+    await page.check('[data-kit-game="g1"]');
+    await expect(page.locator('[data-kit-count]')).toHaveText('1 de 3 elegidos');
+    // Los dos cursos de la Ruta 2 eligen actividades: su kit declara labels.countLabel.
+    for (const [id, mod] of [['herramientas-paz-dialogo', 6], ['herramientas-genero-patrimonio', 6]]) {
+      const HTML = path.join(REPO, '02-Plataforma-Web', `${id}.html`);
+      await page.addInitScript(([cid, m]) => {
+        try {
+          localStorage.setItem('courseProgress_' + cid, JSON.stringify({
+            userProfile: { fullName: 'Rover Prueba' }, currentModule: m,
+            moduleProgress: [], quizScores: [], reflections: {}, studyTime: 0 }));
+        } catch (e) {}
+      }, [id, mod]);
+      await page.goto(pathToFileURL(HTML).href, { waitUntil: 'domcontentloaded' });
+      await page.evaluate((m) => showModule(m), mod);
+      await page.check('[data-kit-game="g1"]');
+      await expect(page.locator('[data-kit-count]'), id).toHaveText('1 de 3 elegidas');
+    }
+  });
+
   test('ninguna petición al backend', async ({ page }) => {
     const alBackend = [];
     page.on('request', (r) => { if (/script\.google\.com/.test(r.url())) alBackend.push(r.url()); });

@@ -412,7 +412,8 @@
             "rulesTitle": "Reglas y cuidados fijos (no se eligen):",
             "careOwnPlaceholder": "Agrega un cuidado propio para tu comunidad (opcional)",
             "download": "Descargar mi kit (PDF)",
-            "pdfTitle": "Mi kit de paz y diálogo"
+            "pdfTitle": "Mi kit de paz y diálogo",
+            "missingGames": "Te faltan actividades: marca tres antes de descargar tu kit."
           },
           "games": [
             {

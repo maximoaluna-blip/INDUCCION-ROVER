@@ -97,6 +97,26 @@ test.describe('@solo-escritorio kit-builder', () => {
     });
     expect(guardo).toBe(false);
     await expect(page.locator('.notification').last()).toContainText('marca tres');
+    // Sin rótulo propio, el aviso sigue diciendo «juegos», como en los cursos de rama.
+    await expect(page.locator('.notification').last()).toContainText('Te faltan juegos');
+  });
+
+  test('un curso que llama «actividades» a lo que se elige lo avisa con su palabra', async ({ page }) => {
+    // herramientas-paz-dialogo (ADR-146) elige actividades del Kit, no juegos: su kit declara
+    // labels.missingGames y el aviso tiene que usarlo (revisión final del ADR-146).
+    const HTML = path.join(REPO, '02-Plataforma-Web', 'herramientas-paz-dialogo.html');
+    await page.addInitScript(() => {
+      try {
+        localStorage.setItem('courseProgress_herramientas-paz-dialogo', JSON.stringify({
+          userProfile: { fullName: 'Rover Prueba' }, currentModule: 6,
+          moduleProgress: [], quizScores: [], reflections: {}, studyTime: 0 }));
+      } catch (e) {}
+    });
+    await page.goto(pathToFileURL(HTML).href, { waitUntil: 'domcontentloaded' });
+    await page.evaluate(() => showModule(6));
+    await page.evaluate(() => downloadKitPDF());
+    await expect(page.locator('.notification').last()).toContainText('Te faltan actividades');
+    await expect(page.locator('.notification').last()).not.toContainText('juegos');
   });
 
   test('ninguna petición al backend', async ({ page }) => {

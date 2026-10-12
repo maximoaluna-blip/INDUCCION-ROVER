@@ -59,7 +59,7 @@ function renderKit(s) {
                         <input type="checkbox" id="kit-care-${esc(c.id)}" data-kit-care="${esc(c.id)}">
                         <label for="kit-care-${esc(c.id)}">${c.text}${c.source ? ' <small class="kit-source">' + c.source + '</small>' : ''}</label>
                     </div>`).join('');
-  return `<div class="kit-builder" data-kit-builder data-max-games="${MAX_GAMES}" data-pdf-title="${esc(L.pdfTitle)}">
+  return `<div class="kit-builder" data-kit-builder data-max-games="${MAX_GAMES}" data-pdf-title="${esc(L.pdfTitle)}"${L.missingGames ? ` data-missing-games="${esc(L.missingGames)}"` : ''}>
                 <h3>${L.title}</h3>
                 <p>${L.intro}</p>
                 <fieldset class="kit-games">

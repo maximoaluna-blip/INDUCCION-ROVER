@@ -2379,7 +2379,8 @@ function downloadKitPDF() {
     // Un kit con menos juegos de los pedidos no esta listo: se avisa y no se descarga.
     var max = parseInt(root.getAttribute('data-max-games'), 10) || 3;
     if (root.querySelectorAll('[data-kit-game]:checked').length !== max) {
-        showNotification('Te faltan juegos: marca tres antes de descargar tu kit.', 'warning');
+        // El rótulo es opcional (labels.missingGames): un curso que elige «actividades» lo dice con su palabra.
+        showNotification(root.getAttribute('data-missing-games') || 'Te faltan juegos: marca tres antes de descargar tu kit.', 'warning');
         return;
     }
     var JsPDF = (window.jspdf && window.jspdf.jsPDF) || (typeof jsPDF !== 'undefined' ? jsPDF : null);

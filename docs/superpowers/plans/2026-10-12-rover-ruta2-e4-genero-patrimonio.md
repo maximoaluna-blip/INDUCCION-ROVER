@@ -96,7 +96,7 @@
 
 ### Task 3: publicar
 
-- [ ] Suite local, push, Pages, suite en producción, raíz (ADR, glosario si hace falta, trazabilidad, ledger, estado, bitácora) y docs de Rover.
+- [x] Suite local, push, Pages, suite en producción, raíz (ADR, glosario si hace falta, trazabilidad, ledger, estado, bitácora) y docs de Rover.
 
 ### Task 4: revisión final
 

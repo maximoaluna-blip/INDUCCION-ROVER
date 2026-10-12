@@ -1,0 +1,597 @@
+{
+  "courseId": "herramientas-paz-dialogo",
+  "title": "Mensajeros de la Paz: paz y diálogo",
+  "subtitle": "Ruta Servir en la comunidad · Nivel 2 · Herramientas",
+  "description": "Para el Rover que va a servir en su comunidad con el desafío Constructores de Paz o con el método de Diálogos por la Paz. En unos 40 minutos conoces la ruta del desafío, las actividades del Kit para mayores de 18, cómo facilitar un diálogo sin tomar partido y cómo cuidar a quien recuerda. Al final armas y descargas tu propio kit. Basado en el Kit de Acción Constructores de Paz (ASC, 2021) y el Manual de Implementación Marco de Mundo Mejor (ASC, 2021).",
+  "contentVersion": "2026-10-12",
+  "route": "comunidad",
+  "level": 2,
+  "branch": null,
+  "registration": {
+    "motivationLabel": "¿Qué división o conflicto de tu comunidad te gustaría ayudar a transformar?"
+  },
+  "icon": "🕊️",
+  "duration": "40 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "En el barrio, los de la parte alta y los de la parte baja llevan años sin ponerse de acuerdo sobre el salón comunal. Cada reunión de la junta termina igual: unos hablan, otros se van. La junta le pregunta a tu Clan si puede ayudar. Este curso es para que puedas decir que sí, y saber cómo."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>El objetivo del diálogo es superar los malentendidos y disipar los estereotipos para aumentar la comprensión mutua.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La frase es del <em>Manual de Implementación Marco de Mundo Mejor</em> (ASC, 2021, p. 21), cuando presenta Diálogos por la Paz. Y sigue: entender mejor el punto de vista del otro <strong>«no significa en lo absoluto que se deba estar de acuerdo con ese punto de vista»</strong>. Este curso trabaja dos desafíos de Mensajeros de la Paz: <strong>Constructores de Paz</strong>, con su <em>Kit de Acción</em> (ASC, 2021), y <strong>Diálogos por la Paz</strong>, con lo que el Manual dice de su método."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Este es un curso de herramientas del Nivel 2 de la ruta Servir en la comunidad: da por sabido lo de <em>Servir más allá del Grupo: Mundo Mejor</em>. Nada de lo que hagas aquí te da un cargo. <br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión —que leen tú y el equipo de formación— y con dos preguntas. Para seguir hay que acertar las dos; si fallas una, el curso te dice cuál revisar y puedes intentarlo las veces que quieras. Al final armas tu kit: se guarda solo en este navegador."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Recorrer</strong> la ruta de Constructores de Paz: tomar conciencia, compartir y actuar, con su autoevaluación",
+            "<strong>Elegir y adaptar</strong> actividades del Kit pensadas para mayores de 18",
+            "<strong>Facilitar</strong> un diálogo con las pautas de Diálogos por la Paz, sin tomar partido",
+            "<strong>Cuidar</strong> a quien recuerda: trabajar la memoria sin revictimizar y reportar cuando toca",
+            "<strong>Armar</strong> tu propio kit de actividades, frases y cuidados"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "El desafío y su ruta",
+      "emoji": "🧭",
+      "navLabel": "La ruta",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 8 minutos · Idea central:</strong> Constructores de Paz es un viaje personal en tres etapas, que se acuerda antes de empezar y se cierra con una autoevaluación."
+        },
+        {
+          "type": "paragraph",
+          "text": "El <em>Kit de Acción Constructores de Paz</em> lo presenta como una oportunidad de aprendizaje del Marco de Mundo Mejor para Colombia, que invita a descubrir más sobre los derechos humanos, la justicia, la memoria histórica y la transformación de conflictos, y a tomar medidas concretas por una cultura de paz (p. 5). Responde, dice el Kit, al reto de la sociedad colombiana en el posconflicto, y está pensado para niños, niñas y jóvenes, scouts o no, desde los siete años hasta la Rama Rover (p. 5)."
+        },
+        {
+          "type": "timeline",
+          "items": [
+            {
+              "title": "Toma conciencia",
+              "description": "Del contexto que te rodea y de las preocupaciones sobre justicia, derechos humanos, memoria histórica y construcción de paz (pp. 5 y 8)."
+            },
+            {
+              "title": "Comparte",
+              "description": "Con los demás, para encontrar soluciones: identificar con tu comunidad los problemas, hacer las actividades y decidir el tema de tu proyecto de servicio (pp. 8–9)."
+            },
+            {
+              "title": "Actúa",
+              "description": "Desarrolla e implementa acciones que hagan la diferencia: ejecuta tu proyecto (pp. 5 y 7)."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Cómo se recorre"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Se acuerda antes.</strong> El viaje empieza cuando el joven descubre el interés y luego <strong>jóvenes y adultos acuerdan</strong> los pasos para completar el desafío (pp. 6–7). Para ti, ese adulto es tu adulto acompañante del Clan.",
+            "<strong>Empieza y termina con la autoevaluación.</strong> La de mayores de 18 tiene dos áreas —«La paz y el cambio positivo comienzan conmigo» y la de tu comunidad— y te pide elegir un problema para trabajar mediante acciones positivas, con la ayuda de una persona adulta (pp. 17–18). Al final la repites.",
+            "<strong>Tres actividades, no todas.</strong> Desde los 11 años el Kit pide tres actividades de su ruta (p. 9), y son opcionales y adaptables si se enmarcan en sus competencias (p. 19).",
+            "<strong>Un proyecto de servicio.</strong> Se identifica con la comunidad, se revisa su viabilidad y sostenibilidad, y se presentan los resultados al grupo y a los beneficiarios (p. 9)."
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>El reconocimiento.</strong> Al cerrar, el Kit habla de reconocer el progreso, celebrar y ser reconocido como Mensajero de la Paz (p. 7). El procedimiento de la insignia de Constructores de Paz no está escrito en ninguna fuente publicada: pregúntalo a la comisión de Mundo Mejor de tu región, y que no sea la meta del viaje."
+        },
+        {
+          "type": "paragraph",
+          "text": "Diálogos por la Paz es otro desafío de la misma iniciativa, también desde los siete años hasta la Rama Rover (Manual, p. 21). Su kit de acción no está en los documentos que usa este curso; su método sí, y lo verás en la lección de facilitar el diálogo."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en una tensión o una división que conozcas en tu barrio o tu ciudad, sin nombrar personas ni contar lo que alguien vivió. ¿En qué etapa del viaje —tomar conciencia, compartir o actuar— tendrías que empezar tú, y por qué?"
+      },
+      "quiz": {
+        "title": "Evaluación - La ruta",
+        "questions": [
+          {
+            "text": "Una Rover hizo su autoevaluación y acordó el viaje con su adulto acompañante. Quiere empezar ya sus actividades, pero un compañero le dice que primero la comisión de Mundo Mejor tiene que aprobarle el desafío. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Esperar la aprobación de la comisión, porque sin ella las actividades no le van a contar",
+              "Empezar: el viaje se acuerda con su adulto acompañante, y la comisión entra al final",
+              "Pedirle a su adulto acompañante que la inscriba ante la comisión antes de empezar"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Un Rover se entusiasma y quiere hacer las siete actividades del Kit para mayores de 18 antes de pensar en su proyecto. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Elegir tres que le sirvan para su proyecto: el Kit pide tres, y deja adaptarlas",
+              "Hacer las siete, porque entre más actividades haga, más completo será el desafío",
+              "Saltarse las actividades del Kit e ir directo al proyecto, que es lo que de verdad cuenta"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: las actividades ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Las actividades para mayores de 18",
+      "emoji": "🛠️",
+      "navLabel": "Actividades",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> el Kit trae siete actividades para mayores de 18; las eliges por lo que tu proyecto necesita y las adaptas al grupo con el que trabajas."
+        },
+        {
+          "type": "paragraph",
+          "text": "El Kit ordena sus actividades en dos áreas, la personal y la de tu comunidad (pp. 21 y 48), y marca con su edad cada una. Estas son las que dice «mayores de 18 años»:"
+        },
+        {
+          "type": "method-grid",
+          "items": [
+            {
+              "title": "📜 La Declaración (p. 40)",
+              "description": "30 minutos. Con el artículo 2 de la Declaración Universal de Derechos Humanos, el grupo decide si unas situaciones lo vulneran o no, y por qué."
+            },
+            {
+              "title": "🗺️ Creando un mapa (p. 42)",
+              "description": "120 minutos. Por grupos, marcan en un mapa dónde se produce la violencia y de qué tipo; luego discuten cómo prevenirla."
+            },
+            {
+              "title": "💭 Empiezo a ser consciente de mis emociones (p. 44)",
+              "description": "45 minutos. Cada uno piensa en una emoción y la situación que la produjo; se comparte en parejas y, con el grupo, solo quien quiera."
+            },
+            {
+              "title": "🤝 Reconociendo (p. 46)",
+              "description": "45 minutos. Identificar los grupos a los que pertenecemos y qué derechos se les vulneran, y proponer acciones solidarias."
+            },
+            {
+              "title": "⚖️ Punto en el conflicto (p. 62)",
+              "description": "60 minutos. Un test sin carácter científico sobre cómo reacciona cada uno ante un conflicto, y qué otras opciones tiene."
+            },
+            {
+              "title": "🎭 ¿Qué lugar ocupan las emociones? (p. 64)",
+              "description": "60 minutos. Qué emociones aparecen en un conflicto, cuáles lo empeoran y cómo hacerlas explícitas."
+            },
+            {
+              "title": "🌱 Propuesta de proyecto (p. 67)",
+              "description": "Un proyecto con tu comunidad o tu Clan sobre no violencia, diálogo, memoria histórica o problemas locales, con Scouts, ONG y actores locales."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "<small>Fuente: <em>Kit de Acción Constructores de Paz</em>, ASC, 2021; edades y tiempos tal como los marca cada actividad.</small>"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Del Clan a la comunidad"
+        },
+        {
+          "type": "paragraph",
+          "text": "Las actividades están escritas para hacerlas con tu Clan o tu grupo. Cuando las llevas a la comunidad, el grupo cambia: vecinos, jóvenes de un colegio, la junta. El Kit lo permite: sus actividades son opcionales y se pueden adaptar o crear otras, siempre que se enmarquen en sus competencias (p. 19). Adaptar no es cambiar el propósito: es que funcione con quienes tienes al frente."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Dos que piden más cuidado.</strong> <em>Creando un mapa</em> pide ubicar dónde hay violencia, y en tu comunidad puede haber quien la vivió. <em>Empiezo a ser consciente de mis emociones</em> pide contar vivencias en parejas; el propio Kit dice que cada uno escoge a quién contárselo y que con el grupo habla solo quien quiera, sin valoraciones (p. 45). La lección de cuidados te dice cómo hacerlas."
+        }
+      ],
+      "reflection": {
+        "prompt": "De las siete actividades, ¿cuál usarías primero con un grupo de tu comunidad, y qué le cambiarías para ese grupo? Describe el grupo por lo que es —jóvenes de un colegio, vecinos de una cuadra—, sin nombres."
+      },
+      "quiz": {
+        "title": "Evaluación - Actividades",
+        "questions": [
+          {
+            "text": "La junta quiere que los jóvenes del barrio entiendan por qué dejar a alguien por fuera del salón comunal por de dónde viene puede vulnerar un derecho. ¿Qué actividad del Kit te sirve más para empezar?",
+            "options": [
+              "La Declaración, porque trabaja con situaciones el artículo 2 sobre la igualdad",
+              "Punto en el conflicto, porque muestra cómo reacciona cada uno",
+              "Creando un mapa, que ubica en el barrio los lugares donde hay violencia"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Un Rover va a usar Punto en el conflicto con los jóvenes de la junta y quiere cambiar algunas frases del test para que suenen a su barrio. Un compañero le dice que no puede tocar nada, porque es del Kit. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "No tocarlo: si el Kit lo trae así, cambiarlo hace que la actividad ya no le sirva al grupo",
+              "Cambiarlo por un test que encontró en internet, sin revisar si tiene el mismo propósito",
+              "Adaptarlo al grupo sin cambiar su propósito: el Kit deja adaptar sus actividades"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: facilitar el diálogo ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Facilitar el diálogo",
+      "emoji": "💬",
+      "navLabel": "Diálogo",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> facilitar un diálogo no es convencer ni arbitrar; es que las personas se escuchen, reconozcan de dónde viene cada una y construyan desde lo que tienen en común."
+        },
+        {
+          "type": "paragraph",
+          "text": "La junta te pide moderar una reunión entre los de la parte alta y los de la parte baja sobre el salón comunal. Antes de pensar en qué decir, vale la pena saber qué es lo que vas a facilitar."
+        },
+        {
+          "type": "blockquote",
+          "text": "«El diálogo es un medio seguro de comunicaciones entre individuos o grupos con el objetivo de intercambiar puntos de vista, conocimientos, entendimientos, imprecisiones y percepciones para alcanzar una comprensión común del tema central de un diálogo determinado.»<br><small>— Manual de Implementación Marco de Mundo Mejor, ASC, 2021, p. 21</small>"
+        },
+        {
+          "type": "paragraph",
+          "text": "El mismo Manual dice lo que el diálogo <strong>no</strong> es (pp. 21–22): no es una conversación sin objetivo, no es una discusión para saber más de un tema —en el diálogo, las personas y sus relaciones están en el centro— y no es una conferencia para hacer declaraciones."
+        },
+        {
+          "type": "timeline",
+          "items": [
+            {
+              "title": "Escuchar",
+              "description": "Tus ideas, pensamientos y emociones, y las palabras y los sentimientos de los demás. Escuchar para entender."
+            },
+            {
+              "title": "Reconocer",
+              "description": "De dónde vienen los pensamientos y emociones, las experiencias previas y los sesgos, propios y de los otros. Reconocer para entender y encontrar puntos en común."
+            },
+            {
+              "title": "Hacer",
+              "description": "Poner la relación primero, construir a partir de intereses comunes y planear cómo llevar el diálogo a los demás en la comunidad."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "<small>Pasos del proceso de aprendizaje de Diálogos por la Paz: Manual, p. 22.</small>"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu papel en la reunión"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Las reglas, con ellos.</strong> El Manual pide establecer las reglas con quienes participan, y que puedan sugerir las que mejor les parezcan (p. 29).",
+            "<strong>Preguntas, no sentencias.</strong> «Sea consciente de su posición de poder, evite actitudes críticas y autoritarias… Haga preguntas abiertas en lugar de promover posiciones o dar consejos» (Manual, p. 6). Aunque tengas una opinión sobre quién tiene la razón, no es tu papel darla.",
+            "<strong>Después de escuchar, hacer.</strong> Escuchar no es quedarse quieto: el tercer paso es construir desde lo que tienen en común. Ayudar a que lo escriban y lo acuerden es parte del diálogo."
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>En simple:</strong> no vas a resolver el conflicto del salón; vas a cuidar que cada parte pueda decir lo suyo y oír lo del otro. Si al final hay un acuerdo, es de ellos."
+        }
+      ],
+      "reflection": {
+        "prompt": "Escribe tres preguntas abiertas que harías en una reunión entre dos grupos de vecinos que no se entienden, para que se escuchen sin que ninguna pregunta tome partido."
+      },
+      "quiz": {
+        "title": "Evaluación - Diálogo",
+        "questions": [
+          {
+            "text": "En la reunión del salón comunal, un vecino de la parte baja le dice al Rover que modera: «Usted que es neutral, díganos quién tiene la razón». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Darle su opinión al grupo con cuidado: si se la preguntaron, su deber es ser sincero",
+              "Devolver la pregunta al grupo, para que cada parte diga qué necesita y por qué",
+              "Decir que nadie tiene la razón, para que ninguna de las dos partes se moleste"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Al final de la reunión, las dos partes coinciden en que el salón debe estar abierto los sábados para los niños. Otro Rover le dice al que modera: «No propongas nada; un facilitador solo escucha». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Ayudarles a escribir ese punto en común y a acordar cómo lo van a cumplir",
+              "Cerrar sin acordar nada: si el facilitador propone, deja de ser neutral",
+              "Proponer él mismo el horario completo del salón, para evitar otra pelea"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: cuidar a quien recuerda ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Cuidar a quien recuerda",
+      "emoji": "🛡️",
+      "navLabel": "Cuidados",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> en una actividad de memoria, lo que cada persona cuenta es suyo. Tú cuidas el espacio, no extraes el relato; y si algo revela un posible delito, lo reportas."
+        },
+        {
+          "type": "paragraph",
+          "text": "La memoria histórica atraviesa el Kit: está en sus autoevaluaciones y en varias actividades. En tu comunidad puede haber quien vivió el conflicto armado de cerca. <strong>El Kit no trae advertencias para eso</strong>, y no encontramos en los documentos de la Asociación que usa este curso una orientación sobre cómo trabajar esa memoria. Lo que sigue lo arma este curso con lo que sí está escrito: es una recomendación con fuentes, no una norma nueva."
+        },
+        {
+          "type": "blockquote",
+          "text": "Revictimización: repetición o profundización del daño sufrido por una persona, como resultado de respuestas inadecuadas, indiferentes o culpabilizantes por parte de quienes deben brindar protección. Puede ocurrir cuando se minimiza el relato de la víctima o se la expone nuevamente a situaciones traumáticas.<br><small>— Política Nacional A Salvo del Peligro, ASC, 2025, p. 15 (resumida)</small>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Avisa antes.</strong> Que la organización sepa qué se va a trabajar y cómo y, si hay menores de edad, que sus familias también: el <em>Modelo</em> pone el consentimiento informado dentro de lo que hace segura una actividad (p. 71).",
+            "<strong>Nadie está obligado a contar.</strong> El propio Kit lo hace así: habla quien lo desee, los demás escuchan «sin hacer valoraciones», y cada uno cuenta a alguien en quien confíe (p. 45); se comparte solo si alguien quiere (p. 62).",
+            "<strong>Pregunta, no sentencies.</strong> Preguntas abiertas en lugar de posiciones o consejos (Manual, p. 6). Sobre el conflicto armado, no tomas partido.",
+            "<strong>Dale lugar a lo que se construyó.</strong> Las actividades de memoria del Kit preguntan también por la resistencia y las iniciativas de la comunidad (pp. 52 y 58). Recordar no exige que alguien cuente su propio sufrimiento.",
+            "<strong>Si alguien se conmueve, no le pidas que explique.</strong> Ofrécele un momento aparte, siempre con alguien de la organización presente: nunca a solas (la práctica 2+1, Política p. 26; con quien no es scout, es recomendación de este curso). Cierra la actividad con lo que la comunidad construyó, no con el dolor."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Lo que no es recomendación"
+        },
+        {
+          "type": "paragraph",
+          "text": "Confidencialidad no es secreto. Si lo que oyes puede ser un delito contra alguien —scout o no—, la Política habla de «cualquier acción que represente un posible delito»: hay que reportarlo y «no cabrá la posibilidad de guardar ningún secreto» (p. 21). Avisa sin demora a tu adulto acompañante y usa el botón «Me Pongo A Salvo del Peligro» (p. 44); no investigas ni confrontas. Y recuerda: no eres terapeuta ni el adulto a cargo. Cuidar el espacio, escuchar y saber a quién acudir es lo que te toca."
+        }
+      ],
+      "reflection": {
+        "prompt": "Imagina un taller de memoria con jóvenes de un barrio que no conoces. Escribe con qué palabras lo abrirías para que nadie se sienta obligado a contar."
+      },
+      "quiz": {
+        "title": "Evaluación - Cuidados",
+        "questions": [
+          {
+            "text": "En Creando un mapa, un joven de la junta marca la vereda de donde salió su familia y dice que llegaron desplazados. Luego se queda callado. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Volver a preguntarle frente al grupo cómo fue, porque su historia le da sentido al mapa",
+              "Agradecerle, no preguntarle más frente al grupo y seguir con lo que el barrio hizo",
+              "Pasar a otro tema sin decir nada y seguir con la actividad del mapa"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Para no revictimizar a nadie, un Rover decide quitar de su taller con la junta todo lo que tenga que ver con la memoria del barrio. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Quitarla toda: sin memoria no hay riesgo de hacer daño a nadie del barrio",
+              "Pedir que cada uno cuente una historia propia, para que la memoria del barrio sea real",
+              "Mantenerla, empezando por lo que el barrio construyó y sin obligar a contar"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Continuar: arma tu kit ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Arma tu kit",
+      "emoji": "🧰",
+      "navLabel": "Tu kit",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 8 minutos · Idea central:</strong> lo que aprendiste se vuelve tuyo cuando lo eliges y lo escribes con tus palabras."
+        },
+        {
+          "type": "kit-builder",
+          "labels": {
+            "title": "Tu kit de paz y diálogo",
+            "intro": "Elige, escribe y descárgalo. Se guarda solo en este navegador: no va a ninguna hoja. Si vuelves desde este mismo navegador, lo encuentras como lo dejaste.",
+            "gamesTitle": "Mis 3 actividades",
+            "gamesHelp": "Marca tres, como pide el Kit. En cada una escribe con qué grupo de tu comunidad la harías, qué le adaptarías y con qué pregunta la cierras.",
+            "gameWhyPlaceholder": "Con qué grupo · qué le adapto · pregunta de cierre",
+            "phrasesTitle": "Mis frases",
+            "phrasePlaceholder": "Lo que dirías, tal cual",
+            "careTitle": "Mi lista de cuidado",
+            "rulesTitle": "Reglas, siempre (no se eligen):",
+            "careOwnPlaceholder": "Agrega un cuidado propio para tu comunidad (opcional)",
+            "download": "Descargar mi kit (PDF)",
+            "pdfTitle": "Mi kit de paz y diálogo"
+          },
+          "games": [
+            {
+              "id": "g1",
+              "name": "La Declaración",
+              "detail": "situaciones que vulneran o no el artículo 2 de la Declaración Universal",
+              "source": "Kit de Acción Constructores de Paz, p. 40"
+            },
+            {
+              "id": "g2",
+              "name": "Creando un mapa",
+              "detail": "dónde se produce la violencia y cómo prevenirla",
+              "source": "Kit de Acción Constructores de Paz, p. 42"
+            },
+            {
+              "id": "g3",
+              "name": "Empiezo a ser consciente de mis emociones",
+              "detail": "una emoción y su situación; se cuenta solo a quien uno escoja",
+              "source": "Kit de Acción Constructores de Paz, p. 44"
+            },
+            {
+              "id": "g4",
+              "name": "Reconociendo",
+              "detail": "los grupos a los que pertenecemos y los derechos que se les vulneran",
+              "source": "Kit de Acción Constructores de Paz, p. 46"
+            },
+            {
+              "id": "g5",
+              "name": "Punto en el conflicto",
+              "detail": "cómo reacciona cada uno ante un conflicto y qué otras opciones tiene",
+              "source": "Kit de Acción Constructores de Paz, p. 62"
+            },
+            {
+              "id": "g6",
+              "name": "¿Qué lugar ocupan las emociones?",
+              "detail": "las emociones que empeoran un conflicto y cómo hacerlas explícitas",
+              "source": "Kit de Acción Constructores de Paz, p. 64"
+            },
+            {
+              "id": "g7",
+              "name": "Propuesta de proyecto",
+              "detail": "un proyecto con tu comunidad sobre no violencia, diálogo o memoria",
+              "source": "Kit de Acción Constructores de Paz, p. 67"
+            }
+          ],
+          "phrases": [
+            {
+              "id": "f1",
+              "situation": "En la reunión, un vecino te pide que digas quién tiene la razón."
+            },
+            {
+              "id": "f2",
+              "situation": "Alguien empieza a contar algo muy duro de su familia frente a todos y se le quiebra la voz."
+            },
+            {
+              "id": "f3",
+              "situation": "Un participante dice que «los de la otra cuadra son todos iguales»."
+            },
+            {
+              "id": "f4",
+              "situation": "La coordinadora quiere cerrar la actividad diciendo quiénes fueron los culpables."
+            }
+          ],
+          "care": [
+            {
+              "id": "c1",
+              "rule": true,
+              "text": "Si lo que veo u oigo puede ser un delito contra alguien, scout o no, no lo guardo: aviso sin demora a mi adulto acompañante y lo reporto con el botón «Me Pongo A Salvo del Peligro».",
+              "source": "Política ASP, pp. 21 y 44"
+            },
+            {
+              "id": "c2",
+              "rule": true,
+              "text": "Nunca me quedo a solas con un menor de edad, scout o no: siempre con alguien de la organización presente.",
+              "source": "Política ASP, p. 26 (práctica 2+1); con quien no es scout: recomendación de este curso"
+            },
+            {
+              "id": "c3",
+              "rule": true,
+              "text": "Antes de una actividad de memoria, la organización —y, si hay menores, sus familias— sabe qué se va a trabajar y cómo.",
+              "source": "Modelo de Aplicación, p. 71 (consentimiento informado); avisar a la organización: recomendación de este curso"
+            },
+            {
+              "id": "c4",
+              "rule": true,
+              "text": "No publico fotos de las personas con las que trabajo sin seguir las directrices de la Asociación y las de la organización; si no las conozco, pregunto y no publico.",
+              "source": "Política ASP, p. 26; preguntar y no publicar: recomendación de este curso"
+            },
+            {
+              "id": "c5",
+              "text": "Nadie está obligado a contar: habla quien quiera y los demás escuchan sin hacer valoraciones.",
+              "source": "Kit de Acción Constructores de Paz, pp. 45 y 62"
+            },
+            {
+              "id": "c6",
+              "text": "Pregunto, no sentencio: preguntas abiertas en lugar de posiciones o consejos.",
+              "source": "Manual de Implementación Marco de Mundo Mejor, p. 6"
+            },
+            {
+              "id": "c7",
+              "text": "Empiezo por lo que la comunidad construyó, no por el sufrimiento de nadie.",
+              "source": "Kit de Acción Constructores de Paz, pp. 52 y 58; empezar por ahí: recomendación de este curso"
+            },
+            {
+              "id": "c8",
+              "text": "Si alguien se conmueve, no le pido que explique: le ofrezco un momento aparte, con alguien de la organización presente.",
+              "source": "Recomendación de este curso, apoyada en la Política ASP, p. 15 (revictimización)"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar vas a escribir tu compromiso: «Antes del ___ voy a usar ___ con ___, y nunca voy a ___». Para el grupo, escribe su tipo —jóvenes de un colegio, vecinos de una junta—, no nombres."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Entender mejor el punto de vista del otro no significa estar de acuerdo con él.</strong><br>Significa que ahora pueden hablar."
+        }
+      ],
+      "reflection": {
+        "prompt": "¿Qué cuidado de tu kit te va a costar más cumplir cuando estés frente a un grupo de tu comunidad, y qué vas a hacer para no saltártelo?"
+      },
+      "quiz": {
+        "title": "Evaluación - Tu kit",
+        "questions": [
+          {
+            "text": "Un Rover arma su kit para trabajar con jóvenes de un colegio que tienen problemas de convivencia, y su proyecto es un acuerdo entre cursos. ¿Qué trío de actividades va mejor con lo que aprendiste?",
+            "options": [
+              "Punto en el conflicto, ¿Qué lugar ocupan las emociones? y Propuesta de proyecto",
+              "Creando un mapa, La Declaración y Reconociendo, sin paso hacia un proyecto",
+              "Las siete del Kit seguidas, para que los jóvenes no se pierdan ninguna de ellas"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "En su kit, una Rover quiere desmarcar la regla de reportar, porque en su comunidad «nadie es scout» y le parece que no aplica. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Desmarcarla: con personas que no son scouts, la Política de la Asociación no aplica",
+              "Dejarla como opción y decidir en cada caso con la organización aliada",
+              "Mantenerla: ante un posible delito se reporta, sea scout o no la persona afectada"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Viaje Acordado",
+      "emoji": "🧭",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Actividad a su Medida",
+      "emoji": "🛠️",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Voz que Pregunta",
+      "emoji": "💬",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Memoria Cuidada",
+      "emoji": "🛡️",
+      "unlockOnModule": 5
+    },
+    {
+      "id": "achievement-5",
+      "name": "Kit de Paz",
+      "emoji": "🧰",
+      "unlockOnModule": 6
+    }
+  ],
+  "certificate": {
+    "courseName": "MENSAJEROS DE LA PAZ: PAZ Y DIÁLOGO",
+    "description": "ha completado el curso Mensajeros de la Paz: paz y diálogo, que presenta la ruta del desafío Constructores de Paz, sus actividades para mayores de 18, el método de Diálogos por la Paz y los cuidados para trabajar la memoria en la comunidad.",
+    "commitmentPrompt": "Escribe tu compromiso completando la frase de la última lección: «Antes del ___ voy a usar ___ con ___, y nunca voy a ___». Para el grupo, escribe su tipo, no nombres."
+  }
+}

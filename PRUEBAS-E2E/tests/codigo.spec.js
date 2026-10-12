@@ -394,4 +394,43 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     }
     expect(malas).toEqual([]);
   });
+
+  // --- E3 paz y diálogo (ADR-146) ---
+  // El Kit de Constructores de Paz mezcla rangos de edad en la misma página. Al Rover solo le
+  // tocan las actividades que el Kit marca «Mayores de 18 años» (pp. 40, 42, 44, 46, 62, 64, 67).
+  const E3 = () => JSON.parse(leer(path.join(GEN, 'borradores', 'herramientas-paz-dialogo.json')) || 'null');
+  const kitDe = (c) => c && c.modules.flatMap((m) => m.sections).find((s) => s.type === 'kit-builder');
+
+  test('las actividades del kit de paz y diálogo son las del Clan, con su página (ADR-146)', () => {
+    const kit = kitDe(E3());
+    expect(kit, 'no existe herramientas-paz-dialogo o no tiene kit').toBeTruthy();
+    const CLAN = new Set([40, 42, 44, 46, 62, 64, 67]);
+    const fuera = kit.games.filter((g) => {
+      const m = /Constructores de Paz[^,;]*,\s*p\.\s*(\d+)/.exec(g.source || '');
+      return !(m && CLAN.has(Number(m[1])));
+    }).map((g) => `${g.id}: ${g.source}`);
+    expect(fuera).toEqual([]);
+  });
+
+  test('en el kit de paz y diálogo, lo que no es norma dice que es recomendación (ADR-146)', () => {
+    const kit = kitDe(E3());
+    expect(kit, 'no existe herramientas-paz-dialogo o no tiene kit').toBeTruthy();
+    // Las reglas fijas («siempre, no se eligen») tienen que ser norma: Política o Modelo. Los
+    // cuidados que se eligen pueden venir del Kit o del Manual; si no, dicen que son recomendación.
+    const NORMA = /Política|Modelo/;
+    const OFICIAL = /Política|Modelo|Kit|Manual|Guía/;
+    const malas = kit.care.filter((c) => {
+      if (c.rule) return !NORMA.test(c.source || '');
+      return !c.source || !(OFICIAL.test(c.source) || /recomendación/i.test(c.source));
+    }).map((c) => `${c.id}: ${c.source || '(sin fuente)'}`);
+    expect(malas).toEqual([]);
+  });
+
+  test('ninguna reflexión de paz y diálogo pide contar una violencia vivida (ADR-146)', () => {
+    const c = E3();
+    expect(c, 'no existe herramientas-paz-dialogo').toBeTruthy();
+    const malas = c.modules.map((m) => m.reflection && m.reflection.prompt)
+      .filter((p) => p && /viviste|te pasó|tu historia|has sufrido|te hicieron/i.test(p));
+    expect(malas).toEqual([]);
+  });
 });

@@ -131,7 +131,7 @@ Molde del Nivel 2 de la Ruta 1, con bienvenida y cuatro lecciones más «Arma tu
 - Las reflexiones se responden por rol o por tipo de organización: nunca piden nombres, iniciales de personas ni confidencias. El plan, el kit y el compromiso se quedan en el navegador.
 - Lo que no tiene fuente se declara «recomendación de este curso». Si protege a alguien y no lo cubre §6, se consulta al dueño.
 - Se dicen las fechas de los kits (2021) y de los manuales OMMS (2020). Para lo que pudo cambiar (plataformas, registro en scout.org), se remite a la comisión de Mundo Mejor.
-- **Fuera:** Scouts del Mundo y Héroes Mensajeros de la Paz (solo aparecen en el Manual de 2021), y el manual Nansen.
+- **Fuera:** Scouts del Mundo y Héroes Mensajeros de la Paz (solo aparecen en documentos de 2021), y el manual Nansen. Excepción: el *Kit Patrimonito* pone el Descubrimiento de Scouts del Mundo como primer paso de su insignia (p. 6); la E4 lo **nombra** como paso y remite a la comisión, sin enseñarlo (ADR-150).
 - Los quizzes siguen los criterios de `SKILL.md` y pasan la regla ciega en cada vuelta de corrección.
 
 ## 8. Lo que no se toca

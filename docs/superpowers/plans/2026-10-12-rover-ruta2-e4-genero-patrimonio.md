@@ -68,28 +68,28 @@
 - Create: `05-Generador-Cursos/borradores/herramientas-genero-patrimonio.json`.
 - Test: `PRUEBAS-E2E/tests/codigo.spec.js`, bloque `// --- E4 género y patrimonio ---`, con los puntos 1, 2, 4 y 5 del Review Focus.
 
-- [ ] **Step 1: Leer las fuentes con página.**
+- [x] **Step 1: Leer las fuentes con página.**
   - Kit HeForShe: lo del Clan y los mayores de 18, la parte B, pp. 7–14 y 80–83.
   - Kit Patrimonito, completo.
   - Manual pp. 27–46 y 67.
   - Diseños y JSON de los Cursos 23 y 24 de PJ.
   - Armar el mapa cerrado página → nombre de las actividades del Rover.
-- [ ] **Step 2: Escribir las pruebas que deben fallar** y verlas fallar porque el curso no existe.
-- [ ] **Step 3: Escribir el diseño y el JSON.**
+- [x] **Step 2: Escribir las pruebas que deben fallar** y verlas fallar porque el curso no existe.
+- [x] **Step 3: Escribir el diseño y el JSON.**
   - L1: los dos desafíos y su ruta (Emisor y Embajador; insignia de Patrimonito y sus 80 h).
   - L2: igualdad y coeducación con las actividades de HeForShe.
   - L3: patrimonio con la comunidad, con las herramientas de Patrimonito.
   - L4: cuidados.
   - L5: «Arma tu kit».
-- [ ] **Step 4: Build, pruebas y fuga.** Build sin avisos, pruebas en PASS, `ciega.py` en cero.
-- [ ] **Step 5: Commit**, sin push.
+- [x] **Step 4: Build, pruebas y fuga.** Build sin avisos, pruebas en PASS, `ciega.py` en cero.
+- [x] **Step 5: Commit**, sin push.
 
 ### Task 2: auditorías y re-auditorías
 
-- [ ] Doctrinal y pedagógica en paralelo, con las instrucciones de Rover. Cursos hermanos: la E3 y los Cursos 23 y 24 de PJ.
-- [ ] Aplicar, re-auditar y aplicar.
-- [ ] Regla ciega final con dos lectores, Haiku y Sonnet: se registra.
-- [ ] **Paradas para el dueño:**
+- [x] Doctrinal y pedagógica en paralelo, con las instrucciones de Rover. Cursos hermanos: la E3 y los Cursos 23 y 24 de PJ.
+- [x] Aplicar, re-auditar y aplicar.
+- [x] Regla ciega final con dos lectores, Haiku y Sonnet: se registra.
+- [x] **Paradas para el dueño:**
   - un tema divisivo fuera del foco;
   - una regla protectora sin fuente que no esté en spec §6;
   - el requisito del taller nacional HeForShe para el Rover.

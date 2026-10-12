@@ -50,5 +50,10 @@ Hilo: la junta de un barrio donde los de la parte alta y los de la parte baja no
 - **Pedagógica:** regla ciega 5/5 en dos vueltas (y un lector Haiku 10/10 dos veces): «el que objeta en el enunciado se equivoca», la correcta en el término medio y la oveja negra de actitud. Se reescribieron 8 ítems y luego se hizo un cambio por quiz; la propia auditoría la da por **estructural** en un curso de tesis única.
 - Info-box nuevo sobre la edad del grupo; registro sin historias; objetivo «Ubicar»; «Reglas y cuidados fijos».
 
+## Regla ciega final (12-10-2026, ADR-148: dos lectores nuevos de modelos distintos)
+- **Haiku: 4 de 5 quizzes (9/10).** Solo falló el ítem con la correcta «A medias».
+- **Sonnet: 5 de 5 (10/10).**
+- Se registra, no se persigue: en un curso de tesis única (no tomar partido, no sacar el relato, nunca a solas) la opción matizada gana a ciegas. Es el mismo techo que DI y PJ.
+
 ## Medición de la fuga (12-10-2026, `ciega.py`)
 Ningún marcador solo en la correcta (adulto, organización, pregunt, acord, sin, Política, porque, junta, comunidad, Kit, grupo); correcta más larga en 3 de 10; ningún quiz se aprueba con la más corta.

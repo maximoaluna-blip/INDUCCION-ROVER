@@ -469,33 +469,41 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     ['Foro de historia cultural', 'Patrimonito, p. 25']]);
 
   test('las actividades del kit de género y patrimonio son las del mapa cerrado, con su página (ADR-150)', () => {
+    // Revisión final del ADR-150: la fuente se compara EXACTA (no con includes), se cuentan todos
+    // los juegos (no los nombres distintos) y TODOS los ítems de las listas de actividades de las
+    // lecciones tienen que terminar en «(p. N)» y estar en el mapa: uno sin página ya no se escapa.
     const c = E4();
     const kit = kitDe(c);
     expect(kit, 'no existe herramientas-genero-patrimonio o no tiene kit').toBeTruthy();
-    const malas = kit.games.filter((g) => !E4_ACTIVIDADES.has(g.name) || !(g.source || '').includes(E4_ACTIVIDADES.get(g.name)))
-      .map((g) => `kit ${g.id}: ${g.name} · ${g.source}`);
-    expect(new Set(kit.games.map((g) => g.name)).size, 'el kit no trae las diez, o repite alguna').toBe(E4_ACTIVIDADES.size);
-    const grilla = c.modules.flatMap((mo) => mo.sections).filter((s) => s.type === 'method-grid')
-      .flatMap((s) => s.items).filter((it) => /\(p\. \d+\)/.test(it.title));
+    const FUENTE = /^Kit de Acción (HeForShe|Patrimonito), p\. (\d+)( \(el nombre es de este curso\))?$/;
+    expect(kit.games.length, 'el kit no trae exactamente diez actividades').toBe(E4_ACTIVIDADES.size);
+    const malas = kit.games.filter((g) => {
+      const m = FUENTE.exec(g.source || '');
+      return !m || E4_ACTIVIDADES.get(g.name) !== `${m[1]}, p. ${m[2]}`;
+    }).map((g) => `kit ${g.id}: ${g.name} · ${g.source}`);
+    expect(new Set(kit.games.map((g) => g.name)).size, 'el kit repite alguna actividad').toBe(E4_ACTIVIDADES.size);
+    const nombres = [...E4_ACTIVIDADES.keys()];
+    const grilla = c.modules.flatMap((mo) => mo.sections).filter((s) => s.type === 'method-grid'
+      && s.items.some((it) => nombres.some((n) => it.title.includes(n)))).flatMap((s) => s.items);
     for (const it of grilla) {
-      const nombre = [...E4_ACTIVIDADES.keys()].find((n) => it.title.includes(n));
-      const p = /\(p\. (\d+)\)/.exec(it.title)[1];
-      if (!nombre || !E4_ACTIVIDADES.get(nombre).endsWith(`p. ${p}`)) malas.push(`lección: ${it.title}`);
+      const m = /\(p\. (\d+)\)$/.exec(it.title);
+      const nombre = nombres.find((n) => it.title.includes(n));
+      if (!m || !nombre || !E4_ACTIVIDADES.get(nombre).endsWith(`p. ${m[1]}`)) malas.push(`lección: ${it.title}`);
     }
-    expect(grilla.length, 'la lista de actividades de las lecciones no tiene las diez').toBe(E4_ACTIVIDADES.size);
+    expect(grilla.length, 'las listas de actividades de las lecciones no tienen exactamente las diez').toBe(E4_ACTIVIDADES.size);
     expect(malas).toEqual([]);
   });
 
   test('género y patrimonio nombra los temas fuera del foco, no los enseña (ADR-108, ADR-150)', () => {
-    // Red estática: la auditoría doctrinal confirma el contexto. Los derechos sexuales y
-    // reproductivos y la identidad de género pueden aparecer donde se nombran (a lo sumo en dos
-    // secciones), nunca en un quiz, una reflexión ni el kit; lo que solo se enseñaría, en ninguna parte.
+    // Red estática: la auditoría doctrinal confirma el contexto. Los temas que el foco solo nombra
+    // aparecen en UNA sección (L1), nunca en un quiz, una reflexión ni el kit; lo que solo se
+    // enseñaría, en ninguna parte. Sinónimos añadidos en la revisión final del ADR-150.
     const c = E4();
     expect(c, 'no existe herramientas-genero-patrimonio').toBeTruthy();
-    const NOMBRADO = /derechos sexuales|identidad de g[ée]nero|expresi[óo]n(es)? de g[ée]nero/i;
-    const NUNCA = /\bXXY\b|aborto|interrupci[óo]n voluntaria|C-355|orientaci[óo]n sexual|anticoncep/i;
+    const NOMBRADO = /derechos sexuales|reproductiv|salud sexual|sexualidad|diversidad sexual|identidad de g[ée]nero|expresi[óo]n(es)? de g[ée]nero|LGBT|\btrans(g[ée]nero)?\b|no binari|intersex|queer/i;
+    const NUNCA = /\bXXY\b|aborto|interrupci[óo]n (voluntaria|del embarazo)|\bIVE\b|C-355|C-055|orientaci[óo]n sexual|anticoncep|planificaci[óo]n familiar|educaci[óo]n sexual/i;
     const secciones = c.modules.flatMap((m) => m.sections).filter((s) => s.type !== 'kit-builder').map((s) => JSON.stringify(s));
-    expect(secciones.filter((t) => NOMBRADO.test(t)).length, 'los temas fuera del foco aparecen en más de dos secciones').toBeLessThanOrEqual(2);
+    expect(secciones.filter((t) => NOMBRADO.test(t)).length, 'los temas fuera del foco aparecen en más de una sección').toBeLessThanOrEqual(1);
     const evaluado = c.modules.flatMap((m) => [m.reflection && m.reflection.prompt, m.quiz && JSON.stringify(m.quiz)]).filter(Boolean);
     evaluado.push(JSON.stringify(kitDe(c) || {}));
     expect(evaluado.filter((t) => NOMBRADO.test(t))).toEqual([]);
@@ -505,23 +513,31 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
   test('en el kit de género y patrimonio, lo que no es norma dice que es recomendación (ADR-150)', () => {
     const kit = kitDe(E4());
     expect(kit, 'no existe herramientas-genero-patrimonio o no tiene kit').toBeTruthy();
-    const NORMA = /^(Política ASP|Modelo de Aplicación|Protocolo Nacional de Transporte),? (pp?\. \d+|CNGR)/;
+    // Las reglas fijas son un mapa cerrado id → fuente exacta (revisión final del ADR-150): una regla
+    // nueva o reformulada obliga a revisarla con la fuente al lado, no basta con que empiece por «Política».
+    const REGLAS = new Map([
+      ['c1', 'Política ASP, pp. 21 y 44; avisar a mi adulto acompañante: recomendación de este curso'],
+      ['c2', 'Política ASP, p. 26 (estrategia 2+1); con quien no es scout: recomendación de este curso'],
+      ['c3', 'Política ASP, p. 26 (directrices para publicar imágenes); autorización con evidencia: Kit de Acción HeForShe, p. 43; la de la familia si es menor: recomendación de este curso'],
+      ['c4', 'Protocolo Nacional de Transporte, CNGR-022-1 (2025); pernocta: recomendación de este curso']]);
+    const fijas = kit.care.filter((c) => c.rule);
+    expect(fijas.map((c) => `${c.id}: ${c.source}`)).toEqual([...REGLAS].map(([id, s]) => `${id}: ${s}`));
     const OFICIAL = /Política|Modelo|Kit|Manual|Guía/;
-    const malas = kit.care.filter((c) => {
-      if (c.rule) return !NORMA.test(c.source || '');
-      return !c.source || !(OFICIAL.test(c.source) || /recomendación/i.test(c.source));
-    }).map((c) => `${c.id}: ${c.source || '(sin fuente)'}`);
+    const malas = kit.care.filter((c) => !c.rule && (!c.source || !(OFICIAL.test(c.source) || /recomendación/i.test(c.source))))
+      .map((c) => `${c.id}: ${c.source || '(sin fuente)'}`);
     expect(malas).toEqual([]);
-    expect(kit.care.filter((c) => c.rule).length, 'cambió el número de reglas fijas: revisarlas').toBe(4);
   });
 
   test('nada de lo que se escribe en género y patrimonio pide contar una violencia vivida (ADR-150)', () => {
+    // Red, no garantía. Sinónimos y textos del kit (situaciones y placeholders) añadidos en la revisión final.
     const c = E4();
     expect(c, 'no existe herramientas-genero-patrimonio').toBeTruthy();
-    const VIVIDA = /has vivido|viviste|sufriste|has sufrido|te pas[óo]|te hicieron|tu (propia )?historia|(tú|tu familia) (viviste|vivió|vivieron)|fuiste víctima|tu experiencia (de|con) (la )?violencia|violencias? que (has )?(ejerces|ejerciste)/i;
+    const VIVIDA = /has vivido|viviste|sufriste|has sufrido|te pas[óo]|te hicieron|te ha(n)? (pasado|hecho|agredido)|has sido víctima|has experimentado|te agredi|en carne propia|tu (propia )?historia|(tú|tu familia) (viviste|vivió|vivieron)|fuiste víctima|tu experiencia (de|con) (la )?violencia|violencias? que (has )?(ejerces|ejerciste)/i;
     const reflexiones = c.modules.map((m) => m.reflection && m.reflection.prompt).filter(Boolean);
     expect(reflexiones.length, 'cambió el número de reflexiones: revisarlas').toBe(5);
-    const textos = [...reflexiones, c.registration && c.registration.motivationLabel, c.certificate && c.certificate.commitmentPrompt];
+    const kit = kitDe(c) || { labels: {}, phrases: [] };
+    const textos = [...reflexiones, c.registration && c.registration.motivationLabel, c.certificate && c.certificate.commitmentPrompt,
+      ...kit.phrases.map((f) => f.situation), kit.labels.gameWhyPlaceholder, kit.labels.careOwnPlaceholder, kit.labels.phrasePlaceholder];
     expect(textos.filter((t) => t && VIVIDA.test(t))).toEqual([]);
   });
 });

@@ -57,7 +57,7 @@ Hilo: dos invitaciones al Clan la misma semana, un colectivo de mujeres del barr
 
 - **Doctrinal:** 0 críticos, 5 mayores y 8 menores. Los mayores: dos distractores defendibles (6.1 con dos desvíos; 5.1 «llevarla a justicia», que la Política p. 21 llama «derivar»); «Comparte y Actúa salen a la comunidad», que el Kit contradice (Actúa empieza por uno mismo, p. 67); la pernocta dada por norma; y el glosario (PES sin entrada; la de VBG dice que nadie la define, y el Manual p. 33 sí). Re-auditoría: 0 mayores y 2 menores (la escuela de marimba cabe en Promoción **o** Conservación; la nota del mapeo social es sobre cómo se vive el patrimonio), aplicados.
 - **Pedagógica:** 0 críticos, 6 mayores y 9 menores. Los mayores: el protagonista del enunciado siempre se equivocaba (6 de 6); la 2.2 quedaba en el término medio; la 6.2 y la 5.2 se resolvían por actitud o por absolutos; «nunca a solas» decía otra cosa en la lección y en el kit; y la lección 1 traía discrepancias de edad que no le sirven a un Rover. Re-auditoría: 1 mayor (la 6.2 premiaba ir solo a la escuela, contra el cuidado c8) y 4 menores, aplicados salvo el de «marimba = seguir», que se registra.
-- **Para el dueño:** el contador del kit dice «n de 3 elegidos» y aquí se eligen actividades. Se arregla en el motor, no en el JSON.
+- **Contador del kit:** decía «n de 3 elegidos»; resuelto en el mismo push con `labels.countLabel` («elegidas», Rover `a5900f3`, decisión del dueño).
 
 ## Medición de la fuga (12-10-2026, `ciega.py`)
 
@@ -67,3 +67,7 @@ Ningún marcador de tesis solo en la correcta (adulto, organización, pregunt, a
 
 - **Primera vuelta, tras las auditorías:** Haiku 1 de 5 (6/10); Sonnet 4 de 5 (9/10). La estimación del auditor antes de corregir era 5 de 5.
 - **Final, con lectores nuevos y después de las re-auditorías:** **Sonnet 3 de 5 (8/10); Haiku 2 de 5 (7/10).** Los dos caen en las mismas trampas: «una música no es un lugar» (2.2) y «con violencias de tema, la autorización escrita no alcanza» (5.2). Se registra y no se persigue más.
+
+## Revisión final (12-10-2026, Task 4)
+
+0 críticos, 3 importantes y 6 menores. Las dos pruebas que se podían burlar (I-2 e I-3) se endurecieron: fuente exacta, conteo total, todos los ítems de las listas con «(p. N)», sinónimos en las redes de temas y de violencia vivida, y reglas fijas como mapa cerrado. Se comprobó que cada una caza su variante alterada del curso. **I-1 queda para el dueño:** la regla fija c3 exige autorización con evidencia, pero esa exigencia sale de una nota del Kit (p. 43), no de la Política (p. 26, que solo pide promover directrices).

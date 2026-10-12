@@ -453,4 +453,75 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     const textos = [...reflexiones, c.registration && c.registration.motivationLabel, c.certificate && c.certificate.commitmentPrompt];
     expect(textos.filter((t) => t && VIVIDA.test(t))).toEqual([]);
   });
+
+  // --- E4 género y patrimonio (ADR-150) ---
+  // Del Kit HeForShe solo se ofrecen actividades del Clan dentro del foco que fijó el dueño (ADR-108):
+  // ni la parte B de derechos sexuales y reproductivos (pp. 75–78) ni «XXY» (p. 74, decisión del dueño
+  // del 12-10-2026). Del Kit Patrimonito, las de pp. 24–25, que van de 15 años a la Rama Rover (p. 4).
+  // Mapa cerrado nombre → fuente con página, en el kit y en la lista de las lecciones.
+  const E4 = () => JSON.parse(leer(path.join(GEN, 'borradores', 'herramientas-genero-patrimonio.json')) || 'null');
+  const E4_ACTIVIDADES = new Map([
+    ['Resistimos callando', 'HeForShe, p. 69'], ['Feria del género', 'HeForShe, p. 69'],
+    ['Violencias no tan invisibles', 'HeForShe, p. 70'], ['Caminos de prevención', 'HeForShe, p. 71'],
+    ['No estamos solas', 'HeForShe, p. 72'], ['Violentómetro', 'HeForShe, p. 73'],
+    ['Liderazgos en cuerpos feminizados', 'HeForShe, p. 80'],
+    ['Mapeo social del patrimonio', 'Patrimonito, p. 25'], ['Mapa de instituciones', 'Patrimonito, p. 25'],
+    ['Foro de historia cultural', 'Patrimonito, p. 25']]);
+
+  test('las actividades del kit de género y patrimonio son las del mapa cerrado, con su página (ADR-150)', () => {
+    const c = E4();
+    const kit = kitDe(c);
+    expect(kit, 'no existe herramientas-genero-patrimonio o no tiene kit').toBeTruthy();
+    const malas = kit.games.filter((g) => !E4_ACTIVIDADES.has(g.name) || !(g.source || '').includes(E4_ACTIVIDADES.get(g.name)))
+      .map((g) => `kit ${g.id}: ${g.name} · ${g.source}`);
+    expect(new Set(kit.games.map((g) => g.name)).size, 'el kit no trae las diez, o repite alguna').toBe(E4_ACTIVIDADES.size);
+    const grilla = c.modules.flatMap((mo) => mo.sections).filter((s) => s.type === 'method-grid')
+      .flatMap((s) => s.items).filter((it) => /\(p\. \d+\)/.test(it.title));
+    for (const it of grilla) {
+      const nombre = [...E4_ACTIVIDADES.keys()].find((n) => it.title.includes(n));
+      const p = /\(p\. (\d+)\)/.exec(it.title)[1];
+      if (!nombre || !E4_ACTIVIDADES.get(nombre).endsWith(`p. ${p}`)) malas.push(`lección: ${it.title}`);
+    }
+    expect(grilla.length, 'la lista de actividades de las lecciones no tiene las diez').toBe(E4_ACTIVIDADES.size);
+    expect(malas).toEqual([]);
+  });
+
+  test('género y patrimonio nombra los temas fuera del foco, no los enseña (ADR-108, ADR-150)', () => {
+    // Red estática: la auditoría doctrinal confirma el contexto. Los derechos sexuales y
+    // reproductivos y la identidad de género pueden aparecer donde se nombran (a lo sumo en dos
+    // secciones), nunca en un quiz, una reflexión ni el kit; lo que solo se enseñaría, en ninguna parte.
+    const c = E4();
+    expect(c, 'no existe herramientas-genero-patrimonio').toBeTruthy();
+    const NOMBRADO = /derechos sexuales|identidad de g[ée]nero|expresi[óo]n(es)? de g[ée]nero/i;
+    const NUNCA = /\bXXY\b|aborto|interrupci[óo]n voluntaria|C-355|orientaci[óo]n sexual|anticoncep/i;
+    const secciones = c.modules.flatMap((m) => m.sections).filter((s) => s.type !== 'kit-builder').map((s) => JSON.stringify(s));
+    expect(secciones.filter((t) => NOMBRADO.test(t)).length, 'los temas fuera del foco aparecen en más de dos secciones').toBeLessThanOrEqual(2);
+    const evaluado = c.modules.flatMap((m) => [m.reflection && m.reflection.prompt, m.quiz && JSON.stringify(m.quiz)]).filter(Boolean);
+    evaluado.push(JSON.stringify(kitDe(c) || {}));
+    expect(evaluado.filter((t) => NOMBRADO.test(t))).toEqual([]);
+    expect([JSON.stringify(c)].filter((t) => NUNCA.test(t))).toEqual([]);
+  });
+
+  test('en el kit de género y patrimonio, lo que no es norma dice que es recomendación (ADR-150)', () => {
+    const kit = kitDe(E4());
+    expect(kit, 'no existe herramientas-genero-patrimonio o no tiene kit').toBeTruthy();
+    const NORMA = /^(Política ASP|Modelo de Aplicación|Protocolo Nacional de Transporte),? (pp?\. \d+|CNGR)/;
+    const OFICIAL = /Política|Modelo|Kit|Manual|Guía/;
+    const malas = kit.care.filter((c) => {
+      if (c.rule) return !NORMA.test(c.source || '');
+      return !c.source || !(OFICIAL.test(c.source) || /recomendación/i.test(c.source));
+    }).map((c) => `${c.id}: ${c.source || '(sin fuente)'}`);
+    expect(malas).toEqual([]);
+    expect(kit.care.filter((c) => c.rule).length, 'cambió el número de reglas fijas: revisarlas').toBe(4);
+  });
+
+  test('nada de lo que se escribe en género y patrimonio pide contar una violencia vivida (ADR-150)', () => {
+    const c = E4();
+    expect(c, 'no existe herramientas-genero-patrimonio').toBeTruthy();
+    const VIVIDA = /has vivido|viviste|sufriste|has sufrido|te pas[óo]|te hicieron|tu (propia )?historia|(tú|tu familia) (viviste|vivió|vivieron)|fuiste víctima|tu experiencia (de|con) (la )?violencia|violencias? que (has )?(ejerces|ejerciste)/i;
+    const reflexiones = c.modules.map((m) => m.reflection && m.reflection.prompt).filter(Boolean);
+    expect(reflexiones.length, 'cambió el número de reflexiones: revisarlas').toBe(5);
+    const textos = [...reflexiones, c.registration && c.registration.motivationLabel, c.certificate && c.certificate.commitmentPrompt];
+    expect(textos.filter((t) => t && VIVIDA.test(t))).toEqual([]);
+  });
 });

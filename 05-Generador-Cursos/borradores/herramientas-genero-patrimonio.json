@@ -1,0 +1,645 @@
+{
+  "courseId": "herramientas-genero-patrimonio",
+  "title": "Mensajeros de la Paz: género y patrimonio",
+  "subtitle": "Ruta Servir en la comunidad · Nivel 2 · Herramientas",
+  "description": "Para el Rover que va a servir en su comunidad con el desafío HeForShe o con Patrimonito. En unos 40 minutos conoces la ruta y el reconocimiento de cada uno, las actividades del Clan para la igualdad de género, cómo trabajar un patrimonio con quienes lo viven y los cuidados que no se negocian. Al final armas y descargas tu propio kit. Basado en el Kit de Acción HeForShe (ASC con ONU Mujeres, 2021), el Kit de Acción Patrimonito (ASC, 2021) y el Manual de Implementación Marco de Mundo Mejor (ASC, 2021).",
+  "contentVersion": "2026-10-12",
+  "route": "comunidad",
+  "level": 2,
+  "branch": null,
+  "registration": {
+    "motivationLabel": "¿Qué te gustaría cuidar o cambiar en tu comunidad: la igualdad entre mujeres y hombres, un patrimonio de tu región, o los dos? (sin nombres ni historias de nadie)"
+  },
+  "icon": "🤝",
+  "duration": "40 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "La misma semana le llegan a tu Clan dos invitaciones. Un colectivo de mujeres del barrio quiere que más gente sepa a dónde acudir ante una violencia basada en género. Y la casa de la cultura del municipio busca jóvenes para su escuela de marimba, que se está quedando sin estudiantes. Las dos caben en Mensajeros de la Paz. Este curso es para que sepas cómo entrar a cada una."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>La igualdad de género no es sólo una cuestión que ataña a las mujeres, es un asunto que nos afecta a todos los seres humanos.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La frase es del <em>Kit de Acción HeForShe</em> (ASC con ONU Mujeres, 2021, p. 82). Este curso trabaja dos desafíos de Mensajeros de la Paz: <strong>HeForShe</strong>, por la igualdad de género, y <strong>Patrimonito</strong>, que el <em>Kit de Acción Patrimonito</em> (ASC, 2021) define como <em>«el reconocimiento a un proyecto social con enfoque en la preservación de espacios o manifestaciones culturales»</em> (p. 4)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Este es un curso de herramientas del Nivel 2 de la ruta Servir en la comunidad: da por sabido lo de <em>Servir más allá del Grupo: Mundo Mejor</em>. Nada de lo que hagas aquí te da un cargo. <br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión —que leen tú y el equipo de formación— y con dos preguntas. Para seguir hay que acertar las dos; si fallas una, el curso te dice cuál revisar y puedes intentarlo las veces que quieras. Al final armas tu kit: se guarda solo en este navegador."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Ubicar</strong> los pasos y el reconocimiento de HeForShe y de Patrimonito",
+            "<strong>Elegir</strong> actividades del Clan del Kit HeForShe y facilitarlas sin imponer tus puntos de vista",
+            "<strong>Identificar</strong> a quién escuchar primero y con qué actividad empezar un servicio de Patrimonito, en un lugar que la UNESCO reconoce",
+            "<strong>Cuidar</strong>: reportar una violencia que te cuenten, trabajar con casos y no con historias propias, y viajar con protocolo",
+            "<strong>Armar</strong> tu propio kit de actividades, frases y cuidados"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Los dos desafíos y su ruta",
+      "emoji": "🧭",
+      "navLabel": "La ruta",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 8 minutos · Idea central:</strong> los dos son viajes personales que acuerdas con tu adulto acompañante. HeForShe se recorre por actividades y competencias; Patrimonito, con un proyecto y horas de servicio en un patrimonio que la UNESCO reconoce."
+        },
+        {
+          "type": "paragraph",
+          "text": "Los dos desafíos están en Mensajeros de la Paz: el <em>Kit HeForShe</em> muestra la igualdad de género y la cultura y el patrimonio entre los temas de esa iniciativa (p. 15). Los dos son también para jóvenes que no son scouts (HeForShe, p. 13; Patrimonito, p. 4)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "HeForShe"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Es para ti.</strong> El Kit y el <em>Manual de Implementación Marco de Mundo Mejor</em> lo abren a la Rama Rover (Kit, p. 13; Manual, p. 28).",
+            "<strong>Se acuerda antes.</strong> Es un proceso individual: con tu adulto acompañante acuerdas por lo menos seis actividades y las anotas en el formato de autoevaluación del Clan (Kit, pp. 13, 67–68).",
+            "<strong>Dos partes, tres fases.</strong> La ruta tiene una parte A y una parte B, y cada una pasa por Toma conciencia, Comparte y Actúa. Para la insignia basta una actividad por fase en cada parte. La de Toma conciencia sale del banco del Kit; para Comparte y Actúa puedes usar las del Kit o planear otra que cumpla la competencia (pp. 14 y 65).",
+            "<strong>La parte B del Clan.</strong> Su Toma conciencia y su Comparte trabajan los derechos sexuales y reproductivos de mujeres y niñas (p. 68). Este curso no enseña esos temas: si vas por la insignia, esa parte la acuerdas con tu adulto acompañante.",
+            "<strong>Se cierra con otros.</strong> Evalúas tus competencias con las personas de tu rama, con aquellas a quienes destinaste tus acciones y con los adultos (Kit, p. 13), y el logro se celebra en una ceremonia <em>«sencilla, sentida y significativa»</em> (Manual, p. 31)."
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Tres reconocimientos distintos.</strong> La <strong>insignia del desafío</strong>, por la ruta de aprendizaje. La de <strong>Emisor/a HeForShe</strong>, por participar en el taller que el equipo nacional HeForShe hace cada año (Kit, p. 80; Manual, p. 36). Y la de <strong>Embajador/a HeForShe</strong>, por un club, un proyecto o una campaña con impacto comunitario de al menos ocho meses, que se solicita a la comisión regional de Mundo Mejor o, en su defecto, a la de Programa de Jóvenes. La campaña pide haber hecho el taller; el club, que lo haya hecho su equipo coordinador; el proyecto no tiene prerrequisitos (Kit, pp. 81–82; Manual, pp. 36–37)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Patrimonito"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Para quién.</strong> Desde los 15 años hasta la edad de la Rama Rover (Kit Patrimonito, p. 4).",
+            "<strong>Tres perspectivas.</strong> <strong>Promoción</strong>, impulsar el desarrollo de un patrimonio; <strong>Difusión</strong>, que sea conocido y llegue a sitios distintos de aquel en que se origina; <strong>Conservación</strong>, cuidar su permanencia (p. 4). Puedes trabajar una o más.",
+            "<strong>Los pasos (p. 6).</strong> Participar en un Descubrimiento Scouts del Mundo – Patrimonito; elegir un patrimonio reconocido por la UNESCO; contactar a la Comisión Nacional de Mundo Mejor para recibir las herramientas; inscribir la iniciativa; ejecutar el proyecto <strong>más 80 horas de servicio voluntario en el sitio</strong>; compartir y evaluar; y solicitar el reconocimiento a la comisión de Mundo Mejor, nacional o de la Región, con la autoevaluación inicial y final y las evidencias.",
+            "<strong>Solo donde la UNESCO lo reconoce.</strong> <em>«Los proyectos deben ser ejecutados en los lugares que la UNESCO ha declarado como Patrimonio de la Humanidad»</em> (Manual, p. 42). El Kit incluye las manifestaciones inmateriales reconocidas y los sitios de la Lista Tentativa de Colombia (pp. 7–8)."
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Lo que pudo cambiar desde 2021.</strong> Los dos kits son de 2021: las listas de la UNESCO, la plataforma de registro y las fechas del próximo Descubrimiento o del próximo taller pregúntalos a la comisión de Mundo Mejor de tu región. Y la insignia de cualquier desafío solo la porta quien la Comisión Nacional reconoce oficialmente (Manual, p. 67)."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en un tema de igualdad entre mujeres y hombres o en un patrimonio de tu región que te mueva. ¿Por cuál de los dos desafíos empezarías, y cuál sería el primer paso que darías esta semana?"
+      },
+      "quiz": {
+        "title": "Evaluación - La ruta",
+        "questions": [
+          {
+            "text": "Una Rover terminó el desafío HeForShe y ahora, con su Clan, arranca en su universidad un proyecto contra el acoso que va a durar un año. ¿A qué puede optar?",
+            "options": [
+              "A Emisora, que la comisión da por llevar el tema a la comunidad",
+              "A Embajadora, con la comisión, cuando lleve al menos ocho meses",
+              "A Embajadora, pero solo si antes participa en el taller nacional"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Una Rover del Valle quiere hacer Patrimonito con la escuela de marimba de su municipio, que se está quedando sin estudiantes. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Seguir: las músicas de marimba están en la lista del Kit, aunque no sean un lugar",
+              "Buscar otro: la lista pide un sitio declarado, y una música no es un lugar",
+              "Seguir, pero desde Conservación, la perspectiva que el Kit pide para lo inmaterial"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: igualdad de género ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Igualdad: lo que HeForShe te pide",
+      "emoji": "⚖️",
+      "navLabel": "Igualdad",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> HeForShe empieza por mirar las violencias que parecen normales, también las propias, y pasa por llevar a la comunidad a dónde acudir."
+        },
+        {
+          "type": "paragraph",
+          "text": "Piensa en la feria del barrio: alguien suelta «eso es trabajo de mujeres» y todos se ríen. Nadie lo ve como violencia, y ahí empieza el trabajo de HeForShe. Para nombrarlo, tres palabras que el Kit define y que vas a usar. La <strong>igualdad de género</strong>: una igualdad de oportunidades y de derechos entre mujeres y hombres en la vida privada y la pública (Kit HeForShe, p. 8). Los <strong>estereotipos de género</strong>: <em>«generalizaciones simplistas de los atributos de género, las diferencias y los roles de las mujeres y los hombres»</em> (p. 82). Y la <strong>violencia basada en género</strong>: todo acto de violencia que busca imponer los roles y comportamientos que la cultura tradicional asigna a cada género (Manual, p. 33)."
+        },
+        {
+          "type": "paragraph",
+          "text": "HeForShe, dice el Kit, <em>«implica a hombres y niños como defensores y partícipes de la causa»</em> (p. 82). No te pide hacerte a un lado: te pide revisar lo que haces, lo que dices y lo que callas. El <em>Modelo de Aplicación</em> nombra el mismo frente cuando, entre los programas de Mensajeros de la Paz, pone rutas contra las <em>«masculinidades invasivas»</em> (p. 99). Y la competencia de Actúa de la parte B te pide promover la participación de las mujeres donde se toman decisiones y, si eres mujer, participar activamente (Kit, p. 68)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Actividades del Clan para empezar"
+        },
+        {
+          "type": "method-grid",
+          "items": [
+            {
+              "title": "🤫 Resistimos callando (p. 69)",
+              "description": "Toma conciencia · 2 horas. Tras investigar qué es la violencia basada en género, identifican en qué entornos aparecen las que parecen normales, y cierran con una lista de los micromachismos que cada uno va a dejar."
+            },
+            {
+              "title": "🎪 Feria del género (p. 69)",
+              "description": "Toma conciencia · 2 a 4 horas. Por equipos, un tema de violencia cotidiana —estereotipos, chistes machistas, compartir desnudos, entre otros—, piezas gráficas o códigos QR y una feria en la calle con juegos para la gente."
+            },
+            {
+              "title": "🍋 Violencias no tan invisibles (p. 70)",
+              "description": "Toma conciencia · 2 a 4 horas. Un juego de Kim con alimentos: cada sabor es un tipo de violencia, y cada uno crea un video, una foto o una canción que la haga visible."
+            },
+            {
+              "title": "🧭 Caminos de prevención (p. 71)",
+              "description": "Comparte · 2 horas. Una caminata por el barrio con señales de pista que representan las rutas de protección y justicia; al final, una infografía o un video para divulgarlas."
+            },
+            {
+              "title": "🏛️ No estamos solas (p. 72)",
+              "description": "Comparte · 2 horas. Una caminata por las instituciones de protección, salud y justicia de tu ciudad, y después una campaña informativa en tu comunidad o tu universidad."
+            },
+            {
+              "title": "🌡️ Violentómetro (p. 73)",
+              "description": "Actúa · 2 horas. Con tu Clan, una lista de las violencias basadas en género que ejercen, convertida en una obra, un corto o un performance que vean por lo menos 40 personas."
+            },
+            {
+              "title": "🗳️ Liderazgos en cuerpos feminizados (p. 80)",
+              "description": "Actúa, parte B · 2 a 4 horas. Con una organización que trabaja por la participación política de las mujeres, una actividad conjunta con al menos dos grupos distintos al tuyo y dos personas que no son scouts."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "<small>Fuente: <em>Kit de Acción HeForShe</em>, ASC con ONU Mujeres, 2021, banco de actividades del Clan; fases y tiempos tal como los marca cada actividad. El Kit trae más; este curso ofrece estas.</small>"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Del Clan a la comunidad, y cómo facilitar"
+        },
+        {
+          "type": "paragraph",
+          "text": "Casi todo empieza con tu Clan. Comparte es la fase que más sale a la comunidad: su competencia es <strong>divulgar las rutas de atención</strong> a víctimas de violencia basada en género. Y Actúa empieza por ti: evaluar tus comportamientos e identificar las violencias que ejerces (Kit, p. 67). Cuando facilites una actividad con otros, el Manual da pautas (p. 29):"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Un espacio que no parezca una clase.</strong> Acomoda los puestos para que todas las personas se vean; no imites un salón escolar.",
+            "<strong>Las reglas, con ellos.</strong> Establécelas con quienes participan, y que puedan sugerir las que mejor les parezcan.",
+            "<strong>Tus puntos de vista, fuera.</strong> Evita exponerlos; haz preguntas abiertas en lugar de promover posiciones o dar consejos.",
+            "<strong>Los temas delicados, adentro.</strong> Anima a debatirlos sin temor a ser juzgado o ridiculizado."
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Lo que pide el Manual a quien acompaña.</strong> Para acompañar cualquier actividad de HeForShe, la persona adulta debe haber completado el <strong>taller nacional HeForShe</strong> y el curso <strong>A Salvo del Peligro</strong> (Manual, p. 29; el Kit pide este último, p. 7). Pregúntale a tu adulto acompañante si los tiene. A ti el Manual no te los exige, pero si vas a facilitar actividades con otros, pregúntale cómo hacerlos."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en una costumbre que se repite en un entorno que conozcas —la universidad, el trabajo, el barrio— y que trata a las mujeres como menos sin que casi nadie lo note. Descríbela como costumbre, no como algo que le pasó a alguien en particular, y sin nombres: ¿con qué actividad del Kit la harías visible?"
+      },
+      "quiz": {
+        "title": "Evaluación - Igualdad",
+        "questions": [
+          {
+            "text": "Con su Clan, un Rover quiere que la gente de su barrio sepa a dónde acudir ante una violencia basada en género. ¿Qué actividad del Kit le sirve más?",
+            "options": [
+              "Feria del género",
+              "Caminos de prevención",
+              "Violencias no tan invisibles"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Un Rover va a facilitar Resistimos callando con un colectivo de universitarios que no conoce. Para no imponer nada, piensa no poner ninguna regla. ¿Qué es lo más coherente con el Manual?",
+            "options": [
+              "Poner reglas, construidas con el grupo y abiertas a las suyas",
+              "No ponerlas: con universitarios, cualquier regla es imponer",
+              "Pedirle al grupo que evite los temas delicados, para no juzgar a nadie"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: el patrimonio ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Patrimonio con quienes lo viven",
+      "emoji": "🏛️",
+      "navLabel": "Patrimonio",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> en Patrimonito el patrimonio no es tuyo: es de la comunidad que lo vive. Tu servicio empieza por escucharla y se hace en un lugar que la UNESCO reconoce."
+        },
+        {
+          "type": "paragraph",
+          "text": "El Kit Patrimonito trae la lista de Colombia en 2021: nueve sitios declarados, doce elementos del patrimonio inmaterial (once manifestaciones y una buena práctica) y quince sitios de la Lista Tentativa (pp. 7–8). Una de esas manifestaciones nombra al Valle del Cauca: <strong>las músicas de marimba y los cantos tradicionales del Pacífico sur colombiano</strong>, de Valle del Cauca, Cauca y Nariño (p. 7). Es la escuela de marimba de la bienvenida. Lo que le falta son estudiantes: eso cabe en Promoción o en Conservación (p. 4), y se empieza preguntándoles a sus maestros qué necesitan (recomendación de este curso)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Si lo que te mueve es un patrimonio cercano que no está en esas listas —una fiesta del barrio, una casa vieja, una historia—, también es un servicio de Mensajeros de la Paz: el <em>Modelo</em> pone entre sus programas el de <em>«Cultura y patrimonio (rescate de historias barriales, patrimonio natural y cultural, rutas de memoria viva)»</em> (p. 99). Lo que no da es la insignia de Patrimonito."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "De quién es el patrimonio"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>El inmaterial lo cuida la comunidad.</strong> Para las manifestaciones de la lista, el plan de salvaguardia cuenta <em>«cómo la comunidad propone proteger y salvaguardar»</em> su patrimonio, y pide que toda la comunidad participe en él (Kit, p. 22).",
+            "<strong>El arqueológico es de la nación.</strong> No requiere declaratoria, y su competencia es del Instituto Colombiano de Antropología e Historia (ICANH), no del Ministerio de Cultura (Kit, p. 21). Si tu proyecto toca un sitio arqueológico, pregunta antes a quien lo gestiona (recomendación de este curso).",
+            "<strong>Las soluciones se acuerdan.</strong> Comparte es identificar con la comunidad sus problemas, hacer una lluvia de ideas con sus miembros, revisar si el proyecto es viable y sostenible, y presentar los resultados al grupo y a los beneficiarios (Kit, pp. 9–10)."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Actividades para empezar"
+        },
+        {
+          "type": "method-grid",
+          "items": [
+            {
+              "title": "🗺️ Mapeo social del patrimonio (p. 25)",
+              "description": "Una visita, física o virtual, a un patrimonio declarado, para mapear la comunidad que lo vive: qué actividades económicas genera y cómo se apropia de él en su vida diaria. Cierra con una nota en audio o video para tu comunidad y tu Clan."
+            },
+            {
+              "title": "🏢 Mapa de instituciones (p. 25)",
+              "description": "Una lista de las instituciones públicas y privadas que gestionan el sitio o la práctica, y un mapa de cómo se relacionan entre ellas."
+            },
+            {
+              "title": "🎙️ Foro de historia cultural (p. 25)",
+              "description": "Foros y actividades para conocer la historia cultural de tu región: cómo incide en el presente y por qué conservar tradiciones que han sido motor social y económico de una comunidad."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "<small>Fuente: <em>Kit de Acción Patrimonito</em>, ASC, 2021, p. 25. El Kit describe las actividades sin ponerles nombre: los de aquí son de este curso.</small>"
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Tu autoevaluación.</strong> La del Kit es para jóvenes de 15 a 18 y de 18 a 21 años, con competencias por cada perspectiva. En Difusión, por ejemplo: <em>«Soy capaz de pronunciarme a favor o en contra de decisiones que se tomen en torno al patrimonio»</em> (Kit, pp. 11–12; con estas palabras, Manual, p. 46). La haces al empezar y al terminar. Y una pregunta para la comisión antes de planear: el Kit pide las 80 horas <em>«en el sitio»</em> (p. 6), pero no dice cómo se cuentan cuando el patrimonio es una manifestación inmaterial."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en un patrimonio de tu región: un lugar, una fiesta, un saber. Escribe a qué tipo de persona u organización de la comunidad que lo vive le preguntarías primero, y qué le preguntarías."
+      },
+      "quiz": {
+        "title": "Evaluación - Patrimonio",
+        "questions": [
+          {
+            "text": "A un Rover de Cali le preocupa que, por no ser del Pacífico, hacer Difusión de las músicas de marimba sea apropiarse de algo ajeno, y piensa dejar el proyecto. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Dejarlo: un patrimonio inmaterial solo lo difunden quienes lo practican",
+              "Acordar con su Clan cambiarlo por un patrimonio de su propia ciudad",
+              "Seguir, acordando con quienes la viven qué difundir y cómo"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "Un equipo de Rovers quiere conservar un sitio arqueológico de la Lista Tentativa y ya tiene un plan para limpiar y reacomodar unas piedras caídas. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Preguntar antes a quien gestiona el sitio: su competencia es del ICANH",
+              "Hacerlo con cuidado y contarle después al ICANH lo que conservaron",
+              "Preguntar antes a la comunidad vecina, que es la dueña de ese patrimonio"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: los cuidados ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Cuidados que no se negocian",
+      "emoji": "🛡️",
+      "navLabel": "Cuidados",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> si alguien te cuenta una violencia, no la guardas: la reportas. En tus actividades trabajas con casos, no con historias propias. Y si el servicio pide viajar, se viaja con protocolo."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Si alguien te cuenta"
+        },
+        {
+          "type": "paragraph",
+          "text": "Las actividades de HeForShe hablan de violencias, y alguien puede contarte lo que le pasa. Confidencialidad no es secreto. Si lo que oyes puede ser un delito contra alguien —scout o no—, la Política Nacional A Salvo del Peligro habla de «cualquier acción que represente un posible delito»: hay que reportarlo y «no cabrá la posibilidad de guardar ningún secreto» (p. 21). Usa el botón «Me Pongo A Salvo del Peligro» (p. 44) y avisa sin demora a tu adulto acompañante (esto último, recomendación de este curso). No investigas ni haces de terapeuta: la Política se lo descarta incluso a sus adultos (p. 29)."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Divulgar no es reportar.</strong> Conocer las rutas de atención sirve para orientar a otros, y es la competencia del Clan en Comparte (Kit HeForShe, p. 67). Pero darle a alguien la ruta no reemplaza el reporte."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Casos, no historias propias"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Casos inventados.</strong> El propio Kit trabaja con un caso hipotético en una de sus actividades (p. 35). Para hablar de violencias, usa casos que no sean de nadie: nadie está obligado a contar lo suyo (recomendación de este curso).",
+            "<strong>Imágenes con autorización.</strong> Muchas actividades terminan en redes con #HeForSheASC. El Kit pide <em>«autorización a las personas para mostrarlas en videos o imágenes, y que quede evidencia de esta autorización»</em> (p. 43), y la Política pide seguir directrices para publicar imágenes de jóvenes (p. 26). Si salen menores de edad, pide la autorización a sus familias (recomendación de este curso).",
+            "<strong>Nunca a solas con menores.</strong> Con menores que no son scouts, siempre con un adulto de la organización presente (recomendación de este curso). Con menores scouts, la estrategia 2+1 de la Política (p. 26), en la que tú no cuentas como adulto."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Viajar al sitio"
+        },
+        {
+          "type": "paragraph",
+          "text": "Las 80 horas de Patrimonito suelen pedir viajar. El servicio es una actividad scout y se planea como cualquier salida: para moverse en vehículo rige el <em>Protocolo Nacional de Transporte</em> (CNGR-022-1, 2025). Para la pernocta no hay protocolo nacional: si tu Grupo o tu Región tienen uno, ese es el que aplicas, y pregúntalo antes (recomendación de este curso). En el sitio, sigue las reglas de quien lo administra y no vayas solo (recomendación de este curso)."
+        }
+      ],
+      "reflection": {
+        "prompt": "Inventa un caso —que no sea de nadie que conozcas— que usarías en Resistimos callando para mostrar una violencia que parece normal. Escríbelo en tres o cuatro líneas."
+      },
+      "quiz": {
+        "title": "Evaluación - Cuidados",
+        "questions": [
+          {
+            "text": "Al terminar No estamos solas, una joven del colectivo del barrio le cuenta en voz baja a un Rover que su pareja la amenaza, y le pide que no se lo diga a nadie. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Darle la ruta de atención y el botón, y respetar que no quiere contarlo",
+              "Preguntarle más detalles, junto con un adulto, para saber si es grave antes de reportarlo",
+              "Decirle que esto no lo puede guardar nunca, avisar a su adulto y usar el botón"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "Tu Clan cierra la Feria del género en el parque. Los vecinos que salen en las fotos, todos adultos, dieron su autorización por escrito. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Publicarlas con #HeForSheASC, pero guardar las autorizaciones como evidencia",
+              "Publicarlas sin las caras: con violencias de tema, la autorización escrita no alcanza",
+              "Publicarlas, pero borrar la evidencia de las autorizaciones: expone los datos de todos"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: arma tu kit ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Arma tu kit",
+      "emoji": "🧰",
+      "navLabel": "Tu kit",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 8 minutos · Idea central:</strong> lo que aprendiste se vuelve tuyo cuando lo eliges y lo escribes con tus palabras."
+        },
+        {
+          "type": "kit-builder",
+          "labels": {
+            "title": "Tu kit de género y patrimonio",
+            "intro": "Elige, escribe y descárgalo. Se guarda solo en este navegador: no va a ninguna hoja. Si vuelves desde este mismo navegador, lo encuentras como lo dejaste.",
+            "gamesTitle": "Mis 3 actividades",
+            "gamesHelp": "Marca tres, de uno de los dos desafíos o de los dos. En cada una escribe con qué grupo de tu comunidad la harías, qué le adaptarías y con qué pregunta la cierras.",
+            "gameWhyPlaceholder": "Con qué grupo · qué le adapto · pregunta de cierre",
+            "phrasesTitle": "Mis frases",
+            "phrasePlaceholder": "Lo que dirías, tal cual",
+            "careTitle": "Mi lista de cuidado",
+            "rulesTitle": "Reglas y cuidados fijos (no se eligen):",
+            "careOwnPlaceholder": "Agrega un cuidado propio para tu comunidad (opcional)",
+            "download": "Descargar mi kit (PDF)",
+            "pdfTitle": "Mi kit de género y patrimonio",
+            "missingGames": "Te faltan actividades: marca tres antes de descargar tu kit."
+          },
+          "games": [
+            {
+              "id": "g1",
+              "name": "Resistimos callando",
+              "detail": "las violencias que parecen normales y los micromachismos que cada uno va a dejar",
+              "source": "Kit de Acción HeForShe, p. 69"
+            },
+            {
+              "id": "g2",
+              "name": "Feria del género",
+              "detail": "una feria en la calle sobre violencias cotidianas, con piezas y juegos",
+              "source": "Kit de Acción HeForShe, p. 69"
+            },
+            {
+              "id": "g3",
+              "name": "Violencias no tan invisibles",
+              "detail": "un juego de Kim con alimentos y una pieza que haga visible cada violencia",
+              "source": "Kit de Acción HeForShe, p. 70"
+            },
+            {
+              "id": "g4",
+              "name": "Caminos de prevención",
+              "detail": "una caminata con señales de pista sobre las rutas de protección y justicia",
+              "source": "Kit de Acción HeForShe, p. 71"
+            },
+            {
+              "id": "g5",
+              "name": "No estamos solas",
+              "detail": "visitar las instituciones de protección, salud y justicia y hacer una campaña",
+              "source": "Kit de Acción HeForShe, p. 72"
+            },
+            {
+              "id": "g6",
+              "name": "Violentómetro",
+              "detail": "las violencias que se ejercen, llevadas a una obra para 40 personas",
+              "source": "Kit de Acción HeForShe, p. 73"
+            },
+            {
+              "id": "g7",
+              "name": "Liderazgos en cuerpos feminizados",
+              "detail": "una actividad con una organización por la participación política de las mujeres",
+              "source": "Kit de Acción HeForShe, p. 80"
+            },
+            {
+              "id": "g8",
+              "name": "Mapeo social del patrimonio",
+              "detail": "la comunidad que vive un patrimonio declarado, y una nota para compartir",
+              "source": "Kit de Acción Patrimonito, p. 25 (el nombre es de este curso)"
+            },
+            {
+              "id": "g9",
+              "name": "Mapa de instituciones",
+              "detail": "quiénes gestionan el sitio o la práctica y cómo se relacionan",
+              "source": "Kit de Acción Patrimonito, p. 25 (el nombre es de este curso)"
+            },
+            {
+              "id": "g10",
+              "name": "Foro de historia cultural",
+              "detail": "la historia cultural de tu región y las tradiciones que vale la pena conservar",
+              "source": "Kit de Acción Patrimonito, p. 25 (el nombre es de este curso)"
+            }
+          ],
+          "phrases": [
+            {
+              "id": "f1",
+              "situation": "En la feria, un señor dice que los chistes del toldo son solo chistes y que se está exagerando."
+            },
+            {
+              "id": "f2",
+              "situation": "Alguien te cuenta en voz baja algo que le pasa y te pide que no se lo digas a nadie."
+            },
+            {
+              "id": "f3",
+              "situation": "Un participante dice que la igualdad de género es un tema de las mujeres."
+            },
+            {
+              "id": "f4",
+              "situation": "Un vecino dice que la marimba es cosa de antes y que a los jóvenes ya no les interesa."
+            }
+          ],
+          "care": [
+            {
+              "id": "c1",
+              "rule": true,
+              "text": "Si lo que veo u oigo puede ser un delito contra alguien, scout o no, no lo guardo: aviso sin demora a mi adulto acompañante y lo reporto con el botón «Me Pongo A Salvo del Peligro».",
+              "source": "Política ASP, pp. 21 y 44; avisar a mi adulto acompañante: recomendación de este curso"
+            },
+            {
+              "id": "c2",
+              "rule": true,
+              "text": "Nunca me quedo a solas con un menor de edad. Si es scout, la estrategia 2+1, en la que yo no cuento como adulto; si no es scout, siempre con un adulto de la organización presente.",
+              "source": "Política ASP, p. 26 (estrategia 2+1); con quien no es scout: recomendación de este curso"
+            },
+            {
+              "id": "c3",
+              "rule": true,
+              "text": "No publico fotos ni videos de nadie sin su autorización, con evidencia de ella; si es menor de edad, la de su familia. Sigo las directrices de la Asociación y las de la organización.",
+              "source": "Política ASP, p. 26 (directrices para publicar imágenes); autorización con evidencia: Kit de Acción HeForShe, p. 43; la de la familia si es menor: recomendación de este curso"
+            },
+            {
+              "id": "c4",
+              "rule": true,
+              "text": "Si el servicio pide moverse en vehículo, aplico el Protocolo Nacional de Transporte. Si hay pernocta, sigo el protocolo de mi Grupo o mi Región si lo tienen, y lo pregunto antes.",
+              "source": "Protocolo Nacional de Transporte, CNGR-022-1 (2025); pernocta: recomendación de este curso"
+            },
+            {
+              "id": "c5",
+              "text": "Trabajo con casos inventados, no con historias propias: nadie está obligado a contar lo suyo.",
+              "source": "Kit de Acción HeForShe, p. 35 (caso hipotético); casos, no historias propias: recomendación de este curso"
+            },
+            {
+              "id": "c6",
+              "text": "Pongo las reglas con el grupo y no expongo mis puntos de vista: pregunto.",
+              "source": "Manual de Implementación Marco de Mundo Mejor, p. 29"
+            },
+            {
+              "id": "c7",
+              "text": "Antes de proponer nada sobre un patrimonio, pregunto a quienes lo viven qué necesitan.",
+              "source": "Kit de Acción Patrimonito, pp. 10 y 22; preguntar primero: recomendación de este curso"
+            },
+            {
+              "id": "c8",
+              "text": "En el sitio sigo las reglas de quien lo administra, y no voy solo.",
+              "source": "Recomendación de este curso"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "¿Te acuerdas de las dos invitaciones? Para el colectivo ya tienes con qué divulgar las rutas y un cuidado que no se negocia; para la escuela de marimba, a quién escuchar primero. Elige a cuál le dices que sí."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar vas a escribir tu compromiso: «Antes del ___ voy a usar ___ con ___, y nunca voy a ___». Para el grupo, escribe su tipo —un colectivo del barrio, la casa de la cultura, un grupo de universitarios—, no nombres. Si tu servicio crece hasta volverse proyecto, el Nivel 3, <em>Mi proyecto de servicio en la comunidad</em>, te ayuda a planearlo."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>La igualdad de género libera no sólo a las mujeres, sino también a los hombres.</strong><br>Y el patrimonio no se salva desde afuera: se cuida con quienes lo viven."
+        }
+      ],
+      "reflection": {
+        "prompt": "De las cuatro reglas fijas de tu kit, ¿cuál podría chocar con lo que te pida el colectivo o la casa de la cultura? Escribe, tal cual, qué les dirías para cumplirla sin romper el acuerdo."
+      },
+      "quiz": {
+        "title": "Evaluación - Tu kit",
+        "questions": [
+          {
+            "text": "En su kit, un Rover marca Violentómetro y escribe: «Mi Clan · cada uno anota las violencias que ha sufrido · cerramos con una obra en la plazoleta». ¿Qué le corregirías?",
+            "options": [
+              "Que pida las violencias que se ejercen, como dice el Kit, no las que sufrió",
+              "Que la cierre con un video en vez de la obra, para llegar a las 40 personas del Kit",
+              "Que presente la obra únicamente ante el Clan, para cuidar a quienes participan"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "En su kit, una Rover marca Mapeo social del patrimonio y escribe: «Maestros y alumnos de la escuela de marimba · vamos con mi Clan un día de ensayo · cierro con una nota en audio sobre cómo viven la marimba y de qué vive la escuela». ¿Cómo le queda?",
+            "options": [
+              "Le queda bien: la visita puede ser física, y la nota recoge a quienes viven la marimba",
+              "Le queda bien si cambia la visita por una virtual, que es la que pide el Kit",
+              "Le queda mal: el Kit pide visitar un patrimonio declarado, no a quienes lo enseñan"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Ruta Acordada",
+      "emoji": "🧭",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Igualdad en Acción",
+      "emoji": "⚖️",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Patrimonio Vivo",
+      "emoji": "🏛️",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Cuidado Firme",
+      "emoji": "🛡️",
+      "unlockOnModule": 5
+    },
+    {
+      "id": "achievement-5",
+      "name": "Kit de Mensajero",
+      "emoji": "🧰",
+      "unlockOnModule": 6
+    }
+  ],
+  "certificate": {
+    "courseName": "MENSAJEROS DE LA PAZ: GÉNERO Y PATRIMONIO",
+    "description": "ha completado el curso Mensajeros de la Paz: género y patrimonio, que presenta la ruta y el reconocimiento de los desafíos HeForShe y Patrimonito, sus actividades para el servicio en la comunidad y los cuidados para trabajar las violencias basadas en género y el patrimonio con quienes lo viven.",
+    "commitmentPrompt": "Escribe tu compromiso completando la frase de la última lección: «Antes del ___ voy a usar ___ con ___, y nunca voy a ___». Para el grupo, escribe su tipo, no nombres."
+  }
+}

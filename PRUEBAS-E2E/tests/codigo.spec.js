@@ -396,41 +396,61 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
   });
 
   // --- E3 paz y diálogo (ADR-146) ---
-  // El Kit de Constructores de Paz mezcla rangos de edad en la misma página. Al Rover solo le
-  // tocan las actividades que el Kit marca «Mayores de 18 años» (pp. 40, 42, 44, 46, 62, 64, 67).
+  // El Kit de Constructores de Paz mezcla rangos de edad en la misma página. El curso solo ofrece
+  // las siete que el Kit marca para mayores de 18 (casi todas sirven también de 15 a 18). Se
+  // comprueba por página Y por nombre, en el kit y en la lista de la lección (revisión final).
   const E3 = () => JSON.parse(leer(path.join(GEN, 'borradores', 'herramientas-paz-dialogo.json')) || 'null');
   const kitDe = (c) => c && c.modules.flatMap((m) => m.sections).find((s) => s.type === 'kit-builder');
+  const CLAN = new Map([[40, 'La Declaración'], [42, 'Creando un mapa'], [44, 'Empiezo a ser consciente de mis emociones'],
+    [46, 'Reconociendo'], [62, 'Punto en el conflicto'], [64, '¿Qué lugar ocupan las emociones?'], [67, 'Propuesta de proyecto']]);
 
   test('las actividades del kit de paz y diálogo son las del Clan, con su página (ADR-146)', () => {
-    const kit = kitDe(E3());
+    const c = E3();
+    const kit = kitDe(c);
     expect(kit, 'no existe herramientas-paz-dialogo o no tiene kit').toBeTruthy();
-    const CLAN = new Set([40, 42, 44, 46, 62, 64, 67]);
-    const fuera = kit.games.filter((g) => {
+    const malas = [];
+    const enKit = kit.games.map((g) => {
       const m = /Constructores de Paz[^,;]*,\s*p\.\s*(\d+)/.exec(g.source || '');
-      return !(m && CLAN.has(Number(m[1])));
-    }).map((g) => `${g.id}: ${g.source}`);
-    expect(fuera).toEqual([]);
+      const p = m && Number(m[1]);
+      if (!p || CLAN.get(p) !== g.name) malas.push(`kit ${g.id}: ${g.name} · ${g.source}`);
+      return p;
+    });
+    expect(new Set(enKit).size, 'el kit no trae las siete, o repite alguna').toBe(CLAN.size);
+    const grilla = c.modules.flatMap((mo) => mo.sections).filter((s) => s.type === 'method-grid')
+      .flatMap((s) => s.items).filter((it) => /\(p\. \d+\)/.test(it.title));
+    for (const it of grilla) {
+      const p = Number(/\(p\. (\d+)\)/.exec(it.title)[1]);
+      if (!CLAN.has(p) || !it.title.includes(CLAN.get(p))) malas.push(`lección: ${it.title}`);
+    }
+    expect(grilla.length, 'la lista de actividades de la lección no tiene las siete').toBe(CLAN.size);
+    expect(malas).toEqual([]);
   });
 
   test('en el kit de paz y diálogo, lo que no es norma dice que es recomendación (ADR-146)', () => {
     const kit = kitDe(E3());
     expect(kit, 'no existe herramientas-paz-dialogo o no tiene kit').toBeTruthy();
-    // Las reglas fijas («siempre, no se eligen») tienen que ser norma: Política o Modelo. Los
-    // cuidados que se eligen pueden venir del Kit o del Manual; si no, dicen que son recomendación.
-    const NORMA = /Política|Modelo/;
+    // Las reglas fijas («siempre, no se eligen») tienen que EMPEZAR por la norma (Política o
+    // Modelo, con página): una recomendación que solo menciona la Política no es una regla.
+    // Los cuidados que se eligen citan una fuente oficial o dicen que son recomendación.
+    const NORMA = /^(Política ASP|Modelo de Aplicación),? pp?\. \d+/;
     const OFICIAL = /Política|Modelo|Kit|Manual|Guía/;
     const malas = kit.care.filter((c) => {
       if (c.rule) return !NORMA.test(c.source || '');
       return !c.source || !(OFICIAL.test(c.source) || /recomendación/i.test(c.source));
     }).map((c) => `${c.id}: ${c.source || '(sin fuente)'}`);
     expect(malas).toEqual([]);
+    expect(kit.care.filter((c) => c.rule).length, 'cambió el número de reglas fijas: revisarlas').toBe(4);
   });
 
-  test('ninguna reflexión de paz y diálogo pide contar una violencia vivida (ADR-146)', () => {
+  test('nada de lo que se escribe en paz y diálogo pide contar una violencia vivida (ADR-146)', () => {
+    // Es una red, no una garantía: «recuerda una vez que alguien te agredió» no la caza. La
+    // auditoría doctrinal y la pedagógica siguen siendo las que leen cada enunciado.
     const c = E3();
     expect(c, 'no existe herramientas-paz-dialogo').toBeTruthy();
-    const malas = c.modules.map((m) => m.reflection && m.reflection.prompt)
-      .filter((p) => p && /viviste|te pasó|tu historia|has sufrido|te hicieron/i.test(p));
-    expect(malas).toEqual([]);
+    const VIVIDA = /has vivido|viviste|sufriste|has sufrido|te pas[óo]|te hicieron|tu (propia )?historia|(tú|tu familia) (viviste|vivió|vivieron)|fuiste víctima|tu experiencia (de|con) (la )?violencia/i;
+    const reflexiones = c.modules.map((m) => m.reflection && m.reflection.prompt).filter(Boolean);
+    expect(reflexiones.length, 'cambió el número de reflexiones: revisarlas').toBe(5);
+    const textos = [...reflexiones, c.registration && c.registration.motivationLabel, c.certificate && c.certificate.commitmentPrompt];
+    expect(textos.filter((t) => t && VIVIDA.test(t))).toEqual([]);
   });
 });

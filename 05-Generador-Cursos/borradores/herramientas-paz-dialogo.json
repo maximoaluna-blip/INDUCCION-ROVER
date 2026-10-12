@@ -96,7 +96,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>El reconocimiento.</strong> Al cerrar, el Kit habla de reconocer el progreso, celebrar y ser reconocido como Mensajero de la Paz (p. 7). El procedimiento de la insignia de Constructores de Paz no está escrito en el Kit ni en el Manual: pregúntalo a la comisión de Mundo Mejor de tu región, y que no sea la meta del viaje."
+          "text": "<strong>El reconocimiento.</strong> Al cerrar, el Kit habla de reconocer el progreso, celebrar y ser reconocido como Mensajero de la Paz (p. 7). El procedimiento para obtener la insignia de Constructores de Paz no está escrito en el Kit ni en el Manual. Lo que el Manual sí dice es que solo la porta quien la Comisión Nacional de Mundo Mejor reconoce oficialmente (p. 67). Pregúntalo a la comisión de Mundo Mejor de tu región, y que no sea la meta del viaje."
         },
         {
           "type": "paragraph",
@@ -110,13 +110,13 @@
         "title": "Evaluación - La ruta",
         "questions": [
           {
-            "text": "Una Rover quiere arrancar Constructores de Paz con la junta de su barrio. Un compañero le dice: «Antes de escoger actividades, haz la autoevaluación y acuerda el viaje con tu adulto acompañante». ¿Tiene razón?",
+            "text": "Una Rover quiere arrancar Constructores de Paz con la junta de su barrio. Un compañero le dice: «Acuerda el viaje con tu adulto acompañante y deja la autoevaluación para el final, cuando ya sepas qué hiciste». ¿Tiene razón?",
             "options": [
-              "Sí: el viaje se acuerda antes con su adulto acompañante, y arranca con la autoevaluación",
-              "No: si la junta ya pidió ayuda, el viaje se acuerda con la junta, no con un adulto",
-              "A medias: el acuerdo sí, pero la autoevaluación va al final, tras las actividades"
+              "Sí: con su adulto acuerda el viaje, y la autoevaluación sirve para medir lo que ya hizo",
+              "A medias: el acuerdo con su adulto va antes, pero la autoevaluación también abre el viaje",
+              "No: si la junta ya pidió ayuda, la autoevaluación sobra; basta con acordarlo con su adulto"
             ],
-            "correctIndex": 0
+            "correctIndex": 1
           },
           {
             "text": "Un Rover ya escogió con su adulto acompañante tres actividades del Kit, pero a mitad de camino ve que una no le sirve al grupo de la junta. ¿Qué es lo más coherente con la lección?",
@@ -193,7 +193,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Ojo con la edad del grupo.</strong> Estas siete están marcadas para mayores de 18. Si tu grupo es de menores de edad —un colegio, la Tropa del barrio—, no las lleves tal cual: busca en el Kit las de su edad y acuérdalo con tu adulto acompañante."
+          "text": "<strong>Ojo con la edad del grupo.</strong> Mira la edad que el Kit marca en cada actividad: casi todas estas sirven también de 15 a 18 años. Si tu grupo es más pequeño —la Tropa del barrio, un curso de primaria—, busca en el Kit las de su edad. En los dos casos, acuérdalo con tu adulto acompañante."
         },
         {
           "type": "info-box",
@@ -209,18 +209,18 @@
           {
             "text": "En las reuniones del salón comunal siempre pasa lo mismo: unos se van y otros gritan. La junta quiere que cada vecino se vea en eso y pruebe otra forma de discutir. ¿Qué actividad del Kit te sirve más para empezar?",
             "options": [
-              "Punto en el conflicto, para que cada uno vea cómo reacciona y qué otra salida tiene",
-              "Reconociendo, para que cada vecino vea a qué grupos pertenece",
-              "Creando un mapa, para ubicar en el barrio los lugares donde se dan esas peleas"
+              "Punto en el conflicto",
+              "¿Qué lugar ocupan las emociones?",
+              "Reconociendo"
             ],
             "correctIndex": 0
           },
           {
             "text": "Un Rover va a hacer La Declaración con los vecinos de la junta, y las situaciones del Kit le suenan lejanas al barrio. ¿Qué es lo más coherente con la lección?",
             "options": [
-              "Escribir situaciones del barrio que pongan a prueba el mismo artículo 2",
+              "Situaciones parecidas a las del barrio, sin señalar a nadie, sobre el artículo 2",
               "Cambiar el artículo 2 por uno que hable de lo que más le duele al barrio",
-              "Dejar que los vecinos escojan qué artículo trabajar, para que sea de ellos"
+              "Dejar que los vecinos escojan qué artículo trabajar, sin imponerles el del Kit"
             ],
             "correctIndex": 0
           }
@@ -301,7 +301,7 @@
             "options": [
               "Darle su opinión al grupo con cuidado: si se la preguntaron, su deber es ser sincero",
               "Devolver la pregunta al grupo, para que cada parte diga qué necesita y por qué",
-              "Decir que nadie tiene la razón, para que ninguna de las dos partes se moleste"
+              "Reconocer que las dos partes tienen algo de razón y proponerles un punto medio"
             ],
             "correctIndex": 1
           },
@@ -309,7 +309,7 @@
             "text": "Al final de la reunión, las dos partes coinciden en que el salón debe abrir los sábados para los niños. Quedan diez minutos. ¿Qué hace el Rover que modera?",
             "options": [
               "Ayudarles a escribir ese punto en común y a acordar cómo lo van a cumplir",
-              "Cerrar sin acordar nada: si el que modera propone algo, deja de ser neutral",
+              "Cerrar sin acordar nada: quien modera no propone",
               "Pedir que cada parte repita lo que oyó de la otra, y cerrar ahí la reunión"
             ],
             "correctIndex": 0
@@ -339,11 +339,11 @@
         {
           "type": "list",
           "items": [
-            "<strong>Avisa antes.</strong> Que la organización sepa qué se va a trabajar y cómo y, si hay menores de edad, que sus familias también: y que estén de acuerdo: el <em>Modelo</em> pone el consentimiento informado dentro de lo que hace segura una actividad (p. 71).",
+            "<strong>Avisa antes.</strong> Que la organización sepa qué se va a trabajar y cómo —y, si hay menores de edad, también sus familias—, y que estén de acuerdo. El <em>Modelo</em> pone el consentimiento informado entre lo que hace segura una actividad (p. 71).",
             "<strong>Nadie está obligado a contar.</strong> El propio Kit lo hace así: habla quien lo desee, los demás escuchan «sin hacer valoraciones», y cada uno cuenta a alguien en quien confíe (p. 45); se comparte solo si alguien quiere (p. 62).",
             "<strong>Pregunta, no sentencies.</strong> Preguntas abiertas en lugar de posiciones o consejos (Manual, p. 6). Sobre el conflicto armado, no tomas partido.",
             "<strong>Dale lugar a lo que se construyó.</strong> Las actividades de memoria del Kit preguntan también por la resistencia y las iniciativas de la comunidad (pp. 52 y 58). Recordar no exige que alguien cuente su propio sufrimiento.",
-            "<strong>Si alguien se conmueve, no le pidas que explique.</strong> Agradécele y ofrécele un momento aparte, siempre con un adulto de la organización presente: nunca a solas (la práctica 2+1, Política p. 26; con quien no es scout, es recomendación de este curso). Cierra la actividad con lo que la comunidad construyó, no con el dolor."
+            "<strong>Si alguien se conmueve, no le pidas que explique.</strong> Agradécele y ofrécele un momento aparte, nunca a solas: con un adulto de la organización presente (recomendación de este curso; si es un menor scout, la estrategia 2+1 de la Política, p. 26, en la que tú no cuentas como adulto). Empieza y cierra la actividad con lo que la comunidad construyó, no con el dolor."
           ]
         },
         {
@@ -353,7 +353,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Confidencialidad no es secreto. Si lo que oyes puede ser un delito contra alguien —scout o no—, la Política habla de «cualquier acción que represente un posible delito»: hay que reportarlo y «no cabrá la posibilidad de guardar ningún secreto» (p. 21). Usa el botón «Me Pongo A Salvo del Peligro» (p. 44) y avisa sin demora a tu adulto acompañante (esto último, recomendación de este curso). No investigas ni haces de terapeuta: la Política tampoco se lo pide a sus líderes (p. 29). Y no eres el adulto a cargo. Cuidar el espacio, escuchar y saber a quién acudir es lo que te toca."
+          "text": "Confidencialidad no es secreto. Si lo que oyes puede ser un delito contra alguien —scout o no—, la Política habla de «cualquier acción que represente un posible delito»: hay que reportarlo y «no cabrá la posibilidad de guardar ningún secreto» (p. 21). Usa el botón «Me Pongo A Salvo del Peligro» (p. 44) y avisa sin demora a tu adulto acompañante (esto último, recomendación de este curso). No investigas ni haces de terapeuta: la Política se lo descarta incluso a sus adultos (p. 29). Y no eres el adulto a cargo. Cuidar el espacio, escuchar y saber a quién acudir es lo que te toca."
         },
         {
           "type": "info-box",
@@ -371,7 +371,7 @@
             "options": [
               "Agradecerle y ofrecerle un momento aparte, con un adulto de la organización",
               "Llevarla aparte con un adulto de la organización, para que termine de contar",
-              "Preguntarle con cariño qué pasó después: su relato no puede quedar a medias"
+              "Seguir con la actividad como si nada: así no la expone más frente a todos"
             ],
             "correctIndex": 0
           },
@@ -486,8 +486,8 @@
             {
               "id": "c2",
               "rule": true,
-              "text": "Nunca me quedo a solas con un menor de edad, scout o no: siempre con un adulto de la organización presente.",
-              "source": "Política ASP, p. 26 (práctica 2+1); con quien no es scout: recomendación de este curso"
+              "text": "Nunca me quedo a solas con un menor de edad. Si es scout, la estrategia 2+1, en la que yo no cuento como adulto; si no es scout, siempre con un adulto de la organización presente.",
+              "source": "Política ASP, p. 26 (estrategia 2+1); con quien no es scout: recomendación de este curso"
             },
             {
               "id": "c3",
@@ -556,8 +556,8 @@
             "text": "Un Rover arma las frases de su kit. Para cuando un vecino diga «con los de la parte baja no se puede hablar, nunca cumplen», ¿cuál va más con el curso?",
             "options": [
               "«¿Qué tendría que pasar para que usted les crea? Digámoselo a ellos»",
-              "«Sobre eso no voy a opinar; sigamos con el siguiente punto, por favor»",
-              "«Eso es un estereotipo, y aquí acordamos no hablar así de nadie»"
+              "«¿Usted no cree que está siendo injusto con los de la parte baja?»",
+              "«Eso es un estereotipo, y con estereotipos aquí no vamos a llegar a nada»"
             ],
             "correctIndex": 0
           }

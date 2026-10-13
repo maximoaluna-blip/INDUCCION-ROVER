@@ -71,3 +71,5 @@ Ningún marcador de tesis solo en la correcta (adulto, organización, pregunt, a
 ## Revisión final (12-10-2026, Task 4)
 
 0 críticos, 3 importantes y 6 menores. Las dos pruebas que se podían burlar (I-2 e I-3) se endurecieron: fuente exacta, conteo total, todos los ítems de las listas con «(p. N)», sinónimos en las redes de temas y de violencia vivida, y reglas fijas como mapa cerrado. Se comprobó que cada una caza su variante alterada del curso. **I-1 queda para el dueño:** la regla fija c3 exige autorización con evidencia, pero esa exigencia sale de una nota del Kit (p. 43), no de la Política (p. 26, que solo pide promover directrices).
+
+**M-4, decidido por el dueño (12-10-2026):** la decisión de no exigirle el taller nacional HeForShe al Rover cubre también el curso A Salvo del Peligro que el Kit pide a quien acompañe (p. 7). El texto «A ti el Manual no te los exige» se queda.

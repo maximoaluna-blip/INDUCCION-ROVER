@@ -38,7 +38,7 @@ Hilo: la quebrada del barrio que baja llena de plástico cada vez que llueve, y 
 - **Scouts Go Solar** (decisión del dueño: según el Manual): el Manual trae proceso y reconocimiento, así que se presenta como desafío sin actividades. El Rover, para ser Explorador Solar, participa en un Taller Solar **y lo replica** (p. 50). **YUNGA** se nombra (Manual pp. 52–55; *Guía de Clan* p. 63).
 - **Incidencia ante autoridades** (decisión del dueño: entra con cuidado): con el adulto acompañante y la organización aliada (recomendación) y sin tomar partido (**con fuente**: *Características Esenciales*, p. 34).
 - **Encuestas sin datos:** el formulario del kit trae nombre (opcional) y edad (p. 52). El curso dice que se quiten: es **recomendación** del curso. La vigila `codigo.spec`.
-- **Residuos y orillas:** guantes, nada cortante con la mano, nunca solo en una orilla. **Recomendación del curso sin fuente** que protege: **queda para el dueño** (spec §6 no la cubre).
+- **Residuos y orillas:** guantes, nada cortante con la mano, nunca solo en una orilla. **Recomendación del curso sin fuente** que protege: **el dueño la dejó como recomendación** (12-10-2026).
 - **Kit (`kit-builder`):** 10 actividades (se eligen 3, «elegidas»), 4 frases, 8 cuidados: las mismas 4 reglas fijas de la E4 y 4 elegibles (no tomar partido, encuestas sin datos, residuos y orillas, lluvia de ideas).
 - **Quizzes:** el plan del protagonista está **bien** en la 1.1, la 2.2, la 4.2 y la 5.2; sin personaje que objeta ni trío exceso / defecto / término medio.
 

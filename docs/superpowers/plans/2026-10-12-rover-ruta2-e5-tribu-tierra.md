@@ -105,8 +105,8 @@ Por eso el curso **enseña actividades, como la E3 y la E4**, y no solo el proce
 
 ### Task 0: visto bueno y paradas antes de diseñar
 
-- [ ] **Avisar al dueño** de lo que cambió desde la spec (los kits sí están) y pedir su visto bueno a este plan.
-- [ ] **Preguntas para el dueño:**
+- [x] **Avisar al dueño** de lo que cambió desde la spec (los kits sí están) y pedir su visto bueno a este plan.
+- [x] **Preguntas para el dueño:**
   - ¿Los kits OMMS de 2020, a los que remite el Manual de la ASC, sirven como fuente de las actividades, igual que los kits de la ASC en la E3 y la E4?
   - ¿Las actividades de incidencia con autoridades (pp. 60 y 62) entran, y con qué cuidado?
   - ¿Scouts Go Solar entra como desafío o solo se nombra? Depende de lo que traiga el Manual.
@@ -118,38 +118,38 @@ Por eso el curso **enseña actividades, como la E3 y la E4**, y no solo el proce
 - Create: `05-Generador-Cursos/borradores/herramientas-tribu-tierra.json`.
 - Test: `PRUEBAS-E2E/tests/codigo.spec.js`, bloque `// --- E5 Tribu de la Tierra ---`, con los puntos 1, 2, 4 y 5 del Review Focus. Se agrega `herramientas-tribu-tierra` a la prueba de `countLabel` de `kit-builder.spec.js`.
 
-- [ ] **Step 1: Leer las fuentes con página.**
+- [x] **Step 1: Leer las fuentes con página.**
   - Los dos kits completos: la ficha de cada actividad, con su rango.
   - Manual MM pp. 47–55 y 67.
   - *Earth Tribe* pp. 14–15 y 26.
   - *Guía de Clan* p. 37.
   - Los manuales de cada desafío, para el reconocimiento.
   - Armar el mapa cerrado nombre → página → rango.
-- [ ] **Step 2: Escribir las pruebas que deben fallar** y verlas fallar porque el curso no existe.
-- [ ] **Step 3: Escribir el diseño y el JSON.**
+- [x] **Step 2: Escribir las pruebas que deben fallar** y verlas fallar porque el curso no existe.
+- [x] **Step 3: Escribir el diseño y el JSON.**
   - **L1, la Tribu y su viaje:** cuatro rutas; acuerdo mutuo; autoevaluación de 15+; cuántas actividades pide cada desafío; proyecto comunitario; reconocimiento y a quién preguntar; Energía Limpia según lo que traiga el Manual.
   - **L2, Mejores Decisiones y Naturaleza:** las actividades de Champions; de la conversación a la acción con la comunidad.
   - **L3, Planeta Sano:** las actividades de Tide Turners y sus ideas de Coopera y Actúa; la autoevaluación del uso de plástico.
   - **L4, cuidados:** salidas, residuos, encuestas sin datos, autoridades, menores e imágenes.
   - **L5, «Arma tu kit»:** `missingGames` y `countLabel`.
-- [ ] **Step 4: Build, pruebas y fuga.** Build sin avisos, pruebas en PASS, `ciega.py` en cero. `cursos.json` en `draft` en local hasta publicar.
-- [ ] **Step 5: Commit**, sin push.
+- [x] **Step 4: Build, pruebas y fuga.** Build sin avisos, pruebas en PASS, `ciega.py` en cero. `cursos.json` en `draft` en local hasta publicar.
+- [x] **Step 5: Commit**, sin push.
 
 ### Task 2: auditorías y re-auditorías
 
-- [ ] Doctrinal y pedagógica en paralelo, con las instrucciones de Rover. Cursos hermanos: la E3, la E4 y el Curso 21 de PJ (`marco-mundo-mejor-ods`).
-- [ ] Aplicar, re-auditar y aplicar.
-- [ ] Regla ciega final con dos lectores nuevos, Haiku y Sonnet: se registra.
-- [ ] **Paradas para el dueño:**
+- [x] Doctrinal y pedagógica en paralelo, con las instrucciones de Rover. Cursos hermanos: la E3, la E4 y el Curso 21 de PJ (`marco-mundo-mejor-ods`).
+- [x] Aplicar, re-auditar y aplicar.
+- [x] Regla ciega final con dos lectores nuevos, Haiku y Sonnet: se registra.
+- [x] **Paradas para el dueño:**
   - una regla protectora sin fuente que no esté en spec §6;
   - la incidencia con autoridades;
   - la recolección de datos en encuestas, si se presenta como regla.
 
 ### Task 3: publicar
 
-- [ ] Suite local, push, Pages, suite en producción.
-- [ ] Raíz: ADR, glosario (Tribu de la Tierra y los dos desafíos, si no tienen entrada), trazabilidad, ledger, bitácora y `ESTADO.md` si no hay cambios ajenos sin publicar.
-- [ ] Docs de Rover: `CLAUDE.md`, spec y memoria. **La Ruta 2 queda completa.**
+- [x] Suite local, push, Pages, suite en producción.
+- [x] Raíz: ADR, glosario (Tribu de la Tierra y los dos desafíos, si no tienen entrada), trazabilidad, ledger, bitácora y `ESTADO.md` si no hay cambios ajenos sin publicar.
+- [x] Docs de Rover: `CLAUDE.md`, spec y memoria. **La Ruta 2 queda completa.**
 
 ### Task 4: revisión final
 

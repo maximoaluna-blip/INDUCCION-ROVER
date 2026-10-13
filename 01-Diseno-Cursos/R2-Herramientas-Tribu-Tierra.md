@@ -53,3 +53,14 @@ Hilo: la quebrada del barrio que baja llena de plástico cada vez que llueve, y 
 ## Medición de la fuga (12-10-2026, `ciega.py`)
 
 Ningún marcador solo en la correcta (los de siempre, más partido, Bien, Mal y Seguir). Correcta más larga en 1 de 10; ningún quiz se aprueba con la más corta ni con la más larga.
+
+## Auditorías (12-10-2026)
+
+- **Doctrinal:** 0 críticos, 3 mayores (los kits sí traen guantes, Tide Turners p. 60; la edad de la encuesta la usa la actividad, p. 51: va por rangos; la edad de la ficha es de quien participa) y 8 menores. Re-auditoría: 1 mayor (la 5.1 ponía el cartel, de 15+, con «niños de la escuela») y 5 menores, aplicados.
+- **Pedagógica:** **1 crítico**: la respuesta sin condiciones ganaba siempre y volvía el trío de término medio, la lección de la E4 corregida de más. Se reescribieron 9 de 10 preguntas con la polaridad repartida. Re-auditoría: 2 mayores (la forma «veredicto, pero…» siempre en un distractor; un distractor confuso) y 4 menores, aplicados.
+- **Decisiones del dueño (12-10-2026):** encuestas a mayores de edad o a menores con su familia, en pareja, de día y en lugares visibles; residuos y orillas; seguir la política de protección de la aliada. Todo como recomendación.
+
+## Regla ciega (ADR-148: dos lectores de modelos distintos)
+
+- **Primera vuelta, tras las auditorías:** Sonnet 2 de 5 (7/10); Haiku 4 de 5 (9/10). La estimación del auditor antes de corregir era 4 o 5 de 5.
+- **Final, con lectores nuevos y después de las re-auditorías: Sonnet 3 de 5 (8/10); Haiku 3 de 5 (7/10).** Los dos fallan los quizzes 1 y 2 y aprueban los de proyecto, cuidados y kit. Se registra.

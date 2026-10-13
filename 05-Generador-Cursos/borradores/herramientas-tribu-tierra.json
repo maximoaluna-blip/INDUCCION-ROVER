@@ -40,7 +40,7 @@
         {
           "type": "course-objectives",
           "items": [
-            "<strong>Distinguir</strong> qué pide cada uno de los cuatro desafíos de la Tribu antes del proyecto, para acordarlo con tu adulto acompañante",
+            "<strong>Distinguir</strong> qué pide Champions for Nature, Tide Turners Plastic y Scouts Go Solar antes del proyecto, para acordarlo con tu adulto acompañante",
             "<strong>Elegir</strong> actividades de Champions for Nature para que tu comunidad hable de lo que consume y de su naturaleza",
             "<strong>Elegir</strong> actividades de Tide Turners Plastic y una idea de proyecto contra el plástico",
             "<strong>Decidir</strong> qué cuidado aplica cuando una actividad sale a la calle: encuestas, autoridades, residuos, orillas y menores",
@@ -112,9 +112,9 @@
           {
             "text": "Una Rover terminó tres actividades de Champions for Nature y quiere hacer ahora Tide Turners Plastic con la misma cuenta: tres actividades y el proyecto. ¿Cómo le queda?",
             "options": [
-              "Mal: Tide Turners pide antes la autoevaluación de su plástico y al menos cinco",
+              "Mal: Tide Turners pide primero la autoevaluación de su plástico y al menos cinco",
               "Bien: a los Rovers los dos desafíos del kit les piden tres actividades y un proyecto",
-              "Mal, pero solo si deja el proyecto para antes de las tres actividades acordadas"
+              "Mal: en Tide Turners la autoevaluación va al final, para medir lo que cambió"
             ],
             "correctIndex": 0
           },
@@ -215,7 +215,7 @@
           {
             "text": "Para Cuatro esquinas, un Rover decide no decir cuál es su esquina y dejar que cada uno se cambie si cambia de opinión. Las preguntas piensa inventarlas en el momento, según cómo vea al grupo. ¿Cómo le queda?",
             "options": [
-              "Bien en lo primero; lo segundo no: el kit pide investigar antes de la actividad",
+              "Bien en lo primero, pero no en lo segundo: el kit recomienda prepararse antes",
               "Bien: el kit deja improvisar, y así cada uno piensa antes por sí mismo",
               "Mal en lo primero: si no dice su esquina, el grupo no sabe cuál es la sostenible"
             ],
@@ -379,7 +379,7 @@
             "text": "En Operación contra la basura, una vecina responde la encuesta y ofrece dejar su nombre y su teléfono «por si necesitan algo más». ¿Qué es lo más coherente con la lección?",
             "options": [
               "Anotar solo el nombre, que el formulario del kit trae como opcional",
-              "No anotarlos, y explicarle que la encuesta no lleva datos de nadie",
+              "No anotarlos, y explicarle que la encuesta no lleva datos que identifiquen",
               "Pasárselos a la junta, que es la que va a hacer el seguimiento en el barrio"
             ],
             "correctIndex": 1
@@ -387,9 +387,9 @@
           {
             "text": "A la limpieza de la quebrada llega la concejal del sector con camisetas de su campaña, y le pide al Rover subir a la tarima a hablar por el Clan. Él acepta: «así viene más gente». ¿Cómo le queda?",
             "options": [
-              "Mal: puede invitarla por el tema, pero la limpieza no se vuelve acto de su campaña",
+              "Mal: puede invitarla por el tema, pero la limpieza no se vuelve acto de campaña",
               "Bien: el kit propone sumar a los representantes, y con ella llega más gente",
-              "Mal, pero se arregla si invita también a un concejal de otro partido"
+              "Mal, pero se arregla si invita también a un concejal de otro partido, para equilibrar"
             ],
             "correctIndex": 0
           }
@@ -465,7 +465,7 @@
             {
               "id": "g7",
               "name": "Basura… ¿por qué es importante?",
-              "detail": "un video y una conversación sobre basura y plástico",
+              "detail": "un video, un debate y observar en un lugar público cómo se tira basura",
               "source": "Kit de Acción Tide Turners Plastic (OMMS, 2020), p. 48"
             },
             {
@@ -571,16 +571,16 @@
         }
       ],
       "reflection": {
-        "prompt": "Piensa en algo que la junta o la alcaldía te podrían pedir y que choca con un cuidado de tu kit: poner el logo de una campaña, pedirte los teléfonos de quienes respondieron la encuesta, bajar a la orilla sin un adulto. Escribe, tal cual, qué les dirías para cumplir el cuidado sin romper el acuerdo."
+        "prompt": "Piensa en algo que la junta o la alcaldía te podrían pedir y que choca con un cuidado de tu kit: poner el logo de una campaña, pedirte los teléfonos de quienes respondieron la encuesta, bajar solo a la orilla o llevar a niños que no son scouts sin un adulto de la organización. Escribe, tal cual, qué les dirías para cumplir el cuidado sin romper el acuerdo."
       },
       "quiz": {
         "title": "Evaluación - Tu kit",
         "questions": [
           {
-            "text": "En su kit, un Rover marca Confeccionar un cartel sobre contaminación marina y escribe: «Niños de la escuela del barrio, que no son scouts · salida a la quebrada con otro Rover del Clan · cierro con los carteles en la escuela». ¿Qué le corregirías?",
+            "text": "En su kit, un Rover marca Confeccionar un cartel sobre contaminación marina y escribe: «Jóvenes de décimo y once del colegio del barrio, menores de edad y que no son scouts · salida a la quebrada con otro Rover del Clan · cierro con los carteles en el colegio». ¿Qué le corregirías?",
             "options": [
-              "Que vaya un adulto de la escuela: con niños no scouts, dos Rovers no alcanzan",
-              "Que sean tres Rovers: con menores rige la 2+1, y un Rover cuenta como adulto",
+              "Que vaya un adulto del colegio: con menores no scouts, dos Rovers no alcanzan",
+              "Que sean tres Rovers: con menores rige la 2+1, y tres cuentan como el adulto que falta",
               "Que lleven guantes y nada cortante: con ese cuidado, en la orilla dos Rovers bastan"
             ],
             "correctIndex": 0
@@ -588,8 +588,8 @@
           {
             "text": "Para que la quebrada no se vuelva a llenar, una Rover arma su kit con Operación contra la basura, Basura… ¿por qué es importante? y Regular el uso de plásticos. ¿Cómo le queda?",
             "options": [
-              "Bien: con esas tres ya completa Tide Turners Plastic y puede pasar al proyecto",
-              "Bien: empieza por entender con la gente por qué se llena, y termina en normas",
+              "Bien: con esas tres ya completa Tide Turners Plastic y puede pasar directo al proyecto",
+              "Bien: primero entiende con la gente por qué se llena; luego, un debate de normas",
               "Mal: empezar por una encuesta aplaza la limpieza que la junta le pidió"
             ],
             "correctIndex": 1

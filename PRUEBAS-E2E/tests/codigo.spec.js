@@ -567,10 +567,14 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     ['Regular el uso de plásticos', 'Tide Turners Plastic (OMMS, 2020), p. 54'],
     ['Confeccionar un cartel sobre contaminación marina', 'Tide Turners Plastic (OMMS, 2020), p. 56']]);
 
-  test('las actividades del kit de Tribu de la Tierra son las del mapa cerrado, con su página (ADR-154)', () => {
+  test('las actividades del kit de Tribu de la Tierra son las del mapa cerrado, con su página y su edad (ADR-154)', () => {
+    // Revisión final del ADR-154: el mapa lleva la edad de la ficha; TODAS las grillas con «(p. N)»
+    // tienen título exacto y descripción que empieza por esa edad; las ideas de proyecto son un mapa
+    // cerrado; y ningún texto nombra una ficha de 7–14 u 11–14.
     const c = E5();
     const kit = kitDe(c);
     expect(kit, 'no existe herramientas-tribu-tierra o no tiene kit').toBeTruthy();
+    const EDAD = new Map([['S.E.E. los enlaces', 14]]);
     const FUENTE = /^Kit de Acción (Champions for Nature|Tide Turners Plastic) \(OMMS, 2020\), p\. (\d+)$/;
     expect(kit.games.length, 'el kit no trae exactamente diez actividades').toBe(E5_ACTIVIDADES.size);
     const malas = kit.games.filter((g) => {
@@ -578,51 +582,82 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
       return !m || E5_ACTIVIDADES.get(g.name) !== `${m[1]} (OMMS, 2020), p. ${m[2]}`;
     }).map((g) => `kit ${g.id}: ${g.name} · ${g.source}`);
     expect(new Set(kit.games.map((g) => g.name)).size, 'el kit repite alguna actividad').toBe(E5_ACTIVIDADES.size);
-    const nombres = [...E5_ACTIVIDADES.keys()];
-    const grilla = c.modules.flatMap((mo) => mo.sections).filter((s) => s.type === 'method-grid'
-      && s.items.some((it) => nombres.some((n) => it.title.includes(n)))).flatMap((s) => s.items);
+    const grilla = c.modules.flatMap((mo) => mo.sections).filter((s) => s.type === 'method-grid').flatMap((s) => s.items)
+      .filter((it) => /\(p\. \d+\)/.test(it.title));
     for (const it of grilla) {
-      const m = /\(p\. (\d+)\)$/.exec(it.title);
-      const nombre = nombres.find((n) => it.title.includes(n));
-      if (!m || !nombre || !E5_ACTIVIDADES.get(nombre).endsWith(`p. ${m[1]}`)) malas.push(`lección: ${it.title}`);
+      const m = /^\S+ (.+) \(p\. (\d+)\)$/.exec(it.title);
+      const nombre = m && m[1];
+      const edad = EDAD.get(nombre) || 15;
+      if (!m || !E5_ACTIVIDADES.has(nombre) || !E5_ACTIVIDADES.get(nombre).endsWith(`p. ${m[2]}`)
+        || !(it.description || '').startsWith(`De ${edad} años en adelante`)) malas.push(`lección: ${it.title}`);
     }
-    expect(grilla.length, 'las listas de actividades de las lecciones no tienen exactamente las diez').toBe(E5_ACTIVIDADES.size);
+    expect(grilla.length, 'las grillas de actividades no tienen exactamente las diez').toBe(E5_ACTIVIDADES.size);
+    const IDEAS = new Map([['Sorpresas de plástico', '61'], ['La persuasión sobre el plástico en el sector privado', '61'],
+      ['Revolución en la gestión de residuos', '62'], ['Comprométete con un río o una playa', '62'], ['Preséntalo a los gobiernos locales', '60']]);
+    const ideas = c.modules.flatMap((mo) => mo.sections).filter((s) => s.type === 'list').flatMap((s) => s.items)
+      .map((t) => /^<strong>([^<]+)<\/strong> \(p\. (\d+)/.exec(t)).filter(Boolean);
+    for (const m of ideas) if (IDEAS.get(m[1]) !== m[2]) malas.push(`idea: ${m[1]} (p. ${m[2]})`);
+    expect(ideas.length, 'las ideas de proyecto no son exactamente las cinco del mapa').toBe(IDEAS.size);
+    const MENORES = /Recojamos basura|Noche de cine|Campaña (de carteles|con posters)|Verde o Rojo|Monitoreo de mis residuos|La red de vida|Mínimo Impacto|Necesidades y deseos|Cambiando mentes|Separar desde el comienzo|Macetas de botellas|Juega a salvar el océano|huella ecológica|Tu vida ecológica|Reciclar y reducir|BioBlitz|¿Qué está en riesgo\?|plantación de árboles/i;
+    if (MENORES.test(JSON.stringify(c))) malas.push(`ficha de menores: ${MENORES.exec(JSON.stringify(c))[0]}`);
     expect(malas).toEqual([]);
   });
 
   test('Tribu de la Tierra no pide anotar datos de las personas encuestadas (ADR-154)', () => {
-    // El formulario de «Operación contra la basura» (Kit Tide Turners, p. 52) pide nombre «(opcional)»
-    // y edad. El curso enseña lo contrario: ningún texto manda anotar o pedir datos que identifiquen.
+    // El formulario de «Operación contra la basura» (Kit Tide Turners, p. 52) trae nombre y edad. Se
+    // quitan primero las frases negadas; después ninguna raíz de «anotar/pedir/guardar…» puede ir con un
+    // dato que identifique. Los quizzes no se miran (sus distractores describen el error a propósito),
+    // y la reflexión del kit, que nombra el error para rechazarlo, va en una lista cerrada.
     const c = E5();
     expect(c, 'no existe herramientas-tribu-tierra').toBeTruthy();
-    const PIDE_DATOS = /(?<!no |sin )\b(anota|anotar|registra|registrar|pide|pedir|apunta|apuntar)\b[^.;]{0,25}\b(nombres?|edad(es)?|tel[ée]fonos?|correos?|direcci[óo]n(es)?)\b/i;
-    // Los quizzes no se miran: sus distractores describen el error a propósito.
-    const textos = c.modules.flatMap((m) => [...m.sections.map((s) => JSON.stringify(s)),
-      m.reflection && m.reflection.prompt]).filter(Boolean);
-    expect(textos.filter((t) => PIDE_DATOS.test(t)).map((t) => PIDE_DATOS.exec(t)[0])).toEqual([]);
-    expect(JSON.stringify(c), 'el curso no dice que la encuesta se hace sin datos que identifiquen').toMatch(/sin (anotar )?nombres/i);
+    const NEGADA = /\b(sin|no|nunca|ni|tampoco)\b[^.;:]{0,60}/gi;
+    const PIDE_DATOS = /\b(anot|registr|ped|pid|píd|apunt|guard|escrib|recog|solicit|conserv|llen|consign|captur)\w*\b[^.;:]{0,30}\b(nombres?|edad exacta|fecha de nacimiento|tel[ée]fonos?|celular(es)?|n[úu]mero de (tel[ée]fono|celular|whatsapp)|correos?|whatsapp|direcci[óo]n(es)?|c[ée]dula|documento de identidad)\b/i;
+    const kit = kitDe(c);
+    const EXENTOS = new Set([c.modules[5].reflection.prompt]);
+    const textos = [...c.modules.flatMap((m) => [...m.sections.map((s) => JSON.stringify(s)), m.reflection && m.reflection.prompt]),
+      c.registration && c.registration.motivationLabel, c.certificate && c.certificate.commitmentPrompt].filter((t) => t && !EXENTOS.has(t));
+    expect(textos.map((t) => t.replace(NEGADA, ' ')).filter((t) => PIDE_DATOS.test(t)).map((t) => PIDE_DATOS.exec(t)[0])).toEqual([]);
+    const encuesta = c.modules[4].sections.find((s) => /casillas para el nombre/.test(s.text || ''));
+    expect(encuesta && encuesta.text, 'el párrafo de la encuesta perdió «sin nombres ni datos que identifiquen» o «basta con un rango»')
+      .toMatch(/sin nombres ni datos que identifiquen[\s\S]*basta con un rango/);
+    const c6 = kit.care.find((x) => x.id === 'c6');
+    expect(c6 && c6.text, 'el cuidado c6 perdió «sin nombres» o «por rangos»').toMatch(/sin nombres[\s\S]*por rangos/);
   });
 
-  test('en el kit de Tribu de la Tierra, las reglas fijas son las del mapa y lo demás dice su fuente (ADR-154)', () => {
-    const kit = kitDe(E5());
+  test('en el kit de Tribu de la Tierra, las reglas fijas son las del mapa, texto y fuente (ADR-154)', () => {
+    const c = E5();
+    const kit = kitDe(c);
     expect(kit, 'no existe herramientas-tribu-tierra o no tiene kit').toBeTruthy();
     const REGLAS = new Map([
-      ['c1', 'Política ASP, pp. 21 y 44; avisar a mi adulto acompañante: recomendación de este curso'],
-      ['c2', 'Política ASP, p. 26 (estrategia 2+1); con quien no es scout: recomendación de este curso'],
-      ['c3', 'Política ASP, p. 26 (directrices para publicar imágenes); autorización con evidencia: Kit de Acción HeForShe, p. 43; la de la familia si es menor: recomendación de este curso'],
-      ['c4', 'Protocolo Nacional de Transporte, CNGR-022-1 (2025); pernocta: recomendación de este curso']]);
-    expect(kit.care.filter((c) => c.rule).map((c) => `${c.id}: ${c.source}`)).toEqual([...REGLAS].map(([id, s]) => `${id}: ${s}`));
+      ['c1', ['Si lo que veo u oigo puede ser un delito contra alguien, scout o no, no lo guardo: aviso sin demora a mi adulto acompañante y lo reporto con el botón «Me Pongo A Salvo del Peligro».',
+        'Política ASP, pp. 21 y 44; avisar a mi adulto acompañante: recomendación de este curso']],
+      ['c2', ['Nunca me quedo a solas con un menor de edad. Si es scout, la estrategia 2+1, en la que yo no cuento como adulto; si no es scout, siempre con un adulto de la organización presente.',
+        'Política ASP, p. 26 (estrategia 2+1); con quien no es scout: recomendación de este curso']],
+      ['c3', ['No publico fotos ni videos de nadie sin su autorización, con evidencia de ella; si es menor de edad, la de su familia. Sigo las directrices de la Asociación y las de la organización.',
+        'Política ASP, p. 26 (directrices para publicar imágenes); autorización con evidencia: Kit de Acción HeForShe, p. 43; la de la familia si es menor: recomendación de este curso']],
+      ['c4', ['Si el servicio pide moverse en vehículo, aplico el Protocolo Nacional de Transporte. Si hay pernocta, sigo el protocolo de mi Grupo o mi Región si lo tienen, y lo pregunto antes.',
+        'Protocolo Nacional de Transporte, CNGR-022-1 (2025); pernocta: recomendación de este curso']]]);
+    expect(kit.care.filter((x) => x.rule).map((x) => [x.id, x.text, x.source])).toEqual([...REGLAS].map(([id, [t, s]]) => [id, t, s]));
     const OFICIAL = /Política|Modelo|Kit|Manual|Guía|Características Esenciales/;
-    const malas = kit.care.filter((c) => !c.rule && (!c.source || !(OFICIAL.test(c.source) || /recomendación/i.test(c.source))))
-      .map((c) => `${c.id}: ${c.source || '(sin fuente)'}`);
+    const malas = kit.care.filter((x) => !x.rule && (!x.source || !(OFICIAL.test(x.source) || /recomendación/i.test(x.source))))
+      .map((x) => `${x.id}: ${x.source || '(sin fuente)'}`);
     expect(malas).toEqual([]);
+    // Ningún texto (fuera de los quizzes) dice que el Rover cuenta como adulto.
+    const sinQuiz = JSON.stringify(c.modules.map((m) => ({ s: m.sections, r: m.reflection })))
+      .replace(/\b(no|nunca)\s+(cuent[oa]s?|cuentan|cuentes|vale[sn]?|sirve[sn]?) como (el |un )?adulto/gi, ' ');
+    expect(sinQuiz).not.toMatch(/\b(cuent[oa]s?|cuentan|cuentes|vale[sn]?|sirve[sn]?) como (el |un )?adulto/i);
   });
 
-  test('ninguna reflexión de Tribu de la Tierra pide nombres de personas (ADR-154)', () => {
+  test('ninguna reflexión ni texto que se escribe en Tribu de la Tierra pide nombres (ADR-154)', () => {
     const c = E5();
     expect(c, 'no existe herramientas-tribu-tierra').toBeTruthy();
     const reflexiones = c.modules.map((m) => m.reflection && m.reflection.prompt).filter(Boolean);
     expect(reflexiones.length, 'cambió el número de reflexiones: revisarlas').toBe(5);
-    expect(reflexiones.filter((t) => /\b(nombre de|c[óo]mo se llama|qui[ée]n es)\b/i.test(t) && !/sin nombres/i.test(t))).toEqual([]);
+    const kit = kitDe(c) || { labels: {} };
+    const NEGADA = /sin (nombres?|nombrar a nadie)( de personas)?( ni iniciales)?|no (su |sus )?nombres?|ni iniciales/gi;
+    const PIDE = /\b(nombres?|inicial(es)?|apellidos?|c[óo]mo se llama|qui[ée]n es|n[óo]mbra(lo|la|los|las|le|les)?)\b/i;
+    const textos = [...reflexiones, c.registration && c.registration.motivationLabel, c.certificate && c.certificate.commitmentPrompt,
+      kit.labels.gameWhyPlaceholder, kit.labels.careOwnPlaceholder, kit.labels.phrasePlaceholder].filter(Boolean);
+    expect(textos.filter((t) => PIDE.test(t.replace(NEGADA, ' ')))).toEqual([]);
   });
 });

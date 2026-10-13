@@ -197,7 +197,7 @@
             "options": [
               "Decirle que sí y firmarla, porque el Rover vio que el lobato cumplió lo pedido",
               "Decirle que espere y llevarle la petición al dirigente, a quien le toca",
-              "Decirle que espere y firmarla después, cuando el dirigente le dé permiso"
+              "Decirle que espere y firmarla al final de la reunión, si el dirigente sigue ocupado"
             ],
             "correctIndex": 1
           },

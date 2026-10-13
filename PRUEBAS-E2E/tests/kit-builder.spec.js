@@ -103,20 +103,23 @@ test.describe('@solo-escritorio kit-builder', () => {
 
   test('un curso que llama «actividades» a lo que se elige lo avisa con su palabra', async ({ page }) => {
     // herramientas-paz-dialogo (ADR-146) elige actividades del Kit, no juegos: su kit declara
-    // labels.missingGames y el aviso tiene que usarlo (revisión final del ADR-146).
-    const HTML = path.join(REPO, '02-Plataforma-Web', 'herramientas-paz-dialogo.html');
-    await page.addInitScript(() => {
-      try {
-        localStorage.setItem('courseProgress_herramientas-paz-dialogo', JSON.stringify({
-          userProfile: { fullName: 'Rover Prueba' }, currentModule: 6,
-          moduleProgress: [], quizScores: [], reflections: {}, studyTime: 0 }));
-      } catch (e) {}
-    });
-    await page.goto(pathToFileURL(HTML).href, { waitUntil: 'domcontentloaded' });
-    await page.evaluate(() => showModule(6));
-    await page.evaluate(() => downloadKitPDF());
-    await expect(page.locator('.notification').last()).toContainText('Te faltan actividades');
-    await expect(page.locator('.notification').last()).not.toContainText('juegos');
+    // labels.missingGames y el aviso tiene que usarlo (revisión final del ADR-146). Igual los otros dos
+    // cursos de herramientas de la Ruta 2 (revisión final del ADR-154).
+    for (const id of ['herramientas-paz-dialogo', 'herramientas-genero-patrimonio', 'herramientas-tribu-tierra']) {
+      const HTML = path.join(REPO, '02-Plataforma-Web', `${id}.html`);
+      await page.addInitScript((cid) => {
+        try {
+          localStorage.setItem('courseProgress_' + cid, JSON.stringify({
+            userProfile: { fullName: 'Rover Prueba' }, currentModule: 6,
+            moduleProgress: [], quizScores: [], reflections: {}, studyTime: 0 }));
+        } catch (e) {}
+      }, id);
+      await page.goto(pathToFileURL(HTML).href, { waitUntil: 'domcontentloaded' });
+      await page.evaluate(() => showModule(6));
+      await page.evaluate(() => downloadKitPDF());
+      await expect(page.locator('.notification').last(), id).toContainText('Te faltan actividades');
+      await expect(page.locator('.notification').last(), id).not.toContainText('juegos');
+    }
   });
 
   test('el contador concuerda con lo que se elige: «elegidos» por defecto, «elegidas» con actividades (ADR-150)', async ({ page }) => {

@@ -64,3 +64,7 @@ Ningún marcador solo en la correcta (los de siempre, más partido, Bien, Mal y 
 
 - **Primera vuelta, tras las auditorías:** Sonnet 2 de 5 (7/10); Haiku 4 de 5 (9/10). La estimación del auditor antes de corregir era 4 o 5 de 5.
 - **Final, con lectores nuevos y después de las re-auditorías: Sonnet 3 de 5 (8/10); Haiku 3 de 5 (7/10).** Los dos fallan los quizzes 1 y 2 y aprueban los de proyecto, cuidados y kit. Se registra.
+
+## Revisión final (12-10-2026, Task 4)
+
+Contenido sin hallazgos críticos ni importantes. Cuatro pruebas endurecidas (edad de la ficha e ideas de proyecto en mapa cerrado; raíces verbales para datos personales; texto de las reglas fijas y «el Rover no cuenta como adulto»; nombres en reflexiones, registro y compromiso), comprobadas contra 12 variantes. **M-2, decidido por el dueño:** «la comisión de Mundo Mejor de tu región» se queda así en la E3, la E4 y la E5, aunque el Manual (p. 50) hable del Equipo Regional y de la Comisión Nacional.

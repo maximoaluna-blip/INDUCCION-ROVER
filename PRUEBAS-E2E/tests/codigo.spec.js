@@ -381,6 +381,15 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     expect(conRama).toEqual([]);
   });
 
+  test('«Recuperar mi avance» escribe sus avisos con contraste AA (adenda del ADR-138)', () => {
+    // Sobre blanco, #FF9800 daba 2,16:1 y #f44336 3,68:1; #B34700 da 5,50:1 y #C62828 5,62:1.
+    // Guarda copiada de DI; en Rover el mensaje vive en el motor propio (templates/engine.js).
+    const motor = leer(MOTOR);
+    expect(motor).toContain('color: #B34700; font-weight: 600;">⚠️ ');
+    expect(motor).toContain('color: #C62828; font-weight: 600;">❌ Error al conectar');
+    expect(motor).not.toMatch(/color: #(FF9800|f44336)/i);
+  });
+
   test('la caja de la reflexión no sugiere iniciales, ni en el build ni en lo compilado (ADR-145)', () => {
     const build = leer(path.join(GEN, 'build-course.js'));
     const enBuild = [...build.matchAll(/id="reflection-[^"]*"[^>]*placeholder="([^"]*)"/g)].map((x) => x[1]);

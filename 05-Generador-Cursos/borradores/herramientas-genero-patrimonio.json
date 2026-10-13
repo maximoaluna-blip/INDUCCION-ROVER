@@ -42,7 +42,7 @@
           "items": [
             "<strong>Ubicar</strong> los pasos y el reconocimiento de HeForShe y de Patrimonito",
             "<strong>Elegir</strong> actividades del Clan del Kit HeForShe y facilitarlas sin imponer tus puntos de vista",
-            "<strong>Identificar</strong> a quién escuchar primero y con qué actividad empezar un servicio de Patrimonito, en un lugar que la UNESCO reconoce",
+            "<strong>Identificar</strong> a quién escuchar primero y con qué actividad empezar un servicio de Patrimonito, en un lugar de la lista del Kit (UNESCO o Lista Tentativa)",
             "<strong>Cuidar</strong>: reportar una violencia que te cuenten, trabajar con casos y no con historias propias, y viajar con protocolo",
             "<strong>Armar</strong> tu propio kit de actividades, frases y cuidados"
           ]
@@ -57,7 +57,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 8 minutos · Idea central:</strong> los dos son viajes personales que acuerdas con tu adulto acompañante. HeForShe se recorre por actividades y competencias; Patrimonito, con un proyecto y horas de servicio en un patrimonio que la UNESCO reconoce."
+          "text": "<strong>⏱️ 8 minutos · Idea central:</strong> los dos son viajes personales que acuerdas con tu adulto acompañante. HeForShe se recorre por actividades y competencias; Patrimonito, con un proyecto y horas de servicio en un patrimonio de la lista del Kit (UNESCO o Lista Tentativa)."
         },
         {
           "type": "paragraph",
@@ -248,7 +248,7 @@
       "sections": [
         {
           "type": "paragraph",
-          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> en Patrimonito el patrimonio no es tuyo: es de la comunidad que lo vive. Tu servicio empieza por escucharla y se hace en un lugar que la UNESCO reconoce."
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> en Patrimonito el patrimonio no es tuyo: es de la comunidad que lo vive. Tu servicio empieza por escucharla y se hace en un lugar de la lista del Kit (UNESCO o Lista Tentativa)."
         },
         {
           "type": "paragraph",
@@ -299,7 +299,7 @@
         },
         {
           "type": "info-box",
-          "text": "<strong>Tu autoevaluación.</strong> La del Kit es para jóvenes de 15 a 18 y de 18 a 21 años, con competencias por cada perspectiva. En Difusión, por ejemplo: <em>«Soy capaz de pronunciarme a favor o en contra de decisiones que se tomen en torno al patrimonio»</em> (Kit, pp. 11–12; con estas palabras, Manual, p. 46). La haces al empezar y al terminar. Y una pregunta para la comisión antes de planear: el Kit pide las 80 horas <em>«en el sitio»</em> (p. 6), pero no dice cómo se cuentan cuando el patrimonio es una manifestación inmaterial."
+          "text": "<strong>Tu autoevaluación.</strong> La del Kit trae, para tu edad, competencias por cada perspectiva. En Difusión, por ejemplo: <em>«Soy capaz de pronunciarme a favor o en contra de decisiones que se tomen en torno al patrimonio»</em> (Kit, pp. 11–12; con estas palabras, Manual, p. 46). La haces al empezar y al terminar. Y una pregunta para la comisión antes de planear: el Kit pide las 80 horas <em>«en el sitio»</em> (p. 6), pero no dice cómo se cuentan cuando el patrimonio es una manifestación inmaterial."
         }
       ],
       "reflection": {
@@ -574,7 +574,7 @@
         },
         {
           "type": "mission-box",
-          "text": "<strong>La igualdad de género libera no sólo a las mujeres, sino también a los hombres.</strong><br>Y el patrimonio no se salva desde afuera: se cuida con quienes lo viven."
+          "text": "<strong>«La igualdad de género libera no sólo a las mujeres, sino también a los hombres, de los roles sociales preestablecidos y de los estereotipos de género».</strong> (Kit HeForShe, p. 82)<br>Y el patrimonio no se salva desde afuera: se cuida con quienes lo viven."
         }
       ],
       "reflection": {

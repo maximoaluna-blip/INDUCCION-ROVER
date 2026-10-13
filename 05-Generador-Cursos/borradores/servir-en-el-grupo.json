@@ -197,7 +197,7 @@
             "options": [
               "Decirle que sí y firmarla, porque el Rover vio que el lobato cumplió lo pedido",
               "Decirle que espere y llevarle la petición al dirigente, a quien le toca",
-              "Decirle que sí, pero firmarla a lápiz para que el dirigente la confirme"
+              "Decirle que espere y firmarla después, cuando el dirigente le dé permiso"
             ],
             "correctIndex": 1
           },
@@ -263,7 +263,7 @@
             "text": "El jefe de la Tropa de tu Grupo es tu amigo y te dice: «Venga el sábado y arrancamos, no hay que hablar con nadie más». ¿Qué es lo más coherente con la lección?",
             "options": [
               "Arrancar el sábado: si el jefe de la rama lo recibe, el acuerdo ya está hecho",
-              "Arrancar el sábado y contárselo al Jefe de Grupo cuando ya lleve un mes allí",
+              "Arrancar después de que el jefe lo confirme por escrito; el Grupo no tiene que saber",
               "Arrancar después de hablar también con el Jefe de Grupo y con su Clan"
             ],
             "correctIndex": 2
@@ -328,7 +328,7 @@
             "options": [
               "Contestarle en un chat donde también esté el dirigente, no por el privado",
               "Contestarle por el privado: se conocen de antes y la pregunta es de logística",
-              "Contestarle por el privado y luego mandarle al dirigente un pantallazo"
+              "Contestarle en el privado y luego mandarle al dirigente un pantallazo"
             ],
             "correctIndex": 0
           },

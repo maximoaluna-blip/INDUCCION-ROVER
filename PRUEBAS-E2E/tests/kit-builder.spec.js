@@ -124,7 +124,7 @@ test.describe('@solo-escritorio kit-builder', () => {
     await page.check('[data-kit-game="g1"]');
     await expect(page.locator('[data-kit-count]')).toHaveText('1 de 3 elegidos');
     // Los dos cursos de la Ruta 2 eligen actividades: su kit declara labels.countLabel.
-    for (const [id, mod] of [['herramientas-paz-dialogo', 6], ['herramientas-genero-patrimonio', 6]]) {
+    for (const [id, mod] of [['herramientas-paz-dialogo', 6], ['herramientas-genero-patrimonio', 6], ['herramientas-tribu-tierra', 6]]) {
       const HTML = path.join(REPO, '02-Plataforma-Web', `${id}.html`);
       await page.addInitScript(([cid, m]) => {
         try {

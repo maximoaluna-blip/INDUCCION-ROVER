@@ -549,4 +549,80 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
       ...kit.phrases.map((f) => f.situation), kit.labels.gameWhyPlaceholder, kit.labels.careOwnPlaceholder, kit.labels.phrasePlaceholder];
     expect(textos.filter((t) => t && VIVIDA.test(t))).toEqual([]);
   });
+
+  // --- E5 Tribu de la Tierra (ADR-154) ---
+  // Los dos kits de la OMMS (2020) mezclan rangos de edad en la misma grilla. El curso solo ofrece
+  // actividades cuya FICHA marca un rango que incluye a los Rovers («de 15 años en adelante» o
+  // «de 14 años en adelante»), con el nombre de la ficha y no el de la grilla. Mapa cerrado.
+  const E5 = () => JSON.parse(leer(path.join(GEN, 'borradores', 'herramientas-tribu-tierra.json')) || 'null');
+  const E5_ACTIVIDADES = new Map([
+    ['¿Cuál es tu posición sobre…?', 'Champions for Nature (OMMS, 2020), p. 34'],
+    ['Cuatro esquinas', 'Champions for Nature (OMMS, 2020), p. 36'],
+    ['Pirámide de alimentos', 'Champions for Nature (OMMS, 2020), p. 38'],
+    ['S.E.E. los enlaces', 'Champions for Nature (OMMS, 2020), p. 60'],
+    ['Contando historias: el discurso Pixar', 'Champions for Nature (OMMS, 2020), p. 62'],
+    ['Audita tus hábitos de uso de plásticos', 'Tide Turners Plastic (OMMS, 2020), p. 47'],
+    ['Basura… ¿por qué es importante?', 'Tide Turners Plastic (OMMS, 2020), p. 48'],
+    ['Operación contra la basura', 'Tide Turners Plastic (OMMS, 2020), p. 50'],
+    ['Regular el uso de plásticos', 'Tide Turners Plastic (OMMS, 2020), p. 54'],
+    ['Cartel sobre contaminación marina', 'Tide Turners Plastic (OMMS, 2020), p. 56']]);
+
+  test('las actividades del kit de Tribu de la Tierra son las del mapa cerrado, con su página (ADR-154)', () => {
+    const c = E5();
+    const kit = kitDe(c);
+    expect(kit, 'no existe herramientas-tribu-tierra o no tiene kit').toBeTruthy();
+    const FUENTE = /^Kit de Acción (Champions for Nature|Tide Turners Plastic) \(OMMS, 2020\), p\. (\d+)$/;
+    expect(kit.games.length, 'el kit no trae exactamente diez actividades').toBe(E5_ACTIVIDADES.size);
+    const malas = kit.games.filter((g) => {
+      const m = FUENTE.exec(g.source || '');
+      return !m || E5_ACTIVIDADES.get(g.name) !== `${m[1]} (OMMS, 2020), p. ${m[2]}`;
+    }).map((g) => `kit ${g.id}: ${g.name} · ${g.source}`);
+    expect(new Set(kit.games.map((g) => g.name)).size, 'el kit repite alguna actividad').toBe(E5_ACTIVIDADES.size);
+    const nombres = [...E5_ACTIVIDADES.keys()];
+    const grilla = c.modules.flatMap((mo) => mo.sections).filter((s) => s.type === 'method-grid'
+      && s.items.some((it) => nombres.some((n) => it.title.includes(n)))).flatMap((s) => s.items);
+    for (const it of grilla) {
+      const m = /\(p\. (\d+)\)$/.exec(it.title);
+      const nombre = nombres.find((n) => it.title.includes(n));
+      if (!m || !nombre || !E5_ACTIVIDADES.get(nombre).endsWith(`p. ${m[1]}`)) malas.push(`lección: ${it.title}`);
+    }
+    expect(grilla.length, 'las listas de actividades de las lecciones no tienen exactamente las diez').toBe(E5_ACTIVIDADES.size);
+    expect(malas).toEqual([]);
+  });
+
+  test('Tribu de la Tierra no pide anotar datos de las personas encuestadas (ADR-154)', () => {
+    // El formulario de «Operación contra la basura» (Kit Tide Turners, p. 52) pide nombre «(opcional)»
+    // y edad. El curso enseña lo contrario: ningún texto manda anotar o pedir datos que identifiquen.
+    const c = E5();
+    expect(c, 'no existe herramientas-tribu-tierra').toBeTruthy();
+    const PIDE_DATOS = /(?<!no |sin )\b(anota|anotar|registra|registrar|pide|pedir|apunta|apuntar)\b[^.;]{0,25}\b(nombres?|edad(es)?|tel[ée]fonos?|correos?|direcci[óo]n(es)?)\b/i;
+    // Los quizzes no se miran: sus distractores describen el error a propósito.
+    const textos = c.modules.flatMap((m) => [...m.sections.map((s) => JSON.stringify(s)),
+      m.reflection && m.reflection.prompt]).filter(Boolean);
+    expect(textos.filter((t) => PIDE_DATOS.test(t)).map((t) => PIDE_DATOS.exec(t)[0])).toEqual([]);
+    expect(JSON.stringify(c), 'el curso no dice que la encuesta se hace sin datos que identifiquen').toMatch(/sin (anotar )?nombres/i);
+  });
+
+  test('en el kit de Tribu de la Tierra, las reglas fijas son las del mapa y lo demás dice su fuente (ADR-154)', () => {
+    const kit = kitDe(E5());
+    expect(kit, 'no existe herramientas-tribu-tierra o no tiene kit').toBeTruthy();
+    const REGLAS = new Map([
+      ['c1', 'Política ASP, pp. 21 y 44; avisar a mi adulto acompañante: recomendación de este curso'],
+      ['c2', 'Política ASP, p. 26 (estrategia 2+1); con quien no es scout: recomendación de este curso'],
+      ['c3', 'Política ASP, p. 26 (directrices para publicar imágenes); autorización con evidencia: Kit de Acción HeForShe, p. 43; la de la familia si es menor: recomendación de este curso'],
+      ['c4', 'Protocolo Nacional de Transporte, CNGR-022-1 (2025); pernocta: recomendación de este curso']]);
+    expect(kit.care.filter((c) => c.rule).map((c) => `${c.id}: ${c.source}`)).toEqual([...REGLAS].map(([id, s]) => `${id}: ${s}`));
+    const OFICIAL = /Política|Modelo|Kit|Manual|Guía|Características Esenciales/;
+    const malas = kit.care.filter((c) => !c.rule && (!c.source || !(OFICIAL.test(c.source) || /recomendación/i.test(c.source))))
+      .map((c) => `${c.id}: ${c.source || '(sin fuente)'}`);
+    expect(malas).toEqual([]);
+  });
+
+  test('ninguna reflexión de Tribu de la Tierra pide nombres de personas (ADR-154)', () => {
+    const c = E5();
+    expect(c, 'no existe herramientas-tribu-tierra').toBeTruthy();
+    const reflexiones = c.modules.map((m) => m.reflection && m.reflection.prompt).filter(Boolean);
+    expect(reflexiones.length, 'cambió el número de reflexiones: revisarlas').toBe(5);
+    expect(reflexiones.filter((t) => /\b(nombre de|c[óo]mo se llama|qui[ée]n es)\b/i.test(t) && !/sin nombres/i.test(t))).toEqual([]);
+  });
 });

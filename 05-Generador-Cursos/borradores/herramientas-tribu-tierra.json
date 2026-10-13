@@ -1,0 +1,634 @@
+{
+  "courseId": "herramientas-tribu-tierra",
+  "title": "Tribu de la Tierra: el ambiente con tu comunidad",
+  "subtitle": "Ruta Servir en la comunidad · Nivel 2 · Herramientas",
+  "description": "Para el Rover que va a servir en su comunidad con los desafíos de la Tribu de la Tierra. En unos 40 minutos conoces el viaje de la Tribu y sus cuatro desafíos, las actividades de Champions for Nature y Tide Turners Plastic para tu edad, cómo pasar de la conversación a un proyecto con tu comunidad y los cuidados en el terreno. Al final armas y descargas tu propio kit. Basado en los kits de acción Champions for Nature y Tide Turners Plastic (OMMS, 2020), el Manual de Implementación Marco de Mundo Mejor (ASC, 2021) y la Guía de Dirigente de Clan (2026).",
+  "contentVersion": "2026-10-12",
+  "route": "comunidad",
+  "level": 2,
+  "branch": null,
+  "registration": {
+    "motivationLabel": "¿Qué problema ambiental de tu barrio o tu municipio te gustaría ayudar a resolver? (sin nombres de personas)"
+  },
+  "icon": "🌍",
+  "duration": "40 minutos",
+  "totalContentModules": 5,
+  "modules": [
+    {
+      "id": 1,
+      "title": "Bienvenido/a",
+      "emoji": "🏠",
+      "navLabel": "Inicio",
+      "isIntro": true,
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "Cada vez que llueve, la quebrada que pasa por el barrio baja llena de botellas y bolsas. La junta de acción comunal le pregunta a tu Clan si puede ayudar. Limpiar un sábado es fácil; que la quebrada no se vuelva a llenar es otra cosa. Este curso es para que sepas por dónde empezar."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Tribu Tierra es la iniciativa que convoca a los jóvenes a asumir un compromiso activo con el cuidado del planeta y la acción climática.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "La frase es de la <em>Guía de Dirigente de Clan</em> (2026, p. 63). Este curso trabaja con lo que traen dos de sus desafíos, <strong>Champions for Nature</strong> y <strong>Tide Turners Plastic</strong>, en sus kits de acción de la Organización Mundial del Movimiento Scout (OMMS, 2020, en español), y con lo que el <em>Manual de Implementación Marco de Mundo Mejor</em> (ASC, 2021) dice de la Tribu y de sus otros dos desafíos."
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Antes de empezar.</strong> Este es un curso de herramientas del Nivel 2 de la ruta Servir en la comunidad: da por sabido lo de <em>Servir más allá del Grupo: Mundo Mejor</em>. Nada de lo que hagas aquí te da un cargo. <br><br><strong>Cómo avanzas.</strong> Cada lección cierra con una reflexión —que leen tú y el equipo de formación— y con dos preguntas. Para seguir hay que acertar las dos; si fallas una, el curso te dice cuál revisar y puedes intentarlo las veces que quieras. Al final armas tu kit: se guarda solo en este navegador."
+        },
+        {
+          "type": "course-objectives",
+          "items": [
+            "<strong>Ubicar</strong> los cuatro desafíos de la Tribu de la Tierra y cuántas actividades exige cada uno a un Rover",
+            "<strong>Elegir</strong> actividades de Champions for Nature para que tu comunidad hable de lo que consume y de su naturaleza",
+            "<strong>Elegir</strong> actividades de Tide Turners Plastic y una idea de proyecto contra el plástico",
+            "<strong>Cuidar</strong> el terreno: encuestas sin datos, autoridades sin tomar partido, residuos y orillas con precaución",
+            "<strong>Armar</strong> tu propio kit de actividades, frases y cuidados"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "La Tribu y su viaje",
+      "emoji": "🧭",
+      "navLabel": "La ruta",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 8 minutos · Idea central:</strong> la Tribu de la Tierra es un viaje personal que acuerdas con tu adulto acompañante; cada desafío pide un número distinto de actividades y termina en un proyecto con tu comunidad."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Tribu trabaja cuatro rutas de aprendizaje: Mejores Decisiones, Naturaleza y Biodiversidad, Energía Limpia y Planeta Sano (Manual, p. 47). La <em>Guía de Clan</em> le cuenta cuatro desafíos: Campeones por la Naturaleza, Plastic Tide Turners, Scouts Go Solar y YUNGA (p. 63). Es una invitación para jóvenes y adultos, scouts o no (<em>Earth Tribe</em>, OMMS, 2020, p. 14)."
+        },
+        {
+          "type": "timeline",
+          "items": [
+            {
+              "title": "Acuerdas el viaje",
+              "description": "Con tu adulto acompañante: el desafío, los pasos para completarlo según tu edad y un proyecto comunitario (Earth Tribe, p. 14)."
+            },
+            {
+              "title": "Te autoevalúas",
+              "description": "Con la tabla «15+» del kit, antes de empezar, y vuelves a ella al final (Champions for Nature, pp. 13 y 18–19)."
+            },
+            {
+              "title": "Haces las actividades y el proyecto",
+              "description": "Sé consciente, Coopera y Actúa: las actividades te preparan y el proyecto lo identificas y lo haces con tu comunidad (pp. 10–12)."
+            },
+            {
+              "title": "Evalúas y celebras",
+              "description": "Con compañeros, beneficiarios y educadores; la insignia y el certificado se entregan en una ceremonia sencilla (p. 9)."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Lo que pide cada desafío"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Champions for Nature</strong> (rutas Mejores Decisiones y Naturaleza y Biodiversidad): <strong>tres actividades</strong> para Scouts y Rovers, del kit o propias si se ajustan a sus competencias, y un proyecto de servicio comunitario (kit, p. 11).",
+            "<strong>Tide Turners Plastic</strong> (ruta Planeta Sano): una autoevaluación de tu uso de plástico antes de empezar, <strong>cinco actividades</strong> desde los 11 años y un proyecto de servicio comunitario (kit, p. 11).",
+            "<strong>Scouts Go Solar</strong> (ruta Energía Limpia): su kit no está en los documentos de este curso, pero el Manual cuenta su camino. Para ser <em>Explorador Solar</em>, un Rover participa en un Taller Solar <strong>y lo replica</strong> en su Grupo o su comunidad, acompañado por el equipo de Mundo Mejor; luego viene <em>Guía Solar</em>, y el reconocimiento nacional pide un proyecto que termina en una instalación solar en una comunidad no scout (Manual, pp. 50–51).",
+            "<strong>YUNGA</strong>: las insignias de las Naciones Unidas sobre biodiversidad, clima, bosques, agua y otros temas (Manual, pp. 52–55)."
+          ]
+        },
+        {
+          "type": "info-box",
+          "text": "<strong>Lo que pudo cambiar desde 2020.</strong> Los kits piden compartir las acciones en scout.org y en la plataforma de los ODS (Champions for Nature, p. 12): esas plataformas y quién entrega hoy cada insignia pregúntalos a la comisión de Mundo Mejor de tu región. Y la insignia de cualquier desafío solo la porta quien la Comisión Nacional reconoce oficialmente (Manual, p. 67)."
+        }
+      ],
+      "reflection": {
+        "prompt": "Piensa en un problema ambiental de tu barrio o tu municipio, sin nombrar a nadie. ¿Con cuál de los cuatro desafíos lo trabajarías, y qué le propondrías a tu adulto acompañante como primer paso?"
+      },
+      "quiz": {
+        "title": "Evaluación - La ruta",
+        "questions": [
+          {
+            "text": "Una Rover quiere hacer Tide Turners Plastic. Ya hizo la autoevaluación de su uso de plástico y acordó con su adulto acompañante cinco actividades del kit antes del proyecto. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Seguir: es lo que el kit pide desde los 11 años antes del proyecto",
+              "Seguir, pero bajar a tres: a los Rovers el kit les pide solo tres",
+              "Saltarse las actividades: antes del proyecto, a su edad no hacen falta"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "Un Rover participó en un Taller Solar que organizó su Región. ¿Qué le falta para ser Explorador Solar?",
+            "options": [
+              "Nada: para su grupo de edad, participar en el taller ya da el reconocimiento",
+              "Replicar el taller en su Grupo o su comunidad, con el equipo de Mundo Mejor",
+              "Una instalación solar en una comunidad que no sea scout, con el equipo regional"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "nextLabel": "Continuar: Champions for Nature ➡️"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Mejores decisiones y naturaleza",
+      "emoji": "🌿",
+      "navLabel": "Champions",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> las actividades de Champions for Nature para tu edad son conversaciones: sirven para que la gente diga lo que piensa de lo que consume y de su naturaleza, y escuche a quien piensa distinto."
+        },
+        {
+          "type": "paragraph",
+          "text": "Champions for Nature, hecho con WWF, es el reconocimiento de la Tribu para dos rutas: <strong>Mejores Decisiones</strong>, sobre los hábitos de consumo, y <strong>Naturaleza y Biodiversidad</strong>, sobre los ecosistemas y el papel que tenemos en ellos (Manual, pp. 47–48). Su autoevaluación «15+» pide, por ejemplo, <em>«Puedo identificar distintos puntos de vista en los conflictos ambientales y puedo formar mi propia opinión según valores personales»</em> (kit, p. 19)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Actividades para tu edad"
+        },
+        {
+          "type": "method-grid",
+          "items": [
+            {
+              "title": "↔️ ¿Cuál es tu posición sobre…? (p. 34)",
+              "description": "De 15 años en adelante · 30 a 40 minutos. Una línea en el piso del 1 al 6: ante cada afirmación sobre sostenibilidad, cada uno se ubica según qué tan de acuerdo está, y comparte por qué."
+            },
+            {
+              "title": "🔲 Cuatro esquinas (p. 36)",
+              "description": "De 15 años en adelante · 20 a 30 minutos. Cada pregunta sobre producción sostenible tiene cuatro respuestas, una por esquina; cada uno va a la suya, explica por qué y puede cambiar si cambia de opinión."
+            },
+            {
+              "title": "🥗 Pirámide de alimentos (p. 38)",
+              "description": "De 15 años en adelante · 1,5 horas. Cada uno arma la pirámide de lo que come en una semana y la compara con la recomendada y con la de impacto ambiental."
+            },
+            {
+              "title": "🎲 S.E.E. los enlaces (p. 60)",
+              "description": "De 14 años en adelante · 20 a 30 minutos. Con tres dados —sociedad, medio ambiente y economía— cada grupo inventa una historia sobre cómo un cambio en un ecosistema afecta lo demás."
+            },
+            {
+              "title": "🎬 Contando historias: el discurso Pixar (p. 62)",
+              "description": "De 15 años en adelante · 1,5 horas. Cada uno elige una causa de la biodiversidad y la cuenta con las seis frases de las historias de Pixar, para defenderla ante otros."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "<small>Fuente: <em>Kit de Acción · Desafío Champions for Nature</em>, OMMS, 2020; edades y tiempos tal como los marca cada ficha. El kit trae más; este curso ofrece las que su ficha abre a tu edad. Donde la lista del kit y la ficha dan nombres distintos, manda la ficha.</small>"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Facilitar y pasar a la acción"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Que cada uno piense por sí mismo.</strong> El kit pide animar a los participantes a pensar de forma independiente y tomar sus propias decisiones, y prepararte antes sobre lo que vas a preguntar (p. 37).",
+            "<strong>Del grupo a la comunidad.</strong> Coopera es identificar con tu grupo, tu comunidad y sus aliados los problemas, hacer una lluvia de ideas con los miembros de la comunidad, comprobar si el proyecto es factible y sostenible, y fijar objetivos SMART (pp. 11–12).",
+            "<strong>Con aliados.</strong> La <em>Guía de Clan</em> pide que los proyectos de la Tribu tengan metas SMART, alianzas comunitarias y autoevaluación por competencias (p. 37)."
+          ]
+        }
+      ],
+      "reflection": {
+        "prompt": "De las cinco actividades, ¿cuál usarías primero con un grupo de tu comunidad —describe el grupo por lo que es, sin nombres—, y qué pregunta o afirmación le llevarías?"
+      },
+      "quiz": {
+        "title": "Evaluación - Champions",
+        "questions": [
+          {
+            "text": "Con un grupo de jóvenes de un colegio, un Rover quiere que cada uno vea cómo lo que come en la semana afecta el ambiente. ¿Qué actividad del kit le sirve más?",
+            "options": [
+              "Cuatro esquinas",
+              "Pirámide de alimentos",
+              "Contando historias: el discurso Pixar"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "En Cuatro esquinas, el Rover que facilita no dice cuál es su esquina y deja que cada uno elija y se cambie si cambia de opinión. ¿Cómo le queda?",
+            "options": [
+              "Bien: el kit pide pensar de forma independiente y deja cambiar de esquina",
+              "Bien, si al final dice cuál esquina es la sostenible, para que aprendan",
+              "Mal: el kit pide sostener la elección; cambiar de esquina desordena la actividad"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: menos plástico ➡️"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Planeta sano: menos plástico",
+      "emoji": "♻️",
+      "navLabel": "Plástico",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> Tide Turners Plastic empieza por revisar el plástico que usas tú y termina en un cambio que la comunidad pueda sostener."
+        },
+        {
+          "type": "paragraph",
+          "text": "Plastic Tide Turners es una iniciativa del Programa de las Naciones Unidas para el Medio Ambiente que la Organización Mundial adoptó como parte de la Tribu (Manual, p. 48). Antes de las actividades, el kit pide evaluar tu propio uso de plástico con su cuestionario (p. 11)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Actividades para tu edad"
+        },
+        {
+          "type": "method-grid",
+          "items": [
+            {
+              "title": "🧾 Audita tus hábitos de uso de plásticos (p. 47)",
+              "description": "De 15 años en adelante · abierta. Durante un mes revisas tu uso de plástico con la guía de Mares Limpios, haces que otras cinco personas revisen el suyo y buscas reducirlo a la mitad."
+            },
+            {
+              "title": "🗑️ Basura… ¿por qué es importante? (p. 48)",
+              "description": "De 15 años en adelante · flexible. Un video corto y una conversación sobre cómo tirar basura alimenta la contaminación por plástico, sobre todo en la vida silvestre y el mar."
+            },
+            {
+              "title": "📋 Operación contra la basura (p. 50)",
+              "description": "De 15 años en adelante · tres días. Una encuesta en lugares públicos sobre por qué la gente tira basura y cómo la afecta, y una discusión de los resultados."
+            },
+            {
+              "title": "⚖️ Regular el uso de plásticos (p. 54)",
+              "description": "De 15 años en adelante · 30 a 40 minutos. Un debate en el que el grupo redacta normas para reducir el plástico en un lugar concreto, como en un proceso parlamentario."
+            },
+            {
+              "title": "🐢 Cartel sobre contaminación marina (p. 56)",
+              "description": "De 15 años en adelante · 30 a 40 minutos. Un cartel para que otros vean la contaminación por plástico en el agua, con investigación o con una salida a un río o un lago cercano."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "<small>Fuente: <em>Kit de Acción · Desafío Tide Turners Plastic</em>, OMMS, 2020; la edad del cartel la da la lista del kit (p. 21), porque su ficha no la trae. Donde la lista y la ficha dan nombres distintos, manda la ficha.</small>"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Ideas de proyecto para tu edad"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Sorpresas de plástico</strong> (p. 61): una exposición sobre objetos que casi nadie sabe que tienen plástico.",
+            "<strong>La persuasión sobre el plástico en el sector privado</strong> (p. 61): proponerles a tres negocios que frecuentas alternativas al plástico que venden.",
+            "<strong>Revolución en la gestión de residuos</strong> (p. 62): un esquema de recolección de plásticos que beneficie a más de cien personas, con el funcionario público y los aliados que haga falta.",
+            "<strong>Comprométete con un río o una playa</strong> (p. 62): mantener limpio un lugar cercano durante al menos un mes.",
+            "<strong>Preséntalo a los gobiernos locales</strong> (p. 60, desde los 11 años): llevarle a una autoridad, con respeto, un problema y una alternativa."
+          ]
+        }
+      ],
+      "reflection": {
+        "prompt": "¿Qué lugar de tu municipio —una quebrada, un parque, una calle— tiene un problema con el plástico? Descríbelo por lo que es, sin nombrar a nadie, y escribe qué harías primero para entenderlo con la gente que vive ahí."
+      },
+      "quiz": {
+        "title": "Evaluación - Plástico",
+        "questions": [
+          {
+            "text": "Un Rover quiere saber por qué la gente de su barrio tira basura en la orilla de la quebrada, y qué piensa de eso. ¿Qué actividad del kit le sirve más?",
+            "options": [
+              "Basura… ¿por qué es importante?",
+              "Regular el uso de plásticos",
+              "Operación contra la basura"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "Para Revolución en la gestión de residuos, un equipo de Rovers quiere plantearle a un funcionario de la alcaldía que en su barrio no pasa el reciclaje. ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Hacerlo con su adulto acompañante y con los datos del barrio, sin hablar por ningún partido",
+              "Esperar a que un adulto de la junta lo pida: a los Rovers no les toca la alcaldía",
+              "Ir con un candidato del barrio, que lleva el tema en su partido: sin él no los recibirán"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: los cuidados ➡️"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Cuidados en el terreno",
+      "emoji": "🛡️",
+      "navLabel": "Cuidados",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 9 minutos · Idea central:</strong> estas actividades salen a la calle: preguntan a desconocidos, hablan con autoridades y tocan residuos. Cada una tiene su cuidado."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Encuestas sin datos de nadie"
+        },
+        {
+          "type": "paragraph",
+          "text": "El formulario de <em>Operación contra la basura</em> trae casillas para el nombre (opcional) y la edad de quien responde (kit Tide Turners, p. 52). Para lo que busca la actividad —por qué se tira basura— no hacen falta. Haz la encuesta sin nombres ni datos que identifiquen a nadie: quita esas casillas antes de imprimirla (recomendación de este curso, con la misma razón por la que esta plataforma no guarda nombres en las reflexiones)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Autoridades, sin tomar partido"
+        },
+        {
+          "type": "blockquote",
+          "text": "«La identificación del Movimiento Scout con cualquier partido político compromete inevitablemente la objetividad y la neutralidad que siempre debe caracterizar el enfoque educativo centrado en la persona que defiende el Movimiento Scout.»<br><small>— Características Esenciales del Movimiento Scout, OMMS, p. 34</small>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Por el tema, no por una campaña.</strong> Varias ideas del kit llevan el problema a un funcionario, a un representante político o a los medios (pp. 60 y 62). Se hace por el tema: no te sumas a la campaña de nadie ni prestas el nombre del Clan para una.",
+            "<strong>Con tu adulto acompañante y la organización aliada.</strong> Que sepan antes con quién vas a hablar y qué vas a proponer (recomendación de este curso)."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Residuos, orillas y viajes"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Con residuos,</strong> guantes y nada cortante ni punzante con la mano; <strong>en la orilla de un río o una quebrada,</strong> nunca solo (recomendación de este curso: los kits no traen pautas de seguridad para esto).",
+            "<strong>Nunca a solas con menores.</strong> Con menores que no son scouts, siempre con un adulto de la organización presente (recomendación de este curso). Con menores scouts, la estrategia 2+1 de la Política A Salvo del Peligro (p. 26), en la que tú no cuentas como adulto.",
+            "<strong>Imágenes con autorización.</strong> Varias actividades terminan en redes, como la campaña de <em>Audita tus hábitos</em> (p. 47). Las personas que salgan en fotos o videos dan su autorización y queda evidencia; si son menores, la dan sus familias (recomendación de este curso, como en el kit de HeForShe, p. 43).",
+            "<strong>Viajes.</strong> Para moverse en vehículo rige el <em>Protocolo Nacional de Transporte</em> (CNGR-022-1, 2025). Para la pernocta no hay protocolo nacional: si tu Grupo o tu Región tienen uno, ese es el que aplicas (recomendación de este curso).",
+            "<strong>Si ves algo que puede ser un delito</strong> contra alguien, scout o no, no lo guardas: lo reportas con el botón «Me Pongo A Salvo del Peligro» y avisas sin demora a tu adulto acompañante (Política, pp. 21 y 44; avisar a tu adulto: recomendación de este curso)."
+          ]
+        }
+      ],
+      "reflection": {
+        "prompt": "Escribe las tres preguntas que harías en la encuesta de Operación contra la basura en tu barrio, sin pedir ningún dato de quien responde."
+      },
+      "quiz": {
+        "title": "Evaluación - Cuidados",
+        "questions": [
+          {
+            "text": "En Operación contra la basura, una vecina responde la encuesta y ofrece dejar su nombre y su teléfono «por si necesitan algo más». ¿Qué es lo más coherente con la lección?",
+            "options": [
+              "Anotar solo el nombre, que el formulario del kit trae como opcional",
+              "Agradecerle y no anotarlos: la encuesta va sin datos que identifiquen",
+              "Anotarlos aparte, sin ponerlos en la encuesta: si ella los ofrece, se pueden guardar"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "Para Comprométete con un río o una playa, un Rover invita a la limpieza a la concejal del sector y a una emisora local, sin logos ni fotos de campaña. ¿Cómo le queda?",
+            "options": [
+              "Bien: el kit propone sumar a un representante y a los medios, y él no toma partido",
+              "Bien, si además deja que la concejal hable por el Clan ante la emisora: el kit lo sugiere",
+              "Mal: invitar a una concejal ya es tomar partido, aunque no haya fotos de campaña"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Continuar: arma tu kit ➡️"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Arma tu kit",
+      "emoji": "🧰",
+      "navLabel": "Tu kit",
+      "sections": [
+        {
+          "type": "paragraph",
+          "text": "<strong>⏱️ 8 minutos · Idea central:</strong> lo que aprendiste se vuelve tuyo cuando lo eliges y lo escribes con tus palabras."
+        },
+        {
+          "type": "kit-builder",
+          "labels": {
+            "title": "Tu kit de la Tribu de la Tierra",
+            "intro": "Elige, escribe y descárgalo. Se guarda solo en este navegador: no va a ninguna hoja. Si vuelves desde este mismo navegador, lo encuentras como lo dejaste.",
+            "gamesTitle": "Mis 3 actividades",
+            "gamesHelp": "Marca tres, de uno de los dos desafíos o de los dos: son las tres con las que empiezas, no el desafío completo. En cada una escribe con qué grupo de tu comunidad la harías, qué le adaptarías y con qué pregunta la cierras.",
+            "countLabel": "elegidas",
+            "gameWhyPlaceholder": "Con qué grupo · qué le adapto · pregunta de cierre",
+            "phrasesTitle": "Mis frases",
+            "phrasePlaceholder": "Lo que dirías, tal cual",
+            "careTitle": "Mi lista de cuidado",
+            "rulesTitle": "Reglas y cuidados fijos (no se eligen):",
+            "careOwnPlaceholder": "Agrega un cuidado propio para tu comunidad (opcional)",
+            "download": "Descargar mi kit (PDF)",
+            "pdfTitle": "Mi kit de la Tribu de la Tierra",
+            "missingGames": "Te faltan actividades: marca tres antes de descargar tu kit."
+          },
+          "games": [
+            {
+              "id": "g1",
+              "name": "¿Cuál es tu posición sobre…?",
+              "detail": "una línea del 1 al 6 para ubicarse ante afirmaciones sobre sostenibilidad",
+              "source": "Kit de Acción Champions for Nature (OMMS, 2020), p. 34"
+            },
+            {
+              "id": "g2",
+              "name": "Cuatro esquinas",
+              "detail": "cuatro respuestas, cuatro esquinas, y cada uno explica la suya",
+              "source": "Kit de Acción Champions for Nature (OMMS, 2020), p. 36"
+            },
+            {
+              "id": "g3",
+              "name": "Pirámide de alimentos",
+              "detail": "lo que como en una semana frente a la pirámide de impacto ambiental",
+              "source": "Kit de Acción Champions for Nature (OMMS, 2020), p. 38"
+            },
+            {
+              "id": "g4",
+              "name": "S.E.E. los enlaces",
+              "detail": "historias con dados sobre sociedad, medio ambiente y economía",
+              "source": "Kit de Acción Champions for Nature (OMMS, 2020), p. 60"
+            },
+            {
+              "id": "g5",
+              "name": "Contando historias: el discurso Pixar",
+              "detail": "una causa de la biodiversidad contada en seis frases",
+              "source": "Kit de Acción Champions for Nature (OMMS, 2020), p. 62"
+            },
+            {
+              "id": "g6",
+              "name": "Audita tus hábitos de uso de plásticos",
+              "detail": "un mes revisando el plástico propio y el de otras cinco personas",
+              "source": "Kit de Acción Tide Turners Plastic (OMMS, 2020), p. 47"
+            },
+            {
+              "id": "g7",
+              "name": "Basura… ¿por qué es importante?",
+              "detail": "un video y una conversación sobre basura y plástico",
+              "source": "Kit de Acción Tide Turners Plastic (OMMS, 2020), p. 48"
+            },
+            {
+              "id": "g8",
+              "name": "Operación contra la basura",
+              "detail": "una encuesta sin datos de nadie sobre por qué se tira basura",
+              "source": "Kit de Acción Tide Turners Plastic (OMMS, 2020), p. 50"
+            },
+            {
+              "id": "g9",
+              "name": "Regular el uso de plásticos",
+              "detail": "un debate para redactar normas sobre el plástico en un lugar concreto",
+              "source": "Kit de Acción Tide Turners Plastic (OMMS, 2020), p. 54"
+            },
+            {
+              "id": "g10",
+              "name": "Cartel sobre contaminación marina",
+              "detail": "un cartel sobre el plástico en el agua, con investigación o con una salida",
+              "source": "Kit de Acción Tide Turners Plastic (OMMS, 2020), p. 56"
+            }
+          ],
+          "phrases": [
+            {
+              "id": "f1",
+              "situation": "En Cuatro esquinas, alguien te pregunta cuál es la respuesta correcta."
+            },
+            {
+              "id": "f2",
+              "situation": "Un vecino dice que separar la basura no sirve porque al final todo va al mismo camión."
+            },
+            {
+              "id": "f3",
+              "situation": "Un funcionario les pide poner el logo de su campaña en los afiches de la limpieza."
+            },
+            {
+              "id": "f4",
+              "situation": "Una persona encuestada quiere dejarte su número de teléfono."
+            }
+          ],
+          "care": [
+            {
+              "id": "c1",
+              "rule": true,
+              "text": "Si lo que veo u oigo puede ser un delito contra alguien, scout o no, no lo guardo: aviso sin demora a mi adulto acompañante y lo reporto con el botón «Me Pongo A Salvo del Peligro».",
+              "source": "Política ASP, pp. 21 y 44; avisar a mi adulto acompañante: recomendación de este curso"
+            },
+            {
+              "id": "c2",
+              "rule": true,
+              "text": "Nunca me quedo a solas con un menor de edad. Si es scout, la estrategia 2+1, en la que yo no cuento como adulto; si no es scout, siempre con un adulto de la organización presente.",
+              "source": "Política ASP, p. 26 (estrategia 2+1); con quien no es scout: recomendación de este curso"
+            },
+            {
+              "id": "c3",
+              "rule": true,
+              "text": "No publico fotos ni videos de nadie sin su autorización, con evidencia de ella; si es menor de edad, la de su familia. Sigo las directrices de la Asociación y las de la organización.",
+              "source": "Política ASP, p. 26 (directrices para publicar imágenes); autorización con evidencia: Kit de Acción HeForShe, p. 43; la de la familia si es menor: recomendación de este curso"
+            },
+            {
+              "id": "c4",
+              "rule": true,
+              "text": "Si el servicio pide moverse en vehículo, aplico el Protocolo Nacional de Transporte. Si hay pernocta, sigo el protocolo de mi Grupo o mi Región si lo tienen, y lo pregunto antes.",
+              "source": "Protocolo Nacional de Transporte, CNGR-022-1 (2025); pernocta: recomendación de este curso"
+            },
+            {
+              "id": "c5",
+              "text": "No tomo partido: el Clan trabaja por el tema, no por un candidato ni un partido.",
+              "source": "Características Esenciales del Movimiento Scout (OMMS), p. 34"
+            },
+            {
+              "id": "c6",
+              "text": "Mis encuestas van sin nombres ni datos que identifiquen a quien responde.",
+              "source": "Recomendación de este curso (el formulario del kit Tide Turners, p. 52, trae casillas de nombre y edad)"
+            },
+            {
+              "id": "c7",
+              "text": "Con residuos, guantes y nada cortante con la mano; en la orilla de un río o una quebrada, nunca solo.",
+              "source": "Recomendación de este curso"
+            },
+            {
+              "id": "c8",
+              "text": "Antes de proponer nada, hago una lluvia de ideas con la gente del lugar.",
+              "source": "Kit de Acción Champions for Nature (OMMS, 2020), p. 11"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "¿Te acuerdas de la quebrada del barrio? Ya tienes con qué entender por qué se llena, cómo hablarlo con los vecinos y con la alcaldía sin tomar partido, y qué cuidar el día que bajes a la orilla."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tu compromiso"
+        },
+        {
+          "type": "paragraph",
+          "text": "Al terminar vas a escribir tu compromiso: «Antes del ___ voy a usar ___ con ___, y nunca voy a ___». Para el grupo, escribe su tipo —la junta de acción comunal, vecinos de una cuadra, un colegio—, no nombres. Si tu servicio crece hasta volverse proyecto, el Nivel 3, <em>Mi proyecto de servicio en la comunidad</em>, te ayuda a planearlo."
+        },
+        {
+          "type": "mission-box",
+          "text": "<strong>Limpiar un sábado es fácil.</strong><br>Lo que deja huella es que la comunidad decida que la quebrada no se vuelva a llenar."
+        }
+      ],
+      "reflection": {
+        "prompt": "De las cuatro reglas fijas de tu kit, ¿cuál podría chocar con lo que te pida la junta o la alcaldía? Escribe, tal cual, qué les dirías para cumplirla sin romper el acuerdo."
+      },
+      "quiz": {
+        "title": "Evaluación - Tu kit",
+        "questions": [
+          {
+            "text": "En su kit, una Rover marca Operación contra la basura y escribe: «Vecinos de la quebrada · tres días de encuesta con el formulario del kit, tal cual · cierro con una charla en la junta». ¿Qué le corregirías?",
+            "options": [
+              "Que acorte la encuesta a un día: tres días es demasiado para un Rover",
+              "Que cambie la charla por un afiche: el kit no propone reuniones",
+              "Que quite del formulario del kit las casillas de nombre y edad"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "Un Rover arma su kit con tres actividades de Champions for Nature y piensa hacer después el desafío Tide Turners con otras cinco. ¿Cómo le queda?",
+            "options": [
+              "Bien: el kit son las tres con que empieza; Tide Turners pide cinco, que acuerda luego",
+              "Mal: el kit tiene que traer cinco, porque es lo que pide Tide Turners Plastic",
+              "Bien, si deja Tide Turners para el año siguiente: dos desafíos a la vez no se permiten"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "nextLabel": "Obtener Certificado 🏆"
+      }
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "name": "Viaje de la Tribu",
+      "emoji": "🧭",
+      "unlockOnModule": 2
+    },
+    {
+      "id": "achievement-2",
+      "name": "Mejores Decisiones",
+      "emoji": "🌿",
+      "unlockOnModule": 3
+    },
+    {
+      "id": "achievement-3",
+      "name": "Menos Plástico",
+      "emoji": "♻️",
+      "unlockOnModule": 4
+    },
+    {
+      "id": "achievement-4",
+      "name": "Terreno Cuidado",
+      "emoji": "🛡️",
+      "unlockOnModule": 5
+    },
+    {
+      "id": "achievement-5",
+      "name": "Kit de la Tribu",
+      "emoji": "🧰",
+      "unlockOnModule": 6
+    }
+  ],
+  "certificate": {
+    "courseName": "TRIBU DE LA TIERRA: EL AMBIENTE CON TU COMUNIDAD",
+    "description": "ha completado el curso Tribu de la Tierra: el ambiente con tu comunidad, que presenta el viaje de la Tribu y sus cuatro desafíos, las actividades de Champions for Nature y Tide Turners Plastic para el servicio en la comunidad y los cuidados para trabajar en el terreno.",
+    "commitmentPrompt": "Escribe tu compromiso completando la frase de la última lección: «Antes del ___ voy a usar ___ con ___, y nunca voy a ___». Para el grupo, escribe su tipo, no nombres."
+  }
+}

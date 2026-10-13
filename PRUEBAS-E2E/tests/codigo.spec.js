@@ -561,11 +561,11 @@ test.describe('Calidad de codigo de Rover (estatica)', () => {
     ['Pirámide de alimentos', 'Champions for Nature (OMMS, 2020), p. 38'],
     ['S.E.E. los enlaces', 'Champions for Nature (OMMS, 2020), p. 60'],
     ['Contando historias: el discurso Pixar', 'Champions for Nature (OMMS, 2020), p. 62'],
-    ['Audita tus hábitos de uso de plásticos', 'Tide Turners Plastic (OMMS, 2020), p. 47'],
+    ['Audita tus hábitos de uso de plásticos y averigua a dónde van tus residuos', 'Tide Turners Plastic (OMMS, 2020), p. 47'],
     ['Basura… ¿por qué es importante?', 'Tide Turners Plastic (OMMS, 2020), p. 48'],
     ['Operación contra la basura', 'Tide Turners Plastic (OMMS, 2020), p. 50'],
     ['Regular el uso de plásticos', 'Tide Turners Plastic (OMMS, 2020), p. 54'],
-    ['Cartel sobre contaminación marina', 'Tide Turners Plastic (OMMS, 2020), p. 56']]);
+    ['Confeccionar un cartel sobre contaminación marina', 'Tide Turners Plastic (OMMS, 2020), p. 56']]);
 
   test('las actividades del kit de Tribu de la Tierra son las del mapa cerrado, con su página (ADR-154)', () => {
     const c = E5();

@@ -94,7 +94,7 @@ function makeSandbox() {
       }),
     },
     PropertiesService: { getScriptProperties: () => ({ getProperty: () => null }) },
-    CacheService: { getScriptCache: () => ({ get: () => null, put: noop }) },
+    CacheService: { getScriptCache: () => ({ get: (k) => (k in CACHE ? CACHE[k] : null), put: (k, v) => { CACHE[k] = v; }, remove: (k) => { delete CACHE[k]; } }) },
     ContentService: {
       MimeType: { JSON: 'application/json' },
       createTextOutput: (t) => ({ _t: t, setMimeType() { return this; }, getContent() { return this._t; } }),
@@ -109,10 +109,14 @@ function makeSandbox() {
   };
 }
 
+const CACHE = {};
 const ctx = vm.createContext(makeSandbox());
 vm.runInContext(fs.readFileSync(SCRIPT_PATH, 'utf8'), ctx, { filename: SCRIPT_PATH });
 
 const get = (params) => JSON.parse(ctx.doGet({ parameter: params }).getContent());
+// Desde la etapa 3 del ADR-139 `recover` va en dos pasos; los correos @example.com
+// reciben el código fijo 000000 sin enviar nada, así que aquí se piden los dos.
+const recover = (params) => { get(Object.assign({ v: '2' }, params)); return get(Object.assign({ v: '2', code: '000000' }, params)); };
 const filasRegistros = () => SHEETS['Registros'].length - 1;
 
 const results = [];
@@ -165,14 +169,14 @@ check('...con el abandono por leccion, que sale de lo que ya se guardaba',
   mods && JSON.stringify(mods.map(function (m) { return [m.modulo, m.completados, m.abandonoPct]; })));
 
 // --- recover: dice si hay inscripcion, y no escribe -------------------------
-const ajeno = get({ action: 'recover', email: 'ana@example.com', course: 'caracteristicas-educativas', token: TOKEN });
+const ajeno = recover({ action: 'recover', email: 'ana@example.com', course: 'caracteristicas-educativas', token: TOKEN });
 const dAjeno = ajeno.data || {};
 check('En un curso donde NO está inscrita, `recover` lo dice (`false`)',
   dAjeno.registeredInCourse === false, String(dAjeno.registeredInCourse));
 check('...y aun así devuelve el registro, que es lo que le deja continuar',
   !!(dAjeno.registration && dAjeno.registration.fullName));
 
-const propio = get({ action: 'recover', email: 'ana@example.com', course: 'fundamentos-scout', token: TOKEN });
+const propio = recover({ action: 'recover', email: 'ana@example.com', course: 'fundamentos-scout', token: TOKEN });
 const dPropio = propio.data || {};
 check('En un curso donde SÍ está inscrita, también lo dice (`true`)',
   dPropio.registeredInCourse === true, String(dPropio.registeredInCourse));
@@ -180,7 +184,7 @@ check('...y devuelve la inscripción DE ESE curso',
   dPropio.registration && dPropio.registration.course === 'fundamentos-scout',
   dPropio.registration && dPropio.registration.course);
 
-const sinCurso = get({ action: 'recover', email: 'ana@example.com', token: TOKEN });
+const sinCurso = recover({ action: 'recover', email: 'ana@example.com', token: TOKEN });
 check('Sin preguntar por un curso, el campo es null y no false',
   (sinCurso.data || {}).registeredInCourse === null, String((sinCurso.data || {}).registeredInCourse));
 

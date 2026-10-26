@@ -370,13 +370,13 @@ function buildRegistrationModule(course) {
 
                 <div class="recovery-section hidden" id="recoverySection">
                     <h3>🔄 Recuperar tu avance anterior</h3>
-                    <p style="color: #636363; margin-bottom: 15px;">Ingresa el correo con el que te registraste en cualquier curso de esta plataforma. Recuperamos tu avance y, si es la primera vez que entras a este curso, te inscribimos con esos mismos datos.</p>
+                    <p style="color: #636363; margin-bottom: 15px;">Ingresa el correo con el que te registraste en cualquier curso de esta plataforma. Te enviamos un código a ese correo para confirmar que es tuyo; con él recuperamos tu avance y, si es la primera vez que entras a este curso, te inscribimos con esos mismos datos.</p>
                     <div class="form-group">
                         <label for="recoveryEmail">Correo Electronico</label>
                         <input type="email" id="recoveryEmail" placeholder="Ej: juan.perez@email.com" required>
                     </div>
                     <div class="consent-box">
-                        <p>Recuperar tu avance puede <strong>inscribirte en este curso</strong>, así que aquí autorizas lo mismo que en el registro: que la Asociación Scouts de Colombia trate tus datos y lo que escribas, solo para la formación, sin compartirlos con terceros y pudiendo pedir su eliminación. Conforme a la <strong>Ley 1581 de 2012</strong> (Habeas Data).</p>
+                        <p>Recuperar tu avance puede <strong>inscribirte en este curso</strong>, así que aquí autorizas lo mismo que en el registro: que la Asociación Scouts de Colombia trate tus datos y lo que escribas, solo para la formación, sin compartirlos con terceros y pudiendo pedir su consulta, corrección o eliminación a <a href="mailto:adultos.valle@scout.org.co">adultos.valle@scout.org.co</a>. Conforme a la <strong>Ley 1581 de 2012</strong> (Habeas Data) y a la <a href="https://scout.org.co/politica-privacidad/" target="_blank" rel="noopener">política de tratamiento de datos de la Asociación</a>.</p>
                         <label class="consent-check" for="consentRecover">
                             <input type="checkbox" id="consentRecover">
                             <span>He leído y autorizo el tratamiento de mis datos.</span>
@@ -384,6 +384,13 @@ function buildRegistrationModule(course) {
                     </div>
                     <div style="text-align: center;">
                         <button class="btn" onclick="recoverProgress()">🔍 Recuperar</button>
+                    </div>
+                    <div class="form-group hidden" id="recoveryCodeGroup" style="margin-top: 15px;">
+                        <label for="recoveryCode">Código que te enviamos (6 dígitos)</label>
+                        <input type="text" id="recoveryCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="Ej: 123456">
+                        <div style="text-align: center; margin-top: 10px;">
+                            <button class="btn" onclick="confirmarCodigoRecuperacion()">✅ Confirmar código</button>
+                        </div>
                     </div>
                     <div id="recoveryMessage" style="margin-top: 15px; text-align: center; display: none;"></div>
                 </div>
@@ -418,7 +425,7 @@ function buildRegistrationModule(course) {
                     </div>
                     <div class="consent-box">
                         <h4>Tratamiento de datos personales</h4>
-                        <p>Autorizo a la Asociación Scouts de Colombia a tratar mis datos (nombre, edad, grupo, región y correo) y lo que escriba en las reflexiones de este curso, con el único fin de acompañar y mejorar la formación. No se comparten con terceros y puedo solicitar su eliminación. Conforme a la <strong>Ley 1581 de 2012</strong> (Habeas Data).</p>
+                        <p>Autorizo a la Asociación Scouts de Colombia a tratar mis datos (nombre, edad, grupo, región y correo) y lo que escriba en las reflexiones de este curso, con el único fin de acompañar y mejorar la formación. No se comparten con terceros y puedo pedir su consulta, corrección o eliminación a <a href="mailto:adultos.valle@scout.org.co">adultos.valle@scout.org.co</a>. Conforme a la <strong>Ley 1581 de 2012</strong> (Habeas Data) y a la <a href="https://scout.org.co/politica-privacidad/" target="_blank" rel="noopener">política de tratamiento de datos de la Asociación</a>.</p>
                         <label class="consent-check" for="consent">
                             <input type="checkbox" id="consent" name="consent" required>
                             <span>He leído y autorizo el tratamiento de mis datos.</span>

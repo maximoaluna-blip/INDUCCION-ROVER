@@ -210,15 +210,24 @@ test.describe('@solo-escritorio plan-builder', () => {
   });
 
   // «Recuperar mi avance» con un backend simulado: devuelve filas de TODOS los cursos del correo.
+  // Desde el ADR-139 son dos pasos: sin `code` el backend solo dice que mando un
+  // codigo; con `code`, devuelve el avance.
   async function recuperarCon(page, datos) {
     await page.route(/script\.google\.com/, (route) => route.fulfill({
       status: 200, contentType: 'application/json',
-      body: JSON.stringify({ success: true, data: Object.assign({ registration: { fullName: 'Rover Prueba', email: 'r@x.co' },
-        modules: [], quizzes: [], certificates: [], registeredInCourse: true }, datos) }) }));
+      body: JSON.stringify(/[?&]code=/.test(route.request().url())
+        ? { success: true, data: Object.assign({ registration: { fullName: 'Rover Prueba', email: 'r@x.co' },
+            modules: [], quizzes: [], certificates: [], registeredInCourse: true }, datos) }
+        : { success: true, data: { codeSent: true, message: 'Te enviamos un codigo.' } }) }));
     await page.evaluate(() => {
       document.getElementById('recoveryEmail').value = 'r@x.co';
       const c = document.getElementById('consentRecover'); if (c) c.checked = true;
       recoverProgress();
+    });
+    await expect(page.locator('#recoveryCodeGroup')).not.toHaveClass(/hidden/);
+    await page.evaluate(() => {
+      document.getElementById('recoveryCode').value = '000000';
+      confirmarCodigoRecuperacion();
     });
     await page.waitForFunction(() => /recuperado/i.test([...document.querySelectorAll('.notification')].map((n) => n.textContent).join(' ')));
   }

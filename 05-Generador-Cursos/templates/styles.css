@@ -142,6 +142,10 @@ body {
 [data-theme="dark"] .consent-box { background: #2a1f3a; border-left-color: #b78fee; }
 [data-theme="dark"] .consent-box h4 { color: #d4b8ff; }
 [data-theme="dark"] .consent-box p { color: #ddd; }
+/* ADR-139: la caja enlaza la politica y el correo de contacto. Mismo azul que las
+   otras lineas usan para los enlaces en oscuro; sin esto el azul por defecto no
+   llega a 4,5:1 sobre #2a1f3a. */
+[data-theme="dark"] .consent-box a { color: #8ab4f8; }
 [data-theme="dark"] .consent-check { color: #d4b8ff; }
 
 /* El certificado conserva fondo claro para poder imprimirse, asi que su texto no debe

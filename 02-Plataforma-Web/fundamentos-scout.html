@@ -154,6 +154,10 @@ body {
 [data-theme="dark"] .consent-box { background: #2a1f3a; border-left-color: #b78fee; }
 [data-theme="dark"] .consent-box h4 { color: #d4b8ff; }
 [data-theme="dark"] .consent-box p { color: #ddd; }
+/* ADR-139: la caja enlaza la politica y el correo de contacto. Mismo azul que las
+   otras lineas usan para los enlaces en oscuro; sin esto el azul por defecto no
+   llega a 4,5:1 sobre #2a1f3a. */
+[data-theme="dark"] .consent-box a { color: #8ab4f8; }
 [data-theme="dark"] .consent-check { color: #d4b8ff; }
 
 /* El certificado conserva fondo claro para poder imprimirse, asi que su texto no debe
@@ -465,13 +469,13 @@ html[data-theme="dark"] .plan-remove, html[data-theme="dark"] .plan-add, html[da
 
                 <div class="recovery-section hidden" id="recoverySection">
                     <h3>🔄 Recuperar tu avance anterior</h3>
-                    <p style="color: #636363; margin-bottom: 15px;">Ingresa el correo con el que te registraste en cualquier curso de esta plataforma. Recuperamos tu avance y, si es la primera vez que entras a este curso, te inscribimos con esos mismos datos.</p>
+                    <p style="color: #636363; margin-bottom: 15px;">Ingresa el correo con el que te registraste en cualquier curso de esta plataforma. Te enviamos un código a ese correo para confirmar que es tuyo; con él recuperamos tu avance y, si es la primera vez que entras a este curso, te inscribimos con esos mismos datos.</p>
                     <div class="form-group">
                         <label for="recoveryEmail">Correo Electronico</label>
                         <input type="email" id="recoveryEmail" placeholder="Ej: juan.perez@email.com" required>
                     </div>
                     <div class="consent-box">
-                        <p>Recuperar tu avance puede <strong>inscribirte en este curso</strong>, así que aquí autorizas lo mismo que en el registro: que la Asociación Scouts de Colombia trate tus datos y lo que escribas, solo para la formación, sin compartirlos con terceros y pudiendo pedir su eliminación. Conforme a la <strong>Ley 1581 de 2012</strong> (Habeas Data).</p>
+                        <p>Recuperar tu avance puede <strong>inscribirte en este curso</strong>, así que aquí autorizas lo mismo que en el registro: que la Asociación Scouts de Colombia trate tus datos y lo que escribas, solo para la formación, sin compartirlos con terceros y pudiendo pedir su consulta, corrección o eliminación a <a href="mailto:adultos.valle@scout.org.co">adultos.valle@scout.org.co</a>. Conforme a la <strong>Ley 1581 de 2012</strong> (Habeas Data) y a la <a href="https://scout.org.co/politica-privacidad/" target="_blank" rel="noopener">política de tratamiento de datos de la Asociación</a>.</p>
                         <label class="consent-check" for="consentRecover">
                             <input type="checkbox" id="consentRecover">
                             <span>He leído y autorizo el tratamiento de mis datos.</span>
@@ -479,6 +483,13 @@ html[data-theme="dark"] .plan-remove, html[data-theme="dark"] .plan-add, html[da
                     </div>
                     <div style="text-align: center;">
                         <button class="btn" onclick="recoverProgress()">🔍 Recuperar</button>
+                    </div>
+                    <div class="form-group hidden" id="recoveryCodeGroup" style="margin-top: 15px;">
+                        <label for="recoveryCode">Código que te enviamos (6 dígitos)</label>
+                        <input type="text" id="recoveryCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="Ej: 123456">
+                        <div style="text-align: center; margin-top: 10px;">
+                            <button class="btn" onclick="confirmarCodigoRecuperacion()">✅ Confirmar código</button>
+                        </div>
                     </div>
                     <div id="recoveryMessage" style="margin-top: 15px; text-align: center; display: none;"></div>
                 </div>
@@ -545,7 +556,7 @@ html[data-theme="dark"] .plan-remove, html[data-theme="dark"] .plan-add, html[da
                     </div>
                     <div class="consent-box">
                         <h4>Tratamiento de datos personales</h4>
-                        <p>Autorizo a la Asociación Scouts de Colombia a tratar mis datos (nombre, edad, grupo, región y correo) y lo que escriba en las reflexiones de este curso, con el único fin de acompañar y mejorar la formación. No se comparten con terceros y puedo solicitar su eliminación. Conforme a la <strong>Ley 1581 de 2012</strong> (Habeas Data).</p>
+                        <p>Autorizo a la Asociación Scouts de Colombia a tratar mis datos (nombre, edad, grupo, región y correo) y lo que escriba en las reflexiones de este curso, con el único fin de acompañar y mejorar la formación. No se comparten con terceros y puedo pedir su consulta, corrección o eliminación a <a href="mailto:adultos.valle@scout.org.co">adultos.valle@scout.org.co</a>. Conforme a la <strong>Ley 1581 de 2012</strong> (Habeas Data) y a la <a href="https://scout.org.co/politica-privacidad/" target="_blank" rel="noopener">política de tratamiento de datos de la Asociación</a>.</p>
                         <label class="consent-check" for="consent">
                             <input type="checkbox" id="consent" name="consent" required>
                             <span>He leído y autorizo el tratamiento de mis datos.</span>
@@ -1305,6 +1316,20 @@ window.addEventListener('beforeunload', function () {
     saveProgress();
 });
 
+// Version del texto de autorizacion de datos de las cajas del registro y de
+// recuperar (ADR-139). Es la fecha de ese texto: si cambia en build-course.js,
+// cambia esta fecha, y el backend guarda cual se autorizo. Rover no usa el nucleo
+// de _MOTOR (ADR-025), asi que la lleva aqui igual que la plataforma.
+var CONSENT_VERSION = '2026-10-25';
+
+// Copia de la de _MOTOR/engine.core.js: el motivo que manda el servidor se pinta
+// como texto, no como HTML.
+function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+}
+
 // --- Registro ---
 function handleRegistration(event) {
     event.preventDefault();
@@ -1329,7 +1354,10 @@ function handleRegistration(event) {
     // registros no. La plataforma lo corrigio el 03-ago-2026 (ADR-026) y a Rover nadie
     // se lo paso: el 27-sep-2026 su UNICA fila de registro seguia sin curso, y hubo que
     // migrarla a mano. Esto es la causa; aquella migracion fue el sintoma.
-    sendToGoogleSheets({ action: 'register', ...userProfile, course: COURSE_CONFIG.courseId });
+    // `consent` (ADR-139): la casilla `required` ya impidio llegar aqui sin marcarla;
+    // esto es la prueba de que se marco, que el backend guarda con su hora.
+    sendToGoogleSheets({ action: 'register', ...userProfile, course: COURSE_CONFIG.courseId,
+        consent: { version: CONSENT_VERSION } });
     showModule(1);
     var firstName = userProfile.fullName.split(' ')[0];
     var welcomeEl = document.getElementById('welcomeName');
@@ -2151,12 +2179,16 @@ function recoverProgress() {
     }
 
     msgDiv.style.display = 'block';
-    msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">🔄 Buscando tu avance...</p>';
+    msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">📧 Enviando un código a tu correo...</p>';
 
+    // ADR-139 - DOS PASOS. Con solo escribir un correo ajeno se veian el nombre,
+    // la edad, el grupo, los puntajes y los certificados de otra persona. Ahora
+    // este paso solo pide que el backend mande un codigo a ese correo; los datos
+    // llegan en confirmarCodigoRecuperacion(), con el codigo. v=2 le dice al
+    // backend que esta pagina ya sabe hacerlo.
     var url = COURSE_CONFIG.googleScriptUrl +
-        '?action=recover&email=' + encodeURIComponent(email) +
-        '&course=' + encodeURIComponent(COURSE_CONFIG.courseId) +
-        '&token=ROVER_ASC_2025';
+        '?action=recover&v=2&email=' + encodeURIComponent(email) +
+        '&course=' + encodeURIComponent(COURSE_CONFIG.courseId);
 
     fetch(url, { redirect: 'follow' })
         .then(function(response) {
@@ -2164,162 +2196,15 @@ function recoverProgress() {
             return response.json();
         })
         .then(function(data) {
-
-            // El Apps Script devuelve: { success: true, data: { registration, modules, quizzes, certificates } }
-            var isFound = (data && data.found) || (data && data.success && data.data);
-
-            if (isFound) {
-                var serverData = data.data || data;
-                var reg = serverData.registration || data.userProfile || {};
-                // El backend devuelve filas de TODOS los cursos del correo: solo cuentan las de
-                // este curso. Sin este filtro, terminar la Tropa abria el certificado de la Manada
-                // (revision final del ADR-120).
-                var deEsteCurso = function (x) { return x && x.course === COURSE_CONFIG.courseId; };
-                var mods = (serverData.modules || []).filter(deEsteCurso);
-                var quizzes = (serverData.quizzes || []).filter(deEsteCurso);
-                // Un certificado ya emitido para este curso se reabre en este equipo con su mismo
-                // codigo: el plan del Nivel 3 vive solo en el navegador donde se escribio, y sin
-                // esto un certificado ganado quedaba bloqueado (y al rehacerlo, salia otro codigo).
-                var certEmitido = (serverData.certificates || []).filter(deEsteCurso)[0];
-                if (certEmitido && certEmitido.certificateCode) {
-                    try {
-                        var claveCert = 'certificate_issued_' + COURSE_CONFIG.courseId;
-                        if (!localStorage.getItem(claveCert)) {
-                            localStorage.setItem(claveCert, JSON.stringify({
-                                name: (reg && reg.fullName) || '', code: certEmitido.certificateCode,
-                                date: certEmitido.completionDate || '', score: certEmitido.score,
-                                course: COURSE_CONFIG.courseId }));
-                        }
-                    } catch (e) {}
-                }
-
-                // Reconstruir userProfile desde registration
-                if (reg.fullName || reg.name) {
-                    userProfile = {
-                        fullName: reg.fullName || reg.name || '',
-                        age: reg.age || '',
-                        group: reg.group || '',
-                        region: reg.region || '',
-                        email: reg.email || email,
-                        motivation: reg.motivation || '',
-                        registrationDate: reg.registrationDate || reg.timestamp || ''
-                    };
-                } else if (data.userProfile) {
-                    userProfile = data.userProfile;
-                }
-
-                // Reconstruir moduleProgress desde modules array
-                if (mods.length > 0) {
-                    moduleProgress = new Array(COURSE_CONFIG.totalModules).fill(false);
-                    mods.forEach(function(m) {
-                        var modNum = m.moduleCompleted || m.module;
-                        if (modNum !== undefined && modNum < moduleProgress.length) {
-                            moduleProgress[modNum] = true;
-                        }
-                    });
-                } else if (data.moduleProgress) {
-                    moduleProgress = data.moduleProgress;
-                }
-
-                // Reconstruir quizScores desde quizzes array
-                if (quizzes.length > 0) {
-                    quizScores = [];
-                    quizzes.forEach(function(q) {
-                        var modNum = q.module;
-                        var score = q.score;
-                        if (modNum !== undefined && score !== undefined) {
-                            quizScores[modNum] = parseInt(score);
-                        }
-                    });
-                } else if (data.quizScores) {
-                    quizScores = data.quizScores;
-                }
-
-                // StudyTime: el unico dato de sesion que el backend sigue devolviendo
-                if (data.studyTime) studyTime = data.studyTime;
-
-                // ADR-074 - AQUI NO SE HIDRATA NINGUN TEXTO, A PROPOSITO.
-                // `recover` no esta autenticado: pide un correo y nada mas. Por eso el
-                // backend de Rover -que es propio, con su hoja y su token- dejo de mandar
-                // lo que la persona escribio y solo dice QUE hay guardado (serverData.saved).
-                // Lo escrito vive en el navegador donde se escribio, y alli sigue.
-                var guardado = serverData.saved || {};
-                var anotaciones = 0;
-                Object.keys(guardado.reflections || {}).forEach(function (cid) {
-                    anotaciones += (guardado.reflections[cid] || []).length;
-                });
-                Object.keys(guardado.commitments || {}).forEach(function (cid) {
-                    anotaciones += guardado.commitments[cid] || 0;
-                });
-                anotaciones += (guardado.plans || []).length + (guardado.assessments || []).length;
-
-                saveProgress();
-                updateStats();
-                updateProgress();
-
-                // --- Recuperar TAMBIEN inscribe en este curso (ADR-082) ---
-                // `recover` busca por correo y devuelve la inscripcion que encuentre,
-                // sea del curso que sea: se entraba aqui con el registro de OTRO curso,
-                // se hacia este entero y al final se escribia el certificado pero nunca
-                // la inscripcion. En la plataforma eso dejo 7 certificados sin fila y
-                // una linea entera figurando con 0 adultos (ADR-080).
-                // Se inscribe SOLO ante un `false` explicito: un `undefined` de un
-                // despliegue anterior no puede leerse como "vuelve a inscribirla".
-                var inscritoAhora = false;
-                if (serverData.registeredInCourse === false && userProfile && userProfile.fullName) {
-                    // Campo a campo y no con spread, para que se vea que `motivation`
-                    // va vacia: `recover` no la devuelve desde el ADR-074.
-                    sendToGoogleSheets({
-                        action: 'register',
-                        fullName: userProfile.fullName,
-                        age: userProfile.age,
-                        group: userProfile.group,
-                        region: userProfile.region,
-                        email: userProfile.email,
-                        motivation: '',
-                        registrationDate: new Date().toISOString(),
-                        course: COURSE_CONFIG.courseId
-                    });
-                    inscritoAhora = true;
-                }
-
-                // Determinar último módulo completado
-                var lastModule = data.currentModule || 0;
-                if (!lastModule && moduleProgress.length > 0) {
-                    for (var i = moduleProgress.length - 1; i >= 0; i--) {
-                        if (moduleProgress[i]) { lastModule = i + 1; break; }
-                    }
-                }
-
-                var firstName = userProfile.fullName ? userProfile.fullName.split(' ')[0] : 'Scout';
-                var welcomeEl = document.getElementById('welcomeName');
-                if (welcomeEl) welcomeEl.textContent = firstName;
-
-                var completedCount = moduleProgress.filter(Boolean).length;
-                showNotification('¡Avance recuperado, ' + firstName + '! ' + completedCount + ' módulos completados 🎉');
-
-                // Si acabamos de inscribirla en este curso, se dice: el dato se arregla
-                // y el texto lo cuenta, que son la misma mitad de la decision.
-                var avisoInscripcion = inscritoAhora
-                    ? '<p style="color: #2e7d32; margin-top: 10px;">Te inscribimos en <strong>este curso</strong> con esos mismos datos.</p>'
-                    : '';
-                var avisoAnotaciones = anotaciones > 0
-                    ? '<p style="color: #636363; margin-top: 10px;">Tienes <strong>' + anotaciones +
-                      '</strong> anotaciones guardadas. Lo que escribes <strong>no se recupera por correo</strong>: ' +
-                      'se queda en el navegador donde lo escribiste.</p>'
-                    : '';
-
-                if ((anotaciones > 0 || inscritoAhora) && typeof msgDiv !== 'undefined' && msgDiv) {
-                    msgDiv.style.display = 'block';
-                    msgDiv.innerHTML = '<p style="color: #2e7d32; font-weight: 600;">✅ Recuperamos tu avance.</p>' +
-                        avisoInscripcion + avisoAnotaciones;
-                }
-                showModule(lastModule > 0 ? lastModule : 1);
+            if (data && data.success && data.data && data.data.codeSent) {
+                var grupo = document.getElementById('recoveryCodeGroup');
+                if (grupo) grupo.classList.remove('hidden');
+                msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">📧 ' + escapeHtml(data.data.message) + '</p>';
+                var campo = document.getElementById('recoveryCode');
+                if (campo) { campo.value = ''; campo.focus(); }
             } else {
-                var reason = (data && data.message) ? data.message : 'No se encontro avance asociado a este correo.';
-                msgDiv.innerHTML = '<p style="color: #B34700; font-weight: 600;">⚠️ ' + reason + '</p>' +
-                    '<p style="color: #636363; margin-top: 10px;">Puedes registrarte como nuevo usuario.</p>' +
-                    '<button class="btn" style="margin-top: 10px;" onclick="toggleRegistrationMode(\'new\')">🆕 Registrarme</button>';
+                var motivo = (data && data.error) || 'No pudimos enviar el código.';
+                msgDiv.innerHTML = '<p style="color: #B34700; font-weight: 600;">⚠️ ' + escapeHtml(motivo) + '</p>';
             }
         })
         .catch(function(err) {
@@ -2328,6 +2213,207 @@ function recoverProgress() {
                 '<p style="color: #636363; margin-top: 10px;">Error: ' + err.message + '</p>' +
                 '<p style="color: #636363; margin-top: 5px;">Verifica tu conexion a internet e intenta de nuevo.</p>';
         });
+}
+
+// Paso 2 de recuperar (ADR-139): con el codigo, el backend devuelve el avance y
+// anota la autorizacion que se acaba de marcar en las filas que no la tenian.
+function confirmarCodigoRecuperacion() {
+    var email = document.getElementById('recoveryEmail').value.trim();
+    var codigo = (document.getElementById('recoveryCode').value || '').replace(/\s/g, '');
+    var msgDiv = document.getElementById('recoveryMessage');
+    if (!/^\d{6}$/.test(codigo)) {
+        showNotification('⚠️ El código tiene 6 dígitos', 'warning');
+        return;
+    }
+    msgDiv.style.display = 'block';
+    msgDiv.innerHTML = '<p style="color: #622599; font-weight: 600;">🔄 Buscando tu avance...</p>';
+
+    var url = COURSE_CONFIG.googleScriptUrl +
+        '?action=recover&v=2&email=' + encodeURIComponent(email) +
+        '&course=' + encodeURIComponent(COURSE_CONFIG.courseId) +
+        '&code=' + encodeURIComponent(codigo) +
+        '&consentVersion=' + encodeURIComponent(CONSENT_VERSION);
+
+    fetch(url, { redirect: 'follow' })
+        .then(function(response) {
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            return response.json();
+        })
+        .then(function(data) { aplicarAvanceRecuperado_(data, email, msgDiv); })
+        .catch(function(err) {
+            if (typeof console !== 'undefined') console.error('[Recovery] Error:', err);
+            msgDiv.innerHTML = '<p style="color: #C62828; font-weight: 600;">❌ Error al conectar con el servidor.</p>' +
+                '<p style="color: #636363; margin-top: 10px;">Error: ' + err.message + '</p>' +
+                '<p style="color: #636363; margin-top: 5px;">Verifica tu conexion a internet e intenta de nuevo.</p>';
+        });
+}
+
+function aplicarAvanceRecuperado_(data, email, msgDiv) {
+    // El Apps Script devuelve: { success: true, data: { registration, modules, quizzes, certificates } }
+    var isFound = (data && data.found) || (data && data.success && data.data);
+
+    if (isFound) {
+        var serverData = data.data || data;
+        var reg = serverData.registration || data.userProfile || {};
+        // El backend devuelve filas de TODOS los cursos del correo: solo cuentan las de
+        // este curso. Sin este filtro, terminar la Tropa abria el certificado de la Manada
+        // (revision final del ADR-120).
+        var deEsteCurso = function (x) { return x && x.course === COURSE_CONFIG.courseId; };
+        var mods = (serverData.modules || []).filter(deEsteCurso);
+        var quizzes = (serverData.quizzes || []).filter(deEsteCurso);
+        // Un certificado ya emitido para este curso se reabre en este equipo con su mismo
+        // codigo: el plan del Nivel 3 vive solo en el navegador donde se escribio, y sin
+        // esto un certificado ganado quedaba bloqueado (y al rehacerlo, salia otro codigo).
+        var certEmitido = (serverData.certificates || []).filter(deEsteCurso)[0];
+        if (certEmitido && certEmitido.certificateCode) {
+            try {
+                var claveCert = 'certificate_issued_' + COURSE_CONFIG.courseId;
+                if (!localStorage.getItem(claveCert)) {
+                    localStorage.setItem(claveCert, JSON.stringify({
+                        name: (reg && reg.fullName) || '', code: certEmitido.certificateCode,
+                        date: certEmitido.completionDate || '', score: certEmitido.score,
+                        course: COURSE_CONFIG.courseId }));
+                }
+            } catch (e) {}
+        }
+
+        // Reconstruir userProfile desde registration
+        if (reg.fullName || reg.name) {
+            userProfile = {
+                fullName: reg.fullName || reg.name || '',
+                age: reg.age || '',
+                group: reg.group || '',
+                region: reg.region || '',
+                email: reg.email || email,
+                motivation: reg.motivation || '',
+                registrationDate: reg.registrationDate || reg.timestamp || ''
+            };
+        } else if (data.userProfile) {
+            userProfile = data.userProfile;
+        }
+
+        // Reconstruir moduleProgress desde modules array
+        if (mods.length > 0) {
+            moduleProgress = new Array(COURSE_CONFIG.totalModules).fill(false);
+            mods.forEach(function(m) {
+                var modNum = m.moduleCompleted || m.module;
+                if (modNum !== undefined && modNum < moduleProgress.length) {
+                    moduleProgress[modNum] = true;
+                }
+            });
+        } else if (data.moduleProgress) {
+            moduleProgress = data.moduleProgress;
+        }
+
+        // Reconstruir quizScores desde quizzes array
+        if (quizzes.length > 0) {
+            quizScores = [];
+            quizzes.forEach(function(q) {
+                var modNum = q.module;
+                var score = q.score;
+                if (modNum !== undefined && score !== undefined) {
+                    quizScores[modNum] = parseInt(score);
+                }
+            });
+        } else if (data.quizScores) {
+            quizScores = data.quizScores;
+        }
+
+        // StudyTime: el unico dato de sesion que el backend sigue devolviendo
+        if (data.studyTime) studyTime = data.studyTime;
+
+        // ADR-074 - AQUI NO SE HIDRATA NINGUN TEXTO, A PROPOSITO.
+        // `recover` no esta autenticado: pide un correo y nada mas. Por eso el
+        // backend de Rover -que es propio, con su hoja y su token- dejo de mandar
+        // lo que la persona escribio y solo dice QUE hay guardado (serverData.saved).
+        // Lo escrito vive en el navegador donde se escribio, y alli sigue.
+        var guardado = serverData.saved || {};
+        var anotaciones = 0;
+        Object.keys(guardado.reflections || {}).forEach(function (cid) {
+            anotaciones += (guardado.reflections[cid] || []).length;
+        });
+        Object.keys(guardado.commitments || {}).forEach(function (cid) {
+            anotaciones += guardado.commitments[cid] || 0;
+        });
+        anotaciones += (guardado.plans || []).length + (guardado.assessments || []).length;
+
+        saveProgress();
+        updateStats();
+        updateProgress();
+
+        // --- Recuperar TAMBIEN inscribe en este curso (ADR-082) ---
+        // `recover` busca por correo y devuelve la inscripcion que encuentre,
+        // sea del curso que sea: se entraba aqui con el registro de OTRO curso,
+        // se hacia este entero y al final se escribia el certificado pero nunca
+        // la inscripcion. En la plataforma eso dejo 7 certificados sin fila y
+        // una linea entera figurando con 0 adultos (ADR-080).
+        // Se inscribe SOLO ante un `false` explicito: un `undefined` de un
+        // despliegue anterior no puede leerse como "vuelve a inscribirla".
+        var inscritoAhora = false;
+        if (serverData.registeredInCourse === false && userProfile && userProfile.fullName) {
+            // Campo a campo y no con spread, para que se vea que `motivation`
+            // va vacia: `recover` no la devuelve desde el ADR-074.
+            sendToGoogleSheets({
+                action: 'register',
+                fullName: userProfile.fullName,
+                age: userProfile.age,
+                group: userProfile.group,
+                region: userProfile.region,
+                email: userProfile.email,
+                motivation: '',
+                registrationDate: new Date().toISOString(),
+                course: COURSE_CONFIG.courseId,
+                // La caja de recuperar se marco para llegar aqui (ADR-139).
+                consent: { version: CONSENT_VERSION }
+            });
+            inscritoAhora = true;
+        }
+
+        // Determinar último módulo completado
+        var lastModule = data.currentModule || 0;
+        if (!lastModule && moduleProgress.length > 0) {
+            for (var i = moduleProgress.length - 1; i >= 0; i--) {
+                if (moduleProgress[i]) { lastModule = i + 1; break; }
+            }
+        }
+
+        var firstName = userProfile.fullName ? userProfile.fullName.split(' ')[0] : 'Scout';
+        var welcomeEl = document.getElementById('welcomeName');
+        if (welcomeEl) welcomeEl.textContent = firstName;
+
+        var completedCount = moduleProgress.filter(Boolean).length;
+        showNotification('¡Avance recuperado, ' + firstName + '! ' + completedCount + ' módulos completados 🎉');
+
+        // Si acabamos de inscribirla en este curso, se dice: el dato se arregla
+        // y el texto lo cuenta, que son la misma mitad de la decision.
+        var avisoInscripcion = inscritoAhora
+            ? '<p style="color: #2e7d32; margin-top: 10px;">Te inscribimos en <strong>este curso</strong> con esos mismos datos.</p>'
+            : '';
+        var avisoAnotaciones = anotaciones > 0
+            ? '<p style="color: #636363; margin-top: 10px;">Tienes <strong>' + anotaciones +
+              '</strong> anotaciones guardadas. Lo que escribes <strong>no se recupera por correo</strong>: ' +
+              'se queda en el navegador donde lo escribiste.</p>'
+            : '';
+
+        if ((anotaciones > 0 || inscritoAhora) && typeof msgDiv !== 'undefined' && msgDiv) {
+            msgDiv.style.display = 'block';
+            msgDiv.innerHTML = '<p style="color: #2e7d32; font-weight: 600;">✅ Recuperamos tu avance.</p>' +
+                avisoInscripcion + avisoAnotaciones;
+        }
+        showModule(lastModule > 0 ? lastModule : 1);
+    } else {
+        var reason = (data && (data.error || data.message)) || 'No se encontro avance asociado a este correo.';
+        // Un codigo errado no es "no tienes cuenta": se dice que hacer con el codigo.
+        if (data && data.data && data.data.codeError) {
+            msgDiv.innerHTML = '<p style="color: #B34700; font-weight: 600;">⚠️ ' + escapeHtml(reason) + '</p>' +
+                (data.data.codeError === 'incorrecto' ? '' :
+                '<p style="color: #636363; margin-top: 10px;">Pulsa <strong>Recuperar</strong> otra vez para recibir un código nuevo.</p>');
+            return;
+        }
+        msgDiv.innerHTML = '<p style="color: #B34700; font-weight: 600;">⚠️ ' + escapeHtml(reason) + '</p>' +
+            '<p style="color: #636363; margin-top: 10px;">Puedes registrarte como nuevo usuario.</p>' +
+            '<button class="btn" style="margin-top: 10px;" onclick="toggleRegistrationMode(\'new\')">🆕 Registrarme</button>';
+    }
 }
 
 // --- Google Sheets ---
